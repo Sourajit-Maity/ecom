@@ -3916,6 +3916,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_html2canvas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-html2canvas */ "./node_modules/vue-html2canvas/index.js");
+/* harmony import */ var vue_html2canvas__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_html2canvas__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _minogin_vue_drag_resize_rotate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @minogin/vue-drag-resize-rotate */ "./node_modules/@minogin/vue-drag-resize-rotate/src/drr.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -4018,25 +4021,45 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   //   name: 'about-us',
+  components: {
+    VueHtml2Canvas: (vue_html2canvas__WEBPACK_IMPORTED_MODULE_1___default()),
+    drr: _minogin_vue_drag_resize_rotate__WEBPACK_IMPORTED_MODULE_2__.default
+  },
   mounted: function mounted() {
     console.log("This is about component");
   },
   data: function data() {
     return {
-      item: {
+      addTextIndex: 0,
+      selectedTextBoxIndex: 0,
+      textDesigns: [{
         x: 300,
         y: 70,
         weight: 200,
         height: 50,
-        angle: 0
+        angle: 0,
+        text: "Your text"
+      }],
+      outerBox: {
+        x: 300,
+        y: 70,
+        weight: 200,
+        height: 50
+      },
+      innerBox: {
+        x: 300,
+        y: 70,
+        weight: 200,
+        height: 50
+      },
+      menu: {
+        sizeShape: true,
+        textOptions: false
       },
       output: null,
       shapeDefaultClass: 'rectangle1-3'
@@ -4050,11 +4073,39 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         'oval1-3': 'oval1-3' == this.shapeDefaultClass,
         'rectangle12-3': 'rectangle12-3' == this.shapeDefaultClass
       };
+    },
+    getYourText: {
+      get: function get() {
+        return this.textDesigns[this.selectedTextBoxIndex].text;
+      },
+      set: function set(value) {
+        this.textDesigns[this.selectedTextBoxIndex].text = value;
+      }
     }
   },
   methods: {
     itemChange: function itemChange(event) {
       console.info('event', event);
+    },
+    selectItem: function selectItem(index) {
+      console.info('index', index);
+      this.selectedTextBoxIndex = index;
+      this.selectDesignbar('textOptions');
+    },
+    selectDesignbar: function selectDesignbar(menuName) {
+      this.menu.sizeShape = 'sizeShape' == menuName;
+      this.menu.textOptions = 'textOptions' == menuName;
+    },
+    addText: function addText() {
+      this.addTextIndex++;
+      this.textDesigns.push({
+        x: 300 + this.addTextIndex * 10,
+        y: 70 + this.addTextIndex * 10,
+        weight: 200,
+        height: 50,
+        angle: 0,
+        text: "Your text"
+      });
     },
     printThis: function printThis() {
       var _this = this;
@@ -4101,9 +4152,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_DesignToolComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/DesignToolComponent.vue */ "./resources/js/components/DesignToolComponent.vue");
-/* harmony import */ var vue_html2canvas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-html2canvas */ "./node_modules/vue-html2canvas/index.js");
-/* harmony import */ var vue_html2canvas__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_html2canvas__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _minogin_vue_drag_resize_rotate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @minogin/vue-drag-resize-rotate */ "./node_modules/@minogin/vue-drag-resize-rotate/src/drr.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
@@ -4111,11 +4159,7 @@ __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default; // importing compoment
 
 
-
-
 Vue.component('design-tool', _components_DesignToolComponent_vue__WEBPACK_IMPORTED_MODULE_0__.default);
-Vue.component('drr', _minogin_vue_drag_resize_rotate__WEBPACK_IMPORTED_MODULE_2__.default);
-Vue.use((vue_html2canvas__WEBPACK_IMPORTED_MODULE_1___default()));
 var app = new Vue({
   el: '#app'
 });
@@ -41397,7 +41441,60 @@ var render = function() {
   return _c("div", { staticClass: "row" }, [
     _c("div", { staticClass: "col-md-7" }, [
       _c("div", { staticClass: "row" }, [
-        _vm._m(0),
+        _c("div", { staticClass: "col-md-12" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-dark mr-2",
+              on: {
+                click: function($event) {
+                  return _vm.selectDesignbar("sizeShape")
+                }
+              }
+            },
+            [
+              _vm._v(
+                "\n                          Size/Shape\n                      "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-dark mr-2", attrs: { disabled: "" } },
+            [
+              _vm._v(
+                "\n                          Background\n                      "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-dark mr-2", attrs: { disabled: "" } },
+            [
+              _vm._v(
+                "\n                          Border\n                      "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-dark mr-2", attrs: { disabled: "" } },
+            [
+              _vm._v(
+                "\n                          Fastener\n                      "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-dark mr-2", attrs: { disabled: "" } },
+            [_vm._v("\n                          Dome\n                      ")]
+          )
+        ]),
         _vm._v(" "),
         _c("div", { ref: "printcontent", staticClass: "col-md-12 mt-4" }, [
           _c(
@@ -41406,23 +41503,35 @@ var render = function() {
               staticClass: "design-area rounded shadow",
               class: _vm.getShapeClass
             },
-            [
-              _c(
+            _vm._l(_vm.textDesigns, function(textDesign, index) {
+              return _c(
                 "drr",
                 {
+                  key: index,
                   attrs: {
-                    x: _vm.item.x,
-                    y: _vm.item.y,
-                    w: _vm.item.weight,
-                    h: _vm.item.height,
-                    angle: _vm.item.angle,
-                    aspectRatio: true
+                    x: textDesign.x,
+                    y: textDesign.y,
+                    w: textDesign.weight,
+                    h: textDesign.height,
+                    angle: textDesign.angle,
+                    aspectRatio: true,
+                    innerBox: _vm.innerBox,
+                    outerBox: _vm.outerBox
                   },
-                  on: { change: _vm.itemChange }
+                  on: {
+                    select: function($event) {
+                      return _vm.selectItem(index)
+                    },
+                    change: _vm.itemChange
+                  }
                 },
-                [_c("h1", [_vm._v("Hello world")])]
+                [
+                  _c("h1", { staticStyle: { width: "100%", height: "100%" } }, [
+                    _vm._v(_vm._s(textDesign.text))
+                  ])
+                ]
               )
-            ],
+            }),
             1
           )
         ])
@@ -41431,102 +41540,185 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "col-md-5" }, [
       _c("div", { staticClass: "row" }, [
-        _vm._m(1),
+        _c("div", { staticClass: "col-md-12" }, [
+          _c(
+            "button",
+            { staticClass: "btn btn-success mr-2", on: { click: _vm.addText } },
+            [
+              _vm._v(
+                "\n                          Add Text\n                      "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-warning mr-2", attrs: { disabled: "" } },
+            [
+              _vm._v(
+                "\n                          Add Logo\n                      "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-primary mr-2", attrs: { disabled: "" } },
+            [
+              _vm._v(
+                "\n                          Add Clipart\n                      "
+              )
+            ]
+          )
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "col-md-12" }, [
-          _c("div", { staticClass: "card mt-4" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v(
-                "\n                                SELECT A SIZE/ SHAPE\n                            "
-              )
-            ]),
-            _vm._v(" "),
-            _c("ul", { staticClass: "list-group list-group-flush" }, [
-              _c("li", { staticClass: "list-group-item" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-block mb-2",
-                        class: [
-                          _vm.shapeDefaultClass == "rectangle1-3"
-                            ? "btn-danger"
-                            : "btn-dark"
-                        ],
-                        on: {
-                          click: function($event) {
-                            _vm.shapeDefaultClass = "rectangle1-3"
-                          }
-                        }
-                      },
-                      [_vm._v('1"x3" Rectangle')]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn  btn-block mb-2",
-                        class: [
-                          _vm.shapeDefaultClass == "rectangle1-5-3"
-                            ? "btn-danger"
-                            : "btn-dark"
-                        ],
-                        on: {
-                          click: function($event) {
-                            _vm.shapeDefaultClass = "rectangle1-5-3"
-                          }
-                        }
-                      },
-                      [_vm._v('1.5"x3" Rectangle')]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn  btn-block",
-                        class: [
-                          _vm.shapeDefaultClass == "oval1-3"
-                            ? "btn-danger"
-                            : "btn-dark"
-                        ],
-                        on: {
-                          click: function($event) {
-                            _vm.shapeDefaultClass = "oval1-3"
-                          }
-                        }
-                      },
-                      [_vm._v('1"x3" Oval')]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn  btn-block",
-                        class: [
-                          _vm.shapeDefaultClass == "rectangle12-3"
-                            ? "btn-danger"
-                            : "btn-dark"
-                        ],
-                        on: {
-                          click: function($event) {
-                            _vm.shapeDefaultClass = "rectangle12-3"
-                          }
-                        }
-                      },
-                      [_vm._v('2"x3" Rectangle')]
-                    )
+          _vm.menu.sizeShape
+            ? _c("div", { staticClass: "card mt-4" }, [
+                _c("div", { staticClass: "card-header" }, [
+                  _vm._v(
+                    "\n                              SELECT A SIZE/ SHAPE\n                          "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("ul", { staticClass: "list-group list-group-flush" }, [
+                  _c("li", { staticClass: "list-group-item" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-block mb-2",
+                            class: [
+                              _vm.shapeDefaultClass == "rectangle1-3"
+                                ? "btn-danger"
+                                : "btn-dark"
+                            ],
+                            on: {
+                              click: function($event) {
+                                _vm.shapeDefaultClass = "rectangle1-3"
+                              }
+                            }
+                          },
+                          [_vm._v('1"x3" Rectangle')]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn  btn-block mb-2",
+                            class: [
+                              _vm.shapeDefaultClass == "rectangle1-5-3"
+                                ? "btn-danger"
+                                : "btn-dark"
+                            ],
+                            on: {
+                              click: function($event) {
+                                _vm.shapeDefaultClass = "rectangle1-5-3"
+                              }
+                            }
+                          },
+                          [_vm._v('1.5"x3" Rectangle')]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn  btn-block",
+                            class: [
+                              _vm.shapeDefaultClass == "oval1-3"
+                                ? "btn-danger"
+                                : "btn-dark"
+                            ],
+                            on: {
+                              click: function($event) {
+                                _vm.shapeDefaultClass = "oval1-3"
+                              }
+                            }
+                          },
+                          [_vm._v('1"x3" Oval')]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn  btn-block",
+                            class: [
+                              _vm.shapeDefaultClass == "rectangle12-3"
+                                ? "btn-danger"
+                                : "btn-dark"
+                            ],
+                            on: {
+                              click: function($event) {
+                                _vm.shapeDefaultClass = "rectangle12-3"
+                              }
+                            }
+                          },
+                          [_vm._v('2"x3" Rectangle')]
+                        )
+                      ])
+                    ])
                   ])
                 ])
               ])
-            ])
-          ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.menu.textOptions
+            ? _c("div", { staticClass: "card mt-4" }, [
+                _c("div", { staticClass: "card-header" }, [
+                  _vm._v(
+                    "\n                              TEXT OPTIONS\n                          "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-sm-3 col-form-label",
+                        attrs: { for: "inputPassword" }
+                      },
+                      [_vm._v("Your Text")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-sm-9" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.getYourText,
+                            expression: "getYourText"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "inputPassword",
+                          placeholder: "Your Text"
+                        },
+                        domProps: { value: _vm.getYourText },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.getYourText = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ])
+              ])
+            : _vm._e()
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "col-md-12" }, [
@@ -41536,64 +41728,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12" }, [
-      _c("button", { staticClass: "btn btn-dark mr-2" }, [
-        _vm._v(
-          "\n                            Size/Shape\n                        "
-        )
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-dark mr-2" }, [
-        _vm._v(
-          "\n                            Background\n                        "
-        )
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-dark mr-2" }, [
-        _vm._v("\n                            Border\n                        ")
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-dark mr-2" }, [
-        _vm._v(
-          "\n                            Fastener\n                        "
-        )
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-dark mr-2" }, [
-        _vm._v("\n                            Dome\n                        ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12" }, [
-      _c("button", { staticClass: "btn btn-success mr-2" }, [
-        _vm._v(
-          "\n                            Add Text\n                        "
-        )
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-warning mr-2" }, [
-        _vm._v(
-          "\n                            Add Logo\n                        "
-        )
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-primary mr-2" }, [
-        _vm._v(
-          "\n                            Add Clipart\n                        "
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
