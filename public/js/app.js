@@ -4021,6 +4021,62 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 
@@ -4041,9 +4097,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         x: 300,
         y: 70,
         weight: 200,
-        height: 50,
+        height: 70,
         angle: 0,
-        text: "Your text"
+        text: "Your text",
+        fontStyle: "",
+        fontSize: "font-size50",
+        fontColor: ""
       }],
       outerBox: {
         x: 300,
@@ -4074,6 +4133,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         'rectangle12-3': 'rectangle12-3' == this.shapeDefaultClass
       };
     },
+    getCustomDesignClass: function getCustomDesignClass() {
+      return {
+        'font-italic': 'font-italic' == this.textDesigns[this.selectedTextBoxIndex].fontStyle,
+        'font-weight-bold': 'font-weight-bold' == this.textDesigns[this.selectedTextBoxIndex].fontStyle,
+        'font-size20': 'font-size20' == this.textDesigns[this.selectedTextBoxIndex].fontSize,
+        'font-size35': 'font-size35' == this.textDesigns[this.selectedTextBoxIndex].fontSize,
+        'font-size50': 'font-size50' == this.textDesigns[this.selectedTextBoxIndex].fontSize,
+        'font-coloRed': 'font-coloRed' == this.textDesigns[this.selectedTextBoxIndex].fontColor,
+        'font-colorGreen': 'font-colorGreen' == this.textDesigns[this.selectedTextBoxIndex].fontColor,
+        'font-colorBlue': 'font-colorBlue' == this.textDesigns[this.selectedTextBoxIndex].fontColor
+      };
+    },
     getYourText: {
       get: function get() {
         return this.textDesigns[this.selectedTextBoxIndex].text;
@@ -4102,9 +4173,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         x: 300 + this.addTextIndex * 10,
         y: 70 + this.addTextIndex * 10,
         weight: 200,
-        height: 50,
+        height: 70,
         angle: 0,
-        text: "Your text"
+        text: "Your text",
+        fontStyle: "",
+        fontSize: "font-size50",
+        fontColor: ""
       });
     },
     printThis: function printThis() {
@@ -8692,7 +8766,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.shadow[data-v-5fe4438c] {\n    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\n    width: 566px;\n}\n.rectangle1-3[data-v-5fe4438c] {\n    height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\n    height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\n    height: 244px;\n    border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\n    height: 367px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.shadow[data-v-5fe4438c] {\n    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\n    width: 566px;\n}\n.rectangle1-3[data-v-5fe4438c] {\n    height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\n    height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\n    height: 244px;\n    border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\n    height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\n        font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\n        font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\n        color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\n        color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\n    color: blue;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41526,9 +41600,14 @@ var render = function() {
                   }
                 },
                 [
-                  _c("h1", { staticStyle: { width: "100%", height: "100%" } }, [
-                    _vm._v(_vm._s(textDesign.text))
-                  ])
+                  _c(
+                    "span",
+                    {
+                      class: _vm.getCustomDesignClass,
+                      staticStyle: { width: "100%", height: "100%" }
+                    },
+                    [_vm._v(_vm._s(textDesign.text))]
+                  )
                 ]
               )
             }),
@@ -41543,7 +41622,11 @@ var render = function() {
         _c("div", { staticClass: "col-md-12" }, [
           _c(
             "button",
-            { staticClass: "btn btn-success mr-2", on: { click: _vm.addText } },
+            {
+              staticClass: "btn btn-success mr-2",
+              attrs: { disabled: "" },
+              on: { click: _vm.addText }
+            },
             [
               _vm._v(
                 "\n                          Add Text\n                      "
@@ -41575,11 +41658,7 @@ var render = function() {
         _c("div", { staticClass: "col-md-12" }, [
           _vm.menu.sizeShape
             ? _c("div", { staticClass: "card mt-4" }, [
-                _c("div", { staticClass: "card-header" }, [
-                  _vm._v(
-                    "\n                              SELECT A SIZE/ SHAPE\n                          "
-                  )
-                ]),
+                _vm._m(0),
                 _vm._v(" "),
                 _c("ul", { staticClass: "list-group list-group-flush" }, [
                   _c("li", { staticClass: "list-group-item" }, [
@@ -41671,11 +41750,7 @@ var render = function() {
           _vm._v(" "),
           _vm.menu.textOptions
             ? _c("div", { staticClass: "card mt-4" }, [
-                _c("div", { staticClass: "card-header" }, [
-                  _vm._v(
-                    "\n                              TEXT OPTIONS\n                          "
-                  )
-                ]),
+                _vm._m(1),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-body" }, [
                   _c("div", { staticClass: "form-group row" }, [
@@ -41715,6 +41790,206 @@ var render = function() {
                         }
                       })
                     ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-sm-3 col-form-label",
+                        attrs: { for: "inputPassword" }
+                      },
+                      [_vm._v("Font Style")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-sm-9" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontStyle,
+                              expression:
+                                "textDesigns[selectedTextBoxIndex].fontStyle"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { id: "inputState" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.textDesigns[_vm.selectedTextBoxIndex],
+                                "fontStyle",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Regular")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "font-weight-bold" } },
+                            [_vm._v("Bold")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "font-italic" } }, [
+                            _vm._v("Italic")
+                          ])
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-sm-3 col-form-label",
+                        attrs: { for: "inputPassword" }
+                      },
+                      [_vm._v("Font Size")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-sm-9" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontSize,
+                              expression:
+                                "textDesigns[selectedTextBoxIndex].fontSize"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { id: "inputState" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.textDesigns[_vm.selectedTextBoxIndex],
+                                "fontSize",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { value: "font-size20" } }, [
+                            _vm._v("10")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "font-size35" } }, [
+                            _vm._v("20")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "font-size50" } }, [
+                            _vm._v("30")
+                          ])
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-sm-3 col-form-label",
+                        attrs: { for: "inputPassword" }
+                      },
+                      [_vm._v("Color")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-sm-9" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontColor,
+                              expression:
+                                "textDesigns[selectedTextBoxIndex].fontColor"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { id: "inputState" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.textDesigns[_vm.selectedTextBoxIndex],
+                                "fontColor",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Black")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "font-coloRed" } }, [
+                            _vm._v("Red")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "option",
+                            { attrs: { value: "font-colorGreen" } },
+                            [_vm._v("Green")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "font-colorBlue" } }, [
+                            _vm._v("Blue")
+                          ])
+                        ]
+                      )
+                    ])
                   ])
                 ])
               ])
@@ -41728,7 +42003,24 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("b", [_vm._v("SELECT A SIZE/ SHAPE")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("b", [_vm._v("TEXT OPTIONS")])
+    ])
+  }
+]
 render._withStripped = true
 
 

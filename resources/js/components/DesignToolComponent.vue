@@ -34,7 +34,7 @@
                 :outerBox="outerBox"
                 v-for="(textDesign,index) in textDesigns" :key="index"
                 >
-                        <h1 style="width: 100%; height: 100%" >{{textDesign.text}}</h1>
+                        <span style="width: 100%; height: 100%" v-bind:class="getCustomDesignClass">{{textDesign.text}}</span>
                 </drr>
 
                     </div>
@@ -44,7 +44,7 @@
             <div class="col-md-5">
                 <div class="row">
                     <div class="col-md-12">
-                        <button class="btn btn-success mr-2" @click="addText">
+                        <button class="btn btn-success mr-2" @click="addText" disabled>
                             Add Text
                         </button>
                         <button class="btn btn-warning mr-2" disabled>
@@ -57,7 +57,7 @@
                     <div class="col-md-12">
                         <div class="card mt-4" v-if="menu.sizeShape">
                             <div class="card-header">
-                                SELECT A SIZE/ SHAPE
+                                <b>SELECT A SIZE/ SHAPE</b>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
@@ -73,14 +73,70 @@
                         </div>
                         <div class="card mt-4" v-if="menu.textOptions">
                             <div class="card-header">
-                                TEXT OPTIONS
+                                <b>TEXT OPTIONS</b>
                             </div>
                             <div class="card-body">
                                 <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-3 col-form-label">Your Text</label>
-                                <div class="col-sm-9">
-                                <input type="text" class="form-control" v-model="getYourText" id="inputPassword" placeholder="Your Text">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label">Your Text</label>
+                                    <div class="col-sm-9">
+                                    <input type="text" class="form-control" v-model="getYourText" id="inputPassword" placeholder="Your Text">
+                                    </div>
                                 </div>
+                                 <!-- <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label">Font</label>
+                                    <div class="col-sm-9">
+                                            <select id="inputState" class="form-control">
+                                            <option id="fnt2" selected="selected">Arial</option>
+                                            <option id="fnt4">Century Gothic</option>
+                                            <option id="fnt28">Century Gothic Bold</option>
+                                            <option id="fnt5">Comic Sans MS</option>
+                                            <option id="fnt6">Courier New</option>
+                                            <option id="fnt7">Georgia</option>
+                                            <option id="fnt8">Impact</option>
+                                            <option id="fnt9">Times New Roman</option>
+                                            <option id="fnt10">Trebuchet MS</option>
+                                            <option id="fnt11">Verdana</option>
+                                            <option id="fnt12">Gotham</option>
+                                            <option id="fnt13">Cormorant Garamond Medium</option>
+                                            <option id="fnt15">Lobster</option>
+                                            <option id="fnt17">Old English TextMT</option>
+                                            <option id="fnt22">MonotypeCorsiva</option>
+                                            <option id="fnt23">Scriptoria SSK</option>
+                                            <option id="fnt19">Ardestine</option>
+                                            <option id="fnt20">Arbonnie</option>
+                                            </select>
+                                    </div>
+                                </div> -->
+                                 <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label">Font Style</label>
+                                    <div class="col-sm-9">
+                                     <select id="inputState" class="form-control" v-model="textDesigns[selectedTextBoxIndex].fontStyle">
+                                            <option value="">Regular</option>
+                                            <option value="font-weight-bold">Bold</option>
+                                            <option value="font-italic">Italic</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label">Font Size</label>
+                                    <div class="col-sm-9">
+                                     <select id="inputState" class="form-control" v-model="textDesigns[selectedTextBoxIndex].fontSize">
+                                            <option value="font-size20">10</option>
+                                            <option value="font-size35">20</option>
+                                            <option value="font-size50">30</option>
+                                     </select>
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label">Color</label>
+                                    <div class="col-sm-9">
+                                     <select id="inputState" class="form-control" v-model="textDesigns[selectedTextBoxIndex].fontColor">
+                                        <option value="">Black</option>
+                                        <option value="font-coloRed">Red</option>
+                                        <option value="font-colorGreen">Green</option>
+                                        <option value="font-colorBlue">Blue</option>
+                                     </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -116,9 +172,12 @@ export default {
                     x:300,
                     y:70,
                     weight:200,
-                    height:50,
+                    height:70,
                     angle: 0,
-                    text: "Your text"
+                    text: "Your text",
+                    fontStyle: "",
+                    fontSize: "font-size50",
+                    fontColor: ""
                 }
         ],
         outerBox:{
@@ -150,6 +209,18 @@ export default {
             'rectangle12-3': 'rectangle12-3'==this.shapeDefaultClass
          }
       },
+       getCustomDesignClass(){
+          return {
+            'font-italic': 'font-italic' == this.textDesigns[this.selectedTextBoxIndex].fontStyle,
+            'font-weight-bold': 'font-weight-bold'==this.textDesigns[this.selectedTextBoxIndex].fontStyle,
+            'font-size20': 'font-size20'==this.textDesigns[this.selectedTextBoxIndex].fontSize,
+            'font-size35': 'font-size35'==this.textDesigns[this.selectedTextBoxIndex].fontSize,
+            'font-size50': 'font-size50'==this.textDesigns[this.selectedTextBoxIndex].fontSize,
+            'font-coloRed': 'font-coloRed'==this.textDesigns[this.selectedTextBoxIndex].fontColor,
+            'font-colorGreen': 'font-colorGreen'==this.textDesigns[this.selectedTextBoxIndex].fontColor,
+            'font-colorBlue': 'font-colorBlue'==this.textDesigns[this.selectedTextBoxIndex].fontColor
+         }
+      },
       getYourText:{
           get() {
                 return this.textDesigns[this.selectedTextBoxIndex].text;
@@ -179,9 +250,12 @@ export default {
                     x:300 + (this.addTextIndex * 10),
                     y:70 + (this.addTextIndex * 10),
                     weight:200,
-                    height:50,
+                    height:70,
                     angle: 0,
-                    text: "Your text"
+                    text: "Your text",
+                    fontStyle: "",
+                    fontSize: "font-size50",
+                    fontColor: ""
                 }
           );
       },
@@ -225,4 +299,21 @@ export default {
             height: 367px;
 
         }
-    </style>
+        .font-size50 {
+                font-size: 50px;
+        }
+
+        .font-size35 {
+                font-size: 35px;
+        }
+        .font-coloRed {
+                color: red;
+        }
+        .font-colorGreen {
+                color: green;
+        }
+        .font-colorBlue{
+            color: blue;
+        }
+        
+        </style>
