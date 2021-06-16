@@ -27,6 +27,7 @@
                 :w="textDesign.weight"
                 :h="textDesign.height"
                 :angle="textDesign.angle"
+                :selected="textDesign.selected"
                 :aspectRatio="true"
                 @select="selectItem(index)"
                 @change="itemChange" 
@@ -34,7 +35,7 @@
                 :outerBox="outerBox"
                 v-for="(textDesign,index) in textDesigns" :key="index"
                 >
-                        <span style="width: 100%; height: 100%" v-bind:class="getCustomDesignClass">{{textDesign.text}}</span>
+                        <span style="width: 100%; height: 100%" v-bind:class="getCustomDesignClass(index)">{{textDesign.text}}</span>
                 </drr>
 
                     </div>
@@ -44,7 +45,7 @@
             <div class="col-md-5">
                 <div class="row">
                     <div class="col-md-12">
-                        <button class="btn btn-success mr-2" @click="addText" disabled>
+                        <button class="btn btn-success mr-2" @click="addText">
                             Add Text
                         </button>
                         <button class="btn btn-warning mr-2" disabled>
@@ -177,20 +178,21 @@ export default {
                     text: "Your text",
                     fontStyle: "",
                     fontSize: "font-size50",
-                    fontColor: ""
+                    fontColor: "",
+                    selected:false
                 }
         ],
         outerBox:{
-            x:300,
-            y:70,
-            weight:200,
-            height:50,
+            x:50,
+            y:50,
+            w:50,
+            h:50,
         },
         innerBox:{
-            x:300,
-            y:70,
-            weight:200,
-            height:50,
+            x:50,
+            y:50,
+            w:50,
+            h:50,
         },
             menu:{
                 sizeShape:true,
@@ -209,18 +211,6 @@ export default {
             'rectangle12-3': 'rectangle12-3'==this.shapeDefaultClass
          }
       },
-       getCustomDesignClass(){
-          return {
-            'font-italic': 'font-italic' == this.textDesigns[this.selectedTextBoxIndex].fontStyle,
-            'font-weight-bold': 'font-weight-bold'==this.textDesigns[this.selectedTextBoxIndex].fontStyle,
-            'font-size20': 'font-size20'==this.textDesigns[this.selectedTextBoxIndex].fontSize,
-            'font-size35': 'font-size35'==this.textDesigns[this.selectedTextBoxIndex].fontSize,
-            'font-size50': 'font-size50'==this.textDesigns[this.selectedTextBoxIndex].fontSize,
-            'font-coloRed': 'font-coloRed'==this.textDesigns[this.selectedTextBoxIndex].fontColor,
-            'font-colorGreen': 'font-colorGreen'==this.textDesigns[this.selectedTextBoxIndex].fontColor,
-            'font-colorBlue': 'font-colorBlue'==this.textDesigns[this.selectedTextBoxIndex].fontColor
-         }
-      },
       getYourText:{
           get() {
                 return this.textDesigns[this.selectedTextBoxIndex].text;
@@ -237,11 +227,31 @@ export default {
       selectItem(index){
           console.info('index',index);
           this.selectedTextBoxIndex=index;
-           this.selectDesignbar('textOptions');
+          this.selectDesignbar('textOptions');
+
+          this.textDesigns.forEach((item,index_textDesign) => {
+              if(index_textDesign==this.selectedTextBoxIndex)
+                item.selected=true;
+             else
+                item.selected=false;
+          });
+          console.info('this.textDesigns',this.textDesigns);
       },
       selectDesignbar(menuName){
           this.menu.sizeShape = 'sizeShape'==menuName;
           this.menu.textOptions = 'textOptions'==menuName;
+      },
+       getCustomDesignClass(index){
+          return {
+            'font-italic': 'font-italic' == this.textDesigns[index].fontStyle,
+            'font-weight-bold': 'font-weight-bold'==this.textDesigns[index].fontStyle,
+            'font-size20': 'font-size20'==this.textDesigns[index].fontSize,
+            'font-size35': 'font-size35'==this.textDesigns[index].fontSize,
+            'font-size50': 'font-size50'==this.textDesigns[index].fontSize,
+            'font-coloRed': 'font-coloRed'==this.textDesigns[index].fontColor,
+            'font-colorGreen': 'font-colorGreen'==this.textDesigns[index].fontColor,
+            'font-colorBlue': 'font-colorBlue'==this.textDesigns[index].fontColor
+         }
       },
       addText(){
           this.addTextIndex++;
@@ -255,7 +265,8 @@ export default {
                     text: "Your text",
                     fontStyle: "",
                     fontSize: "font-size50",
-                    fontColor: ""
+                    fontColor: "",
+                    selected:false
                 }
           );
       },

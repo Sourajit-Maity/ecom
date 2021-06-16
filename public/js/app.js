@@ -4077,6 +4077,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 
@@ -4102,19 +4103,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         text: "Your text",
         fontStyle: "",
         fontSize: "font-size50",
-        fontColor: ""
+        fontColor: "",
+        selected: false
       }],
       outerBox: {
-        x: 300,
-        y: 70,
-        weight: 200,
-        height: 50
+        x: 50,
+        y: 50,
+        w: 50,
+        h: 50
       },
       innerBox: {
-        x: 300,
-        y: 70,
-        weight: 200,
-        height: 50
+        x: 50,
+        y: 50,
+        w: 50,
+        h: 50
       },
       menu: {
         sizeShape: true,
@@ -4133,18 +4135,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         'rectangle12-3': 'rectangle12-3' == this.shapeDefaultClass
       };
     },
-    getCustomDesignClass: function getCustomDesignClass() {
-      return {
-        'font-italic': 'font-italic' == this.textDesigns[this.selectedTextBoxIndex].fontStyle,
-        'font-weight-bold': 'font-weight-bold' == this.textDesigns[this.selectedTextBoxIndex].fontStyle,
-        'font-size20': 'font-size20' == this.textDesigns[this.selectedTextBoxIndex].fontSize,
-        'font-size35': 'font-size35' == this.textDesigns[this.selectedTextBoxIndex].fontSize,
-        'font-size50': 'font-size50' == this.textDesigns[this.selectedTextBoxIndex].fontSize,
-        'font-coloRed': 'font-coloRed' == this.textDesigns[this.selectedTextBoxIndex].fontColor,
-        'font-colorGreen': 'font-colorGreen' == this.textDesigns[this.selectedTextBoxIndex].fontColor,
-        'font-colorBlue': 'font-colorBlue' == this.textDesigns[this.selectedTextBoxIndex].fontColor
-      };
-    },
     getYourText: {
       get: function get() {
         return this.textDesigns[this.selectedTextBoxIndex].text;
@@ -4159,13 +4149,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       console.info('event', event);
     },
     selectItem: function selectItem(index) {
+      var _this = this;
+
       console.info('index', index);
       this.selectedTextBoxIndex = index;
       this.selectDesignbar('textOptions');
+      this.textDesigns.forEach(function (item, index_textDesign) {
+        if (index_textDesign == _this.selectedTextBoxIndex) item.selected = true;else item.selected = false;
+      });
+      console.info('this.textDesigns', this.textDesigns);
     },
     selectDesignbar: function selectDesignbar(menuName) {
       this.menu.sizeShape = 'sizeShape' == menuName;
       this.menu.textOptions = 'textOptions' == menuName;
+    },
+    getCustomDesignClass: function getCustomDesignClass(index) {
+      return {
+        'font-italic': 'font-italic' == this.textDesigns[index].fontStyle,
+        'font-weight-bold': 'font-weight-bold' == this.textDesigns[index].fontStyle,
+        'font-size20': 'font-size20' == this.textDesigns[index].fontSize,
+        'font-size35': 'font-size35' == this.textDesigns[index].fontSize,
+        'font-size50': 'font-size50' == this.textDesigns[index].fontSize,
+        'font-coloRed': 'font-coloRed' == this.textDesigns[index].fontColor,
+        'font-colorGreen': 'font-colorGreen' == this.textDesigns[index].fontColor,
+        'font-colorBlue': 'font-colorBlue' == this.textDesigns[index].fontColor
+      };
     },
     addText: function addText() {
       this.addTextIndex++;
@@ -4178,11 +4186,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         text: "Your text",
         fontStyle: "",
         fontSize: "font-size50",
-        fontColor: ""
+        fontColor: "",
+        selected: false
       });
     },
     printThis: function printThis() {
-      var _this = this;
+      var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
         var el, options;
@@ -4191,7 +4200,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 console.log("printing..");
-                el = _this.$refs.printcontent; // add option type to get the image version
+                el = _this2.$refs.printcontent; // add option type to get the image version
                 // if not provided the promise will return 
                 // the canvas.
 
@@ -4199,10 +4208,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   type: 'dataURL'
                 };
                 _context.next = 5;
-                return _this.$html2canvas(el, options);
+                return _this2.$html2canvas(el, options);
 
               case 5:
-                _this.output = _context.sent;
+                _this2.output = _context.sent;
 
               case 6:
               case "end":
@@ -41588,6 +41597,7 @@ var render = function() {
                     w: textDesign.weight,
                     h: textDesign.height,
                     angle: textDesign.angle,
+                    selected: textDesign.selected,
                     aspectRatio: true,
                     innerBox: _vm.innerBox,
                     outerBox: _vm.outerBox
@@ -41603,7 +41613,7 @@ var render = function() {
                   _c(
                     "span",
                     {
-                      class: _vm.getCustomDesignClass,
+                      class: _vm.getCustomDesignClass(index),
                       staticStyle: { width: "100%", height: "100%" }
                     },
                     [_vm._v(_vm._s(textDesign.text))]
@@ -41622,11 +41632,7 @@ var render = function() {
         _c("div", { staticClass: "col-md-12" }, [
           _c(
             "button",
-            {
-              staticClass: "btn btn-success mr-2",
-              attrs: { disabled: "" },
-              on: { click: _vm.addText }
-            },
+            { staticClass: "btn btn-success mr-2", on: { click: _vm.addText } },
             [
               _vm._v(
                 "\n                          Add Text\n                      "
