@@ -3,13 +3,13 @@
             <div class="col-md-7">
                 <div class="row">
                     <div class="col-md-12">
-                        <button class="btn btn-dark mr-2" @click="selectDesignbar('sizeShape')">
+                        <button class="btn mr-2" :class="[menu.sizeShape  ? 'btn-danger' : 'btn-dark']" @click="selectDesignbar('sizeShape')">
                             Size/Shape
                         </button>
-                        <button class="btn btn-dark mr-2" disabled>
+                        <button class="btn mr-2" :class="[menu.background  ? 'btn-danger' : 'btn-dark']" @click="selectDesignbar('background')">
                             Background
                         </button>
-                        <button class="btn btn-dark mr-2" disabled>
+                        <button class="btn  mr-2" :class="[menu.border  ? 'btn-danger' : 'btn-dark']" @click="selectDesignbar('border')">
                             Border
                         </button>
                         <button class="btn btn-dark mr-2" disabled>
@@ -20,7 +20,8 @@
                         </button>
                     </div>
                     <div class="col-md-12 mt-4" ref="printcontent">
-                        <div class="design-area rounded shadow" v-bind:class="getShapeClass" >
+                        <div class="design-area shadow" v-bind:class="getShapeClass">
+                            <img :src="'/background/Material/'+materialBackgroundImage" class="h-100 w-100" v-if="materialBackgroundImage">
                 <drr
                 :x="textDesign.x"
                 :y="textDesign.y"
@@ -141,6 +142,52 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card mt-4" v-if="menu.border">
+                            <div class="card-header">
+                                <b>BORDER OPTIONS</b>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-6"> <button class="btn btn-block mb-2" :class="[borderDefaultClass == 'gold-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'gold-border'">Gold Border</button></div>
+                                        <div class="col-md-6"><button class="btn  btn-block mb-2" :class="[borderDefaultClass == 'silver-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'silver-border'">Silver Border</button></div>
+                                        <div class="col-md-6"><button class="btn  btn-block mb-2"  :class="[borderDefaultClass == 'black-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'black-border'">Black Border</button></div>
+                                        <div class="col-md-6"><button class="btn  btn-block" :class="[borderDefaultClass == 'rose-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'rose-border'">Rose Border</button></div>
+                                        <div class="col-md-6"><button class="btn  btn-block" :class="[borderDefaultClass == 'no-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'no-border'">No Border</button></div>
+                                        <!-- <div class="col-md-6"><button class="btn btn-success  btn-block mt-2"  @click="printThis">Print</button></div> -->
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                         <div class="card mt-4" v-if="menu.background">
+                             <div class="card-body">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">MATERIAL</a>
+                                    </li>
+                                    <!-- <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">COLORS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">CUSTOM</a>
+                                    </li> -->
+                                    </ul>
+                                    <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="materialBackgroundImage = 'White-Plastic/1.png'"><img class="border" src="/background/Material/White-Plastic/1-thumb.png">White - Plastic</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="materialBackgroundImage = 'Gold-Plastic/7.png'"><img class="border" src="/background/Material/Gold-Plastic/7-thumb.png">Gold - Plastic</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="materialBackgroundImage = 'Silver-Plastic/8.png'"><img class="border" src="/background/Material/Silver-Plastic/8-thumb.png">Silver - Plastic</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="materialBackgroundImage = 'Gold-Metallic/5.png'"><img class="border" src="/background/Material/Gold-Metallic/5-thumb.png">Gold Metallic</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="materialBackgroundImage = 'Silver-Metallic/6.png'"><img class="border" src="/background/Material/Silver-Metallic/6-thumb.png">Silver Metallic</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="materialBackgroundImage = 'Wood-Grain/11.png'"><img  class="border" src="/background/Material/Wood-Grain/11-thumb.png">Wood Grain</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                                    </div>
+                             </div>
+                        </div>
                     </div>
                     <div class="col-md-12">
                          <img :src="output">
@@ -196,10 +243,13 @@ export default {
         },
             menu:{
                 sizeShape:true,
+                background:false,
                 textOptions:false
             },
             output: null,
-            shapeDefaultClass: 'rectangle1-3'
+            shapeDefaultClass: 'rectangle1-3',
+            borderDefaultClass: 'no-border',
+            materialBackgroundImage: ""
       }
   },
   computed:{
@@ -208,7 +258,12 @@ export default {
             'rectangle1-3': 'rectangle1-3' == this.shapeDefaultClass,
             'rectangle1-5-3': 'rectangle1-5-3'==this.shapeDefaultClass,
             'oval1-3': 'oval1-3'==this.shapeDefaultClass,
-            'rectangle12-3': 'rectangle12-3'==this.shapeDefaultClass
+            'rectangle12-3': 'rectangle12-3'==this.shapeDefaultClass,
+            'gold-border' : 'gold-border' == this.borderDefaultClass,
+            'silver-border' : 'silver-border' == this.borderDefaultClass,
+            'black-border' : 'black-border' == this.borderDefaultClass,
+            'rose-border' : 'rose-border' == this.borderDefaultClass,
+            'no-border' : 'no-border' == this.borderDefaultClass,
          }
       },
       getYourText:{
@@ -239,7 +294,9 @@ export default {
       },
       selectDesignbar(menuName){
           this.menu.sizeShape = 'sizeShape'==menuName;
+          this.menu.border= 'border'==menuName;
           this.menu.textOptions = 'textOptions'==menuName;
+          this.menu.background= 'background'== menuName;
       },
        getCustomDesignClass(index){
           return {
@@ -291,6 +348,8 @@ export default {
         }
         .design-area {
             width: 566px;
+            border-radius: 30px;
+            overflow: hidden;
         }
 
         .rectangle1-3 {
@@ -325,6 +384,28 @@ export default {
         }
         .font-colorBlue{
             color: blue;
+        }
+        .no-border{
+            border: none;
+        }
+        .gold-border{
+                border: 9px solid #ffed4a;
+        }
+        .silver-border{
+                border: 9px solid #b8b7b2;
+        }
+        .black-border{
+                border: 9px solid #050505;
+        }
+        .rose-border{
+                border: 9px solid #c07b86;
+        }
+
+        .selected-material-box{
+            border: 3px solid #3a00ff !important;
+        }
+        .cursor-pointer{
+            cursor:pointer;
         }
         
         </style>

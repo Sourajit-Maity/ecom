@@ -4078,6 +4078,53 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 
@@ -4120,10 +4167,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       },
       menu: {
         sizeShape: true,
+        background: false,
         textOptions: false
       },
       output: null,
-      shapeDefaultClass: 'rectangle1-3'
+      shapeDefaultClass: 'rectangle1-3',
+      borderDefaultClass: 'no-border',
+      materialBackgroundImage: ""
     };
   },
   computed: {
@@ -4132,7 +4182,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         'rectangle1-3': 'rectangle1-3' == this.shapeDefaultClass,
         'rectangle1-5-3': 'rectangle1-5-3' == this.shapeDefaultClass,
         'oval1-3': 'oval1-3' == this.shapeDefaultClass,
-        'rectangle12-3': 'rectangle12-3' == this.shapeDefaultClass
+        'rectangle12-3': 'rectangle12-3' == this.shapeDefaultClass,
+        'gold-border': 'gold-border' == this.borderDefaultClass,
+        'silver-border': 'silver-border' == this.borderDefaultClass,
+        'black-border': 'black-border' == this.borderDefaultClass,
+        'rose-border': 'rose-border' == this.borderDefaultClass,
+        'no-border': 'no-border' == this.borderDefaultClass
       };
     },
     getYourText: {
@@ -4161,7 +4216,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     selectDesignbar: function selectDesignbar(menuName) {
       this.menu.sizeShape = 'sizeShape' == menuName;
+      this.menu.border = 'border' == menuName;
       this.menu.textOptions = 'textOptions' == menuName;
+      this.menu.background = 'background' == menuName;
     },
     getCustomDesignClass: function getCustomDesignClass(index) {
       return {
@@ -8775,7 +8832,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.shadow[data-v-5fe4438c] {\n    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\n    width: 566px;\n}\n.rectangle1-3[data-v-5fe4438c] {\n    height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\n    height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\n    height: 244px;\n    border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\n    height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\n        font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\n        font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\n        color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\n        color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\n    color: blue;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.shadow[data-v-5fe4438c] {\n    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\n    width: 566px;\n    border-radius: 30px;\n    overflow: hidden;\n}\n.rectangle1-3[data-v-5fe4438c] {\n    height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\n    height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\n    height: 244px;\n    border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\n    height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\n        font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\n        font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\n        color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\n        color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\n    color: blue;\n}\n.no-border[data-v-5fe4438c]{\n    border: none;\n}\n.gold-border[data-v-5fe4438c]{\n        border: 9px solid #ffed4a;\n}\n.silver-border[data-v-5fe4438c]{\n        border: 9px solid #b8b7b2;\n}\n.black-border[data-v-5fe4438c]{\n        border: 9px solid #050505;\n}\n.rose-border[data-v-5fe4438c]{\n        border: 9px solid #c07b86;\n}\n.selected-material-box[data-v-5fe4438c]{\n    border: 3px solid #3a00ff !important;\n}\n.cursor-pointer[data-v-5fe4438c]{\n    cursor:pointer;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41528,7 +41585,8 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "btn btn-dark mr-2",
+              staticClass: "btn mr-2",
+              class: [_vm.menu.sizeShape ? "btn-danger" : "btn-dark"],
               on: {
                 click: function($event) {
                   return _vm.selectDesignbar("sizeShape")
@@ -41544,7 +41602,15 @@ var render = function() {
           _vm._v(" "),
           _c(
             "button",
-            { staticClass: "btn btn-dark mr-2", attrs: { disabled: "" } },
+            {
+              staticClass: "btn mr-2",
+              class: [_vm.menu.background ? "btn-danger" : "btn-dark"],
+              on: {
+                click: function($event) {
+                  return _vm.selectDesignbar("background")
+                }
+              }
+            },
             [
               _vm._v(
                 "\n                          Background\n                      "
@@ -41554,7 +41620,15 @@ var render = function() {
           _vm._v(" "),
           _c(
             "button",
-            { staticClass: "btn btn-dark mr-2", attrs: { disabled: "" } },
+            {
+              staticClass: "btn  mr-2",
+              class: [_vm.menu.border ? "btn-danger" : "btn-dark"],
+              on: {
+                click: function($event) {
+                  return _vm.selectDesignbar("border")
+                }
+              }
+            },
             [
               _vm._v(
                 "\n                          Border\n                      "
@@ -41582,46 +41656,54 @@ var render = function() {
         _c("div", { ref: "printcontent", staticClass: "col-md-12 mt-4" }, [
           _c(
             "div",
-            {
-              staticClass: "design-area rounded shadow",
-              class: _vm.getShapeClass
-            },
-            _vm._l(_vm.textDesigns, function(textDesign, index) {
-              return _c(
-                "drr",
-                {
-                  key: index,
-                  attrs: {
-                    x: textDesign.x,
-                    y: textDesign.y,
-                    w: textDesign.weight,
-                    h: textDesign.height,
-                    angle: textDesign.angle,
-                    selected: textDesign.selected,
-                    aspectRatio: true,
-                    innerBox: _vm.innerBox,
-                    outerBox: _vm.outerBox
+            { staticClass: "design-area shadow", class: _vm.getShapeClass },
+            [
+              _vm.materialBackgroundImage
+                ? _c("img", {
+                    staticClass: "h-100 w-100",
+                    attrs: {
+                      src: "/background/Material/" + _vm.materialBackgroundImage
+                    }
+                  })
+                : _vm._e(),
+              _vm._v(" "),
+              _vm._l(_vm.textDesigns, function(textDesign, index) {
+                return _c(
+                  "drr",
+                  {
+                    key: index,
+                    attrs: {
+                      x: textDesign.x,
+                      y: textDesign.y,
+                      w: textDesign.weight,
+                      h: textDesign.height,
+                      angle: textDesign.angle,
+                      selected: textDesign.selected,
+                      aspectRatio: true,
+                      innerBox: _vm.innerBox,
+                      outerBox: _vm.outerBox
+                    },
+                    on: {
+                      select: function($event) {
+                        return _vm.selectItem(index)
+                      },
+                      change: _vm.itemChange
+                    }
                   },
-                  on: {
-                    select: function($event) {
-                      return _vm.selectItem(index)
-                    },
-                    change: _vm.itemChange
-                  }
-                },
-                [
-                  _c(
-                    "span",
-                    {
-                      class: _vm.getCustomDesignClass(index),
-                      staticStyle: { width: "100%", height: "100%" }
-                    },
-                    [_vm._v(_vm._s(textDesign.text))]
-                  )
-                ]
-              )
-            }),
-            1
+                  [
+                    _c(
+                      "span",
+                      {
+                        class: _vm.getCustomDesignClass(index),
+                        staticStyle: { width: "100%", height: "100%" }
+                      },
+                      [_vm._v(_vm._s(textDesign.text))]
+                    )
+                  ]
+                )
+              })
+            ],
+            2
           )
         ])
       ])
@@ -41999,6 +42081,344 @@ var render = function() {
                   ])
                 ])
               ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.menu.border
+            ? _c("div", { staticClass: "card mt-4" }, [
+                _vm._m(2),
+                _vm._v(" "),
+                _c("ul", { staticClass: "list-group list-group-flush" }, [
+                  _c("li", { staticClass: "list-group-item" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-block mb-2",
+                            class: [
+                              _vm.borderDefaultClass == "gold-border"
+                                ? "btn-danger"
+                                : "btn-dark"
+                            ],
+                            on: {
+                              click: function($event) {
+                                _vm.borderDefaultClass = "gold-border"
+                              }
+                            }
+                          },
+                          [_vm._v("Gold Border")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn  btn-block mb-2",
+                            class: [
+                              _vm.borderDefaultClass == "silver-border"
+                                ? "btn-danger"
+                                : "btn-dark"
+                            ],
+                            on: {
+                              click: function($event) {
+                                _vm.borderDefaultClass = "silver-border"
+                              }
+                            }
+                          },
+                          [_vm._v("Silver Border")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn  btn-block mb-2",
+                            class: [
+                              _vm.borderDefaultClass == "black-border"
+                                ? "btn-danger"
+                                : "btn-dark"
+                            ],
+                            on: {
+                              click: function($event) {
+                                _vm.borderDefaultClass = "black-border"
+                              }
+                            }
+                          },
+                          [_vm._v("Black Border")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn  btn-block",
+                            class: [
+                              _vm.borderDefaultClass == "rose-border"
+                                ? "btn-danger"
+                                : "btn-dark"
+                            ],
+                            on: {
+                              click: function($event) {
+                                _vm.borderDefaultClass = "rose-border"
+                              }
+                            }
+                          },
+                          [_vm._v("Rose Border")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn  btn-block",
+                            class: [
+                              _vm.borderDefaultClass == "no-border"
+                                ? "btn-danger"
+                                : "btn-dark"
+                            ],
+                            on: {
+                              click: function($event) {
+                                _vm.borderDefaultClass = "no-border"
+                              }
+                            }
+                          },
+                          [_vm._v("No Border")]
+                        )
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.menu.background
+            ? _c("div", { staticClass: "card mt-4" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "tab-content",
+                      attrs: { id: "myTabContent" }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "tab-pane fade show active",
+                          attrs: {
+                            id: "home",
+                            role: "tabpanel",
+                            "aria-labelledby": "home-tab"
+                          }
+                        },
+                        [
+                          _c("div", { staticClass: "row" }, [
+                            _c(
+                              "div",
+                              { staticClass: "col-md-4 pt-4 cursor-pointer" },
+                              [
+                                _c(
+                                  "span",
+                                  {
+                                    on: {
+                                      click: function($event) {
+                                        _vm.materialBackgroundImage =
+                                          "White-Plastic/1.png"
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass: "border",
+                                      attrs: {
+                                        src:
+                                          "/background/Material/White-Plastic/1-thumb.png"
+                                      }
+                                    }),
+                                    _vm._v("White - Plastic")
+                                  ]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "col-md-4 pt-4 cursor-pointer" },
+                              [
+                                _c(
+                                  "span",
+                                  {
+                                    on: {
+                                      click: function($event) {
+                                        _vm.materialBackgroundImage =
+                                          "Gold-Plastic/7.png"
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass: "border",
+                                      attrs: {
+                                        src:
+                                          "/background/Material/Gold-Plastic/7-thumb.png"
+                                      }
+                                    }),
+                                    _vm._v("Gold - Plastic")
+                                  ]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "col-md-4 pt-4 cursor-pointer" },
+                              [
+                                _c(
+                                  "span",
+                                  {
+                                    on: {
+                                      click: function($event) {
+                                        _vm.materialBackgroundImage =
+                                          "Silver-Plastic/8.png"
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass: "border",
+                                      attrs: {
+                                        src:
+                                          "/background/Material/Silver-Plastic/8-thumb.png"
+                                      }
+                                    }),
+                                    _vm._v("Silver - Plastic")
+                                  ]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "col-md-4 pt-4 cursor-pointer" },
+                              [
+                                _c(
+                                  "span",
+                                  {
+                                    on: {
+                                      click: function($event) {
+                                        _vm.materialBackgroundImage =
+                                          "Gold-Metallic/5.png"
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass: "border",
+                                      attrs: {
+                                        src:
+                                          "/background/Material/Gold-Metallic/5-thumb.png"
+                                      }
+                                    }),
+                                    _vm._v("Gold Metallic")
+                                  ]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "col-md-4 pt-4 cursor-pointer" },
+                              [
+                                _c(
+                                  "span",
+                                  {
+                                    on: {
+                                      click: function($event) {
+                                        _vm.materialBackgroundImage =
+                                          "Silver-Metallic/6.png"
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass: "border",
+                                      attrs: {
+                                        src:
+                                          "/background/Material/Silver-Metallic/6-thumb.png"
+                                      }
+                                    }),
+                                    _vm._v("Silver Metallic")
+                                  ]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "col-md-4 pt-4 cursor-pointer" },
+                              [
+                                _c(
+                                  "span",
+                                  {
+                                    on: {
+                                      click: function($event) {
+                                        _vm.materialBackgroundImage =
+                                          "Wood-Grain/11.png"
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass: "border",
+                                      attrs: {
+                                        src:
+                                          "/background/Material/Wood-Grain/11-thumb.png"
+                                      }
+                                    }),
+                                    _vm._v("Wood Grain")
+                                  ]
+                                )
+                              ]
+                            )
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "tab-pane fade",
+                          attrs: {
+                            id: "profile",
+                            role: "tabpanel",
+                            "aria-labelledby": "profile-tab"
+                          }
+                        },
+                        [_vm._v("...")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "tab-pane fade",
+                          attrs: {
+                            id: "contact",
+                            role: "tabpanel",
+                            "aria-labelledby": "contact-tab"
+                          }
+                        },
+                        [_vm._v("...")]
+                      )
+                    ]
+                  )
+                ])
+              ])
             : _vm._e()
         ]),
         _vm._v(" "),
@@ -42025,6 +42445,42 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-header" }, [
       _c("b", [_vm._v("TEXT OPTIONS")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("b", [_vm._v("BORDER OPTIONS")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      { staticClass: "nav nav-tabs", attrs: { id: "myTab", role: "tablist" } },
+      [
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link active",
+              attrs: {
+                id: "home-tab",
+                "data-toggle": "tab",
+                href: "#home",
+                role: "tab",
+                "aria-controls": "home",
+                "aria-selected": "true"
+              }
+            },
+            [_vm._v("MATERIAL")]
+          )
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
