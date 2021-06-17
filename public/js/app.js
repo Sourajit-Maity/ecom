@@ -4125,6 +4125,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 
@@ -4173,7 +4177,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       output: null,
       shapeDefaultClass: 'rectangle1-3',
       borderDefaultClass: 'no-border',
-      materialBackgroundImage: ""
+      backgroundImage: ""
     };
   },
   computed: {
@@ -8832,7 +8836,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.shadow[data-v-5fe4438c] {\n    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\n    width: 566px;\n    border-radius: 30px;\n    overflow: hidden;\n}\n.rectangle1-3[data-v-5fe4438c] {\n    height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\n    height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\n    height: 244px;\n    border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\n    height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\n        font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\n        font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\n        color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\n        color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\n    color: blue;\n}\n.no-border[data-v-5fe4438c]{\n    border: none;\n}\n.gold-border[data-v-5fe4438c]{\n        border: 9px solid #ffed4a;\n}\n.silver-border[data-v-5fe4438c]{\n        border: 9px solid #b8b7b2;\n}\n.black-border[data-v-5fe4438c]{\n        border: 9px solid #050505;\n}\n.rose-border[data-v-5fe4438c]{\n        border: 9px solid #c07b86;\n}\n.selected-material-box[data-v-5fe4438c]{\n    border: 3px solid #3a00ff !important;\n}\n.cursor-pointer[data-v-5fe4438c]{\n    cursor:pointer;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.shadow[data-v-5fe4438c] {\n    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\n    width: 566px;\n    border-radius: 30px;\n    overflow: hidden;\n}\n.rectangle1-3[data-v-5fe4438c] {\n    height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\n    height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\n    height: 244px;\n    border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\n    height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\n        font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\n        font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\n        color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\n        color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\n    color: blue;\n}\n.no-border[data-v-5fe4438c]{\n    border: none;\n}\n.gold-border[data-v-5fe4438c]{\n        border: 9px solid #ffed4a;\n}\n.silver-border[data-v-5fe4438c]{\n        border: 9px solid #b8b7b2;\n}\n.black-border[data-v-5fe4438c]{\n        border: 9px solid #050505;\n}\n.rose-border[data-v-5fe4438c]{\n        border: 9px solid #c07b86;\n}\n.selected-material-box[data-v-5fe4438c]{\n    border: 3px solid #3a00ff !important;\n}\n.cursor-pointer[data-v-5fe4438c]{\n    cursor:pointer;\n}\n.custom-background-img[data-v-5fe4438c]{\n    max-height: 400px;\n    overflow: scroll;\n    overflow-x: hidden;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41658,12 +41662,10 @@ var render = function() {
             "div",
             { staticClass: "design-area shadow", class: _vm.getShapeClass },
             [
-              _vm.materialBackgroundImage
+              _vm.backgroundImage
                 ? _c("img", {
                     staticClass: "h-100 w-100",
-                    attrs: {
-                      src: "/background/Material/" + _vm.materialBackgroundImage
-                    }
+                    attrs: { src: _vm.backgroundImage }
                   })
                 : _vm._e(),
               _vm._v(" "),
@@ -42212,7 +42214,7 @@ var render = function() {
                         {
                           staticClass: "tab-pane fade show active",
                           attrs: {
-                            id: "home",
+                            id: "MATERIAL",
                             role: "tabpanel",
                             "aria-labelledby": "home-tab"
                           }
@@ -42228,8 +42230,8 @@ var render = function() {
                                   {
                                     on: {
                                       click: function($event) {
-                                        _vm.materialBackgroundImage =
-                                          "White-Plastic/1.png"
+                                        _vm.backgroundImage =
+                                          "/background/Material/White-Plastic/1.png"
                                       }
                                     }
                                   },
@@ -42256,8 +42258,8 @@ var render = function() {
                                   {
                                     on: {
                                       click: function($event) {
-                                        _vm.materialBackgroundImage =
-                                          "Gold-Plastic/7.png"
+                                        _vm.backgroundImage =
+                                          "/background/Material/Gold-Plastic/7.png"
                                       }
                                     }
                                   },
@@ -42284,8 +42286,8 @@ var render = function() {
                                   {
                                     on: {
                                       click: function($event) {
-                                        _vm.materialBackgroundImage =
-                                          "Silver-Plastic/8.png"
+                                        _vm.backgroundImage =
+                                          "/background/Material/Silver-Plastic/8.png"
                                       }
                                     }
                                   },
@@ -42312,8 +42314,8 @@ var render = function() {
                                   {
                                     on: {
                                       click: function($event) {
-                                        _vm.materialBackgroundImage =
-                                          "Gold-Metallic/5.png"
+                                        _vm.backgroundImage =
+                                          "/background/Material/Gold-Metallic/5.png"
                                       }
                                     }
                                   },
@@ -42340,8 +42342,8 @@ var render = function() {
                                   {
                                     on: {
                                       click: function($event) {
-                                        _vm.materialBackgroundImage =
-                                          "Silver-Metallic/6.png"
+                                        _vm.backgroundImage =
+                                          "/background/Material/Silver-Metallic/6.png"
                                       }
                                     }
                                   },
@@ -42368,8 +42370,8 @@ var render = function() {
                                   {
                                     on: {
                                       click: function($event) {
-                                        _vm.materialBackgroundImage =
-                                          "Wood-Grain/11.png"
+                                        _vm.backgroundImage =
+                                          "/background/Material/Wood-Grain/11.png"
                                       }
                                     }
                                   },
@@ -42395,12 +42397,50 @@ var render = function() {
                         {
                           staticClass: "tab-pane fade",
                           attrs: {
-                            id: "profile",
+                            id: "custom",
                             role: "tabpanel",
                             "aria-labelledby": "profile-tab"
                           }
                         },
-                        [_vm._v("...")]
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "row custom-background-img" },
+                            _vm._l(37, function(i) {
+                              return _c(
+                                "div",
+                                {
+                                  key: i,
+                                  staticClass: "col-md-4 cursor-pointer pt-4"
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "border",
+                                    staticStyle: {
+                                      height: "60px",
+                                      width: "100px"
+                                    },
+                                    attrs: {
+                                      src:
+                                        "/background/Custom/" + i + "/thumb.png"
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.backgroundImage =
+                                          "/background/Custom/" +
+                                          i +
+                                          "/" +
+                                          i +
+                                          ".png"
+                                      }
+                                    }
+                                  })
+                                ]
+                              )
+                            }),
+                            0
+                          )
+                        ]
                       ),
                       _vm._v(" "),
                       _c(
@@ -42470,13 +42510,31 @@ var staticRenderFns = [
               attrs: {
                 id: "home-tab",
                 "data-toggle": "tab",
-                href: "#home",
+                href: "#MATERIAL",
                 role: "tab",
                 "aria-controls": "home",
                 "aria-selected": "true"
               }
             },
             [_vm._v("MATERIAL")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: {
+                id: "contact-tab",
+                "data-toggle": "tab",
+                href: "#custom",
+                role: "tab",
+                "aria-controls": "contact",
+                "aria-selected": "false"
+              }
+            },
+            [_vm._v("CUSTOM")]
           )
         ])
       ]

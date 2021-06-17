@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-md-12 mt-4" ref="printcontent">
                         <div class="design-area shadow" v-bind:class="getShapeClass">
-                            <img :src="'/background/Material/'+materialBackgroundImage" class="h-100 w-100" v-if="materialBackgroundImage">
+                            <img :src="backgroundImage" class="h-100 w-100" v-if="backgroundImage">
                 <drr
                 :x="textDesign.x"
                 :y="textDesign.y"
@@ -163,27 +163,31 @@
                              <div class="card-body">
                                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">MATERIAL</a>
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#MATERIAL" role="tab" aria-controls="home" aria-selected="true">MATERIAL</a>
                                     </li>
                                     <!-- <li class="nav-item">
                                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">COLORS</a>
-                                    </li>
+                                    </li>-->
                                     <li class="nav-item">
-                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">CUSTOM</a>
-                                    </li> -->
+                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#custom" role="tab" aria-controls="contact" aria-selected="false">CUSTOM</a>
+                                    </li> 
                                     </ul>
                                     <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="tab-pane fade show active" id="MATERIAL" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
-                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="materialBackgroundImage = 'White-Plastic/1.png'"><img class="border" src="/background/Material/White-Plastic/1-thumb.png">White - Plastic</span></div>
-                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="materialBackgroundImage = 'Gold-Plastic/7.png'"><img class="border" src="/background/Material/Gold-Plastic/7-thumb.png">Gold - Plastic</span></div>
-                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="materialBackgroundImage = 'Silver-Plastic/8.png'"><img class="border" src="/background/Material/Silver-Plastic/8-thumb.png">Silver - Plastic</span></div>
-                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="materialBackgroundImage = 'Gold-Metallic/5.png'"><img class="border" src="/background/Material/Gold-Metallic/5-thumb.png">Gold Metallic</span></div>
-                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="materialBackgroundImage = 'Silver-Metallic/6.png'"><img class="border" src="/background/Material/Silver-Metallic/6-thumb.png">Silver Metallic</span></div>
-                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="materialBackgroundImage = 'Wood-Grain/11.png'"><img  class="border" src="/background/Material/Wood-Grain/11-thumb.png">Wood Grain</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/White-Plastic/1.png'"><img class="border" src="/background/Material/White-Plastic/1-thumb.png">White - Plastic</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Gold-Plastic/7.png'"><img class="border" src="/background/Material/Gold-Plastic/7-thumb.png">Gold - Plastic</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Silver-Plastic/8.png'"><img class="border" src="/background/Material/Silver-Plastic/8-thumb.png">Silver - Plastic</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Gold-Metallic/5.png'"><img class="border" src="/background/Material/Gold-Metallic/5-thumb.png">Gold Metallic</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Silver-Metallic/6.png'"><img class="border" src="/background/Material/Silver-Metallic/6-thumb.png">Silver Metallic</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Wood-Grain/11.png'"><img  class="border" src="/background/Material/Wood-Grain/11-thumb.png">Wood Grain</span></div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                                    <div class="tab-pane fade" id="custom" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="row custom-background-img">
+                                            <div class="col-md-4 cursor-pointer pt-4" v-for="i in 37" :key="i"><img style="height:60px; width:100px;" class="border" :src="'/background/Custom/' + i + '/thumb.png'" @click="backgroundImage= '/background/Custom/' + i + '/' + i + '.png'"></div>
+                                        </div>
+                                    </div>
                                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
                                     </div>
                              </div>
@@ -249,7 +253,7 @@ export default {
             output: null,
             shapeDefaultClass: 'rectangle1-3',
             borderDefaultClass: 'no-border',
-            materialBackgroundImage: ""
+            backgroundImage: ""
       }
   },
   computed:{
@@ -406,6 +410,11 @@ export default {
         }
         .cursor-pointer{
             cursor:pointer;
+        }
+        .custom-background-img{
+            max-height: 400px;
+            overflow: scroll;
+            overflow-x: hidden;
         }
         
         </style>
