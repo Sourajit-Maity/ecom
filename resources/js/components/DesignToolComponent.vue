@@ -12,16 +12,31 @@
                         <button class="btn  mr-2" :class="[menu.border  ? 'btn-danger' : 'btn-dark']" @click="selectDesignbar('border')">
                             Border
                         </button>
-                        <button class="btn btn-dark mr-2" disabled>
+                        <!-- <button class="btn btn-dark mr-2" disabled>
                             Fastener
                         </button>
                         <button class="btn btn-dark mr-2" disabled>
                             Dome
-                        </button>
+                        </button> -->
                     </div>
                     <div class="col-md-12 mt-4" ref="printcontent">
                         <div class="design-area shadow" v-bind:class="getShapeClass">
                             <img :src="backgroundImage" class="h-100 w-100" v-if="backgroundImage">
+                <drr
+                :x="clipartDesign.x"
+                :y="clipartDesign.y"
+                :w="clipartDesign.weight"
+                :h="clipartDesign.height"
+                :angle="clipartDesign.angle"
+                :selected="clipartDesign.selected"
+                :aspectRatio="true"
+                @select="selectItemClipart(index)"
+                :innerBox="innerBox"
+                :outerBox="outerBox"
+                v-for="(clipartDesign,index) in clipartDesigns" :key="index"
+                >  
+                 <img :src="clipartDesign.img" style="width: 100%; height: 100%" />
+                 </drr>
                 <drr
                 :x="textDesign.x"
                 :y="textDesign.y"
@@ -31,7 +46,6 @@
                 :selected="textDesign.selected"
                 :aspectRatio="true"
                 @select="selectItem(index)"
-                @change="itemChange" 
                 :innerBox="innerBox"
                 :outerBox="outerBox"
                 v-for="(textDesign,index) in textDesigns" :key="index"
@@ -49,10 +63,10 @@
                         <button class="btn btn-success mr-2" @click="addText">
                             Add Text
                         </button>
-                        <button class="btn btn-warning mr-2" disabled>
+                        <!-- <button class="btn btn-warning mr-2" disabled>
                             Add Logo
-                        </button>
-                        <button class="btn btn-primary mr-2" disabled>
+                        </button> -->
+                        <button class="btn btn-primary mr-2" @click="$modal.show('clipart-modal')">
                             Add Clipart
                         </button>
                     </div>
@@ -84,31 +98,18 @@
                                     <input type="text" class="form-control" v-model="getYourText" id="inputPassword" placeholder="Your Text">
                                     </div>
                                 </div>
-                                 <!-- <div class="form-group row">
+                                 <div class="form-group row">
                                     <label for="inputPassword" class="col-sm-3 col-form-label">Font</label>
                                     <div class="col-sm-9">
-                                            <select id="inputState" class="form-control">
-                                            <option id="fnt2" selected="selected">Arial</option>
-                                            <option id="fnt4">Century Gothic</option>
-                                            <option id="fnt28">Century Gothic Bold</option>
-                                            <option id="fnt5">Comic Sans MS</option>
-                                            <option id="fnt6">Courier New</option>
-                                            <option id="fnt7">Georgia</option>
-                                            <option id="fnt8">Impact</option>
-                                            <option id="fnt9">Times New Roman</option>
-                                            <option id="fnt10">Trebuchet MS</option>
-                                            <option id="fnt11">Verdana</option>
-                                            <option id="fnt12">Gotham</option>
-                                            <option id="fnt13">Cormorant Garamond Medium</option>
-                                            <option id="fnt15">Lobster</option>
-                                            <option id="fnt17">Old English TextMT</option>
-                                            <option id="fnt22">MonotypeCorsiva</option>
-                                            <option id="fnt23">Scriptoria SSK</option>
-                                            <option id="fnt19">Ardestine</option>
-                                            <option id="fnt20">Arbonnie</option>
+                                            <select class="form-control" v-model="textDesigns[selectedTextBoxIndex].font" >
+                                            <option class="font-fnt2" value="font-fnt2">Arial</option>
+                                            <option class="font-fnt4" value="font-fnt4">Century Gothic</option>
+                                            <option class="font-fnt28" value="font-fnt28">Century Gothic Bold</option>
+                                            <option class="font-fnt5" value="font-fnt5">Comic Sans MS</option>
+                                            <option class="font-fnt6" value="font-fnt6">Courier New</option>
                                             </select>
                                     </div>
-                                </div> -->
+                                </div>
                                  <div class="form-group row">
                                     <label for="inputPassword" class="col-sm-3 col-form-label">Font Style</label>
                                     <div class="col-sm-9">
@@ -140,6 +141,12 @@
                                      </select>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-9">
+                                        <button class="btn btn-danger" @click="deleteText">Delete Text</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="card mt-4" v-if="menu.border">
@@ -154,7 +161,6 @@
                                         <div class="col-md-6"><button class="btn  btn-block mb-2"  :class="[borderDefaultClass == 'black-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'black-border'">Black Border</button></div>
                                         <div class="col-md-6"><button class="btn  btn-block" :class="[borderDefaultClass == 'rose-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'rose-border'">Rose Border</button></div>
                                         <div class="col-md-6"><button class="btn  btn-block" :class="[borderDefaultClass == 'no-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'no-border'">No Border</button></div>
-                                        <!-- <div class="col-md-6"><button class="btn btn-success  btn-block mt-2"  @click="printThis">Print</button></div> -->
                                     </div>
                                 </li>
                             </ul>
@@ -199,18 +205,24 @@
                 </div>
 
             </div>
+            <modal name="clipart-modal" :adaptive="true" :draggable="true">
+                <div class="row custom-background-img p-4">
+                        <div class="col-md-3 cursor-pointer pt-4" v-for="i in 12" :key="i"><img style="height:60px; width:100px;" :src="'/clipart/' + i + '/thumb.png'" @click="addClipart(i)"></div>
+                </div>
+            </modal>
   </div>
 </template>
 
 <script>
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
-import VueHtml2Canvas from 'vue-html2canvas';
+
 import drr from '@minogin/vue-drag-resize-rotate'
+
 
 export default {
 //   name: 'about-us',
     components: {
-    VueHtml2Canvas,drr
+    drr
   },
   mounted() {
     console.log("This is about component");
@@ -218,7 +230,9 @@ export default {
   data(){
       return {
           addTextIndex:0,
+          addClipartIndex:0,
           selectedTextBoxIndex:0,
+          selectedClipartIndex:0,
             textDesigns:[
                 {
                     x:300,
@@ -227,11 +241,27 @@ export default {
                     height:70,
                     angle: 0,
                     text: "Your text",
+                    font:"font-fnt2",
                     fontStyle: "",
-                    fontSize: "font-size50",
+                    fontSize: "font-size35",
                     fontColor: "",
                     selected:false
                 }
+        ],
+        clipartDesigns:[
+                // {
+                //     x:100,
+                //     y:60,
+                //     weight:100,
+                //     height:60,
+                //     angle: 0,
+                //     img: "/clipart/1/1.png",
+                //     font:"font-fnt2",
+                //     fontStyle: "",
+                //     fontSize: "font-size35",
+                //     fontColor: "",
+                //     selected:false
+                // }
         ],
         outerBox:{
             x:50,
@@ -248,6 +278,7 @@ export default {
             menu:{
                 sizeShape:true,
                 background:false,
+                border:false,
                 textOptions:false
             },
             output: null,
@@ -267,7 +298,7 @@ export default {
             'silver-border' : 'silver-border' == this.borderDefaultClass,
             'black-border' : 'black-border' == this.borderDefaultClass,
             'rose-border' : 'rose-border' == this.borderDefaultClass,
-            'no-border' : 'no-border' == this.borderDefaultClass,
+            'no-border' : 'no-border' == this.borderDefaultClass
          }
       },
       getYourText:{
@@ -280,9 +311,9 @@ export default {
       }
   },
   methods: {
-      itemChange(event){
-          console.info('event',event);
-      },
+    //   itemChange(event){
+    //       console.info('event',event);
+    //   },
       selectItem(index){
           console.info('index',index);
           this.selectedTextBoxIndex=index;
@@ -296,11 +327,30 @@ export default {
           });
           console.info('this.textDesigns',this.textDesigns);
       },
+      selectItemClipart(index){
+        //   console.info('index',index);
+          this.selectedClipartIndex=index;
+        //   this.selectDesignbar('textOptions');
+
+          this.clipartDesigns.forEach((item,index_clipartDesign) => {
+              if(index_clipartDesign==this.selectedClipartIndex)
+                item.selected=true;
+             else
+                item.selected=false;
+          });
+        //   console.info('this.textDesigns',this.textDesigns);
+      },
       selectDesignbar(menuName){
           this.menu.sizeShape = 'sizeShape'==menuName;
           this.menu.border= 'border'==menuName;
           this.menu.textOptions = 'textOptions'==menuName;
           this.menu.background= 'background'== menuName;
+      },
+      deleteText(){
+           this.textDesigns.splice(this.selectedTextBoxIndex,1)
+           if(this.textDesigns.length>0)
+                this.selectItem(0);
+           else this.menu.textOptions=false;
       },
        getCustomDesignClass(index){
           return {
@@ -311,7 +361,12 @@ export default {
             'font-size50': 'font-size50'==this.textDesigns[index].fontSize,
             'font-coloRed': 'font-coloRed'==this.textDesigns[index].fontColor,
             'font-colorGreen': 'font-colorGreen'==this.textDesigns[index].fontColor,
-            'font-colorBlue': 'font-colorBlue'==this.textDesigns[index].fontColor
+            'font-colorBlue': 'font-colorBlue'==this.textDesigns[index].fontColor,
+            'font-fnt2'   : 'font-fnt2'  == this.textDesigns[index].font,
+            'font-fnt4'  :  'font-fnt4' == this.textDesigns[index].font,
+            'font-fnt28'  : 'font-fnt28' == this.textDesigns[index].font,
+            'font-fnt5'  : 'font-fnt5' == this.textDesigns[index].font,
+            'font-fnt6'  : 'font-fnt6' == this.textDesigns[index].font,
          }
       },
       addText(){
@@ -324,9 +379,24 @@ export default {
                     height:70,
                     angle: 0,
                     text: "Your text",
+                    font:"font-fnt2",
                     fontStyle: "",
-                    fontSize: "font-size50",
+                    fontSize: "font-size35",
                     fontColor: "",
+                    selected:false
+                }
+          );
+      },
+      addClipart(i){
+          this.addClipartIndex++;
+          this.clipartDesigns.push(
+               {
+                    x:150 + (this.addClipartIndex * 11),
+                    y:60 + (this.addClipartIndex * 11),
+                    weight:100,
+                    height:60,
+                    angle: 0,
+                    img: `/clipart/${i}/${i}.png`,
                     selected:false
                 }
           );
@@ -416,5 +486,20 @@ export default {
             overflow: scroll;
             overflow-x: hidden;
         }
-        
+.font-fnt2{
+    font-family:Arial;
+
+}
+.font-fnt4{
+    font-family:serif;
+}
+.font-fnt28{
+    font-family:monospace;
+}
+.font-fnt5{
+    font-family:cursive;
+}
+.font-fnt6{
+    font-family:fantasy;
+}
         </style>
