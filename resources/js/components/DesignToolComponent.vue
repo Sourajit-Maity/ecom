@@ -46,8 +46,6 @@
                 :selected="textDesign.selected"
                 :aspectRatio="true"
                 @select="selectItem(index)"
-                :innerBox="innerBox"
-                :outerBox="outerBox"
                 v-for="(textDesign,index) in textDesigns" :key="index"
                 >
                         <span style="width: 100%; height: 100%" v-bind:class="getCustomDesignClass(index)">{{textDesign.text}}</span>
@@ -206,8 +204,8 @@
 
             </div>
             <modal name="clipart-modal" :adaptive="true" :draggable="true">
-                <div class="row custom-background-img p-4">
-                        <div class="col-md-3 cursor-pointer pt-4" v-for="i in 12" :key="i"><img style="height:60px; width:100px;" :src="'/clipart/' + i + '/thumb.png'" @click="addClipart(i)"></div>
+                <div class="row p-4 clipart-custom">
+                        <div class="col-md-3 cursor-pointer pt-4" v-for="i in 36" :key="i"><img style="height:60px; width:100px;" :src="'/clipart/' + i + '/thumb.png'" @click="addClipart(i)"></div>
                 </div>
             </modal>
   </div>
@@ -237,8 +235,8 @@ export default {
                 {
                     x:300,
                     y:70,
-                    weight:200,
-                    height:70,
+                    weight:140,
+                    height:55,
                     angle: 0,
                     text: "Your text",
                     font:"font-fnt2",
@@ -263,18 +261,6 @@ export default {
                 //     selected:false
                 // }
         ],
-        outerBox:{
-            x:50,
-            y:50,
-            w:50,
-            h:50,
-        },
-        innerBox:{
-            x:50,
-            y:50,
-            w:50,
-            h:50,
-        },
             menu:{
                 sizeShape:true,
                 background:false,
@@ -424,6 +410,7 @@ export default {
             width: 566px;
             border-radius: 30px;
             overflow: hidden;
+            position: relative;
         }
 
         .rectangle1-3 {
@@ -501,5 +488,10 @@ export default {
 }
 .font-fnt6{
     font-family:fantasy;
+}
+
+.clipart-custom{
+    max-height: 307px;
+    overflow-y: scroll;
 }
         </style>

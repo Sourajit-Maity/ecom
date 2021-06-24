@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\AdminDashboard;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Welcome\DesignToolController;
+use App\Http\Controllers\Welcome\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,14 +19,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', 'design-tool');
-Route::redirect('admin', 'admin/login');
-Route::view('design-tool', 'design-tool');
+// Route::redirect('/', 'design-tool');
+// Route::redirect('admin', 'admin/login');
+// Route::view('design-tool', 'design-tool');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum'], function () {
-    Route::get('profile', [ProfileController::class, 'getProfile'])->name('admin.profile');
-    Route::get('/dashboard', [AdminDashboard::class, 'getDashboard'])->name('admin.dashboard');
-    Route::resources([
-        'users' => UserController::class
-    ]);
-});
+// Route::inertia('/about', 'AboutComponent');
+Route::get('/', [HomeController::class, 'index']);
+Route::get('design-tool', [DesignToolController::class, 'index']);
+
+// Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum'], function () {
+//     Route::get('profile', [ProfileController::class, 'getProfile'])->name('admin.profile');
+//     Route::get('/dashboard', [AdminDashboard::class, 'getDashboard'])->name('admin.dashboard');
+//     Route::resources([
+//         'users' => UserController::class
+//     ]);
+// });

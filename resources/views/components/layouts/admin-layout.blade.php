@@ -36,7 +36,8 @@
             content: "*";
             color: red;
         }
-        .align-center{
+
+        .align-center {
             text-align: center;
         }
     </style>
@@ -72,11 +73,11 @@
     <livewire:styles />
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-	<link href="{{asset('admin_assets/vendors/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('admin_assets/vendors/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    
+
     <!--end::Layout Skins -->
     <link rel="shortcut icon" href="{{asset('admin_assets/media/logos/favicon.ico')}}" />
 
@@ -94,30 +95,30 @@
         <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
 
-        <x-admin-left-bar />
+            <x-admin-left-bar />
 
 
 
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
 
 
-            <x-admin-header  :title="$title" />
+                <x-admin-header :title="$title" />
 
-                <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
+                <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="app">
 
-                   {{$subHeader}}
+                    {{$subHeader}}
 
                     <!-- begin:: Content -->
                     <div class="kt-content  kt-grid__item kt-grid__item--fluid">
-                    {{ $slot }}
+                        {{ $slot }}
                     </div>
 
                     <!-- end:: Content -->
                 </div>
 
-            <x-admin-footer/>
-            
-                   </div>
+                <x-admin-footer />
+
+            </div>
         </div>
     </div>
 
@@ -220,32 +221,30 @@
     <script src="{{asset('admin_assets/app/custom/general/components/extended/toastr.js')}}" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script type="text/javascript">
-	
-    toastr.options = {
-      "closeButton": false,
-      "debug": false,
-      "newestOnTop": false,
-      "progressBar": true,
-    //   "positionClass": "toast-bottom-center",
-      "preventDuplicates": false,
-      "onclick": null,
-     "showDuration": "300",
-     "hideDuration": "1000",
-      "timeOut": "9000",
-     "extendedTimeOut": "1000",
-      "showEasing": "swing",
-      "hideEasing": "linear",
-      "showMethod": "fadeIn",
-      "hideMethod": "fadeOut"
-    }
-</script>
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            //   "positionClass": "toast-bottom-center",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "9000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
 
-<script type="text/javascript">
-		
-		function deleteConfirm(){
-			window.livewire.emit('deleteConfirm')
-		}
-</script>
+    <script type="text/javascript">
+        function deleteConfirm() {
+            window.livewire.emit('deleteConfirm')
+        }
+    </script>
     <script type="text/javascript">
         @if(Session::has('success'))
         toastr.success("{{ Session::get('success') }}");
@@ -266,33 +265,31 @@
         toastr.error("{{ Session::get('error') }}");
         @endif
 
-        window.addEventListener('modal-open', event  => {
-                $('#delete_confirm_modal').modal('show');
-		});
+        window.addEventListener('modal-open', event => {
+            $('#delete_confirm_modal').modal('show');
+        });
 
-        
-        window.addEventListener('toastr', event  => {
-				alertMsg(event.detail.msg,event.detail.type);
-		});
 
-        function alertMsg($msg,$type){
-				switch($type){
-			case 'success':
-				toastr.success($msg);
-				break;
-			case 'info':
-				toastr.info($msg);
-				break;
-			case 'warning':
-				toastr.warning($msg);
-				break;
-			case 'error':
-				toastr.error($msg);
-				break;
-		}
+        window.addEventListener('toastr', event => {
+            alertMsg(event.detail.msg, event.detail.type);
+        });
+
+        function alertMsg($msg, $type) {
+            switch ($type) {
+                case 'success':
+                    toastr.success($msg);
+                    break;
+                case 'info':
+                    toastr.info($msg);
+                    break;
+                case 'warning':
+                    toastr.warning($msg);
+                    break;
+                case 'error':
+                    toastr.error($msg);
+                    break;
+            }
         }
-		
-
     </script>
     <script>
         const SwalModal = (icon, title, html) => {
@@ -324,7 +321,7 @@
             })
         }
 
-        document.addEventListener('DOMContentLoaded', () => { 
+        document.addEventListener('DOMContentLoaded', () => {
             this.livewire.on('swal:modal', data => {
                 SwalModal(data.type, data.title, data.text)
             })
