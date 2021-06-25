@@ -12,6 +12,6 @@ class DesignToolController extends Controller
 {
     public function index()
     {
-        return view('design-tool');
+        return view('Welcome.design-tool');
     }
 }

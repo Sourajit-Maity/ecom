@@ -1,4 +1,5 @@
 <template>
+<div class="container">
    <div class="row">
             <div class="col-md-7">
                 <div class="row">
@@ -209,6 +210,7 @@
                 </div>
             </modal>
   </div>
+  </div>
 </template>
 
 <script>
@@ -403,6 +405,10 @@ export default {
 </script>
 
 <style scoped>
+        .container{
+            margin-top: 9%;
+            margin-bottom: 6%;
+        }
         .shadow {
             box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)
         }
