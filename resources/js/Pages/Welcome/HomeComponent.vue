@@ -9,7 +9,8 @@
         </div>
       </div>
       <div class="text-center">
-        <a href="#about" class="btn-get-started scrollto">Get Started Now</a>
+        <inertia-link href="/design-tool" class="btn-get-started scrollto">Get Started Now</inertia-link>
+        <!-- <a href="#about" class="btn-get-started scrollto">Get Started Now</a> -->
       </div>
 
       <div class="row icon-boxes">

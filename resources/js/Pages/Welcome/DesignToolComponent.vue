@@ -219,7 +219,7 @@
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 import drr from '@minogin/vue-drag-resize-rotate'
-import WelcomeLayout from '../Shared/WelcomeLayout'; 
+import WelcomeLayout from '@/Shared/WelcomeLayout'; 
 
 export default {
 //   name: 'about-us',

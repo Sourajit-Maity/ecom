@@ -12,7 +12,7 @@ class DesignToolController extends Controller
 {
     public function index()
     {
-        return Inertia::render('AboutComponent', [
+        return Inertia::render('Welcome/DesignToolComponent', [
             'users' => User::all()->map(function ($user) {
                 return [
                     'id' => $user->id,
