@@ -19,13 +19,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', 'design-tool');
+// Route::redirect('/', 'design-tool');
 Route::redirect('admin', 'admin/login');
-Route::view('design-tool', 'design-tool');
+// Route::view('design-tool', 'design-tool');
 
 // Route::inertia('/about', 'AboutComponent');
-// Route::get('/', [HomeController::class, 'index']);
-// Route::get('design-tool', [DesignToolController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
+Route::get('design-tool', [DesignToolController::class, 'index'])->name('welcome.design-tool');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum'], function () {
     Route::get('profile', [ProfileController::class, 'getProfile'])->name('admin.profile');
