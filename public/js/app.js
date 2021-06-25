@@ -14190,6 +14190,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -14237,12 +14256,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         sizeShape: true,
         background: false,
         border: false,
-        textOptions: false
+        textOptions: false,
+        fastener: false
       },
       output: null,
       shapeDefaultClass: 'rectangle1-3',
       borderDefaultClass: 'no-border',
-      backgroundImage: ""
+      backgroundImage: "",
+      selected_fastener: ""
     };
   },
   computed: {
@@ -14295,6 +14316,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     selectDesignbar: function selectDesignbar(menuName) {
       this.menu.sizeShape = 'sizeShape' == menuName;
+      this.menu.fastener = 'fastener' == menuName;
       this.menu.border = 'border' == menuName;
       this.menu.textOptions = 'textOptions' == menuName;
       this.menu.background = 'background' == menuName;
@@ -18959,7 +18981,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.container[data-v-5fe4438c]{\n            margin-top: 9%;\n            margin-bottom: 6%;\n}\n.shadow[data-v-5fe4438c] {\n            box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\n            width: 566px;\n            border-radius: 30px;\n            overflow: hidden;\n            position: relative;\n}\n.rectangle1-3[data-v-5fe4438c] {\n            height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\n            height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\n            height: 244px;\n            border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\n            height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\n                font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\n                font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\n                color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\n                color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\n            color: blue;\n}\n.no-border[data-v-5fe4438c]{\n            border: none;\n}\n.gold-border[data-v-5fe4438c]{\n                border: 9px solid #ffed4a;\n}\n.silver-border[data-v-5fe4438c]{\n                border: 9px solid #b8b7b2;\n}\n.black-border[data-v-5fe4438c]{\n                border: 9px solid #050505;\n}\n.rose-border[data-v-5fe4438c]{\n                border: 9px solid #c07b86;\n}\n.selected-material-box[data-v-5fe4438c]{\n            border: 3px solid #3a00ff !important;\n}\n.cursor-pointer[data-v-5fe4438c]{\n            cursor:pointer;\n}\n.custom-background-img[data-v-5fe4438c]{\n            max-height: 400px;\n            overflow: scroll;\n            overflow-x: hidden;\n}\n.font-fnt2[data-v-5fe4438c]{\n    font-family:Arial;\n}\n.font-fnt4[data-v-5fe4438c]{\n    font-family:serif;\n}\n.font-fnt28[data-v-5fe4438c]{\n    font-family:monospace;\n}\n.font-fnt5[data-v-5fe4438c]{\n    font-family:cursive;\n}\n.font-fnt6[data-v-5fe4438c]{\n    font-family:fantasy;\n}\n.clipart-custom[data-v-5fe4438c]{\n    max-height: 307px;\n    overflow-y: scroll;\n}\n        ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.container[data-v-5fe4438c]{\n            margin-top: 9%;\n            margin-bottom: 6%;\n}\n.shadow[data-v-5fe4438c] {\n            box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\n            width: 566px;\n            border-radius: 30px;\n            overflow: hidden;\n            position: relative;\n}\n.rectangle1-3[data-v-5fe4438c] {\n            height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\n            height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\n            height: 244px;\n            border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\n            height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\n                font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\n                font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\n                color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\n                color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\n            color: blue;\n}\n.no-border[data-v-5fe4438c]{\n            border: none;\n}\n.gold-border[data-v-5fe4438c]{\n                border: 9px solid #ffed4a;\n}\n.silver-border[data-v-5fe4438c]{\n                border: 9px solid #b8b7b2;\n}\n.black-border[data-v-5fe4438c]{\n                border: 9px solid #050505;\n}\n.rose-border[data-v-5fe4438c]{\n                border: 9px solid #c07b86;\n}\n.selected-material-box[data-v-5fe4438c]{\n            border: 3px solid #3a00ff !important;\n}\n.cursor-pointer[data-v-5fe4438c]{\n            cursor:pointer;\n}\n.custom-background-img[data-v-5fe4438c]{\n            max-height: 400px;\n            overflow: scroll;\n            overflow-x: hidden;\n}\n.font-fnt2[data-v-5fe4438c]{\n    font-family:Arial;\n}\n.font-fnt4[data-v-5fe4438c]{\n    font-family:serif;\n}\n.font-fnt28[data-v-5fe4438c]{\n    font-family:monospace;\n}\n.font-fnt5[data-v-5fe4438c]{\n    font-family:cursive;\n}\n.font-fnt6[data-v-5fe4438c]{\n    font-family:fantasy;\n}\n.clipart-custom[data-v-5fe4438c]{\n    max-height: 307px;\n    overflow-y: scroll;\n}\n.fastener-img[data-v-5fe4438c] {\n    width: 100px;\n    height: 60px;\n}\n.selected_fastener[data-v-5fe4438c]{\n    border: 2px solid blue !important;\n}\n        ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -52104,7 +52126,25 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                            Border\r\n                        "
+                    "\r\n                            Frame\r\n                        "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn  mr-2",
+                  class: [_vm.menu.fastener ? "btn-danger" : "btn-dark"],
+                  on: {
+                    click: function($event) {
+                      return _vm.selectDesignbar("fastener")
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\r\n                            Fastener\r\n                        "
                   )
                 ]
               )
@@ -52227,9 +52267,165 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-md-12" }, [
-              _vm.menu.sizeShape
+              _vm.menu.fastener
                 ? _c("div", { staticClass: "card mt-4" }, [
                     _vm._m(0),
+                    _vm._v(" "),
+                    _c("ul", { staticClass: "list-group list-group-flush" }, [
+                      _c("li", { staticClass: "list-group-item" }, [
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            { staticClass: "col-md-4 pt-4 cursor-pointer" },
+                            [
+                              _c(
+                                "span",
+                                {
+                                  on: {
+                                    click: function($event) {
+                                      _vm.selected_fastener = "Jewelers"
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "fastener-img border p-1",
+                                    class: {
+                                      selected_fastener:
+                                        "Jewelers" == _vm.selected_fastener
+                                    },
+                                    attrs: {
+                                      src: "/fasteners/Jeweler_s Pin.png"
+                                    }
+                                  }),
+                                  _vm._v("Jewelers Pin")
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-md-4 pt-4 cursor-pointer" },
+                            [
+                              _c(
+                                "span",
+                                {
+                                  on: {
+                                    click: function($event) {
+                                      _vm.selected_fastener = "Magnet"
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "fastener-img border p-1",
+                                    class: {
+                                      selected_fastener:
+                                        "Magnet" == _vm.selected_fastener
+                                    },
+                                    attrs: { src: "/fasteners/Magnet.jpg" }
+                                  }),
+                                  _vm._v("Magnet.jpg")
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-md-4 pt-4 cursor-pointer" },
+                            [
+                              _c(
+                                "span",
+                                {
+                                  on: {
+                                    click: function($event) {
+                                      _vm.selected_fastener = "Pin"
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "fastener-img border p-1",
+                                    class: {
+                                      selected_fastener:
+                                        "Pin" == _vm.selected_fastener
+                                    },
+                                    attrs: { src: "/fasteners/Pin.jpg" }
+                                  }),
+                                  _vm._v("Pin")
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-md-4 pt-4 cursor-pointer" },
+                            [
+                              _c(
+                                "span",
+                                {
+                                  on: {
+                                    click: function($event) {
+                                      _vm.selected_fastener = "SWBD"
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "fastener-img border p-1",
+                                    class: {
+                                      selected_fastener:
+                                        "SWBD" == _vm.selected_fastener
+                                    },
+                                    attrs: { src: "/fasteners/SWBD.jpg" }
+                                  }),
+                                  _vm._v("SWBD")
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-md-4 pt-4 cursor-pointer" },
+                            [
+                              _c(
+                                "span",
+                                {
+                                  on: {
+                                    click: function($event) {
+                                      _vm.selected_fastener = "Swivel"
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "fastener-img border p-1",
+                                    class: {
+                                      selected_fastener:
+                                        "Swivel" == _vm.selected_fastener
+                                    },
+                                    attrs: {
+                                      src: "/fasteners/Swivel Bulldog.png"
+                                    }
+                                  }),
+                                  _vm._v("Swivel Bulldog")
+                                ]
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.menu.sizeShape
+                ? _c("div", { staticClass: "card mt-4" }, [
+                    _vm._m(1),
                     _vm._v(" "),
                     _c("ul", { staticClass: "list-group list-group-flush" }, [
                       _c("li", { staticClass: "list-group-item" }, [
@@ -52321,7 +52517,7 @@ var render = function() {
               _vm._v(" "),
               _vm.menu.textOptions
                 ? _c("div", { staticClass: "card mt-4" }, [
-                    _vm._m(1),
+                    _vm._m(2),
                     _vm._v(" "),
                     _c("div", { staticClass: "card-body" }, [
                       _c("div", { staticClass: "form-group row" }, [
@@ -52695,7 +52891,7 @@ var render = function() {
               _vm._v(" "),
               _vm.menu.border
                 ? _c("div", { staticClass: "card mt-4" }, [
-                    _vm._m(2),
+                    _vm._m(3),
                     _vm._v(" "),
                     _c("ul", { staticClass: "list-group list-group-flush" }, [
                       _c("li", { staticClass: "list-group-item" }, [
@@ -52716,7 +52912,7 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_vm._v("Gold Border")]
+                              [_vm._v("Gold Frame")]
                             )
                           ]),
                           _vm._v(" "),
@@ -52736,7 +52932,7 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_vm._v("Silver Border")]
+                              [_vm._v("Silver Frame")]
                             )
                           ]),
                           _vm._v(" "),
@@ -52756,7 +52952,7 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_vm._v("Black Border")]
+                              [_vm._v("Black Frame")]
                             )
                           ]),
                           _vm._v(" "),
@@ -52776,7 +52972,7 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_vm._v("Rose Border")]
+                              [_vm._v("Rose Frame")]
                             )
                           ]),
                           _vm._v(" "),
@@ -52796,7 +52992,7 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_vm._v("No Border")]
+                              [_vm._v("No Frame")]
                             )
                           ])
                         ])
@@ -52808,7 +53004,7 @@ var render = function() {
               _vm.menu.background
                 ? _c("div", { staticClass: "card mt-4" }, [
                     _c("div", { staticClass: "card-body" }, [
-                      _vm._m(3),
+                      _vm._m(4),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -53130,6 +53326,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
+      _c("b", [_vm._v("FASTENER OPTIONS")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
       _c("b", [_vm._v("SELECT A SIZE/ SHAPE")])
     ])
   },
@@ -53146,7 +53350,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("b", [_vm._v("BORDER OPTIONS")])
+      _c("b", [_vm._v("FRAME OPTIONS")])
     ])
   },
   function() {

@@ -11,7 +11,10 @@
                             Background
                         </button>
                         <button class="btn  mr-2" :class="[menu.border  ? 'btn-danger' : 'btn-dark']" @click="selectDesignbar('border')">
-                            Border
+                            Frame
+                        </button>
+                        <button class="btn  mr-2" :class="[menu.fastener  ? 'btn-danger' : 'btn-dark']" @click="selectDesignbar('fastener')">
+                            Fastener
                         </button>
                         <!-- <button class="btn btn-dark mr-2" disabled>
                             Fastener
@@ -70,7 +73,23 @@
                         </button>
                     </div>
                     <div class="col-md-12">
-                        <div class="card mt-4" v-if="menu.sizeShape">
+                        <div class="card mt-4" v-if="menu.fastener">
+                            <div class="card-header">
+                                <b>FASTENER OPTIONS</b>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span @click="selected_fastener = 'Jewelers'"><img class="fastener-img border p-1" :class="{'selected_fastener': 'Jewelers'== selected_fastener}" src="/fasteners/Jeweler_s Pin.png">Jewelers Pin</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span @click="selected_fastener = 'Magnet'"><img class="fastener-img border p-1" :class="{'selected_fastener': 'Magnet'== selected_fastener}" src="/fasteners/Magnet.jpg">Magnet.jpg</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span @click="selected_fastener = 'Pin'"><img class="fastener-img border p-1" :class="{'selected_fastener': 'Pin'== selected_fastener}" src="/fasteners/Pin.jpg">Pin</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span @click="selected_fastener = 'SWBD'"><img class="fastener-img border p-1" :class="{'selected_fastener': 'SWBD'== selected_fastener}" src="/fasteners/SWBD.jpg">SWBD</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span @click="selected_fastener = 'Swivel'" ><img class="fastener-img border p-1" :class="{'selected_fastener': 'Swivel'== selected_fastener}" src="/fasteners/Swivel Bulldog.png">Swivel Bulldog</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                         <div class="card mt-4" v-if="menu.sizeShape">
                             <div class="card-header">
                                 <b>SELECT A SIZE/ SHAPE</b>
                             </div>
@@ -150,16 +169,16 @@
                         </div>
                         <div class="card mt-4" v-if="menu.border">
                             <div class="card-header">
-                                <b>BORDER OPTIONS</b>
+                                <b>FRAME OPTIONS</b>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <div class="row">
-                                        <div class="col-md-6"> <button class="btn btn-block mb-2" :class="[borderDefaultClass == 'gold-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'gold-border'">Gold Border</button></div>
-                                        <div class="col-md-6"><button class="btn  btn-block mb-2" :class="[borderDefaultClass == 'silver-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'silver-border'">Silver Border</button></div>
-                                        <div class="col-md-6"><button class="btn  btn-block mb-2"  :class="[borderDefaultClass == 'black-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'black-border'">Black Border</button></div>
-                                        <div class="col-md-6"><button class="btn  btn-block" :class="[borderDefaultClass == 'rose-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'rose-border'">Rose Border</button></div>
-                                        <div class="col-md-6"><button class="btn  btn-block" :class="[borderDefaultClass == 'no-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'no-border'">No Border</button></div>
+                                        <div class="col-md-6"> <button class="btn btn-block mb-2" :class="[borderDefaultClass == 'gold-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'gold-border'">Gold Frame</button></div>
+                                        <div class="col-md-6"><button class="btn  btn-block mb-2" :class="[borderDefaultClass == 'silver-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'silver-border'">Silver Frame</button></div>
+                                        <div class="col-md-6"><button class="btn  btn-block mb-2"  :class="[borderDefaultClass == 'black-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'black-border'">Black Frame</button></div>
+                                        <div class="col-md-6"><button class="btn  btn-block" :class="[borderDefaultClass == 'rose-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'rose-border'">Rose Frame</button></div>
+                                        <div class="col-md-6"><button class="btn  btn-block" :class="[borderDefaultClass == 'no-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'no-border'">No Frame</button></div>
                                     </div>
                                 </li>
                             </ul>
@@ -267,12 +286,14 @@ export default {
                 sizeShape:true,
                 background:false,
                 border:false,
-                textOptions:false
+                textOptions:false,
+                fastener:false
             },
             output: null,
             shapeDefaultClass: 'rectangle1-3',
             borderDefaultClass: 'no-border',
-            backgroundImage: ""
+            backgroundImage: "",
+            selected_fastener: ""
       }
   },
   computed:{
@@ -330,6 +351,7 @@ export default {
       },
       selectDesignbar(menuName){
           this.menu.sizeShape = 'sizeShape'==menuName;
+          this.menu.fastener= 'fastener' == menuName;
           this.menu.border= 'border'==menuName;
           this.menu.textOptions = 'textOptions'==menuName;
           this.menu.background= 'background'== menuName;
@@ -499,5 +521,13 @@ export default {
 .clipart-custom{
     max-height: 307px;
     overflow-y: scroll;
+}
+
+.fastener-img {
+    width: 100px;
+    height: 60px;
+}
+.selected_fastener{
+    border: 2px solid blue !important;
 }
         </style>
