@@ -38,6 +38,7 @@
         "@minogin/vue-drag-resize-rotate": "^1.0.5",
         "cross-env": "^7.0.3",
         "laravel-mix-alias": "^1.0.3",
+        "vue-color": "^2.8.1",
         "vue-draggable-resizable": "^2.3.0",
         "vue-html2canvas": "0.0.4",
         "vue-js-modal": "^2.0.0-rc.6"

@@ -24,7 +24,7 @@
                         </button> -->
                     </div>
                     <div class="col-md-12 mt-4" ref="printcontent">
-                        <div class="design-area shadow" v-bind:class="getShapeClass">
+                        <div class="design-area shadow" v-bind:class="getShapeClass" :style="{backgroundColor : colors.hex}">
                             <img :src="backgroundImage" class="h-100 w-100" v-if="backgroundImage">
                 <drr
                 :x="clipartDesign.x"
@@ -81,7 +81,7 @@
                                 <li class="list-group-item">
                                     <div class="row">
                                             <div class="col-md-4 pt-4 cursor-pointer"><span @click="selected_fastener = 'Jewelers'"><img class="fastener-img border p-1" :class="{'selected_fastener': 'Jewelers'== selected_fastener}" src="/fasteners/Jeweler_s Pin.png">Jewelers Pin</span></div>
-                                            <div class="col-md-4 pt-4 cursor-pointer"><span @click="selected_fastener = 'Magnet'"><img class="fastener-img border p-1" :class="{'selected_fastener': 'Magnet'== selected_fastener}" src="/fasteners/Magnet.jpg">Magnet.jpg</span></div>
+                                            <div class="col-md-4 pt-4 cursor-pointer"><span @click="selected_fastener = 'Magnet'"><img class="fastener-img border p-1" :class="{'selected_fastener': 'Magnet'== selected_fastener}" src="/fasteners/Magnet.jpg">Magnet</span></div>
                                             <div class="col-md-4 pt-4 cursor-pointer"><span @click="selected_fastener = 'Pin'"><img class="fastener-img border p-1" :class="{'selected_fastener': 'Pin'== selected_fastener}" src="/fasteners/Pin.jpg">Pin</span></div>
                                             <div class="col-md-4 pt-4 cursor-pointer"><span @click="selected_fastener = 'SWBD'"><img class="fastener-img border p-1" :class="{'selected_fastener': 'SWBD'== selected_fastener}" src="/fasteners/SWBD.jpg">SWBD</span></div>
                                             <div class="col-md-4 pt-4 cursor-pointer"><span @click="selected_fastener = 'Swivel'" ><img class="fastener-img border p-1" :class="{'selected_fastener': 'Swivel'== selected_fastener}" src="/fasteners/Swivel Bulldog.png">Swivel Bulldog</span></div>
@@ -189,9 +189,9 @@
                                     <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#MATERIAL" role="tab" aria-controls="home" aria-selected="true">MATERIAL</a>
                                     </li>
-                                    <!-- <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">COLORS</a>
-                                    </li>-->
+                                    <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#colors" role="tab" aria-controls="profile" aria-selected="false">COLORS</a>
+                                    </li>
                                     <li class="nav-item">
                                     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#custom" role="tab" aria-controls="contact" aria-selected="false">CUSTOM</a>
                                     </li> 
@@ -205,6 +205,11 @@
                                             <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Gold-Metallic/5.png'"><img class="border" src="/background/Material/Gold-Metallic/5-thumb.png">Gold Metallic</span></div>
                                             <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Silver-Metallic/6.png'"><img class="border" src="/background/Material/Silver-Metallic/6-thumb.png">Silver Metallic</span></div>
                                             <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Wood-Grain/11.png'"><img  class="border" src="/background/Material/Wood-Grain/11-thumb.png">Wood Grain</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="colors" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                           <photoshop-picker v-model="colors" class="color-picker-custom mt-2" @input="colorChanged" />
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="custom" role="tabpanel" aria-labelledby="profile-tab">
@@ -236,12 +241,13 @@
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 import drr from '@minogin/vue-drag-resize-rotate'
-
+import { Photoshop } from 'vue-color'
 
 export default {
 //   name: 'about-us',
     components: {
-    drr
+    drr,
+    'photoshop-picker': Photoshop
   },
   mounted() {
     console.log("This is about component");
@@ -267,6 +273,14 @@ export default {
                     selected:false
                 }
         ],
+        colors:{
+            hex: '#FFFFFF',
+            hex8: '#194D33A8',
+            hsl: { h: 150, s: 0.5, l: 0.2, a: 1 },
+            hsv: { h: 150, s: 0.66, v: 0.30, a: 1 },
+            rgba: { r: 25, g: 77, b: 51, a: 1 },
+            a: 1
+        },
         clipartDesigns:[
                 // {
                 //     x:100,
@@ -335,6 +349,10 @@ export default {
                 item.selected=false;
           });
           console.info('this.textDesigns',this.textDesigns);
+      },
+      colorChanged(){
+          console.info('this.color',this.colors);
+          this.backgroundImage="";
       },
       selectItemClipart(index){
         //   console.info('index',index);
@@ -529,5 +547,8 @@ export default {
 }
 .selected_fastener{
     border: 2px solid blue !important;
+}
+.color-picker-custom{
+    width: 100%;
 }
         </style>
