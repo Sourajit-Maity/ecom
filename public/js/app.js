@@ -14216,6 +14216,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 
@@ -14244,7 +14261,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         font: "font-fnt2",
         fontStyle: "",
         fontSize: "font-size35",
-        fontColor: "",
+        fontColor: "#000000",
         selected: false
       }],
       colors: {
@@ -14289,7 +14306,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         background: false,
         border: false,
         textOptions: false,
-        fastener: false
+        fastener: false,
+        logoClip: false
       },
       output: null,
       shapeDefaultClass: 'rectangle1-3',
@@ -14368,9 +14386,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         'font-size20': 'font-size20' == this.textDesigns[index].fontSize,
         'font-size35': 'font-size35' == this.textDesigns[index].fontSize,
         'font-size50': 'font-size50' == this.textDesigns[index].fontSize,
-        'font-coloRed': 'font-coloRed' == this.textDesigns[index].fontColor,
-        'font-colorGreen': 'font-colorGreen' == this.textDesigns[index].fontColor,
-        'font-colorBlue': 'font-colorBlue' == this.textDesigns[index].fontColor,
+        // 'font-coloRed': 'font-coloRed'==this.textDesigns[index].fontColor,
+        // 'font-colorGreen': 'font-colorGreen'==this.textDesigns[index].fontColor,
+        // 'font-colorBlue': 'font-colorBlue'==this.textDesigns[index].fontColor,
         'font-fnt2': 'font-fnt2' == this.textDesigns[index].font,
         'font-fnt4': 'font-fnt4' == this.textDesigns[index].font,
         'font-fnt28': 'font-fnt28' == this.textDesigns[index].font,
@@ -14477,17 +14495,7 @@ _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_3__.library.add(_fort
 Vue.component('font-awesome-icon', _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_4__.FontAwesomeIcon);
 var app = new Vue({
   el: '#app'
-}); // import { createInertiaApp } from '@inertiajs/inertia-vue'
-// import { InertiaProgress } from '@inertiajs/progress'
-// InertiaProgress.init()
-// createInertiaApp({
-//   resolve: name => import(`./Pages/${name}`),
-//   setup({ el, app, props }) {
-//     new Vue({
-//       render: h => h(app, props),
-//     }).$mount(el)
-//   },
-// })
+});
 
 /***/ }),
 
@@ -19017,7 +19025,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.container[data-v-5fe4438c]{\n            margin-top: 9%;\n            margin-bottom: 6%;\n}\n.shadow[data-v-5fe4438c] {\n            box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\n            width: 566px;\n            border-radius: 30px;\n            overflow: hidden;\n            position: relative;\n}\n.rectangle1-3[data-v-5fe4438c] {\n            height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\n            height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\n            height: 244px;\n            border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\n            height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\n                font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\n                font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\n                color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\n                color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\n            color: blue;\n}\n.no-border[data-v-5fe4438c]{\n            border: none;\n}\n.gold-border[data-v-5fe4438c]{\n                border: 9px solid #ffed4a;\n}\n.silver-border[data-v-5fe4438c]{\n                border: 9px solid #b8b7b2;\n}\n.black-border[data-v-5fe4438c]{\n                border: 9px solid #050505;\n}\n.rose-border[data-v-5fe4438c]{\n                border: 9px solid #c07b86;\n}\n.selected-material-box[data-v-5fe4438c]{\n            border: 3px solid #3a00ff !important;\n}\n.cursor-pointer[data-v-5fe4438c]{\n            cursor:pointer;\n}\n.custom-background-img[data-v-5fe4438c]{\n            max-height: 400px;\n            overflow: scroll;\n            overflow-x: hidden;\n}\n.font-fnt2[data-v-5fe4438c]{\n    font-family:Arial;\n}\n.font-fnt4[data-v-5fe4438c]{\n    font-family:serif;\n}\n.font-fnt28[data-v-5fe4438c]{\n    font-family:monospace;\n}\n.font-fnt5[data-v-5fe4438c]{\n    font-family:cursive;\n}\n.font-fnt6[data-v-5fe4438c]{\n    font-family:fantasy;\n}\n.clipart-custom[data-v-5fe4438c]{\n    max-height: 307px;\n    overflow-y: scroll;\n}\n.fastener-img[data-v-5fe4438c] {\n    width: 100px;\n    height: 60px;\n}\n.selected_fastener[data-v-5fe4438c]{\n    border: 2px solid blue !important;\n}\n.color-picker-custom[data-v-5fe4438c]{\n    width: 100%;\n}\n        ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.container[data-v-5fe4438c]{\n            margin-top: 9%;\n            margin-bottom: 6%;\n}\n.shadow[data-v-5fe4438c] {\n            box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\n            width: 566px;\n            border-radius: 30px;\n            overflow: hidden;\n            position: relative;\n}\n.rectangle1-3[data-v-5fe4438c] {\n            height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\n            height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\n            height: 244px;\n            border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\n            height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\n                font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\n                font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\n                color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\n                color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\n            color: blue;\n}\n.no-border[data-v-5fe4438c]{\n            border: none;\n}\n.gold-border[data-v-5fe4438c]{\n                border: 9px solid #ffed4a;\n}\n.silver-border[data-v-5fe4438c]{\n                border: 9px solid #b8b7b2;\n}\n.black-border[data-v-5fe4438c]{\n                border: 9px solid #050505;\n}\n.rose-border[data-v-5fe4438c]{\n                border: 9px solid #c07b86;\n}\n.selected-material-box[data-v-5fe4438c]{\n            border: 3px solid #3a00ff !important;\n}\n.cursor-pointer[data-v-5fe4438c]{\n            cursor:pointer;\n}\n.custom-background-img[data-v-5fe4438c]{\n            max-height: 400px;\n            overflow: scroll;\n            overflow-x: hidden;\n}\n.font-fnt2[data-v-5fe4438c]{\n    font-family:Arial;\n}\n.font-fnt4[data-v-5fe4438c]{\n    font-family:serif;\n}\n.font-fnt28[data-v-5fe4438c]{\n    font-family:monospace;\n}\n.font-fnt5[data-v-5fe4438c]{\n    font-family:cursive;\n}\n.font-fnt6[data-v-5fe4438c]{\n    font-family:fantasy;\n}\n.clipart-custom[data-v-5fe4438c]{\n    max-height: 307px;\n    overflow-y: scroll;\n}\n.fastener-img[data-v-5fe4438c] {\n    width: 100px;\n    height: 60px;\n}\n.selected_fastener[data-v-5fe4438c]{\n    border: 2px solid blue !important;\n}\n.color-picker-custom[data-v-5fe4438c]{\n    width: 100%;\n}\n.color-row span[data-v-5fe4438c]{\n    width: 22px;\n    height: 22px;\n    display: inline-block;\n    background: red;\n    border-radius: 100%;\n    border: 2px solid white;\n    box-shadow: 0 0 0px 1px initial;\n    margin: 7px;\n    cursor: pointer;\n}\n.color-row span.active[data-v-5fe4438c]{\n    box-shadow: 0 0 0px 2px #1491d0;\n}\n        ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -52268,7 +52276,8 @@ var render = function() {
                           "span",
                           {
                             class: _vm.getCustomDesignClass(index),
-                            staticStyle: { width: "100%", height: "100%" }
+                            staticStyle: { width: "100%", height: "100%" },
+                            style: { color: textDesign.fontColor }
                           },
                           [_vm._v(_vm._s(textDesign.text))]
                         )
@@ -52856,68 +52865,214 @@ var render = function() {
                           [_vm._v("Color")]
                         ),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-9" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontColor,
-                                  expression:
-                                    "textDesigns[selectedTextBoxIndex].fontColor"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: { id: "inputState" },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.$set(
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex],
-                                    "fontColor",
-                                    $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  )
-                                }
-                              }
+                        _c("div", { staticClass: "col-sm-9 color-row" }, [
+                          _c("span", {
+                            staticClass: "colr-000000",
+                            class: {
+                              active:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontColor == "#000000"
                             },
-                            [
-                              _c("option", { attrs: { value: "" } }, [
-                                _vm._v("Black")
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "option",
-                                { attrs: { value: "font-coloRed" } },
-                                [_vm._v("Red")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "option",
-                                { attrs: { value: "font-colorGreen" } },
-                                [_vm._v("Green")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "option",
-                                { attrs: { value: "font-colorBlue" } },
-                                [_vm._v("Blue")]
-                              )
-                            ]
-                          )
+                            staticStyle: { background: "#000000" },
+                            attrs: { id: "colr" },
+                            on: {
+                              click: function($event) {
+                                _vm.textDesigns[
+                                  _vm.selectedTextBoxIndex
+                                ].fontColor = "#000000"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", {
+                            staticClass: "colr-ffffff",
+                            class: {
+                              active:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontColor == "#ffffff"
+                            },
+                            staticStyle: {
+                              background: "#ffffff",
+                              "border-color": "#ccc"
+                            },
+                            on: {
+                              click: function($event) {
+                                _vm.textDesigns[
+                                  _vm.selectedTextBoxIndex
+                                ].fontColor = "#ffffff"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", {
+                            staticClass: "colr-ff0000",
+                            class: {
+                              active:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontColor == "#ff0000"
+                            },
+                            staticStyle: { background: "#ff0000" },
+                            on: {
+                              click: function($event) {
+                                _vm.textDesigns[
+                                  _vm.selectedTextBoxIndex
+                                ].fontColor = "#ff0000"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", {
+                            staticClass: "colr-0000ff",
+                            class: {
+                              active:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontColor == "#0000FF"
+                            },
+                            staticStyle: { background: "#0000FF" },
+                            on: {
+                              click: function($event) {
+                                _vm.textDesigns[
+                                  _vm.selectedTextBoxIndex
+                                ].fontColor = "#0000FF"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", {
+                            staticClass: "colr-008000",
+                            class: {
+                              active:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontColor == "#008000"
+                            },
+                            staticStyle: { background: "#008000" },
+                            on: {
+                              click: function($event) {
+                                _vm.textDesigns[
+                                  _vm.selectedTextBoxIndex
+                                ].fontColor = "#008000"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", {
+                            staticClass: "colr-ffa500",
+                            class: {
+                              active:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontColor == "#FFA500"
+                            },
+                            staticStyle: { background: "#FFA500" },
+                            on: {
+                              click: function($event) {
+                                _vm.textDesigns[
+                                  _vm.selectedTextBoxIndex
+                                ].fontColor = "#FFA500"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", {
+                            staticClass: "colr-ff921d",
+                            class: {
+                              active:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontColor == "#ff921d"
+                            },
+                            staticStyle: { background: "#ff921d" },
+                            on: {
+                              click: function($event) {
+                                _vm.textDesigns[
+                                  _vm.selectedTextBoxIndex
+                                ].fontColor = "#ff921d"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", {
+                            staticClass: "colr-2ee6b4",
+                            class: {
+                              active:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontColor == "#2ee6b4"
+                            },
+                            staticStyle: { background: "#2ee6b4" },
+                            on: {
+                              click: function($event) {
+                                _vm.textDesigns[
+                                  _vm.selectedTextBoxIndex
+                                ].fontColor = "#2ee6b4"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", {
+                            staticClass: "colr-547ce1",
+                            class: {
+                              active:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontColor == "#547ce1"
+                            },
+                            staticStyle: { background: "#547ce1" },
+                            on: {
+                              click: function($event) {
+                                _vm.textDesigns[
+                                  _vm.selectedTextBoxIndex
+                                ].fontColor = "#547ce1"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", {
+                            staticClass: "colr-51a3f0",
+                            class: {
+                              active:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontColor == "#51a3f0"
+                            },
+                            staticStyle: { background: "#51a3f0" },
+                            on: {
+                              click: function($event) {
+                                _vm.textDesigns[
+                                  _vm.selectedTextBoxIndex
+                                ].fontColor = "#51a3f0"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", {
+                            staticClass: "colr-5a5af5",
+                            class: {
+                              active:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontColor == "#5a5af5"
+                            },
+                            staticStyle: { background: "#5a5af5" },
+                            on: {
+                              click: function($event) {
+                                _vm.textDesigns[
+                                  _vm.selectedTextBoxIndex
+                                ].fontColor = "#5a5af5"
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", {
+                            staticClass: "colr-ff00f0",
+                            class: {
+                              active:
+                                _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                  .fontColor == "#ff00f0"
+                            },
+                            staticStyle: { background: "#ff00f0" },
+                            on: {
+                              click: function($event) {
+                                _vm.textDesigns[
+                                  _vm.selectedTextBoxIndex
+                                ].fontColor = "#ff00f0"
+                              }
+                            }
+                          })
                         ])
                       ]),
                       _vm._v(" "),

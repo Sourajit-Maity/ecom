@@ -52,7 +52,7 @@
                 @select="selectItem(index)"
                 v-for="(textDesign,index) in textDesigns" :key="index"
                 >
-                        <span style="width: 100%; height: 100%" v-bind:class="getCustomDesignClass(index)">{{textDesign.text}}</span>
+                        <span style="width: 100%; height: 100%" v-bind:class="getCustomDesignClass(index)" :style="{color: textDesign.fontColor}">{{textDesign.text}}</span>
                 </drr>
 
                     </div>
@@ -148,7 +148,24 @@
                                      </select>
                                     </div>
                                 </div>
-                                 <div class="form-group row">
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label">Color</label>
+                                    <div class="col-sm-9 color-row">
+                                        <span id="colr" class="colr-000000" style="background: #000000;" :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#000000' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#000000'"></span>
+                                        <span class="colr-ffffff" style="background: #ffffff;border-color: #ccc"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#ffffff' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#ffffff'"></span>
+                                        <span class="colr-ff0000" style="background: #ff0000;"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#ff0000' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#ff0000'"></span>
+                                        <span class="colr-0000ff" style="background: #0000FF;"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#0000FF' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#0000FF'"></span>
+                                        <span class="colr-008000" style="background: #008000"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#008000' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#008000'"></span>
+                                        <span class="colr-ffa500" style="background: #FFA500"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#FFA500' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#FFA500'"></span>
+                                        <span class="colr-ff921d" style="background: #ff921d"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#ff921d' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#ff921d'"></span>
+                                        <span class="colr-2ee6b4" style="background: #2ee6b4"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#2ee6b4' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#2ee6b4'"></span>
+                                        <span class="colr-547ce1" style="background: #547ce1"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#547ce1' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#547ce1'"></span>
+                                        <span class="colr-51a3f0" style="background: #51a3f0"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#51a3f0' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#51a3f0'"></span>
+                                        <span class="colr-5a5af5" style="background: #5a5af5"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#5a5af5' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#5a5af5'"></span>
+                                        <span class="colr-ff00f0" style="background: #ff00f0"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#ff00f0' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#ff00f0'"></span>
+                                    </div>
+                                </div>
+                                 <!-- <div class="form-group row">
                                     <label for="inputPassword" class="col-sm-3 col-form-label">Color</label>
                                     <div class="col-sm-9">
                                      <select id="inputState" class="form-control" v-model="textDesigns[selectedTextBoxIndex].fontColor">
@@ -158,7 +175,7 @@
                                         <option value="font-colorBlue">Blue</option>
                                      </select>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
@@ -269,7 +286,7 @@ export default {
                     font:"font-fnt2",
                     fontStyle: "",
                     fontSize: "font-size35",
-                    fontColor: "",
+                    fontColor: "#000000",
                     selected:false
                 }
         ],
@@ -301,7 +318,8 @@ export default {
                 background:false,
                 border:false,
                 textOptions:false,
-                fastener:false
+                fastener:false,
+                logoClip:false
             },
             output: null,
             shapeDefaultClass: 'rectangle1-3',
@@ -387,9 +405,9 @@ export default {
             'font-size20': 'font-size20'==this.textDesigns[index].fontSize,
             'font-size35': 'font-size35'==this.textDesigns[index].fontSize,
             'font-size50': 'font-size50'==this.textDesigns[index].fontSize,
-            'font-coloRed': 'font-coloRed'==this.textDesigns[index].fontColor,
-            'font-colorGreen': 'font-colorGreen'==this.textDesigns[index].fontColor,
-            'font-colorBlue': 'font-colorBlue'==this.textDesigns[index].fontColor,
+            // 'font-coloRed': 'font-coloRed'==this.textDesigns[index].fontColor,
+            // 'font-colorGreen': 'font-colorGreen'==this.textDesigns[index].fontColor,
+            // 'font-colorBlue': 'font-colorBlue'==this.textDesigns[index].fontColor,
             'font-fnt2'   : 'font-fnt2'  == this.textDesigns[index].font,
             'font-fnt4'  :  'font-fnt4' == this.textDesigns[index].font,
             'font-fnt28'  : 'font-fnt28' == this.textDesigns[index].font,
@@ -550,5 +568,19 @@ export default {
 }
 .color-picker-custom{
     width: 100%;
+}
+.color-row span{
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background: red;
+    border-radius: 100%;
+    border: 2px solid white;
+    box-shadow: 0 0 0px 1px initial;
+    margin: 7px;
+    cursor: pointer;
+}
+.color-row span.active{
+    box-shadow: 0 0 0px 2px #1491d0;
 }
         </style>
