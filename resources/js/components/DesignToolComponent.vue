@@ -57,6 +57,12 @@
 
                     </div>
             </div>
+             <div class="col-md-12  mt-5" v-if="output">
+                        <div>
+                            <div style="text-align: center;font-size: 25px;padding: 5px;margin-left: -15px;">Image Preview</div>
+                            <img :src="output" class="w-100">
+                         </div>
+             </div>
             </div>
             </div>
             <div class="col-md-5">
@@ -239,11 +245,12 @@
                              </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                         <img :src="output">
-                    </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-lg btn-success  btn-block mt-2" style="text-transform: uppercase;"  @click="printThis">Finished Designing</button>
+                    </div>
+            </div>
             </div>
             <modal name="clipart-modal" :adaptive="true" :draggable="true">
                 <div class="row p-4 clipart-custom">

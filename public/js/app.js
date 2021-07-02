@@ -14233,6 +14233,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 
@@ -52287,7 +52294,31 @@ var render = function() {
                 ],
                 2
               )
-            ])
+            ]),
+            _vm._v(" "),
+            _vm.output
+              ? _c("div", { staticClass: "col-md-12  mt-5" }, [
+                  _c("div", [
+                    _c(
+                      "div",
+                      {
+                        staticStyle: {
+                          "text-align": "center",
+                          "font-size": "25px",
+                          padding: "5px",
+                          "margin-left": "-15px"
+                        }
+                      },
+                      [_vm._v("Image Preview")]
+                    ),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "w-100",
+                      attrs: { src: _vm.output }
+                    })
+                  ])
+                ])
+              : _vm._e()
           ])
         ]),
         _vm._v(" "),
@@ -53516,10 +53547,20 @@ var render = function() {
                     ])
                   ])
                 : _vm._e()
-            ]),
-            _vm._v(" "),
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12" }, [
-              _c("img", { attrs: { src: _vm.output } })
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-lg btn-success  btn-block mt-2",
+                  staticStyle: { "text-transform": "uppercase" },
+                  on: { click: _vm.printThis }
+                },
+                [_vm._v("Finished Designing")]
+              )
             ])
           ])
         ]),
