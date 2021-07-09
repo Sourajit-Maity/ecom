@@ -14240,6 +14240,128 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 
@@ -14314,13 +14436,44 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         border: false,
         textOptions: false,
         fastener: false,
-        logoClip: false
+        logoClip: false,
+        global_items: {
+          designYourBadge: true,
+          addNames: false,
+          completeOrder: false,
+          addOrEditNames: false
+        }
       },
       output: null,
       shapeDefaultClass: 'rectangle1-3',
       borderDefaultClass: 'no-border',
       backgroundImage: "",
-      selected_fastener: ""
+      selected_fastener: "",
+      price: [{
+        quantity: 1 - 5,
+        price: 40
+      }, {
+        quantity: 12,
+        price: 40
+      }, {
+        quantity: 12,
+        price: 40
+      }, {
+        quantity: 12,
+        price: 40
+      }, {
+        quantity: 12,
+        price: 40
+      }, {
+        quantity: 12,
+        price: 40
+      }, {
+        quantity: 12,
+        price: 40
+      }, {
+        quantity: 12,
+        price: 40
+      }]
     };
   },
   computed: {
@@ -14365,6 +14518,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       console.info('this.color', this.colors);
       this.backgroundImage = "";
     },
+    gobackAndEdit: function gobackAndEdit() {
+      this.selectGlobalMenuItems('designYourBadge');
+    },
     selectItemClipart: function selectItemClipart(index) {
       var _this2 = this;
 
@@ -14374,6 +14530,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.clipartDesigns.forEach(function (item, index_clipartDesign) {
         if (index_clipartDesign == _this2.selectedClipartIndex) item.selected = true;else item.selected = false;
       }); //   console.info('this.textDesigns',this.textDesigns);
+    },
+    selectGlobalMenuItems: function selectGlobalMenuItems(menuName) {
+      this.menu.global_items.designYourBadge = 'designYourBadge' == menuName;
+      this.menu.global_items.addNames = 'addNames' == menuName;
+      this.menu.global_items.completeOrder = 'completeOrder' == menuName;
     },
     selectDesignbar: function selectDesignbar(menuName) {
       this.menu.sizeShape = 'sizeShape' == menuName;
@@ -14404,6 +14565,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       };
     },
     addText: function addText() {
+      if (this.textDesigns.length == 4) return;
       this.addTextIndex++;
       this.textDesigns.push({
         x: 300 + this.addTextIndex * 10,
@@ -14454,7 +14616,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 5:
                 _this3.output = _context.sent;
 
-              case 6:
+                _this3.selectGlobalMenuItems('addNames');
+
+              case 7:
               case "end":
                 return _context.stop();
             }
@@ -19032,7 +19196,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.container[data-v-5fe4438c]{\n            margin-top: 9%;\n            margin-bottom: 6%;\n}\n.shadow[data-v-5fe4438c] {\n            box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\n            width: 566px;\n            border-radius: 30px;\n            overflow: hidden;\n            position: relative;\n}\n.rectangle1-3[data-v-5fe4438c] {\n            height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\n            height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\n            height: 244px;\n            border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\n            height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\n                font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\n                font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\n                color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\n                color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\n            color: blue;\n}\n.no-border[data-v-5fe4438c]{\n            border: none;\n}\n.gold-border[data-v-5fe4438c]{\n                border: 9px solid #ffed4a;\n}\n.silver-border[data-v-5fe4438c]{\n                border: 9px solid #b8b7b2;\n}\n.black-border[data-v-5fe4438c]{\n                border: 9px solid #050505;\n}\n.rose-border[data-v-5fe4438c]{\n                border: 9px solid #c07b86;\n}\n.selected-material-box[data-v-5fe4438c]{\n            border: 3px solid #3a00ff !important;\n}\n.cursor-pointer[data-v-5fe4438c]{\n            cursor:pointer;\n}\n.custom-background-img[data-v-5fe4438c]{\n            max-height: 400px;\n            overflow: scroll;\n            overflow-x: hidden;\n}\n.font-fnt2[data-v-5fe4438c]{\n    font-family:Arial;\n}\n.font-fnt4[data-v-5fe4438c]{\n    font-family:serif;\n}\n.font-fnt28[data-v-5fe4438c]{\n    font-family:monospace;\n}\n.font-fnt5[data-v-5fe4438c]{\n    font-family:cursive;\n}\n.font-fnt6[data-v-5fe4438c]{\n    font-family:fantasy;\n}\n.clipart-custom[data-v-5fe4438c]{\n    max-height: 307px;\n    overflow-y: scroll;\n}\n.fastener-img[data-v-5fe4438c] {\n    width: 100px;\n    height: 60px;\n}\n.selected_fastener[data-v-5fe4438c]{\n    border: 2px solid blue !important;\n}\n.color-picker-custom[data-v-5fe4438c]{\n    width: 100%;\n}\n.color-row span[data-v-5fe4438c]{\n    width: 22px;\n    height: 22px;\n    display: inline-block;\n    background: red;\n    border-radius: 100%;\n    border: 2px solid white;\n    box-shadow: 0 0 0px 1px initial;\n    margin: 7px;\n    cursor: pointer;\n}\n.color-row span.active[data-v-5fe4438c]{\n    box-shadow: 0 0 0px 2px #1491d0;\n}\n        ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.container[data-v-5fe4438c]{\n            margin-top: 9%;\n            margin-bottom: 6%;\n}\n.shadow[data-v-5fe4438c] {\n            box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\n            width: 566px;\n            border-radius: 30px;\n            overflow: hidden;\n            position: relative;\n}\n.rectangle1-3[data-v-5fe4438c] {\n            height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\n            height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\n            height: 244px;\n            border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\n            height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\n                font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\n                font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\n                color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\n                color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\n            color: blue;\n}\n.no-border[data-v-5fe4438c]{\n            border: none;\n}\n.gold-border[data-v-5fe4438c]{\n                border: 9px solid #ffed4a;\n}\n.silver-border[data-v-5fe4438c]{\n                border: 9px solid #b8b7b2;\n}\n.black-border[data-v-5fe4438c]{\n                border: 9px solid #050505;\n}\n.rose-border[data-v-5fe4438c]{\n                border: 9px solid #c07b86;\n}\n.selected-material-box[data-v-5fe4438c]{\n            border: 3px solid #3a00ff !important;\n}\n.cursor-pointer[data-v-5fe4438c]{\n            cursor:pointer;\n}\n.custom-background-img[data-v-5fe4438c]{\n            max-height: 400px;\n            overflow: scroll;\n            overflow-x: hidden;\n}\n.font-fnt2[data-v-5fe4438c]{\n    font-family:Arial;\n}\n.font-fnt4[data-v-5fe4438c]{\n    font-family:serif;\n}\n.font-fnt28[data-v-5fe4438c]{\n    font-family:monospace;\n}\n.font-fnt5[data-v-5fe4438c]{\n    font-family:cursive;\n}\n.font-fnt6[data-v-5fe4438c]{\n    font-family:fantasy;\n}\n.clipart-custom[data-v-5fe4438c]{\n    max-height: 307px;\n    overflow-y: scroll;\n}\n.fastener-img[data-v-5fe4438c] {\n    width: 100px;\n    height: 60px;\n}\n.selected_fastener[data-v-5fe4438c]{\n    border: 2px solid blue !important;\n}\n.color-picker-custom[data-v-5fe4438c]{\n    width: 100%;\n}\n.color-row span[data-v-5fe4438c]{\n    width: 22px;\n    height: 22px;\n    display: inline-block;\n    background: red;\n    border-radius: 100%;\n    border: 2px solid white;\n    box-shadow: 0 0 0px 1px initial;\n    margin: 7px;\n    cursor: pointer;\n}\n.color-row span.active[data-v-5fe4438c]{\n    box-shadow: 0 0 0px 2px #1491d0;\n}\n.price[data-v-5fe4438c]{\n    font-size: 30px;\n    font-weight: 600;\n    color: #107fb7;\n    display: table;\n    width: 100% !important;\n    margin-top: 10px;\n}\n.price b[data-v-5fe4438c] {\n    font-size: 30px;\n    font-weight: normal;\n}\n.price-table[data-v-5fe4438c] {\n    width: 100%;\n    height: 124px;\n    margin: 20px 0;\n    border: 0;\n    padding: 0;\n    clear: both;\n}\n.table_wrap[data-v-5fe4438c] {\n    margin-bottom: 15px;\n}\n.title_table[data-v-5fe4438c] {\n    background-color: #f8f8f8;\n    padding: 15px 20px;\n    border: 1px solid #eaeaea;\n}\n.ttl[data-v-5fe4438c] {\n    font-size: 18px;\n    color: #474747;\n    display: inline-block;\n    font-weight: 600;\n}\n.text-imp[data-v-5fe4438c] {\n    float: right;\n}\n.table_wrap .table[data-v-5fe4438c] {\n    margin-bottom: 20px;\n    max-width: 100%;\n    width: 100%;\n    box-shadow: 0px 3px 10px 0px rgb(0 0 0 / 9%);\n}\n.vue-step-wizard[data-v-5fe4438c] {\n    background-color: #f7f8fc;\n    width: 100%;\n    margin: auto;\n    padding: 10px;\n}\n#fieldset-tbl.table[data-v-5fe4438c] {\n    display: inline-table !important;\n    padding: 0 !important;\n    margin-top: 3%;\n}\nelement.style[data-v-5fe4438c] {\n}\n#fieldset-tbl.table > tbody > tr > td[data-v-5fe4438c], #fieldset-tbl.table > tbody > tr > th[data-v-5fe4438c], #fieldset-tbl.table > tfoot > tr > td[data-v-5fe4438c], #fieldset-tbl.table > tfoot > tr > th[data-v-5fe4438c], #fieldset-tbl.table > thead > tr > td[data-v-5fe4438c], #fieldset-tbl.table > thead > tr > th[data-v-5fe4438c] {\n    border-top: 1px solid #ddd;\n    line-height: 1.42857;\n    padding: 8px;\n    border-bottom: none;\n}\n.table th[data-v-5fe4438c], .table td[data-v-5fe4438c] {\n    padding: 10px 0;\n    border-bottom: 1px solid #31A3D9;\n    color: #000;\n}\n.qty[data-v-5fe4438c] {\n    text-align: center;\n    width: 41px;\n    margin-right: 30px;\n    padding: 0;\n}\n#fieldset-tbl .btn .edit[data-v-5fe4438c] {\n    background-color: #ff9a04;\n}\n#fieldset-tbl .btn .remove[data-v-5fe4438c] {\n    background-color: #ff3131;\n    margin-left: 10px;\n}\n#fieldset-tbl .btn .edit[data-v-5fe4438c], #fieldset-tbl .btn .remove[data-v-5fe4438c], #fieldset-tbl .btn .accept[data-v-5fe4438c] {\n    background-image: none !important;\n    background-position: unset !important;\n    color: #fff !important;\n    display: inline;\n    height: auto;\n    padding: 5px 20px;\n    text-indent: 0 !important;\n    vertical-align: middle !important;\n    width: auto !important;\n    margin-right: 0;\n}\n#fieldset-tbl .btn .done[data-v-5fe4438c] {\n    background-color: #A1BB3C;\n}\n#fieldset-tbl.table-bordered[data-v-5fe4438c] {\n    border: 1px solid #ddd;\n}\n/* .vue-step-wizard{\n    width:0px;\n} */\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -52131,1135 +52295,309 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-4" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-lg btn-outline-info  btn-block",
+            class: {
+              "btn-outline-danger": _vm.menu.global_items.designYourBadge
+            },
+            staticStyle: { "text-transform": "uppercase" },
+            attrs: { disabled: !_vm.menu.global_items.designYourBadge }
+          },
+          [_vm._v("DESIGN YOUR BADGE")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-lg btn-outline-info  btn-block",
+            class: { "btn-outline-danger": _vm.menu.global_items.addNames },
+            staticStyle: { "text-transform": "uppercase" },
+            attrs: { disabled: !_vm.menu.global_items.addNames }
+          },
+          [_vm._v("ADD NAMES")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-lg btn-outline-info  btn-block",
+            class: {
+              "btn-outline-danger": _vm.menu.global_items.completeOrder
+            },
+            staticStyle: { "text-transform": "uppercase" },
+            attrs: { disabled: !_vm.menu.global_items.completeOrder },
+            on: {
+              click: function($event) {
+                return _vm.selectGlobalMenuItems("completeOrder")
+              }
+            }
+          },
+          [_vm._v("COMPLETE ORDER")]
+        )
+      ])
+    ]),
+    _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row" },
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.menu.global_items.designYourBadge,
+            expression: "menu.global_items.designYourBadge"
+          }
+        ]
+      },
       [
-        _c("div", { staticClass: "col-md-7" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn mr-2",
-                  class: [_vm.menu.sizeShape ? "btn-danger" : "btn-dark"],
-                  on: {
-                    click: function($event) {
-                      return _vm.selectDesignbar("sizeShape")
-                    }
-                  }
-                },
-                [
-                  _vm._v(
-                    "\r\n                            Size/Shape\r\n                        "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn mr-2",
-                  class: [_vm.menu.background ? "btn-danger" : "btn-dark"],
-                  on: {
-                    click: function($event) {
-                      return _vm.selectDesignbar("background")
-                    }
-                  }
-                },
-                [
-                  _vm._v(
-                    "\r\n                            Background\r\n                        "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn  mr-2",
-                  class: [_vm.menu.border ? "btn-danger" : "btn-dark"],
-                  on: {
-                    click: function($event) {
-                      return _vm.selectDesignbar("border")
-                    }
-                  }
-                },
-                [
-                  _vm._v(
-                    "\r\n                            Frame\r\n                        "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn  mr-2",
-                  class: [_vm.menu.fastener ? "btn-danger" : "btn-dark"],
-                  on: {
-                    click: function($event) {
-                      return _vm.selectDesignbar("fastener")
-                    }
-                  }
-                },
-                [
-                  _vm._v(
-                    "\r\n                            Fastener\r\n                        "
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { ref: "printcontent", staticClass: "col-md-12 mt-4" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "design-area shadow",
-                  class: _vm.getShapeClass,
-                  style: { backgroundColor: _vm.colors.hex }
-                },
-                [
-                  _vm.backgroundImage
-                    ? _c("img", {
-                        staticClass: "h-100 w-100",
-                        attrs: { src: _vm.backgroundImage }
-                      })
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm._l(_vm.clipartDesigns, function(clipartDesign, index) {
-                    return _c(
-                      "drr",
-                      {
-                        key: index,
-                        attrs: {
-                          x: clipartDesign.x,
-                          y: clipartDesign.y,
-                          w: clipartDesign.weight,
-                          h: clipartDesign.height,
-                          angle: clipartDesign.angle,
-                          selected: clipartDesign.selected,
-                          aspectRatio: true,
-                          innerBox: _vm.innerBox,
-                          outerBox: _vm.outerBox
-                        },
-                        on: {
-                          select: function($event) {
-                            return _vm.selectItemClipart(index)
-                          }
+        _c(
+          "div",
+          { staticClass: "row mt-3" },
+          [
+            _c("div", { staticClass: "col-md-7" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn mr-2",
+                      class: [_vm.menu.sizeShape ? "btn-danger" : "btn-dark"],
+                      on: {
+                        click: function($event) {
+                          return _vm.selectDesignbar("sizeShape")
                         }
-                      },
-                      [
-                        _c("img", {
-                          staticStyle: { width: "100%", height: "100%" },
-                          attrs: { src: clipartDesign.img }
-                        })
-                      ]
-                    )
-                  }),
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\r\n                                    Size/Shape\r\n                                "
+                      )
+                    ]
+                  ),
                   _vm._v(" "),
-                  _vm._l(_vm.textDesigns, function(textDesign, index) {
-                    return _c(
-                      "drr",
-                      {
-                        key: index,
-                        attrs: {
-                          x: textDesign.x,
-                          y: textDesign.y,
-                          w: textDesign.weight,
-                          h: textDesign.height,
-                          angle: textDesign.angle,
-                          selected: textDesign.selected,
-                          aspectRatio: true
-                        },
-                        on: {
-                          select: function($event) {
-                            return _vm.selectItem(index)
-                          }
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn mr-2",
+                      class: [_vm.menu.background ? "btn-danger" : "btn-dark"],
+                      on: {
+                        click: function($event) {
+                          return _vm.selectDesignbar("background")
                         }
-                      },
-                      [
-                        _c(
-                          "span",
-                          {
-                            class: _vm.getCustomDesignClass(index),
-                            staticStyle: { width: "100%", height: "100%" },
-                            style: { color: textDesign.fontColor }
-                          },
-                          [_vm._v(_vm._s(textDesign.text))]
-                        )
-                      ]
-                    )
-                  })
-                ],
-                2
-              )
-            ]),
-            _vm._v(" "),
-            _vm.output
-              ? _c("div", { staticClass: "col-md-12  mt-5" }, [
-                  _c("div", [
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\r\n                                    Background\r\n                                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn  mr-2",
+                      class: [_vm.menu.border ? "btn-danger" : "btn-dark"],
+                      on: {
+                        click: function($event) {
+                          return _vm.selectDesignbar("border")
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\r\n                                    Frame\r\n                                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn  mr-2",
+                      class: [_vm.menu.fastener ? "btn-danger" : "btn-dark"],
+                      on: {
+                        click: function($event) {
+                          return _vm.selectDesignbar("fastener")
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\r\n                                    Fastener\r\n                                "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { ref: "printcontent", staticClass: "col-md-12 mt-4" },
+                  [
                     _c(
                       "div",
                       {
-                        staticStyle: {
-                          "text-align": "center",
-                          "font-size": "25px",
-                          padding: "5px",
-                          "margin-left": "-15px"
-                        }
+                        staticClass: "design-area shadow",
+                        class: _vm.getShapeClass,
+                        style: { backgroundColor: _vm.colors.hex }
                       },
-                      [_vm._v("Image Preview")]
-                    ),
-                    _vm._v(" "),
-                    _c("img", {
-                      staticClass: "w-100",
-                      attrs: { src: _vm.output }
-                    })
-                  ])
-                ])
-              : _vm._e()
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-5" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success mr-2",
-                  on: { click: _vm.addText }
-                },
-                [
-                  _vm._v(
-                    "\r\n                            Add Text\r\n                        "
-                  )
-                ]
-              ),
+                      [
+                        _vm.backgroundImage
+                          ? _c("img", {
+                              staticClass: "h-100 w-100",
+                              attrs: { src: _vm.backgroundImage }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm._l(_vm.clipartDesigns, function(
+                          clipartDesign,
+                          index
+                        ) {
+                          return _c(
+                            "drr",
+                            {
+                              key: index,
+                              attrs: {
+                                x: clipartDesign.x,
+                                y: clipartDesign.y,
+                                w: clipartDesign.weight,
+                                h: clipartDesign.height,
+                                angle: clipartDesign.angle,
+                                selected: clipartDesign.selected,
+                                aspectRatio: true,
+                                innerBox: _vm.innerBox,
+                                outerBox: _vm.outerBox
+                              },
+                              on: {
+                                select: function($event) {
+                                  return _vm.selectItemClipart(index)
+                                }
+                              }
+                            },
+                            [
+                              _c("img", {
+                                staticStyle: { width: "100%", height: "100%" },
+                                attrs: { src: clipartDesign.img }
+                              })
+                            ]
+                          )
+                        }),
+                        _vm._v(" "),
+                        _vm._l(_vm.textDesigns, function(textDesign, index) {
+                          return _c(
+                            "drr",
+                            {
+                              key: index,
+                              attrs: {
+                                x: textDesign.x,
+                                y: textDesign.y,
+                                w: textDesign.weight,
+                                h: textDesign.height,
+                                angle: textDesign.angle,
+                                selected: textDesign.selected,
+                                aspectRatio: true
+                              },
+                              on: {
+                                select: function($event) {
+                                  return _vm.selectItem(index)
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "span",
+                                {
+                                  class: _vm.getCustomDesignClass(index),
+                                  staticStyle: {
+                                    width: "100%",
+                                    height: "100%"
+                                  },
+                                  style: { color: textDesign.fontColor }
+                                },
+                                [_vm._v(_vm._s(textDesign.text))]
+                              )
+                            ]
+                          )
+                        })
+                      ],
+                      2
+                    )
+                  ]
+                )
+              ]),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary mr-2",
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.show("clipart-modal")
-                    }
-                  }
-                },
-                [
-                  _vm._v(
-                    "\r\n                            Add Clipart\r\n                        "
+              _c("div", { staticClass: "row mt-5" }, [
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-lg btn-success  btn-block mt-2",
+                      staticStyle: { "text-transform": "uppercase" },
+                      on: { click: _vm.printThis }
+                    },
+                    [_vm._v("Finished Designing")]
                   )
-                ]
-              )
+                ]),
+                _vm._v(" "),
+                _vm._m(0)
+              ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-12" }, [
-              _vm.menu.fastener
-                ? _c("div", { staticClass: "card mt-4" }, [
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "list-group list-group-flush" }, [
-                      _c("li", { staticClass: "list-group-item" }, [
-                        _c("div", { staticClass: "row" }, [
-                          _c(
-                            "div",
-                            { staticClass: "col-md-4 pt-4 cursor-pointer" },
-                            [
-                              _c(
-                                "span",
-                                {
-                                  on: {
-                                    click: function($event) {
-                                      _vm.selected_fastener = "Jewelers"
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "fastener-img border p-1",
-                                    class: {
-                                      selected_fastener:
-                                        "Jewelers" == _vm.selected_fastener
-                                    },
-                                    attrs: {
-                                      src: "/fasteners/Jeweler_s Pin.png"
-                                    }
-                                  }),
-                                  _vm._v("Jewelers Pin")
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-md-4 pt-4 cursor-pointer" },
-                            [
-                              _c(
-                                "span",
-                                {
-                                  on: {
-                                    click: function($event) {
-                                      _vm.selected_fastener = "Magnet"
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "fastener-img border p-1",
-                                    class: {
-                                      selected_fastener:
-                                        "Magnet" == _vm.selected_fastener
-                                    },
-                                    attrs: { src: "/fasteners/Magnet.jpg" }
-                                  }),
-                                  _vm._v("Magnet")
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-md-4 pt-4 cursor-pointer" },
-                            [
-                              _c(
-                                "span",
-                                {
-                                  on: {
-                                    click: function($event) {
-                                      _vm.selected_fastener = "Pin"
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "fastener-img border p-1",
-                                    class: {
-                                      selected_fastener:
-                                        "Pin" == _vm.selected_fastener
-                                    },
-                                    attrs: { src: "/fasteners/Pin.jpg" }
-                                  }),
-                                  _vm._v("Pin")
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-md-4 pt-4 cursor-pointer" },
-                            [
-                              _c(
-                                "span",
-                                {
-                                  on: {
-                                    click: function($event) {
-                                      _vm.selected_fastener = "SWBD"
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "fastener-img border p-1",
-                                    class: {
-                                      selected_fastener:
-                                        "SWBD" == _vm.selected_fastener
-                                    },
-                                    attrs: { src: "/fasteners/SWBD.jpg" }
-                                  }),
-                                  _vm._v("SWBD")
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-md-4 pt-4 cursor-pointer" },
-                            [
-                              _c(
-                                "span",
-                                {
-                                  on: {
-                                    click: function($event) {
-                                      _vm.selected_fastener = "Swivel"
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "fastener-img border p-1",
-                                    class: {
-                                      selected_fastener:
-                                        "Swivel" == _vm.selected_fastener
-                                    },
-                                    attrs: {
-                                      src: "/fasteners/Swivel Bulldog.png"
-                                    }
-                                  }),
-                                  _vm._v("Swivel Bulldog")
-                                ]
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.menu.sizeShape
-                ? _c("div", { staticClass: "card mt-4" }, [
-                    _vm._m(1),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "list-group list-group-flush" }, [
-                      _c("li", { staticClass: "list-group-item" }, [
-                        _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-md-6" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-block mb-2",
-                                class: [
-                                  _vm.shapeDefaultClass == "rectangle1-3"
-                                    ? "btn-danger"
-                                    : "btn-dark"
-                                ],
-                                on: {
-                                  click: function($event) {
-                                    _vm.shapeDefaultClass = "rectangle1-3"
-                                  }
-                                }
-                              },
-                              [_vm._v('1"x3" Rectangle')]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-6" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn  btn-block mb-2",
-                                class: [
-                                  _vm.shapeDefaultClass == "rectangle1-5-3"
-                                    ? "btn-danger"
-                                    : "btn-dark"
-                                ],
-                                on: {
-                                  click: function($event) {
-                                    _vm.shapeDefaultClass = "rectangle1-5-3"
-                                  }
-                                }
-                              },
-                              [_vm._v('1.5"x3" Rectangle')]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-6" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn  btn-block",
-                                class: [
-                                  _vm.shapeDefaultClass == "oval1-3"
-                                    ? "btn-danger"
-                                    : "btn-dark"
-                                ],
-                                on: {
-                                  click: function($event) {
-                                    _vm.shapeDefaultClass = "oval1-3"
-                                  }
-                                }
-                              },
-                              [_vm._v('1"x3" Oval')]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-6" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn  btn-block",
-                                class: [
-                                  _vm.shapeDefaultClass == "rectangle12-3"
-                                    ? "btn-danger"
-                                    : "btn-dark"
-                                ],
-                                on: {
-                                  click: function($event) {
-                                    _vm.shapeDefaultClass = "rectangle12-3"
-                                  }
-                                }
-                              },
-                              [_vm._v('2"x3" Rectangle')]
-                            )
-                          ])
-                        ])
-                      ])
-                    ])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.menu.textOptions
-                ? _c("div", { staticClass: "card mt-4" }, [
-                    _vm._m(2),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("div", { staticClass: "form-group row" }, [
+            _c("div", { staticClass: "col-md-5" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success mr-2",
+                      on: { click: _vm.addText }
+                    },
+                    [
+                      _vm._v(
+                        "\r\n                                    Add Text\r\n                                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary mr-2",
+                      on: {
+                        click: function($event) {
+                          return _vm.$modal.show("clipart-modal")
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\r\n                                    Add Clipart\r\n                                "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-12" }, [
+                  _vm.menu.fastener
+                    ? _c("div", { staticClass: "card mt-4" }, [
+                        _vm._m(1),
+                        _vm._v(" "),
                         _c(
-                          "label",
+                          "ul",
                           {
-                            staticClass: "col-sm-3 col-form-label",
-                            attrs: { for: "inputPassword" }
+                            staticClass:
+                              "list-group list-group-flush ul-custom-height"
                           },
-                          [_vm._v("Your Text")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-9" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.getYourText,
-                                expression: "getYourText"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "text",
-                              id: "inputPassword",
-                              placeholder: "Your Text"
-                            },
-                            domProps: { value: _vm.getYourText },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.getYourText = $event.target.value
-                              }
-                            }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-group row" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "col-sm-3 col-form-label",
-                            attrs: { for: "inputPassword" }
-                          },
-                          [_vm._v("Font")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-9" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .font,
-                                  expression:
-                                    "textDesigns[selectedTextBoxIndex].font"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.$set(
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex],
-                                    "font",
-                                    $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  )
-                                }
-                              }
-                            },
-                            [
-                              _c(
-                                "option",
-                                {
-                                  staticClass: "font-fnt2",
-                                  attrs: { value: "font-fnt2" }
-                                },
-                                [_vm._v("Arial")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "option",
-                                {
-                                  staticClass: "font-fnt4",
-                                  attrs: { value: "font-fnt4" }
-                                },
-                                [_vm._v("Century Gothic")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "option",
-                                {
-                                  staticClass: "font-fnt28",
-                                  attrs: { value: "font-fnt28" }
-                                },
-                                [_vm._v("Century Gothic Bold")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "option",
-                                {
-                                  staticClass: "font-fnt5",
-                                  attrs: { value: "font-fnt5" }
-                                },
-                                [_vm._v("Comic Sans MS")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "option",
-                                {
-                                  staticClass: "font-fnt6",
-                                  attrs: { value: "font-fnt6" }
-                                },
-                                [_vm._v("Courier New")]
-                              )
-                            ]
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-group row" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "col-sm-3 col-form-label",
-                            attrs: { for: "inputPassword" }
-                          },
-                          [_vm._v("Font Style")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-9" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontStyle,
-                                  expression:
-                                    "textDesigns[selectedTextBoxIndex].fontStyle"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: { id: "inputState" },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.$set(
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex],
-                                    "fontStyle",
-                                    $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  )
-                                }
-                              }
-                            },
-                            [
-                              _c("option", { attrs: { value: "" } }, [
-                                _vm._v("Regular")
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "option",
-                                { attrs: { value: "font-weight-bold" } },
-                                [_vm._v("Bold")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "option",
-                                { attrs: { value: "font-italic" } },
-                                [_vm._v("Italic")]
-                              )
-                            ]
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-group row" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "col-sm-3 col-form-label",
-                            attrs: { for: "inputPassword" }
-                          },
-                          [_vm._v("Font Size")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-9" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontSize,
-                                  expression:
-                                    "textDesigns[selectedTextBoxIndex].fontSize"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: { id: "inputState" },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.$set(
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex],
-                                    "fontSize",
-                                    $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  )
-                                }
-                              }
-                            },
-                            [
-                              _c(
-                                "option",
-                                { attrs: { value: "font-size20" } },
-                                [_vm._v("10")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "option",
-                                { attrs: { value: "font-size35" } },
-                                [_vm._v("20")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "option",
-                                { attrs: { value: "font-size50" } },
-                                [_vm._v("30")]
-                              )
-                            ]
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-group row" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "col-sm-3 col-form-label",
-                            attrs: { for: "inputPassword" }
-                          },
-                          [_vm._v("Color")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-9 color-row" }, [
-                          _c("span", {
-                            staticClass: "colr-000000",
-                            class: {
-                              active:
-                                _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                  .fontColor == "#000000"
-                            },
-                            staticStyle: { background: "#000000" },
-                            attrs: { id: "colr" },
-                            on: {
-                              click: function($event) {
-                                _vm.textDesigns[
-                                  _vm.selectedTextBoxIndex
-                                ].fontColor = "#000000"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", {
-                            staticClass: "colr-ffffff",
-                            class: {
-                              active:
-                                _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                  .fontColor == "#ffffff"
-                            },
-                            staticStyle: {
-                              background: "#ffffff",
-                              "border-color": "#ccc"
-                            },
-                            on: {
-                              click: function($event) {
-                                _vm.textDesigns[
-                                  _vm.selectedTextBoxIndex
-                                ].fontColor = "#ffffff"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", {
-                            staticClass: "colr-ff0000",
-                            class: {
-                              active:
-                                _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                  .fontColor == "#ff0000"
-                            },
-                            staticStyle: { background: "#ff0000" },
-                            on: {
-                              click: function($event) {
-                                _vm.textDesigns[
-                                  _vm.selectedTextBoxIndex
-                                ].fontColor = "#ff0000"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", {
-                            staticClass: "colr-0000ff",
-                            class: {
-                              active:
-                                _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                  .fontColor == "#0000FF"
-                            },
-                            staticStyle: { background: "#0000FF" },
-                            on: {
-                              click: function($event) {
-                                _vm.textDesigns[
-                                  _vm.selectedTextBoxIndex
-                                ].fontColor = "#0000FF"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", {
-                            staticClass: "colr-008000",
-                            class: {
-                              active:
-                                _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                  .fontColor == "#008000"
-                            },
-                            staticStyle: { background: "#008000" },
-                            on: {
-                              click: function($event) {
-                                _vm.textDesigns[
-                                  _vm.selectedTextBoxIndex
-                                ].fontColor = "#008000"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", {
-                            staticClass: "colr-ffa500",
-                            class: {
-                              active:
-                                _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                  .fontColor == "#FFA500"
-                            },
-                            staticStyle: { background: "#FFA500" },
-                            on: {
-                              click: function($event) {
-                                _vm.textDesigns[
-                                  _vm.selectedTextBoxIndex
-                                ].fontColor = "#FFA500"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", {
-                            staticClass: "colr-ff921d",
-                            class: {
-                              active:
-                                _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                  .fontColor == "#ff921d"
-                            },
-                            staticStyle: { background: "#ff921d" },
-                            on: {
-                              click: function($event) {
-                                _vm.textDesigns[
-                                  _vm.selectedTextBoxIndex
-                                ].fontColor = "#ff921d"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", {
-                            staticClass: "colr-2ee6b4",
-                            class: {
-                              active:
-                                _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                  .fontColor == "#2ee6b4"
-                            },
-                            staticStyle: { background: "#2ee6b4" },
-                            on: {
-                              click: function($event) {
-                                _vm.textDesigns[
-                                  _vm.selectedTextBoxIndex
-                                ].fontColor = "#2ee6b4"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", {
-                            staticClass: "colr-547ce1",
-                            class: {
-                              active:
-                                _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                  .fontColor == "#547ce1"
-                            },
-                            staticStyle: { background: "#547ce1" },
-                            on: {
-                              click: function($event) {
-                                _vm.textDesigns[
-                                  _vm.selectedTextBoxIndex
-                                ].fontColor = "#547ce1"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", {
-                            staticClass: "colr-51a3f0",
-                            class: {
-                              active:
-                                _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                  .fontColor == "#51a3f0"
-                            },
-                            staticStyle: { background: "#51a3f0" },
-                            on: {
-                              click: function($event) {
-                                _vm.textDesigns[
-                                  _vm.selectedTextBoxIndex
-                                ].fontColor = "#51a3f0"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", {
-                            staticClass: "colr-5a5af5",
-                            class: {
-                              active:
-                                _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                  .fontColor == "#5a5af5"
-                            },
-                            staticStyle: { background: "#5a5af5" },
-                            on: {
-                              click: function($event) {
-                                _vm.textDesigns[
-                                  _vm.selectedTextBoxIndex
-                                ].fontColor = "#5a5af5"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", {
-                            staticClass: "colr-ff00f0",
-                            class: {
-                              active:
-                                _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                  .fontColor == "#ff00f0"
-                            },
-                            staticStyle: { background: "#ff00f0" },
-                            on: {
-                              click: function($event) {
-                                _vm.textDesigns[
-                                  _vm.selectedTextBoxIndex
-                                ].fontColor = "#ff00f0"
-                              }
-                            }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-3" }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-9" }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-danger",
-                              on: { click: _vm.deleteText }
-                            },
-                            [_vm._v("Delete Text")]
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.menu.border
-                ? _c("div", { staticClass: "card mt-4" }, [
-                    _vm._m(3),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "list-group list-group-flush" }, [
-                      _c("li", { staticClass: "list-group-item" }, [
-                        _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-md-6" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-block mb-2",
-                                class: [
-                                  _vm.borderDefaultClass == "gold-border"
-                                    ? "btn-danger"
-                                    : "btn-dark"
-                                ],
-                                on: {
-                                  click: function($event) {
-                                    _vm.borderDefaultClass = "gold-border"
-                                  }
-                                }
-                              },
-                              [_vm._v("Gold Frame")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-6" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn  btn-block mb-2",
-                                class: [
-                                  _vm.borderDefaultClass == "silver-border"
-                                    ? "btn-danger"
-                                    : "btn-dark"
-                                ],
-                                on: {
-                                  click: function($event) {
-                                    _vm.borderDefaultClass = "silver-border"
-                                  }
-                                }
-                              },
-                              [_vm._v("Silver Frame")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-6" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn  btn-block mb-2",
-                                class: [
-                                  _vm.borderDefaultClass == "black-border"
-                                    ? "btn-danger"
-                                    : "btn-dark"
-                                ],
-                                on: {
-                                  click: function($event) {
-                                    _vm.borderDefaultClass = "black-border"
-                                  }
-                                }
-                              },
-                              [_vm._v("Black Frame")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-6" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn  btn-block",
-                                class: [
-                                  _vm.borderDefaultClass == "rose-border"
-                                    ? "btn-danger"
-                                    : "btn-dark"
-                                ],
-                                on: {
-                                  click: function($event) {
-                                    _vm.borderDefaultClass = "rose-border"
-                                  }
-                                }
-                              },
-                              [_vm._v("Rose Frame")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-6" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn  btn-block",
-                                class: [
-                                  _vm.borderDefaultClass == "no-border"
-                                    ? "btn-danger"
-                                    : "btn-dark"
-                                ],
-                                on: {
-                                  click: function($event) {
-                                    _vm.borderDefaultClass = "no-border"
-                                  }
-                                }
-                              },
-                              [_vm._v("No Frame")]
-                            )
-                          ])
-                        ])
-                      ])
-                    ])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.menu.background
-                ? _c("div", { staticClass: "card mt-4" }, [
-                    _c("div", { staticClass: "card-body" }, [
-                      _vm._m(4),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "tab-content",
-                          attrs: { id: "myTabContent" }
-                        },
-                        [
-                          _c(
-                            "div",
-                            {
-                              staticClass: "tab-pane fade show active",
-                              attrs: {
-                                id: "MATERIAL",
-                                role: "tabpanel",
-                                "aria-labelledby": "home-tab"
-                              }
-                            },
-                            [
+                          [
+                            _c("li", { staticClass: "list-group-item" }, [
                               _c("div", { staticClass: "row" }, [
                                 _c(
                                   "div",
@@ -53272,20 +52610,24 @@ var render = function() {
                                       {
                                         on: {
                                           click: function($event) {
-                                            _vm.backgroundImage =
-                                              "/background/Material/White-Plastic/1.png"
+                                            _vm.selected_fastener = "Jewelers"
                                           }
                                         }
                                       },
                                       [
                                         _c("img", {
-                                          staticClass: "border",
+                                          staticClass:
+                                            "fastener-img border p-1",
+                                          class: {
+                                            selected_fastener:
+                                              "Jewelers" ==
+                                              _vm.selected_fastener
+                                          },
                                           attrs: {
-                                            src:
-                                              "/background/Material/White-Plastic/1-thumb.png"
+                                            src: "/fasteners/Jeweler_s Pin.png"
                                           }
                                         }),
-                                        _vm._v("White - Plastic")
+                                        _vm._v("Jewelers Pin")
                                       ]
                                     )
                                   ]
@@ -53302,20 +52644,23 @@ var render = function() {
                                       {
                                         on: {
                                           click: function($event) {
-                                            _vm.backgroundImage =
-                                              "/background/Material/Gold-Plastic/7.png"
+                                            _vm.selected_fastener = "Magnet"
                                           }
                                         }
                                       },
                                       [
                                         _c("img", {
-                                          staticClass: "border",
+                                          staticClass:
+                                            "fastener-img border p-1",
+                                          class: {
+                                            selected_fastener:
+                                              "Magnet" == _vm.selected_fastener
+                                          },
                                           attrs: {
-                                            src:
-                                              "/background/Material/Gold-Plastic/7-thumb.png"
+                                            src: "/fasteners/Magnet.jpg"
                                           }
                                         }),
-                                        _vm._v("Gold - Plastic")
+                                        _vm._v("Magnet")
                                       ]
                                     )
                                   ]
@@ -53332,20 +52677,21 @@ var render = function() {
                                       {
                                         on: {
                                           click: function($event) {
-                                            _vm.backgroundImage =
-                                              "/background/Material/Silver-Plastic/8.png"
+                                            _vm.selected_fastener = "Pin"
                                           }
                                         }
                                       },
                                       [
                                         _c("img", {
-                                          staticClass: "border",
-                                          attrs: {
-                                            src:
-                                              "/background/Material/Silver-Plastic/8-thumb.png"
-                                          }
+                                          staticClass:
+                                            "fastener-img border p-1",
+                                          class: {
+                                            selected_fastener:
+                                              "Pin" == _vm.selected_fastener
+                                          },
+                                          attrs: { src: "/fasteners/Pin.jpg" }
                                         }),
-                                        _vm._v("Silver - Plastic")
+                                        _vm._v("Pin")
                                       ]
                                     )
                                   ]
@@ -53362,243 +52708,1313 @@ var render = function() {
                                       {
                                         on: {
                                           click: function($event) {
-                                            _vm.backgroundImage =
-                                              "/background/Material/Gold-Metallic/5.png"
+                                            _vm.selected_fastener = "Swivel"
                                           }
                                         }
                                       },
                                       [
                                         _c("img", {
-                                          staticClass: "border",
+                                          staticClass:
+                                            "fastener-img border p-1",
+                                          class: {
+                                            selected_fastener:
+                                              "Swivel" == _vm.selected_fastener
+                                          },
                                           attrs: {
-                                            src:
-                                              "/background/Material/Gold-Metallic/5-thumb.png"
+                                            src: "/fasteners/Swivel Bulldog.png"
                                           }
                                         }),
-                                        _vm._v("Gold Metallic")
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "col-md-4 pt-4 cursor-pointer"
-                                  },
-                                  [
-                                    _c(
-                                      "span",
-                                      {
-                                        on: {
-                                          click: function($event) {
-                                            _vm.backgroundImage =
-                                              "/background/Material/Silver-Metallic/6.png"
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c("img", {
-                                          staticClass: "border",
-                                          attrs: {
-                                            src:
-                                              "/background/Material/Silver-Metallic/6-thumb.png"
-                                          }
-                                        }),
-                                        _vm._v("Silver Metallic")
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "col-md-4 pt-4 cursor-pointer"
-                                  },
-                                  [
-                                    _c(
-                                      "span",
-                                      {
-                                        on: {
-                                          click: function($event) {
-                                            _vm.backgroundImage =
-                                              "/background/Material/Wood-Grain/11.png"
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c("img", {
-                                          staticClass: "border",
-                                          attrs: {
-                                            src:
-                                              "/background/Material/Wood-Grain/11-thumb.png"
-                                          }
-                                        }),
-                                        _vm._v("Wood Grain")
+                                        _vm._v("Swivel Clip")
                                       ]
                                     )
                                   ]
                                 )
                               ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "tab-pane fade",
-                              attrs: {
-                                id: "colors",
-                                role: "tabpanel",
-                                "aria-labelledby": "home-tab"
-                              }
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "row" },
-                                [
-                                  _c("photoshop-picker", {
-                                    staticClass: "color-picker-custom mt-2",
-                                    on: { input: _vm.colorChanged },
-                                    model: {
-                                      value: _vm.colors,
-                                      callback: function($$v) {
-                                        _vm.colors = $$v
-                                      },
-                                      expression: "colors"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "tab-pane fade",
-                              attrs: {
-                                id: "custom",
-                                role: "tabpanel",
-                                "aria-labelledby": "profile-tab"
-                              }
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "row custom-background-img" },
-                                _vm._l(37, function(i) {
-                                  return _c(
-                                    "div",
+                            ])
+                          ]
+                        )
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.menu.sizeShape
+                    ? _c("div", { staticClass: "card mt-4" }, [
+                        _vm._m(2),
+                        _vm._v(" "),
+                        _c(
+                          "ul",
+                          {
+                            staticClass:
+                              "list-group list-group-flush ul-custom-height"
+                          },
+                          [
+                            _c("li", { staticClass: "list-group-item" }, [
+                              _c("div", { staticClass: "row" }, [
+                                _c("div", { staticClass: "col-md-6" }, [
+                                  _c(
+                                    "button",
                                     {
-                                      key: i,
-                                      staticClass:
-                                        "col-md-4 cursor-pointer pt-4"
+                                      staticClass: "btn btn-block mb-2",
+                                      class: [
+                                        _vm.shapeDefaultClass == "rectangle1-3"
+                                          ? "btn-danger"
+                                          : "btn-dark"
+                                      ],
+                                      on: {
+                                        click: function($event) {
+                                          _vm.shapeDefaultClass = "rectangle1-3"
+                                        }
+                                      }
                                     },
+                                    [_vm._v('1"x3" Rectangle')]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-md-6" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn  btn-block mb-2",
+                                      class: [
+                                        _vm.shapeDefaultClass ==
+                                        "rectangle1-5-3"
+                                          ? "btn-danger"
+                                          : "btn-dark"
+                                      ],
+                                      on: {
+                                        click: function($event) {
+                                          _vm.shapeDefaultClass =
+                                            "rectangle1-5-3"
+                                        }
+                                      }
+                                    },
+                                    [_vm._v('1.5"x3" Rectangle')]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-md-6" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn  btn-block",
+                                      class: [
+                                        _vm.shapeDefaultClass == "oval1-3"
+                                          ? "btn-danger"
+                                          : "btn-dark"
+                                      ],
+                                      on: {
+                                        click: function($event) {
+                                          _vm.shapeDefaultClass = "oval1-3"
+                                        }
+                                      }
+                                    },
+                                    [_vm._v('1"x3" Oval')]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-md-6" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn  btn-block",
+                                      class: [
+                                        _vm.shapeDefaultClass == "rectangle12-3"
+                                          ? "btn-danger"
+                                          : "btn-dark"
+                                      ],
+                                      on: {
+                                        click: function($event) {
+                                          _vm.shapeDefaultClass =
+                                            "rectangle12-3"
+                                        }
+                                      }
+                                    },
+                                    [_vm._v('2"x3" Rectangle')]
+                                  )
+                                ])
+                              ])
+                            ])
+                          ]
+                        )
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.menu.textOptions
+                    ? _c("div", { staticClass: "card mt-4" }, [
+                        _vm._m(3),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "card-body" }, [
+                          _c("div", { staticClass: "form-group row" }, [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "col-sm-3 col-form-label",
+                                attrs: { for: "inputPassword" }
+                              },
+                              [_vm._v("Your Text")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-sm-9" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.getYourText,
+                                    expression: "getYourText"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  type: "text",
+                                  id: "inputPassword",
+                                  placeholder: "Your Text"
+                                },
+                                domProps: { value: _vm.getYourText },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.getYourText = $event.target.value
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-group row" }, [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "col-sm-3 col-form-label",
+                                attrs: { for: "inputPassword" }
+                              },
+                              [_vm._v("Font")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-sm-9" }, [
+                              _c(
+                                "select",
+                                {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value:
+                                        _vm.textDesigns[
+                                          _vm.selectedTextBoxIndex
+                                        ].font,
+                                      expression:
+                                        "textDesigns[selectedTextBoxIndex].font"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  on: {
+                                    change: function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.$set(
+                                        _vm.textDesigns[
+                                          _vm.selectedTextBoxIndex
+                                        ],
+                                        "font",
+                                        $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      )
+                                    }
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "option",
+                                    {
+                                      staticClass: "font-fnt2",
+                                      attrs: { value: "font-fnt2" }
+                                    },
+                                    [_vm._v("Arial")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    {
+                                      staticClass: "font-fnt4",
+                                      attrs: { value: "font-fnt4" }
+                                    },
+                                    [_vm._v("Century Gothic")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    {
+                                      staticClass: "font-fnt28",
+                                      attrs: { value: "font-fnt28" }
+                                    },
+                                    [_vm._v("Century Gothic Bold")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    {
+                                      staticClass: "font-fnt5",
+                                      attrs: { value: "font-fnt5" }
+                                    },
+                                    [_vm._v("Comic Sans MS")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    {
+                                      staticClass: "font-fnt6",
+                                      attrs: { value: "font-fnt6" }
+                                    },
+                                    [_vm._v("Courier New")]
+                                  )
+                                ]
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-group row" }, [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "col-sm-3 col-form-label",
+                                attrs: { for: "inputPassword" }
+                              },
+                              [_vm._v("Font Style")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-sm-9" }, [
+                              _c(
+                                "select",
+                                {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value:
+                                        _vm.textDesigns[
+                                          _vm.selectedTextBoxIndex
+                                        ].fontStyle,
+                                      expression:
+                                        "textDesigns[selectedTextBoxIndex].fontStyle"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: { id: "inputState" },
+                                  on: {
+                                    change: function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.$set(
+                                        _vm.textDesigns[
+                                          _vm.selectedTextBoxIndex
+                                        ],
+                                        "fontStyle",
+                                        $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      )
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("option", { attrs: { value: "" } }, [
+                                    _vm._v("Regular")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "font-weight-bold" } },
+                                    [_vm._v("Bold")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "font-italic" } },
+                                    [_vm._v("Italic")]
+                                  )
+                                ]
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-group row" }, [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "col-sm-3 col-form-label",
+                                attrs: { for: "inputPassword" }
+                              },
+                              [_vm._v("Font Size")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-sm-9" }, [
+                              _c(
+                                "select",
+                                {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value:
+                                        _vm.textDesigns[
+                                          _vm.selectedTextBoxIndex
+                                        ].fontSize,
+                                      expression:
+                                        "textDesigns[selectedTextBoxIndex].fontSize"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: { id: "inputState" },
+                                  on: {
+                                    change: function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.$set(
+                                        _vm.textDesigns[
+                                          _vm.selectedTextBoxIndex
+                                        ],
+                                        "fontSize",
+                                        $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      )
+                                    }
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "font-size20" } },
+                                    [_vm._v("10")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "font-size35" } },
+                                    [_vm._v("20")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "font-size50" } },
+                                    [_vm._v("30")]
+                                  )
+                                ]
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-group row" }, [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "col-sm-3 col-form-label",
+                                attrs: { for: "inputPassword" }
+                              },
+                              [_vm._v("Color")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-sm-9 color-row" }, [
+                              _c("span", {
+                                staticClass: "colr-000000",
+                                class: {
+                                  active:
+                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                      .fontColor == "#000000"
+                                },
+                                staticStyle: { background: "#000000" },
+                                attrs: { id: "colr" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.textDesigns[
+                                      _vm.selectedTextBoxIndex
+                                    ].fontColor = "#000000"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "colr-ffffff",
+                                class: {
+                                  active:
+                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                      .fontColor == "#ffffff"
+                                },
+                                staticStyle: {
+                                  background: "#ffffff",
+                                  "border-color": "#ccc"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    _vm.textDesigns[
+                                      _vm.selectedTextBoxIndex
+                                    ].fontColor = "#ffffff"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "colr-ff0000",
+                                class: {
+                                  active:
+                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                      .fontColor == "#ff0000"
+                                },
+                                staticStyle: { background: "#ff0000" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.textDesigns[
+                                      _vm.selectedTextBoxIndex
+                                    ].fontColor = "#ff0000"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "colr-0000ff",
+                                class: {
+                                  active:
+                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                      .fontColor == "#0000FF"
+                                },
+                                staticStyle: { background: "#0000FF" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.textDesigns[
+                                      _vm.selectedTextBoxIndex
+                                    ].fontColor = "#0000FF"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "colr-008000",
+                                class: {
+                                  active:
+                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                      .fontColor == "#008000"
+                                },
+                                staticStyle: { background: "#008000" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.textDesigns[
+                                      _vm.selectedTextBoxIndex
+                                    ].fontColor = "#008000"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "colr-ffa500",
+                                class: {
+                                  active:
+                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                      .fontColor == "#FFA500"
+                                },
+                                staticStyle: { background: "#FFA500" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.textDesigns[
+                                      _vm.selectedTextBoxIndex
+                                    ].fontColor = "#FFA500"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "colr-ff921d",
+                                class: {
+                                  active:
+                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                      .fontColor == "#ff921d"
+                                },
+                                staticStyle: { background: "#ff921d" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.textDesigns[
+                                      _vm.selectedTextBoxIndex
+                                    ].fontColor = "#ff921d"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "colr-2ee6b4",
+                                class: {
+                                  active:
+                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                      .fontColor == "#2ee6b4"
+                                },
+                                staticStyle: { background: "#2ee6b4" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.textDesigns[
+                                      _vm.selectedTextBoxIndex
+                                    ].fontColor = "#2ee6b4"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "colr-547ce1",
+                                class: {
+                                  active:
+                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                      .fontColor == "#547ce1"
+                                },
+                                staticStyle: { background: "#547ce1" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.textDesigns[
+                                      _vm.selectedTextBoxIndex
+                                    ].fontColor = "#547ce1"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "colr-51a3f0",
+                                class: {
+                                  active:
+                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                      .fontColor == "#51a3f0"
+                                },
+                                staticStyle: { background: "#51a3f0" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.textDesigns[
+                                      _vm.selectedTextBoxIndex
+                                    ].fontColor = "#51a3f0"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "colr-5a5af5",
+                                class: {
+                                  active:
+                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                      .fontColor == "#5a5af5"
+                                },
+                                staticStyle: { background: "#5a5af5" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.textDesigns[
+                                      _vm.selectedTextBoxIndex
+                                    ].fontColor = "#5a5af5"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "colr-ff00f0",
+                                class: {
+                                  active:
+                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                      .fontColor == "#ff00f0"
+                                },
+                                staticStyle: { background: "#ff00f0" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.textDesigns[
+                                      _vm.selectedTextBoxIndex
+                                    ].fontColor = "#ff00f0"
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "row" }, [
+                            _c("div", { staticClass: "col-md-3" }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-md-9" }, [
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-danger",
+                                  on: { click: _vm.deleteText }
+                                },
+                                [_vm._v("Delete Text")]
+                              )
+                            ])
+                          ])
+                        ])
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.menu.border
+                    ? _c("div", { staticClass: "card mt-4" }, [
+                        _vm._m(4),
+                        _vm._v(" "),
+                        _c(
+                          "ul",
+                          {
+                            staticClass:
+                              "list-group list-group-flush ul-custom-height ul-custom-height"
+                          },
+                          [
+                            _c("li", { staticClass: "list-group-item" }, [
+                              _c("div", { staticClass: "row" }, [
+                                _c("div", { staticClass: "col-md-6" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn btn-block mb-2",
+                                      class: [
+                                        _vm.borderDefaultClass == "gold-border"
+                                          ? "btn-danger"
+                                          : "btn-dark"
+                                      ],
+                                      on: {
+                                        click: function($event) {
+                                          _vm.borderDefaultClass = "gold-border"
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("Gold Frame")]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-md-6" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn  btn-block mb-2",
+                                      class: [
+                                        _vm.borderDefaultClass ==
+                                        "silver-border"
+                                          ? "btn-danger"
+                                          : "btn-dark"
+                                      ],
+                                      on: {
+                                        click: function($event) {
+                                          _vm.borderDefaultClass =
+                                            "silver-border"
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("Silver Frame")]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-md-6" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn  btn-block mb-2",
+                                      class: [
+                                        _vm.borderDefaultClass == "black-border"
+                                          ? "btn-danger"
+                                          : "btn-dark"
+                                      ],
+                                      on: {
+                                        click: function($event) {
+                                          _vm.borderDefaultClass =
+                                            "black-border"
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("Black Frame")]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-md-6" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn  btn-block",
+                                      class: [
+                                        _vm.borderDefaultClass == "rose-border"
+                                          ? "btn-danger"
+                                          : "btn-dark"
+                                      ],
+                                      on: {
+                                        click: function($event) {
+                                          _vm.borderDefaultClass = "rose-border"
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("Rose Frame")]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-md-6" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn  btn-block",
+                                      class: [
+                                        _vm.borderDefaultClass == "no-border"
+                                          ? "btn-danger"
+                                          : "btn-dark"
+                                      ],
+                                      on: {
+                                        click: function($event) {
+                                          _vm.borderDefaultClass = "no-border"
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("No Frame")]
+                                  )
+                                ])
+                              ])
+                            ])
+                          ]
+                        )
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.menu.background
+                    ? _c("div", { staticClass: "card mt-4" }, [
+                        _c("div", { staticClass: "card-body" }, [
+                          _vm._m(5),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "tab-content",
+                              attrs: { id: "myTabContent" }
+                            },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "tab-pane fade show active ul-custom-height",
+                                  attrs: {
+                                    id: "MATERIAL",
+                                    role: "tabpanel",
+                                    "aria-labelledby": "home-tab"
+                                  }
+                                },
+                                [
+                                  _c("div", { staticClass: "row" }, [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "col-md-4 pt-4 cursor-pointer"
+                                      },
+                                      [
+                                        _c(
+                                          "span",
+                                          {
+                                            on: {
+                                              click: function($event) {
+                                                _vm.backgroundImage =
+                                                  "/background/Material/White-Plastic/1.png"
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("img", {
+                                              staticClass: "border",
+                                              attrs: {
+                                                src:
+                                                  "/background/Material/White-Plastic/1-thumb.png"
+                                              }
+                                            }),
+                                            _vm._v("White - Plastic")
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "col-md-4 pt-4 cursor-pointer"
+                                      },
+                                      [
+                                        _c(
+                                          "span",
+                                          {
+                                            on: {
+                                              click: function($event) {
+                                                _vm.backgroundImage =
+                                                  "/background/Material/Gold-Plastic/7.png"
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("img", {
+                                              staticClass: "border",
+                                              attrs: {
+                                                src:
+                                                  "/background/Material/Gold-Plastic/7-thumb.png"
+                                              }
+                                            }),
+                                            _vm._v("Gold - Plastic")
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "col-md-4 pt-4 cursor-pointer"
+                                      },
+                                      [
+                                        _c(
+                                          "span",
+                                          {
+                                            on: {
+                                              click: function($event) {
+                                                _vm.backgroundImage =
+                                                  "/background/Material/Silver-Plastic/8.png"
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("img", {
+                                              staticClass: "border",
+                                              attrs: {
+                                                src:
+                                                  "/background/Material/Silver-Plastic/8-thumb.png"
+                                              }
+                                            }),
+                                            _vm._v("Silver - Plastic")
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "col-md-4 pt-4 cursor-pointer"
+                                      },
+                                      [
+                                        _c(
+                                          "span",
+                                          {
+                                            on: {
+                                              click: function($event) {
+                                                _vm.backgroundImage =
+                                                  "/background/Material/Gold-Metallic/5.png"
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("img", {
+                                              staticClass: "border",
+                                              attrs: {
+                                                src:
+                                                  "/background/Material/Gold-Metallic/5-thumb.png"
+                                              }
+                                            }),
+                                            _vm._v("Gold Metallic")
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "col-md-4 pt-4 cursor-pointer"
+                                      },
+                                      [
+                                        _c(
+                                          "span",
+                                          {
+                                            on: {
+                                              click: function($event) {
+                                                _vm.backgroundImage =
+                                                  "/background/Material/Silver-Metallic/6.png"
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("img", {
+                                              staticClass: "border",
+                                              attrs: {
+                                                src:
+                                                  "/background/Material/Silver-Metallic/6-thumb.png"
+                                              }
+                                            }),
+                                            _vm._v("Silver Metallic")
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "col-md-4 pt-4 cursor-pointer"
+                                      },
+                                      [
+                                        _c(
+                                          "span",
+                                          {
+                                            on: {
+                                              click: function($event) {
+                                                _vm.backgroundImage =
+                                                  "/background/Material/Wood-Grain/11.png"
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("img", {
+                                              staticClass: "border",
+                                              attrs: {
+                                                src:
+                                                  "/background/Material/Wood-Grain/11-thumb.png"
+                                              }
+                                            }),
+                                            _vm._v("Wood Grain")
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "tab-pane fade",
+                                  attrs: {
+                                    id: "colors",
+                                    role: "tabpanel",
+                                    "aria-labelledby": "home-tab"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "row" },
                                     [
-                                      _c("img", {
-                                        staticClass: "border",
-                                        staticStyle: {
-                                          height: "60px",
-                                          width: "100px"
-                                        },
-                                        attrs: {
-                                          src:
-                                            "/background/Custom/" +
-                                            i +
-                                            "/thumb.png"
-                                        },
-                                        on: {
-                                          click: function($event) {
-                                            _vm.backgroundImage =
-                                              "/background/Custom/" +
-                                              i +
-                                              "/" +
-                                              i +
-                                              ".png"
-                                          }
+                                      _c("photoshop-picker", {
+                                        staticClass: "color-picker-custom mt-2",
+                                        on: { input: _vm.colorChanged },
+                                        model: {
+                                          value: _vm.colors,
+                                          callback: function($$v) {
+                                            _vm.colors = $$v
+                                          },
+                                          expression: "colors"
                                         }
                                       })
-                                    ]
+                                    ],
+                                    1
                                   )
-                                }),
-                                0
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "tab-pane fade",
+                                  attrs: {
+                                    id: "custom",
+                                    role: "tabpanel",
+                                    "aria-labelledby": "profile-tab"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "row custom-background-img"
+                                    },
+                                    _vm._l(37, function(i) {
+                                      return _c(
+                                        "div",
+                                        {
+                                          key: i,
+                                          staticClass:
+                                            "col-md-4 cursor-pointer pt-4"
+                                        },
+                                        [
+                                          _c("img", {
+                                            staticClass: "border",
+                                            staticStyle: {
+                                              height: "60px",
+                                              width: "100px"
+                                            },
+                                            attrs: {
+                                              src:
+                                                "/background/Custom/" +
+                                                i +
+                                                "/thumb.png"
+                                            },
+                                            on: {
+                                              click: function($event) {
+                                                _vm.backgroundImage =
+                                                  "/background/Custom/" +
+                                                  i +
+                                                  "/" +
+                                                  i +
+                                                  ".png"
+                                              }
+                                            }
+                                          })
+                                        ]
+                                      )
+                                    }),
+                                    0
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "tab-pane fade",
+                                  attrs: {
+                                    id: "contact",
+                                    role: "tabpanel",
+                                    "aria-labelledby": "contact-tab"
+                                  }
+                                },
+                                [_vm._v("...")]
                               )
                             ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "tab-pane fade",
-                              attrs: {
-                                id: "contact",
-                                role: "tabpanel",
-                                "aria-labelledby": "contact-tab"
-                              }
-                            },
-                            [_vm._v("...")]
                           )
-                        ]
-                      )
-                    ])
-                  ])
-                : _vm._e()
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-lg btn-success  btn-block mt-2",
-                  staticStyle: { "text-transform": "uppercase" },
-                  on: { click: _vm.printThis }
-                },
-                [_vm._v("Finished Designing")]
-              )
-            ])
-          ])
-        ]),
+                        ])
+                      ])
+                    : _vm._e()
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "modal",
+              {
+                attrs: {
+                  name: "clipart-modal",
+                  adaptive: true,
+                  draggable: true
+                }
+              },
+              [
+                _c(
+                  "div",
+                  { staticClass: "row p-4 clipart-custom" },
+                  _vm._l(36, function(i) {
+                    return _c(
+                      "div",
+                      { key: i, staticClass: "col-md-3 cursor-pointer pt-4" },
+                      [
+                        _c("img", {
+                          staticStyle: { height: "60px", width: "100px" },
+                          attrs: { src: "/clipart/" + i + "/thumb.png" },
+                          on: {
+                            click: function($event) {
+                              return _vm.addClipart(i)
+                            }
+                          }
+                        })
+                      ]
+                    )
+                  }),
+                  0
+                )
+              ]
+            )
+          ],
+          1
+        ),
         _vm._v(" "),
+        _vm._m(6)
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.menu.global_items.addNames,
+            expression: "menu.global_items.addNames"
+          }
+        ]
+      },
+      [
         _c(
-          "modal",
-          { attrs: { name: "clipart-modal", adaptive: true, draggable: true } },
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: !_vm.menu.global_items.addOrEditNames,
+                expression: "!menu.global_items.addOrEditNames"
+              }
+            ],
+            staticClass: "row"
+          },
           [
             _c(
               "div",
-              { staticClass: "row p-4 clipart-custom" },
-              _vm._l(36, function(i) {
-                return _c(
-                  "div",
-                  { key: i, staticClass: "col-md-3 cursor-pointer pt-4" },
-                  [
-                    _c("img", {
-                      staticStyle: { height: "60px", width: "100px" },
-                      attrs: { src: "/clipart/" + i + "/thumb.png" },
-                      on: {
-                        click: function($event) {
-                          return _vm.addClipart(i)
+              { staticClass: "col-md-12 mt-5 d-flex justify-content-center" },
+              [
+                _vm.output
+                  ? _c("div", { staticClass: "design-area" }, [
+                      _c("img", {
+                        staticClass: "w-100",
+                        attrs: { src: _vm.output }
+                      })
+                    ])
+                  : _vm._e()
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-md-12 mt-5 d-flex justify-content-center" },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-info btn-block",
+                        staticStyle: { height: "55px" },
+                        on: { click: _vm.gobackAndEdit }
+                      },
+                      [_vm._v("Go back & edit badge")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary btn-block",
+                        staticStyle: { height: "55px" },
+                        on: {
+                          click: function($event) {
+                            _vm.menu.global_items.addOrEditNames = true
+                          }
                         }
-                      }
-                    })
-                  ]
-                )
-              }),
-              0
+                      },
+                      [_vm._v("Add or edit names")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(7)
+                ])
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.menu.global_items.addOrEditNames,
+                expression: "menu.global_items.addOrEditNames"
+              }
+            ],
+            staticClass: "row"
+          },
+          [
+            _vm._m(8),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-md-12 mt-5 d-flex justify-content-center" },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-danger btn-block",
+                        on: {
+                          click: function($event) {
+                            _vm.menu.global_items.addOrEditNames = false
+                          }
+                        }
+                      },
+                      [_vm._v("GO BACK")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-success btn-block",
+                        on: {
+                          click: function($event) {
+                            _vm.menu.global_items.addOrEditNames = true
+                          }
+                        }
+                      },
+                      [_vm._v("FINISHED")]
+                    )
+                  ])
+                ])
+              ]
             )
           ]
         )
-      ],
-      1
+      ]
     )
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c("div", { staticClass: "price" }, [
+        _vm._v("Price: "),
+        _c("b", [_vm._v("$")]),
+        _c("span", [_vm._v("9.99")]),
+        _vm._v(" each")
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -53694,6 +54110,225 @@ var staticRenderFns = [
         ])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "price-table" }, [
+          _c("div", { staticClass: "table_wrap" }, [
+            _c("div", { staticClass: "title_table" }, [
+              _c("span", { staticClass: "ttl" }, [_vm._v("Quantity Price")]),
+              _c("span", { staticClass: "text-imp" }, [
+                _vm._v(
+                  "*These prices will update automatically based on the design you choose above!"
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table spec_tb" }, [
+              _c("tbody", [
+                _c("tr", [
+                  _c("td", [_vm._v("QTY:")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("1-10")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("11-20")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("21-30")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("31-50")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("51-100")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("101-250")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("251-1000")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("1000+")])
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td", [_vm._v("Price:")]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "it-0" }, [_vm._v("$9.99")]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "it-1" }, [_vm._v("$9.59")]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "it-2" }, [_vm._v("$9.39")]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "it-3" }, [_vm._v("$9.24")]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "it-4" }, [_vm._v("$8.89")]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "it-5" }, [_vm._v("$8.49")]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "it-6" }, [_vm._v("$8.24")]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "it-7" }, [_vm._v("$7.49")])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-12" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-success btn-block mt-2",
+          staticStyle: { height: "55px" },
+          attrs: { disabled: "" }
+        },
+        [_vm._v("I am finished adding name")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-12 mt-5" }, [
+      _c("p", { staticStyle: { "line-height": "20px" } }, [
+        _vm._v(
+          "Please add all the names and quantities you want for your name badges. (All name badges will keep the same design formatting)"
+        ),
+        _c("br"),
+        _vm._v(
+          "\r\n                            **You will not see a proof of all the individual name badges. "
+        ),
+        _c("br"),
+        _vm._v(
+          "***We will match all the additional names to your first design and make sure all the text fits properly."
+        ),
+        _c("br")
+      ]),
+      _vm._v(" "),
+      _c("div", [
+        _c(
+          "table",
+          {
+            staticClass: "table table-bordered",
+            staticStyle: { width: "100%" },
+            attrs: { id: "fieldset-tbl", cellspacing: "0" }
+          },
+          [
+            _c("thead", [
+              _c("tr", [
+                _c("th", { attrs: { width: "30", align: "left" } }, [
+                  _vm._v("No")
+                ]),
+                _vm._v(" "),
+                _c("th", { attrs: { align: "left" } }, [_vm._v("Field 1")]),
+                _vm._v(" "),
+                _c("th", { attrs: { width: "20" } }, [_vm._v(" ")]),
+                _vm._v(" "),
+                _c("th", { staticClass: "qty" }, [_vm._v("Quantity")]),
+                _vm._v(" "),
+                _c("th", { attrs: { width: "20" } }, [_vm._v(" ")]),
+                _vm._v(" "),
+                _c("th", { attrs: { width: "180" } }, [_vm._v("  ")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("tbody", [
+              _c("tr", { staticClass: "line", attrs: { id: "line13667324" } }, [
+                _c("td", [_vm._v("1.")]),
+                _c("td", { staticClass: "text" }, [_vm._v("john")]),
+                _vm._v(" "),
+                _c("td", { staticStyle: { "background-color": "#f3f3f3" } }, [
+                  _c(
+                    "a",
+                    { staticClass: "less", attrs: { href: "javascript:;" } },
+                    [_vm._v("-")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "qty" }, [
+                  _c("input", {
+                    staticClass: "sqty",
+                    attrs: {
+                      type: "text",
+                      value: "1",
+                      name: "qty",
+                      disabled: ""
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("td", { staticStyle: { "background-color": "#f3f3f3" } }, [
+                  _c(
+                    "a",
+                    { staticClass: "more", attrs: { href: "javascript:;" } },
+                    [_vm._v("+")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "btn" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-success",
+                      attrs: { href: "javascript:;" }
+                    },
+                    [_vm._v("DONE")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-info",
+                      attrs: { href: "javascript:;" }
+                    },
+                    [_vm._v("EDIT")]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("tr", { attrs: { id: "line" } }, [
+                _c("td", [_vm._v(" ")]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text" }, [
+                  _c("input", { attrs: { type: "text", name: "text1" } })
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(" ")]),
+                _vm._v(" "),
+                _c("td", { staticClass: "qty" }, [
+                  _c("input", {
+                    staticClass: "sqty",
+                    attrs: {
+                      type: "text",
+                      id: "newqty",
+                      name: "qty",
+                      value: "1"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(" ")]),
+                _vm._v(" "),
+                _c("td", { staticClass: "btn" }, [
+                  _c(
+                    "a",
+                    { staticClass: "accept", attrs: { href: "javascript:;" } },
+                    [_vm._v("+ ADD NAME")]
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
+      ])
+    ])
   }
 ]
 render._withStripped = true
