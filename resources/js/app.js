@@ -1,7 +1,8 @@
 require('./bootstrap');
 
 require('alpinejs');
-window.Vue = require("vue").default;
+// window.Vue = require("vue").default;
+import Vue from "vue";
 
 // importing compoment
 import DesignTool from './components/DesignToolComponent.vue'

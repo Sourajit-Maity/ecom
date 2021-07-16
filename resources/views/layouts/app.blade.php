@@ -17,13 +17,13 @@
     @livewireStyles
 
     <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 </head>
 
 <body class="font-sans antialiased">
     <x-jet-banner />
 
-    <div class="min-h-screen bg-gray-100">
+    <div class="min-h-screen bg-gray-100" id="app">
         @livewire('navigation-menu')
 
         <!-- Page Heading -->

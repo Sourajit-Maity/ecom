@@ -54,6 +54,21 @@
                         <img :src="clipartDesign.img" style="width: 100%; height: 100%" />
                         </drr>
                         <drr
+                        :x="logoDesign.x"
+                        :y="logoDesign.y"
+                        :w="logoDesign.weight"
+                        :h="logoDesign.height"
+                        :angle="logoDesign.angle"
+                        :selected="logoDesign.selected"
+                        :aspectRatio="true"
+                        @select="selectItemLogo(index)"
+                        :innerBox="innerBox"
+                        :outerBox="outerBox"
+                        v-for="(logoDesign,index) in logoDesigns" :key="index"
+                        >  
+                        <img :src="logoDesign.img" style="width: 100%; height: 100%" />
+                        </drr>
+                        <drr
                         :x="textDesign.x"
                         :y="textDesign.y"
                         :w="textDesign.weight"
@@ -64,7 +79,7 @@
                         @select="selectItem(index)"
                         v-for="(textDesign,index) in textDesigns" :key="index"
                         >
-                                <span style="width: 100%; height: 100%" v-bind:class="getCustomDesignClass(index)" :style="{color: textDesign.fontColor}">{{textDesign.text}}</span>
+                                <span style="width: 100%; height: 100%" v-bind:class="getCustomDesignClass(index)" :style="{color: textDesign.fontColor, fontSize: textDesign.fontSize*11+ 'px'}">{{textDesign.text}}</span>
                         </drr>
 
                             </div>
@@ -86,9 +101,19 @@
                                 <button class="btn btn-success mr-2" @click="addText">
                                     Add Text
                                 </button>
-                                <!-- <button class="btn btn-warning mr-2" disabled>
+                                <button class="btn btn-warning mr-2" @click="selectImage">
                                     Add Logo
-                                </button> -->
+                                </button>
+                                    <input
+                                    ref="fileInput"
+                                    type="file"
+                                    @input="pickFile" style="display: none;">
+
+                                            <!-- <div
+                                            class="imagePreviewWrapper"
+                                            :style="{ 'background-image': `url(${previewImage})` }"
+                                            >
+                                            </div> -->
                                 <button class="btn btn-primary mr-2" @click="$modal.show('clipart-modal')">
                                     Add Clipart
                                 </button>
@@ -118,7 +143,7 @@
                                             <div class="row">
                                                 <div class="col-md-6"> <button class="btn btn-block mb-2" :class="[shapeDefaultClass == 'rectangle1-3' ? 'btn-danger' : 'btn-dark']" @click="shapeDefaultClass = 'rectangle1-3'">1"x3" Rectangle</button></div>
                                                 <div class="col-md-6"><button class="btn  btn-block mb-2" :class="[shapeDefaultClass == 'rectangle1-5-3' ? 'btn-danger' : 'btn-dark']" @click="shapeDefaultClass = 'rectangle1-5-3'">1.5"x3" Rectangle</button></div>
-                                                <div class="col-md-6"><button class="btn  btn-block"  :class="[shapeDefaultClass == 'oval1-3' ? 'btn-danger' : 'btn-dark']"@click="shapeDefaultClass = 'oval1-3'">1"x3" Oval</button></div>
+                                                <div class="col-md-6"><button class="btn  btn-block"  :class="[shapeDefaultClass == 'oval1-3' ? 'btn-danger' : 'btn-dark']"@click="shapeDefaultClass = 'oval1-3'">Oval</button></div>
                                                 <div class="col-md-6"><button class="btn  btn-block" :class="[shapeDefaultClass == 'rectangle12-3' ? 'btn-danger' : 'btn-dark']" @click="shapeDefaultClass = 'rectangle12-3'">2"x3" Rectangle</button></div>
                                                 <!-- <div class="col-md-6"><button class="btn btn-success  btn-block mt-2"  @click="printThis">Print</button></div> -->
                                             </div>
@@ -161,11 +186,17 @@
                                         <div class="form-group row">
                                             <label for="inputPassword" class="col-sm-3 col-form-label">Font Size</label>
                                             <div class="col-sm-9">
-                                            <select id="inputState" class="form-control" v-model="textDesigns[selectedTextBoxIndex].fontSize">
+                                                <VueSimpleRangeSlider
+                                                style="width: 100%"
+                                                :min="1"
+                                                :max="10"
+                                                v-model="textDesigns[selectedTextBoxIndex].fontSize"
+                                                />
+                                            <!-- <select id="inputState" class="form-control" v-model="textDesigns[selectedTextBoxIndex].fontSize">
                                                     <option value="font-size20">10</option>
                                                     <option value="font-size35">20</option>
                                                     <option value="font-size50">30</option>
-                                            </select>
+                                            </select> -->
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -214,7 +245,7 @@
                                                 <div class="col-md-6"> <button class="btn btn-block mb-2" :class="[borderDefaultClass == 'gold-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'gold-border'">Gold Frame</button></div>
                                                 <div class="col-md-6"><button class="btn  btn-block mb-2" :class="[borderDefaultClass == 'silver-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'silver-border'">Silver Frame</button></div>
                                                 <div class="col-md-6"><button class="btn  btn-block mb-2"  :class="[borderDefaultClass == 'black-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'black-border'">Black Frame</button></div>
-                                                <div class="col-md-6"><button class="btn  btn-block" :class="[borderDefaultClass == 'rose-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'rose-border'">Rose Frame</button></div>
+                                                <!-- <div class="col-md-6"><button class="btn  btn-block" :class="[borderDefaultClass == 'rose-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'rose-border'">Rose Frame</button></div> -->
                                                 <div class="col-md-6"><button class="btn  btn-block" :class="[borderDefaultClass == 'no-border' ? 'btn-danger' : 'btn-dark']" @click="borderDefaultClass = 'no-border'">No Frame</button></div>
                                             </div>
                                         </li>
@@ -237,11 +268,11 @@
                                             <div class="tab-pane fade show active ul-custom-height" id="MATERIAL" role="tabpanel" aria-labelledby="home-tab">
                                                 <div class="row">
                                                     <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/White-Plastic/1.png'"><img class="border" src="/background/Material/White-Plastic/1-thumb.png">White - Plastic</span></div>
-                                                    <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Gold-Plastic/7.png'"><img class="border" src="/background/Material/Gold-Plastic/7-thumb.png">Gold - Plastic</span></div>
-                                                    <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Silver-Plastic/8.png'"><img class="border" src="/background/Material/Silver-Plastic/8-thumb.png">Silver - Plastic</span></div>
+                                                    <div class="col-md-4 pt-4 cursor-pointer" v-if="this.shapeDefaultClass!='oval1-3' "><span  @click="backgroundImage= '/background/Material/Gold-Plastic/7.png'"><img class="border" src="/background/Material/Gold-Plastic/7-thumb.png">Gold - Plastic</span></div>
+                                                    <div class="col-md-4 pt-4 cursor-pointer" v-if="this.shapeDefaultClass!='oval1-3' "><span  @click="backgroundImage= '/background/Material/Silver-Plastic/8.png'"><img class="border" src="/background/Material/Silver-Plastic/8-thumb.png">Silver - Plastic</span></div>
                                                     <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Gold-Metallic/5.png'"><img class="border" src="/background/Material/Gold-Metallic/5-thumb.png">Gold Metallic</span></div>
                                                     <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Silver-Metallic/6.png'"><img class="border" src="/background/Material/Silver-Metallic/6-thumb.png">Silver Metallic</span></div>
-                                                    <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Wood-Grain/11.png'"><img  class="border" src="/background/Material/Wood-Grain/11-thumb.png">Wood Grain</span></div>
+                                                    <!-- <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Wood-Grain/11.png'"><img  class="border" src="/background/Material/Wood-Grain/11-thumb.png">Wood Grain</span></div> -->
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade" id="colors" role="tabpanel" aria-labelledby="home-tab">
@@ -334,34 +365,37 @@
                             <div>
 <table class="table table-bordered" id="fieldset-tbl" style="width:100%" cellspacing="0">
 <thead>
-<tr><th width="30" align="left">No</th>
-<th align="left">Field 1</th>
-<th width="20">&nbsp;</th>
-<th class="qty">Quantity</th>
-<th width="20">&nbsp;</th>
-<th width="180">&nbsp; </th>
-</tr></thead>
+    <tr>
+        <th width="30" align="left">No</th>
+        <th align="left">Field 1</th>
+        <th width="20">&nbsp;</th>
+        <th class="qty">Quantity</th>
+        <th width="20">&nbsp;</th>
+        <th width="180">&nbsp; </th>
+    </tr>
+</thead>
 <tbody>
-<tr id="line13667324" class="line"><td>1.</td><td class="text">john</td>
-<td style="background-color: #f3f3f3;"><a class="less" href="javascript:;">-</a></td>
-<td class="qty">
-<input type="text" value="1" name="qty" class="sqty" disabled="">
-</td>
-<td style="background-color: #f3f3f3;"><a class="more" href="javascript:;">+</a></td>
-<td class="btn">
-<a class="btn btn-success" href="javascript:;">DONE</a>
-<a class="btn btn-info" href="javascript:;">EDIT</a>
-<!-- <a class="btn btn-danger" href="javascript:;">DELETE</a> -->
-</td>
-</tr>
-<tr id="line" class="">
-<td>&nbsp;</td>
-<td class="text"><input type="text" name="text1"></td>
-<td>&nbsp;</td>
-<td class="qty"><input type="text" id="newqty" name="qty" value="1" class="sqty"></td>
-<td>&nbsp;</td>
-<td class="btn"><a href="javascript:;" class="accept">+ ADD NAME</a></td>
-</tr>
+    <tr id="line13667324" class="line">
+        <td>1.</td><td class="text">john</td>
+        <td style="background-color: #f3f3f3;"><a class="less" href="javascript:;">-</a></td>
+        <td class="qty">
+        <input type="text" value="1" name="qty" class="sqty" disabled="">
+        </td>
+        <td style="background-color: #f3f3f3;"><a class="more" href="javascript:;">+</a></td>
+        <td class="btn">
+        <a class="btn btn-success" href="javascript:;">DONE</a>
+        <a class="btn btn-info" href="javascript:;">EDIT</a>
+        <!-- <a class="btn btn-danger" href="javascript:;">DELETE</a> -->
+        </td>
+    </tr>
+    <tr id="line" class="">
+        <td>&nbsp;</td>
+        <td class="text"><input type="text" name="text1"></td>
+        <td>&nbsp;</td>
+        <td class="qty"><input type="text" id="newqty" name="qty" value="1" class="sqty"></td>
+        <td>&nbsp;</td>
+        <td class="btn"><a href="javascript:;" class="accept">+ ADD NAME</a></td>
+    </tr>
 </tbody>
 </table>
 </div>
@@ -388,23 +422,28 @@
 
 import drr from '@minogin/vue-drag-resize-rotate'
 import { Photoshop } from 'vue-color'
-
-
+import VueSimpleRangeSlider from 'vue-simple-range-slider';
+import 'vue-simple-range-slider/dist/vueSimpleRangeSlider.css'
 export default {
 //   name: 'about-us',
     components: {
     drr,
-    'photoshop-picker': Photoshop
+    'photoshop-picker': Photoshop,
+    VueSimpleRangeSlider 
   },
   mounted() {
     console.log("This is about component");
   },
   data(){
       return {
+          previewImage: null,
           addTextIndex:0,
           addClipartIndex:0,
+          addLogoIndex:0,
           selectedTextBoxIndex:0,
           selectedClipartIndex:0,
+          selectedLogoIndex:0,
+        //   number: 10,
             textDesigns:[
                 {
                     x:300,
@@ -415,11 +454,11 @@ export default {
                     text: "Your text",
                     font:"font-fnt2",
                     fontStyle: "",
-                    fontSize: "font-size35",
+                    fontSize: 2,
                     fontColor: "#000000",
                     selected:false
                 }
-        ],
+            ],
         colors:{
             hex: '#FFFFFF',
             hex8: '#194D33A8',
@@ -443,6 +482,7 @@ export default {
                 //     selected:false
                 // }
         ],
+            logoDesigns:[],
             menu:{
                 sizeShape:true,
                 background:false,
@@ -476,6 +516,7 @@ export default {
   },
   computed:{
       getShapeClass(){
+          console.info('textDesigns[selectedTextBoxIndex].fontSize',this.textDesigns[this.selectedTextBoxIndex].fontSize);
           return {
             'rectangle1-3': 'rectangle1-3' == this.shapeDefaultClass,
             'rectangle1-5-3': 'rectangle1-5-3'==this.shapeDefaultClass,
@@ -501,6 +542,26 @@ export default {
     //   itemChange(event){
     //       console.info('event',event);
     //   },
+    selectImage () {
+          this.$refs.fileInput.click()
+    },
+    pickFile () {
+        let input = this.$refs.fileInput
+        let file = input.files
+        let self=this;
+        if (file && file[0]) {
+          let reader = new FileReader
+          reader.onload = e => {
+            // this.previewImage = e.target.result
+            self.addLogo(e.target.result);
+          }
+          reader.readAsDataURL(file[0])
+          this.$emit('input', file[0])
+        }
+    },
+    checkvalue(){
+          console.info('event');
+    },
       selectItem(index){
           console.info('index',index);
           this.selectedTextBoxIndex=index;
@@ -534,6 +595,19 @@ export default {
           });
         //   console.info('this.textDesigns',this.textDesigns);
       },
+      selectItemLogo(index){
+        //   console.info('index',index);
+          this.selectedLogoIndex=index;
+        //   this.selectDesignbar('textOptions');
+
+          this.logoDesigns.forEach((item,index_LogoDesign) => {
+              if(index_clipartDesign==this.selectedLogoIndex)
+                item.selected=true;
+             else
+                item.selected=false;
+          });
+        //   console.info('this.textDesigns',this.textDesigns);
+      },
       selectGlobalMenuItems(menuName){
           this.menu.global_items.designYourBadge='designYourBadge'==menuName;
           this.menu.global_items.addNames='addNames'==menuName;
@@ -556,9 +630,9 @@ export default {
           return {
             'font-italic': 'font-italic' == this.textDesigns[index].fontStyle,
             'font-weight-bold': 'font-weight-bold'==this.textDesigns[index].fontStyle,
-            'font-size20': 'font-size20'==this.textDesigns[index].fontSize,
-            'font-size35': 'font-size35'==this.textDesigns[index].fontSize,
-            'font-size50': 'font-size50'==this.textDesigns[index].fontSize,
+            // 'font-size20': 'font-size20'==this.textDesigns[index].fontSize,
+            // 'font-size35': 'font-size35'==this.textDesigns[index].fontSize,
+            // 'font-size50': 'font-size50'==this.textDesigns[index].fontSize,
             // 'font-coloRed': 'font-coloRed'==this.textDesigns[index].fontColor,
             // 'font-colorGreen': 'font-colorGreen'==this.textDesigns[index].fontColor,
             // 'font-colorBlue': 'font-colorBlue'==this.textDesigns[index].fontColor,
@@ -582,7 +656,7 @@ export default {
                     text: "Your text",
                     font:"font-fnt2",
                     fontStyle: "",
-                    fontSize: "font-size35",
+                    fontSize: 2,
                     fontColor: "",
                     selected:false
                 }
@@ -598,6 +672,20 @@ export default {
                     height:60,
                     angle: 0,
                     img: `/clipart/${i}/${i}.png`,
+                    selected:false
+                }
+          );
+      },
+      addLogo(imgSrc){
+          this.addLogoIndex++;
+          this.logoDesigns.push(
+               {
+                    x:150 + (this.addLogoIndex * 11),
+                    y:80 + (this.addLogoIndex * 11),
+                    weight:200,
+                    height:120,
+                    angle: 0,
+                    img: imgSrc,
                     selected:false
                 }
           );
@@ -808,7 +896,7 @@ element.style {
 }
 .table th, .table td {
     padding: 10px 0;
-    border-bottom: 1px solid #31A3D9;
+    /* border-bottom: 1px solid #31A3D9; */
     color: #000;
 }
 .qty {
@@ -848,4 +936,14 @@ element.style {
 /* .vue-step-wizard{
     width:0px;
 } */
+
+.imagePreviewWrapper {
+    width: 250px;
+    height: 250px;
+    display: block;
+    cursor: pointer;
+    margin: 0 auto 30px;
+    background-size: cover;
+    background-position: center center;
+}
 </style>

@@ -76,7 +76,7 @@
     <link href="{{asset('admin_assets/vendors/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
     <!--end::Layout Skins -->
     <link rel="shortcut icon" href="{{asset('admin_assets/media/logos/favicon.ico')}}" />
@@ -183,7 +183,7 @@
     <!--begin:: Global Mandatory Vendors -->
     <script src="{{asset('admin_assets/vendors/general/jquery/dist/jquery.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('admin_assets/vendors/general/popper.js/dist/umd/popper.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('admin_assets/vendors/general/bootstrap/dist/js/bootstrap.min.js')}}" type="text/javascript"></script>
+    <!-- <script src="{{asset('admin_assets/vendors/general/bootstrap/dist/js/bootstrap.min.js')}}" type="text/javascript"></script> -->
     <script src="{{asset('admin_assets/vendors/general/js-cookie/src/js.cookie.js')}}" type="text/javascript"></script>
     <script src="{{asset('admin_assets/vendors/general/moment/min/moment.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('admin_assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js')}}" type="text/javascript"></script>
