@@ -6,3 +6,57 @@
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
+
+@font-face {
+    font-family: "ARBONNIE";
+    src: url("/fonts/ARBONNIE.woff") format("woff");
+}
+
+@font-face {
+    font-family: "ARDESTINE";
+    src: url("/fonts/ARDESTINE.woff") format("woff");
+}
+
+@font-face {
+    font-family: "gothicb";
+    src: url("/fonts/gothicb.woff") format("woff");
+}
+/* 
+@font-face {
+    font-family: "Impact";
+    src: url("/fonts/Impact.woff") format("woff");
+} */
+
+@font-face {
+    font-family: "MonotypeCorsiva";
+    src: url("/fonts/MonotypeCorsiva.woff") format("woff");
+}
+
+@font-face {
+    font-family: "scriptina-webfont";
+    src: url("/fonts/scriptina-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "OldEnglishTextMT";
+    src: url("/fonts/OldEnglishTextMT.woff") format("woff");
+}
+
+@font-face {
+    font-family: "CenturyGothic";
+    src: url("/fonts/CenturyGothic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "ComicSansMS";
+    src: url("/fonts/ComicSansMS.woff") format("woff");
+}
+
+@font-face {
+    font-family: "GothamBold";
+    src: url("/fonts/GothamBold.woff") format("woff");
+}
+@font-face {
+    font-family: "FuturaBT-BoldCondensed";
+    src: url("/fonts/FuturaBT-BoldCondensed.woff") format("woff");
+}

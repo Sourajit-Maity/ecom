@@ -75,11 +75,12 @@
                         :h="textDesign.height"
                         :angle="textDesign.angle"
                         :selected="textDesign.selected"
+                        v-on:resizing="resize"
                         :aspectRatio="true"
                         @select="selectItem(index)"
                         v-for="(textDesign,index) in textDesigns" :key="index"
                         >
-                                <span style="width: 100%; height: 100%" v-bind:class="getCustomDesignClass(index)" :style="{color: textDesign.fontColor, fontSize: textDesign.fontSize*11+ 'px'}">{{textDesign.text}}</span>
+                                <div style="width: 100%; height: 100%" v-bind:class="getCustomDesignClass(index)" :style="{color: textDesign.fontColor, fontSize: textDesign.fontSize*11+ 'px'}">{{textDesign.text}}</div>
                         </drr>
 
                             </div>
@@ -165,11 +166,24 @@
                                             <label for="inputPassword" class="col-sm-3 col-form-label">Font</label>
                                             <div class="col-sm-9">
                                                     <select class="form-control" v-model="textDesigns[selectedTextBoxIndex].font" >
-                                                    <option class="font-fnt2" value="font-fnt2">Arial</option>
-                                                    <option class="font-fnt4" value="font-fnt4">Century Gothic</option>
-                                                    <option class="font-fnt28" value="font-fnt28">Century Gothic Bold</option>
-                                                    <option class="font-fnt5" value="font-fnt5">Comic Sans MS</option>
-                                                    <option class="font-fnt6" value="font-fnt6">Courier New</option>
+                                                   <option value="fnt2" id="fnt2" >Arial</option>
+                                                    <option value="fnt4" id="fnt4">Century Gothic</option>
+                                                    <option value="fnt28" id="fnt28">Century Gothic Bold</option>
+                                                    <option value="fnt5" id="fnt5">Comic Sans MS</option>
+                                                    <option value="fnt6" id="fnt6">Courier New</option>
+                                                    <option value="fnt7" id="fnt7">Georgia</option>
+                                                    <option value="fnt8" id="fnt8">Impact</option>
+                                                    <option value="fnt9" id="fnt9">Times New Roman</option>
+                                                    <option value="fnt10" id="fnt10">Trebuchet MS</option>
+                                                    <option value="fnt11" id="fnt11">Verdana</option>
+                                                    <option value="fnt12" id="fnt12">Gotham</option>
+                                                    <option value="fnt13" id="fnt13">Cormorant Garamond Medium</option>
+                                                    <option value="fnt15" id="fnt15">Lobster</option>
+                                                    <option value="fnt17" id="fnt17">Old English TextMT</option>
+                                                    <option value="fnt22" id="fnt22">MonotypeCorsiva</option>
+                                                    <option value="fnt23" id="fnt23">Scriptoria SSK</option>
+                                                    <option value="fnt19" id="fnt19">Ardestine</option>
+                                                    <option value="fnt20" id="fnt20">Arbonnie</option>
                                                     </select>
                                             </div>
                                         </div>
@@ -452,7 +466,7 @@ export default {
                     height:55,
                     angle: 0,
                     text: "Your text",
-                    font:"font-fnt2",
+                    font:"fnt2",
                     fontStyle: "",
                     fontSize: 2,
                     fontColor: "#000000",
@@ -542,6 +556,9 @@ export default {
     //   itemChange(event){
     //       console.info('event',event);
     //   },
+    resize (newRect) {
+       console.info('newRect',newRect);
+    },
     selectImage () {
           this.$refs.fileInput.click()
     },
@@ -636,11 +653,24 @@ export default {
             // 'font-coloRed': 'font-coloRed'==this.textDesigns[index].fontColor,
             // 'font-colorGreen': 'font-colorGreen'==this.textDesigns[index].fontColor,
             // 'font-colorBlue': 'font-colorBlue'==this.textDesigns[index].fontColor,
-            'font-fnt2'   : 'font-fnt2'  == this.textDesigns[index].font,
-            'font-fnt4'  :  'font-fnt4' == this.textDesigns[index].font,
-            'font-fnt28'  : 'font-fnt28' == this.textDesigns[index].font,
-            'font-fnt5'  : 'font-fnt5' == this.textDesigns[index].font,
-            'font-fnt6'  : 'font-fnt6' == this.textDesigns[index].font,
+            'fnt2'   : 'fnt2'  == this.textDesigns[index].font,
+            'fnt4'  :  'fnt4' == this.textDesigns[index].font,
+            'fnt28'  : 'fnt28' == this.textDesigns[index].font,
+            'fnt5'  : 'fnt5' == this.textDesigns[index].font,
+            'fnt6'  : 'fnt6' == this.textDesigns[index].font,
+            'fnt7': 'fnt7'== this.textDesigns[index].font,
+            'fnt8': 'fnt8'== this.textDesigns[index].font,
+            'fnt9': 'fnt9'== this.textDesigns[index].font,
+            'fnt10': 'fnt10'== this.textDesigns[index].font,
+            'fnt11': 'fnt11'== this.textDesigns[index].font,
+            'fnt12': 'fnt12'== this.textDesigns[index].font,
+            'fnt13': 'fnt13'== this.textDesigns[index].font,
+            'fnt15': 'fnt15'== this.textDesigns[index].font,
+            'fnt17': 'fnt17'== this.textDesigns[index].font,
+            'fnt22': 'fnt22'== this.textDesigns[index].font,
+            'fnt23': 'fnt23'== this.textDesigns[index].font,
+            'fnt19': 'fnt19'== this.textDesigns[index].font,
+            'fnt20': 'fnt20'== this.textDesigns[index].font
          }
       },
       addText(){
@@ -781,7 +811,7 @@ export default {
             overflow: scroll;
             overflow-x: hidden;
         }
-.font-fnt2{
+/* .font-fnt2{
     font-family:Arial;
 
 }
@@ -795,8 +825,75 @@ export default {
     font-family:cursive;
 }
 .font-fnt6{
-    font-family:fantasy;
+    font-family:OldEnglishTextMT;
+} */
+
+
+.fnt1, #fnt1{font-family:"Andale Mono";}
+
+
+.fnt2, #fnt2{font-family:Arial;}
+
+
+.fnt3, #fnt3{font-family:"Arial Black";}
+
+
+.fnt4, #fnt4{font-family:"CenturyGothic";}
+
+
+.fnt5, #fnt5{font-family:"ComicSansMS";}
+
+
+.fnt6, #fnt6{font-family:"Courier New";}
+
+.fnt7, #fnt7{font-family:Georgia;}
+
+
+.fnt8, #fnt8{font-family:impact;}
+
+
+.fnt9, #fnt9{font-family:"Times New Roman";}
+
+
+.fnt10, #fnt10{font-family:"Trebuchet MS";}
+
+.fnt11, #fnt11{font-family:Verdana;}
+
+.fnt12, #fnt12{font-family: 'GothamBold';}
+
+.fnt13, #fnt13{font-family: 'cormorant_garamondmedium';}
+
+.fnt14, #fnt14{font-family: 'FuturaBT-BoldCondensed';}
+
+.fnt15, #fnt15{font-family: 'lobster_1.3regular';}
+
+.fnt16, #fnt16{font-family: 'scriptinaregular';}
+
+.fnt16, #fnt16 {
+  vertical-align: text-top !important;
+  line-height: 1.5 !important; 
 }
+
+.fnt17, #fnt17{font-family: 'OldEnglishTextMT';}
+
+
+.fnt18, #fnt18{font-family: 'robotoregular';}
+
+ .fnt19, #fnt19{font-family: 'ARDESTINE';} 
+
+.fnt20, #fnt20{font-family: 'ARBONNIE';}
+
+.fnt22, #fnt22{font-family: 'MonotypeCorsiva';}
+.fnt23, #fnt23{font-family: 'scriptoriasskregular';}
+
+.fnt24, #fnt24{font-family: 'ColoredCrayons';}
+.fnt25, #fnt25{font-family: 'EraserRegular';}
+.fnt26, #fnt26{font-family: 'Return_To_Sender';}
+.fnt27, #fnt27{font-family: 'KGSecondChancesSketch';}
+.fnt28, #fnt28{font-family: 'CenturyGothicBold';}
+
+
+
 
 .clipart-custom{
     max-height: 307px;

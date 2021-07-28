@@ -28,3 +28,5 @@ mix.webpackConfig({
             }
         }
     });
+
+mix.copyDirectory('resources/assets/fonts', 'public/fonts');
