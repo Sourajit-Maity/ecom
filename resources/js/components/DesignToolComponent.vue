@@ -462,13 +462,13 @@ export default {
                 {
                     x:300,
                     y:70,
-                    weight:140,
+                    weight:160,
                     height:55,
                     angle: 0,
                     text: "Your text",
                     font:"fnt2",
                     fontStyle: "",
-                    fontSize: 2,
+                    fontSize: 3,
                     fontColor: "#000000",
                     selected:false
                 }
@@ -680,13 +680,13 @@ export default {
                {
                     x:300 + (this.addTextIndex * 10),
                     y:70 + (this.addTextIndex * 10),
-                    weight:200,
-                    height:70,
+                    weight:160,
+                    height:55,
                     angle: 0,
                     text: "Your text",
-                    font:"font-fnt2",
+                    font:"fnt2",
                     fontStyle: "",
-                    fontSize: 2,
+                    fontSize: 3,
                     fontColor: "",
                     selected:false
                 }
