@@ -14425,8 +14425,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     'photoshop-picker': vue_color__WEBPACK_IMPORTED_MODULE_2__.Photoshop,
     VueSimpleRangeSlider: (vue_simple_range_slider__WEBPACK_IMPORTED_MODULE_3___default())
   },
-  mounted: function mounted() {
-    console.log("This is about component");
+  mounted: function mounted() {// console.log("This is about component");
   },
   data: function data() {
     return {
@@ -14537,7 +14536,39 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   computed: {
     getShapeClass: function getShapeClass() {
-      console.info('textDesigns[selectedTextBoxIndex].fontSize', this.textDesigns[this.selectedTextBoxIndex].fontSize);
+      //   console.info('textDesigns[selectedTextBoxIndex].fontSize',this.textDesigns[this.selectedTextBoxIndex].fontSize);
+      if (this.textDesigns[this.selectedTextBoxIndex].fontSize == 1) {
+        this.textDesigns[this.selectedTextBoxIndex].weight = 70;
+        this.textDesigns[this.selectedTextBoxIndex].height = 28;
+      } else if (this.textDesigns[this.selectedTextBoxIndex].fontSize == 2) {
+        this.textDesigns[this.selectedTextBoxIndex].weight = 125;
+        this.textDesigns[this.selectedTextBoxIndex].height = 37;
+      } else if (this.textDesigns[this.selectedTextBoxIndex].fontSize == 3) {
+        this.textDesigns[this.selectedTextBoxIndex].weight = 170;
+        this.textDesigns[this.selectedTextBoxIndex].height = 50;
+      } else if (this.textDesigns[this.selectedTextBoxIndex].fontSize == 4) {
+        this.textDesigns[this.selectedTextBoxIndex].weight = 200;
+        this.textDesigns[this.selectedTextBoxIndex].height = 61;
+      } else if (this.textDesigns[this.selectedTextBoxIndex].fontSize == 5) {
+        this.textDesigns[this.selectedTextBoxIndex].weight = 250;
+        this.textDesigns[this.selectedTextBoxIndex].height = 68;
+      } else if (this.textDesigns[this.selectedTextBoxIndex].fontSize == 6) {
+        this.textDesigns[this.selectedTextBoxIndex].weight = 300;
+        this.textDesigns[this.selectedTextBoxIndex].height = 82;
+      } else if (this.textDesigns[this.selectedTextBoxIndex].fontSize == 7) {
+        this.textDesigns[this.selectedTextBoxIndex].weight = 350;
+        this.textDesigns[this.selectedTextBoxIndex].height = 110;
+      } else if (this.textDesigns[this.selectedTextBoxIndex].fontSize == 8) {
+        this.textDesigns[this.selectedTextBoxIndex].weight = 380;
+        this.textDesigns[this.selectedTextBoxIndex].height = 116;
+      } else if (this.textDesigns[this.selectedTextBoxIndex].fontSize == 9) {
+        this.textDesigns[this.selectedTextBoxIndex].weight = 430;
+        this.textDesigns[this.selectedTextBoxIndex].height = 125;
+      } else if (this.textDesigns[this.selectedTextBoxIndex].fontSize == 10) {
+        this.textDesigns[this.selectedTextBoxIndex].weight = 450;
+        this.textDesigns[this.selectedTextBoxIndex].height = 135;
+      }
+
       return {
         'rectangle1-3': 'rectangle1-3' == this.shapeDefaultClass,
         'rectangle1-5-3': 'rectangle1-5-3' == this.shapeDefaultClass,
@@ -14564,7 +14595,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     //       console.info('event',event);
     //   },
     resize: function resize(newRect) {
-      console.info('newRect', newRect);
+      //    console.info('newRect',newRect);
+      if (newRect.w > 50 && newRect.w < 100) this.textDesigns[this.selectedTextBoxIndex].fontSize = 1;
+      if (newRect.w > 100 && newRect.w < 130) this.textDesigns[this.selectedTextBoxIndex].fontSize = 2;
+      if (newRect.w > 130 && newRect.w < 185) this.textDesigns[this.selectedTextBoxIndex].fontSize = 3;
+      if (newRect.w > 185 && newRect.w < 219) this.textDesigns[this.selectedTextBoxIndex].fontSize = 4;else if (newRect.w > 220 && newRect.w < 263) this.textDesigns[this.selectedTextBoxIndex].fontSize = 5;else if (newRect.w > 263 && newRect.w < 360) this.textDesigns[this.selectedTextBoxIndex].fontSize = 6;else if (newRect.w > 360 && newRect.w < 365) this.textDesigns[this.selectedTextBoxIndex].fontSize = 7;else if (newRect.w > 365 && newRect.w < 405) this.textDesigns[this.selectedTextBoxIndex].fontSize = 8;else if (newRect.w > 405 && newRect.w < 440) this.textDesigns[this.selectedTextBoxIndex].fontSize = 9;else if (newRect.w > 440) this.textDesigns[this.selectedTextBoxIndex].fontSize = 10;
     },
     selectImage: function selectImage() {
       this.$refs.fileInput.click();
@@ -14586,22 +14621,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         this.$emit('input', file[0]);
       }
     },
-    checkvalue: function checkvalue() {
-      console.info('event');
+    checkvalue: function checkvalue() {//   console.info('event');
     },
     selectItem: function selectItem(index) {
       var _this = this;
 
-      console.info('index', index);
+      //   console.info('index',index);
       this.selectedTextBoxIndex = index;
       this.selectDesignbar('textOptions');
       this.textDesigns.forEach(function (item, index_textDesign) {
         if (index_textDesign == _this.selectedTextBoxIndex) item.selected = true;else item.selected = false;
-      });
-      console.info('this.textDesigns', this.textDesigns);
+      }); //   console.info('this.textDesigns',this.textDesigns);
     },
     colorChanged: function colorChanged() {
-      console.info('this.color', this.colors);
+      //   console.info('this.color',this.colors);
       this.backgroundImage = "";
     },
     gobackAndEdit: function gobackAndEdit() {
@@ -14723,7 +14756,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                console.log("printing..");
+                //   console.log("printing..");
                 el = _this4.$refs.printcontent; // add option type to get the image version
                 // if not provided the promise will return 
                 // the canvas.
@@ -14731,15 +14764,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 options = {
                   type: 'dataURL'
                 };
-                _context.next = 5;
+                _context.next = 4;
                 return _this4.$html2canvas(el, options);
 
-              case 5:
+              case 4:
                 _this4.output = _context.sent;
 
                 _this4.selectGlobalMenuItems('addNames');
 
-              case 7:
+              case 6:
               case "end":
                 return _context.stop();
             }
@@ -52714,7 +52747,7 @@ var render = function() {
                                 aspectRatio: true
                               },
                               on: {
-                                resizing: _vm.resize,
+                                resize: _vm.resize,
                                 select: function($event) {
                                   return _vm.selectItem(index)
                                 }

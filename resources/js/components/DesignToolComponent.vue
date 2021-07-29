@@ -75,8 +75,8 @@
                         :h="textDesign.height"
                         :angle="textDesign.angle"
                         :selected="textDesign.selected"
-                        v-on:resizing="resize"
                         :aspectRatio="true"
+                        @resize = "resize"
                         @select="selectItem(index)"
                         v-for="(textDesign,index) in textDesigns" :key="index"
                         >
@@ -446,7 +446,7 @@ export default {
     VueSimpleRangeSlider 
   },
   mounted() {
-    console.log("This is about component");
+    // console.log("This is about component");
   },
   data(){
       return {
@@ -530,7 +530,48 @@ export default {
   },
   computed:{
       getShapeClass(){
-          console.info('textDesigns[selectedTextBoxIndex].fontSize',this.textDesigns[this.selectedTextBoxIndex].fontSize);
+        //   console.info('textDesigns[selectedTextBoxIndex].fontSize',this.textDesigns[this.selectedTextBoxIndex].fontSize);
+        if(this.textDesigns[this.selectedTextBoxIndex].fontSize==1){
+        this.textDesigns[this.selectedTextBoxIndex].weight=70;
+        this.textDesigns[this.selectedTextBoxIndex].height=28;
+         }
+        else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==2){
+        this.textDesigns[this.selectedTextBoxIndex].weight=125;
+        this.textDesigns[this.selectedTextBoxIndex].height=37;
+         }
+         else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==3){
+        this.textDesigns[this.selectedTextBoxIndex].weight=170;
+        this.textDesigns[this.selectedTextBoxIndex].height=50;
+         }
+         else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==4){
+            this.textDesigns[this.selectedTextBoxIndex].weight=200;
+            this.textDesigns[this.selectedTextBoxIndex].height=61;
+         }
+        else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==5){
+        this.textDesigns[this.selectedTextBoxIndex].weight=250;
+        this.textDesigns[this.selectedTextBoxIndex].height=68;
+         }
+        else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==6){
+        this.textDesigns[this.selectedTextBoxIndex].weight=300;
+        this.textDesigns[this.selectedTextBoxIndex].height=82;
+         }
+        else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==7){
+        this.textDesigns[this.selectedTextBoxIndex].weight=350;
+        this.textDesigns[this.selectedTextBoxIndex].height=110;
+         }
+        else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==8){
+        this.textDesigns[this.selectedTextBoxIndex].weight=380;
+        this.textDesigns[this.selectedTextBoxIndex].height=116;
+         }
+        else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==9){
+        this.textDesigns[this.selectedTextBoxIndex].weight=430;
+        this.textDesigns[this.selectedTextBoxIndex].height=125;
+         }
+        else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==10){
+        this.textDesigns[this.selectedTextBoxIndex].weight=450;
+        this.textDesigns[this.selectedTextBoxIndex].height=135;
+         }
+
           return {
             'rectangle1-3': 'rectangle1-3' == this.shapeDefaultClass,
             'rectangle1-5-3': 'rectangle1-5-3'==this.shapeDefaultClass,
@@ -556,8 +597,29 @@ export default {
     //   itemChange(event){
     //       console.info('event',event);
     //   },
-    resize (newRect) {
-       console.info('newRect',newRect);
+    resize(newRect) {
+    //    console.info('newRect',newRect);
+       if(newRect.w>50 && newRect.w<100)
+        this.textDesigns[this.selectedTextBoxIndex].fontSize=1;
+        if(newRect.w>100 && newRect.w<130)
+        this.textDesigns[this.selectedTextBoxIndex].fontSize=2;
+        if(newRect.w>130 && newRect.w<185)
+        this.textDesigns[this.selectedTextBoxIndex].fontSize=3;
+       if(newRect.w>185 && newRect.w<219)
+        this.textDesigns[this.selectedTextBoxIndex].fontSize=4;
+       else if(newRect.w>220 && newRect.w<263)
+        this.textDesigns[this.selectedTextBoxIndex].fontSize=5;
+        else if(newRect.w>263 && newRect.w<360)
+        this.textDesigns[this.selectedTextBoxIndex].fontSize=6;
+        else if(newRect.w>360 && newRect.w<365)
+        this.textDesigns[this.selectedTextBoxIndex].fontSize=7;
+        else if(newRect.w>365 && newRect.w<405)
+        this.textDesigns[this.selectedTextBoxIndex].fontSize=8;
+        else if(newRect.w>405 && newRect.w<440)
+        this.textDesigns[this.selectedTextBoxIndex].fontSize=9;
+        else if(newRect.w>440)
+        this.textDesigns[this.selectedTextBoxIndex].fontSize=10;
+
     },
     selectImage () {
           this.$refs.fileInput.click()
@@ -577,10 +639,10 @@ export default {
         }
     },
     checkvalue(){
-          console.info('event');
+        //   console.info('event');
     },
       selectItem(index){
-          console.info('index',index);
+        //   console.info('index',index);
           this.selectedTextBoxIndex=index;
           this.selectDesignbar('textOptions');
 
@@ -590,10 +652,10 @@ export default {
              else
                 item.selected=false;
           });
-          console.info('this.textDesigns',this.textDesigns);
+        //   console.info('this.textDesigns',this.textDesigns);
       },
       colorChanged(){
-          console.info('this.color',this.colors);
+        //   console.info('this.color',this.colors);
           this.backgroundImage="";
       },
       gobackAndEdit(){
@@ -721,7 +783,7 @@ export default {
           );
       },
       async printThis() {
-      console.log("printing..");
+    //   console.log("printing..");
       const el = this.$refs.printcontent;
       // add option type to get the image version
       // if not provided the promise will return 
