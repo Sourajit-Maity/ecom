@@ -1,79 +1,240 @@
 <x-layouts.welcome-layout>
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-            <div class="row justify-content-center">
-                <div class="col-xl-7 col-lg-9 text-center">
-                    <h1>Custom Name Tags</h1>
-                    <h2>NO SETUP FEES!</h2>
-                </div>
-            </div>
-            <div class="text-center">
-                <a href="{{route('welcome.design-tool')}}" class="btn-get-started scrollto">Get Started Now</a>
-                <!-- <a href="#about" class="btn-get-started scrollto">Get Started Now</a> -->
-            </div>
 
-            <div class="row icon-boxes">
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 pb-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="icon-box">
-                        <div class="icon"><i class="ri-award-line"></i></div>
-                        <h4 class="title">
-                            <a href="{{route('welcome.design-tool')}}">Printed Badges</a>
-                        </h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+    <section class="banner-section" style="background: url('{{asset("welcome_assets/images/banner-image.jpg")}}') no-repeat center center;">
+        <div class="container banner-container">
+            <div class="banner-row row">
+                <div class="col-md-7 banner-col-left">
+                    <div class="banner-cont">
+                        <h1>
+                            Lorem ipsum dolor amet <br>
+                            <span>custom badges </span>
+                        </h1>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Phasellus ut
+                            leo, tortor vehicula ante lectus. Diam integer <br> nulla lectus cursus
+                            ultrices in.
+                        </p>
+
+                        <a class="cmn-btn" href="{{route('welcome.design-tool')}}">GET STARTED NOW</a>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 pb-4" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="icon-box">
-                        <div class="icon"><i class="ri-medal-line"></i></div>
-                        <h4 class="title">
-                            <a href="{{route('welcome.design-tool')}}">Framed Badges</a>
-                        </h4>
-                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                <div class="col-md-5 banner-col-right">
+                    <div class="banner-image">
+                        <img src="{{asset('welcome_assets/images/banner-image2.png')}}" alt="">
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 pb-4" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="icon-box">
-                        <div class="icon"><i class="ri-medal-2-line"></i></div>
-                        <h4 class="title">
-                            <a href="{{route('welcome.design-tool')}}">Metallic Silver Badges</a>
-                        </h4>
-                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 pb-4" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="icon-box">
-                        <div class="icon"><i class="ri-award-fill"></i></div>
-                        <h4 class="title">
-                            <a href="{{route('welcome.design-tool')}}">Metallic Gold Badges</a>
-                        </h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 pb-4" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="icon-box">
-                        <div class="icon"><i class="ri-medal-fill"></i></div>
-                        <h4 class="title">
-                            <a href="{{route('welcome.design-tool')}}">Silver Badges</a>
-                        </h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 pb-4" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="icon-box">
-                        <div class="icon"><i class="ri-medal-2-fill"></i></div>
-                        <h4 class="title">
-                            <a href="{{route('welcome.design-tool')}}">Gold Badges</a>
-                        </h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </section><!-- End Hero -->
+    </section>
+
+
+    <section class="our-product cmn-gap">
+        <div class="container">
+            <div class="cmn-heading">
+                <h2>Our Products</h2>
+            </div>
+
+            <div class="row product-row">
+                <div class="col-lg-4 col-md-6 product-col">
+                    <div class="product-card">
+                        <div class="card-image">
+                            <img src="{{asset('welcome_assets/images/product-01.png')}}" alt="">
+                        </div>
+                        <div class="product-cont">
+                            <h4>Printed Badges</h4>
+                            <a class="cmn-btn" href="{{route('welcome.design-tool')}}">Design now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 product-col">
+                    <div class="product-card">
+                        <div class="card-image">
+                            <img src="{{asset('welcome_assets/images/product-02.png')}}" alt="">
+                        </div>
+                        <div class="product-cont">
+                            <h4>Framed Badges</h4>
+                            <a class="cmn-btn" href="{{route('welcome.design-tool')}}">Design now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 product-col">
+                    <div class="product-card">
+                        <div class="card-image">
+                            <img src="{{asset('welcome_assets/images/product-03.png')}}" alt="">
+                        </div>
+                        <div class="product-cont">
+                            <h4>Metallic Silver Badges</h4>
+                            <a class="cmn-btn" href="{{route('welcome.design-tool')}}">Design now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 product-col">
+                    <div class="product-card">
+                        <div class="card-image">
+                            <img src="{{asset('welcome_assets/images/product-04.png')}}" alt="">
+                        </div>
+                        <div class="product-cont">
+                            <h4>Metallic Gold Badges</h4>
+                            <a class="cmn-btn" href="{{route('welcome.design-tool')}}">Design now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 product-col">
+                    <div class="product-card">
+                        <div class="card-image">
+                            <img src="{{asset('welcome_assets/images/product-05.png')}}" alt="">
+                        </div>
+                        <div class="product-cont">
+                            <h4>Silver Badges</h4>
+                            <a class="cmn-btn" href="{{route('welcome.design-tool')}}">Design now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 product-col">
+                    <div class="product-card">
+                        <div class="card-image">
+                            <img src="{{asset('welcome_assets/images/product-06.png')}}" alt="">
+                        </div>
+                        <div class="product-cont">
+                            <h4>Gold Badges</h4>
+                            <a class="cmn-btn" href="{{route('welcome.design-tool')}}">Design now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="who-we-are-sec cmn-gap" style="background: url({{asset('welcome_assets/images/who-we-are.jpg')}}) no-repeat right center;">
+        <div class="container">
+            <div class="who-we-are-cont">
+                <div class="cmn-heading">
+                    <h2>Who We Are</h2>
+                </div>
+                <h3>BADGES ARE OUR PASSION</h3>
+                <p>
+                    Badges may be small, but they are big to us. With their years of experience,
+                    our entire team treats each and every badge we make as if it were our own.
+                    We take the utmost pridein making the best quality badges at a great price.
+                    Badges. Your Brand. Our Passion.
+                </p>
+                <a href="#url">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="company-benefits cmn-gap">
+        <div class="container">
+            <div class="cmn-heading">
+                <h2>Company Benefits</h2>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Habitant massa imperdiet purus amet, at nullam arcu <br> dignissim netus.
+                Purus in in in dignissim cum fermentum est. Mattis vehicula morbi odio viverra.
+            </p>
+
+            <div class="row benefits-row">
+                <div class="col-md-5 benefits-left">
+                    <img src="{{asset('welcome_assets/images/company-benefits.png')}}" alt="">
+                </div>
+                <div class="col-md-7 benefits-right">
+                    <div class="benefits-cont">
+                        <ul>
+                            <li>
+                                <div class="benefit-icon">
+                                    <img src="{{asset('welcome_assets/images/benefits-icon01.svg')}}" alt="">
+                                </div>
+                                <div class="benefit-cont">
+                                    <h4>Setup Charges</h4>
+                                    <p>
+                                        Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="benefit-icon">
+                                    <img src="{{asset('welcome_assets/images/benefits-icon02.svg')}}" alt="">
+                                </div>
+                                <div class="benefit-cont">
+                                    <h4>Minimums</h4>
+                                    <p>
+                                        Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="benefit-icon">
+                                    <img src="{{asset('welcome_assets/images/benefits-icon03.svg')}}" alt="">
+                                </div>
+                                <div class="benefit-cont">
+                                    <h4>Shipping</h4>
+                                    <p>
+                                        Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial cmn-gap">
+        <div class="container">
+            <div class="cmn-heading">
+                <h2>They Said</h2>
+            </div>
+
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="iamge-sec">
+                        <img src="{{asset('welcome_assets/images/testimonial01.jpg')}}" alt="">
+                    </div>
+                    <div class="testimonial-cont">
+                        <h4>Michael</h4>
+                        <p>I was last-minute and they took on the job and moved quickly.
+                            They did a great job printing the badges for my event.
+                            I would highly recommend them.
+                        </p>
+                        <a href="#url">Read More</a>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="iamge-sec">
+                        <img src="{{asset('welcome_assets/images/testimonial02.jpg')}}" alt="">
+                    </div>
+                    <div class="testimonial-cont">
+                        <h4>Kailey</h4>
+                        <p>
+                            QUICK RESPONSES!!! They turned an <br> order in less than 24 hours for me.
+                        </p>
+                        <a href="#url">Read More</a>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="iamge-sec">
+                        <img src="{{asset('welcome_assets/images/testimonial01.jpg')}}" alt="">
+                    </div>
+                    <div class="testimonial-cont">
+                        <h4>Michael</h4>
+                        <p>
+                            I was last-minute and they took on the job and moved quickly.
+                            They did a great job printing the badges for my event.
+                            I would highly recommend them.
+                        </p>
+                        <a href="#url">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </x-layouts.welcome-layout>

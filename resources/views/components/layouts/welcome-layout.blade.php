@@ -1,69 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
+  <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Our Name Badges</title>
 
-  <title></title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
-  <script src="{{ mix('/js/app.js') }}" defer></script>
-  <!-- Favicons -->
-  <link href="{{asset('welcome_assets/assets/img/favicon.png')}}" rel="icon">
-  <link href="{{asset('welcome_assets/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <!-- fabicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+  <!-- All CSS -->
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{{asset('welcome_assets/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{asset('welcome_assets/assets/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
-  <link href="{{asset('welcome_assets/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-  <link href="{{asset('welcome_assets/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
-  <link href="{{asset('welcome_assets/assets/vendor/venobox/venobox.css')}}" rel="stylesheet">
-  <link href="{{asset('welcome_assets/assets/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-  <link href="{{asset('welcome_assets/assets/vendor/aos/aos.css')}}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="{{asset('welcome_assets/assets/css/style.css')}}" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Badge Print CO - v2.2.2
-  * Template URL: https://bootstrapmade.com/Badge Print CO-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="{{asset('welcome_assets/css/all.css')}}">
+  <link rel="stylesheet" href="{{asset('welcome_assets/css/brands.css')}}">
+  <link rel="stylesheet" href="{{asset('welcome_assets/css/fontawesome.css')}}">
+  <link rel="stylesheet" href="{{asset('welcome_assets/css/regular.css')}}">
+  <link rel="stylesheet" href="{{asset('welcome_assets/css/solid.css')}}">
+  <link rel="stylesheet" href="{{asset('welcome_assets/css/easy-responsive-tabs.css')}}">
+  <link rel="stylesheet" href="{{asset('welcome_assets/css/slick.css')}}">
+  <link rel="stylesheet" href="{{asset('welcome_assets/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('welcome_assets/style.css')}}">
 </head>
 
 <body>
-
   <x-welcome-includes.welcome-header />
-  <main id="app">
-    {{ $slot }}
-  </main><!-- End #main -->
+
+  {{$slot}}
 
   <x-welcome-includes.welcome-footer />
-  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
-  <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="{{asset('welcome_assets/assets/vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('welcome_assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('welcome_assets/assets/vendor/jquery.easing/jquery.easing.min.js')}}"></script>
-  <script src="{{asset('welcome_assets/assets/vendor/php-email-form/validate.js')}}"></script>
-  <script src="{{asset('welcome_assets/assets/vendor/waypoints/jquery.waypoints.min.js')}}"></script>
-  <script src="{{asset('welcome_assets/assets/vendor/counterup/counterup.min.js')}}"></script>
-  <script src="{{asset('welcome_assets/assets/vendor/venobox/venobox.min.js')}}"></script>
-  <script src="{{asset('welcome_assets/assets/vendor/owl.carousel/owl.carousel.min.js')}}"></script>
-  <script src="{{asset('welcome_assets/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-  <script src="{{asset('welcome_assets/assets/vendor/aos/aos.js')}}"></script>
 
-  <!-- Template Main JS File -->
-  <script src="{{asset('welcome_assets/assets/js/main.js')}}"></script>
 
+  <!-- <span id="scroll" style="display: none;"><i class="fas fa-angle-up"></i></span> -->
+
+  <!-- Jquery-->
+  <script src="{{asset('welcome_assets/js/jquery-3.5.1.min.js')}}"></script>
+  <script src="{{asset('welcome_assets/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('welcome_assets/js/slick.min.js')}}"></script>
+  <script src="{{asset('welcome_assets/js/easyResponsiveTabs.js')}}"></script>
+  <script src="{{asset('welcome_assets/js/common.js')}}"></script>
 </body>
 
 </html>

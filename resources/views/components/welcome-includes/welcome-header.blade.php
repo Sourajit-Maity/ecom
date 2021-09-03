@@ -1,47 +1,49 @@
- <!-- ======= Header ======= -->
- <header id="header" class="fixed-top">
-     <div class="container d-flex align-items-center">
+<header class="main-head {{ Request::is('design-tool') ? 'product-head' : '' }}">
 
-         <h1 class="logo mr-auto">
-             <a href="/"><img src="{{asset('welcome_assets/assets/img/logo.png')}}" /></a>
-         </h1>
-         <!-- Uncomment below if you prefer to use an image logo -->
-         <!-- <a href="index.html" class="logo mr-auto"><img src="{{asset('welcome_assets/assets/img/logo.png')}}" alt="" class="img-fluid"></a>-->
+    <div class="top-head">
+        <div class="container">
+            <div class="top-head-wrap">
+                <div class="login">
+                    <ul>
+                        <li><a href="{{route('welcome.login')}}">Login</a></li>
+                        <li><a href="{{route('welcome.signup')}}">Signup</a></li>
+                    </ul>
+                </div>
 
+                <div class="logo">
+                    <a href="{{route('welcome.home')}}"><img src="{{asset('welcome_assets/images/logo.png')}}" alt=""></a>
+                </div>
 
-         <nav class="nav-menu d-none d-lg-block">
-             <ul>
-                 <li>
-                     <a href="/">Home</a>
-                 </li>
-                 <!-- <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li class="drop-down"><a href="">Drop Down</a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="drop-down"><a href="#">Deep Drop Down</a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#contact">Contact</a></li> -->
+                <div class="cart-sec">
+                    <a href="#url">cart items 2</a>
+                </div>
 
-             </ul>
-         </nav><!-- .nav-menu -->
+            </div>
+        </div>
+    </div>
 
-         <!-- <a href="#about" class="get-started-btn scrollto">Get Started Now</a> -->
-
-     </div>
- </header><!-- End Header -->
+    <div class="bottom-head">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <button class="navbar-toggler navbar-toggler-main" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                    <span class="stick"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <button class="navbar-toggler navbar-toggler-main" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <!-- <span class="navbar-toggler-icon"></span> -->
+                        <span class="stick"></span>
+                    </button>
+                    <ul class="navbar-nav">
+                        <li class="{{ Request::is('/') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.home')}}">Home</a></li>
+                        <li class="{{ Request::is('about-us') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.about-us')}}">About Us</a></li>
+                        <li class="{{ Request::is('products') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.products')}}">Products</a></li>
+                        <li class="{{ Request::is('faq') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.faq')}}">FAQs</a></li>
+                        <li class="{{ Request::is('contact-us') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.contact-us')}}">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <button class="navbar-toggler" id="navoverlay" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
+    </div>
+</header>

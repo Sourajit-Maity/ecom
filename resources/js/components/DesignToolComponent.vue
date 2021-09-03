@@ -532,16 +532,16 @@ export default {
       getShapeClass(){
         //   console.info('textDesigns[selectedTextBoxIndex].fontSize',this.textDesigns[this.selectedTextBoxIndex].fontSize);
         if(this.textDesigns[this.selectedTextBoxIndex].fontSize==1){
-        this.textDesigns[this.selectedTextBoxIndex].weight=70;
-        this.textDesigns[this.selectedTextBoxIndex].height=28;
+            this.textDesigns[this.selectedTextBoxIndex].weight=70;
+            this.textDesigns[this.selectedTextBoxIndex].height=28;
          }
         else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==2){
-        this.textDesigns[this.selectedTextBoxIndex].weight=125;
-        this.textDesigns[this.selectedTextBoxIndex].height=37;
+            this.textDesigns[this.selectedTextBoxIndex].weight=125;
+            this.textDesigns[this.selectedTextBoxIndex].height=37;
          }
          else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==3){
-        this.textDesigns[this.selectedTextBoxIndex].weight=170;
-        this.textDesigns[this.selectedTextBoxIndex].height=50;
+            this.textDesigns[this.selectedTextBoxIndex].weight=170;
+            this.textDesigns[this.selectedTextBoxIndex].height=50;
          }
          else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==4){
             this.textDesigns[this.selectedTextBoxIndex].weight=200;
