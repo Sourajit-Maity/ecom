@@ -4,14 +4,14 @@
             <div class="user-nav">
                 <ul>
                     <li><a href="#url">USER MENU</a></li>
-                    <li><a href="#url">CREATE NEW DESIGN</a></li>
-                    <li><a href="#url">MY SAVED DESIGNS</a></li>
-                    <li><a href="#url">ORDER HISTORY</a></li>
+                    <li><a href="{{route('welcome.design-tool')}}">CREATE NEW DESIGN</a></li>
+                    <li><a href="{{route('welcome.my-save-design')}}">MY SAVED DESIGNS</a></li>
+                    <li><a href="{{route('welcome.order-history')}}">ORDER HISTORY</a></li>
                     <li class="menu-item-has-children">
                         <a href="#url">ACCOUNT</a>
                         <ul class="sub-menu">
                             <li><a href="#url">My account</a></li>
-                            <li class="current-menu-item"><a href="#url">saved addresses</a></li>
+                            <li class="current-menu-item"><a href="{{route('welcome.saved-address')}}">saved addresses</a></li>
                         </ul>
                     </li>
                     <li><a href="#url">LOG OUT</a></li>

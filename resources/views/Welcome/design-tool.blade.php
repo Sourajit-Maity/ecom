@@ -4,14 +4,14 @@
             <div class="order-tab">
                 <ul>
                     <li class="active">
-                        <a href="#url">
+                        <a href="{{route('welcome.design-tool')}}">
                             <span>1</span>
                             <span>DESIGN YOUR BADGE</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="#url">
+                        <a href="{{route('welcome.design-page-demo-add-name')}}">
                             <span>2</span>
                             <span>ADD NAMES</span>
                         </a>
@@ -36,17 +36,17 @@
                                     <span>Size/Shape</span>
                                 </a></li>
 
-                            <li><a href="#url">
+                            <li><a href="{{route('welcome.design-page-background')}}">
                                     <span><img src="{{asset('welcome_assets/images/design-list02.svg')}}" alt=""></span>
                                     <span>Background</span>
                                 </a></li>
 
-                            <li><a href="#url">
+                            <li><a href="{{route('welcome.design-page-border')}}">
                                     <span><img src="{{asset('welcome_assets/images/design-list03.svg')}}" alt=""></span>
                                     <span>Border</span>
                                 </a></li>
 
-                            <li><a href="#url">
+                            <li><a href="{{route('welcome.design-page-fastener')}}">
                                     <span><img src="{{asset('welcome_assets/images/design-list04.svg')}}" alt=""></span>
                                     <span>Fastener</span>
                                 </a></li>

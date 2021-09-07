@@ -5,15 +5,14 @@
             <div class="order-tab">
                 <ul>
                     <li>
-                        <a href="#url">
+                        <a href="{{route('welcome.design-tool')}}">
                             <span>1</span>
                             <span>DESIGN YOUR BADGE</span> 
                         </a>
                     </li>
 
                     <li class="active">
-                        <a href="#url">
-                            <span>2</span>
+                        <a href="{{route('welcome.design-page-demo-add-name')}}">                            <span>2</span>
                             <span>ADD NAMES</span> 
                         </a>
                     </li>
@@ -43,7 +42,7 @@
             <div class="button-section">
                 <ul>
                     <li><a class="cmn-btn" href="#url">Go back and edit badge</a></li>
-                    <li><a class="cmn-btn" href="#url">Add or edit names</a></li>
+                    <li><a class="cmn-btn" href="{{route('welcome.design-page-demo-add-or-edit-name')}}">Add or edit names</a></li>
                     <li><a class="cmn-btn" href="#url">I am finished adding names</a></li>
                 </ul>
             </div>
