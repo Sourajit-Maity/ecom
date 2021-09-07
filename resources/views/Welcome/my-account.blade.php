@@ -25,7 +25,7 @@
                 <div class="row account-row">
                     <div class="col-md-2 accout-col-left">
                         <div class="profile-image">
-                            <img src="images/user-profile.png" alt="">
+                            <img src="{{asset('welcome_assets/images/user-profile.png')}}" alt="">
                         </div>
                     </div>
 

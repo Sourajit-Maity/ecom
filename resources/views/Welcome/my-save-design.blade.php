@@ -25,7 +25,7 @@
                 <div class="row design-row">
                     <div class="col-md-6 design-col-left">
                         <div class="images-sec">
-                            <img src="images/design01.png" alt="">
+                            <img src="{{asset('welcome_assets/images/design01.png')}}" alt="">
                         </div>
                     </div>
                     <div class="col-md-6 design-col-right">
@@ -45,7 +45,7 @@
                 <div class="row design-row">
                     <div class="col-md-6 design-col-left">
                         <div class="images-sec">
-                            <img src="images/design02.png" alt="">
+                            <img src="{{asset('welcome_assets/images/design02.png')}}" alt="">
                         </div>
                     </div>
                     <div class="col-md-6 design-col-right">
@@ -65,7 +65,7 @@
                 <div class="row design-row">
                     <div class="col-md-6 design-col-left">
                         <div class="images-sec">
-                            <img src="images/design03.png" alt="">
+                            <img src="{{asset('welcome_assets/images/design03.png')}}" alt="">
                         </div>
                     </div>
                     <div class="col-md-6 design-col-right">
@@ -86,13 +86,13 @@
 
             <div class="pagination">
                 <ul>
-                    <li class="prev"><a href="#url"><img src="images/arrow-right.svg" alt=""></a></li>
+                    <li class="prev"><a href="#url"><img src="{{asset('welcome_assets/images/arrow-right.svg')}}" alt=""></a></li>
                     <li class="active"><a href="#url"><span>1</span></a></li>
                     <li><a href="#url"><span>2</span></a></li>
                     <li><a href="#url"><span>3</span></a></li>
                     <li><a href="#url"><span>4</span></a></li>
                     <li><a href="#url"><span>...</span></a></li>
-                    <li class="next"><a href="#url"><img src="images/arrow-right.svg" alt=""></a></li>
+                    <li class="next"><a href="#url"><img src="{{asset('welcome_assets/images/arrow-right.svg')}}" alt=""></a></li>
                 </ul>
             </div>
 

@@ -43,7 +43,6 @@ Route::get('my-account', [HomeController::class, 'myAccount'])->name('welcome.my
 Route::get('edit-account', [HomeController::class, 'editAccount'])->name('welcome.edit-account');
 Route::get('my-save-design', [HomeController::class, 'mySaveDesign'])->name('welcome.my-save-design');
 
-//
 Route::get('design-page', [HomeController::class, 'designPage'])->name('welcome.design-page');
 Route::get('design-page-background', [HomeController::class, 'designPageBackground'])->name('welcome.design-page-background');
 Route::get('design-page-border', [HomeController::class, 'designPageBorder'])->name('welcome.design-page-border');

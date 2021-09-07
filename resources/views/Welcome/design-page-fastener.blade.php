@@ -33,27 +33,27 @@
                     <div class="design-tab">
                         <ul>
                             <li class="visited"><a href="#url">
-                                <span><img src="images/design-list01.svg" alt=""></span>
+                                <span><img src="{{asset('welcome_assets/images/design-list01.svg')}}" alt=""></span>
                                 <span>Size/Shape</span>
                             </a></li>
 
                             <li class="visited"><a href="#url">
-                                <span><img src="images/design-list02.svg" alt=""></span>
+                                <span><img src="{{asset('welcome_assets/images/design-list02.svg')}}" alt=""></span>
                                 <span>Background</span>
                             </a></li>
 
                             <li class="visited"><a href="#url">
-                                <span><img src="images/design-list03.svg" alt=""></span>
+                                <span><img src="{{asset('welcome_assets/images/design-list03.svg')}}" alt=""></span>
                                 <span>Border</span>
                             </a></li>
 
                             <li class="active"><a href="#url">
-                                <span><img src="images/design-list04.svg" alt=""></span>
+                                <span><img src="{{asset('welcome_assets/images/design-list04.svg')}}" alt=""></span>
                                 <span>Fastener</span>
                             </a></li>
 
                             <li><a href="#url">
-                                <span><img src="images/design-list05.svg" alt=""></span>
+                                <span><img src="{{asset('welcome_assets/images/design-list05.svg')}}" alt=""></span>
                                 <span>Dome</span>
                             </a></li>
                         </ul>
@@ -62,7 +62,7 @@
                     <div class="your-text">
                         <div class="form-input">
                             <textarea placeholder="Your Text"></textarea>
-                            <a href="#url"><img src="images/close.svg" alt=""></a>
+                            <a href="#url"><img src="{{asset('welcome_assets/images/close.svg')}}" alt=""></a>
                         </div>
 
                         <span class="right">1</span>
@@ -104,7 +104,7 @@
                                     <div class="form_input_radio">
                                         <label>
                                             <input type="radio" name="name">
-                                            <span><img src="images/f-image01.png" alt=""></span>
+                                            <span><img src="{{asset('welcome_assets/images/f-image01.png')}}" alt=""></span>
                                         </label>
                                         <span>Magnetic</span>
                                     </div>
@@ -114,7 +114,7 @@
                                     <div class="form_input_radio">
                                         <label>
                                             <input type="radio" name="name">
-                                            <span><img src="images/f-image02.png" alt=""></span>
+                                            <span><img src="{{asset('welcome_assets/images/f-image02.png')}}" alt=""></span>
                                         </label>
                                         <span>Swivel clip</span>
                                     </div>
@@ -123,7 +123,7 @@
                                     <div class="form_input_radio">
                                         <label>
                                             <input type="radio" name="name">
-                                            <span><img src="images/f-image03.png" alt=""></span>
+                                            <span><img src="{{asset('welcome_assets/images/f-image03.png')}}" alt=""></span>
                                         </label>
                                         <span>Military post</span>
                                     </div>
@@ -132,7 +132,7 @@
                                     <div class="form_input_radio">
                                         <label>
                                             <input type="radio" name="name">
-                                            <span><img src="images/f-image04.png" alt=""></span>
+                                            <span><img src="{{asset('welcome_assets/images/f-image04.png')}}" alt=""></span>
                                         </label>
                                         <span>Pin fastener</span>
                                     </div>
@@ -142,7 +142,7 @@
                                     <div class="form_input_radio">
                                         <label>
                                             <input type="radio" name="name">
-                                            <span><img src="images/f-image05.png" alt=""></span>
+                                            <span><img src="{{asset('welcome_assets/images/f-image05.png')}}" alt=""></span>
                                         </label>
                                         <span>Pocket clip</span>
                                     </div>

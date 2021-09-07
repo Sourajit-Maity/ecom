@@ -33,27 +33,27 @@
                     <div class="design-tab">
                         <ul>
                             <li class="visited"><a href="#url">
-                                <span><img src="images/design-list01.svg" alt=""></span>
+                                <span><img src="{{asset('welcome_assets/images/design-list01.svg')}}" alt=""></span>
                                 <span>Size/Shape</span>
                             </a></li>
 
                             <li class="active"><a href="#url">
-                                <span><img src="images/design-list02.svg" alt=""></span>
+                                <span><img src="{{asset('welcome_assets/images/design-list02.svg')}}" alt=""></span>
                                 <span>Background</span>
                             </a></li>
 
                             <li><a href="#url">
-                                <span><img src="images/design-list03.svg" alt=""></span>
+                                <span><img src="{{asset('welcome_assets/images/design-list03.svg')}}" alt=""></span>
                                 <span>Border</span>
                             </a></li>
 
                             <li><a href="#url">
-                                <span><img src="images/design-list04.svg" alt=""></span>
+                                <span><img src="{{asset('welcome_assets/images/design-list04.svg')}}" alt=""></span>
                                 <span>Fastener</span>
                             </a></li>
 
                             <li><a href="#url">
-                                <span><img src="images/design-list05.svg" alt=""></span>
+                                <span><img src="{{asset('welcome_assets/images/design-list05.svg')}}" alt=""></span>
                                 <span>Dome</span>
                             </a></li>
                         </ul>
@@ -109,7 +109,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/mat01.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/mat01.png')}}" alt=""></span>
                                                     </label>
                                                     <span>White - Plastic</span>
                                                 </div>
@@ -119,7 +119,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/mat02.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/mat02.png')}}" alt=""></span>
                                                     </label>
                                                     <span>Gold - Plastic</span>
                                                 </div>
@@ -128,7 +128,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/mat03.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/mat03.png')}}" alt=""></span>
                                                     </label>
                                                     <span>Silver - Plastic</span>
                                                 </div>
@@ -137,7 +137,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/mat04.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/mat04.png')}}" alt=""></span>
                                                     </label>
                                                     <span>Gold Metallic</span>
                                                 </div>
@@ -147,7 +147,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" checked name="name">
-                                                        <span><img src="images/mat05.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/mat05.png')}}" alt=""></span>
                                                     </label>
                                                     <span>Silver Metallic</span>
                                                 </div>
@@ -157,7 +157,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/mat06.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/mat06.png')}}" alt=""></span>
                                                     </label>
                                                     <span>Wood Grain</span>
                                                 </div>
@@ -169,7 +169,7 @@
                                 <div class="content resp-tab-content-active">
 
                                  <div class="color-picker">
-                                     <img src="images/color-picker.png" alt="">
+                                     <img src="{{asset('welcome_assets/images/color-picker.png')}}" alt="">
                                  </div>
 
                                 </div>
@@ -180,7 +180,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/custom01.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/custom01.png')}}" alt=""></span>
                                                     </label>
                                                 </div>
                                             </li>
@@ -189,7 +189,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/custom02.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/custom02.png')}}" alt=""></span>
                                                     </label>
                                                 </div>
                                             </li>
@@ -197,7 +197,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/custom03.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/custom03.png')}}" alt=""></span>
                                                     </label>
                                                 </div>
                                             </li>
@@ -205,16 +205,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/custom04.png" alt=""></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                <div class="form_input_radio">
-                                                    <label>
-                                                        <input type="radio" name="name">
-                                                        <span><img src="images/custom05.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/custom04.png')}}" alt=""></span>
                                                     </label>
                                                 </div>
                                             </li>
@@ -223,7 +214,16 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/custom06.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/custom05.png')}}" alt=""></span>
+                                                    </label>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="form_input_radio">
+                                                    <label>
+                                                        <input type="radio" name="name">
+                                                        <span><img src="{{asset('welcome_assets/images/custom06.png')}}" alt=""></span>
                                                     </label>
                                                 </div>
                                             </li>
@@ -231,7 +231,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/custom07.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/custom07.png')}}" alt=""></span>
                                                     </label>
                                                 </div>
                                             </li>
@@ -239,7 +239,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/custom08.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/custom08.png')}}" alt=""></span>
                                                     </label>
                                                 </div>
                                             </li>
@@ -247,7 +247,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/custom09.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/custom09.png')}}" alt=""></span>
                                                     </label>
                                                 </div>
                                             </li>
@@ -255,7 +255,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/custom10.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/custom10.png')}}" alt=""></span>
                                                     </label>
                                                 </div>
                                             </li>
@@ -263,7 +263,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/custom11.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/custom11.png')}}" alt=""></span>
                                                     </label>
                                                 </div>
                                             </li>
@@ -271,7 +271,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/custom12.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/custom12.png')}}" alt=""></span>
                                                     </label>
                                                 </div>
                                             </li>
@@ -279,7 +279,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/custom13.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/custom13.png')}}" alt=""></span>
                                                     </label>
                                                 </div>
                                             </li>
@@ -287,7 +287,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/custom14.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/custom14.png')}}" alt=""></span>
                                                     </label>
                                                 </div>
                                             </li>
@@ -295,7 +295,7 @@
                                                 <div class="form_input_radio">
                                                     <label>
                                                         <input type="radio" name="name">
-                                                        <span><img src="images/custome15.png" alt=""></span>
+                                                        <span><img src="{{asset('welcome_assets/images/custome15.png')}}" alt=""></span>
                                                     </label>
                                                 </div>
                                             </li>

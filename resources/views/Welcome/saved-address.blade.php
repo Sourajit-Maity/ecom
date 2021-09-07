@@ -78,13 +78,13 @@
 
             <div class="pagination">
                 <ul>
-                    <li class="prev"><a href="#url"><img src="images/arrow-right.svg" alt=""></a></li>
+                    <li class="prev"><a href="#url"><img src="{{asset('welcome_assets/images/arrow-right.svg')}}" alt=""></a></li>
                     <li class="active"><a href="#url"><span>1</span></a></li>
                     <li><a href="#url"><span>2</span></a></li>
                     <li><a href="#url"><span>3</span></a></li>
                     <li><a href="#url"><span>4</span></a></li>
                     <li><a href="#url"><span>...</span></a></li>
-                    <li class="next"><a href="#url"><img src="images/arrow-right.svg" alt=""></a></li>
+                    <li class="next"><a href="#url"><img src="{{asset('welcome_assets/images/arrow-right.svg')}}" alt=""></a></li>
                 </ul>
             </div>
 

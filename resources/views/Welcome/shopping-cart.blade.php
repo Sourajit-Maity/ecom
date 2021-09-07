@@ -17,8 +17,8 @@
                             <td>
                                 <div class="image-wraper">
                                     <div class="order-image">
-                                        <img src="images/order01.png" alt="">
-                                        <a href="#url"><img src="images/close.svg" alt=""></a>
+                                        <img src="{{asset('welcome_assets/images/order01.png')}}" alt="">
+                                        <a href="#url"><img src="{{asset('welcome_assets/images/close.svg')}}" alt=""></a>
                                     </div>
                                     <div class="order-name">
                                         <p>Plastic Badges</p>
@@ -44,8 +44,8 @@
                             <td>
                                 <div class="image-wraper">
                                     <div class="order-image">
-                                        <img src="images/order02.png" alt="">
-                                        <a href="#url"><img src="images/close.svg" alt=""></a>
+                                        <img src="{{asset('welcome_assets/images/order02.png')}}" alt="">
+                                        <a href="#url"><img src="{{asset('welcome_assets/images/close.svg')}}" alt=""></a>
                                     </div>
                                     <div class="order-name">
                                         <p>Plastic Badges</p>
@@ -71,8 +71,8 @@
                             <td>
                                 <div class="image-wraper">
                                     <div class="order-image">
-                                        <img src="images/order03.png" alt="">
-                                        <a href="#url"><img src="images/close.svg" alt=""></a>
+                                        <img src="{{asset('welcome_assets/images/order03.png')}}" alt="">
+                                        <a href="#url"><img src="{{asset('welcome_assets/images/close.svg')}}" alt=""></a>
                                     </div>
                                     <div class="order-name">
                                         <p>Plastic Badges</p>
