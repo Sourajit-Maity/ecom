@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="cart-sec">
-                    <a href="#url">cart items 2</a>
+                    <a href="{{route('welcome.shopping-cart')}}">cart items 2</a>
                 </div>
 
             </div>
