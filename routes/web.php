@@ -34,6 +34,26 @@ Route::get('login', [HomeController::class, 'login'])->name('welcome.login');
 Route::get('product-details', [HomeController::class, 'productDetails'])->name('welcome.product-details');
 // Route::get('design-tool', [DesignToolController::class, 'index'])->name('welcome.design-tool');
 Route::get('design-tool', [HomeController::class, 'designTool'])->name('welcome.design-tool');
+Route::get('add-address', [HomeController::class, 'addAddress'])->name('welcome.add-address');
+Route::get('billing-address', [HomeController::class, 'billingAddress'])->name('welcome.billing-address');
+Route::get('shopping-cart', [HomeController::class, 'shoppingCart'])->name('welcome.shopping-cart');
+Route::get('saved-address', [HomeController::class, 'savedAddress'])->name('welcome.saved-address');
+Route::get('order-history', [HomeController::class, 'orderHistory'])->name('welcome.order-history');
+Route::get('my-account', [HomeController::class, 'myAccount'])->name('welcome.my-account');
+Route::get('edit-account', [HomeController::class, 'editAccount'])->name('welcome.edit-account');
+Route::get('my-save-design', [HomeController::class, 'mySaveDesign'])->name('welcome.my-save-design');
+
+Route::get('design-page', [HomeController::class, 'designPage'])->name('welcome.design-page');
+Route::get('design-page-background', [HomeController::class, 'designPageBackground'])->name('welcome.design-page-background');
+Route::get('design-page-border', [HomeController::class, 'designPageBorder'])->name('welcome.design-page-border');
+Route::get('design-page-colors', [HomeController::class, 'designPageColors'])->name('welcome.design-page-colors');
+Route::get('design-page-custom-background', [HomeController::class, 'designPageCustomBackground'])->name('welcome.design-page-custom-background');
+Route::get('design-page-demo', [HomeController::class, 'designPageDemo'])->name('welcome.design-page-demo');
+Route::get('design-page-demo-add-name', [HomeController::class, 'designPageDemoaddName'])->name('welcome.design-page-demo-add-name');
+Route::get('design-page-demo-add-or-edit-name', [HomeController::class, 'designPageDemoaddorEditName'])->name('welcome.design-page-demo-add-or-edit-name');
+Route::get('design-page-fastener', [HomeController::class, 'designPageFastener'])->name('welcome.design-page-fastener');
+
+
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum'], function () {
     Route::get('profile', [ProfileController::class, 'getProfile'])->name('admin.profile');
