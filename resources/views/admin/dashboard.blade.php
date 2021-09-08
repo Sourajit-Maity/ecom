@@ -26,5 +26,22 @@
         </div>
     </div>
 </div>
+<div class="kt-portlet">
+    <div class="kt-portlet__body kt-portlet__body--fit">
+        <div class="row row-no-padding row-col-separator-xl">
+            <div class="col-md-6 col-lg-6 col-xl-6">
+                <x-admin.dashboard-count-widget>
+                    <x-admin.dashboard-count-widget-item title="Total faqs" description="Total user available in this system" :count="$count['faqCount']" href="{{ route('faq-master.index') }}" />
+                    <x-admin.dashboard-count-widget-item title="Total inactive faqs" description="Total inactive faq available in this system" :count="$count['blockedFaqCount'] " href="{{ route('faq-master.index') }}" />
+                </x-admin.dashboard-count-widget>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-6">
+                <x-admin.dashboard-count-widget>
+                    <x-admin.dashboard-count-widget-item title="Total active faqs" description="Total active faq available in this system" :count="$count['activeFaqCount'] " href="{{ route('faq-master.index') }}" />
+                </x-admin.dashboard-count-widget>
+            </div>
+        </div>
+    </div>
+</div>
 
 </x-admin-layout>
