@@ -131,7 +131,7 @@
                 </td>
                 <x-admin.td-action>
                     <a class="dropdown-item" href="{{ route('contact-form.edit', ['contact_form' => $contactusform->id]) }}"><i
-                            class="la la-edit"></i> Edit</a>
+                            class="la la-edit"></i> View</a>
                     <button href="#" class="dropdown-item" wire:click="deleteAttempt({{ $contactusform->id }})"><i
                             class="fa fa-trash"></i> Delete</button>
                 </x-admin.td-action>
