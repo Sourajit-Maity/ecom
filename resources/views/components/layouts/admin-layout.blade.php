@@ -79,7 +79,7 @@
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
     <!--end::Layout Skins -->
-    <link rel="shortcut icon" href="{{asset('admin_assets/media/logos/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{asset('admin_assets/media/logos/logo.png')}}" />
 
 </head>
 
