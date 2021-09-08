@@ -46,6 +46,32 @@
 									<h4 class="kt-menu__section-text">Master</h4>
 									<i class="kt-menu__section-icon flaticon-more-v2"></i>
 								</li> --}}
+								<li class="kt-menu__section ">
+									<h4 class="kt-menu__section-text">Master Data Management</h4>
+									<i class="kt-menu__section-icon flaticon-more-v2"></i>
+								</li>
+								<li class="kt-menu__item  {{ Request::is('admin/faq-master*') ? 'kt-menu__item--active' : '' }}"
+												aria-haspopup="true"><a href="{{ route('faq-master.index') }}"
+													class="kt-menu__link ">
+													<i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+														class="kt-menu__link-text">Faq-Master</span></a>
+								</li>
+								<li class="kt-menu__section ">
+									<h4 class="kt-menu__section-text">Contact/Review Management</h4>
+									<i class="kt-menu__section-icon flaticon-more-v2"></i>
+								</li>
+								<li class="kt-menu__item  {{ Request::is('admin/contact-form*') ? 'kt-menu__item--active' : '' }}"
+												aria-haspopup="true"><a href="{{ route('contact-form.index') }}"
+													class="kt-menu__link ">
+													<i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+														class="kt-menu__link-text">Contact us Form</span></a>
+								</li>
+								<li class="kt-menu__item  {{ Request::is('admin/review-master*') ? 'kt-menu__item--active' : '' }}"
+												aria-haspopup="true"><a href="{{ route('review-master.index') }}"
+													class="kt-menu__link ">
+													<i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+														class="kt-menu__link-text">Review-Master</span></a>
+								</li>
 							</ul>
 						</div>
 					</div>
