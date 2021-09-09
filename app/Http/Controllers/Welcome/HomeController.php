@@ -4,32 +4,65 @@ namespace App\Http\Controllers\Welcome;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Faq;
+use App\Models\Review;
+use App\Models\ContactUsForm;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('Welcome.home');
+        $reviews = Review::with('user')->where('active', 1)->get();
+        return view('Welcome.home',compact('reviews'));
     }
     public function aboutUs()
     {
-        return view('Welcome.about-us');
+        $reviews = Review::with('user')->where('active', 1)->get();
+        return view('Welcome.about-us',compact('reviews'));
     }
     public function products()
     {
-        return view('Welcome.products');
+        $reviews = Review::with('user')->where('active', 1)->get();
+        return view('Welcome.products',compact('reviews'));
     }
     public function faq()
     {
-        return view('Welcome.faq');
+        $faqs = Faq::all();
+        $reviews = Review::with('user')->where('active', 1)->get();
+        return view('Welcome.faq',compact('faqs','reviews'));
     }
     public function contactUs()
     {
-        return view('Welcome.contact-us');
+        $reviews = Review::with('user')->where('active', 1)->get();
+        return view('Welcome.contact-us',compact('reviews'));
+    }
+    public function contactUsSubmit(Request $request)
+    {
+        Log::debug("Request".print_r($request->all(), true));
+        request()->validate([
+            'full_name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'zip' => 'required',
+            'subject' => 'required',
+            'message' => 'required',
+        ]);
+    
+       
+        $contact = new ContactUsForm($request->all());
+        $contact->save();
+    
+        return redirect()->back()
+                        ->with('success','Request Submitted successfully.');
     }
     public function signUp()
     {
+        
         return view('Welcome.sign-up');
     }
     public function login()
@@ -38,7 +71,8 @@ class HomeController extends Controller
     }
     public function productDetails()
     {
-        return view('Welcome.product-details');
+        $reviews = Review::with('user')->where('active', 1)->get();
+        return view('Welcome.product-details',compact('reviews'));
     }
     public function designTool()
     {
