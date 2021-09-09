@@ -8,6 +8,7 @@ use App\Http\Controllers\Welcome\HomeController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -66,6 +67,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum'], function () 
         'faq-master' => FaqController::class,
         'contact-form' => ContactController::class,
         'review-master' => ReviewController::class,
+        'product' => ProductController::class,
 
     ]);
 });
