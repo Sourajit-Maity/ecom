@@ -35,56 +35,113 @@
                         </div>
                         <div class="col-md-6 conatct-form-col">
                             <h3>Contact Us</h3>
+                        <form action="{{ route('welcome.contact-us-submit') }}" method="POST" >
+                        {{ csrf_field() }}
                             <div class="form-input">
-                                <input type="text" placeholder="Name *">
+                                <input id="full_name" type="text" placeholder="Name *" class="form-control @error('full_name') is-invalid @enderror" name="full_name" value="{{ old('full_name') }}" required autocomplete="full_name">
+
+                                @error('full_name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
 
                             <div class="form-input">
-                                <input type="tel" placeholder="Phone Number *">
+                                <input id="phone" type="tel" placeholder="Phone Number *" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
 
                             <div class="form-input">
-                                <input type="email" placeholder="Email Address *">
+                               
+                                <input id="email" type="email" placeholder="Email Address *" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
 
                             <div class="form-input">
-                                <input type="text" placeholder="Address *">
+                                <input id="address" type="text" placeholder="Address *" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address">
+
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
 
                             <div class="form-input">
                                 <div class="row address-row">
                                     <div class="col-md-4 address-col">
                                         <div class="address-cont">
-                                            <input type="text" placeholder="City *">
+                                            <input id="city" type="text" placeholder="City *" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ old('city') }}" required autocomplete="city">
+
+                                            @error('city')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-4 address-col">
                                         <div class="address-cont">
-                                            <input type="text" placeholder="State *">
+                                            <input id="state" type="text" placeholder="State *" class="form-control @error('state') is-invalid @enderror" name="state" value="{{ old('state') }}" required autocomplete="state">
+
+                                            @error('state')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-md-4 address-col">
                                         <div class="address-cont">
-                                            <input type="text" placeholder="Zip *">
+                                            <input id="zip" type="text" placeholder="Zip *" class="form-control @error('zip') is-invalid @enderror" name="zip" value="{{ old('zip') }}" required autocomplete="zip">
+
+                                            @error('zip')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-input">
-                                <input type="text" placeholder="Subject *">
+                                <input id="subject" type="text" placeholder="Subject *" class="form-control @error('subject') is-invalid @enderror" name="subject" value="{{ old('subject') }}" required autocomplete="subject">
+
+                                    @error('subject')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                             </div>
 
                             <div class="form-input">
-                                <textarea placeholder="Message *"></textarea>
+                                <textarea name="message" class="form-control @error('message') is-invalid @enderror" name="message" value="{{ old('message') }}" required autocomplete="message" placeholder="Message *"></textarea>
+
+                                @error('message')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
 
                             <div class="form-input">
-                                <input type="submit" value="Send">
+                                <input type="submit" value="Submit">
                             </div>
 
-
+                        </form>
                         </div>
                     </div>
                 </form>
@@ -98,50 +155,25 @@
             <div class="cmn-heading">
                 <h2>They Said</h2>
             </div>
-
+            
             <div class="testimonial-slider">
+            @foreach($reviews as $review)
                 <div class="testimonial-card">
+                
                     <div class="iamge-sec">
                         <img src="{{asset('welcome_assets/images/testimonial01.jpg')}}" alt="">
                     </div>
                     <div class="testimonial-cont">
-                        <h4>Michael</h4>
-                        <p>I was last-minute and they took on the job and moved quickly.
-                            They did a great job printing the badges for my event.
-                            I would highly recommend them.
+                        <h4>{{$review->user->first_name}} {{$review->user->last_name}}</h4>
+                        <p>{{ Str::limit($review->review_description , 100) }}
                         </p>
                         <a href="#url">Read More</a>
                     </div>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="iamge-sec">
-                        <img src="{{asset('welcome_assets/images/testimonial02.jpg')}}" alt="">
-                    </div>
-                    <div class="testimonial-cont">
-                        <h4>Kailey</h4>
-                        <p>
-                            QUICK RESPONSES!!! They turned an <br> order in less than 24 hours for me.
-                        </p>
-                        <a href="#url">Read More</a>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="iamge-sec">
-                        <img src="{{asset('welcome_assets/images/testimonial01.jpg')}}" alt="">
-                    </div>
-                    <div class="testimonial-cont">
-                        <h4>Michael</h4>
-                        <p>
-                            I was last-minute and they took on the job and moved quickly.
-                            They did a great job printing the badges for my event.
-                            I would highly recommend them.
-                        </p>
-                        <a href="#url">Read More</a>
-                    </div>
-                </div>
-            </div>
+                @endforeach
+            </div>  
+                     
         </div>
+        
     </section>
 </x-layouts.welcome-layout>
