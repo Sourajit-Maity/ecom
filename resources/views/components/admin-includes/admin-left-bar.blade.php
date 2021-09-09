@@ -82,8 +82,8 @@
 													<i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
 														class="kt-menu__link-text">Product</span></a>
 								</li>
-								<li class="kt-menu__item  {{ Request::is('admin/review-master*') ? 'kt-menu__item--active' : '' }}"
-												aria-haspopup="true"><a href="{{ route('review-master.index') }}"
+								<li class="kt-menu__item  {{ Request::is('admin/product-price*') ? 'kt-menu__item--active' : '' }}"
+												aria-haspopup="true"><a href="{{ route('product-price.index') }}"
 													class="kt-menu__link ">
 													<i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
 														class="kt-menu__link-text">Product Price</span></a>

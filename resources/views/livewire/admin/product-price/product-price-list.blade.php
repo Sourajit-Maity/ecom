@@ -19,9 +19,13 @@
                 aria-sort="ascending" aria-label="Agent: activate to sort column descending">Product Name <i
                     class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('product_name')"></i>
             </th>
+            <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
+                aria-sort="ascending" aria-label="Agent: activate to sort column descending"> Product Price <i
+                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('price')"></i>
+            </th>
             <!-- <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
-                aria-sort="ascending" aria-label="Agent: activate to sort column descending"> Product Slug <i
-                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('product_slug')"></i>
+                aria-sort="ascending" aria-label="Agent: activate to sort column descending">Product Price range <i
+                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('price_range')"></i>
             </th> -->
             <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
                 aria-sort="ascending" aria-label="Agent: activate to sort column descending">Product Category <i
@@ -38,8 +42,12 @@
                 <x-admin.input type="search" wire:model.defer="searchProductname" placeholder="" autocomplete="off"
                     class="form-control-sm form-filter" />
             </th>
+            <th>
+                <x-admin.input type="search" wire:model.defer="searchPrice" placeholder="" autocomplete="off"
+                    class="form-control-sm form-filter" />
+            </th>
             <!-- <th>
-                <x-admin.input type="search" wire:model.defer="searchProductslug" placeholder="" autocomplete="off"
+                <x-admin.input type="search" wire:model.defer="searchPricerange" placeholder="" autocomplete="off"
                     class="form-control-sm form-filter" />
             </th> -->
             <th>
@@ -79,17 +87,18 @@
     </x-slot>
 
     <x-slot name="tbody">
-        @forelse($products as $product)
+        @forelse($productprices as $product)
             <tr role="row" class="odd">
-                <td class="sorting_1" tabindex="0">{{ $product->product_name  }}</td>
-                <!-- <td class="sorting_1" tabindex="0">{{ $product->product_slug  }}</td> -->
+                <td class="sorting_1" tabindex="0">{{ $product->product->product_name  }}</td>
+                <td class="sorting_1" tabindex="0">{{ $product->price  }}</td>
+                <!-- <td class="sorting_1" tabindex="0">{{ $product->price_range  }}</td> -->
                 <td class="sorting_1" tabindex="0">{{ $product->product_category  }}</td>
                 <td class="align-center"><span
                         class="kt-badge  kt-badge--{{ $product->active == 1 ? 'success' : 'warning' }} kt-badge--inline kt-badge--pill cursor-pointer"
                         wire:click="changeStatusConfirm({{ $product->id }})">{{ $product->active == 1 ? 'Active' : 'Inactive' }}</span>
                 </td>
                 <x-admin.td-action>
-                    <a class="dropdown-item" href="{{ route('product.edit', ['product' => $product->id]) }}"><i
+                    <a class="dropdown-item" href="{{ route('product-price.edit', ['product_price' => $product->id]) }}"><i
                             class="la la-edit"></i> Edit</a>
                     <button href="#" class="dropdown-item" wire:click="deleteAttempt({{ $product->id }})"><i
                             class="fa fa-trash"></i> Delete</button>
@@ -102,9 +111,9 @@
         @endforelse
     </x-slot>
     <x-slot name="pagination">
-        {{ $products->links() }}
+        {{ $productprices->links() }}
     </x-slot>
     <x-slot name="showingEntries">
-        Showing {{ $products->firstitem() }} to {{ $products->lastitem() }} of {{ $products->total() }} entries
+        Showing {{ $productprices->firstitem() }} to {{ $productprices->lastitem() }} of {{ $productprices->total() }} entries
     </x-slot>
 </x-admin.table>

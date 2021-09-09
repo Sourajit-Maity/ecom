@@ -29,12 +29,12 @@ class ProductCreateEdit extends Component
 
             $this->categoryList = [
                 ['value' => 0, 'text' => "Choose Category"],
-                ['value' => 1, 'text' => "Category1"],
-                ['value' => 2, 'text' => "Category2"],
-                ['value' => 3, 'text' => "Category3"],
-                ['value' => 4, 'text' => "Category4"],
-                ['value' => 5, 'text' => "Category5"],
-                ['value' => 6, 'text' => "Category6"],
+                ['value' => "Category1", 'text' => "Category1"],
+                ['value' => "Category2", 'text' => "Category2"],
+                ['value' => "Category3", 'text' => "Category3"],
+                ['value' => "Category4", 'text' => "Category4"],
+                ['value' => "Category5", 'text' => "Category5"],
+                ['value' => "Category6", 'text' => "Category6"],
             ];
 
 

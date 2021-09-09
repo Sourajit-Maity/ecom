@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Product;
+namespace App\Http\Livewire\Admin\ProductPrice;
 
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Livewire\WithPagination;
 use App\Http\Livewire\Traits\WithSorting;
 use App\Http\Livewire\Traits\AlertMessage;
+use App\Models\ProductPrice;
 use App\Models\Product;
 
-class ProductList extends Component
+class ProductPriceList extends Component
 {
     use WithPagination;
     use WithSorting;
@@ -20,7 +21,7 @@ class ProductList extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public $searchProductname,$searchProductslug,$searchProductcategory, $searchStatus = -1, $perPage = 5;
+    public $searchProductname,$searchPrice,$searchPricerange,$searchProductcategory, $searchStatus = -1, $perPage = 5;
     protected $listeners = ['deleteConfirm', 'changeStatus'];
 
     public function mount()
@@ -51,32 +52,39 @@ class ProductList extends Component
     public function resetSearch()
     {
         $this->searchProductname = "";
-        $this->searchProductslug = "";
+        $this->searchPrice = "";
+        $this->searchPricerange = "";
         $this->searchProductcategory = "";
         $this->searchStatus = -1;
     }
 
     public function render()
     {
-        $productQuery = Product::query();
-        if ($this->searchProductname)
-            $productQuery->Where('product_name', 'like', '%' . $this->searchProductname . '%');
-        if ($this->searchProductslug)
-            $productQuery->Where('product_slug', 'like', '%' . $this->searchProductslug . '%');
+        $productpriceQuery = ProductPrice::query();
+        if ($this->searchProductname) {
+                $product_name = Product::Where('product_name', 'like', '%' . $this->searchProductname . '%')->get();
+                foreach ($product_name as $value) {
+                    $productpriceQuery->orWhere('product_id', $value->id);
+                 }
+             }
+        if ($this->searchPrice)
+            $productpriceQuery->Where('price', 'like', '%' . $this->searchPrice . '%');
+        if ($this->searchPricerange)
+            $productpriceQuery->Where('price_range', 'like', '%' . $this->searchPricerange . '%');
         if ($this->searchProductcategory)
-            $productQuery->Where('product_category', 'like', '%' . $this->searchProductcategory . '%');
+            $productpriceQuery->Where('product_category', 'like', '%' . $this->searchProductcategory . '%');
         if ($this->searchStatus >= 0)
-            $productQuery->orWhere('active', $this->searchStatus);
-        return view('livewire.admin.product.product-list', [
-            'products' => $productQuery
+            $productpriceQuery->orWhere('active', $this->searchStatus);
+        return view('livewire.admin.product-price.product-price-list', [
+            'productprices' => $productpriceQuery
                 ->orderBy($this->sortBy, $this->sortDirection)
                 ->paginate($this->perPage)
         ]);
     }
     public function deleteConfirm($id)
     {
-        Product::destroy($id);
-        $this->showModal('success', 'Success', 'Product is deleted successfully');
+        ProductPrice::destroy($id);
+        $this->showModal('success', 'Success', 'ProductPrice is deleted successfully');
     }
     public function deleteAttempt($id)
     {
@@ -88,11 +96,11 @@ class ProductList extends Component
         $this->showConfirmation("warning", 'Are you sure?', "Do you want to change this status?", 'Yes, Change!', 'changeStatus', ['id' => $id]); //($type,$title,$text,$confirmText,$method)
     }
 
-    public function changeStatus(Product $product)
+    public function changeStatus(ProductPrice $productprice)
     {
-        $product->fill(['active' => ($product->active == 1) ? 0 : 1])->save();
+        $productprice->fill(['active' => ($productprice->active == 1) ? 0 : 1])->save();
        
         $this->showModal('success', 'Success', 'status is changed successfully');
     }
+ 
 }
-

@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductPriceController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -68,6 +69,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum'], function () 
         'contact-form' => ContactController::class,
         'review-master' => ReviewController::class,
         'product' => ProductController::class,
+        'product-price' => ProductPriceController::class,
 
     ]);
 });
