@@ -173,9 +173,7 @@
             </div>
         </div>
     </section> -->
-    <div id="app">
-        <design-tool />
-    </div>
+    <design-tool />
     @push('js')
     <script src="{{ mix('js/app.js') }}" defer></script>
     @endpush

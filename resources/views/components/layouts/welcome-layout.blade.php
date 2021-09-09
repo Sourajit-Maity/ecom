@@ -26,9 +26,9 @@
 
 <body>
   <x-welcome-includes.welcome-header />
-
-  {{$slot}}
-
+  <div id="app">
+    {{$slot}}
+  </div>
   <x-welcome-includes.welcome-footer />
 
 
