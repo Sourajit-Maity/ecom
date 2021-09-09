@@ -1,5 +1,9 @@
 <x-layouts.welcome-layout>
-    <section class="design-page-sec cmn-gap2">
+    @push('css')
+    <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
+    @endpush
+
+    <!-- <section class="design-page-sec cmn-gap2">
         <div class="container">
             <div class="order-tab">
                 <ul>
@@ -168,5 +172,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+    <div id="app">
+        <design-tool />
+    </div>
+    @push('js')
+    <script src="{{ mix('js/app.js') }}" defer></script>
+    @endpush
 </x-layouts.welcome-layout>

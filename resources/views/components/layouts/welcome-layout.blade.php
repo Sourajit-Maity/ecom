@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="{{asset('welcome_assets/css/slick.css')}}">
   <link rel="stylesheet" href="{{asset('welcome_assets/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('welcome_assets/style.css')}}">
+  @stack('css')
 </head>
 
 <body>
@@ -40,6 +41,7 @@
   <script src="{{asset('welcome_assets/js/slick.min.js')}}"></script>
   <script src="{{asset('welcome_assets/js/easyResponsiveTabs.js')}}"></script>
   <script src="{{asset('welcome_assets/js/common.js')}}"></script>
+  @stack('js')
 </body>
 
 </html>
