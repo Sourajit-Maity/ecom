@@ -54,7 +54,7 @@
 												aria-haspopup="true"><a href="{{ route('faq-master.index') }}"
 													class="kt-menu__link ">
 													<i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-														class="kt-menu__link-text">Faq-Master</span></a>
+														class="kt-menu__link-text">Faq</span></a>
 								</li>
 								<li class="kt-menu__section ">
 									<h4 class="kt-menu__section-text">Contact/Review Management</h4>
@@ -70,7 +70,23 @@
 												aria-haspopup="true"><a href="{{ route('review-master.index') }}"
 													class="kt-menu__link ">
 													<i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-														class="kt-menu__link-text">Review-Master</span></a>
+														class="kt-menu__link-text">Review</span></a>
+								</li>
+								<li class="kt-menu__section ">
+									<h4 class="kt-menu__section-text">Product Management</h4>
+									<i class="kt-menu__section-icon flaticon-more-v2"></i>
+								</li>
+								<li class="kt-menu__item  {{ Request::is('admin/product*') ? 'kt-menu__item--active' : '' }}"
+												aria-haspopup="true"><a href="{{ route('product.index') }}"
+													class="kt-menu__link ">
+													<i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+														class="kt-menu__link-text">Product</span></a>
+								</li>
+								<li class="kt-menu__item  {{ Request::is('admin/product-price*') ? 'kt-menu__item--active' : '' }}"
+												aria-haspopup="true"><a href="{{ route('product-price.index') }}"
+													class="kt-menu__link ">
+													<i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+														class="kt-menu__link-text">Product Price</span></a>
 								</li>
 							</ul>
 						</div>

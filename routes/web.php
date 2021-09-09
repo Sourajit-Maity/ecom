@@ -8,6 +8,8 @@ use App\Http\Controllers\Welcome\HomeController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductPriceController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,6 +34,7 @@ Route::get('about-us', [HomeController::class, 'aboutUs'])->name('welcome.about-
 Route::get('products', [HomeController::class, 'products'])->name('welcome.products');
 Route::get('faq', [HomeController::class, 'faq'])->name('welcome.faq');
 Route::get('contact-us', [HomeController::class, 'contactUs'])->name('welcome.contact-us');
+Route::post('contact-us-submit', [HomeController::class, 'contactUsSubmit'])->name('welcome.contact-us-submit');
 Route::get('signup', [HomeController::class, 'signUp'])->name('welcome.signup');
 Route::get('login', [HomeController::class, 'login'])->name('welcome.login');
 Route::get('product-details', [HomeController::class, 'productDetails'])->name('welcome.product-details');
@@ -66,6 +69,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum'], function () 
         'faq-master' => FaqController::class,
         'contact-form' => ContactController::class,
         'review-master' => ReviewController::class,
+        'product' => ProductController::class,
+        'product-price' => ProductPriceController::class,
 
     ]);
 });
