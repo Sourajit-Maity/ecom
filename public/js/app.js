@@ -14208,211 +14208,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 
@@ -19376,7 +19171,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.container[data-v-5fe4438c]{\n            margin-top: 9%;\n            margin-bottom: 6%;\n}\n.shadow[data-v-5fe4438c] {\n            box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\n            width: 566px;\n            border-radius: 30px;\n            overflow: hidden;\n            position: relative;\n}\n.rectangle1-3[data-v-5fe4438c] {\n            height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\n            height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\n            height: 244px;\n            border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\n            height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\n                font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\n                font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\n                color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\n                color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\n            color: blue;\n}\n.no-border[data-v-5fe4438c]{\n            border: none;\n}\n.gold-border[data-v-5fe4438c]{\n                border: 9px solid #ffed4a;\n}\n.silver-border[data-v-5fe4438c]{\n                border: 9px solid #b8b7b2;\n}\n.black-border[data-v-5fe4438c]{\n                border: 9px solid #050505;\n}\n.rose-border[data-v-5fe4438c]{\n                border: 9px solid #c07b86;\n}\n.selected-material-box[data-v-5fe4438c]{\n            border: 3px solid #3a00ff !important;\n}\n.cursor-pointer[data-v-5fe4438c]{\n            cursor:pointer;\n}\n.custom-background-img[data-v-5fe4438c]{\n            max-height: 400px;\n            overflow: scroll;\n            overflow-x: hidden;\n}\n/* .font-fnt2{\n    font-family:Arial;\n\n}\n.font-fnt4{\n    font-family:serif;\n}\n.font-fnt28{\n    font-family:monospace;\n}\n.font-fnt5{\n    font-family:cursive;\n}\n.font-fnt6{\n    font-family:OldEnglishTextMT;\n} */\n.fnt1[data-v-5fe4438c], #fnt1[data-v-5fe4438c]{font-family:\"Andale Mono\";}\n.fnt2[data-v-5fe4438c], #fnt2[data-v-5fe4438c]{font-family:Arial;}\n.fnt3[data-v-5fe4438c], #fnt3[data-v-5fe4438c]{font-family:\"Arial Black\";}\n.fnt4[data-v-5fe4438c], #fnt4[data-v-5fe4438c]{font-family:\"CenturyGothic\";}\n.fnt5[data-v-5fe4438c], #fnt5[data-v-5fe4438c]{font-family:\"ComicSansMS\";}\n.fnt6[data-v-5fe4438c], #fnt6[data-v-5fe4438c]{font-family:\"Courier New\";}\n.fnt7[data-v-5fe4438c], #fnt7[data-v-5fe4438c]{font-family:Georgia;}\n.fnt8[data-v-5fe4438c], #fnt8[data-v-5fe4438c]{font-family:impact;}\n.fnt9[data-v-5fe4438c], #fnt9[data-v-5fe4438c]{font-family:\"Times New Roman\";}\n.fnt10[data-v-5fe4438c], #fnt10[data-v-5fe4438c]{font-family:\"Trebuchet MS\";}\n.fnt11[data-v-5fe4438c], #fnt11[data-v-5fe4438c]{font-family:Verdana;}\n.fnt12[data-v-5fe4438c], #fnt12[data-v-5fe4438c]{font-family: 'GothamBold';}\n.fnt13[data-v-5fe4438c], #fnt13[data-v-5fe4438c]{font-family: 'cormorant_garamondmedium';}\n.fnt14[data-v-5fe4438c], #fnt14[data-v-5fe4438c]{font-family: 'FuturaBT-BoldCondensed';}\n.fnt15[data-v-5fe4438c], #fnt15[data-v-5fe4438c]{font-family: 'lobster_1.3regular';}\n.fnt16[data-v-5fe4438c], #fnt16[data-v-5fe4438c]{font-family: 'scriptinaregular';}\n.fnt16[data-v-5fe4438c], #fnt16[data-v-5fe4438c] {\n  vertical-align: text-top !important;\n  line-height: 1.5 !important;\n}\n.fnt17[data-v-5fe4438c], #fnt17[data-v-5fe4438c]{font-family: 'OldEnglishTextMT';}\n.fnt18[data-v-5fe4438c], #fnt18[data-v-5fe4438c]{font-family: 'robotoregular';}\n.fnt19[data-v-5fe4438c], #fnt19[data-v-5fe4438c]{font-family: 'ARDESTINE';}\n.fnt20[data-v-5fe4438c], #fnt20[data-v-5fe4438c]{font-family: 'ARBONNIE';}\n.fnt22[data-v-5fe4438c], #fnt22[data-v-5fe4438c]{font-family: 'MonotypeCorsiva';}\n.fnt23[data-v-5fe4438c], #fnt23[data-v-5fe4438c]{font-family: 'scriptoriasskregular';}\n.fnt24[data-v-5fe4438c], #fnt24[data-v-5fe4438c]{font-family: 'ColoredCrayons';}\n.fnt25[data-v-5fe4438c], #fnt25[data-v-5fe4438c]{font-family: 'EraserRegular';}\n.fnt26[data-v-5fe4438c], #fnt26[data-v-5fe4438c]{font-family: 'Return_To_Sender';}\n.fnt27[data-v-5fe4438c], #fnt27[data-v-5fe4438c]{font-family: 'KGSecondChancesSketch';}\n.fnt28[data-v-5fe4438c], #fnt28[data-v-5fe4438c]{font-family: 'CenturyGothicBold';}\n.clipart-custom[data-v-5fe4438c]{\n    max-height: 307px;\n    overflow-y: scroll;\n}\n.fastener-img[data-v-5fe4438c] {\n    width: 100px;\n    height: 60px;\n}\n.selected_fastener[data-v-5fe4438c]{\n    border: 2px solid blue !important;\n}\n.color-picker-custom[data-v-5fe4438c]{\n    width: 100%;\n}\n.color-row span[data-v-5fe4438c]{\n    width: 22px;\n    height: 22px;\n    display: inline-block;\n    background: red;\n    border-radius: 100%;\n    border: 2px solid white;\n    box-shadow: 0 0 0px 1px initial;\n    margin: 7px;\n    cursor: pointer;\n}\n.color-row span.active[data-v-5fe4438c]{\n    box-shadow: 0 0 0px 2px #1491d0;\n}\n.price[data-v-5fe4438c]{\n    font-size: 30px;\n    font-weight: 600;\n    color: #107fb7;\n    display: table;\n    width: 100% !important;\n    margin-top: 10px;\n}\n.price b[data-v-5fe4438c] {\n    font-size: 30px;\n    font-weight: normal;\n}\n.price-table[data-v-5fe4438c] {\n    width: 100%;\n    height: 124px;\n    margin: 20px 0;\n    border: 0;\n    padding: 0;\n    clear: both;\n}\n.table_wrap[data-v-5fe4438c] {\n    margin-bottom: 15px;\n}\n.title_table[data-v-5fe4438c] {\n    background-color: #f8f8f8;\n    padding: 15px 20px;\n    border: 1px solid #eaeaea;\n}\n.ttl[data-v-5fe4438c] {\n    font-size: 18px;\n    color: #474747;\n    display: inline-block;\n    font-weight: 600;\n}\n.text-imp[data-v-5fe4438c] {\n    float: right;\n}\n.table_wrap .table[data-v-5fe4438c] {\n    margin-bottom: 20px;\n    max-width: 100%;\n    width: 100%;\n    box-shadow: 0px 3px 10px 0px rgb(0 0 0 / 9%);\n}\n.vue-step-wizard[data-v-5fe4438c] {\n    background-color: #f7f8fc;\n    width: 100%;\n    margin: auto;\n    padding: 10px;\n}\n#fieldset-tbl.table[data-v-5fe4438c] {\n    display: inline-table !important;\n    padding: 0 !important;\n    margin-top: 3%;\n}\nelement.style[data-v-5fe4438c] {\n}\n#fieldset-tbl.table > tbody > tr > td[data-v-5fe4438c], #fieldset-tbl.table > tbody > tr > th[data-v-5fe4438c], #fieldset-tbl.table > tfoot > tr > td[data-v-5fe4438c], #fieldset-tbl.table > tfoot > tr > th[data-v-5fe4438c], #fieldset-tbl.table > thead > tr > td[data-v-5fe4438c], #fieldset-tbl.table > thead > tr > th[data-v-5fe4438c] {\n    border-top: 1px solid #ddd;\n    line-height: 1.42857;\n    padding: 8px;\n    border-bottom: none;\n}\n.table th[data-v-5fe4438c], .table td[data-v-5fe4438c] {\n    padding: 10px 0;\n    /* border-bottom: 1px solid #31A3D9; */\n    color: #000;\n}\n.qty[data-v-5fe4438c] {\n    text-align: center;\n    width: 41px;\n    margin-right: 30px;\n    padding: 0;\n}\n#fieldset-tbl .btn .edit[data-v-5fe4438c] {\n    background-color: #ff9a04;\n}\n#fieldset-tbl .btn .remove[data-v-5fe4438c] {\n    background-color: #ff3131;\n    margin-left: 10px;\n}\n#fieldset-tbl .btn .edit[data-v-5fe4438c], #fieldset-tbl .btn .remove[data-v-5fe4438c], #fieldset-tbl .btn .accept[data-v-5fe4438c] {\n    background-image: none !important;\n    background-position: unset !important;\n    color: #fff !important;\n    display: inline;\n    height: auto;\n    padding: 5px 20px;\n    text-indent: 0 !important;\n    vertical-align: middle !important;\n    width: auto !important;\n    margin-right: 0;\n}\n#fieldset-tbl .btn .done[data-v-5fe4438c] {\n    background-color: #A1BB3C;\n}\n#fieldset-tbl.table-bordered[data-v-5fe4438c] {\n    border: 1px solid #ddd;\n}\n/* .vue-step-wizard{\n    width:0px;\n} */\n.imagePreviewWrapper[data-v-5fe4438c] {\n    width: 250px;\n    height: 250px;\n    display: block;\n    cursor: pointer;\n    margin: 0 auto 30px;\n    background-size: cover;\n    background-position: center center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ndl[data-v-5fe4438c], ol[data-v-5fe4438c], ul[data-v-5fe4438c] {\r\n    margin-top: 0;\r\n    margin-bottom: 1rem !important;\n}\r\n        /* .container{\r\n            margin-top: 9%;\r\n            margin-bottom: 6%;\r\n        }  */\n.shadow[data-v-5fe4438c] {\r\n            box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\r\n            width: 566px;\r\n            border-radius: 30px;\r\n            /* overflow: hidden; */\r\n            position: relative;\n}\n.rectangle1-3[data-v-5fe4438c] {\r\n            height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\r\n            height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\r\n            height: 244px;\r\n            border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\r\n            height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\r\n                font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\r\n                font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\r\n                color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\r\n                color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\r\n            color: blue;\n}\n.no-border[data-v-5fe4438c]{\r\n            border: none;\n}\n.gold-border[data-v-5fe4438c]{\r\n                border: 9px solid #ffed4a;\n}\n.silver-border[data-v-5fe4438c]{\r\n                border: 9px solid #b8b7b2;\n}\n.black-border[data-v-5fe4438c]{\r\n                border: 9px solid #050505;\n}\n.rose-border[data-v-5fe4438c]{\r\n                border: 9px solid #c07b86;\n}\n.selected-material-box[data-v-5fe4438c]{\r\n            border: 3px solid #3a00ff !important;\n}\n.cursor-pointer[data-v-5fe4438c]{\r\n            cursor:pointer;\n}\n.custom-background-img[data-v-5fe4438c]{\r\n            max-height: 400px;\r\n            overflow: scroll;\r\n            overflow-x: hidden;\n}\n.fnt1[data-v-5fe4438c], #fnt1[data-v-5fe4438c]{font-family:\"Andale Mono\";}\n.fnt2[data-v-5fe4438c], #fnt2[data-v-5fe4438c]{font-family:Arial;}\n.fnt3[data-v-5fe4438c], #fnt3[data-v-5fe4438c]{font-family:\"Arial Black\";}\n.fnt4[data-v-5fe4438c], #fnt4[data-v-5fe4438c]{font-family:\"CenturyGothic\";}\n.fnt5[data-v-5fe4438c], #fnt5[data-v-5fe4438c]{font-family:\"ComicSansMS\";}\n.fnt6[data-v-5fe4438c], #fnt6[data-v-5fe4438c]{font-family:\"Courier New\";}\n.fnt7[data-v-5fe4438c], #fnt7[data-v-5fe4438c]{font-family:Georgia;}\n.fnt8[data-v-5fe4438c], #fnt8[data-v-5fe4438c]{font-family:impact;}\n.fnt9[data-v-5fe4438c], #fnt9[data-v-5fe4438c]{font-family:\"Times New Roman\";}\n.fnt10[data-v-5fe4438c], #fnt10[data-v-5fe4438c]{font-family:\"Trebuchet MS\";}\n.fnt11[data-v-5fe4438c], #fnt11[data-v-5fe4438c]{font-family:Verdana;}\n.fnt12[data-v-5fe4438c], #fnt12[data-v-5fe4438c]{font-family: 'GothamBold';}\n.fnt13[data-v-5fe4438c], #fnt13[data-v-5fe4438c]{font-family: 'cormorant_garamondmedium';}\n.fnt14[data-v-5fe4438c], #fnt14[data-v-5fe4438c]{font-family: 'FuturaBT-BoldCondensed';}\n.fnt15[data-v-5fe4438c], #fnt15[data-v-5fe4438c]{font-family: 'lobster_1.3regular';}\n.fnt16[data-v-5fe4438c], #fnt16[data-v-5fe4438c]{font-family: 'scriptinaregular';}\n.fnt16[data-v-5fe4438c], #fnt16[data-v-5fe4438c] {\r\n  vertical-align: text-top !important;\r\n  line-height: 1.5 !important;\n}\n.fnt17[data-v-5fe4438c], #fnt17[data-v-5fe4438c]{font-family: 'OldEnglishTextMT';}\n.fnt18[data-v-5fe4438c], #fnt18[data-v-5fe4438c]{font-family: 'robotoregular';}\n.fnt19[data-v-5fe4438c], #fnt19[data-v-5fe4438c]{font-family: 'ARDESTINE';}\n.fnt20[data-v-5fe4438c], #fnt20[data-v-5fe4438c]{font-family: 'ARBONNIE';}\n.fnt22[data-v-5fe4438c], #fnt22[data-v-5fe4438c]{font-family: 'MonotypeCorsiva';}\n.fnt23[data-v-5fe4438c], #fnt23[data-v-5fe4438c]{font-family: 'scriptoriasskregular';}\n.fnt24[data-v-5fe4438c], #fnt24[data-v-5fe4438c]{font-family: 'ColoredCrayons';}\n.fnt25[data-v-5fe4438c], #fnt25[data-v-5fe4438c]{font-family: 'EraserRegular';}\n.fnt26[data-v-5fe4438c], #fnt26[data-v-5fe4438c]{font-family: 'Return_To_Sender';}\n.fnt27[data-v-5fe4438c], #fnt27[data-v-5fe4438c]{font-family: 'KGSecondChancesSketch';}\n.fnt28[data-v-5fe4438c], #fnt28[data-v-5fe4438c]{font-family: 'CenturyGothicBold';}\n.clipart-custom[data-v-5fe4438c]{\r\n    max-height: 307px;\r\n    overflow-y: scroll;\n}\n.fastener-img[data-v-5fe4438c] {\r\n    width: 100px;\r\n    height: 60px;\n}\n.selected_fastener[data-v-5fe4438c]{\r\n    border: 2px solid blue !important;\n}\n.color-picker-custom[data-v-5fe4438c]{\r\n    width: 100%;\n}\n.color-row span[data-v-5fe4438c]{\r\n    width: 22px;\r\n    height: 22px;\r\n    display: inline-block;\r\n    background: red;\r\n    border-radius: 100%;\r\n    border: 2px solid white;\r\n    box-shadow: 0 0 0px 1px initial;\r\n    margin: 7px;\r\n    cursor: pointer;\n}\n.color-row span.active[data-v-5fe4438c]{\r\n    box-shadow: 0 0 0px 2px #1491d0;\n}\n.price[data-v-5fe4438c]{\r\n    font-size: 30px;\r\n    font-weight: 600;\r\n    color: #107fb7;\r\n    display: table;\r\n    width: 100% !important;\r\n    margin-top: 10px;\n}\n.price b[data-v-5fe4438c] {\r\n    font-size: 30px;\r\n    font-weight: normal;\n}\n.price-table[data-v-5fe4438c] {\r\n    width: 100%;\r\n    height: 124px;\r\n    margin: 20px 0;\r\n    border: 0;\r\n    padding: 0;\r\n    clear: both;\n}\n.table_wrap[data-v-5fe4438c] {\r\n    margin-bottom: 15px;\n}\n.title_table[data-v-5fe4438c] {\r\n    background-color: #f8f8f8;\r\n    padding: 15px 20px;\r\n    border: 1px solid #eaeaea;\n}\n.ttl[data-v-5fe4438c] {\r\n    font-size: 18px;\r\n    color: #474747;\r\n    display: inline-block;\r\n    font-weight: 600;\n}\n.text-imp[data-v-5fe4438c] {\r\n    float: right;\n}\n.table_wrap .table[data-v-5fe4438c] {\r\n    margin-bottom: 20px;\r\n    max-width: 100%;\r\n    width: 100%;\r\n    box-shadow: 0px 3px 10px 0px rgb(0 0 0 / 9%);\n}\n.vue-step-wizard[data-v-5fe4438c] {\r\n    background-color: #f7f8fc;\r\n    width: 100%;\r\n    margin: auto;\r\n    padding: 10px;\n}\n#fieldset-tbl.table[data-v-5fe4438c] {\r\n    display: inline-table !important;\r\n    padding: 0 !important;\r\n    margin-top: 3%;\n}\nelement.style[data-v-5fe4438c] {\n}\n#fieldset-tbl.table > tbody > tr > td[data-v-5fe4438c], #fieldset-tbl.table > tbody > tr > th[data-v-5fe4438c], #fieldset-tbl.table > tfoot > tr > td[data-v-5fe4438c], #fieldset-tbl.table > tfoot > tr > th[data-v-5fe4438c], #fieldset-tbl.table > thead > tr > td[data-v-5fe4438c], #fieldset-tbl.table > thead > tr > th[data-v-5fe4438c] {\r\n    border-top: 1px solid #ddd;\r\n    line-height: 1.42857;\r\n    padding: 8px;\r\n    border-bottom: none;\n}\n.table th[data-v-5fe4438c], .table td[data-v-5fe4438c] {\r\n    padding: 10px 0;\r\n    color: #000;\n}\n.qty[data-v-5fe4438c] {\r\n    text-align: center;\r\n    width: 41px;\r\n    margin-right: 30px;\r\n    padding: 0;\n}\n#fieldset-tbl .btn .edit[data-v-5fe4438c] {\r\n    background-color: #ff9a04;\n}\n#fieldset-tbl .btn .remove[data-v-5fe4438c] {\r\n    background-color: #ff3131;\r\n    margin-left: 10px;\n}\n#fieldset-tbl .btn .edit[data-v-5fe4438c], #fieldset-tbl .btn .remove[data-v-5fe4438c], #fieldset-tbl .btn .accept[data-v-5fe4438c] {\r\n    background-image: none !important;\r\n    background-position: unset !important;\r\n    color: #fff !important;\r\n    display: inline;\r\n    height: auto;\r\n    padding: 5px 20px;\r\n    text-indent: 0 !important;\r\n    vertical-align: middle !important;\r\n    width: auto !important;\r\n    margin-right: 0;\n}\n#fieldset-tbl .btn .done[data-v-5fe4438c] {\r\n    background-color: #A1BB3C;\n}\n#fieldset-tbl.table-bordered[data-v-5fe4438c] {\r\n    border: 1px solid #ddd;\n}\n.imagePreviewWrapper[data-v-5fe4438c] {\r\n    width: 250px;\r\n    height: 250px;\r\n    display: block;\r\n    cursor: pointer;\r\n    margin: 0 auto 30px;\r\n    background-size: cover;\r\n    background-position: center center;\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -52517,1758 +52312,355 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-4" }, [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-lg btn-outline-info  btn-block",
-            class: {
-              "btn-outline-danger": _vm.menu.global_items.designYourBadge
-            },
-            staticStyle: { "text-transform": "uppercase" },
-            attrs: { disabled: !_vm.menu.global_items.designYourBadge }
-          },
-          [_vm._v("DESIGN YOUR BADGE")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-lg btn-outline-info  btn-block",
-            class: { "btn-outline-danger": _vm.menu.global_items.addNames },
-            staticStyle: { "text-transform": "uppercase" },
-            attrs: { disabled: !_vm.menu.global_items.addNames }
-          },
-          [_vm._v("ADD NAMES")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-lg btn-outline-info  btn-block",
-            class: {
-              "btn-outline-danger": _vm.menu.global_items.completeOrder
-            },
-            staticStyle: { "text-transform": "uppercase" },
-            attrs: { disabled: !_vm.menu.global_items.completeOrder },
-            on: {
-              click: function($event) {
-                return _vm.selectGlobalMenuItems("completeOrder")
-              }
-            }
-          },
-          [_vm._v("COMPLETE ORDER")]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.menu.global_items.designYourBadge,
-            expression: "menu.global_items.designYourBadge"
-          }
-        ]
-      },
-      [
-        _c(
-          "div",
-          { staticClass: "row mt-3" },
-          [
-            _c("div", { staticClass: "col-md-7" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn mr-2",
-                      class: [_vm.menu.sizeShape ? "btn-danger" : "btn-dark"],
-                      on: {
-                        click: function($event) {
-                          return _vm.selectDesignbar("sizeShape")
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\r\n                                    Size/Shape\r\n                                "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn mr-2",
-                      class: [_vm.menu.background ? "btn-danger" : "btn-dark"],
-                      on: {
-                        click: function($event) {
-                          return _vm.selectDesignbar("background")
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\r\n                                    Background\r\n                                "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn  mr-2",
-                      class: [_vm.menu.border ? "btn-danger" : "btn-dark"],
-                      on: {
-                        click: function($event) {
-                          return _vm.selectDesignbar("border")
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\r\n                                    Frame\r\n                                "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn  mr-2",
-                      class: [_vm.menu.fastener ? "btn-danger" : "btn-dark"],
-                      on: {
-                        click: function($event) {
-                          return _vm.selectDesignbar("fastener")
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\r\n                                    Fastener\r\n                                "
-                      )
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { ref: "printcontent", staticClass: "col-md-12 mt-4" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "design-area shadow",
-                        class: _vm.getShapeClass,
-                        style: { backgroundColor: _vm.colors.hex }
-                      },
-                      [
-                        _vm.backgroundImage
-                          ? _c("img", {
-                              staticClass: "h-100 w-100",
-                              attrs: { src: _vm.backgroundImage }
-                            })
-                          : _vm._e(),
-                        _vm._v(" "),
-                        _vm._l(_vm.clipartDesigns, function(
-                          clipartDesign,
-                          index
-                        ) {
-                          return _c(
-                            "drr",
-                            {
-                              key: index,
-                              attrs: {
-                                x: clipartDesign.x,
-                                y: clipartDesign.y,
-                                w: clipartDesign.weight,
-                                h: clipartDesign.height,
-                                angle: clipartDesign.angle,
-                                selected: clipartDesign.selected,
-                                aspectRatio: true,
-                                innerBox: _vm.innerBox,
-                                outerBox: _vm.outerBox
-                              },
-                              on: {
-                                select: function($event) {
-                                  return _vm.selectItemClipart(index)
-                                }
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "100%", height: "100%" },
-                                attrs: { src: clipartDesign.img }
-                              })
-                            ]
-                          )
-                        }),
-                        _vm._v(" "),
-                        _vm._l(_vm.logoDesigns, function(logoDesign, index) {
-                          return _c(
-                            "drr",
-                            {
-                              key: index,
-                              attrs: {
-                                x: logoDesign.x,
-                                y: logoDesign.y,
-                                w: logoDesign.weight,
-                                h: logoDesign.height,
-                                angle: logoDesign.angle,
-                                selected: logoDesign.selected,
-                                aspectRatio: true,
-                                innerBox: _vm.innerBox,
-                                outerBox: _vm.outerBox
-                              },
-                              on: {
-                                select: function($event) {
-                                  return _vm.selectItemLogo(index)
-                                }
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "100%", height: "100%" },
-                                attrs: { src: logoDesign.img }
-                              })
-                            ]
-                          )
-                        }),
-                        _vm._v(" "),
-                        _vm._l(_vm.textDesigns, function(textDesign, index) {
-                          return _c(
-                            "drr",
-                            {
-                              key: index,
-                              attrs: {
-                                x: textDesign.x,
-                                y: textDesign.y,
-                                w: textDesign.weight,
-                                h: textDesign.height,
-                                angle: textDesign.angle,
-                                selected: textDesign.selected,
-                                aspectRatio: true
-                              },
-                              on: {
-                                resize: _vm.resize,
-                                select: function($event) {
-                                  return _vm.selectItem(index)
-                                }
-                              }
-                            },
-                            [
-                              _c(
-                                "div",
-                                {
-                                  class: _vm.getCustomDesignClass(index),
-                                  staticStyle: {
-                                    width: "100%",
-                                    height: "100%"
-                                  },
-                                  style: {
-                                    color: textDesign.fontColor,
-                                    fontSize: textDesign.fontSize * 11 + "px"
-                                  }
-                                },
-                                [_vm._v(_vm._s(textDesign.text))]
-                              )
-                            ]
-                          )
-                        })
-                      ],
-                      2
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row mt-5" }, [
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-lg btn-success  btn-block mt-2",
-                      staticStyle: { "text-transform": "uppercase" },
-                      on: { click: _vm.printThis }
-                    },
-                    [_vm._v("Finished Designing")]
-                  )
-                ]),
-                _vm._v(" "),
-                _vm._m(0)
-              ])
+  return _c(
+    "section",
+    { staticClass: "design-page-sec cmn-gap2" },
+    [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "order-tab" }, [
+          _c("ul", [
+            _c(
+              "li",
+              { class: { active: _vm.menu.global_items.designYourBadge } },
+              [_vm._m(0)]
+            ),
+            _vm._v(" "),
+            _c("li", { class: { active: _vm.menu.global_items.addNames } }, [
+              _vm._m(1)
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-5" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-success mr-2",
-                      on: { click: _vm.addText }
-                    },
-                    [
-                      _vm._v(
-                        "\r\n                                    Add Text\r\n                                "
-                      )
-                    ]
-                  ),
+            _c(
+              "li",
+              { class: { active: _vm.menu.global_items.completeOrder } },
+              [_vm._m(2)]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row design-page-row" }, [
+          _c("div", { staticClass: "col-lg-7 design-page-left" }, [
+            _vm._m(3),
+            _vm._v(" "),
+            _c("div", { staticClass: "your-text" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "design-area",
+                  class: _vm.getShapeClass,
+                  style: { backgroundColor: _vm.colors.hex }
+                },
+                [
+                  _vm.backgroundImage
+                    ? _c("img", {
+                        staticClass: "h-100 w-100",
+                        attrs: { src: _vm.backgroundImage }
+                      })
+                    : _vm._e(),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-warning mr-2",
-                      on: { click: _vm.selectImage }
-                    },
-                    [
-                      _vm._v(
-                        "\r\n                                    Add Logo\r\n                                "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    ref: "fileInput",
-                    staticStyle: { display: "none" },
-                    attrs: { type: "file" },
-                    on: { input: _vm.pickFile }
+                  _vm._l(_vm.clipartDesigns, function(clipartDesign, index) {
+                    return _c(
+                      "drr",
+                      {
+                        key: index,
+                        attrs: {
+                          x: clipartDesign.x,
+                          y: clipartDesign.y,
+                          w: clipartDesign.weight,
+                          h: clipartDesign.height,
+                          angle: clipartDesign.angle,
+                          selected: clipartDesign.selected,
+                          aspectRatio: true,
+                          innerBox: _vm.innerBox,
+                          outerBox: _vm.outerBox
+                        },
+                        on: {
+                          select: function($event) {
+                            return _vm.selectItemClipart(index)
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticStyle: { width: "100%", height: "100%" },
+                          attrs: { src: clipartDesign.img }
+                        })
+                      ]
+                    )
                   }),
                   _vm._v(" "),
+                  _vm._l(_vm.logoDesigns, function(logoDesign, index) {
+                    return _c(
+                      "drr",
+                      {
+                        key: index,
+                        attrs: {
+                          x: logoDesign.x,
+                          y: logoDesign.y,
+                          w: logoDesign.weight,
+                          h: logoDesign.height,
+                          angle: logoDesign.angle,
+                          selected: logoDesign.selected,
+                          aspectRatio: true,
+                          innerBox: _vm.innerBox,
+                          outerBox: _vm.outerBox
+                        },
+                        on: {
+                          select: function($event) {
+                            return _vm.selectItemLogo(index)
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticStyle: { width: "100%", height: "100%" },
+                          attrs: { src: logoDesign.img }
+                        })
+                      ]
+                    )
+                  }),
+                  _vm._v(" "),
+                  _vm._l(_vm.textDesigns, function(textDesign, index) {
+                    return _c(
+                      "drr",
+                      {
+                        key: index,
+                        attrs: {
+                          x: textDesign.x,
+                          y: textDesign.y,
+                          w: textDesign.weight,
+                          h: textDesign.height,
+                          angle: textDesign.angle,
+                          selected: textDesign.selected,
+                          aspectRatio: true
+                        },
+                        on: {
+                          resize: _vm.resize,
+                          select: function($event) {
+                            return _vm.selectItem(index)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            class: _vm.getCustomDesignClass(index),
+                            staticStyle: { width: "100%", height: "100%" },
+                            style: {
+                              color: textDesign.fontColor,
+                              fontSize: textDesign.fontSize * 11 + "px"
+                            }
+                          },
+                          [_vm._v(_vm._s(textDesign.text))]
+                        )
+                      ]
+                    )
+                  })
+                ],
+                2
+              ),
+              _vm._v(" "),
+              _c("span", { staticClass: "right" }, [_vm._v("1")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "bottom" }, [_vm._v("3")])
+            ]),
+            _vm._v(" "),
+            _vm._m(4)
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-5 design-page-right" }, [
+            _c("div", { staticClass: "add-list" }, [
+              _c("ul", [
+                _c("li", [
                   _c(
-                    "button",
+                    "a",
+                    { attrs: { href: "#url" }, on: { click: _vm.addText } },
+                    [_vm._v("+ Add Text")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    { attrs: { href: "#url" }, on: { click: _vm.selectImage } },
+                    [_vm._v("+ Add Logo")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  ref: "fileInput",
+                  staticStyle: { display: "none" },
+                  attrs: { type: "file" },
+                  on: { input: _vm.pickFile }
+                }),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
                     {
-                      staticClass: "btn btn-primary mr-2",
+                      attrs: { href: "#url" },
                       on: {
                         click: function($event) {
                           return _vm.$modal.show("clipart-modal")
                         }
                       }
                     },
-                    [
-                      _vm._v(
-                        "\r\n                                    Add Clipart\r\n                                "
-                      )
-                    ]
+                    [_vm._v("+ Add Clipart")]
                   )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-12" }, [
-                  _vm.menu.fastener
-                    ? _c("div", { staticClass: "card mt-4" }, [
-                        _vm._m(1),
-                        _vm._v(" "),
-                        _c(
-                          "ul",
-                          {
-                            staticClass:
-                              "list-group list-group-flush ul-custom-height"
-                          },
-                          [
-                            _c("li", { staticClass: "list-group-item" }, [
-                              _c("div", { staticClass: "row" }, [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "col-md-4 pt-4 cursor-pointer"
-                                  },
-                                  [
-                                    _c(
-                                      "span",
-                                      {
-                                        on: {
-                                          click: function($event) {
-                                            _vm.selected_fastener = "Jewelers"
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c("img", {
-                                          staticClass:
-                                            "fastener-img border p-1",
-                                          class: {
-                                            selected_fastener:
-                                              "Jewelers" ==
-                                              _vm.selected_fastener
-                                          },
-                                          attrs: {
-                                            src: "/fasteners/Jeweler_s Pin.png"
-                                          }
-                                        }),
-                                        _vm._v("Jewelers Pin")
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "col-md-4 pt-4 cursor-pointer"
-                                  },
-                                  [
-                                    _c(
-                                      "span",
-                                      {
-                                        on: {
-                                          click: function($event) {
-                                            _vm.selected_fastener = "Magnet"
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c("img", {
-                                          staticClass:
-                                            "fastener-img border p-1",
-                                          class: {
-                                            selected_fastener:
-                                              "Magnet" == _vm.selected_fastener
-                                          },
-                                          attrs: {
-                                            src: "/fasteners/Magnet.jpg"
-                                          }
-                                        }),
-                                        _vm._v("Magnet")
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "col-md-4 pt-4 cursor-pointer"
-                                  },
-                                  [
-                                    _c(
-                                      "span",
-                                      {
-                                        on: {
-                                          click: function($event) {
-                                            _vm.selected_fastener = "Pin"
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c("img", {
-                                          staticClass:
-                                            "fastener-img border p-1",
-                                          class: {
-                                            selected_fastener:
-                                              "Pin" == _vm.selected_fastener
-                                          },
-                                          attrs: { src: "/fasteners/Pin.jpg" }
-                                        }),
-                                        _vm._v("Pin")
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "col-md-4 pt-4 cursor-pointer"
-                                  },
-                                  [
-                                    _c(
-                                      "span",
-                                      {
-                                        on: {
-                                          click: function($event) {
-                                            _vm.selected_fastener = "Swivel"
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c("img", {
-                                          staticClass:
-                                            "fastener-img border p-1",
-                                          class: {
-                                            selected_fastener:
-                                              "Swivel" == _vm.selected_fastener
-                                          },
-                                          attrs: {
-                                            src: "/fasteners/Swivel Bulldog.png"
-                                          }
-                                        }),
-                                        _vm._v("Swivel Clip")
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
-                            ])
-                          ]
-                        )
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.menu.sizeShape
-                    ? _c("div", { staticClass: "card mt-4" }, [
-                        _vm._m(2),
-                        _vm._v(" "),
-                        _c(
-                          "ul",
-                          {
-                            staticClass:
-                              "list-group list-group-flush ul-custom-height"
-                          },
-                          [
-                            _c("li", { staticClass: "list-group-item" }, [
-                              _c("div", { staticClass: "row" }, [
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass: "btn btn-block mb-2",
-                                      class: [
-                                        _vm.shapeDefaultClass == "rectangle1-3"
-                                          ? "btn-danger"
-                                          : "btn-dark"
-                                      ],
-                                      on: {
-                                        click: function($event) {
-                                          _vm.shapeDefaultClass = "rectangle1-3"
-                                        }
-                                      }
-                                    },
-                                    [_vm._v('1"x3" Rectangle')]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass: "btn  btn-block mb-2",
-                                      class: [
-                                        _vm.shapeDefaultClass ==
-                                        "rectangle1-5-3"
-                                          ? "btn-danger"
-                                          : "btn-dark"
-                                      ],
-                                      on: {
-                                        click: function($event) {
-                                          _vm.shapeDefaultClass =
-                                            "rectangle1-5-3"
-                                        }
-                                      }
-                                    },
-                                    [_vm._v('1.5"x3" Rectangle')]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass: "btn  btn-block",
-                                      class: [
-                                        _vm.shapeDefaultClass == "oval1-3"
-                                          ? "btn-danger"
-                                          : "btn-dark"
-                                      ],
-                                      on: {
-                                        click: function($event) {
-                                          _vm.shapeDefaultClass = "oval1-3"
-                                        }
-                                      }
-                                    },
-                                    [_vm._v("Oval")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass: "btn  btn-block",
-                                      class: [
-                                        _vm.shapeDefaultClass == "rectangle12-3"
-                                          ? "btn-danger"
-                                          : "btn-dark"
-                                      ],
-                                      on: {
-                                        click: function($event) {
-                                          _vm.shapeDefaultClass =
-                                            "rectangle12-3"
-                                        }
-                                      }
-                                    },
-                                    [_vm._v('2"x3" Rectangle')]
-                                  )
-                                ])
-                              ])
-                            ])
-                          ]
-                        )
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.menu.textOptions
-                    ? _c("div", { staticClass: "card mt-4" }, [
-                        _vm._m(3),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("div", { staticClass: "form-group row" }, [
-                            _c(
-                              "label",
-                              {
-                                staticClass: "col-sm-3 col-form-label",
-                                attrs: { for: "inputPassword" }
-                              },
-                              [_vm._v("Your Text")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-9" }, [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.getYourText,
-                                    expression: "getYourText"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  type: "text",
-                                  id: "inputPassword",
-                                  placeholder: "Your Text"
-                                },
-                                domProps: { value: _vm.getYourText },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.getYourText = $event.target.value
-                                  }
-                                }
-                              })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "form-group row" }, [
-                            _c(
-                              "label",
-                              {
-                                staticClass: "col-sm-3 col-form-label",
-                                attrs: { for: "inputPassword" }
-                              },
-                              [_vm._v("Font")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-9" }, [
-                              _c(
-                                "select",
-                                {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value:
-                                        _vm.textDesigns[
-                                          _vm.selectedTextBoxIndex
-                                        ].font,
-                                      expression:
-                                        "textDesigns[selectedTextBoxIndex].font"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  on: {
-                                    change: function($event) {
-                                      var $$selectedVal = Array.prototype.filter
-                                        .call($event.target.options, function(
-                                          o
-                                        ) {
-                                          return o.selected
-                                        })
-                                        .map(function(o) {
-                                          var val =
-                                            "_value" in o ? o._value : o.value
-                                          return val
-                                        })
-                                      _vm.$set(
-                                        _vm.textDesigns[
-                                          _vm.selectedTextBoxIndex
-                                        ],
-                                        "font",
-                                        $event.target.multiple
-                                          ? $$selectedVal
-                                          : $$selectedVal[0]
-                                      )
-                                    }
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt2", id: "fnt2" } },
-                                    [_vm._v("Arial")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt4", id: "fnt4" } },
-                                    [_vm._v("Century Gothic")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt28", id: "fnt28" } },
-                                    [_vm._v("Century Gothic Bold")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt5", id: "fnt5" } },
-                                    [_vm._v("Comic Sans MS")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt6", id: "fnt6" } },
-                                    [_vm._v("Courier New")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt7", id: "fnt7" } },
-                                    [_vm._v("Georgia")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt8", id: "fnt8" } },
-                                    [_vm._v("Impact")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt9", id: "fnt9" } },
-                                    [_vm._v("Times New Roman")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt10", id: "fnt10" } },
-                                    [_vm._v("Trebuchet MS")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt11", id: "fnt11" } },
-                                    [_vm._v("Verdana")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt12", id: "fnt12" } },
-                                    [_vm._v("Gotham")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt13", id: "fnt13" } },
-                                    [_vm._v("Cormorant Garamond Medium")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt15", id: "fnt15" } },
-                                    [_vm._v("Lobster")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt17", id: "fnt17" } },
-                                    [_vm._v("Old English TextMT")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt22", id: "fnt22" } },
-                                    [_vm._v("MonotypeCorsiva")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt23", id: "fnt23" } },
-                                    [_vm._v("Scriptoria SSK")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt19", id: "fnt19" } },
-                                    [_vm._v("Ardestine")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "fnt20", id: "fnt20" } },
-                                    [_vm._v("Arbonnie")]
-                                  )
-                                ]
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "form-group row" }, [
-                            _c(
-                              "label",
-                              {
-                                staticClass: "col-sm-3 col-form-label",
-                                attrs: { for: "inputPassword" }
-                              },
-                              [_vm._v("Font Style")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-9" }, [
-                              _c(
-                                "select",
-                                {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value:
-                                        _vm.textDesigns[
-                                          _vm.selectedTextBoxIndex
-                                        ].fontStyle,
-                                      expression:
-                                        "textDesigns[selectedTextBoxIndex].fontStyle"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  attrs: { id: "inputState" },
-                                  on: {
-                                    change: function($event) {
-                                      var $$selectedVal = Array.prototype.filter
-                                        .call($event.target.options, function(
-                                          o
-                                        ) {
-                                          return o.selected
-                                        })
-                                        .map(function(o) {
-                                          var val =
-                                            "_value" in o ? o._value : o.value
-                                          return val
-                                        })
-                                      _vm.$set(
-                                        _vm.textDesigns[
-                                          _vm.selectedTextBoxIndex
-                                        ],
-                                        "fontStyle",
-                                        $event.target.multiple
-                                          ? $$selectedVal
-                                          : $$selectedVal[0]
-                                      )
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("option", { attrs: { value: "" } }, [
-                                    _vm._v("Regular")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "font-weight-bold" } },
-                                    [_vm._v("Bold")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "option",
-                                    { attrs: { value: "font-italic" } },
-                                    [_vm._v("Italic")]
-                                  )
-                                ]
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "form-group row" }, [
-                            _c(
-                              "label",
-                              {
-                                staticClass: "col-sm-3 col-form-label",
-                                attrs: { for: "inputPassword" }
-                              },
-                              [_vm._v("Font Size")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "col-sm-9" },
-                              [
-                                _c("VueSimpleRangeSlider", {
-                                  staticStyle: { width: "100%" },
-                                  attrs: { min: 1, max: 10 },
-                                  model: {
-                                    value:
-                                      _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                        .fontSize,
-                                    callback: function($$v) {
-                                      _vm.$set(
-                                        _vm.textDesigns[
-                                          _vm.selectedTextBoxIndex
-                                        ],
-                                        "fontSize",
-                                        $$v
-                                      )
-                                    },
-                                    expression:
-                                      "textDesigns[selectedTextBoxIndex].fontSize"
-                                  }
-                                })
-                              ],
-                              1
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "form-group row" }, [
-                            _c(
-                              "label",
-                              {
-                                staticClass: "col-sm-3 col-form-label",
-                                attrs: { for: "inputPassword" }
-                              },
-                              [_vm._v("Color")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-9 color-row" }, [
-                              _c("span", {
-                                staticClass: "colr-000000",
-                                class: {
-                                  active:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontColor == "#000000"
-                                },
-                                staticStyle: { background: "#000000" },
-                                attrs: { id: "colr" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.textDesigns[
-                                      _vm.selectedTextBoxIndex
-                                    ].fontColor = "#000000"
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("span", {
-                                staticClass: "colr-ffffff",
-                                class: {
-                                  active:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontColor == "#ffffff"
-                                },
-                                staticStyle: {
-                                  background: "#ffffff",
-                                  "border-color": "#ccc"
-                                },
-                                on: {
-                                  click: function($event) {
-                                    _vm.textDesigns[
-                                      _vm.selectedTextBoxIndex
-                                    ].fontColor = "#ffffff"
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("span", {
-                                staticClass: "colr-ff0000",
-                                class: {
-                                  active:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontColor == "#ff0000"
-                                },
-                                staticStyle: { background: "#ff0000" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.textDesigns[
-                                      _vm.selectedTextBoxIndex
-                                    ].fontColor = "#ff0000"
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("span", {
-                                staticClass: "colr-0000ff",
-                                class: {
-                                  active:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontColor == "#0000FF"
-                                },
-                                staticStyle: { background: "#0000FF" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.textDesigns[
-                                      _vm.selectedTextBoxIndex
-                                    ].fontColor = "#0000FF"
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("span", {
-                                staticClass: "colr-008000",
-                                class: {
-                                  active:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontColor == "#008000"
-                                },
-                                staticStyle: { background: "#008000" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.textDesigns[
-                                      _vm.selectedTextBoxIndex
-                                    ].fontColor = "#008000"
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("span", {
-                                staticClass: "colr-ffa500",
-                                class: {
-                                  active:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontColor == "#FFA500"
-                                },
-                                staticStyle: { background: "#FFA500" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.textDesigns[
-                                      _vm.selectedTextBoxIndex
-                                    ].fontColor = "#FFA500"
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("span", {
-                                staticClass: "colr-ff921d",
-                                class: {
-                                  active:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontColor == "#ff921d"
-                                },
-                                staticStyle: { background: "#ff921d" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.textDesigns[
-                                      _vm.selectedTextBoxIndex
-                                    ].fontColor = "#ff921d"
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("span", {
-                                staticClass: "colr-2ee6b4",
-                                class: {
-                                  active:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontColor == "#2ee6b4"
-                                },
-                                staticStyle: { background: "#2ee6b4" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.textDesigns[
-                                      _vm.selectedTextBoxIndex
-                                    ].fontColor = "#2ee6b4"
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("span", {
-                                staticClass: "colr-547ce1",
-                                class: {
-                                  active:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontColor == "#547ce1"
-                                },
-                                staticStyle: { background: "#547ce1" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.textDesigns[
-                                      _vm.selectedTextBoxIndex
-                                    ].fontColor = "#547ce1"
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("span", {
-                                staticClass: "colr-51a3f0",
-                                class: {
-                                  active:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontColor == "#51a3f0"
-                                },
-                                staticStyle: { background: "#51a3f0" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.textDesigns[
-                                      _vm.selectedTextBoxIndex
-                                    ].fontColor = "#51a3f0"
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("span", {
-                                staticClass: "colr-5a5af5",
-                                class: {
-                                  active:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontColor == "#5a5af5"
-                                },
-                                staticStyle: { background: "#5a5af5" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.textDesigns[
-                                      _vm.selectedTextBoxIndex
-                                    ].fontColor = "#5a5af5"
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("span", {
-                                staticClass: "colr-ff00f0",
-                                class: {
-                                  active:
-                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                      .fontColor == "#ff00f0"
-                                },
-                                staticStyle: { background: "#ff00f0" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.textDesigns[
-                                      _vm.selectedTextBoxIndex
-                                    ].fontColor = "#ff00f0"
-                                  }
-                                }
-                              })
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "row" }, [
-                            _c("div", { staticClass: "col-md-3" }),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-md-9" }, [
-                              _c(
-                                "button",
-                                {
-                                  staticClass: "btn btn-danger",
-                                  on: { click: _vm.deleteText }
-                                },
-                                [_vm._v("Delete Text")]
-                              )
-                            ])
-                          ])
-                        ])
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.menu.border
-                    ? _c("div", { staticClass: "card mt-4" }, [
-                        _vm._m(4),
-                        _vm._v(" "),
-                        _c(
-                          "ul",
-                          {
-                            staticClass:
-                              "list-group list-group-flush ul-custom-height ul-custom-height"
-                          },
-                          [
-                            _c("li", { staticClass: "list-group-item" }, [
-                              _c("div", { staticClass: "row" }, [
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass: "btn btn-block mb-2",
-                                      class: [
-                                        _vm.borderDefaultClass == "gold-border"
-                                          ? "btn-danger"
-                                          : "btn-dark"
-                                      ],
-                                      on: {
-                                        click: function($event) {
-                                          _vm.borderDefaultClass = "gold-border"
-                                        }
-                                      }
-                                    },
-                                    [_vm._v("Gold Frame")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass: "btn  btn-block mb-2",
-                                      class: [
-                                        _vm.borderDefaultClass ==
-                                        "silver-border"
-                                          ? "btn-danger"
-                                          : "btn-dark"
-                                      ],
-                                      on: {
-                                        click: function($event) {
-                                          _vm.borderDefaultClass =
-                                            "silver-border"
-                                        }
-                                      }
-                                    },
-                                    [_vm._v("Silver Frame")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass: "btn  btn-block mb-2",
-                                      class: [
-                                        _vm.borderDefaultClass == "black-border"
-                                          ? "btn-danger"
-                                          : "btn-dark"
-                                      ],
-                                      on: {
-                                        click: function($event) {
-                                          _vm.borderDefaultClass =
-                                            "black-border"
-                                        }
-                                      }
-                                    },
-                                    [_vm._v("Black Frame")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass: "btn  btn-block",
-                                      class: [
-                                        _vm.borderDefaultClass == "no-border"
-                                          ? "btn-danger"
-                                          : "btn-dark"
-                                      ],
-                                      on: {
-                                        click: function($event) {
-                                          _vm.borderDefaultClass = "no-border"
-                                        }
-                                      }
-                                    },
-                                    [_vm._v("No Frame")]
-                                  )
-                                ])
-                              ])
-                            ])
-                          ]
-                        )
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.menu.background
-                    ? _c("div", { staticClass: "card mt-4" }, [
-                        _c("div", { staticClass: "card-body" }, [
-                          _vm._m(5),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "tab-content",
-                              attrs: { id: "myTabContent" }
-                            },
-                            [
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "tab-pane fade show active ul-custom-height",
-                                  attrs: {
-                                    id: "MATERIAL",
-                                    role: "tabpanel",
-                                    "aria-labelledby": "home-tab"
-                                  }
-                                },
-                                [
-                                  _c("div", { staticClass: "row" }, [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "col-md-4 pt-4 cursor-pointer"
-                                      },
-                                      [
-                                        _c(
-                                          "span",
-                                          {
-                                            on: {
-                                              click: function($event) {
-                                                _vm.backgroundImage =
-                                                  "/background/Material/White-Plastic/1.png"
-                                              }
-                                            }
-                                          },
-                                          [
-                                            _c("img", {
-                                              staticClass: "border",
-                                              attrs: {
-                                                src:
-                                                  "/background/Material/White-Plastic/1-thumb.png"
-                                              }
-                                            }),
-                                            _vm._v("White - Plastic")
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    this.shapeDefaultClass != "oval1-3"
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "col-md-4 pt-4 cursor-pointer"
-                                          },
-                                          [
-                                            _c(
-                                              "span",
-                                              {
-                                                on: {
-                                                  click: function($event) {
-                                                    _vm.backgroundImage =
-                                                      "/background/Material/Gold-Plastic/7.png"
-                                                  }
-                                                }
-                                              },
-                                              [
-                                                _c("img", {
-                                                  staticClass: "border",
-                                                  attrs: {
-                                                    src:
-                                                      "/background/Material/Gold-Plastic/7-thumb.png"
-                                                  }
-                                                }),
-                                                _vm._v("Gold - Plastic")
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    this.shapeDefaultClass != "oval1-3"
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "col-md-4 pt-4 cursor-pointer"
-                                          },
-                                          [
-                                            _c(
-                                              "span",
-                                              {
-                                                on: {
-                                                  click: function($event) {
-                                                    _vm.backgroundImage =
-                                                      "/background/Material/Silver-Plastic/8.png"
-                                                  }
-                                                }
-                                              },
-                                              [
-                                                _c("img", {
-                                                  staticClass: "border",
-                                                  attrs: {
-                                                    src:
-                                                      "/background/Material/Silver-Plastic/8-thumb.png"
-                                                  }
-                                                }),
-                                                _vm._v("Silver - Plastic")
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "col-md-4 pt-4 cursor-pointer"
-                                      },
-                                      [
-                                        _c(
-                                          "span",
-                                          {
-                                            on: {
-                                              click: function($event) {
-                                                _vm.backgroundImage =
-                                                  "/background/Material/Gold-Metallic/5.png"
-                                              }
-                                            }
-                                          },
-                                          [
-                                            _c("img", {
-                                              staticClass: "border",
-                                              attrs: {
-                                                src:
-                                                  "/background/Material/Gold-Metallic/5-thumb.png"
-                                              }
-                                            }),
-                                            _vm._v("Gold Metallic")
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "col-md-4 pt-4 cursor-pointer"
-                                      },
-                                      [
-                                        _c(
-                                          "span",
-                                          {
-                                            on: {
-                                              click: function($event) {
-                                                _vm.backgroundImage =
-                                                  "/background/Material/Silver-Metallic/6.png"
-                                              }
-                                            }
-                                          },
-                                          [
-                                            _c("img", {
-                                              staticClass: "border",
-                                              attrs: {
-                                                src:
-                                                  "/background/Material/Silver-Metallic/6-thumb.png"
-                                              }
-                                            }),
-                                            _vm._v("Silver Metallic")
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  ])
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "tab-pane fade",
-                                  attrs: {
-                                    id: "colors",
-                                    role: "tabpanel",
-                                    "aria-labelledby": "home-tab"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    { staticClass: "row" },
-                                    [
-                                      _c("photoshop-picker", {
-                                        staticClass: "color-picker-custom mt-2",
-                                        on: { input: _vm.colorChanged },
-                                        model: {
-                                          value: _vm.colors,
-                                          callback: function($$v) {
-                                            _vm.colors = $$v
-                                          },
-                                          expression: "colors"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "tab-pane fade",
-                                  attrs: {
-                                    id: "custom",
-                                    role: "tabpanel",
-                                    "aria-labelledby": "profile-tab"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "row custom-background-img"
-                                    },
-                                    _vm._l(37, function(i) {
-                                      return _c(
-                                        "div",
-                                        {
-                                          key: i,
-                                          staticClass:
-                                            "col-md-4 cursor-pointer pt-4"
-                                        },
-                                        [
-                                          _c("img", {
-                                            staticClass: "border",
-                                            staticStyle: {
-                                              height: "60px",
-                                              width: "100px"
-                                            },
-                                            attrs: {
-                                              src:
-                                                "/background/Custom/" +
-                                                i +
-                                                "/thumb.png"
-                                            },
-                                            on: {
-                                              click: function($event) {
-                                                _vm.backgroundImage =
-                                                  "/background/Custom/" +
-                                                  i +
-                                                  "/" +
-                                                  i +
-                                                  ".png"
-                                              }
-                                            }
-                                          })
-                                        ]
-                                      )
-                                    }),
-                                    0
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "tab-pane fade",
-                                  attrs: {
-                                    id: "contact",
-                                    role: "tabpanel",
-                                    "aria-labelledby": "contact-tab"
-                                  }
-                                },
-                                [_vm._v("...")]
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    : _vm._e()
                 ])
               ])
             ]),
             _vm._v(" "),
-            _c(
-              "modal",
-              {
-                attrs: {
-                  name: "clipart-modal",
-                  adaptive: true,
-                  draggable: true
-                }
-              },
-              [
-                _c(
-                  "div",
-                  { staticClass: "row p-4 clipart-custom" },
-                  _vm._l(36, function(i) {
-                    return _c(
-                      "div",
-                      { key: i, staticClass: "col-md-3 cursor-pointer pt-4" },
-                      [
-                        _c("img", {
-                          staticStyle: { height: "60px", width: "100px" },
-                          attrs: { src: "/clipart/" + i + "/thumb.png" },
-                          on: {
-                            click: function($event) {
-                              return _vm.addClipart(i)
-                            }
-                          }
-                        })
-                      ]
-                    )
-                  }),
-                  0
-                )
-              ]
-            )
-          ],
-          1
-        ),
+            _vm._m(5)
+          ])
+        ]),
         _vm._v(" "),
         _vm._m(6)
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.menu.global_items.addNames,
-            expression: "menu.global_items.addNames"
-          }
+      ]),
+      _vm._v(" "),
+      _c(
+        "modal",
+        { attrs: { name: "clipart-modal", adaptive: true, draggable: true } },
+        [
+          _c(
+            "div",
+            { staticClass: "row p-4 clipart-custom" },
+            _vm._l(36, function(i) {
+              return _c(
+                "div",
+                { key: i, staticClass: "col-md-3 cursor-pointer pt-4" },
+                [
+                  _c("img", {
+                    staticStyle: { height: "60px", width: "100px" },
+                    attrs: { src: "/clipart/" + i + "/thumb.png" },
+                    on: {
+                      click: function($event) {
+                        return _vm.addClipart(i)
+                      }
+                    }
+                  })
+                ]
+              )
+            }),
+            0
+          )
         ]
-      },
-      [
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: !_vm.menu.global_items.addOrEditNames,
-                expression: "!menu.global_items.addOrEditNames"
-              }
-            ],
-            staticClass: "row"
-          },
-          [
-            _c(
-              "div",
-              { staticClass: "col-md-12 mt-5 d-flex justify-content-center" },
-              [
-                _vm.output
-                  ? _c("div", { staticClass: "design-area" }, [
-                      _c("img", {
-                        staticClass: "w-100",
-                        attrs: { src: _vm.output }
-                      })
-                    ])
-                  : _vm._e()
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-md-12 mt-5 d-flex justify-content-center" },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-info btn-block",
-                        staticStyle: { height: "55px" },
-                        on: { click: _vm.gobackAndEdit }
-                      },
-                      [_vm._v("Go back & edit badge")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-primary btn-block",
-                        staticStyle: { height: "55px" },
-                        on: {
-                          click: function($event) {
-                            _vm.menu.global_items.addOrEditNames = true
-                          }
-                        }
-                      },
-                      [_vm._v("Add or edit names")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(7)
-                ])
-              ]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.menu.global_items.addOrEditNames,
-                expression: "menu.global_items.addOrEditNames"
-              }
-            ],
-            staticClass: "row"
-          },
-          [
-            _vm._m(8),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-md-12 mt-5 d-flex justify-content-center" },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-danger btn-block",
-                        on: {
-                          click: function($event) {
-                            _vm.menu.global_items.addOrEditNames = false
-                          }
-                        }
-                      },
-                      [_vm._v("GO BACK")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-success btn-block",
-                        on: {
-                          click: function($event) {
-                            _vm.menu.global_items.addOrEditNames = true
-                          }
-                        }
-                      },
-                      [_vm._v("FINISHED")]
-                    )
-                  ])
-                ])
-              ]
-            )
-          ]
-        )
-      ]
-    )
-  ])
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6" }, [
-      _c("div", { staticClass: "price" }, [
-        _vm._v("Price: "),
-        _c("b", [_vm._v("$")]),
-        _c("span", [_vm._v("9.99")]),
-        _vm._v(" each")
+    return _c("a", { attrs: { href: "" } }, [
+      _c("span", [_vm._v("1")]),
+      _vm._v(" "),
+      _c("span", [_vm._v("DESIGN YOUR BADGE")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "" } }, [
+      _c("span", [_vm._v("2")]),
+      _vm._v(" "),
+      _c("span", [_vm._v("ADD NAMES")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "#url" } }, [
+      _c("span", [_vm._v("3")]),
+      _vm._v(" "),
+      _c("span", [_vm._v("COMPLETE ORDER")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "design-tab" }, [
+      _c("ul", [
+        _c("li", { staticClass: "active" }, [
+          _c("a", { attrs: { href: "#url" } }, [
+            _c("span", [
+              _c("img", {
+                attrs: {
+                  src: "welcome_assets/images/design-list01.svg",
+                  alt: ""
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("span", [_vm._v("Size/Shape")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "welcome.design-page-background" } }, [
+            _c("span", [
+              _c("img", {
+                attrs: {
+                  src: "welcome_assets/images/design-list02.svg",
+                  alt: ""
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("span", [_vm._v("Background")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "welcome.design-page-border" } }, [
+            _c("span", [
+              _c("img", {
+                attrs: {
+                  src: "welcome_assets/images/design-list03.svg",
+                  alt: ""
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("span", [_vm._v("Border")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "welcome.design-page-fastener" } }, [
+            _c("span", [
+              _c("img", {
+                attrs: {
+                  src: "welcome_assets/images/design-list04.svg",
+                  alt: ""
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("span", [_vm._v("Fastener")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#url" } }, [
+            _c("span", [
+              _c("img", {
+                attrs: {
+                  src: "welcome_assets/images/design-list05.svg",
+                  alt: ""
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("span", [_vm._v("Dome")])
+          ])
+        ])
       ])
     ])
   },
@@ -54276,157 +52668,77 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("b", [_vm._v("FASTENER OPTIONS")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("b", [_vm._v("SELECT A SIZE/ SHAPE")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("b", [_vm._v("TEXT OPTIONS")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("b", [_vm._v("FRAME OPTIONS")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "ul",
-      { staticClass: "nav nav-tabs", attrs: { id: "myTab", role: "tablist" } },
-      [
-        _c("li", { staticClass: "nav-item" }, [
-          _c(
-            "a",
-            {
-              staticClass: "nav-link active",
-              attrs: {
-                id: "home-tab",
-                "data-toggle": "tab",
-                href: "#MATERIAL",
-                role: "tab",
-                "aria-controls": "home",
-                "aria-selected": "true"
-              }
-            },
-            [_vm._v("MATERIAL")]
-          )
+    return _c("div", { staticClass: "text-content" }, [
+      _c("p", [
+        _c("span", [_vm._v("White")]),
+        _vm._v(
+          " boxes around logos will not be printed on colored backgrounds.\n                        You can click "
+        ),
+        _c("span", [_vm._v("Add Text")]),
+        _vm._v(
+          " up to (4) times for multiple lines of text.\n                    "
+        )
+      ]),
+      _vm._v(" "),
+      _c("ul", [
+        _c("li", [
+          _c("a", { staticClass: "cmn-btn", attrs: { href: "#url" } }, [
+            _vm._v("Finished Designing")
+          ])
         ]),
         _vm._v(" "),
-        _c("li", { staticClass: "nav-item" }, [
-          _c(
-            "a",
-            {
-              staticClass: "nav-link",
-              attrs: {
-                id: "profile-tab",
-                "data-toggle": "tab",
-                href: "#colors",
-                role: "tab",
-                "aria-controls": "profile",
-                "aria-selected": "false"
-              }
-            },
-            [_vm._v("COLORS")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "nav-item" }, [
-          _c(
-            "a",
-            {
-              staticClass: "nav-link",
-              attrs: {
-                id: "contact-tab",
-                "data-toggle": "tab",
-                href: "#custom",
-                role: "tab",
-                "aria-controls": "contact",
-                "aria-selected": "false"
-              }
-            },
-            [_vm._v("CUSTOM")]
-          )
+        _c("li", [
+          _c("h3", [_vm._v("Price: "), _c("span", [_vm._v("$9.99 each")])])
         ])
-      ]
-    )
+      ])
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "price-table" }, [
-          _c("div", { staticClass: "table_wrap" }, [
-            _c("div", { staticClass: "title_table" }, [
-              _c("span", { staticClass: "ttl" }, [_vm._v("Quantity Price")]),
-              _c("span", { staticClass: "text-imp" }, [
-                _vm._v(
-                  "*These prices will update automatically based on the design you choose above!"
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("table", { staticClass: "table spec_tb" }, [
-              _c("tbody", [
-                _c("tr", [
-                  _c("td", [_vm._v("QTY:")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("1-10")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("11-20")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("21-30")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("31-50")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("51-100")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("101-250")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("251-1000")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("1000+")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("Price:")]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "it-0" }, [_vm._v("$9.99")]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "it-1" }, [_vm._v("$9.59")]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "it-2" }, [_vm._v("$9.39")]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "it-3" }, [_vm._v("$9.24")]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "it-4" }, [_vm._v("$8.89")]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "it-5" }, [_vm._v("$8.49")]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "it-6" }, [_vm._v("$8.24")]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "it-7" }, [_vm._v("$7.49")])
-                ])
-              ])
+    return _c("div", { staticClass: "size-sec" }, [
+      _c("h5", [_vm._v("SELECT A SIZE / SHAPE")]),
+      _vm._v(" "),
+      _c("ul", [
+        _c("li", [
+          _c("div", { staticClass: "form_input_radio" }, [
+            _c("label", [
+              _c("input", {
+                attrs: { type: "radio", checked: "", name: "name" }
+              }),
+              _vm._v(" "),
+              _c("span", [_vm._v(" 1’’x3’’ Rectangle")])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("div", { staticClass: "form_input_radio" }, [
+            _c("label", [
+              _c("input", { attrs: { type: "radio", name: "name" } }),
+              _vm._v(" "),
+              _c("span", [_vm._v("1.5’’x3’’ Rectangle")])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("div", { staticClass: "form_input_radio" }, [
+            _c("label", [
+              _c("input", { attrs: { type: "radio", name: "name" } }),
+              _vm._v(" "),
+              _c("span", [_vm._v("1.5’x3’ Oval")])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("div", { staticClass: "form_input_radio" }, [
+            _c("label", [
+              _c("input", { attrs: { type: "radio", name: "name" } }),
+              _vm._v(" "),
+              _c("span", [_vm._v("2’’x3’’ Rectangle")])
             ])
           ])
         ])
@@ -54437,153 +52749,59 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-success btn-block mt-2",
-          staticStyle: { height: "55px" },
-          attrs: { disabled: "" }
-        },
-        [_vm._v("I am finished adding name")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12 mt-5" }, [
-      _c("p", { staticStyle: { "line-height": "20px" } }, [
-        _vm._v(
-          "Please add all the names and quantities you want for your name badges. (All name badges will keep the same design formatting)"
-        ),
-        _c("br"),
-        _vm._v(
-          "\r\n                            **You will not see a proof of all the individual name badges. "
-        ),
-        _c("br"),
-        _vm._v(
-          "***We will match all the additional names to your first design and make sure all the text fits properly."
-        ),
-        _c("br")
-      ]),
-      _vm._v(" "),
-      _c("div", [
-        _c(
-          "table",
-          {
-            staticClass: "table table-bordered",
-            staticStyle: { width: "100%" },
-            attrs: { id: "fieldset-tbl", cellspacing: "0" }
-          },
-          [
-            _c("thead", [
-              _c("tr", [
-                _c("th", { attrs: { width: "30", align: "left" } }, [
-                  _vm._v("No")
-                ]),
-                _vm._v(" "),
-                _c("th", { attrs: { align: "left" } }, [_vm._v("Field 1")]),
-                _vm._v(" "),
-                _c("th", { attrs: { width: "20" } }, [_vm._v(" ")]),
-                _vm._v(" "),
-                _c("th", { staticClass: "qty" }, [_vm._v("Quantity")]),
-                _vm._v(" "),
-                _c("th", { attrs: { width: "20" } }, [_vm._v(" ")]),
-                _vm._v(" "),
-                _c("th", { attrs: { width: "180" } }, [_vm._v("  ")])
-              ])
-            ]),
+    return _c("div", { staticClass: "Product-sec" }, [
+      _c("div", { staticClass: "table-sec" }, [
+        _c("table", [
+          _c("tr", [
+            _c("th", { attrs: { colspan: "2" } }, [_vm._v("Quantity Price")]),
             _vm._v(" "),
-            _c("tbody", [
-              _c("tr", { staticClass: "line", attrs: { id: "line13667324" } }, [
-                _c("td", [_vm._v("1.")]),
-                _c("td", { staticClass: "text" }, [_vm._v("john")]),
-                _vm._v(" "),
-                _c("td", { staticStyle: { "background-color": "#f3f3f3" } }, [
-                  _c(
-                    "a",
-                    { staticClass: "less", attrs: { href: "javascript:;" } },
-                    [_vm._v("-")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("td", { staticClass: "qty" }, [
-                  _c("input", {
-                    staticClass: "sqty",
-                    attrs: {
-                      type: "text",
-                      value: "1",
-                      name: "qty",
-                      disabled: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("td", { staticStyle: { "background-color": "#f3f3f3" } }, [
-                  _c(
-                    "a",
-                    { staticClass: "more", attrs: { href: "javascript:;" } },
-                    [_vm._v("+")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("td", { staticClass: "btn" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-success",
-                      attrs: { href: "javascript:;" }
-                    },
-                    [_vm._v("DONE")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-info",
-                      attrs: { href: "javascript:;" }
-                    },
-                    [_vm._v("EDIT")]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("tr", { attrs: { id: "line" } }, [
-                _c("td", [_vm._v(" ")]),
-                _vm._v(" "),
-                _c("td", { staticClass: "text" }, [
-                  _c("input", { attrs: { type: "text", name: "text1" } })
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v(" ")]),
-                _vm._v(" "),
-                _c("td", { staticClass: "qty" }, [
-                  _c("input", {
-                    staticClass: "sqty",
-                    attrs: {
-                      type: "text",
-                      id: "newqty",
-                      name: "qty",
-                      value: "1"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v(" ")]),
-                _vm._v(" "),
-                _c("td", { staticClass: "btn" }, [
-                  _c(
-                    "a",
-                    { staticClass: "accept", attrs: { href: "javascript:;" } },
-                    [_vm._v("+ ADD NAME")]
-                  )
-                ])
-              ])
+            _c("th", { attrs: { colspan: "7" } }, [
+              _vm._v(
+                "*These prices will update automatically based on the design you choose above!"
+              )
             ])
-          ]
-        )
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v("QTY:")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("1-10")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("11-20")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("21-30")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("31-50")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("51-100")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("101-250")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("251-1000")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("1000+")])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v("Price:")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("$9.99")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("$9.59")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("$9.39")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("$9.24")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("$8.89")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("$8.49")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("$8.24")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("$7.49")])
+          ])
+        ])
       ])
     ])
   }
