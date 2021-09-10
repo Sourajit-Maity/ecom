@@ -50,12 +50,12 @@
 									<h4 class="kt-menu__section-text">Master Data Management</h4>
 									<i class="kt-menu__section-icon flaticon-more-v2"></i>
 								</li>
-								<li class="kt-menu__item  {{ Request::is('admin/faq-master*') ? 'kt-menu__item--active' : '' }}"
-												aria-haspopup="true"><a href="{{ route('faq-master.index') }}"
-													class="kt-menu__link ">
-													<i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-														class="kt-menu__link-text">Faq</span></a>
-								</li>
+								
+								<li class="kt-menu__item  {{ Request::is('admin/faq-master*') ? 'kt-menu__item--active' : '' }}" aria-haspopup="true"><a href="{{route('faq-master.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-question-circle"></i><span class="kt-menu__link-text">Faq</span></a></li>
+								<li class="kt-menu__item  {{ Request::is('admin/country*') ? 'kt-menu__item--active' : '' }}" aria-haspopup="true"><a href="{{route('country.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-globe"></i><span class="kt-menu__link-text">Country</span></a></li>
+								<li class="kt-menu__item  {{ Request::is('admin/state*') ? 'kt-menu__item--active' : '' }}" aria-haspopup="true"><a href="{{route('state.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-globe"></i><span class="kt-menu__link-text">State</span></a></li>
+								<li class="kt-menu__item  {{ Request::is('admin/city*') ? 'kt-menu__item--active' : '' }}" aria-haspopup="true"><a href="{{route('city.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-globe"></i><span class="kt-menu__link-text">City</span></a></li>
+
 								<li class="kt-menu__section ">
 									<h4 class="kt-menu__section-text">Contact/Review Management</h4>
 									<i class="kt-menu__section-icon flaticon-more-v2"></i>

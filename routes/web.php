@@ -10,6 +10,9 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductPriceController;
+use App\Http\Controllers\Admin\CountryController;
+use App\Http\Controllers\Admin\StateController;
+use App\Http\Controllers\Admin\CityController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -71,6 +74,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum'], function () 
         'review-master' => ReviewController::class,
         'product' => ProductController::class,
         'product-price' => ProductPriceController::class,
+        'country' => CountryController::class,
+        'city' => CityController::class,
+        'state' => StateController::class,
 
     ]);
 });
