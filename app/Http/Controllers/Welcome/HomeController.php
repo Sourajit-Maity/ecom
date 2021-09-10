@@ -14,6 +14,11 @@ use App\Models\ContactUsForm;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
+use App\Http\Requests;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -67,7 +72,7 @@ class HomeController extends Controller
     }
     public function registerSubmit(Request $request)
     {
-        Log::debug("register".print_r($request->all(), true));
+        //Log::debug("register".print_r($request->all(), true));
         request()->validate([
             'first_name' => 'required|regex:/^[a-zA-Z]+$/u',
             'email' => 'required|email|max:255|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix|unique:users',
@@ -99,7 +104,35 @@ class HomeController extends Controller
     }
     public function login()
     {
+
         return view('Welcome.login');
+    }
+    public function loginClient(Request $request) {
+
+        $validator = Validator::make($request->all(), [
+            "email" =>  "required|email",
+            "password" =>  "required",
+        ]);
+
+        if($validator->fails()) {
+            return redirect()->back()->with('success','Not found.');
+           
+        }
+
+        $user=User::where("email", $request->email)->first();
+
+        if(is_null($user)) {
+            return redirect()->back()->with('success','Email Not Found.');
+        }
+
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+            $user       =       Auth::user();
+            return Redirect::to('/')->with('success','User Registered Successfully!');
+        }
+        else {
+            return redirect()->back()->with('success','"Whoops! invalid password.');
+           
+        }
     }
     public function productDetails()
     {

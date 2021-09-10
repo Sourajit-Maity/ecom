@@ -9,14 +9,27 @@
                 <div class="login-contnt">
                     <h2>Your Account Information</h2>
 
-                    <form>
+                    <form action="{{ route('welcome.login-client') }}" method="POST" >
+                         @csrf
                         <div class="form-input">
                             <label>Email</label>
-                            <input type="email" placeholder="Enter Email">
+                            <input id="email" type="email" placeholder="Enter Email*" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                         </div>
                         <div class="form-input">
                             <label>Password</label>
-                            <input type="password" placeholder="Enter Password">
+                            <input id="password" type="password" placeholder="Enter Password*" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                         </div>
  
                         <div class="input-wraper">
@@ -40,7 +53,7 @@
                         </div>
 
                         <div class="form-input">
-                            <p>Don't have an account? <a href="#url">Sign Up</a></p>
+                            <p>Don't have an account? <a href="{{route('welcome.signup')}}">Sign Up</a></p>
                         </div>
 
                     </form>

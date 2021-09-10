@@ -81,7 +81,7 @@
                             </div>
                             <div class="form-input">
                                 <label>Address 2</label>
-                                <input id="address2" type="text" placeholder="Address2 *" class="form-control" name="address2" value="{{ old('address2') }}"  autocomplete="address2">
+                                <input id="address2" type="text" placeholder="Address2" class="form-control" name="address2" value="{{ old('address2') }}"  autocomplete="address2">
                             </div> 
 
                             <div class="form-input">
