@@ -18,7 +18,7 @@
                             <label>Password</label>
                             <input type="password" placeholder="Enter Password">
                         </div>
-
+ 
                         <div class="input-wraper">
                             <div class="form-input">
                                 <div class="form_input_check">

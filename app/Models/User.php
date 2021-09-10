@@ -40,7 +40,15 @@ class User extends Authenticatable
         'email',
         'phone',
         'password',
-        'active'
+        'address1',
+        'address2',
+        'company',
+        'city',
+        'state',
+        'country',
+        'zip',
+        'terms_condition',
+        'active',
     ];
 
     /**
