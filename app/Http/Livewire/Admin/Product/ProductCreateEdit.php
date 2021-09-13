@@ -29,12 +29,19 @@ class ProductCreateEdit extends Component
 
             $this->categoryList = [
                 ['value' => 0, 'text' => "Choose Category"],
-                ['value' => "Category1", 'text' => "Category1"],
-                ['value' => "Category2", 'text' => "Category2"],
-                ['value' => "Category3", 'text' => "Category3"],
-                ['value' => "Category4", 'text' => "Category4"],
-                ['value' => "Category5", 'text' => "Category5"],
-                ['value' => "Category6", 'text' => "Category6"],
+                ['value' => "DigBadge", 'text' => "DigBadge"],
+                ['value' => "SMSBadge", 'text' => "SMSBadge"],
+                ['value' => "SMGBadge", 'text' => "SMGBadge"],
+                ['value' => "BRSBadge", 'text' => "BRSBadge"],
+                ['value' => "BRGBadge", 'text' => "BRGBadge"],
+                ['value' => "FRBadge", 'text' => "FRBadge"],
+                ['value' => "FRGBadge", 'text' => "FRGBadge"],
+                ['value' => "FRSBadge", 'text' => "FRSBadge"],
+                ['value' => "FRBRSBadge", 'text' => "FRBRSBadge"],
+                ['value' => "FRBRGBadge", 'text' => "FRBRGBadge"],
+                ['value' => "OvBadge", 'text' => "OvBadge"],
+                ['value' => "FrOvBadge", 'text' => "FrOvBadge"],
+                ['value' => "FrOvBRSBadge", 'text' => "FrOvBRSBadge"],
             ];
 
 

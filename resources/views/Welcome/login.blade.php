@@ -9,28 +9,43 @@
                 <div class="login-contnt">
                     <h2>Your Account Information</h2>
 
-                    <form>
+                    <form action="{{ route('welcome.login-client') }}" method="POST" >
+                         @csrf
                         <div class="form-input">
                             <label>Email</label>
-                            <input type="email" placeholder="Enter Email">
+                            <input id="email" type="email" placeholder="Enter Email*" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                         </div>
                         <div class="form-input">
                             <label>Password</label>
-                            <input type="password" placeholder="Enter Password">
-                        </div>
+                            <input id="password" type="password" placeholder="Enter Password*" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+ 
                         <div class="input-wraper">
                             <div class="form-input">
                                 <div class="form_input_check">
                                     <label>
-                                        <input type="checkbox">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                         <span> Remember me</span>
                                     </label>
                                 </div>
                             </div>
 
                             <div class="form-input">
-                                <a href="#url">Forgot password?</a>
+                                 @if (Route::has('password.request'))
+										 <a href="{{ route('password.request') }}">Forgot Password</a>
+                                 @endif
                             </div>
 
                         </div>
@@ -40,7 +55,7 @@
                         </div>
 
                         <div class="form-input">
-                            <p>Don't have an account? <a href="#url">Sign Up</a></p>
+                            <p>Don't have an account? <a href="{{route('welcome.signup')}}">Sign Up</a></p>
                         </div>
 
                     </form>

@@ -18,6 +18,7 @@ class ProductPriceCreateEdit extends Component
     public $product_id,$price,$product_category, $user_id,$blankArr, $productprice,$price_range;
     public $isEdit=false;
     public $categoryList = [];
+    public $product_rangeList = [];
     public $productnames = [];
 
     public function mount($productprice = null)
@@ -36,12 +37,30 @@ class ProductPriceCreateEdit extends Component
 
             $this->categoryList = [
                 ['value' => 0, 'text' => "Choose Category"],
-                ['value' => "Category1", 'text' => "Category1"],
-                ['value' => "Category2", 'text' => "Category2"],
-                ['value' => "Category3", 'text' => "Category3"],
-                ['value' => "Category4", 'text' => "Category4"],
-                ['value' => "Category5", 'text' => "Category5"],
-                ['value' => "Category6", 'text' => "Category6"],
+                ['value' => "DigBadge", 'text' => "DigBadge"],
+                ['value' => "SMSBadge", 'text' => "SMSBadge"],
+                ['value' => "SMGBadge", 'text' => "SMGBadge"],
+                ['value' => "BRSBadge", 'text' => "BRSBadge"],
+                ['value' => "BRGBadge", 'text' => "BRGBadge"],
+                ['value' => "FRBadge", 'text' => "FRBadge"],
+                ['value' => "FRGBadge", 'text' => "FRGBadge"],
+                ['value' => "FRSBadge", 'text' => "FRSBadge"],
+                ['value' => "FRBRSBadge", 'text' => "FRBRSBadge"],
+                ['value' => "FRBRGBadge", 'text' => "FRBRGBadge"],
+                ['value' => "OvBadge", 'text' => "OvBadge"],
+                ['value' => "FrOvBadge", 'text' => "FrOvBadge"],
+                ['value' => "FrOvBRSBadge", 'text' => "FrOvBRSBadge"],
+            ];
+            $this->product_rangeList = [
+                ['value' => 0, 'text' => "Choose Quantity"],
+                ['value' => "1-5", 'text' => "One to Five"],
+                ['value' => "6-15", 'text' => "Six to Fifteen"],
+                ['value' => "16-25", 'text' => "Sixteen to TweentyFive"],
+                ['value' => "26-50", 'text' => "TweentySix to Fifty"],
+                ['value' => "51-100", 'text' => "FiftyOne to Hundred"],
+                ['value' => "101-199", 'text' => "Hundred One to One Hundred Ninty Nine"],
+                ['value' => "200-499", 'text' => "Two Hundred to Four Hundred Ninty Nine"],
+                ['value' => "500", 'text' => "More Than Five Hundred"],
             ];
 
 

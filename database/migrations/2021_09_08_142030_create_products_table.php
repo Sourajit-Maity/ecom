@@ -17,11 +17,11 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('product_name')->unique();
             $table->string('product_slug')->unique();
-            $table->text('product_category');
+            $table->text('product_category')->nullable();;
             $table->decimal('price',8,2)->nullable(); 
-            $table->text('product_photo_path');
+            $table->text('product_photo_path')->nullable();
             $table->foreignId('user_id')->nullable()->references('id')->on('users')->onDelete('cascade');
-            $table->boolean('active')->default(false);            
+            $table->boolean('active')->default(true);            
             $table->timestamps();
             $table->softDeletes();
         });

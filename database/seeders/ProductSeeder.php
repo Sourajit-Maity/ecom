@@ -13,17 +13,56 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        $productNames=['product1','product2', 'product3','product4','product5', 'product6','product7','product8', 'product9',];
-        $productSlugs=['product1','product2', 'product3','product4','product5', 'product6','product7','product8', 'product9',];
+        $datas = [
+            [
+                "product_name" => "White Plastic Rectangle",
+                "product_slug" => "white_plastic",
+                "product_category" => "DigBadge",
+            ],
+            [
+                "product_name" => "Gold & Silver Plastic Rectangle",
+                "product_slug" => "gold_silver_plastic",
+                "product_category" => "SMSBadge",
+            ],
+            [
+                "product_name" => "Metallic Plastic Rectangle",
+                "product_slug" => "metalic_plastic",
+                "product_category" => "BRSBadge",
+            ],
+            [
+                "product_name" => "Framed White Badges",
+                "product_slug" => "framed_white",
+                "product_category" => "FRBadge",
+            ],
+            [
+                "product_name" => "Framed Gold or Silver Badges",
+                "product_slug" => "framed_gold_silver",
+                "product_category" => "FRGBadge",
+            ],
+            [
+                "product_name" => "Framed metallic Badges",
+                "product_slug" => "framed_metallic",
+                "product_category" => "FRBRSBadge",
+            ],
 
-        $productCategories=['product1','product2', 'product3','product4','product5', 'product6','product7','product8', 'product9',];
-        foreach ($productNames as $key => $productName) {
-            Product::create(['product_name' => $productName,
-            'product_slug' => $productSlugs,
-            'product_category' => $productCategories,
-            'name' => $productName,
-            
-            ]);
+            [
+                "product_name" => "Oval White Badges",
+                "product_slug" => "oval_white",
+                "product_category" => "OvBadge",
+            ],
+            [
+                "product_name" => "Framed Oval White Badges",
+                "product_slug" => "framed_oval_white",
+                "product_category" => "FrOvBadge",
+            ],
+            [
+                "product_name" => "Framed Metallic Oval Badges",
+                "product_slug" => "framed_metallic_oval",
+                "product_category" => "FrOvBRSBadge",
+            ],
+        ];
+        foreach($datas as $data){
+            Product::create($data);
         }
     }
 }
