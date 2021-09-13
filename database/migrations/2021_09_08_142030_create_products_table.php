@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->decimal('price',8,2)->nullable(); 
             $table->text('product_photo_path')->nullable();
             $table->foreignId('user_id')->nullable()->references('id')->on('users')->onDelete('cascade');
-            $table->boolean('active')->default(false);            
+            $table->boolean('active')->default(true);            
             $table->timestamps();
             $table->softDeletes();
         });

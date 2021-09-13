@@ -20,7 +20,7 @@ class CreateProductPricesTable extends Migration
             $table->decimal('price',8,2); 
             $table->string('price_range');
             $table->foreignId('user_id')->nullable()->references('id')->on('users')->onDelete('cascade');
-            $table->boolean('active')->default(false);            
+            $table->boolean('active')->default(true);            
             $table->timestamps();
             $table->softDeletes();
         });
