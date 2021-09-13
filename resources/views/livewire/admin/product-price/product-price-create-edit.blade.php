@@ -11,17 +11,12 @@
                         </x-admin.dropdown>
                         <x-admin.input-error for="product_id" />
                     </x-admin.form-group>
-                    <x-admin.form-group>
-                        <x-admin.lable value="Price" required />
-                        <x-admin.input type="text" wire:model.defer="price" placeholder="Price"  class="{{ $errors->has('price') ? 'is-invalid' :'' }}" />
-                        <x-admin.input-error for="price" />
-                    </x-admin.form-group>
-                    <x-admin.form-group>
-                        <x-admin.lable value="Product Price range" required />
-                        <x-admin.input type="text" wire:model.defer="price_range" placeholder="Product Price Range"  class="{{ $errors->has('price_range') ? 'is-invalid' :'' }}" />
-                        <x-admin.input-error for="price_range" />
-                    </x-admin.form-group>
                     
+                    <!-- <x-admin.form-group>
+                        <x-admin.lable value="Product Quantity range" required />
+                        <x-admin.input type="text" wire:model.defer="price_range" placeholder="Product Quantity Range"  class="{{ $errors->has('price_range') ? 'is-invalid' :'' }}" />
+                        <x-admin.input-error for="price_range" />
+                    </x-admin.form-group> -->
                     <x-admin.form-group>
                         <x-admin.lable value="Product Category" required/>
                         <x-admin.dropdown  wire:model.defer="product_category" placeHolderText="Please select one" autocomplete="off" class="{{ $errors->has('product_category') ? 'is-invalid' :'' }}">
@@ -30,6 +25,20 @@
                                 @endforeach
                         </x-admin.dropdown>
                         <x-admin.input-error for="product_category" />
+                    </x-admin.form-group>
+                    <x-admin.form-group>
+                        <x-admin.lable value="Product Quantity Range" required/>
+                        <x-admin.dropdown  wire:model.defer="price_range" placeHolderText="Please select one" autocomplete="off" class="{{ $errors->has('price_range') ? 'is-invalid' :'' }}">
+                                @foreach ($product_rangeList as $pricecategory)
+                                    <x-admin.dropdown-item  :value="$pricecategory['value']" :text="$pricecategory['text']"/>                          
+                                @endforeach
+                        </x-admin.dropdown>
+                        <x-admin.input-error for="price_range" />
+                    </x-admin.form-group>
+                    <x-admin.form-group>
+                        <x-admin.lable value="Price" required />
+                        <x-admin.input type="text" wire:model.defer="price" placeholder="Price"  class="{{ $errors->has('price') ? 'is-invalid' :'' }}" />
+                        <x-admin.input-error for="price" />
                     </x-admin.form-group>
                       
                 </div>

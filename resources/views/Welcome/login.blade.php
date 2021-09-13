@@ -36,14 +36,16 @@
                             <div class="form-input">
                                 <div class="form_input_check">
                                     <label>
-                                        <input type="checkbox">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                         <span> Remember me</span>
                                     </label>
                                 </div>
                             </div>
 
                             <div class="form-input">
-                                <a href="#url">Forgot password?</a>
+                                 @if (Route::has('password.request'))
+										 <a href="{{ route('password.request') }}">Forgot Password</a>
+                                 @endif
                             </div>
 
                         </div>

@@ -134,6 +134,12 @@ class HomeController extends Controller
            
         }
     }
+    public function logoutClient() {
+        Session::flush();
+        Auth::logout();
+  
+        return Redirect::to('/');
+    }
     public function productDetails()
     {
         $reviews = Review::with('user')->where('active', 1)->get();

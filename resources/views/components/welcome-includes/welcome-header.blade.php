@@ -5,18 +5,27 @@
             <div class="top-head-wrap">
                 <div class="login">
                     <ul>
+                    @guest
                         <li><a href="{{route('welcome.login')}}">Login</a></li>
                         <li><a href="{{route('welcome.signup')}}">Signup</a></li>
+                    @else
+                    <li><a href="{{route('welcome.logout-client')}}">Logout</a></li>
+                     @endguest   
                     </ul>
                 </div>
 
                 <div class="logo">
                     <a href="{{route('welcome.home')}}"><img src="{{asset('welcome_assets/images/logo.png')}}" alt=""></a>
                 </div>
-
-                <div class="cart-sec">
-                    <a href="{{route('welcome.shopping-cart')}}">cart items 2</a>
-                </div>
+                @guest
+                    <div class="cart-sec">
+                        <a href="{{route('welcome.shopping-cart')}}">cart items 2</a>
+                    </div>
+                @else
+                    <div class="cart-sec">
+                        <a href="{{route('welcome.shopping-cart')}}">cart items 2</a>
+                    </div>           
+                @endguest 
 
             </div>
         </div>

@@ -39,6 +39,7 @@ Route::get('faq', [HomeController::class, 'faq'])->name('welcome.faq');
 Route::get('contact-us', [HomeController::class, 'contactUs'])->name('welcome.contact-us');
 Route::post('register-submit', [HomeController::class, 'registerSubmit'])->name('welcome.register-submit');
 Route::post("login-client", [HomeController::class, 'loginClient'])->name('welcome.login-client');
+Route::get('logout-client', [HomeController::class, 'logoutClient'])->name('welcome.logout-client');
 Route::get('/getstate/{id}', [HomeController::class, 'getState']);
 Route::post('contact-us-submit', [HomeController::class, 'contactUsSubmit'])->name('welcome.contact-us-submit');
 Route::get('signup', [HomeController::class, 'signUp'])->name('welcome.signup');
