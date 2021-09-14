@@ -10,7 +10,9 @@ use App\Models\Country;
 use App\Models\City;
 use App\Models\State;
 use App\Models\User;
+use App\Models\Faqpage;
 use App\Models\ContactUsForm;
+use App\Models\Contactuspage;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
@@ -40,13 +42,15 @@ class HomeController extends Controller
     public function faq()
     {
         $faqs = Faq::all();
+        $faqpage = Faqpage::first();
         $reviews = Review::with('user')->where('active', 1)->get();
-        return view('Welcome.faq',compact('faqs','reviews'));
+        return view('Welcome.faq',compact('faqs','reviews','faqpage'));
     }
     public function contactUs()
     {
+        $contactuspage = Contactuspage::first();
         $reviews = Review::with('user')->where('active', 1)->get();
-        return view('Welcome.contact-us',compact('reviews'));
+        return view('Welcome.contact-us',compact('reviews','contactuspage'));
     }
     public function contactUsSubmit(Request $request)
     {

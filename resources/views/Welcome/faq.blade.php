@@ -4,12 +4,13 @@
             <div class="banner-row row">
                 <div class="col-md-6 banner-col-left">
                     <div class="banner-cont">
-                        <h1>FAQ</h1>
+                        <h1>{{$faqpage->content_heading}}</h1>
                     </div>
                 </div>
                 <div class="col-md-6 banner-col-right">
                     <div class="banner-image">
-                        <img src="{{asset('welcome_assets/images/Faq-banner-image.png')}}" alt="">
+                        <img src="{{asset('welcome_assets/images')}}/{{$faqpage->banner_image}}" alt="">
+                        <!-- <img src="{{url('asset/welcome_assets/images')}}/{{$faqpage->banner_image}}" alt=""> -->
                     </div>
                 </div>
             </div>

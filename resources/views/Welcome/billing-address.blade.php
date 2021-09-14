@@ -16,7 +16,7 @@
                             <li><a href="{{route('welcome.saved-address')}}">saved addresses</a></li>
                         </ul>
                     </li>
-                    <li><a href="#url">LOG OUT</a></li>
+                    <li><a href="{{route('welcome.logout-client')}}">LOG OUT</a></li>
                 </ul>
             </div>
 
