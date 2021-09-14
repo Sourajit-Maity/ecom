@@ -23,7 +23,7 @@
             <div class="row passion-row">
                 <div class="col-md-6 passion-left">
                     <div class="content">
-                        <h2>Badges Ar e Our Passion</h2>
+                        <h2>Badges Ar e Our Passion</h2> 
                         <p>
                             Badges may be small, but they are big to us. With their years of
                             experience, our entire team treats each and every badge we make as

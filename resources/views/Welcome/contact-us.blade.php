@@ -20,8 +20,7 @@
         <div class="container">
             <div class="contact-head">
                 <h4>
-                    Comments, questions, and concerns are always welcome. Drop us a line and one
-                    of our friendly customer service representatives will get back to you.
+                {{$contactuspage->content_heading}}
                 </h4>
             </div>
 

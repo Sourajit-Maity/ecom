@@ -13,6 +13,11 @@ use App\Http\Controllers\Admin\ProductPriceController;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\StateController;
 use App\Http\Controllers\Admin\CityController;
+use App\Http\Controllers\Admin\CmsController;
+use App\Http\Controllers\Admin\HomepageController;
+use App\Http\Controllers\Admin\FaqpageController;
+use App\Http\Controllers\Admin\ContactuspageController;
+use App\Http\Controllers\Admin\AboutpageController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -81,6 +86,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum'], function () 
         'country' => CountryController::class,
         'city' => CityController::class,
         'state' => StateController::class,
+        'homepage' => HomepageController::class,
+        'faqpage' => FaqpageController::class,
+        'contactuspage' => ContactuspageController::class,
+        'aboutpage' => AboutpageController::class,
+        'pages' => CmsController::class,
 
     ]);
 });

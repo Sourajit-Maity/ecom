@@ -17,6 +17,12 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTableSeeder::class);
         $this->call(ProductSeeder::class);
         $this->call(ProductPriceSeeder::class);
+
+        $this->call(PagesSeeder::class);
+        $this->call(HomePageTableSeeder::class);
+        $this->call(AboutPageTableSeeder::class);
+        $this->call(FaqPageTableSeeder::class);
+        $this->call(ContactPageTableSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }
