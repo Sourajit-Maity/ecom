@@ -81,6 +81,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum','role_or_permi
   
     Route::get('profile', [ProfileController::class, 'getProfile'])->name('admin.profile');
     Route::get('/dashboard', [AdminDashboard::class, 'getDashboard'])->name('admin.dashboard');
+    Route::group(['middleware'=>['auth:web','adminuser']], function() {
     Route::resources([
         'users' => UserController::class,
         'faq-master' => FaqController::class,
@@ -98,4 +99,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum','role_or_permi
         'pages' => CmsController::class,
 
     ]);
+});
 });
