@@ -38,9 +38,9 @@ Route::redirect('admin', 'admin/login');
 
 // Route::inertia('/about', 'AboutComponent');
 Route::get('/', [HomeController::class, 'index'])->name('welcome.home');
-// Route::group(['middleware'=>['auth:web','clientuser']], function() {
+// 
 
-// Route::get('/', [HomeController::class, 'index'])->name('welcome.home');
+// 
 Route::get('about-us', [HomeController::class, 'aboutUs'])->name('welcome.about-us');
 Route::get('products', [HomeController::class, 'products'])->name('welcome.products');
 Route::get('faq', [HomeController::class, 'faq'])->name('welcome.faq');
@@ -53,6 +53,9 @@ Route::post('contact-us-submit', [HomeController::class, 'contactSubmit'])->name
 Route::post('contact-submit', [HomeController::class, 'contactusSubmit'])->name('welcome.contact-submit');
 Route::get('signup', [HomeController::class, 'signUp'])->name('welcome.signup');
 Route::get('login', [HomeController::class, 'login'])->name('welcome.login');
+
+Route::group(['middleware'=>['auth:web','clientuser']], function() {
+
 Route::get('product-details', [HomeController::class, 'productDetails'])->name('welcome.product-details');
 // Route::get('design-tool', [DesignToolController::class, 'index'])->name('welcome.design-tool');
 Route::get('design-tool', [HomeController::class, 'designTool'])->name('welcome.design-tool');
@@ -74,8 +77,9 @@ Route::get('design-page-demo', [HomeController::class, 'designPageDemo'])->name(
 Route::get('design-page-demo-add-name', [HomeController::class, 'designPageDemoaddName'])->name('welcome.design-page-demo-add-name');
 Route::get('design-page-demo-add-or-edit-name', [HomeController::class, 'designPageDemoaddorEditName'])->name('welcome.design-page-demo-add-or-edit-name');
 Route::get('design-page-fastener', [HomeController::class, 'designPageFastener'])->name('welcome.design-page-fastener');
-
-// });
+Route::get('cart', [ProductController::class, 'cartList'])->name('cart.list');
+Route::post('cart', [ProductController::class, 'addToCart'])->name('cart.store');
+ });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum','role_or_permission:SUPER-ADMIN'], function () {
   
