@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Auth;
 use Illuminate\Http\Request;
 
 class ClientUser
@@ -21,7 +22,7 @@ class ClientUser
         } else {
             Auth::logout();
             session()->flash('error', 'You are not Authenticate.');
-            return redirect('/client-login');
+            return redirect('/');
         } 
     }
 }
