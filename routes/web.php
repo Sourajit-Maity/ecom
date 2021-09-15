@@ -37,8 +37,10 @@ Route::redirect('admin', 'admin/login');
 // Route::view('design-tool', 'design-tool');
 
 // Route::inertia('/about', 'AboutComponent');
-
 Route::get('/', [HomeController::class, 'index'])->name('welcome.home');
+// Route::group(['middleware'=>['auth:web','clientuser']], function() {
+
+// Route::get('/', [HomeController::class, 'index'])->name('welcome.home');
 Route::get('about-us', [HomeController::class, 'aboutUs'])->name('welcome.about-us');
 Route::get('products', [HomeController::class, 'products'])->name('welcome.products');
 Route::get('faq', [HomeController::class, 'faq'])->name('welcome.faq');
@@ -73,9 +75,9 @@ Route::get('design-page-demo-add-name', [HomeController::class, 'designPageDemoa
 Route::get('design-page-demo-add-or-edit-name', [HomeController::class, 'designPageDemoaddorEditName'])->name('welcome.design-page-demo-add-or-edit-name');
 Route::get('design-page-fastener', [HomeController::class, 'designPageFastener'])->name('welcome.design-page-fastener');
 
+// });
 
-
-Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum','role_or_permission:SUPER-ADMIN'], function () {
   
     Route::get('profile', [ProfileController::class, 'getProfile'])->name('admin.profile');
     Route::get('/dashboard', [AdminDashboard::class, 'getDashboard'])->name('admin.dashboard');

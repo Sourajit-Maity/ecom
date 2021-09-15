@@ -24,10 +24,7 @@ use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    
 
     public function index()
     {
@@ -145,8 +142,8 @@ class HomeController extends Controller
         }
 
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            $user       =       Auth::user()->is_admin == 0;
-            return Redirect::to('/')->with('success','User Registered Successfully!');
+            $user       =       Auth::user();
+            return Redirect::to('/')->with('success','User Login Successfully!');
         }
         else {
             return redirect()->back()->with('success','"Whoops! invalid password.');
