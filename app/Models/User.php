@@ -49,6 +49,7 @@ class User extends Authenticatable
         'zip',
         'terms_condition',
         'active',
+        'is_admin'
     ];
 
     /**

@@ -20,6 +20,7 @@ class UserTableSeeder extends Seeder
             'last_name' => "Admin",
             'email' => "admin@admin.com",
             'password' => "11111111",
+            'is_admin'=>'1',
             'active'=>true
         ]);
         $superAdminUser->assignRole('SUPER-ADMIN');

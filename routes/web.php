@@ -37,6 +37,7 @@ Route::redirect('admin', 'admin/login');
 // Route::view('design-tool', 'design-tool');
 
 // Route::inertia('/about', 'AboutComponent');
+
 Route::get('/', [HomeController::class, 'index'])->name('welcome.home');
 Route::get('about-us', [HomeController::class, 'aboutUs'])->name('welcome.about-us');
 Route::get('products', [HomeController::class, 'products'])->name('welcome.products');
@@ -46,7 +47,8 @@ Route::post('register-submit', [HomeController::class, 'registerSubmit'])->name(
 Route::post("login-client", [HomeController::class, 'loginClient'])->name('welcome.login-client');
 Route::get('logout-client', [HomeController::class, 'logoutClient'])->name('welcome.logout-client');
 Route::get('/getstate/{id}', [HomeController::class, 'getState']);
-Route::post('contact-us-submit', [HomeController::class, 'contactUsSubmit'])->name('welcome.contact-us-submit');
+Route::post('contact-us-submit', [HomeController::class, 'contactSubmit'])->name('contact-us-submit');
+Route::post('contact-submit', [HomeController::class, 'contactusSubmit'])->name('welcome.contact-submit');
 Route::get('signup', [HomeController::class, 'signUp'])->name('welcome.signup');
 Route::get('login', [HomeController::class, 'login'])->name('welcome.login');
 Route::get('product-details', [HomeController::class, 'productDetails'])->name('welcome.product-details');
@@ -74,6 +76,7 @@ Route::get('design-page-fastener', [HomeController::class, 'designPageFastener']
 
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum'], function () {
+  
     Route::get('profile', [ProfileController::class, 'getProfile'])->name('admin.profile');
     Route::get('/dashboard', [AdminDashboard::class, 'getDashboard'])->name('admin.dashboard');
     Route::resources([

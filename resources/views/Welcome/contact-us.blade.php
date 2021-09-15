@@ -34,8 +34,10 @@
                         </div>
                         <div class="col-md-6 conatct-form-col">
                             <h3>Contact Us</h3>
-                        <form action="{{ route('welcome.contact-us-submit') }}" method="POST" >
-                        {{ csrf_field() }}
+                        
+                        <form action="{{ route('welcome.contact-submit') }}" method="POST" >
+                            @csrf
+                           
                             <div class="form-input">
                                 <input id="full_name" type="text" placeholder="Name *" class="form-control @error('full_name') is-invalid @enderror" name="full_name" value="{{ old('full_name') }}" required autocomplete="full_name">
 
@@ -47,7 +49,7 @@
                             </div>
 
                             <div class="form-input">
-                                <input id="phone" type="tel" placeholder="Phone Number *" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+                                <input id="phone" type="text" placeholder="Phone Number *" class="form-control @error('phone') is-invalid @enderror only-numeric" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
 
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
@@ -104,7 +106,7 @@
 
                                     <div class="col-md-4 address-col">
                                         <div class="address-cont">
-                                            <input id="zip" type="text" placeholder="Zip *" class="form-control @error('zip') is-invalid @enderror" name="zip" value="{{ old('zip') }}" required autocomplete="zip">
+                                            <input id="zip" type="text" placeholder="Zip *" class="form-control @error('zip') is-invalid @enderror only-numeric" name="zip" value="{{ old('zip') }}" required autocomplete="zip">
 
                                             @error('zip')
                                                 <span class="invalid-feedback" role="alert">
@@ -137,7 +139,7 @@
                             </div>
 
                             <div class="form-input">
-                                <input type="submit" value="Submit">
+                                <input type="submit" name="submit" class="submit"/>
                             </div>
 
                         </form>
@@ -176,3 +178,18 @@
         
     </section>
 </x-layouts.welcome-layout>
+<script>
+    $(document).ready(function(){
+
+        $(".only-numeric").bind("keypress", function (e) {
+          var keyCode = e.which ? e.which : e.keyCode
+               
+          if (!(keyCode >= 48 && keyCode <= 57)) {
+            $(".error").css("display", "inline");
+            return false;
+          }else{
+            $(".error").css("display", "none");
+          }
+      });
+    });
+</script>

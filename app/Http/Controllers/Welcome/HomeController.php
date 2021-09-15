@@ -24,6 +24,11 @@ use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $reviews = Review::with('user')->where('active', 1)->get();
@@ -52,9 +57,18 @@ class HomeController extends Controller
         $reviews = Review::with('user')->where('active', 1)->get();
         return view('Welcome.contact-us',compact('reviews','contactuspage'));
     }
-    public function contactUsSubmit(Request $request)
+
+    public function contactusSubmit(Request $request)
+    {
+        dd($request->all());
+        Log::debug("Request".print_r($request->all(), true));
+        
+        
+    }
+    public function contactSubmit(Request $request)
     {
         Log::debug("Request".print_r($request->all(), true));
+        
         request()->validate([
             'full_name' => 'required',
             'email' => 'required|email',
@@ -68,9 +82,10 @@ class HomeController extends Controller
         ]);
     
        
-        $contact = new ContactUsForm($request->all());
-        $contact->save();
-    
+        
+         $inputs = $request->all();
+         $contact = ContactUsForm::create($inputs);
+     
         return redirect()->back()
                         ->with('success','Request Submitted successfully.');
     }
@@ -96,7 +111,7 @@ class HomeController extends Controller
          $user   =   User::create($inputs);
          $user->assignRole('CLIENT');
     
-        return redirect()->back()
+        return redirect()->route('welcome.login')
                         ->with('success','Request Submitted successfully.');
     }
     public function signUp()
@@ -123,14 +138,14 @@ class HomeController extends Controller
            
         }
 
-        $user=User::where("email", $request->email)->first();
+        $user=User::where("email", $request->email)->role('CLIENT')->first();
 
         if(is_null($user)) {
             return redirect()->back()->with('success','Email Not Found.');
         }
 
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            $user       =       Auth::user();
+            $user       =       Auth::user()->is_admin == 0;
             return Redirect::to('/')->with('success','User Registered Successfully!');
         }
         else {
