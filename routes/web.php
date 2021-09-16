@@ -79,6 +79,8 @@ Route::get('design-page-demo-add-or-edit-name', [HomeController::class, 'designP
 Route::get('design-page-fastener', [HomeController::class, 'designPageFastener'])->name('welcome.design-page-fastener');
 Route::get('cart', [ProductController::class, 'cartList'])->name('cart.list');
 Route::post('cart', [ProductController::class, 'addToCart'])->name('cart.store');
+Route::post('cart', [ProductController::class, 'addToCart'])->name('cart.store');
+Route::get('product-list', [ProductController::class, 'productList'])->name('products.list');
  });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum','role_or_permission:SUPER-ADMIN'], function () {
