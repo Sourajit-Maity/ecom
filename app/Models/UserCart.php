@@ -17,4 +17,7 @@ class UserCart extends Model
     public function product(){
         return $this->hasOne(Product::class,'id','product_id')->withDefault();
     }
+    public function productprice(){
+        return $this->hasOne(ProductPrice::class,'id','product_id')->withDefault();
+    }
 }

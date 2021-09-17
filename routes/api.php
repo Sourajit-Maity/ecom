@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\TaskController;
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\UserCartController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,6 @@ Route::post("login", [UserController::class, 'login']);
 Route::middleware('auth:api')->group(function() {
     Route::get("user", [UserController::class, "user"]);
     Route::resource('tasks', TaskController::class);    //patch/put   =>  x-www-form-urlencode
+
+    Route::post('add-to-cart', [UserCartController::class,'addToCart']);
 });

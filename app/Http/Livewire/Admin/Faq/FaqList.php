@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use Livewire\WithPagination;
 use App\Http\Livewire\Traits\WithSorting;
 use App\Http\Livewire\Traits\AlertMessage;
-use App\Models\Faq;
+use App\Models\Faq; 
 
 class FaqList extends Component
 {

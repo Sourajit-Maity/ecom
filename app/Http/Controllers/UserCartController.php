@@ -1,12 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Order;
 use App\Models\Product;
-class ProductController extends Controller
+use App\Models\UserCart;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
+
+class UserCartController extends Controller
 {
+    private  $per_page = 10;
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +23,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('admin.product.list');
+        //
     }
 
     /**
@@ -24,7 +33,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create-edit',['product'=>null]);
+        //
     }
 
     /**
@@ -57,8 +66,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::findOrFail($id);
-        return view('admin.product.create-edit',compact('product'));
+        //
     }
 
     /**
@@ -81,31 +89,38 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-       
-    }
-    public function productList()
-    {
-        $products = Product::all();
-
-        return view('products', compact('products'));
-    }
-
-    public function cartList()
-    {
-        return view('cart');
+        //
     }
 
     public function addToCart(Request $request)
     {
-        \Cart::add([
-            'id' => $request->id,
-            'name' => $request->product_name,
-            'price' => $request->price,
-            'quantity' => $request->quantity,
-            
-        ]);
-        session()->flash('success', 'Product is Added to Cart Successfully !');
+       try{
 
-        return redirect()->route('cart.list');
+        $validator = Validator::make($request->all(), [ 
+            "product_id" =>  "required",
+            "quantity" =>  "",
+        ]);
+
+        if($validator->fails()) {
+            return response()->json(["validation_errors" => $validator->errors()]);
+        }
+
+        $products = UserCart::where('product_id',$request->product_id)->where('user_id',Auth::user()->id)->first();
+        if($products) {
+            return Response()->Json(["status"=>false,"message"=> 'Already added this product.']);
+        }
+
+        $user_cart = new UserCart;
+        $user_cart->user_id = Auth::user()->id;
+        $user_cart->product_id = $request->product_id;
+        $user_cart->quantity = $request->quantity ?? 1;
+        $user_cart->save();
+
+        return Response()->Json(["status"=>true,"message"=> 'Product successfully added your cart.']);
+
+       }catch(\Exception $e) {
+           return Response()->Json(["status"=>false,"message"=> 'Something went wrong. Please try again.']);
+      }
     }
+
 }

@@ -19,7 +19,7 @@
                 </div>
                 @guest
                     <div class="cart-sec">
-                        <a href="{{route('welcome.shopping-cart')}}">cart items 2</a>
+                       
                     </div>
                 @else
                     <div class="cart-sec">
