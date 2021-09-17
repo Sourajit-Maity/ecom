@@ -105,6 +105,7 @@ class HomeController extends Controller
         ]);
     
          $inputs = $request->all();
+         
          $user   =   User::create($inputs);
          $user->assignRole('CLIENT');
     

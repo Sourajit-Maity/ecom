@@ -48,7 +48,7 @@
                 </td>
                 <td class="sorting_1" tabindex="0">{{ $usercart->productprice->price  }}</td>
                 <td>
-                <button href="#"  wire:click="removeCart({{ $usercart->id }})"><i
+                <button  wire:click="removeCart({{ $usercart->id }})"><i
                             class="fa fa-trash"></i> </button>
                            
                 <!-- <button href="#" class="dropdown-item" wire:click="deleteAttempt({{ $usercart->id }})"><i class="fa fa-trash" ></i> Remove</button> -->
