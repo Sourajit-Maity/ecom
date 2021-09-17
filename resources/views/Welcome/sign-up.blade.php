@@ -5,7 +5,12 @@
                 <div class="login-head">
                     <h2>Signup</h2>
                 </div>
-
+                @if (Session::has('success'))
+                    <div class="alert alert-success text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                    <p>{{ Session::get('success') }}</p>
+                    </div>
+                @endif
                 <div class="login-contnt">
                 <form action="{{ route('welcome.register-submit') }}" method="POST" >
                      @csrf
