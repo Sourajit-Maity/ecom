@@ -87,6 +87,7 @@ class UserCartList extends Component
 
     public function removeCart($id)
     {
+        dd($id);
         UserCart::remove($id);
 
         session()->flash('success', 'Item has removed!');

@@ -19,11 +19,12 @@
                 </div>
                 @guest
                     <div class="cart-sec">
-                       
+                    <p>Hi! Guest</p>
                     </div>
                 @else
                     <div class="cart-sec">
-                        <a href="{{route('welcome.shopping-cart')}}">cart items 2</a>
+                    <p>Hi! {{ Auth::user()->first_name }}    <a href="{{route('welcome.shopping-cart')}}">cart 2</a></p>
+                        
                     </div>           
                 @endguest 
 

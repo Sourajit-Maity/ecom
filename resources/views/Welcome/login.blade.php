@@ -5,7 +5,12 @@
                 <div class="login-head">
                     <h2>Login</h2>
                 </div>
-
+                @if (Session::has('success'))
+                    <div class="alert alert-success text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                    <p>{{ Session::get('success') }}</p>
+                    </div>
+                @endif
                 <div class="login-contnt">
                     <h2>Your Account Information</h2>
 
@@ -13,7 +18,7 @@
                          @csrf
                         <div class="form-input">
                             <label>Email</label>
-                            <input id="email" type="email" placeholder="Enter Email*" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                            <input id="email" type="email" placeholder="Enter Email*" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -23,7 +28,7 @@
                         </div>
                         <div class="form-input">
                             <label>Password</label>
-                            <input id="password" type="password" placeholder="Enter Password*" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                            <input id="password" type="password" placeholder="Enter Password*" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">

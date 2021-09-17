@@ -53,12 +53,13 @@ Route::post('contact-us-submit', [HomeController::class, 'contactSubmit'])->name
 Route::post('contact-submit', [HomeController::class, 'contactusSubmit'])->name('welcome.contact-submit');
 Route::get('signup', [HomeController::class, 'signUp'])->name('welcome.signup');
 Route::get('login', [HomeController::class, 'login'])->name('welcome.login');
+Route::get('design-tool', [HomeController::class, 'designTool'])->name('welcome.design-tool');
 
 Route::group(['middleware'=>['auth:web','clientuser']], function() {
 
 Route::get('product-details', [HomeController::class, 'productDetails'])->name('welcome.product-details');
 // Route::get('design-tool', [DesignToolController::class, 'index'])->name('welcome.design-tool');
-Route::get('design-tool', [HomeController::class, 'designTool'])->name('welcome.design-tool');
+
 Route::get('add-address', [HomeController::class, 'addAddress'])->name('welcome.add-address');
 Route::get('billing-address', [HomeController::class, 'billingAddress'])->name('welcome.billing-address');
 Route::get('shopping-cart', [HomeController::class, 'shoppingCart'])->name('welcome.shopping-cart');
