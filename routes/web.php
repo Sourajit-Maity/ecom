@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\HomepageController;
 use App\Http\Controllers\Admin\FaqpageController;
 use App\Http\Controllers\Admin\ContactuspageController;
 use App\Http\Controllers\Admin\AboutpageController;
+use App\Http\Controllers\UserCartController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -62,7 +63,7 @@ Route::get('product-details', [HomeController::class, 'productDetails'])->name('
 
 Route::get('add-address', [HomeController::class, 'addAddress'])->name('welcome.add-address');
 Route::get('billing-address', [HomeController::class, 'billingAddress'])->name('welcome.billing-address');
-Route::get('shopping-cart', [HomeController::class, 'shoppingCart'])->name('welcome.shopping-cart');
+Route::get('shopping-cart', [UserCartController::class, 'shoppingCart'])->name('welcome.shopping-cart');
 Route::get('saved-address', [HomeController::class, 'savedAddress'])->name('welcome.saved-address');
 Route::get('order-history', [HomeController::class, 'orderHistory'])->name('welcome.order-history');
 Route::get('my-account', [HomeController::class, 'myAccount'])->name('welcome.my-account');
@@ -78,10 +79,10 @@ Route::get('design-page-demo', [HomeController::class, 'designPageDemo'])->name(
 Route::get('design-page-demo-add-name', [HomeController::class, 'designPageDemoaddName'])->name('welcome.design-page-demo-add-name');
 Route::get('design-page-demo-add-or-edit-name', [HomeController::class, 'designPageDemoaddorEditName'])->name('welcome.design-page-demo-add-or-edit-name');
 Route::get('design-page-fastener', [HomeController::class, 'designPageFastener'])->name('welcome.design-page-fastener');
-Route::get('cart', [ProductController::class, 'cartList'])->name('cart.list');
-Route::post('cart', [ProductController::class, 'addToCart'])->name('cart.store');
-Route::post('cart', [ProductController::class, 'addToCart'])->name('cart.store');
-Route::get('product-list', [ProductController::class, 'productList'])->name('products.list');
+
+Route::resources([
+    'cart' => UserCartController::class,
+]);
  });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum','role_or_permission:SUPER-ADMIN'], function () {

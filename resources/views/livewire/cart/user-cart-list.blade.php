@@ -44,17 +44,14 @@
                 <td class="sorting_1" tabindex="0">{{ $usercart->product->product_category  }}</td>
                 <td class="sorting_1" tabindex="0">{{ $usercart->productprice->price  }}</td>
                 <td class="sorting_1" tabindex="0">{{ $usercart->quantity  }}               
-                <livewire:cart-update :usercart="$usercart" :key="$usercart->id"/>
+                <!-- <livewire:cart-update :usercart="$usercart" :key="$usercart->id"/> -->
                 </td>
                 <td class="sorting_1" tabindex="0">{{ $usercart->productprice->price  }}</td>
                 <td>
-                <button  wire:click="removeCart({{ $usercart->id }})"><i
-                            class="fa fa-trash"></i> </button>
-                           
-                <!-- <button href="#" class="dropdown-item" wire:click="deleteAttempt({{ $usercart->id }})"><i class="fa fa-trash" ></i> Remove</button> -->
-                </td>
-
-                
+                <!-- <a class="dropdown-item" href="{{ route('cart.destroy', ['cart' => $usercart->id]) }}"><i
+                            class="la la-edit"></i> Delete</a> -->
+                    <button href="#" class="dropdown-item" wire:click="removeCart({{ $usercart->id }})"><i class="fa fa-trash" ></i></button>
+                </td>              
             </tr>
         @empty
             <tr>
@@ -68,6 +65,7 @@
         {{ $usercarts->links() }}
     </x-slot>
     <x-slot name="showingEntries">
-    <a href="#" class="px-6 py-2 text-red-800 bg-red-300" wire:click.prevent="clearAllCart">Remove All Cart Items</a>
+    <button href="#" class="px-6 py-2 text-red-800 bg-red-300" wire:click.prevent="clearAllCart"><i class="fa fa-trash" ></i> Remove All Cart Items</button>
+    <!-- <a href="#" class="px-6 py-2 text-red-800 bg-red-300" wire:click.prevent="clearAllCart">Remove All Cart Items</a> -->
     </x-slot>
 </x-admin.table>

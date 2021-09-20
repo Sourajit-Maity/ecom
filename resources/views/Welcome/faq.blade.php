@@ -9,8 +9,7 @@
                 </div>
                 <div class="col-md-6 banner-col-right">
                     <div class="banner-image">
-                        <img src="{{asset('welcome_assets/images')}}/{{$faqpage->banner_image}}" alt="">
-                        <!-- <img src="{{url('asset/welcome_assets/images')}}/{{$faqpage->banner_image}}" alt=""> -->
+                        <img src="{{$faqpage->banner_image}}" alt="">
                     </div>
                 </div>
             </div>

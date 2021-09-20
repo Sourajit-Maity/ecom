@@ -78,17 +78,23 @@ class UserCartList extends Component
         UserCart::destroy($id);
         $this->showModal('success', 'Success', 'Product is removed successfully');
     }
+
     public function deleteAttempt($id)
     {
         
         $this->showConfirmation("warning", 'Are you sure?', "Do you want to delete this?", 'Yes, delete!', 'deleteConfirm', ['id' => $id]); //($type,$title,$text,$confirmText,$method)
     }
 
+    public function deleteCart($id)
+    {
+        UserCart::destroy($id);
+        $this->showModal('success', 'Success', 'City is deleted successfully');
+    }
 
     public function removeCart($id)
     {
         dd($id);
-        UserCart::remove($id);
+        UserCart::destroy($id);
 
         session()->flash('success', 'Item has removed!');
     }

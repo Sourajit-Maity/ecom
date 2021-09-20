@@ -6,22 +6,18 @@
                 <div class="col-md-7 banner-col-left">
                     <div class="banner-cont">
                         <h1>
-                            Lorem ipsum dolor amet <br>
-                            <span>custom badges </span>
+                            {{$homedetails->banner_heading}} <br>
+                            
                         </h1>
 
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Phasellus ut
-                            leo, tortor vehicula ante lectus. Diam integer <br> nulla lectus cursus
-                            ultrices in.
-                        </p>
+                        <p> {{$homedetails->banner_sub_heading}}</p>                        
 
                         <a class="cmn-btn" href="{{route('welcome.design-tool')}}">GET STARTED NOW</a>
                     </div>
                 </div>
                 <div class="col-md-5 banner-col-right">
                     <div class="banner-image">
-                        <img src="{{asset('welcome_assets/images/banner-image2.png')}}" alt="">
+                        <img src="{{$homedetails->banner_image}}" alt="">
                     </div>
                 </div>
             </div>
@@ -112,15 +108,10 @@
         <div class="container">
             <div class="who-we-are-cont">
                 <div class="cmn-heading">
-                    <h2>Who We Are</h2>
+                    <h2>{{$homedetails->content1_heading}}</h2>
                 </div>
-                <h3>BADGES ARE OUR PASSION</h3>
-                <p>
-                    Badges may be small, but they are big to us. With their years of experience,
-                    our entire team treats each and every badge we make as if it were our own.
-                    We take the utmost pridein making the best quality badges at a great price.
-                    Badges. Your Brand. Our Passion.
-                </p>
+                <h3>{{$homedetails->content1_subheading}}</h3>
+                <p>{{$homedetails->content1_text}}</p>
                 <a href="#url">Read More</a>
             </div>
         </div>
@@ -129,54 +120,45 @@
     <section class="company-benefits cmn-gap">
         <div class="container">
             <div class="cmn-heading">
-                <h2>Company Benefits</h2>
+                <h2>{{$homedetails->content2_heading}}</h2>
             </div>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Habitant massa imperdiet purus amet, at nullam arcu <br> dignissim netus.
-                Purus in in in dignissim cum fermentum est. Mattis vehicula morbi odio viverra.
-            </p>
+            <p>{{$homedetails->content2_text}}</p>
 
             <div class="row benefits-row">
                 <div class="col-md-5 benefits-left">
-                    <img src="{{asset('welcome_assets/images/company-benefits.png')}}" alt="">
+                    <img src="{{$homedetails->content2_image}}" alt="">
                 </div>
                 <div class="col-md-7 benefits-right">
                     <div class="benefits-cont">
                         <ul>
                             <li>
                                 <div class="benefit-icon">
-                                    <img src="{{asset('welcome_assets/images/benefits-icon01.svg')}}" alt="">
+                                    <img src="{{$homedetails->content2_option_image1}}" alt="">
                                 </div>
                                 <div class="benefit-cont">
-                                    <h4>Setup Charges</h4>
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry.
-                                    </p>
+                                    <h4>{{$homedetails->content2_option_heading1}}</h4>
+                                    <p> {{$homedetails->content2_option_text1}}</p>
+                                   
                                 </div>
                             </li>
 
                             <li>
                                 <div class="benefit-icon">
-                                    <img src="{{asset('welcome_assets/images/benefits-icon02.svg')}}" alt="">
+                                    <img src="{{$homedetails->content2_option_image2}}" alt="">
                                 </div>
                                 <div class="benefit-cont">
-                                    <h4>Minimums</h4>
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry.
-                                    </p>
+                                    <h4>{{$homedetails->content2_option_heading2}}</h4>
+                                    <p> {{$homedetails->content2_option_text2}} </p>
                                 </div>
                             </li>
 
                             <li>
                                 <div class="benefit-icon">
-                                    <img src="{{asset('welcome_assets/images/benefits-icon03.svg')}}" alt="">
+                                    <img src="{{$homedetails->content2_option_image3}}" alt="">
                                 </div>
                                 <div class="benefit-cont">
-                                    <h4>Shipping</h4>
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry.
-                                    </p>
+                                    <h4>{{$homedetails->content2_option_heading3}}</h4>
+                                    <p>{{$homedetails->content2_option_text3}}</p>
                                 </div>
                             </li>
                         </ul>

@@ -3,6 +3,7 @@
     <section class="banner-section about-banner" style="background: url('{{asset("welcome_assets/images/about-banner.jpg")}}')) no-repeat center center;">
         <div class="container banner-container">
             <div class="banner-row row">
+            
                 <div class="col-md-6 banner-col-left">
                     <div class="banner-cont">
                         <h1>About us</h1>
@@ -10,7 +11,7 @@
                 </div>
                 <div class="col-md-6 banner-col-right">
                     <div class="banner-image">
-                        <img src="{{asset('welcome_assets/images/about-banner-2.png')}}" alt="">
+                        <img src="{{$about->banner_image}}" alt="">
                     </div>
                 </div>
             </div>
@@ -23,23 +24,20 @@
             <div class="row passion-row">
                 <div class="col-md-6 passion-left">
                     <div class="content">
-                        <h2>Badges Ar e Our Passion</h2> 
+                        <h2>{{$about->content_heading}}</h2> 
                         <p>
-                            Badges may be small, but they are big to us. With their years of
-                            experience, our entire team treats each and every badge we make as
-                            if it were our own. We take the utmost pride in making the best
-                            quality badges at a great price. Badges. Your Brand. Our Passion.
+                        {{$about->content_text}}
                         </p>
 
                         <div class="image-sec">
-                            <img src="{{asset('welcome_assets/images/passion-image2.png')}}" alt="">
+                            <img src="{{$about->content_image1}}" alt="">
                         </div>
 
                     </div>
                 </div>
                 <div class="col-md-6 passion-right">
                     <div class="passion-image">
-                        <img src="{{asset('welcome_assets/images/passion-image.png')}}" alt="">
+                        <img src="{{$about->content_image2}}" alt="">
                     </div>
                 </div>
             </div>

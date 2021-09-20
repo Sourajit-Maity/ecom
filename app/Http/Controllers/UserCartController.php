@@ -12,6 +12,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Redirect;
 
 class UserCartController extends Controller
 {
@@ -21,6 +22,12 @@ class UserCartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function shoppingCart()
+    {
+        return view('Welcome.shopping-cart');
+    }
+
     public function index()
     {
         //
@@ -87,9 +94,13 @@ class UserCartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+   
     public function destroy($id)
     {
-        //
+
+        $UserCart = UserCart::delete($id);
+        return redirect()->route('welcome.shopping-cart')
+                        ->with('success','Company deleted successfully');
     }
 
     public function addToCart(Request $request)

@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-md-6 banner-col-right">
                     <div class="banner-image">
-                        <img src="{{asset('welcome_assets/images/contact-banner-image.png')}}" alt="">
+                        <img src="{{$contactuspage->banner_image}}" alt="">
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                     <div class="row conatct-form-row">
                         <div class="col-md-6 conatct-form-col">
                             <div class="conatct-image">
-                                <img src="{{asset('welcome_assets/images/conatct-image.png')}}" alt="">
+                                <img src="{{$contactuspage->content_image}}" alt="">
                             </div>
                         </div>
                         <div class="col-md-6 conatct-form-col">
