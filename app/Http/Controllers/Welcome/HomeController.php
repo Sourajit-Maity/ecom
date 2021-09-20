@@ -95,6 +95,7 @@ class HomeController extends Controller
         //Log::debug("register".print_r($request->all(), true));
         request()->validate([
             'first_name' => 'required|regex:/^[a-zA-Z]+$/u',
+            'last_name' => 'required|regex:/^[a-zA-Z]+$/u',
             'email' => 'required|email|max:255|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix|unique:users',
             'phone' => 'required|regex:/^([0-9\s+\(\)]*)$/',
             'address1' => 'required',
@@ -103,7 +104,6 @@ class HomeController extends Controller
             'country' => 'required',
             'zip' => 'required',
             'terms_condition' => 'required',
-            'last_name' => 'required|regex:/^[a-zA-Z]+$/u',
             'password' => 'required|string|min:8|confirmed',
             'password_confirmation' => 'required',
         ]);
