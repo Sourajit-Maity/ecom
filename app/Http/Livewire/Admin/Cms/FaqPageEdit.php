@@ -53,7 +53,7 @@ class FaqPageEdit extends Component
                 File::delete(public_path() . '/storage/' . $this->banner_image);
                 $name = md5($this->banner_image . microtime()) . '.' . $this->banner_image->extension();
                 $this->banner_image->storeAs("cms_images", $name, "public");
-                $validatedData['banner_image'] = "cms_images/" . $name;
+                $validatedData['banner_image'] = "storage/cms_images/" . $name;
             }
    
             $this->details->faq->update($validatedData);

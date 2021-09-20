@@ -51,7 +51,7 @@ class ContactusPageEdit extends Component
                 File::delete(public_path() . '/storage/' . $this->banner_image);
                 $name = md5($this->banner_image . microtime()) . '.' . $this->banner_image->extension();
                 $this->banner_image->storeAs("cms_images", $name, "public");
-                $validatedData['banner_image'] = "cms_images/" . $name;
+                $validatedData['banner_image'] = "storage/cms_images/" . $name;
             }
 
             if (!is_string($this->content_image)) {
@@ -61,7 +61,7 @@ class ContactusPageEdit extends Component
                 File::delete(public_path() . '/storage/' . $this->content_image);
                 $name = md5($this->content_image . microtime()) . '.' . $this->content_image->extension();
                 $this->content_image->storeAs("cms_images", $name, "public");
-                $validatedData['content_image'] = "cms_images/" . $name;
+                $validatedData['content_image'] = "storage/cms_images/" . $name;
             }
    
             $this->details->contact->update($validatedData);

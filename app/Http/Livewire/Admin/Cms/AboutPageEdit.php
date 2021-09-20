@@ -53,7 +53,7 @@ class AboutPageEdit extends Component
                 File::delete(public_path() . '/storage/' . $this->banner_image);
                 $name = md5($this->banner_image . microtime()) . '.' . $this->banner_image->extension();
                 $this->banner_image->storeAs("cms_images", $name, "public");
-                $validatedData['banner_image'] = "cms_images/" . $name;
+                $validatedData['banner_image'] = "storage/cms_images/" . $name;
             }
 
             if (!is_string($this->content_image1)) {
@@ -63,7 +63,7 @@ class AboutPageEdit extends Component
                 File::delete(public_path() . '/storage/' . $this->content_image1);
                 $name = md5($this->content_image1 . microtime()) . '.' . $this->content_image1->extension();
                 $this->content_image1->storeAs("cms_images", $name, "public");
-                $validatedData['content_image1'] = "cms_images/" . $name;
+                $validatedData['content_image1'] = "storage/cms_images/" . $name;
             }
             if (!is_string($this->content_image2)) {
                 $this->validate([
@@ -72,7 +72,7 @@ class AboutPageEdit extends Component
                 File::delete(public_path() . '/storage/' . $this->content_image2);
                 $name = md5($this->content_image2 . microtime()) . '.' . $this->content_image2->extension();
                 $this->content_image2->storeAs("cms_images", $name, "public");
-                $validatedData['content_image2'] = "cms_images/" . $name;
+                $validatedData['content_image2'] = "storage/cms_images/" . $name;
             }
    
             $this->details->about->update($validatedData);
