@@ -66,7 +66,7 @@ class HomePageEdit extends Component
                 File::delete(public_path() . '/storage/' . $this->banner_image);
                 $name = md5($this->banner_image . microtime()) . '.' . $this->banner_image->extension();
                 $this->banner_image->storeAs("cms_images", $name, "public");
-                $validatedData['banner_image'] = "cms_images/" . $name;
+                $validatedData['banner_image'] = "storage/cms_images/" . $name;
             }
             if (!is_string($this->content1_image)) {
                 $this->validate([
@@ -76,7 +76,7 @@ class HomePageEdit extends Component
                 $name = md5($this->content1_image . microtime()) . '.' . $this->content1_image->extension();
                 $this->content1_image->storeAs("cms_images", $name, "public");
                 // $this->cms->home->update(['content1_image' => "cms_images/" . $name]);
-                $validatedData['content1_image'] = "cms_images/" . $name;
+                $validatedData['content1_image'] = "storage/cms_images/" . $name;
             }
            if (!is_string($this->content2_option_image1)) {
                 $this->validate([
@@ -86,7 +86,7 @@ class HomePageEdit extends Component
                 $name = md5($this->content2_option_image1 . microtime()) . '.' . $this->content2_option_image1->extension();
                 $this->content2_option_image1->storeAs("cms_images", $name, "public");
                 // $this->cms->home->update(['content2_option_image1' => "cms_images/" . $name]);
-                $validatedData['content2_option_image1'] = "cms_images/" . $name;
+                $validatedData['content2_option_image1'] = "storage/cms_images/" . $name;
             }
             if (!is_string($this->content2_image)) {
                 $this->validate([
@@ -96,7 +96,7 @@ class HomePageEdit extends Component
                 $name = md5($this->content2_image . microtime()) . '.' . $this->content2_image->extension();
                 $this->content2_image->storeAs("cms_images", $name, "public");
                 // $this->cms->home->update(['content2_image' => "cms_images/" . $name]);
-                $validatedData['content2_image'] = "cms_images/" . $name;
+                $validatedData['content2_image'] = "storage/cms_images/" . $name;
             }
             if (!is_string($this->content2_option_image2)) {
                 $this->validate([
@@ -106,7 +106,7 @@ class HomePageEdit extends Component
                 $name = md5($this->content2_option_image2 . microtime()) . '.' . $this->content2_option_image2->extension();
                 $this->content2_option_image2->storeAs("cms_images", $name, "public");
                 // $this->cms->home->update(['content2_option_image2' => "cms_images/" . $name]);
-                $validatedData['content2_option_image2'] = "cms_images/" . $name;
+                $validatedData['content2_option_image2'] = "storage/cms_images/" . $name;
             }   
             if (!is_string($this->content2_option_image3)) {
                 $this->validate([
@@ -116,7 +116,7 @@ class HomePageEdit extends Component
                 $name = md5($this->content2_option_image3 . microtime()) . '.' . $this->content2_option_image3->extension();
                 $this->content2_option_image3->storeAs("cms_images", $name, "public");
                 // $this->cms->home->update(['content2_option_image3' => "cms_images/" . $name]);
-                $validatedData['content2_option_image3'] = "cms_images/" . $name;
+                $validatedData['content2_option_image3'] = "storage/cms_images/" . $name;
             }   
         
             
