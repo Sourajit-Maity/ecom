@@ -18,7 +18,7 @@ class HomePageEdit extends Component
     $content1_heading,$content2_option_text1,$content1_text,$content2_option_heading1,$content2_option_heading3,
     $content2_text,$content2_option_text2,$content2_option_heading2,$content1_image = "",$content2_option_text3,
     $content2_option_image1 = "",$content2_option_image2 = "",$content2_image = "",$banner_image = "",$details;
-
+ 
     public function mount($details = null){
         if($details) {
             $details = $details->toArray();

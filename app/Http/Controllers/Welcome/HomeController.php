@@ -11,6 +11,8 @@ use App\Models\City;
 use App\Models\State;
 use App\Models\User;
 use App\Models\Faqpage;
+use App\Models\Aboutpage;
+use App\Models\Homepage;
 use App\Models\ContactUsForm;
 use App\Models\Contactuspage;
 use Inertia\Inertia;
@@ -28,13 +30,15 @@ class HomeController extends Controller
 
     public function index()
     {
+        $homedetails = Homepage::first();
         $reviews = Review::with('user')->where('active', 1)->get();
-        return view('Welcome.home',compact('reviews'));
+        return view('Welcome.home',compact('reviews','homedetails'));
     }
     public function aboutUs()
     {
+        $about = Aboutpage::first();
         $reviews = Review::with('user')->where('active', 1)->get();
-        return view('Welcome.about-us',compact('reviews'));
+        return view('Welcome.about-us',compact('reviews','about'));
     }
     public function products()
     {
@@ -178,10 +182,7 @@ class HomeController extends Controller
         return view('Welcome.billing-address');
     }
 
-    public function shoppingCart()
-    {
-        return view('Welcome.shopping-cart');
-    }
+   
     public function savedAddress()
     {
         return view('Welcome.saved-address');

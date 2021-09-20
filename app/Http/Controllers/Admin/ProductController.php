@@ -83,29 +83,5 @@ class ProductController extends Controller
     {
        
     }
-    public function productList()
-    {
-        $products = Product::all();
-
-        return view('products', compact('products'));
-    }
-
-    public function cartList()
-    {
-        return view('cart');
-    }
-
-    public function addToCart(Request $request)
-    {
-        \Cart::add([
-            'id' => $request->id,
-            'name' => $request->product_name,
-            'price' => $request->price,
-            'quantity' => $request->quantity,
-            
-        ]);
-        session()->flash('success', 'Product is Added to Cart Successfully !');
-
-        return redirect()->route('cart.list');
-    }
+    
 }

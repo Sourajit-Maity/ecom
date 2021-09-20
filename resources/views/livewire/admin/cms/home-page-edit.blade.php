@@ -127,6 +127,9 @@
         </div>           
        
 <!-- content 4  -->
+
+
+ 
         <x-admin.form-group>
             <x-admin.lable value=" Heading" required />
                 <x-admin.input type="text"  wire:model.defer="content2_option_heading2" placeholder="Enter Heading"
@@ -150,11 +153,8 @@
         <div class="form-group col-lg-3 d-flex justify-content-end">
             <img src="{{Storage::disk('public')->exists($details->home->content2_option_image2) ? Storage::url($details->home->content2_option_image2) : asset($details->home->content2_option_image2)}}" width="200px" height="150px">
         </div> 
-            </div>
-            <br>
-    </x-slot>
 
-    <x-admin.form-group>
+        <x-admin.form-group>
             <x-admin.lable value=" Heading" required />
                 <x-admin.input type="text"  wire:model.defer="content2_option_heading3" placeholder="Enter Heading"
                     class="{{ $errors->has('content2_option_heading3') ? 'is-invalid' :'' }}"/>
@@ -176,7 +176,12 @@
 
         <div class="form-group col-lg-3 d-flex justify-content-end">
             <img src="{{Storage::disk('public')->exists($details->home->content2_option_image3) ? Storage::url($details->home->content2_option_image3) : asset($details->home->content2_option_image3)}}" width="200px" height="150px">
-        </div> 
+        </div>
+            </div>
+            <br>
+    </x-slot>
+
+    
             </div>
             <br>
     </x-slot>
