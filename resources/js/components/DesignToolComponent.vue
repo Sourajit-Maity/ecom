@@ -31,36 +31,43 @@
                 <div class="col-lg-7 design-page-left">
                     <div class="design-tab">
                         <ul>
-                            <li class="active"><a href="#url">
+                            <li class="cursor-pointer" :class="[menu.sizeShape  ? 'active' : 'visited']" @click="selectDesignbar('sizeShape')">
+                                <a>
                                     <span><img src="welcome_assets/images/design-list01.svg" alt=""></span>
                                     <span>Size/Shape</span>
-                                </a></li>
+                                </a>
+                            </li>
 
-                            <li><a href="welcome.design-page-background">
+                            <li class="cursor-pointer"  :class="[menu.background  ? 'active' : 'visited']" @click="selectDesignbar('background')">
+                                <a>
                                     <span><img src="welcome_assets/images/design-list02.svg" alt=""></span>
                                     <span>Background</span>
                                 </a></li>
 
-                            <li><a href="welcome.design-page-border">
+                            <li class="cursor-pointer">
+                                <a>
                                     <span><img src="welcome_assets/images/design-list03.svg" alt=""></span>
                                     <span>Border</span>
                                 </a></li>
 
-                            <li><a href="welcome.design-page-fastener">
+                            <li class="cursor-pointer">
+                                <a>
                                     <span><img src="welcome_assets/images/design-list04.svg" alt=""></span>
                                     <span>Fastener</span>
                                 </a></li>
 
-                            <li><a href="#url">
+                            <li class="cursor-pointer">
+                                <a>
                                     <span><img src="welcome_assets/images/design-list05.svg" alt=""></span>
                                     <span>Dome</span>
                                 </a></li>
                         </ul>
                     </div>
 
-                    <div class="your-text">
+                    <div class="design_tool_custom" >
+                        <div class="your-text">
                         <div class="design-area" v-bind:class="getShapeClass" :style="{backgroundColor : colors.hex}">
-                             <img :src="backgroundImage" class="h-100 w-100" v-if="backgroundImage">
+                        <img :src="backgroundImage" class="h-100 w-100" v-if="backgroundImage">
                         <drr
                         :x="clipartDesign.x"
                         :y="clipartDesign.y"
@@ -108,9 +115,14 @@
                             <!-- <textarea placeholder="Your Text"></textarea>
                             <a href="#url"><img src="welcome_assets/images/close.svg" alt=""></a> -->
                         </div>
+                        
+                        </div>
 
-                        <span class="right">1</span>
-                        <span class="bottom">3</span>
+                        <span class="right" v-if="shapeDefaultClass == 'rectangle1-3'">1’’</span>
+                        <span class="right" v-if="shapeDefaultClass =='rectangle1-5-3' ">1.5’’</span>
+                        <span class="right" v-if="shapeDefaultClass == 'oval1-3'">1.5’’</span>
+                        <span class="right" v-if="shapeDefaultClass == 'rectangle12-3'">2’’</span> 
+                        <span class="bottom">3’’</span>
                     </div>
 
                     <div class="text-content">
@@ -142,13 +154,13 @@
                         </ul>
                     </div>
 
-                    <div class="size-sec">
+                    <div class="size-sec" v-if="menu.sizeShape">
                         <h5>SELECT A SIZE / SHAPE</h5>
                         <ul>
                             <li>
                                 <div class="form_input_radio">
                                     <label>
-                                        <input type="radio" checked="" name="name">
+                                        <input type="radio" value="rectangle1-3" v-model="shapeDefaultClass">
                                         <span> 1’’x3’’ Rectangle</span>
                                     </label>
                                 </div>
@@ -156,7 +168,7 @@
                             <li>
                                 <div class="form_input_radio">
                                     <label>
-                                        <input type="radio" name="name">
+                                        <input type="radio" value="rectangle1-5-3" v-model="shapeDefaultClass">
                                         <span>1.5’’x3’’ Rectangle</span>
                                     </label>
                                 </div>
@@ -164,7 +176,7 @@
                             <li>
                                 <div class="form_input_radio">
                                     <label>
-                                        <input type="radio" name="name">
+                                        <input type="radio" value="oval1-3" v-model="shapeDefaultClass">
                                         <span>1.5’x3’ Oval</span>
                                     </label>
                                 </div>
@@ -172,20 +184,154 @@
                             <li>
                                 <div class="form_input_radio">
                                     <label>
-                                        <input type="radio" name="name">
+                                        <input type="radio" value="rectangle12-3" v-model="shapeDefaultClass">
                                         <span>2’’x3’’ Rectangle</span>
                                     </label>
                                 </div>
                             </li>
                         </ul>
                     </div>
+                    <div class="size-sec" v-if="menu.textOptions">
+                                    <h5>TEXT OPTIONS</h5>
+                                    <div class="">
+                                        <div class="form-group row">
+                                            <label for="inputPassword" class="col-sm-3 col-form-label">Your Text</label>
+                                            <div class="col-sm-9">
+                                            <input type="text" class="form-control" v-model="getYourText" id="inputPassword" placeholder="Your Text">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputPassword" class="col-sm-3 col-form-label">Font</label>
+                                            <div class="col-sm-9">
+                                                    <select class="form-control" v-model="textDesigns[selectedTextBoxIndex].font" >
+                                                   <option value="fnt2" id="fnt2" >Arial</option>
+                                                    <option value="fnt4" id="fnt4">Century Gothic</option>
+                                                    <option value="fnt28" id="fnt28">Century Gothic Bold</option>
+                                                    <option value="fnt5" id="fnt5">Comic Sans MS</option>
+                                                    <option value="fnt6" id="fnt6">Courier New</option>
+                                                    <option value="fnt7" id="fnt7">Georgia</option>
+                                                    <option value="fnt8" id="fnt8">Impact</option>
+                                                    <option value="fnt9" id="fnt9">Times New Roman</option>
+                                                    <option value="fnt10" id="fnt10">Trebuchet MS</option>
+                                                    <option value="fnt11" id="fnt11">Verdana</option>
+                                                    <option value="fnt12" id="fnt12">Gotham</option>
+                                                    <option value="fnt13" id="fnt13">Cormorant Garamond Medium</option>
+                                                    <option value="fnt15" id="fnt15">Lobster</option>
+                                                    <option value="fnt17" id="fnt17">Old English TextMT</option>
+                                                    <option value="fnt22" id="fnt22">MonotypeCorsiva</option>
+                                                    <option value="fnt23" id="fnt23">Scriptoria SSK</option>
+                                                    <option value="fnt19" id="fnt19">Ardestine</option>
+                                                    <option value="fnt20" id="fnt20">Arbonnie</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputPassword" class="col-sm-3 col-form-label">Font Style</label>
+                                            <div class="col-sm-9">
+                                            <select id="inputState" class="form-control" v-model="textDesigns[selectedTextBoxIndex].fontStyle">
+                                                    <option value="">Regular</option>
+                                                    <option value="font-weight-bold">Bold</option>
+                                                    <option value="font-italic">Italic</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputPassword" class="col-sm-3 col-form-label">Font Size</label>
+                                            <div class="col-sm-9">
+                                                <VueSimpleRangeSlider
+                                                style="width: 100%"
+                                                :min="1"
+                                                :max="10"
+                                                v-model="textDesigns[selectedTextBoxIndex].fontSize"
+                                                />
+                                            <!-- <select id="inputState" class="form-control" v-model="textDesigns[selectedTextBoxIndex].fontSize">
+                                                    <option value="font-size20">10</option>
+                                                    <option value="font-size35">20</option>
+                                                    <option value="font-size50">30</option>
+                                            </select> -->
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputPassword" class="col-sm-3 col-form-label">Color</label>
+                                            <div class="col-sm-9 color-row">
+                                                <span id="colr" class="colr-000000" style="background: #000000;" :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#000000' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#000000'"></span>
+                                                <span class="colr-ffffff" style="background: #ffffff;border-color: #ccc"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#ffffff' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#ffffff'"></span>
+                                                <span class="colr-ff0000" style="background: #ff0000;"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#ff0000' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#ff0000'"></span>
+                                                <span class="colr-0000ff" style="background: #0000FF;"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#0000FF' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#0000FF'"></span>
+                                                <span class="colr-008000" style="background: #008000"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#008000' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#008000'"></span>
+                                                <span class="colr-ffa500" style="background: #FFA500"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#FFA500' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#FFA500'"></span>
+                                                <span class="colr-ff921d" style="background: #ff921d"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#ff921d' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#ff921d'"></span>
+                                                <span class="colr-2ee6b4" style="background: #2ee6b4"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#2ee6b4' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#2ee6b4'"></span>
+                                                <span class="colr-547ce1" style="background: #547ce1"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#547ce1' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#547ce1'"></span>
+                                                <span class="colr-51a3f0" style="background: #51a3f0"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#51a3f0' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#51a3f0'"></span>
+                                                <span class="colr-5a5af5" style="background: #5a5af5"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#5a5af5' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#5a5af5'"></span>
+                                                <span class="colr-ff00f0" style="background: #ff00f0"  :class="{active: textDesigns[selectedTextBoxIndex].fontColor == '#ff00f0' }" @click="textDesigns[selectedTextBoxIndex].fontColor = '#ff00f0'"></span>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="form-group row">
+                                            <label for="inputPassword" class="col-sm-3 col-form-label">Color</label>
+                                            <div class="col-sm-9">
+                                            <select id="inputState" class="form-control" v-model="textDesigns[selectedTextBoxIndex].fontColor">
+                                                <option value="">Black</option>
+                                                <option value="font-coloRed">Red</option>
+                                                <option value="font-colorGreen">Green</option>
+                                                <option value="font-colorBlue">Blue</option>
+                                            </select>
+                                            </div>
+                                        </div> -->
+                                        <div class="row">
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-9">
+                                                <button class="btn btn-danger" v-if="textDesigns.length>1" @click="deleteText">Delete Text</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                    </div>
+                    <div class="size-sec" v-if="menu.background">
+                                    <div class="">
+                                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#MATERIAL" role="tab" aria-controls="home" aria-selected="true">MATERIAL</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#colors" role="tab" aria-controls="profile" aria-selected="false">COLORS</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#custom" role="tab" aria-controls="contact" aria-selected="false">CUSTOM</a>
+                                            </li> 
+                                            </ul>
+                                            <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active ul-custom-height" id="MATERIAL" role="tabpanel" aria-labelledby="home-tab">
+                                                <div class="row">
+                                                    <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/White-Plastic/1.png'"><img class="border" src="/background/Material/White-Plastic/1-thumb.png">White - Plastic</span></div>
+                                                    <div class="col-md-4 pt-4 cursor-pointer" v-if="this.shapeDefaultClass!='oval1-3' "><span  @click="backgroundImage= '/background/Material/Gold-Plastic/7.png'"><img class="border" src="/background/Material/Gold-Plastic/7-thumb.png">Gold - Plastic</span></div>
+                                                    <div class="col-md-4 pt-4 cursor-pointer" v-if="this.shapeDefaultClass!='oval1-3' "><span  @click="backgroundImage= '/background/Material/Silver-Plastic/8.png'"><img class="border" src="/background/Material/Silver-Plastic/8-thumb.png">Silver - Plastic</span></div>
+                                                    <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Gold-Metallic/5.png'"><img class="border" src="/background/Material/Gold-Metallic/5-thumb.png">Gold Metallic</span></div>
+                                                    <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Silver-Metallic/6.png'"><img class="border" src="/background/Material/Silver-Metallic/6-thumb.png">Silver Metallic</span></div>
+                                                    <!-- <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Wood-Grain/11.png'"><img  class="border" src="/background/Material/Wood-Grain/11-thumb.png">Wood Grain</span></div> -->
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="colors" role="tabpanel" aria-labelledby="home-tab">
+                                                <div class="row">
+                                                <photoshop-picker v-model="colors" class="color-picker-custom mt-2" @input="colorChanged" />
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="custom" role="tabpanel" aria-labelledby="profile-tab">
+                                                <div class="row custom-background-img">
+                                                    <div class="col-md-4 cursor-pointer pt-4" v-for="i in 37" :key="i"><img style="height:60px; width:100px;" class="border" :src="'/background/Custom/' + i + '/thumb.png'" @click="backgroundImage= '/background/Custom/' + i + '/' + i + '.png'"></div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                                            </div>
+                                    </div>
+                                </div>
 
                 </div>
             </div>
 
 
             <div class="Product-sec">
-                <div class="table-sec">
+                <div class="table-sec" :class="{'price_yable-custom-margin' : shapeDefaultClass == 'rectangle12-3'}">
                     <table>
                         <tr>
                             <th colspan="2">Quantity Price</th>
@@ -326,46 +472,48 @@ export default {
   computed:{
       getShapeClass(){
         //   console.info('textDesigns[selectedTextBoxIndex].fontSize',this.textDesigns[this.selectedTextBoxIndex].fontSize);
-        if(this.textDesigns[this.selectedTextBoxIndex].fontSize==1){
-            this.textDesigns[this.selectedTextBoxIndex].weight=70;
-            this.textDesigns[this.selectedTextBoxIndex].height=28;
-         }
-        else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==2){
-            this.textDesigns[this.selectedTextBoxIndex].weight=125;
-            this.textDesigns[this.selectedTextBoxIndex].height=37;
-         }
-         else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==3){
-            this.textDesigns[this.selectedTextBoxIndex].weight=170;
-            this.textDesigns[this.selectedTextBoxIndex].height=50;
-         }
-         else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==4){
-            this.textDesigns[this.selectedTextBoxIndex].weight=200;
-            this.textDesigns[this.selectedTextBoxIndex].height=61;
-         }
-        else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==5){
-        this.textDesigns[this.selectedTextBoxIndex].weight=250;
-        this.textDesigns[this.selectedTextBoxIndex].height=68;
-         }
-        else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==6){
-        this.textDesigns[this.selectedTextBoxIndex].weight=300;
-        this.textDesigns[this.selectedTextBoxIndex].height=82;
-         }
-        else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==7){
-        this.textDesigns[this.selectedTextBoxIndex].weight=350;
-        this.textDesigns[this.selectedTextBoxIndex].height=110;
-         }
-        else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==8){
-        this.textDesigns[this.selectedTextBoxIndex].weight=380;
-        this.textDesigns[this.selectedTextBoxIndex].height=116;
-         }
-        else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==9){
-        this.textDesigns[this.selectedTextBoxIndex].weight=430;
-        this.textDesigns[this.selectedTextBoxIndex].height=125;
-         }
-        else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==10){
-        this.textDesigns[this.selectedTextBoxIndex].weight=450;
-        this.textDesigns[this.selectedTextBoxIndex].height=135;
-         }
+        if(this.textDesigns.length>0){
+            if(this.textDesigns[this.selectedTextBoxIndex].fontSize==1){
+                this.textDesigns[this.selectedTextBoxIndex].weight=70;
+                this.textDesigns[this.selectedTextBoxIndex].height=28;
+            }
+            else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==2){
+                this.textDesigns[this.selectedTextBoxIndex].weight=125;
+                this.textDesigns[this.selectedTextBoxIndex].height=37;
+            }
+            else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==3){
+                this.textDesigns[this.selectedTextBoxIndex].weight=170;
+                this.textDesigns[this.selectedTextBoxIndex].height=50;
+            }
+            else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==4){
+                this.textDesigns[this.selectedTextBoxIndex].weight=200;
+                this.textDesigns[this.selectedTextBoxIndex].height=61;
+            }
+            else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==5){
+            this.textDesigns[this.selectedTextBoxIndex].weight=250;
+            this.textDesigns[this.selectedTextBoxIndex].height=68;
+            }
+            else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==6){
+            this.textDesigns[this.selectedTextBoxIndex].weight=300;
+            this.textDesigns[this.selectedTextBoxIndex].height=82;
+            }
+            else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==7){
+            this.textDesigns[this.selectedTextBoxIndex].weight=350;
+            this.textDesigns[this.selectedTextBoxIndex].height=110;
+            }
+            else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==8){
+            this.textDesigns[this.selectedTextBoxIndex].weight=380;
+            this.textDesigns[this.selectedTextBoxIndex].height=116;
+            }
+            else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==9){
+            this.textDesigns[this.selectedTextBoxIndex].weight=430;
+            this.textDesigns[this.selectedTextBoxIndex].height=125;
+            }
+            else if(this.textDesigns[this.selectedTextBoxIndex].fontSize==10){
+            this.textDesigns[this.selectedTextBoxIndex].weight=450;
+            this.textDesigns[this.selectedTextBoxIndex].height=135;
+            }
+        }
 
           return {
             'rectangle1-3': 'rectangle1-3' == this.shapeDefaultClass,
@@ -495,10 +643,11 @@ export default {
           this.menu.background= 'background'== menuName;
       },
       deleteText(){
-           this.textDesigns.splice(this.selectedTextBoxIndex,1)
-           if(this.textDesigns.length>0)
+          let textDesignsLength=this.textDesigns.length;
+          if(textDesignsLength>1){
+                this.textDesigns.splice(this.selectedTextBoxIndex,1);
                 this.selectItem(0);
-           else this.menu.textOptions=false;
+          }
       },
        getCustomDesignClass(index){
           return {
@@ -537,6 +686,7 @@ export default {
                {
                     x:300 + (this.addTextIndex * 10),
                     y:70 + (this.addTextIndex * 10),
+                    // y:70 + (this.addTextIndex * 10),
                     weight:160,
                     height:55,
                     angle: 0,
@@ -555,6 +705,7 @@ export default {
                {
                     x:150 + (this.addClipartIndex * 11),
                     y:60 + (this.addClipartIndex * 11),
+                    // y:60 + (this.addClipartIndex * 11),
                     weight:100,
                     height:60,
                     angle: 0,
@@ -567,8 +718,9 @@ export default {
           this.addLogoIndex++;
           this.logoDesigns.push(
                {
-                    x:150 + (this.addLogoIndex * 11),
-                    y:80 + (this.addLogoIndex * 11),
+                    x:120 + (this.addLogoIndex * 11),
+                    y:20 + (this.addLogoIndex * 11),
+                    // y:80 + (this.addLogoIndex * 11),
                     weight:200,
                     height:120,
                     angle: 0,
@@ -606,12 +758,15 @@ dl, ol, ul {
             box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)
         }
         .design-area {
-            width: 566px;
+            width: 100%;
             border-radius: 30px;
-            /* overflow: hidden; */
+            overflow: hidden;
             position: relative;
+            border: 1px solid #ccc;
+            box-shadow: 0px 0px 20px 0px #dcdcdc;
         }
 
+     
         .rectangle1-3 {
             height: 198px;
         }
@@ -882,6 +1037,19 @@ element.style {
     margin: 0 auto 30px;
     background-size: cover;
     background-position: center center;
+}
+.visited {
+    border-color: #000 !important;
+}
+.price_yable-custom-margin{
+    /* margin-top: 30px !important; */
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+.design_tool_custom{
+    position: relative;
 }
 
 </style>
