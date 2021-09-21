@@ -2531,16 +2531,16 @@ input[type="submit"]:hover {
 }
 
 .design-page-sec .your-text {
-    min-height: 298px;
-    width: 100%;
+    /* min-height: 298px;
+    width: 100%; */
     background: #ffffff;
-    box-shadow: 0px 0px 14px 0px rgba(234, 234, 234, 1);
-    -webkit-box-shadow: 0px 0px 14px 0px rgba(234, 234, 234, 1);
+    /* box-shadow: 0px 0px 14px 0px rgba(234, 234, 234, 1);
+    -webkit-box-shadow: 0px 0px 14px 0px rgba(234, 234, 234, 1); */
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 14px;
-    position: relative;
+    justify-content: start;
+    /* border-radius: 14px; */
+    /* position: relative; */
     margin-bottom: 106px;
 }
 
