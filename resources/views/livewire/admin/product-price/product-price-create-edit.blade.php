@@ -1,17 +1,13 @@
 <x-admin.form-section submit="saveOrUpdate" enctype="multipart/form-data">
     <x-slot name="form">
                    
-                    <x-admin.form-group>
-                        <x-admin.lable value="Product Name" required/>
-                        <x-admin.dropdown  wire:model.defer="product_id" placeHolderText="Please select one" autocomplete="off" class="{{ $errors->has('product_id') ? 'is-invalid' :'' }}">
-                        <x-admin.dropdown-item  :value="$blankArr['value']" :text="$blankArr['text']"/> 
-                                @foreach ($productnames as $name)
-                                    <x-admin.dropdown-item  :value="$name['id']" :text="$name['product_name']"/>                      
-                                @endforeach
-                        </x-admin.dropdown>
-                        <x-admin.input-error for="product_id" />
+                  
+                     <x-admin.form-group>
+                        <x-admin.lable value="Product Type" required />
+                        <x-admin.input type="text" wire:model.defer="product_type" placeholder="Product Type"  class="{{ $errors->has('product_type') ? 'is-invalid' :'' }}" />
+                        <x-admin.input type="hidden" wire:model.defer="product_type_slug" placeholder="Product Type Slug"  class="{{ $errors->has('product_type_slug') ? 'is-invalid' :'' }}" />
+                        <x-admin.input-error for="product_type" />
                     </x-admin.form-group>
-                    
                     <!-- <x-admin.form-group>
                         <x-admin.lable value="Product Quantity range" required />
                         <x-admin.input type="text" wire:model.defer="price_range" placeholder="Product Quantity Range"  class="{{ $errors->has('price_range') ? 'is-invalid' :'' }}" />

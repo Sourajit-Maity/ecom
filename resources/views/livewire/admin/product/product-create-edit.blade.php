@@ -5,38 +5,21 @@
                         <x-admin.input type="text" wire:model.defer="product_name" placeholder="Product Name"  class="{{ $errors->has('product_name') ? 'is-invalid' :'' }}" />
                         <x-admin.input-error for="product_name" />
                     </x-admin.form-group>
-                    @if(!$isEdit)
-                    <x-admin.form-group>
-                        <x-admin.lable value="Product Slug" required />
-                        <x-admin.input type="text" wire:model.defer="product_slug" placeholder="Product Slug"  class="{{ $errors->has('product_slug') ? 'is-invalid' :'' }}
-                        " />
-                        <x-admin.input-error for="product_slug" />
+                  
+                    <x-admin.form-group class="col-lg-12">
+                        <x-admin.lable value="Product Description" required />
+                        <x-admin.textarea type="text" wire:model.defer="product_description" placeholder="product description..."  class="{{ $errors->has('product_description') ? 'is-invalid' :'' }}" rows='8' />
+                        <x-admin.input-error for="product_description" />
                     </x-admin.form-group>
-                    @endif
-                    <x-admin.form-group>
-                        <x-admin.lable value="Product Category" required/>
-                        <x-admin.dropdown  wire:model.defer="product_category" placeHolderText="Please select one" autocomplete="off" class="{{ $errors->has('product_category') ? 'is-invalid' :'' }}">
-                                @foreach ($categoryList as $category)
-                                    <x-admin.dropdown-item  :value="$category['value']" :text="$category['text']"/>                          
-                                @endforeach
-                        </x-admin.dropdown>
-                        <x-admin.input-error for="product_category" />
-                    </x-admin.form-group>
-                    <x-admin.form-group>
+                <x-admin.form-group>
                         <x-admin.lable value="Product Image" required />
                         <x-admin.input type="file" wire:model.defer="product_photo_path"   class="{{ $errors->has('product_photo_path') ? 'is-invalid' :'' }}" accept="image/*" />
                         <x-admin.input-error for="product_photo_path" />
-                    </x-admin.form-group>
+                </x-admin.form-group>
 
-                @if($isEdit)
-                    <div class="form-group col-lg-3 d-flex justify-content-end">
-                    @if($product->product_photo_path)
-                        <img src="{{ Storage::url($product->product_photo_path) }}" width="200px" height="150px">
-                    @else
-                        <img src="" alt="No Image" width="200px" height="150px">
-                    @endif
-                    </div>
-                @endif
+                <div class="form-group col-lg-3 d-flex justify-content-end">
+                    <img src="{{Storage::disk('public')->exists($product->product_photo_path) ? Storage::url($product->product_photo_path) : asset($product->product_photo_path)}}" width="200px" height="150px">
+                </div>
 
                 
                    

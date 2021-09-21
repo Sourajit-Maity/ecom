@@ -12,6 +12,7 @@ use App\Models\State;
 use App\Models\User;
 use App\Models\Faqpage;
 use App\Models\Aboutpage;
+use App\Models\Product;
 use App\Models\Homepage;
 use App\Models\ContactUsForm;
 use App\Models\Contactuspage;
@@ -31,8 +32,9 @@ class HomeController extends Controller
     public function index()
     {
         $homedetails = Homepage::first();
+        $products = Product::latest()->take(6)->get();
         $reviews = Review::with('user')->where('active', 1)->get();
-        return view('Welcome.home',compact('reviews','homedetails'));
+        return view('Welcome.home',compact('reviews','homedetails','products'));
     }
     public function aboutUs()
     {
@@ -42,8 +44,9 @@ class HomeController extends Controller
     }
     public function products()
     {
+        $products = Product::get();
         $reviews = Review::with('user')->where('active', 1)->get();
-        return view('Welcome.products',compact('reviews'));
+        return view('Welcome.products',compact('reviews','products'));
     }
     public function faq()
     {
