@@ -19,18 +19,8 @@
                 aria-sort="ascending" aria-label="Agent: activate to sort column descending">Product Name <i
                     class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('product_name')"></i>
             </th>
-            <!-- <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
-                aria-sort="ascending" aria-label="Agent: activate to sort column descending"> Product Slug <i
-                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('product_slug')"></i>
-            </th> -->
-            <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
-                aria-sort="ascending" aria-label="Agent: activate to sort column descending">Product Category <i
-                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('product_category')"></i>
-            </th>
-           
-            <th class="align-center" tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 15%;"
-                aria-label="Status: activate to sort column ascending">Status</th>
-                <th class="align-center" rowspan="1" colspan="1" style="width: 20%;" aria-label="Actions">Actions</th>
+ 
+            <th class="align-center" rowspan="1" colspan="1" style="width: 20%;" aria-label="Actions">Actions</th>
         </tr>
 
         <tr class="filter">
@@ -38,23 +28,7 @@
                 <x-admin.input type="search" wire:model.defer="searchProductname" placeholder="" autocomplete="off"
                     class="form-control-sm form-filter" />
             </th>
-            <!-- <th>
-                <x-admin.input type="search" wire:model.defer="searchProductslug" placeholder="" autocomplete="off"
-                    class="form-control-sm form-filter" />
-            </th> -->
-            <th>
-                <x-admin.input type="search" wire:model.defer="searchProductcategory" placeholder="" autocomplete="off"
-                    class="form-control-sm form-filter" />
-            </th>
           
-            <th>
-                <select class="form-control form-control-sm form-filter kt-input" wire:model.defer="searchStatus"
-                    title="Select" data-col-index="2">
-                    <option value="-1">Select One</option>
-                    <option value="1">Active</option>
-                    <option value="0">Inactive</option>
-                </select>
-            </th>
             <th>
                 <div class="row">
                     <div class="col-md-6">
@@ -82,17 +56,12 @@
         @forelse($products as $product)
             <tr role="row" class="odd">
                 <td class="sorting_1" tabindex="0">{{ $product->product_name  }}</td>
-                <!-- <td class="sorting_1" tabindex="0">{{ $product->product_slug  }}</td> -->
-                <td class="sorting_1" tabindex="0">{{ $product->product_category  }}</td>
-                <td class="align-center"><span
-                        class="kt-badge  kt-badge--{{ $product->active == 1 ? 'success' : 'warning' }} kt-badge--inline kt-badge--pill cursor-pointer"
-                        wire:click="changeStatusConfirm({{ $product->id }})">{{ $product->active == 1 ? 'Active' : 'Inactive' }}</span>
-                </td>
+              
                 <x-admin.td-action>
                     <a class="dropdown-item" href="{{ route('product.edit', ['product' => $product->id]) }}"><i
                             class="la la-edit"></i> Edit</a>
-                    <button href="#" class="dropdown-item" wire:click="deleteAttempt({{ $product->id }})"><i
-                            class="fa fa-trash"></i> Delete</button>
+                    <!-- <button href="#" class="dropdown-item" wire:click="deleteAttempt({{ $product->id }})"><i
+                            class="fa fa-trash"></i> Delete</button> -->
                 </x-admin.td-action>
             </tr>
         @empty

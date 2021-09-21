@@ -15,51 +15,84 @@ class ProductSeeder extends Seeder
     {
         $datas = [
             [
-                "product_name" => "White Plastic Rectangle",
-                "product_slug" => "white_plastic",
-                "product_category" => "DigBadge",
+                "product_name" => "Printed Badges",
+                "product_description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                "product_photo_path" => "welcome_assets/images/product-01.png",
             ],
             [
-                "product_name" => "Gold & Silver Plastic Rectangle",
-                "product_slug" => "gold_silver_plastic",
-                "product_category" => "SMSBadge",
+                "product_name" => "Framed Badges",
+                "product_description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                "product_photo_path" => "welcome_assets/images/product-02.png",
             ],
             [
-                "product_name" => "Metallic Plastic Rectangle",
-                "product_slug" => "metalic_plastic",
-                "product_category" => "BRSBadge",
+                "product_name" => "Metallic Silver Badges",
+                "product_description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                "product_photo_path" => "welcome_assets/images/product-03.png",
+               
             ],
             [
-                "product_name" => "Framed White Badges",
-                "product_slug" => "framed_white",
-                "product_category" => "FRBadge",
+                "product_name" => "Metallic Gold Badges",
+                "product_description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                "product_photo_path" => "welcome_assets/images/product-04.png",
+               
             ],
             [
-                "product_name" => "Framed Gold or Silver Badges",
-                "product_slug" => "framed_gold_silver",
-                "product_category" => "FRGBadge",
+                "product_name" => "Silver Badges",
+                "product_description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                "product_photo_path" => "welcome_assets/images/product-05.png",
+               
             ],
             [
-                "product_name" => "Framed metallic Badges",
-                "product_slug" => "framed_metallic",
-                "product_category" => "FRBRSBadge",
+                "product_name" => "Gold Badges",
+                "product_description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                "product_photo_path" => "welcome_assets/images/product-06.png",
+               
             ],
 
             [
-                "product_name" => "Oval White Badges",
-                "product_slug" => "oval_white",
-                "product_category" => "OvBadge",
+                "product_name" => "Plastic Badges",
+                "product_description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                "product_photo_path" => "welcome_assets/images/product-06.png",
+               
             ],
             [
-                "product_name" => "Framed Oval White Badges",
-                "product_slug" => "framed_oval_white",
-                "product_category" => "FrOvBadge",
+                "product_name" => "Oval Badges",
+                "product_description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                "product_photo_path" => "welcome_assets/images/product-06.png",
+               
             ],
             [
-                "product_name" => "Framed Metallic Oval Badges",
-                "product_slug" => "framed_metallic_oval",
-                "product_category" => "FrOvBRSBadge",
+                "product_name" => "Aluminum Badges",
+                "product_description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                "product_photo_path" => "welcome_assets/images/product-06.png",
+             
             ],
+            
+            [
+                "product_name" => "Bling Badges",
+                "product_description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                "product_photo_path" => "welcome_assets/images/product-06.png",
+            
+            ],
+            [
+                "product_name" => "Wooden Badges",
+                "product_description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                "product_photo_path" => "welcome_assets/images/product-06.png",
+         
+            ],
+            [
+                "product_name" => "Engraved Badges",
+                "product_description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                "product_photo_path" => "welcome_assets/images/product-06.png",
+              
+            ],
+            [
+                "product_name" => "Engraved Nameplates",
+                "product_description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+                "product_photo_path" => "welcome_assets/images/product-06.png",
+               
+            ],
+                  
         ];
         foreach($datas as $data){
             Product::create($data);

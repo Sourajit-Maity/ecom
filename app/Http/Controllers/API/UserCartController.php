@@ -12,9 +12,14 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
-
+/**
+ * @group  User Cart Authentication
+ *
+ * APIs for managing basic auth functionality
+ */
 class UserCartController extends Controller
 {
+    
     private  $per_page = 10;
     /**
      * Display a listing of the resource.
@@ -91,7 +96,14 @@ class UserCartController extends Controller
     {
         //
     }
-
+/** 
+ * Add To Cart
+ * @response  {
+    "status": true,
+    "message": "Product successfully added your cart."
+}
+ 
+ */
     public function addToCart(Request $request)
     {
        try{

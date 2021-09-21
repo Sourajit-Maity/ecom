@@ -20,7 +20,7 @@ class ProductList extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public $searchProductname,$searchProductslug,$searchProductcategory, $searchStatus = -1, $perPage = 5;
+    public $searchProductname,  $perPage = 5;
     protected $listeners = ['deleteConfirm', 'changeStatus'];
 
     public function mount()
@@ -51,9 +51,8 @@ class ProductList extends Component
     public function resetSearch()
     {
         $this->searchProductname = "";
-        $this->searchProductslug = "";
-        $this->searchProductcategory = "";
-        $this->searchStatus = -1;
+
+
     }
 
     public function render()
@@ -61,12 +60,7 @@ class ProductList extends Component
         $productQuery = Product::query();
         if ($this->searchProductname)
             $productQuery->Where('product_name', 'like', '%' . $this->searchProductname . '%');
-        if ($this->searchProductslug)
-            $productQuery->Where('product_slug', 'like', '%' . $this->searchProductslug . '%');
-        if ($this->searchProductcategory)
-            $productQuery->Where('product_category', 'like', '%' . $this->searchProductcategory . '%');
-        if ($this->searchStatus >= 0)
-            $productQuery->orWhere('active', $this->searchStatus);
+        
         return view('livewire.admin.product.product-list', [
             'products' => $productQuery
                 ->orderBy($this->sortBy, $this->sortDirection)
@@ -88,11 +82,6 @@ class ProductList extends Component
         $this->showConfirmation("warning", 'Are you sure?', "Do you want to change this status?", 'Yes, Change!', 'changeStatus', ['id' => $id]); //($type,$title,$text,$confirmText,$method)
     }
 
-    public function changeStatus(Product $product)
-    {
-        $product->fill(['active' => ($product->active == 1) ? 0 : 1])->save();
-       
-        $this->showModal('success', 'Success', 'status is changed successfully');
-    }
+   
 }
 
