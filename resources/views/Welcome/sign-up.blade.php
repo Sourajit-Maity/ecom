@@ -38,10 +38,15 @@
                             </div>
                             <div class="form-input">
                                 <label>Verify Password<span style="color:red"> *</span></label>
-                                <input id="password_confirmation" type="password" class="form-control" name="password_confirmation"  autocomplete="new-password">
+                                <input id="password_confirmation" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation">
+                                @error('password_confirmation')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
-
+                        
                         <div class="customer-info">
                             <h2>Customer Information</h2>
                             <div class="form-input">
@@ -161,8 +166,14 @@
                             <div class="form-input">
                                 <div class="form_input_check">
                                     <label>
-                                        <input type="checkbox" name="terms_condition" id="checkme" value="1" onchange="isChecked(this, 'sub1')" />
+                                       <input type="checkbox" name="terms_condition" value="1"  class="form-control @error('terms_condition') is-invalid @enderror"/> 
+                                        <!-- <input type="checkbox" name="terms_condition" id="checkme" value="1" onchange="isChecked(this, 'sub1')" /> -->
                                         <span> I agree to terms & conditions<span style="color:red"> *</span></span>
+                                        @error('terms_condition')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                         @enderror
                                     </label>
                                 </div>
                             </div>

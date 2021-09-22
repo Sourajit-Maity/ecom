@@ -18,6 +18,7 @@ class CreateUserCartsTable extends Migration
             $table->foreignId('user_id')->nullable()->index();
             $table->foreignId('product_id')->nullable()->index();
             $table->integer('quantity')->default(1);
+            $table->text('product_image')->nullable();
             $table->timestamps();
         });
     }

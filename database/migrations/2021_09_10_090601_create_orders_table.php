@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->integer('quantity')->default(1);
             $table->decimal('original_price',8,2);
             $table->decimal('payment_price',8,2);
+            $table->text('product_image')->nullable();
             $table->tinyInteger('status')->default(1)->comment('1:processing, 2:accepted, 3:cancel, 4:delivered');
             $table->timestamps();
             $table->softDeletes();
