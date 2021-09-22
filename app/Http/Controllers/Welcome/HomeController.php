@@ -97,7 +97,13 @@ class HomeController extends Controller
     public function registerSubmit(Request $request)
     {
         //Log::debug("register".print_r($request->all(), true));
-        request()->validate([
+        $messages = [
+
+            'password_confirmation.required' => 'password confirmation field is required.',
+            'terms_condition.required' => 'terms & condition field is required.',
+
+        ];
+        $this->validate($request, [
             'first_name' => 'required|regex:/^[a-zA-Z]+$/u',
             'last_name' => 'required|regex:/^[a-zA-Z]+$/u',
             'email' => 'required|email|max:255|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix|unique:users',
@@ -107,10 +113,12 @@ class HomeController extends Controller
             'state' => 'required',
             'country' => 'required',
             'zip' => 'required',
+            'terms_condition' => 'accepted',
             'terms_condition' => 'required',
             'password' => 'required|string|min:8|confirmed',
             'password_confirmation' => 'required',
-        ]);
+        ],$messages);
+       
     
          $inputs = $request->all();
          
