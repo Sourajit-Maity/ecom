@@ -15,7 +15,7 @@ class ProductPriceCreateEdit extends Component
 {
     use AlertMessage;
     use WithFileUploads;
-    public $product_id,$price,$product_category, $user_id,$blankArr, $productprice,$price_range;
+    public $product_type,$product_type_slug,$price,$product_category, $user_id,$blankArr, $productprice,$price_range;
     public $isEdit=false;
     public $categoryList = [];
     public $product_rangeList = [];
@@ -30,7 +30,6 @@ class ProductPriceCreateEdit extends Component
         }
         else
             $this->productprice=new ProductPrice;
-            $this->productnames = Product::get();
             $this->blankArr = [
                 "value"=> "", "text"=> "== Select One =="
             ];
@@ -70,7 +69,7 @@ class ProductPriceCreateEdit extends Component
     {
         return
             [
-                'product_id' => ['required'],
+                'product_type' => ['required'],
                 'price' => ['required'],
                 'product_category' => ['required'],
                 "price_range"  =>  ['required'],
@@ -82,7 +81,7 @@ class ProductPriceCreateEdit extends Component
     {
         return
             [   
-                'product_id' => ['required'],
+                'product_type' => ['required'],
                 'price' => ['required'],
                 'product_category' => ['required'],
                 "price_range"  =>  ['required'],               

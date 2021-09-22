@@ -21,7 +21,7 @@ class ProductPriceList extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public $searchProductname,$searchPrice,$searchPricerange,$searchProductcategory, $searchStatus = -1, $perPage = 5;
+    public $searchProducttype,$searchPrice,$searchPricerange,$searchProductcategory, $perPage = 5;
     protected $listeners = ['deleteConfirm', 'changeStatus'];
 
     public function mount()
@@ -51,30 +51,25 @@ class ProductPriceList extends Component
     }
     public function resetSearch()
     {
-        $this->searchProductname = "";
+        $this->searchProducttype = "";
         $this->searchPrice = "";
         $this->searchPricerange = "";
         $this->searchProductcategory = "";
-        $this->searchStatus = -1;
+
     }
 
     public function render()
     {
         $productpriceQuery = ProductPrice::query();
-        if ($this->searchProductname) {
-                $product_name = Product::Where('product_name', 'like', '%' . $this->searchProductname . '%')->get();
-                foreach ($product_name as $value) {
-                    $productpriceQuery->orWhere('product_id', $value->id);
-                 }
-             }
+        if ($this->searchProducttype)
+        $productpriceQuery->Where('product_type', 'like', '%' . $this->searchProducttype . '%');
         if ($this->searchPrice)
             $productpriceQuery->Where('price', 'like', '%' . $this->searchPrice . '%');
         if ($this->searchPricerange)
             $productpriceQuery->Where('price_range', 'like', '%' . $this->searchPricerange . '%');
         if ($this->searchProductcategory)
             $productpriceQuery->Where('product_category', 'like', '%' . $this->searchProductcategory . '%');
-        if ($this->searchStatus >= 0)
-            $productpriceQuery->orWhere('active', $this->searchStatus);
+
         return view('livewire.admin.product-price.product-price-list', [
             'productprices' => $productpriceQuery
                 ->orderBy($this->sortBy, $this->sortDirection)
@@ -96,11 +91,6 @@ class ProductPriceList extends Component
         $this->showConfirmation("warning", 'Are you sure?', "Do you want to change this status?", 'Yes, Change!', 'changeStatus', ['id' => $id]); //($type,$title,$text,$confirmText,$method)
     }
 
-    public function changeStatus(ProductPrice $productprice)
-    {
-        $productprice->fill(['active' => ($productprice->active == 1) ? 0 : 1])->save();
-       
-        $this->showModal('success', 'Success', 'status is changed successfully');
-    }
+    
  
 }

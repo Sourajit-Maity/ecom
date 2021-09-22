@@ -9,11 +9,12 @@ use App\Models\Product;
 use Livewire\WithFileUploads;
 use Spatie\MediaLibrary\Models\Media;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\File;
 class ProductCreateEdit extends Component
 {
     use AlertMessage;
     use WithFileUploads;
-    public $product_name,$product_slug,$product_category, $user_id, $product,$product_photo_path;
+    public $product_name,$product_description, $user_id, $product,$product_photo_path;
     public $isEdit=false;
     public $categoryList = [];
 
@@ -52,8 +53,7 @@ class ProductCreateEdit extends Component
         return
             [
                 'product_name' => ['required', 'max:255', Rule::unique('products')],
-                'product_slug' => ['required'],
-                'product_category' => ['required'],
+                'product_description' => ['required'],
                 "product_photo_path"  =>  "required|image:jpeg,png,jpg,gif,svg|max:2048",
                 
             ];
@@ -64,43 +64,40 @@ class ProductCreateEdit extends Component
         return
             [   
                 'product_name' => ['required', 'max:255', Rule::unique('products')->ignore($this->product->id)],
-                'product_slug' => ['required'],
-                'product_category' => ['required'],
-               
-                
+                'product_description' => ['required'],
             ];
     }
 
-    protected $messages = [
-        'product_photo_path.required' => 'Product photo field is required.',
-       
-    ];
+                protected $messages = [
+                    'product_photo_path.required' => 'Product photo field is required.',
+                
+                ];
 
     public function saveOrUpdate()
-    {
-        if ($this->product_photo_path) {
+    {      
+
+        if ($this->product) {
+            $validatedData = $this->validate($this->validationRuleForUpdate());
+
             if (!is_string($this->product_photo_path)) {
                 $this->validate([
-                    'product_photo_path' => ['mimes:jpg,jpeg,png'],
-                ],[
-                    'product_photo_path.mimes' => 'Image must be jpeg,jpg or png type.',
+                    'product_photo_path' => ['mimes:jpg,jpeg,png', 'max:20000']
                 ]);
+                File::delete(public_path() . '/storage/' . $this->product_photo_path);
                 $name = md5($this->product_photo_path . microtime()) . '.' . $this->product_photo_path->extension();
-                $this->product_photo_path->storeAs("attachFile", $name, "public");
-                $this->product->product_photo_path = "attachFile/" . $name;
+                $this->product_photo_path->storeAs("cms_images", $name, "public");
+                $validatedData['product_photo_path'] = "storage/cms_images/" . $name;
             }
+   
+            $this->product->update($validatedData);
+            $msgAction = $this->product->name . ' Product has been updated';
+            $this->showToastr("success", $msgAction);
+            return redirect()->route('product.index');
         }
-        
-
-
-        $this->isEdit ? $this->product->user_id = auth()->user()->id : $this->product->user_id = auth()->user()->id;
-
-        $this->product->fill($this->validate($this->isEdit ? $this->validationRuleForUpdate() : $this->validationRuleForSave()))->save();
-        
-        $msgAction = 'Product is '. ($this->isEdit ? 'updated' : 'added') . ' successfully';
-        $this->showToastr("success",$msgAction);
-
+        $this->showToastr("error", "No record to update!!");
         return redirect()->route('product.index');
+
+
     }
     public function render()
     {

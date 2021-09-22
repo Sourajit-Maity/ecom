@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AboutPageTableSeeder::class);
         $this->call(FaqPageTableSeeder::class);
         $this->call(ContactPageTableSeeder::class);
+        $this->call(ReviewSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }

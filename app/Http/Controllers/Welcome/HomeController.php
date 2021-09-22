@@ -12,6 +12,7 @@ use App\Models\State;
 use App\Models\User;
 use App\Models\Faqpage;
 use App\Models\Aboutpage;
+use App\Models\Product;
 use App\Models\Homepage;
 use App\Models\ContactUsForm;
 use App\Models\Contactuspage;
@@ -31,8 +32,9 @@ class HomeController extends Controller
     public function index()
     {
         $homedetails = Homepage::first();
+        $products = Product::latest()->take(6)->get();
         $reviews = Review::with('user')->where('active', 1)->get();
-        return view('Welcome.home',compact('reviews','homedetails'));
+        return view('Welcome.home',compact('reviews','homedetails','products'));
     }
     public function aboutUs()
     {
@@ -42,8 +44,9 @@ class HomeController extends Controller
     }
     public function products()
     {
+        $products = Product::get();
         $reviews = Review::with('user')->where('active', 1)->get();
-        return view('Welcome.products',compact('reviews'));
+        return view('Welcome.products',compact('reviews','products'));
     }
     public function faq()
     {
@@ -95,6 +98,7 @@ class HomeController extends Controller
         //Log::debug("register".print_r($request->all(), true));
         request()->validate([
             'first_name' => 'required|regex:/^[a-zA-Z]+$/u',
+            'last_name' => 'required|regex:/^[a-zA-Z]+$/u',
             'email' => 'required|email|max:255|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix|unique:users',
             'phone' => 'required|regex:/^([0-9\s+\(\)]*)$/',
             'address1' => 'required',
@@ -103,7 +107,6 @@ class HomeController extends Controller
             'country' => 'required',
             'zip' => 'required',
             'terms_condition' => 'required',
-            'last_name' => 'required|regex:/^[a-zA-Z]+$/u',
             'password' => 'required|string|min:8|confirmed',
             'password_confirmation' => 'required',
         ]);

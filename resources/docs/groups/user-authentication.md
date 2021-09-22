@@ -11,7 +11,7 @@ APIs for managing basic auth functionality
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/register"
+    "http://localhost/api/register"
 );
 
 let headers = {
@@ -91,21 +91,25 @@ fetch(url, {
 <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="first_name" data-endpoint="POSTapi-register" data-component="body" required  hidden>
 <br>
+
 </p>
 <p>
 <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="last_name" data-endpoint="POSTapi-register" data-component="body" required  hidden>
 <br>
+
 </p>
 <p>
 <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="email" data-endpoint="POSTapi-register" data-component="body" required  hidden>
 <br>
+
 </p>
 <p>
 <b><code>phone</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="phone" data-endpoint="POSTapi-register" data-component="body" required  hidden>
 <br>
+
 </p>
 
 </form>
@@ -120,7 +124,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/login"
+    "http://localhost/api/login"
 );
 
 let headers = {
@@ -188,11 +192,13 @@ fetch(url, {
 <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="email" data-endpoint="POSTapi-login" data-component="body" required  hidden>
 <br>
+
 </p>
 <p>
 <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="password" data-endpoint="POSTapi-login" data-component="body" required  hidden>
+<input type="password" name="password" data-endpoint="POSTapi-login" data-component="body" required  hidden>
 <br>
+
 </p>
 
 </form>
@@ -208,7 +214,7 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/user"
+    "http://localhost/api/user"
 );
 
 let headers = {

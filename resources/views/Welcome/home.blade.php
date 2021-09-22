@@ -32,72 +32,19 @@
             </div>
 
             <div class="row product-row">
-                <div class="col-lg-4 col-md-6 product-col">
-                    <div class="product-card">
-                        <div class="card-image">
-                            <img src="{{asset('welcome_assets/images/product-01.png')}}" alt="">
+                @foreach($products as $product)
+                    <div class="col-lg-4 col-md-6 product-col">
+                        <div class="product-card">
+                            <div class="card-image">
+                                <img src="{{$product->product_photo_path}}" alt="">
+                            </div>
+                            <div class="product-cont">
+                                <h4>{{$product->product_name}}</h4>
+                                <a class="cmn-btn" href="{{route('welcome.design-tool')}}">Design now</a>
+                            </div>
                         </div>
-                        <div class="product-cont">
-                            <h4>Printed Badges</h4>
-                            <a class="cmn-btn" href="{{route('welcome.design-tool')}}">Design now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 product-col">
-                    <div class="product-card">
-                        <div class="card-image">
-                            <img src="{{asset('welcome_assets/images/product-02.png')}}" alt="">
-                        </div>
-                        <div class="product-cont">
-                            <h4>Framed Badges</h4>
-                            <a class="cmn-btn" href="{{route('welcome.design-tool')}}">Design now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 product-col">
-                    <div class="product-card">
-                        <div class="card-image">
-                            <img src="{{asset('welcome_assets/images/product-03.png')}}" alt="">
-                        </div>
-                        <div class="product-cont">
-                            <h4>Metallic Silver Badges</h4>
-                            <a class="cmn-btn" href="{{route('welcome.design-tool')}}">Design now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 product-col">
-                    <div class="product-card">
-                        <div class="card-image">
-                            <img src="{{asset('welcome_assets/images/product-04.png')}}" alt="">
-                        </div>
-                        <div class="product-cont">
-                            <h4>Metallic Gold Badges</h4>
-                            <a class="cmn-btn" href="{{route('welcome.design-tool')}}">Design now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 product-col">
-                    <div class="product-card">
-                        <div class="card-image">
-                            <img src="{{asset('welcome_assets/images/product-05.png')}}" alt="">
-                        </div>
-                        <div class="product-cont">
-                            <h4>Silver Badges</h4>
-                            <a class="cmn-btn" href="{{route('welcome.design-tool')}}">Design now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 product-col">
-                    <div class="product-card">
-                        <div class="card-image">
-                            <img src="{{asset('welcome_assets/images/product-06.png')}}" alt="">
-                        </div>
-                        <div class="product-cont">
-                            <h4>Gold Badges</h4>
-                            <a class="cmn-btn" href="{{route('welcome.design-tool')}}">Design now</a>
-                        </div>
-                    </div>
-                </div>
+                    </div>  
+                @endforeach               
             </div>
 
         </div>
