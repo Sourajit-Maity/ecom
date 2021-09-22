@@ -5,14 +5,11 @@
                 <div class="col-md-3 product-left">
                     <div class="product-list">
                         <ul>
-                            <li class="active"><a href="#url">Plastic Badges</a></li>
-                            <li><a href="#url">Oval Badges</a></li>
-                            <li><a href="#url">Aluminum Badges</a></li>
-                            <li><a href="#url">Framed Badges</a></li>
-                            <li><a href="#url">Bling Badges</a></li>
-                            <li><a href="#url">Wooden Badges</a></li>
-                            <li><a href="#url">Engraved Badges</a></li>
-                            <li><a href="#url">Engraved Nameplates</a></li>
+                            <!-- <li class="active"><a href="#url">Plastic Badges</a></li> -->
+                            @foreach($products as $product)
+                                <li><a href="#url">{{$product->product_name}}</a></li> 
+                                <a href="{{route('welcome.product-details',[$product->product_name])}}">View Details</a>
+                            @endforeach                        
                         </ul>
                     </div>
                 </div>
@@ -22,6 +19,7 @@
                             <div class="row product-row">
                                 <div class="col-md-5 product-col-left">
                                     <img src="{{asset('welcome_assets/images/product-01.png')}}" alt="">
+                                    <a href="{{route('welcome.product-details',[$product->product_name])}}">View Details</a>
                                 </div>
                                 <div class="col-md-7 product-col-right">
                                     <h4>
@@ -57,10 +55,9 @@
                                                 <li>Free Doming</li>
                                                 <li>No Hidden Fees</li>
                                             </ul>
-                                        </div>
+                                        </div> 
                                     </div>
 
-                                    <a href="{{route('welcome.product-details')}}">View Details</a>
 
                                 </div>
                             </div>
@@ -108,7 +105,6 @@
                                         </div>
                                     </div>
 
-                                    <a href="{{route('welcome.product-details')}}">View Details</a>
 
                                 </div>
                             </div>
@@ -156,7 +152,6 @@
                                         </div>
                                     </div>
 
-                                    <a href="{{route('welcome.product-details')}}">View Details</a>
 
                                 </div>
                             </div>
@@ -188,47 +183,21 @@
             </div>
 
             <div class="testimonial-slider">
-                <div class="testimonial-card">
-                    <div class="iamge-sec">
-                        <img src="{{asset('welcome_assets/images/testimonial01.jpg')}}" alt="">
+                @foreach($reviews as $review)
+                    <div class="testimonial-card">
+                    
+                        <div class="iamge-sec">
+                            <img src="{{asset('welcome_assets/images/testimonial01.jpg')}}" alt="">
+                        </div>
+                        <div class="testimonial-cont">
+                            <h4>{{$review->user->first_name}} {{$review->user->last_name}}</h4>
+                            <p>{{ Str::limit($review->review_description , 100) }}
+                            </p>
+                            <a href="#url">Read More</a>
+                        </div>
                     </div>
-                    <div class="testimonial-cont">
-                        <h4>Michael</h4>
-                        <p>I was last-minute and they took on the job and moved quickly.
-                            They did a great job printing the badges for my event.
-                            I would highly recommend them.
-                        </p>
-                        <a href="#url">Read More</a>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="iamge-sec">
-                        <img src="{{asset('welcome_assets/images/testimonial02.jpg')}}" alt="">
-                    </div>
-                    <div class="testimonial-cont">
-                        <h4>Kailey</h4>
-                        <p>
-                            QUICK RESPONSES!!! They turned an <br> order in less than 24 hours for me.
-                        </p>
-                        <a href="#url">Read More</a>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="iamge-sec">
-                        <img src="{{asset('welcome_assets/images/testimonial01.jpg')}}" alt="">
-                    </div>
-                    <div class="testimonial-cont">
-                        <h4>Michael</h4>
-                        <p>
-                            I was last-minute and they took on the job and moved quickly.
-                            They did a great job printing the badges for my event.
-                            I would highly recommend them.
-                        </p>
-                        <a href="#url">Read More</a>
-                    </div>
-                </div>
+                @endforeach
+ 
             </div>
         </div>
     </section>

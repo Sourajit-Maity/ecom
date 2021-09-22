@@ -13,6 +13,7 @@ use App\Models\User;
 use App\Models\Faqpage;
 use App\Models\Aboutpage;
 use App\Models\Product;
+use App\Models\ProductPrice;
 use App\Models\Homepage;
 use App\Models\ContactUsForm;
 use App\Models\Contactuspage;
@@ -166,10 +167,13 @@ class HomeController extends Controller
   
         return Redirect::to('/');
     }
-    public function productDetails()
-    {
+    public function productDetails($product_name)
+    { 
+        $products = Product::where('product_name',$product_name)->first();
+        //dd($products);
+        $productprices = ProductPrice::get();
         $reviews = Review::with('user')->where('active', 1)->get();
-        return view('Welcome.product-details',compact('reviews'));
+        return view('Welcome.product-details',compact('reviews','productprices','products'));
     }
     public function designTool()
     {

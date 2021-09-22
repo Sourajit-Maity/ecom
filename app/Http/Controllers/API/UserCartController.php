@@ -111,6 +111,8 @@ class UserCartController extends Controller
         $validator = Validator::make($request->all(), [ 
             "product_id" =>  "required",
             "quantity" =>  "",
+            'product_image' => 'required',
+            'product_image.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         if($validator->fails()) {
@@ -122,10 +124,24 @@ class UserCartController extends Controller
             return Response()->Json(["status"=>false,"message"=> 'Already added this product.']);
         }
 
+        $image = $request->file('product_image');
+        if($request->hasfile('product_image'))
+         {
+            
+            // foreach($images as $image)
+            // {
+                
+                $name=$image->getClientOriginalName();
+                $image->move(public_path().'/images/', $name);  
+                $data[] = $name;  
+            //}
+         }
+       
         $user_cart = new UserCart;
         $user_cart->user_id = Auth::user()->id;
         $user_cart->product_id = $request->product_id;
         $user_cart->quantity = $request->quantity ?? 1;
+        $user_cart->product_image=json_encode($data);
         $user_cart->save();
 
         return Response()->Json(["status"=>true,"message"=> 'Product successfully added your cart.']);
