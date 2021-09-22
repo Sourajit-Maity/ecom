@@ -287,7 +287,7 @@
                                         </div>
                                     </div>
                     </div>
-                    <div class="size-sec" v-if="menu.background">
+                     <div class="size-sec" v-if="menu.background">
                                     <div class="">
                                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item">
@@ -302,30 +302,102 @@
                                             </ul>
                                             <div class="tab-content" id="myTabContent">
                                             <div class="tab-pane fade show active ul-custom-height" id="MATERIAL" role="tabpanel" aria-labelledby="home-tab">
-                                                <div class="row">
+                                                <div class="matirial-list">
+                                        <ul>
+                                            <li>
+                                                <div class="form_input_radio">
+                                                    <label @click="backgroundImage= '/background/Material/White-Plastic/1.png'" class="custom_height_60">
+                                                        <input type="radio" checked name="name">
+                                                        <span><img src="/background/Material/White-Plastic/1-thumb.png" alt="" class="border"></span>
+                                                    </label>
+                                                    <span>White - Plastic</span>
+                                                </div>
+                                            </li>
+
+                                            <li v-if="this.shapeDefaultClass!='oval1-3' ">
+                                                <div class="form_input_radio">
+                                                    <label @click="backgroundImage= '/background/Material/Gold-Plastic/7.png'" class="custom_height_60">
+                                                        <input type="radio" name="name">
+                                                        <span><img src="/background/Material/Gold-Plastic/7-thumb.png" alt=""></span>
+                                                    </label>
+                                                    <span>Gold - Plastic</span>
+                                                </div>
+                                            </li>
+                                            <li v-if="this.shapeDefaultClass!='oval1-3' ">
+                                                <div class="form_input_radio">
+                                                    <label @click="backgroundImage= '/background/Material/Silver-Plastic/8.png'" class="custom_height_60">
+                                                        <input type="radio" name="name">
+                                                        <span><img src="/background/Material/Silver-Plastic/8-thumb.png" alt=""></span>
+                                                    </label>
+                                                    <span>Silver - Plastic</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form_input_radio">
+                                                    <label @click="backgroundImage= '/background/Material/Gold-Metallic/5.png'" class="custom_height_60">
+                                                        <input type="radio" name="name">
+                                                        <span><img src="/background/Material/Gold-Metallic/5-thumb.png" alt=""></span>
+                                                    </label>
+                                                    <span>Gold Metallic</span>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="form_input_radio">
+                                                    <label @click="backgroundImage= '/background/Material/Silver-Metallic/6.png'" class="custom_height_60">
+                                                        <input type="radio"  name="name">
+                                                        <span><img src="/background/Material/Silver-Metallic/6-thumb.png" alt=""></span>
+                                                    </label>
+                                                    <span>Silver Metallic</span>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="form_input_radio">
+                                                    <label @click="backgroundImage= 'background/Material/Wood-Grain/11.png'" class="custom_height_60">
+                                                        <input type="radio" name="name">
+                                                        <span><img src="/background/Material/Wood-Grain/11-thumb.png" alt=""></span>
+                                                    </label>
+                                                    <span>Wood Grain</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                                <!-- <div class="row">
                                                     <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/White-Plastic/1.png'"><img class="border" src="/background/Material/White-Plastic/1-thumb.png">White - Plastic</span></div>
                                                     <div class="col-md-4 pt-4 cursor-pointer" v-if="this.shapeDefaultClass!='oval1-3' "><span  @click="backgroundImage= '/background/Material/Gold-Plastic/7.png'"><img class="border" src="/background/Material/Gold-Plastic/7-thumb.png">Gold - Plastic</span></div>
                                                     <div class="col-md-4 pt-4 cursor-pointer" v-if="this.shapeDefaultClass!='oval1-3' "><span  @click="backgroundImage= '/background/Material/Silver-Plastic/8.png'"><img class="border" src="/background/Material/Silver-Plastic/8-thumb.png">Silver - Plastic</span></div>
                                                     <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Gold-Metallic/5.png'"><img class="border" src="/background/Material/Gold-Metallic/5-thumb.png">Gold Metallic</span></div>
                                                     <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Silver-Metallic/6.png'"><img class="border" src="/background/Material/Silver-Metallic/6-thumb.png">Silver Metallic</span></div>
-                                                    <!-- <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Wood-Grain/11.png'"><img  class="border" src="/background/Material/Wood-Grain/11-thumb.png">Wood Grain</span></div> -->
-                                                </div>
+                                                    <div class="col-md-4 pt-4 cursor-pointer"><span  @click="backgroundImage= '/background/Material/Wood-Grain/11.png'"><img  class="border" src="/background/Material/Wood-Grain/11-thumb.png">Wood Grain</span></div>
+                                                </div> -->
                                             </div>
                                             <div class="tab-pane fade" id="colors" role="tabpanel" aria-labelledby="home-tab">
-                                                <div class="row">
+                                                <div class="row" style="margin-right: 13px;">
                                                 <photoshop-picker v-model="colors" class="color-picker-custom mt-2" @input="colorChanged" />
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade" id="custom" role="tabpanel" aria-labelledby="profile-tab">
-                                                <div class="row custom-background-img">
-                                                    <div class="col-md-4 cursor-pointer pt-4" v-for="i in 37" :key="i"><img style="height:60px; width:100px;" class="border" :src="'/background/Custom/' + i + '/thumb.png'" @click="backgroundImage= '/background/Custom/' + i + '/' + i + '.png'"></div>
+                                                <!-- <div class="row custom-background-img"> -->
+                                                     <div class="matirial-list">
+                                                     <ul>
+                                            <li v-for="i in 37" :key="i">
+                                                <div class="form_input_radio">
+                                                    <label class="custom_height_60" @click="backgroundImage= '/background/Custom/' + i + '/' + i + '.png'">
+                                                        <input type="radio" name="name">
+                                                        <span><img :src="'/background/Custom/' + i + '/thumb.png'"  alt="" style="height:60px; width:100px;"></span>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                                     </ul>
+                                                     <!-- </div> -->
+                                                    <!-- <div class="col-md-4 cursor-pointer pt-4" v-for="i in 37" :key="i"><img style="height:60px; width:100px;" class="border" :src="'/background/Custom/' + i + '/thumb.png'" @click="backgroundImage= '/background/Custom/' + i + '/' + i + '.png'"></div> -->
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
                                             </div>
                                     </div>
-                                </div>
-
+                    </div>
                 </div>
             </div>
 
@@ -401,8 +473,8 @@ export default {
         //   number: 10,
             textDesigns:[
                 {
-                    x:300,
-                    y:70,
+                    x:390,
+                    y:85,
                     weight:160,
                     height:55,
                     angle: 0,
@@ -684,8 +756,8 @@ export default {
           this.addTextIndex++;
           this.textDesigns.push(
                {
-                    x:300 + (this.addTextIndex * 10),
-                    y:70 + (this.addTextIndex * 10),
+                    x:390 + (this.addTextIndex * 10),
+                    y:85 + (this.addTextIndex * 10),
                     // y:70 + (this.addTextIndex * 10),
                     weight:160,
                     height:55,
@@ -1050,6 +1122,9 @@ element.style {
 }
 .design_tool_custom{
     position: relative;
+}
+.custom_height_60{
+    height:60px;
 }
 
 </style>

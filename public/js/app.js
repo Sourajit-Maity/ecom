@@ -14354,6 +14354,78 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 
@@ -14379,8 +14451,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       selectedLogoIndex: 0,
       //   number: 10,
       textDesigns: [{
-        x: 300,
-        y: 70,
+        x: 390,
+        y: 85,
         weight: 160,
         height: 55,
         angle: 0,
@@ -14657,8 +14729,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       if (this.textDesigns.length == 4) return;
       this.addTextIndex++;
       this.textDesigns.push({
-        x: 300 + this.addTextIndex * 10,
-        y: 70 + this.addTextIndex * 10,
+        x: 390 + this.addTextIndex * 10,
+        y: 85 + this.addTextIndex * 10,
         // y:70 + (this.addTextIndex * 10),
         weight: 160,
         height: 55,
@@ -19326,7 +19398,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\ndl[data-v-5fe4438c], ol[data-v-5fe4438c], ul[data-v-5fe4438c] {\r\n    margin-top: 0;\r\n    margin-bottom: 1rem !important;\n}\r\n        /* .container{\r\n            margin-top: 9%;\r\n            margin-bottom: 6%;\r\n        }  */\n.shadow[data-v-5fe4438c] {\r\n            box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\r\n            width: 100%;\r\n            border-radius: 30px;\r\n            overflow: hidden;\r\n            position: relative;\r\n            border: 1px solid #ccc;\r\n            box-shadow: 0px 0px 20px 0px #dcdcdc;\n}\n.rectangle1-3[data-v-5fe4438c] {\r\n            height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\r\n            height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\r\n            height: 244px;\r\n            border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\r\n            height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\r\n                font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\r\n                font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\r\n                color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\r\n                color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\r\n            color: blue;\n}\n.no-border[data-v-5fe4438c]{\r\n            border: none;\n}\n.gold-border[data-v-5fe4438c]{\r\n                border: 9px solid #ffed4a;\n}\n.silver-border[data-v-5fe4438c]{\r\n                border: 9px solid #b8b7b2;\n}\n.black-border[data-v-5fe4438c]{\r\n                border: 9px solid #050505;\n}\n.rose-border[data-v-5fe4438c]{\r\n                border: 9px solid #c07b86;\n}\n.selected-material-box[data-v-5fe4438c]{\r\n            border: 3px solid #3a00ff !important;\n}\n.cursor-pointer[data-v-5fe4438c]{\r\n            cursor:pointer;\n}\n.custom-background-img[data-v-5fe4438c]{\r\n            max-height: 400px;\r\n            overflow: scroll;\r\n            overflow-x: hidden;\n}\n.fnt1[data-v-5fe4438c], #fnt1[data-v-5fe4438c]{font-family:\"Andale Mono\";}\n.fnt2[data-v-5fe4438c], #fnt2[data-v-5fe4438c]{font-family:Arial;}\n.fnt3[data-v-5fe4438c], #fnt3[data-v-5fe4438c]{font-family:\"Arial Black\";}\n.fnt4[data-v-5fe4438c], #fnt4[data-v-5fe4438c]{font-family:\"CenturyGothic\";}\n.fnt5[data-v-5fe4438c], #fnt5[data-v-5fe4438c]{font-family:\"ComicSansMS\";}\n.fnt6[data-v-5fe4438c], #fnt6[data-v-5fe4438c]{font-family:\"Courier New\";}\n.fnt7[data-v-5fe4438c], #fnt7[data-v-5fe4438c]{font-family:Georgia;}\n.fnt8[data-v-5fe4438c], #fnt8[data-v-5fe4438c]{font-family:impact;}\n.fnt9[data-v-5fe4438c], #fnt9[data-v-5fe4438c]{font-family:\"Times New Roman\";}\n.fnt10[data-v-5fe4438c], #fnt10[data-v-5fe4438c]{font-family:\"Trebuchet MS\";}\n.fnt11[data-v-5fe4438c], #fnt11[data-v-5fe4438c]{font-family:Verdana;}\n.fnt12[data-v-5fe4438c], #fnt12[data-v-5fe4438c]{font-family: 'GothamBold';}\n.fnt13[data-v-5fe4438c], #fnt13[data-v-5fe4438c]{font-family: 'cormorant_garamondmedium';}\n.fnt14[data-v-5fe4438c], #fnt14[data-v-5fe4438c]{font-family: 'FuturaBT-BoldCondensed';}\n.fnt15[data-v-5fe4438c], #fnt15[data-v-5fe4438c]{font-family: 'lobster_1.3regular';}\n.fnt16[data-v-5fe4438c], #fnt16[data-v-5fe4438c]{font-family: 'scriptinaregular';}\n.fnt16[data-v-5fe4438c], #fnt16[data-v-5fe4438c] {\r\n  vertical-align: text-top !important;\r\n  line-height: 1.5 !important;\n}\n.fnt17[data-v-5fe4438c], #fnt17[data-v-5fe4438c]{font-family: 'OldEnglishTextMT';}\n.fnt18[data-v-5fe4438c], #fnt18[data-v-5fe4438c]{font-family: 'robotoregular';}\n.fnt19[data-v-5fe4438c], #fnt19[data-v-5fe4438c]{font-family: 'ARDESTINE';}\n.fnt20[data-v-5fe4438c], #fnt20[data-v-5fe4438c]{font-family: 'ARBONNIE';}\n.fnt22[data-v-5fe4438c], #fnt22[data-v-5fe4438c]{font-family: 'MonotypeCorsiva';}\n.fnt23[data-v-5fe4438c], #fnt23[data-v-5fe4438c]{font-family: 'scriptoriasskregular';}\n.fnt24[data-v-5fe4438c], #fnt24[data-v-5fe4438c]{font-family: 'ColoredCrayons';}\n.fnt25[data-v-5fe4438c], #fnt25[data-v-5fe4438c]{font-family: 'EraserRegular';}\n.fnt26[data-v-5fe4438c], #fnt26[data-v-5fe4438c]{font-family: 'Return_To_Sender';}\n.fnt27[data-v-5fe4438c], #fnt27[data-v-5fe4438c]{font-family: 'KGSecondChancesSketch';}\n.fnt28[data-v-5fe4438c], #fnt28[data-v-5fe4438c]{font-family: 'CenturyGothicBold';}\n.clipart-custom[data-v-5fe4438c]{\r\n    max-height: 307px;\r\n    overflow-y: scroll;\n}\n.fastener-img[data-v-5fe4438c] {\r\n    width: 100px;\r\n    height: 60px;\n}\n.selected_fastener[data-v-5fe4438c]{\r\n    border: 2px solid blue !important;\n}\n.color-picker-custom[data-v-5fe4438c]{\r\n    width: 100%;\n}\n.color-row span[data-v-5fe4438c]{\r\n    width: 22px;\r\n    height: 22px;\r\n    display: inline-block;\r\n    background: red;\r\n    border-radius: 100%;\r\n    border: 2px solid white;\r\n    box-shadow: 0 0 0px 1px initial;\r\n    margin: 7px;\r\n    cursor: pointer;\n}\n.color-row span.active[data-v-5fe4438c]{\r\n    box-shadow: 0 0 0px 2px #1491d0;\n}\n.price[data-v-5fe4438c]{\r\n    font-size: 30px;\r\n    font-weight: 600;\r\n    color: #107fb7;\r\n    display: table;\r\n    width: 100% !important;\r\n    margin-top: 10px;\n}\n.price b[data-v-5fe4438c] {\r\n    font-size: 30px;\r\n    font-weight: normal;\n}\n.price-table[data-v-5fe4438c] {\r\n    width: 100%;\r\n    height: 124px;\r\n    margin: 20px 0;\r\n    border: 0;\r\n    padding: 0;\r\n    clear: both;\n}\n.table_wrap[data-v-5fe4438c] {\r\n    margin-bottom: 15px;\n}\n.title_table[data-v-5fe4438c] {\r\n    background-color: #f8f8f8;\r\n    padding: 15px 20px;\r\n    border: 1px solid #eaeaea;\n}\n.ttl[data-v-5fe4438c] {\r\n    font-size: 18px;\r\n    color: #474747;\r\n    display: inline-block;\r\n    font-weight: 600;\n}\n.text-imp[data-v-5fe4438c] {\r\n    float: right;\n}\n.table_wrap .table[data-v-5fe4438c] {\r\n    margin-bottom: 20px;\r\n    max-width: 100%;\r\n    width: 100%;\r\n    box-shadow: 0px 3px 10px 0px rgb(0 0 0 / 9%);\n}\n.vue-step-wizard[data-v-5fe4438c] {\r\n    background-color: #f7f8fc;\r\n    width: 100%;\r\n    margin: auto;\r\n    padding: 10px;\n}\n#fieldset-tbl.table[data-v-5fe4438c] {\r\n    display: inline-table !important;\r\n    padding: 0 !important;\r\n    margin-top: 3%;\n}\nelement.style[data-v-5fe4438c] {\n}\n#fieldset-tbl.table > tbody > tr > td[data-v-5fe4438c], #fieldset-tbl.table > tbody > tr > th[data-v-5fe4438c], #fieldset-tbl.table > tfoot > tr > td[data-v-5fe4438c], #fieldset-tbl.table > tfoot > tr > th[data-v-5fe4438c], #fieldset-tbl.table > thead > tr > td[data-v-5fe4438c], #fieldset-tbl.table > thead > tr > th[data-v-5fe4438c] {\r\n    border-top: 1px solid #ddd;\r\n    line-height: 1.42857;\r\n    padding: 8px;\r\n    border-bottom: none;\n}\n.table th[data-v-5fe4438c], .table td[data-v-5fe4438c] {\r\n    padding: 10px 0;\r\n    color: #000;\n}\n.qty[data-v-5fe4438c] {\r\n    text-align: center;\r\n    width: 41px;\r\n    margin-right: 30px;\r\n    padding: 0;\n}\n#fieldset-tbl .btn .edit[data-v-5fe4438c] {\r\n    background-color: #ff9a04;\n}\n#fieldset-tbl .btn .remove[data-v-5fe4438c] {\r\n    background-color: #ff3131;\r\n    margin-left: 10px;\n}\n#fieldset-tbl .btn .edit[data-v-5fe4438c], #fieldset-tbl .btn .remove[data-v-5fe4438c], #fieldset-tbl .btn .accept[data-v-5fe4438c] {\r\n    background-image: none !important;\r\n    background-position: unset !important;\r\n    color: #fff !important;\r\n    display: inline;\r\n    height: auto;\r\n    padding: 5px 20px;\r\n    text-indent: 0 !important;\r\n    vertical-align: middle !important;\r\n    width: auto !important;\r\n    margin-right: 0;\n}\n#fieldset-tbl .btn .done[data-v-5fe4438c] {\r\n    background-color: #A1BB3C;\n}\n#fieldset-tbl.table-bordered[data-v-5fe4438c] {\r\n    border: 1px solid #ddd;\n}\n.imagePreviewWrapper[data-v-5fe4438c] {\r\n    width: 250px;\r\n    height: 250px;\r\n    display: block;\r\n    cursor: pointer;\r\n    margin: 0 auto 30px;\r\n    background-size: cover;\r\n    background-position: center center;\n}\n.visited[data-v-5fe4438c] {\r\n    border-color: #000 !important;\n}\n.price_yable-custom-margin[data-v-5fe4438c]{\r\n    /* margin-top: 30px !important; */\n}\n.cursor-pointer[data-v-5fe4438c]{\r\n    cursor: pointer;\n}\n.design_tool_custom[data-v-5fe4438c]{\r\n    position: relative;\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ndl[data-v-5fe4438c], ol[data-v-5fe4438c], ul[data-v-5fe4438c] {\r\n    margin-top: 0;\r\n    margin-bottom: 1rem !important;\n}\r\n        /* .container{\r\n            margin-top: 9%;\r\n            margin-bottom: 6%;\r\n        }  */\n.shadow[data-v-5fe4438c] {\r\n            box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 29%)\n}\n.design-area[data-v-5fe4438c] {\r\n            width: 100%;\r\n            border-radius: 30px;\r\n            overflow: hidden;\r\n            position: relative;\r\n            border: 1px solid #ccc;\r\n            box-shadow: 0px 0px 20px 0px #dcdcdc;\n}\n.rectangle1-3[data-v-5fe4438c] {\r\n            height: 198px;\n}\n.rectangle1-5-3[data-v-5fe4438c] {\r\n            height: 290px;\n}\n.oval1-3[data-v-5fe4438c] {\r\n            height: 244px;\r\n            border-radius: 50% !important;\n}\n.rectangle12-3[data-v-5fe4438c] {\r\n            height: 367px;\n}\n.font-size50[data-v-5fe4438c] {\r\n                font-size: 50px;\n}\n.font-size35[data-v-5fe4438c] {\r\n                font-size: 35px;\n}\n.font-coloRed[data-v-5fe4438c] {\r\n                color: red;\n}\n.font-colorGreen[data-v-5fe4438c] {\r\n                color: green;\n}\n.font-colorBlue[data-v-5fe4438c]{\r\n            color: blue;\n}\n.no-border[data-v-5fe4438c]{\r\n            border: none;\n}\n.gold-border[data-v-5fe4438c]{\r\n                border: 9px solid #ffed4a;\n}\n.silver-border[data-v-5fe4438c]{\r\n                border: 9px solid #b8b7b2;\n}\n.black-border[data-v-5fe4438c]{\r\n                border: 9px solid #050505;\n}\n.rose-border[data-v-5fe4438c]{\r\n                border: 9px solid #c07b86;\n}\n.selected-material-box[data-v-5fe4438c]{\r\n            border: 3px solid #3a00ff !important;\n}\n.cursor-pointer[data-v-5fe4438c]{\r\n            cursor:pointer;\n}\n.custom-background-img[data-v-5fe4438c]{\r\n            max-height: 400px;\r\n            overflow: scroll;\r\n            overflow-x: hidden;\n}\n.fnt1[data-v-5fe4438c], #fnt1[data-v-5fe4438c]{font-family:\"Andale Mono\";}\n.fnt2[data-v-5fe4438c], #fnt2[data-v-5fe4438c]{font-family:Arial;}\n.fnt3[data-v-5fe4438c], #fnt3[data-v-5fe4438c]{font-family:\"Arial Black\";}\n.fnt4[data-v-5fe4438c], #fnt4[data-v-5fe4438c]{font-family:\"CenturyGothic\";}\n.fnt5[data-v-5fe4438c], #fnt5[data-v-5fe4438c]{font-family:\"ComicSansMS\";}\n.fnt6[data-v-5fe4438c], #fnt6[data-v-5fe4438c]{font-family:\"Courier New\";}\n.fnt7[data-v-5fe4438c], #fnt7[data-v-5fe4438c]{font-family:Georgia;}\n.fnt8[data-v-5fe4438c], #fnt8[data-v-5fe4438c]{font-family:impact;}\n.fnt9[data-v-5fe4438c], #fnt9[data-v-5fe4438c]{font-family:\"Times New Roman\";}\n.fnt10[data-v-5fe4438c], #fnt10[data-v-5fe4438c]{font-family:\"Trebuchet MS\";}\n.fnt11[data-v-5fe4438c], #fnt11[data-v-5fe4438c]{font-family:Verdana;}\n.fnt12[data-v-5fe4438c], #fnt12[data-v-5fe4438c]{font-family: 'GothamBold';}\n.fnt13[data-v-5fe4438c], #fnt13[data-v-5fe4438c]{font-family: 'cormorant_garamondmedium';}\n.fnt14[data-v-5fe4438c], #fnt14[data-v-5fe4438c]{font-family: 'FuturaBT-BoldCondensed';}\n.fnt15[data-v-5fe4438c], #fnt15[data-v-5fe4438c]{font-family: 'lobster_1.3regular';}\n.fnt16[data-v-5fe4438c], #fnt16[data-v-5fe4438c]{font-family: 'scriptinaregular';}\n.fnt16[data-v-5fe4438c], #fnt16[data-v-5fe4438c] {\r\n  vertical-align: text-top !important;\r\n  line-height: 1.5 !important;\n}\n.fnt17[data-v-5fe4438c], #fnt17[data-v-5fe4438c]{font-family: 'OldEnglishTextMT';}\n.fnt18[data-v-5fe4438c], #fnt18[data-v-5fe4438c]{font-family: 'robotoregular';}\n.fnt19[data-v-5fe4438c], #fnt19[data-v-5fe4438c]{font-family: 'ARDESTINE';}\n.fnt20[data-v-5fe4438c], #fnt20[data-v-5fe4438c]{font-family: 'ARBONNIE';}\n.fnt22[data-v-5fe4438c], #fnt22[data-v-5fe4438c]{font-family: 'MonotypeCorsiva';}\n.fnt23[data-v-5fe4438c], #fnt23[data-v-5fe4438c]{font-family: 'scriptoriasskregular';}\n.fnt24[data-v-5fe4438c], #fnt24[data-v-5fe4438c]{font-family: 'ColoredCrayons';}\n.fnt25[data-v-5fe4438c], #fnt25[data-v-5fe4438c]{font-family: 'EraserRegular';}\n.fnt26[data-v-5fe4438c], #fnt26[data-v-5fe4438c]{font-family: 'Return_To_Sender';}\n.fnt27[data-v-5fe4438c], #fnt27[data-v-5fe4438c]{font-family: 'KGSecondChancesSketch';}\n.fnt28[data-v-5fe4438c], #fnt28[data-v-5fe4438c]{font-family: 'CenturyGothicBold';}\n.clipart-custom[data-v-5fe4438c]{\r\n    max-height: 307px;\r\n    overflow-y: scroll;\n}\n.fastener-img[data-v-5fe4438c] {\r\n    width: 100px;\r\n    height: 60px;\n}\n.selected_fastener[data-v-5fe4438c]{\r\n    border: 2px solid blue !important;\n}\n.color-picker-custom[data-v-5fe4438c]{\r\n    width: 100%;\n}\n.color-row span[data-v-5fe4438c]{\r\n    width: 22px;\r\n    height: 22px;\r\n    display: inline-block;\r\n    background: red;\r\n    border-radius: 100%;\r\n    border: 2px solid white;\r\n    box-shadow: 0 0 0px 1px initial;\r\n    margin: 7px;\r\n    cursor: pointer;\n}\n.color-row span.active[data-v-5fe4438c]{\r\n    box-shadow: 0 0 0px 2px #1491d0;\n}\n.price[data-v-5fe4438c]{\r\n    font-size: 30px;\r\n    font-weight: 600;\r\n    color: #107fb7;\r\n    display: table;\r\n    width: 100% !important;\r\n    margin-top: 10px;\n}\n.price b[data-v-5fe4438c] {\r\n    font-size: 30px;\r\n    font-weight: normal;\n}\n.price-table[data-v-5fe4438c] {\r\n    width: 100%;\r\n    height: 124px;\r\n    margin: 20px 0;\r\n    border: 0;\r\n    padding: 0;\r\n    clear: both;\n}\n.table_wrap[data-v-5fe4438c] {\r\n    margin-bottom: 15px;\n}\n.title_table[data-v-5fe4438c] {\r\n    background-color: #f8f8f8;\r\n    padding: 15px 20px;\r\n    border: 1px solid #eaeaea;\n}\n.ttl[data-v-5fe4438c] {\r\n    font-size: 18px;\r\n    color: #474747;\r\n    display: inline-block;\r\n    font-weight: 600;\n}\n.text-imp[data-v-5fe4438c] {\r\n    float: right;\n}\n.table_wrap .table[data-v-5fe4438c] {\r\n    margin-bottom: 20px;\r\n    max-width: 100%;\r\n    width: 100%;\r\n    box-shadow: 0px 3px 10px 0px rgb(0 0 0 / 9%);\n}\n.vue-step-wizard[data-v-5fe4438c] {\r\n    background-color: #f7f8fc;\r\n    width: 100%;\r\n    margin: auto;\r\n    padding: 10px;\n}\n#fieldset-tbl.table[data-v-5fe4438c] {\r\n    display: inline-table !important;\r\n    padding: 0 !important;\r\n    margin-top: 3%;\n}\nelement.style[data-v-5fe4438c] {\n}\n#fieldset-tbl.table > tbody > tr > td[data-v-5fe4438c], #fieldset-tbl.table > tbody > tr > th[data-v-5fe4438c], #fieldset-tbl.table > tfoot > tr > td[data-v-5fe4438c], #fieldset-tbl.table > tfoot > tr > th[data-v-5fe4438c], #fieldset-tbl.table > thead > tr > td[data-v-5fe4438c], #fieldset-tbl.table > thead > tr > th[data-v-5fe4438c] {\r\n    border-top: 1px solid #ddd;\r\n    line-height: 1.42857;\r\n    padding: 8px;\r\n    border-bottom: none;\n}\n.table th[data-v-5fe4438c], .table td[data-v-5fe4438c] {\r\n    padding: 10px 0;\r\n    color: #000;\n}\n.qty[data-v-5fe4438c] {\r\n    text-align: center;\r\n    width: 41px;\r\n    margin-right: 30px;\r\n    padding: 0;\n}\n#fieldset-tbl .btn .edit[data-v-5fe4438c] {\r\n    background-color: #ff9a04;\n}\n#fieldset-tbl .btn .remove[data-v-5fe4438c] {\r\n    background-color: #ff3131;\r\n    margin-left: 10px;\n}\n#fieldset-tbl .btn .edit[data-v-5fe4438c], #fieldset-tbl .btn .remove[data-v-5fe4438c], #fieldset-tbl .btn .accept[data-v-5fe4438c] {\r\n    background-image: none !important;\r\n    background-position: unset !important;\r\n    color: #fff !important;\r\n    display: inline;\r\n    height: auto;\r\n    padding: 5px 20px;\r\n    text-indent: 0 !important;\r\n    vertical-align: middle !important;\r\n    width: auto !important;\r\n    margin-right: 0;\n}\n#fieldset-tbl .btn .done[data-v-5fe4438c] {\r\n    background-color: #A1BB3C;\n}\n#fieldset-tbl.table-bordered[data-v-5fe4438c] {\r\n    border: 1px solid #ddd;\n}\n.imagePreviewWrapper[data-v-5fe4438c] {\r\n    width: 250px;\r\n    height: 250px;\r\n    display: block;\r\n    cursor: pointer;\r\n    margin: 0 auto 30px;\r\n    background-size: cover;\r\n    background-position: center center;\n}\n.visited[data-v-5fe4438c] {\r\n    border-color: #000 !important;\n}\n.price_yable-custom-margin[data-v-5fe4438c]{\r\n    /* margin-top: 30px !important; */\n}\n.cursor-pointer[data-v-5fe4438c]{\r\n    cursor: pointer;\n}\n.design_tool_custom[data-v-5fe4438c]{\r\n    position: relative;\n}\n.custom_height_60[data-v-5fe4438c]{\r\n    height:60px;\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -53418,156 +53490,213 @@ var render = function() {
                             }
                           },
                           [
-                            _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                { staticClass: "col-md-4 pt-4 cursor-pointer" },
-                                [
+                            _c("div", { staticClass: "matirial-list" }, [
+                              _c("ul", [
+                                _c("li", [
                                   _c(
-                                    "span",
-                                    {
-                                      on: {
-                                        click: function($event) {
-                                          _vm.backgroundImage =
-                                            "/background/Material/White-Plastic/1.png"
-                                        }
-                                      }
-                                    },
-                                    [
-                                      _c("img", {
-                                        staticClass: "border",
-                                        attrs: {
-                                          src:
-                                            "/background/Material/White-Plastic/1-thumb.png"
-                                        }
-                                      }),
-                                      _vm._v("White - Plastic")
-                                    ]
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              this.shapeDefaultClass != "oval1-3"
-                                ? _c(
                                     "div",
-                                    {
-                                      staticClass:
-                                        "col-md-4 pt-4 cursor-pointer"
-                                    },
+                                    { staticClass: "form_input_radio" },
                                     [
                                       _c(
-                                        "span",
+                                        "label",
                                         {
+                                          staticClass: "custom_height_60",
                                           on: {
                                             click: function($event) {
                                               _vm.backgroundImage =
-                                                "/background/Material/Gold-Plastic/7.png"
+                                                "/background/Material/White-Plastic/1.png"
                                             }
                                           }
                                         },
                                         [
-                                          _c("img", {
-                                            staticClass: "border",
+                                          _c("input", {
                                             attrs: {
-                                              src:
-                                                "/background/Material/Gold-Plastic/7-thumb.png"
+                                              type: "radio",
+                                              checked: "",
+                                              name: "name"
                                             }
                                           }),
-                                          _vm._v("Gold - Plastic")
+                                          _vm._v(" "),
+                                          _vm._m(10)
                                         ]
-                                      )
+                                      ),
+                                      _vm._v(" "),
+                                      _c("span", [_vm._v("White - Plastic")])
                                     ]
                                   )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              this.shapeDefaultClass != "oval1-3"
-                                ? _c(
+                                ]),
+                                _vm._v(" "),
+                                this.shapeDefaultClass != "oval1-3"
+                                  ? _c("li", [
+                                      _c(
+                                        "div",
+                                        { staticClass: "form_input_radio" },
+                                        [
+                                          _c(
+                                            "label",
+                                            {
+                                              staticClass: "custom_height_60",
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.backgroundImage =
+                                                    "/background/Material/Gold-Plastic/7.png"
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("input", {
+                                                attrs: {
+                                                  type: "radio",
+                                                  name: "name"
+                                                }
+                                              }),
+                                              _vm._v(" "),
+                                              _vm._m(11)
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("span", [_vm._v("Gold - Plastic")])
+                                        ]
+                                      )
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                this.shapeDefaultClass != "oval1-3"
+                                  ? _c("li", [
+                                      _c(
+                                        "div",
+                                        { staticClass: "form_input_radio" },
+                                        [
+                                          _c(
+                                            "label",
+                                            {
+                                              staticClass: "custom_height_60",
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.backgroundImage =
+                                                    "/background/Material/Silver-Plastic/8.png"
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("input", {
+                                                attrs: {
+                                                  type: "radio",
+                                                  name: "name"
+                                                }
+                                              }),
+                                              _vm._v(" "),
+                                              _vm._m(12)
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("span", [
+                                            _vm._v("Silver - Plastic")
+                                          ])
+                                        ]
+                                      )
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _c("li", [
+                                  _c(
                                     "div",
-                                    {
-                                      staticClass:
-                                        "col-md-4 pt-4 cursor-pointer"
-                                    },
+                                    { staticClass: "form_input_radio" },
                                     [
                                       _c(
-                                        "span",
+                                        "label",
                                         {
+                                          staticClass: "custom_height_60",
                                           on: {
                                             click: function($event) {
                                               _vm.backgroundImage =
-                                                "/background/Material/Silver-Plastic/8.png"
+                                                "/background/Material/Gold-Metallic/5.png"
                                             }
                                           }
                                         },
                                         [
-                                          _c("img", {
-                                            staticClass: "border",
+                                          _c("input", {
                                             attrs: {
-                                              src:
-                                                "/background/Material/Silver-Plastic/8-thumb.png"
+                                              type: "radio",
+                                              name: "name"
                                             }
                                           }),
-                                          _vm._v("Silver - Plastic")
+                                          _vm._v(" "),
+                                          _vm._m(13)
                                         ]
-                                      )
+                                      ),
+                                      _vm._v(" "),
+                                      _c("span", [_vm._v("Gold Metallic")])
                                     ]
                                   )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "col-md-4 pt-4 cursor-pointer" },
-                                [
+                                ]),
+                                _vm._v(" "),
+                                _c("li", [
                                   _c(
-                                    "span",
-                                    {
-                                      on: {
-                                        click: function($event) {
-                                          _vm.backgroundImage =
-                                            "/background/Material/Gold-Metallic/5.png"
-                                        }
-                                      }
-                                    },
+                                    "div",
+                                    { staticClass: "form_input_radio" },
                                     [
-                                      _c("img", {
-                                        staticClass: "border",
-                                        attrs: {
-                                          src:
-                                            "/background/Material/Gold-Metallic/5-thumb.png"
-                                        }
-                                      }),
-                                      _vm._v("Gold Metallic")
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass: "custom_height_60",
+                                          on: {
+                                            click: function($event) {
+                                              _vm.backgroundImage =
+                                                "/background/Material/Silver-Metallic/6.png"
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("input", {
+                                            attrs: {
+                                              type: "radio",
+                                              name: "name"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _vm._m(14)
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("span", [_vm._v("Silver Metallic")])
                                     ]
                                   )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "col-md-4 pt-4 cursor-pointer" },
-                                [
+                                ]),
+                                _vm._v(" "),
+                                _c("li", [
                                   _c(
-                                    "span",
-                                    {
-                                      on: {
-                                        click: function($event) {
-                                          _vm.backgroundImage =
-                                            "/background/Material/Silver-Metallic/6.png"
-                                        }
-                                      }
-                                    },
+                                    "div",
+                                    { staticClass: "form_input_radio" },
                                     [
-                                      _c("img", {
-                                        staticClass: "border",
-                                        attrs: {
-                                          src:
-                                            "/background/Material/Silver-Metallic/6-thumb.png"
-                                        }
-                                      }),
-                                      _vm._v("Silver Metallic")
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass: "custom_height_60",
+                                          on: {
+                                            click: function($event) {
+                                              _vm.backgroundImage =
+                                                "background/Material/Wood-Grain/11.png"
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("input", {
+                                            attrs: {
+                                              type: "radio",
+                                              name: "name"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _vm._m(15)
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("span", [_vm._v("Wood Grain")])
                                     ]
                                   )
-                                ]
-                              )
+                                ])
+                              ])
                             ])
                           ]
                         ),
@@ -53585,7 +53714,10 @@ var render = function() {
                           [
                             _c(
                               "div",
-                              { staticClass: "row" },
+                              {
+                                staticClass: "row",
+                                staticStyle: { "margin-right": "13px" }
+                              },
                               [
                                 _c("photoshop-picker", {
                                   staticClass: "color-picker-custom mt-2",
@@ -53615,45 +53747,62 @@ var render = function() {
                             }
                           },
                           [
-                            _c(
-                              "div",
-                              { staticClass: "row custom-background-img" },
-                              _vm._l(37, function(i) {
-                                return _c(
-                                  "div",
-                                  {
-                                    key: i,
-                                    staticClass: "col-md-4 cursor-pointer pt-4"
-                                  },
-                                  [
-                                    _c("img", {
-                                      staticClass: "border",
-                                      staticStyle: {
-                                        height: "60px",
-                                        width: "100px"
-                                      },
-                                      attrs: {
-                                        src:
-                                          "/background/Custom/" +
-                                          i +
-                                          "/thumb.png"
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.backgroundImage =
-                                            "/background/Custom/" +
-                                            i +
-                                            "/" +
-                                            i +
-                                            ".png"
-                                        }
-                                      }
-                                    })
-                                  ]
-                                )
-                              }),
-                              0
-                            )
+                            _c("div", { staticClass: "matirial-list" }, [
+                              _c(
+                                "ul",
+                                _vm._l(37, function(i) {
+                                  return _c("li", { key: i }, [
+                                    _c(
+                                      "div",
+                                      { staticClass: "form_input_radio" },
+                                      [
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "custom_height_60",
+                                            on: {
+                                              click: function($event) {
+                                                _vm.backgroundImage =
+                                                  "/background/Custom/" +
+                                                  i +
+                                                  "/" +
+                                                  i +
+                                                  ".png"
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("input", {
+                                              attrs: {
+                                                type: "radio",
+                                                name: "name"
+                                              }
+                                            }),
+                                            _vm._v(" "),
+                                            _c("span", [
+                                              _c("img", {
+                                                staticStyle: {
+                                                  height: "60px",
+                                                  width: "100px"
+                                                },
+                                                attrs: {
+                                                  src:
+                                                    "/background/Custom/" +
+                                                    i +
+                                                    "/thumb.png",
+                                                  alt: ""
+                                                }
+                                              })
+                                            ])
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                }),
+                                0
+                              )
+                            ])
                           ]
                         ),
                         _vm._v(" "),
@@ -53687,7 +53836,7 @@ var render = function() {
                   _vm.shapeDefaultClass == "rectangle12-3"
               }
             },
-            [_vm._m(10)]
+            [_vm._m(16)]
           )
         ])
       ]),
@@ -53923,6 +54072,79 @@ var staticRenderFns = [
         ])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", {
+        staticClass: "border",
+        attrs: {
+          src: "/background/Material/White-Plastic/1-thumb.png",
+          alt: ""
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", {
+        attrs: { src: "/background/Material/Gold-Plastic/7-thumb.png", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", {
+        attrs: {
+          src: "/background/Material/Silver-Plastic/8-thumb.png",
+          alt: ""
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", {
+        attrs: {
+          src: "/background/Material/Gold-Metallic/5-thumb.png",
+          alt: ""
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", {
+        attrs: {
+          src: "/background/Material/Silver-Metallic/6-thumb.png",
+          alt: ""
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", {
+        attrs: { src: "/background/Material/Wood-Grain/11-thumb.png", alt: "" }
+      })
+    ])
   },
   function() {
     var _vm = this
