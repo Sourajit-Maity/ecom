@@ -35,17 +35,15 @@ class AdminDashboard extends Controller
         $count['blockedContactCount'] = ContactUsForm::whereActive(0)->count();
 
         $count['productCount'] = Product::count();
-        $count['activeProductCount'] = Product::whereActive(1)->count();
-        $count['blockedProductCount'] = Product::whereActive(0)->count();
+
 
         $count['productpriceCount'] = ProductPrice::count();
-        $count['activeProductpriceCount'] = ProductPrice::whereActive(1)->count();
-        $count['blockedProductpriceCount'] = ProductPrice::whereActive(0)->count();
-
+ 
         $count['countryCount'] = Country::count();
         $count['stateCount'] = State::count();
+        $users=User::take(10)->latest()->get();
 
-        return view('admin.dashboard',compact('count'));
+        return view('admin.dashboard',compact('count','users'));
     }
     public function userCreateShow(){
         return view('admin.user-create');

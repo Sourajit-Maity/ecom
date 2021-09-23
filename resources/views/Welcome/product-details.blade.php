@@ -43,14 +43,10 @@
                 </div>
                 <div class="col-md-7 product-right">
                     <div class="product-dertails-cont">
-                        <h3>FC-100 Full Color Digital Badges on Plastic</h3>
+
+                        <h3>{{$products->product_name}}</h3>
                         <p>
-                            Badge and Sign Store's advanced computer technology can place any computer graphics
-                            file on a rugged, plastic badge. No matter how complex and colorful your company logo
-                            and artwork may be, our thermal transfer printing equipment can turn it into a badge
-                            or card. There are no limits on the number of colors or the type styles you choose.
-                            And to make them even more flexible, these badges can be written on with a Sharpie®
-                            and then wiped clean with alcohol.
+                        {{$products->product_description}}
                         </p>
 
                         <div class="price">
