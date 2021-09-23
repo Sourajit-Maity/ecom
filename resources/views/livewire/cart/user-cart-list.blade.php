@@ -25,10 +25,10 @@
                 aria-sort="ascending" aria-label="Agent: activate to sort column descending">Quantity <i
                     class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('quantity')"></i>
             </th>
-            <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
+            <!-- <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
                 aria-sort="ascending" aria-label="Agent: activate to sort column descending">Total Price <i
                     class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('product_category')"></i>
-            </th>
+            </th> -->
               <th class="align-center" rowspan="1" colspan="1" style="width: 20%;" aria-label="Actions">Actions</th>
         </tr>
       
@@ -39,14 +39,17 @@
         @forelse($usercarts as $usercart)
        
             <tr role="row" class="odd">
-                <td class="sorting_1" tabindex="0">{{ $usercart->product->product_photo_path  }}</td>
+                
+           
+				<td class="sorting_1" tabindex="0"><img src="{{url($usercart->product->product_photo_path)}}" width="100" class="img-circle img-left"></td>	
+                <!-- <td class="sorting_1" tabindex="0"><img src="{{url('images')}}/{{$usercart->product_image}}" width="100" class="img-circle img-left"></td>			 		  -->
                 <td class="sorting_1" tabindex="0">{{ $usercart->product->product_name  }}</td>
-                <td class="sorting_1" tabindex="0">{{ $usercart->product->product_category  }}</td>
+                <td class="sorting_1" tabindex="0">{{ $usercart->productprice->product_category  }}</td>
                 <td class="sorting_1" tabindex="0">{{ $usercart->productprice->price  }}</td>
                 <td class="sorting_1" tabindex="0">{{ $usercart->quantity  }}               
-                <!-- <livewire:cart-update :usercart="$usercart" :key="$usercart->id"/> -->
+                
                 </td>
-                <td class="sorting_1" tabindex="0">{{ $usercart->productprice->price  }}</td>
+                <!-- <td class="sorting_1" tabindex="0">{{ $usercart->productprice->price  }}</td> -->
                 <td>
                 <!-- <a class="dropdown-item" href="{{ route('cart.destroy', ['cart' => $usercart->id]) }}"><i
                             class="la la-edit"></i> Delete</a> -->
@@ -64,8 +67,10 @@
     <x-slot name="pagination">
         {{ $usercarts->links() }}
     </x-slot>
+    <x-slot name="perPage">    
+         Total: ${{ Cart::getTotal() }}
+    </x-slot>
     <x-slot name="showingEntries">
     <button href="#" class="px-6 py-2 text-red-800 bg-red-300" wire:click.prevent="clearAllCart"><i class="fa fa-trash" ></i> Remove All Cart Items</button>
-    <!-- <a href="#" class="px-6 py-2 text-red-800 bg-red-300" wire:click.prevent="clearAllCart">Remove All Cart Items</a> -->
     </x-slot>
 </x-admin.table>
