@@ -44,19 +44,19 @@
                                     <span>Background</span>
                                 </a></li>
 
-                            <li class="cursor-pointer">
+                            <li class="cursor-pointer" :class="[menu.border  ? 'active' : 'visited']" @click="selectDesignbar('border')">
                                 <a>
                                     <span><img src="welcome_assets/images/design-list03.svg" alt=""></span>
                                     <span>Border</span>
                                 </a></li>
 
-                            <li class="cursor-pointer">
+                            <li class="cursor-pointer" :class="[menu.fastener  ? 'active' : 'visited']" @click="selectDesignbar('fastener')">
                                 <a>
                                     <span><img src="welcome_assets/images/design-list04.svg" alt=""></span>
                                     <span>Fastener</span>
                                 </a></li>
 
-                            <li class="cursor-pointer">
+                            <li class="cursor-pointer" :class="[menu.dome  ? 'active' : 'visited']" @click="selectDesignbar('dome')">
                                 <a>
                                     <span><img src="welcome_assets/images/design-list05.svg" alt=""></span>
                                     <span>Dome</span>
@@ -398,6 +398,152 @@
                                             </div>
                                     </div>
                     </div>
+                     <div class="size-sec" v-if="menu.border">
+                        <div class="border-option">
+                           <a href="#uel">
+                            Border Option
+                           </a>
+                        </div>
+                        <div class="matirial-list">
+                            <ul>
+                                <li>
+                                    <div class="form_input_radio">
+                                        <label @click="borderDefaultClass = 'gold-border'" >
+                                            <input type="radio" name="name">
+                                            <span><img src="welcome_assets/images/border01.png" alt="" ></span>
+                                        </label>
+                                        <span>Gold Border</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="form_input_radio">
+                                        <label @click="borderDefaultClass = 'silver-border'">
+                                            <input type="radio" name="name">
+                                            <span><img src="welcome_assets/images/border02.png" alt=""></span>
+                                        </label>
+                                        <span>Silver Border</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form_input_radio">
+                                        <label @click="borderDefaultClass = 'black-border'">
+                                            <input type="radio" name="name">
+                                            <span><img src="welcome_assets/images/border03.png" alt=""></span>
+                                        </label>
+                                        <span>Black Border</span>
+                                    </div>
+                                </li>
+                                <!-- <li>
+                                    <div class="form_input_radio">
+                                        <label>
+                                            <input type="radio" name="name">
+                                            <span><img src="welcome_assets/images/border04.png" alt=""></span>
+                                        </label>
+                                        <span>Rose Border</span>
+                                    </div>
+                                </li> -->
+
+                                <li>
+                                    <div class="form_input_radio">
+                                        <label @click="borderDefaultClass = 'no-border'">
+                                            <input type="radio" checked name="name">
+                                            <span><img src="welcome_assets/images/border05.png" alt=""></span>
+                                        </label>
+                                        <span>No Border</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="size-sec" v-if="menu.fastener">
+                        <div class="border-option">
+                           <a href="#uel">
+                            FASTENER OPTIONS
+                           </a>
+                        </div>
+                        <div class="matirial-list fastener-list">
+                            <ul>
+                                <li>
+                                    <div class="form_input_radio">
+                                        <label @click="selected_fastener = 'Jewelers'">
+                                            <input type="radio" name="name">
+                                            <span><img src="/fasteners/Jeweler_s Pin.png" style="height:60px; width:100px;" alt=""></span>
+                                        </label>
+                                        <span>Jewelers Pin</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="form_input_radio">
+                                        <label @click="selected_fastener = 'Magnet'">
+                                            <input type="radio" name="name">
+                                            <span><img src="/fasteners/Magnet.jpg" style="height:60px; width:100px;" alt=""></span>
+                                        </label>
+                                        <span>Magnet</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form_input_radio">
+                                        <label @click="selected_fastener = 'Pin'">
+                                            <input type="radio" name="name">
+                                            <span><img src="/fasteners/Pin.jpg" style="height:60px; width:100px;" alt=""></span>
+                                        </label>
+                                        <span>Pin</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form_input_radio">
+                                        <label @click="selected_fastener = 'Swivel'">
+                                            <input type="radio" name="name">
+                                            <span><img src="/fasteners/Swivel Bulldog.png" style="height:60px; width:100px;" alt=""></span>
+                                        </label>
+                                        <span>Swivel Clip</span>
+                                    </div>
+                                </li>
+
+                                <!-- <li>
+                                    <div class="form_input_radio">
+                                        <label>
+                                            <input type="radio" name="name">
+                                            <span><img src="welcome_assets/images/f-image05.png" alt=""></span>
+                                        </label>
+                                        <span>Pocket clip</span>
+                                    </div>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="size-sec" v-if="menu.dome">
+                        <div class="border-option">
+                           <a href="#uel">
+                            NAME BADGE DOME
+                           </a>
+                        </div>
+                        <div class="matirial-list demo-list">
+                            <ul>
+                                <li>
+                                    <div class="form_input_radio">
+                                        <label @click="selected_fastener = 'doming'">
+                                            <input type="radio" name="name">
+                                            <span><img src="welcome_assets/images/demo01.png" alt=""></span>
+                                        </label>
+                                        <span>Add Doming</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="form_input_radio">
+                                        <label @click="selected_fastener = 'no doming'">
+                                            <input type="radio" checked name="name">
+                                            <span><img src="welcome_assets/images/demo02.png" alt=""></span>
+                                        </label>
+                                        <span>No Doming</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -517,6 +663,7 @@ export default {
                 textOptions:false,
                 fastener:false,
                 logoClip:false,
+                dome:false,
                 global_items:{ 
                     designYourBadge:true,
                     addNames:false,
@@ -529,6 +676,7 @@ export default {
             borderDefaultClass: 'no-border',
             backgroundImage: "",
             selected_fastener: "",
+            selected_dome: "",
             price:[
                 {quantity: 1-5, price:40 },
                 {quantity: 12, price:40 },
@@ -713,6 +861,7 @@ export default {
           this.menu.border= 'border'==menuName;
           this.menu.textOptions = 'textOptions'==menuName;
           this.menu.background= 'background'== menuName;
+          this.menu.dome= 'dome'== menuName;
       },
       deleteText(){
           let textDesignsLength=this.textDesigns.length;

@@ -2893,7 +2893,7 @@ input[type="submit"]:hover {
 }
 
 .matirial-list ul li .form_input_radio label span {
-    display: inline-block;
+    display: block;
     padding: 0 !important;
 }
 

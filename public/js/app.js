@@ -14426,6 +14426,152 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 
@@ -14508,6 +14654,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         textOptions: false,
         fastener: false,
         logoClip: false,
+        dome: false,
         global_items: {
           designYourBadge: true,
           addNames: false,
@@ -14520,6 +14667,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       borderDefaultClass: 'no-border',
       backgroundImage: "",
       selected_fastener: "",
+      selected_dome: "",
       price: [{
         quantity: 1 - 5,
         price: 40
@@ -14686,6 +14834,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.menu.border = 'border' == menuName;
       this.menu.textOptions = 'textOptions' == menuName;
       this.menu.background = 'background' == menuName;
+      this.menu.dome = 'dome' == menuName;
     },
     deleteText: function deleteText() {
       var textDesignsLength = this.textDesigns.length;
@@ -52596,11 +52745,47 @@ var render = function() {
                   [_vm._m(4)]
                 ),
                 _vm._v(" "),
-                _vm._m(5),
+                _c(
+                  "li",
+                  {
+                    staticClass: "cursor-pointer",
+                    class: [_vm.menu.border ? "active" : "visited"],
+                    on: {
+                      click: function($event) {
+                        return _vm.selectDesignbar("border")
+                      }
+                    }
+                  },
+                  [_vm._m(5)]
+                ),
                 _vm._v(" "),
-                _vm._m(6),
+                _c(
+                  "li",
+                  {
+                    staticClass: "cursor-pointer",
+                    class: [_vm.menu.fastener ? "active" : "visited"],
+                    on: {
+                      click: function($event) {
+                        return _vm.selectDesignbar("fastener")
+                      }
+                    }
+                  },
+                  [_vm._m(6)]
+                ),
                 _vm._v(" "),
-                _vm._m(7)
+                _c(
+                  "li",
+                  {
+                    staticClass: "cursor-pointer",
+                    class: [_vm.menu.dome ? "active" : "visited"],
+                    on: {
+                      click: function($event) {
+                        return _vm.selectDesignbar("dome")
+                      }
+                    }
+                  },
+                  [_vm._m(7)]
+                )
               ])
             ]),
             _vm._v(" "),
@@ -53822,6 +54007,284 @@ var render = function() {
                     )
                   ])
                 ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.menu.border
+              ? _c("div", { staticClass: "size-sec" }, [
+                  _vm._m(16),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "matirial-list" }, [
+                    _c("ul", [
+                      _c("li", [
+                        _c("div", { staticClass: "form_input_radio" }, [
+                          _c(
+                            "label",
+                            {
+                              on: {
+                                click: function($event) {
+                                  _vm.borderDefaultClass = "gold-border"
+                                }
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: { type: "radio", name: "name" }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(17)
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("Gold Border")])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("div", { staticClass: "form_input_radio" }, [
+                          _c(
+                            "label",
+                            {
+                              on: {
+                                click: function($event) {
+                                  _vm.borderDefaultClass = "silver-border"
+                                }
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: { type: "radio", name: "name" }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(18)
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("Silver Border")])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("div", { staticClass: "form_input_radio" }, [
+                          _c(
+                            "label",
+                            {
+                              on: {
+                                click: function($event) {
+                                  _vm.borderDefaultClass = "black-border"
+                                }
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: { type: "radio", name: "name" }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(19)
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("Black Border")])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("div", { staticClass: "form_input_radio" }, [
+                          _c(
+                            "label",
+                            {
+                              on: {
+                                click: function($event) {
+                                  _vm.borderDefaultClass = "no-border"
+                                }
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: {
+                                  type: "radio",
+                                  checked: "",
+                                  name: "name"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(20)
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("No Border")])
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.menu.fastener
+              ? _c("div", { staticClass: "size-sec" }, [
+                  _vm._m(21),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "matirial-list fastener-list" }, [
+                    _c("ul", [
+                      _c("li", [
+                        _c("div", { staticClass: "form_input_radio" }, [
+                          _c(
+                            "label",
+                            {
+                              on: {
+                                click: function($event) {
+                                  _vm.selected_fastener = "Jewelers"
+                                }
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: { type: "radio", name: "name" }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(22)
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("Jewelers Pin")])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("div", { staticClass: "form_input_radio" }, [
+                          _c(
+                            "label",
+                            {
+                              on: {
+                                click: function($event) {
+                                  _vm.selected_fastener = "Magnet"
+                                }
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: { type: "radio", name: "name" }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(23)
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("Magnet")])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("div", { staticClass: "form_input_radio" }, [
+                          _c(
+                            "label",
+                            {
+                              on: {
+                                click: function($event) {
+                                  _vm.selected_fastener = "Pin"
+                                }
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: { type: "radio", name: "name" }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(24)
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("Pin")])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("div", { staticClass: "form_input_radio" }, [
+                          _c(
+                            "label",
+                            {
+                              on: {
+                                click: function($event) {
+                                  _vm.selected_fastener = "Swivel"
+                                }
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: { type: "radio", name: "name" }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(25)
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("Swivel Clip")])
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.menu.dome
+              ? _c("div", { staticClass: "size-sec" }, [
+                  _vm._m(26),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "matirial-list demo-list" }, [
+                    _c("ul", [
+                      _c("li", [
+                        _c("div", { staticClass: "form_input_radio" }, [
+                          _c(
+                            "label",
+                            {
+                              on: {
+                                click: function($event) {
+                                  _vm.selected_fastener = "doming"
+                                }
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: { type: "radio", name: "name" }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(27)
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("Add Doming")])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("div", { staticClass: "form_input_radio" }, [
+                          _c(
+                            "label",
+                            {
+                              on: {
+                                click: function($event) {
+                                  _vm.selected_fastener = "no doming"
+                                }
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: {
+                                  type: "radio",
+                                  checked: "",
+                                  name: "name"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(28)
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("No Doming")])
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
               : _vm._e()
           ])
         ]),
@@ -53836,7 +54299,7 @@ var render = function() {
                   _vm.shapeDefaultClass == "rectangle12-3"
               }
             },
-            [_vm._m(16)]
+            [_vm._m(29)]
           )
         ])
       ]),
@@ -53936,48 +54399,42 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "cursor-pointer" }, [
-      _c("a", [
-        _c("span", [
-          _c("img", {
-            attrs: { src: "welcome_assets/images/design-list03.svg", alt: "" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("span", [_vm._v("Border")])
-      ])
+    return _c("a", [
+      _c("span", [
+        _c("img", {
+          attrs: { src: "welcome_assets/images/design-list03.svg", alt: "" }
+        })
+      ]),
+      _vm._v(" "),
+      _c("span", [_vm._v("Border")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "cursor-pointer" }, [
-      _c("a", [
-        _c("span", [
-          _c("img", {
-            attrs: { src: "welcome_assets/images/design-list04.svg", alt: "" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("span", [_vm._v("Fastener")])
-      ])
+    return _c("a", [
+      _c("span", [
+        _c("img", {
+          attrs: { src: "welcome_assets/images/design-list04.svg", alt: "" }
+        })
+      ]),
+      _vm._v(" "),
+      _c("span", [_vm._v("Fastener")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "cursor-pointer" }, [
-      _c("a", [
-        _c("span", [
-          _c("img", {
-            attrs: { src: "welcome_assets/images/design-list05.svg", alt: "" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("span", [_vm._v("Dome")])
-      ])
+    return _c("a", [
+      _c("span", [
+        _c("img", {
+          attrs: { src: "welcome_assets/images/design-list05.svg", alt: "" }
+        })
+      ]),
+      _vm._v(" "),
+      _c("span", [_vm._v("Dome")])
     ])
   },
   function() {
@@ -54144,6 +54601,142 @@ var staticRenderFns = [
       _c("img", {
         attrs: { src: "/background/Material/Wood-Grain/11-thumb.png", alt: "" }
       })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "border-option" }, [
+      _c("a", { attrs: { href: "#uel" } }, [
+        _vm._v(
+          "\n                        Border Option\n                       "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", {
+        attrs: { src: "welcome_assets/images/border01.png", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", {
+        attrs: { src: "welcome_assets/images/border02.png", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", {
+        attrs: { src: "welcome_assets/images/border03.png", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", {
+        attrs: { src: "welcome_assets/images/border05.png", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "border-option" }, [
+      _c("a", { attrs: { href: "#uel" } }, [
+        _vm._v(
+          "\n                        FASTENER OPTIONS\n                       "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", {
+        staticStyle: { height: "60px", width: "100px" },
+        attrs: { src: "/fasteners/Jeweler_s Pin.png", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", {
+        staticStyle: { height: "60px", width: "100px" },
+        attrs: { src: "/fasteners/Magnet.jpg", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", {
+        staticStyle: { height: "60px", width: "100px" },
+        attrs: { src: "/fasteners/Pin.jpg", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", {
+        staticStyle: { height: "60px", width: "100px" },
+        attrs: { src: "/fasteners/Swivel Bulldog.png", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "border-option" }, [
+      _c("a", { attrs: { href: "#uel" } }, [
+        _vm._v(
+          "\n                        NAME BADGE DOME\n                       "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", { attrs: { src: "welcome_assets/images/demo01.png", alt: "" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("img", { attrs: { src: "welcome_assets/images/demo02.png", alt: "" } })
     ])
   },
   function() {
