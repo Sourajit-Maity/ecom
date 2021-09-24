@@ -87,7 +87,7 @@
             </div>
             <div class="col-md-6 col-lg-6 col-xl-6">
                 <x-admin.dashboard-count-widget>
-                <x-admin.dashboard-count-widget-item title="Total Product price" description="Total product price available in this system" :count="$count['productpriceCount']" href="{{ route('product-price.index') }}" />
+                <x-admin.dashboard-count-widget-item title="Total Product price" description="Total product price available in this system" :count="$count['productpriceCount']" href="{{ route('price.index') }}" />
                 </x-admin.dashboard-count-widget>
             </div>
         </div>

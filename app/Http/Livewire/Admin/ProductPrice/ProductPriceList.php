@@ -21,7 +21,7 @@ class ProductPriceList extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public $searchProducttype,$searchPrice,$searchPricerange,$searchProductcategory, $perPage = 5;
+    public $searchName, $perPage = 5;
     protected $listeners = ['deleteConfirm', 'changeStatus'];
 
     public function mount()
@@ -51,27 +51,17 @@ class ProductPriceList extends Component
     }
     public function resetSearch()
     {
-        $this->searchProducttype = "";
-        $this->searchPrice = "";
-        $this->searchPricerange = "";
-        $this->searchProductcategory = "";
+        $this->searchName = "";
 
     }
 
     public function render()
     {
         $productpriceQuery = ProductPrice::query();
-        if ($this->searchProducttype)
-        $productpriceQuery->Where('product_type', 'like', '%' . $this->searchProducttype . '%');
-        if ($this->searchPrice)
-            $productpriceQuery->Where('price', 'like', '%' . $this->searchPrice . '%');
-        if ($this->searchPricerange)
-            $productpriceQuery->Where('price_range', 'like', '%' . $this->searchPricerange . '%');
-        if ($this->searchProductcategory)
-            $productpriceQuery->Where('product_category', 'like', '%' . $this->searchProductcategory . '%');
-
+        if ($this->searchName)
+        $productpriceQuery->Where('name', 'like', '%' . $this->searchName . '%');
         return view('livewire.admin.product-price.product-price-list', [
-            'productprices' => $productpriceQuery
+            'prices' => $productpriceQuery
                 ->orderBy($this->sortBy, $this->sortDirection)
                 ->paginate($this->perPage)
         ]);
