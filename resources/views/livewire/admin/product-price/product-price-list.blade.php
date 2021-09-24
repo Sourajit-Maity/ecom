@@ -15,21 +15,10 @@
 
     <x-slot name="thead">
         <tr role="row">
-            <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
-                aria-sort="ascending" aria-label="Agent: activate to sort column descending">Product Type <i
-                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('product_type')"></i>
-            </th>
-            <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 12%;"
-                aria-sort="ascending" aria-label="Agent: activate to sort column descending"> Product Price <i
-                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('price')"></i>
-            </th>
-            <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 18%;"
-                aria-sort="ascending" aria-label="Agent: activate to sort column descending">Product Price range <i
-                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('price_range')"></i>
-            </th>
+           
             <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 15%;"
-                aria-sort="ascending" aria-label="Agent: activate to sort column descending">Product Category <i
-                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('product_category')"></i>
+                aria-sort="ascending" aria-label="Agent: activate to sort column descending">Name<i
+                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('name')"></i>
             </th>
            
           
@@ -38,22 +27,9 @@
 
         <tr class="filter">
             <th>
-                <x-admin.input type="search" wire:model.defer="searchProducttype" placeholder="" autocomplete="off"
+                <x-admin.input type="search" wire:model.defer="searchName" placeholder="" autocomplete="off"
                     class="form-control-sm form-filter" />
-            </th>
-            <th>
-                <x-admin.input type="search" wire:model.defer="searchPrice" placeholder="" autocomplete="off"
-                    class="form-control-sm form-filter" />
-            </th>
-            <th>
-                <x-admin.input type="search" wire:model.defer="searchPricerange" placeholder="" autocomplete="off"
-                    class="form-control-sm form-filter" />
-            </th>
-            <th>
-                <x-admin.input type="search" wire:model.defer="searchProductcategory" placeholder="" autocomplete="off"
-                    class="form-control-sm form-filter" />
-            </th>
-          
+            </th>          
            
             <th>
                 <div class="row">
@@ -79,35 +55,13 @@
     </x-slot>
 
     <x-slot name="tbody">
-        @forelse($productprices as $product)
+        @forelse($prices as $price)
             <tr role="row" class="odd">
-                <td class="sorting_1" tabindex="0">{{ $product->product_type  }}</td>
-                <td class="sorting_1" tabindex="0">{{ $product->price  }}</td>
-                @if($product->price_range =='500') 
-                <td class="sorting_1" tabindex="0">More Than Five Hundred</td>
-                @elseif($product->price_range =='200-499') 
-                <td class="sorting_1" tabindex="0">Two Hundred to Four Hundred Ninty Nine</td>
-                @elseif($product->price_range =='101-199') 
-                <td class="sorting_1" tabindex="0">Hundred One to One Hundred Ninty Nine</td>
-                @elseif($product->price_range =='51-100') 
-                <td class="sorting_1" tabindex="0">FiftyOne to Hundred</td>
-                @elseif($product->price_range =='26-50') 
-                <td class="sorting_1" tabindex="0">TweentySix to Fifty</td>
-                @elseif($product->price_range =='16-25') 
-                <td class="sorting_1" tabindex="0">Sixteen to TweentyFive</td>
-                @elseif($product->price_range =='6-15') 
-                <td class="sorting_1" tabindex="0">Six to Fifteen</td>
-                @elseif($product->price_range =='1-5') 
-                <td class="sorting_1" tabindex="0">One to Five</td>
-                @endif
-                <td class="sorting_1" tabindex="0">{{ $product->product_category  }}</td>
-
-                
-              
+                <td class="sorting_1" tabindex="0">{{ $price->name  }}</td>
                 <x-admin.td-action>
-                    <a class="dropdown-item" href="{{ route('product-price.edit', ['product_price' => $product->id]) }}"><i
-                            class="la la-edit"></i> Edit</a>
-                    <!-- <button href="#" class="dropdown-item" wire:click="deleteAttempt({{ $product->id }})"><i
+                    <!-- <a class="dropdown-item" href="{{ route('price.edit', ['price' => $price->id]) }}"><i
+                            class="la la-edit"></i> Edit</a> -->
+                    <!-- <button href="#" class="dropdown-item" wire:click="deleteAttempt({{ $price->id }})"><i
                             class="fa fa-trash"></i> Delete</button> -->
                 </x-admin.td-action>
             </tr>
@@ -118,9 +72,9 @@
         @endforelse
     </x-slot>
     <x-slot name="pagination">
-        {{ $productprices->links() }}
+        {{ $prices->links() }}
     </x-slot>
     <x-slot name="showingEntries">
-        Showing {{ $productprices->firstitem() }} to {{ $productprices->lastitem() }} of {{ $productprices->total() }} entries
+        Showing {{ $prices->firstitem() }} to {{ $prices->lastitem() }} of {{ $prices->total() }} entries
     </x-slot>
 </x-admin.table>
