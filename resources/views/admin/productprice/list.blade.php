@@ -8,7 +8,7 @@
 				</x-admin.breadcrumbs>
 
 			    <x-slot name="toolbar" >
-					<!-- <a href="{{route('product-price.create')}}" class="btn btn-brand btn-elevate btn-icon-sm">
+					<!-- <a href="{{route('price.create')}}" class="btn btn-brand btn-elevate btn-icon-sm">
 						<i class="la la-plus"></i>
 						Add New Product price
 					</a> -->

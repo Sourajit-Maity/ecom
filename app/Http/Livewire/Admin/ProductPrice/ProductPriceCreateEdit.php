@@ -15,53 +15,24 @@ class ProductPriceCreateEdit extends Component
 {
     use AlertMessage;
     use WithFileUploads;
-    public $product_type,$product_type_slug,$price,$product_category, $user_id,$blankArr, $productprice,$price_range;
+    public $name,$slug,$magnet,$pin, $user_id,$blankArr, $swivel_clip,$price;
     public $isEdit=false;
     public $categoryList = [];
     public $product_rangeList = [];
     public $productnames = [];
 
-    public function mount($productprice = null)
+    public function mount($price = null)
     {
-        if ($productprice) {
-            $this->productprice = $productprice;
-            $this->fill($this->productprice);
+        if ($price) {
+            $this->price = $price;
+            $this->fill($this->price);
             $this->isEdit=true;
         }
         else
-            $this->productprice=new ProductPrice;
+            $this->price=new ProductPrice;
             $this->blankArr = [
                 "value"=> "", "text"=> "== Select One =="
             ];
-
-            $this->categoryList = [
-                ['value' => 0, 'text' => "Choose Category"],
-                ['value' => "DigBadge", 'text' => "DigBadge"],
-                ['value' => "SMSBadge", 'text' => "SMSBadge"],
-                ['value' => "SMGBadge", 'text' => "SMGBadge"],
-                ['value' => "BRSBadge", 'text' => "BRSBadge"],
-                ['value' => "BRGBadge", 'text' => "BRGBadge"],
-                ['value' => "FRBadge", 'text' => "FRBadge"],
-                ['value' => "FRGBadge", 'text' => "FRGBadge"],
-                ['value' => "FRSBadge", 'text' => "FRSBadge"],
-                ['value' => "FRBRSBadge", 'text' => "FRBRSBadge"],
-                ['value' => "FRBRGBadge", 'text' => "FRBRGBadge"],
-                ['value' => "OvBadge", 'text' => "OvBadge"],
-                ['value' => "FrOvBadge", 'text' => "FrOvBadge"],
-                ['value' => "FrOvBRSBadge", 'text' => "FrOvBRSBadge"],
-            ];
-            $this->product_rangeList = [
-                ['value' => 0, 'text' => "Choose Quantity"],
-                ['value' => "1-5", 'text' => "One to Five"],
-                ['value' => "6-15", 'text' => "Six to Fifteen"],
-                ['value' => "16-25", 'text' => "Sixteen to TweentyFive"],
-                ['value' => "26-50", 'text' => "TweentySix to Fifty"],
-                ['value' => "51-100", 'text' => "FiftyOne to Hundred"],
-                ['value' => "101-199", 'text' => "Hundred One to One Hundred Ninty Nine"],
-                ['value' => "200-499", 'text' => "Two Hundred to Four Hundred Ninty Nine"],
-                ['value' => "500", 'text' => "More Than Five Hundred"],
-            ];
-
 
     }
 
@@ -70,7 +41,7 @@ class ProductPriceCreateEdit extends Component
         return
             [
                 'product_type' => ['required'],
-                'price' => ['required'],
+                '1-5' => ['required'],
                 'product_category' => ['required'],
                 "price_range"  =>  ['required'],
                 

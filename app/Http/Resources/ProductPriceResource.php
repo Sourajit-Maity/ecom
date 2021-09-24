@@ -19,7 +19,7 @@ class ProductPriceResource extends JsonResource
            
             'name' => $this->name,
             'slug' => $this->slug,
-            '1-5' => '1-5',
+            '1-5' => 1-5,
             '6-15' => 6-15,
             '16-25' => 16-25,
             '26-50' => 26-50,
