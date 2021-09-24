@@ -457,12 +457,12 @@ class ProductController extends Controller
  */
     public function productPrice()
 {
-    $productprice = ProductPrice::latest()->get();
+    $productprice = ProductPrice::latest()->get()->groupBy('slug');
 
-    $price = ProductPriceResource::collection($productprice);
+    //$price = ProductPriceResource::collection($productprice)->groupBy('slug');
     
-    if(count($price) > 0){
-        return response()->json(["status" => true, "data" => $price]);
+    if(count($productprice) > 0){
+        return response()->json(["status" => true, "data" => $productprice]);
     }
     else{
         return response()->json(["status" => true, "message" => "product price not found"]);
