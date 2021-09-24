@@ -16,10 +16,10 @@ class ProductPriceCreateEdit extends Component
     use AlertMessage;
     use WithFileUploads;
     public $name,$slug,$magnet,$pin, $user_id,$blankArr, $swivel_clip,$price;
+    public $one_to_five,$six_to_fifteen,$sixteen_to_twentyfive,$twentysix_to_fifty, $fiftyone_to_hundred;
+    public $hundredone_to_oneninetynine, $twohundred_to_fournintynine,$fivehundredplus;
     public $isEdit=false;
-    public $categoryList = [];
-    public $product_rangeList = [];
-    public $productnames = [];
+ 
 
     public function mount($price = null)
     {
@@ -29,7 +29,7 @@ class ProductPriceCreateEdit extends Component
             $this->isEdit=true;
         }
         else
-            $this->price=new ProductPrice;
+            $this->price = new ProductPrice;
             $this->blankArr = [
                 "value"=> "", "text"=> "== Select One =="
             ];
@@ -40,10 +40,18 @@ class ProductPriceCreateEdit extends Component
     {
         return
             [
-                'product_type' => ['required'],
+                '26-50' => ['required'],
                 '1-5' => ['required'],
-                'product_category' => ['required'],
-                "price_range"  =>  ['required'],
+                '6-15' => ['required'],
+                "16-25"  =>  ['required'],
+                '51-100' => ['required'],
+                '101-199' => ['required'],
+                '200-499' => ['required'],
+                "500+"  =>  ['required'],
+                'magnet' => ['required'],
+                'pin' => ['required'],
+                'swivel_clip' => ['required'],
+                "name"  =>  ['required'],
                 
             ];
     }
@@ -51,13 +59,21 @@ class ProductPriceCreateEdit extends Component
     public function validationRuleForUpdate(): array
     {
         return
-            [   
-                'product_type' => ['required'],
-                'price' => ['required'],
-                'product_category' => ['required'],
-                "price_range"  =>  ['required'],               
-                
-            ];
+        [
+            '26-50' => ['required'],
+            '1-5' => ['required'],
+            '6-15' => ['required'],
+            "16-25"  =>  ['required'],
+            '51-100' => ['required'],
+            '101-199' => ['required'],
+            '200-499' => ['required'],
+            "500+"  =>  ['required'],
+            'magnet' => ['required'],
+            'pin' => ['required'],
+            'swivel_clip' => ['required'],
+            "name"  =>  ['required'],
+            
+        ];
     }
 
 
@@ -65,9 +81,9 @@ class ProductPriceCreateEdit extends Component
     public function saveOrUpdate()
     {
        
-        $this->isEdit ? $this->productprice->user_id = auth()->user()->id : $this->productprice->user_id = auth()->user()->id;
+        $this->isEdit ? $this->price->user_id = auth()->user()->id : $this->price->user_id = auth()->user()->id;
 
-        $this->productprice->fill($this->validate($this->isEdit ? $this->validationRuleForUpdate() : $this->validationRuleForSave()))->save();
+        $this->price->fill($this->validate($this->isEdit ? $this->validationRuleForUpdate() : $this->validationRuleForSave()))->save();
         
         $msgAction = 'Product Price is '. ($this->isEdit ? 'updated' : 'added') . ' successfully';
         $this->showToastr("success",$msgAction);
