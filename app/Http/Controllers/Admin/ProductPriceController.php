@@ -24,7 +24,7 @@ class ProductPriceController extends Controller
      */
     public function create()
     {
-        return view('admin.productprice.create-edit',['productprice'=>null]);
+        return view('admin.productprice.create-edit',['price'=>null]);
     }
 
     /**
@@ -57,8 +57,8 @@ class ProductPriceController extends Controller
      */
     public function edit($id)
     {
-        $productprice = ProductPrice::findOrFail($id);
-        return view('admin.productprice.create-edit',compact('productprice'));
+        $price = ProductPrice::findOrFail($id);
+        return view('admin.productprice.create-edit',compact('price'));
     }
 
     /**

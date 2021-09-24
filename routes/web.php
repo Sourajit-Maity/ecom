@@ -96,7 +96,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum','role_or_permi
         'contact-form' => ContactController::class,
         'review-master' => ReviewController::class,
         'product' => ProductController::class,
-        'product-price' => ProductPriceController::class,
+        'price' => ProductPriceController::class,
         'country' => CountryController::class,
         'city' => CityController::class,
         'state' => StateController::class,

@@ -70,7 +70,7 @@
 									<i class="kt-menu__section-icon flaticon-more-v2"></i>
 								</li>
 							
-								<li class="kt-menu__item  {{ Request::is('admin/product-price*') ? 'kt-menu__item--active' : '' }}" aria-haspopup="true"><a href="{{route('product-price.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-money-check-alt"></i><span class="kt-menu__link-text">Product Price</span></a></li>
+								<li class="kt-menu__item  {{ Request::is('admin/price*') ? 'kt-menu__item--active' : '' }}" aria-haspopup="true"><a href="{{route('price.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-money-check-alt"></i><span class="kt-menu__link-text">Product Price</span></a></li>
 
 								<li class="kt-menu__section ">
 									<h4 class="kt-menu__section-text">Content Management</h4>

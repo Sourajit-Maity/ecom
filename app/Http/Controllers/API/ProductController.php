@@ -457,7 +457,8 @@ class ProductController extends Controller
  */
     public function productPrice()
 {
-    $productprice = ProductPrice::latest()->get()->groupBy('slug');
+    $productprice = ProductPrice::select('name','slug','1-5','6-15','16-25','26-50','51-100','101-199','200-499','500+','magnet','pin','swivel_clip')
+    ->latest()->get()->groupBy('slug');
 
     //$price = ProductPriceResource::collection($productprice)->groupBy('slug');
     
