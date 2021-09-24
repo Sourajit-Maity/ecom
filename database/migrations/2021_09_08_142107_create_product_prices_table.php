@@ -15,16 +15,24 @@ class CreateProductPricesTable extends Migration
     {
         Schema::create('product_prices', function (Blueprint $table) {
             $table->id();
-            $table->string('product_type');
-            $table->string('product_type_slug');
-            $table->text('product_category');
-            $table->decimal('price',8,2); 
-            $table->string('price_range');
+            $table->string('name');
+            $table->string('slug');
+            $table->decimal('1-5',8,2)->nullable();
+            $table->decimal('6-15',8,2)->nullable(); 
+            $table->decimal('16-25',8,2)->nullable(); 
+            $table->decimal('26-50',8,2)->nullable(); 
+            $table->decimal('51-100',8,2)->nullable(); 
+            $table->decimal('101-199',8,2)->nullable(); 
+            $table->decimal('200-499',8,2)->nullable(); 
+            $table->decimal('500+',8,2)->nullable(); 
+            $table->decimal('magnet',8,2)->nullable(); 
+            $table->decimal('pin',8,2)->nullable(); 
+            $table->decimal('swivel_clip',8,2)->nullable();
             $table->foreignId('user_id')->nullable()->references('id')->on('users')->onDelete('cascade');           
             $table->timestamps();
             $table->softDeletes();
         });
-    }
+    } 
 
     /**
      * Reverse the migrations.

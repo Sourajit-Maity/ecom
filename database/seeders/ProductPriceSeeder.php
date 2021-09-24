@@ -15,568 +15,129 @@ class ProductPriceSeeder extends Seeder
     {
         $datas = [
             [
-                "product_type" => "White Plastic Rectangle",
-                "product_type_slug" => "white_plastic",
-                "product_category" => "DigBadge",
-                "price" => "15.37",
-                "price_range" => "1-5",
+                "name" => "White Plastic Rectangle",
+                "slug" => "white_plastic_rectangle",
+                "1-5" => "15.37",
+                "6-15" => "13.88",
+                "16-25" => "12.44",
+                "26-50" => "11.09",
+                "51-100" => "9.23",
+                "101-199" => "8.14",
+                "200-499" => "7.75",
+                "500+" => "7.07",
+
             ],
 
             [
-                "product_type" => "White Plastic Rectangle",
-                "product_type_slug" => "white_plastic",
-                "product_category" => "DigBadge",
-                "price" => "13.88",
-                "price_range" => "6-15",
+                "name" => "Gold & Silver Plastic Rectangle",
+                "slug" => "gold_silver_plastic_rectangle",
+                "1-5" => "16.42",
+                "6-15" => "14.93",
+                "16-25" => "13.49",
+                "26-50" => "12.14",
+                "51-100" => "10.28",
+                "101-199" => "9.19",
+                "200-499" => "8.80",
+                "500+" => "8.12",
+
             ],
 
             [
-                "product_type" => "White Plastic Rectangle",
-                "product_type_slug" => "white_plastic",
-                "product_category" => "DigBadge",
-                "price" => "12.44",
-                "price_range" => "16-25",
+                "name" => "Metallic Plastic Rectangle",
+                "slug" => "metallic_plastic_rectangle",
+                "1-5" => "16.95",
+                "6-15" => "15.46",
+                "16-25" => "14.02",
+                "26-50" => "12.66",
+                "51-100" => "10.80",
+                "101-199" => "9.71",
+                "200-499" => "9.32",
+                "500+" => "8.64",
+
+            ],
+            [
+                "name" => "Framed White Badges",
+                "slug" => "framed_white_badges",
+                "1-5" => "21.39",
+                "6-15" => "21.39",
+                "16-25" => "21.39",
+                "26-50" => "21.39",
+                "51-100" => "21.39",
+                "101-199" => "21.39",
+                "200-499" => "21.39",
+                "500+" => "21.39",
             ],
 
             [
-                "product_type" => "White Plastic Rectangle",
-                "product_type_slug" => "white_plastic",
-                "product_category" => "DigBadge",
-                "price" => "11.09",
-                "price_range" => "26-50",
+                "name" => "Framed Gold or Silver Badges",
+                "slug" => "framed_gold_or_silver_badges",
+                "1-5" => "22.49",
+                "6-15" => "20.93",
+                "16-25" => "19.42",
+                "26-50" => "17.99",
+                "51-100" => "16.04",
+                "101-199" => "14.90",
+                "200-499" => "14.49",
+                "500+" => "13.77",
             ],
 
             [
-                "product_type" => "White Plastic Rectangle",
-                "product_type_slug" => "white_plastic",
-                "product_category" => "DigBadge",
-                "price" => "9.23",
-                "price_range" => "51-100",
+                "name" => "Framed metallic Badges",
+                "slug" => "framed_metallic_badges",
+                "1-5" => "23.04",
+                "6-15" => "21.48",
+                "16-25" => "19.97",
+                "26-50" => "18.55",
+                "51-100" => "16.59",
+                "101-199" => "15.45",
+                "200-499" => "15.04",
+                "500+" => "14.32",
+            ],
+            [
+                "name" => "Oval White Badges",
+                "slug" => "oval_white_badges",
+                "1-5" => "19.37",
+                "6-15" => "17.88",
+                "16-25" => "16.44",
+                "26-50" => "15.09",
+                "51-100" => "13.23",
+                "101-199" => "12.14",
+                "200-499" => "11.75",
+                "500+" => "11.07",
+            ],
+            [
+                "name" => "Framed Oval White Badges",
+                "slug" => "framed_oval_white_badges",
+                "1-5" => "25.37",
+                "6-15" => "23.88",
+                "16-25" => "22.44",
+                "26-50" => "21.09",
+                "51-100" => "19.23",
+                "101-199" => "18.14",
+                "200-499" => "17.75",
+                "500+" => "17.07",
             ],
 
             [
-                "product_type" => "White Plastic Rectangle",
-                "product_type_slug" => "white_plastic",
-                "product_category" => "DigBadge",
-                "price" => "8.14",
-                "price_range" => "101-199",
+                "name" => "Framed Metallic Oval Badges",
+                "slug" => "framed_metallic_oval_badges",
+                "1-5" => "26.37",
+                "6-15" => "24.88",
+                "16-25" => "23.44",
+                "26-50" => "22.09",
+                "51-100" => "20.23",
+                "101-199" => "19.14",
+                "200-499" => "18.75",
+                "500+" => "18.07",
             ],
             [
-                "product_type" => "White Plastic Rectangle",
-                "product_type_slug" => "white_plastic",
-                "product_category" => "DigBadge",
-                "price" => "7.75",
-                "price_range" => "200-499",
-            ],
-            [
-                "product_type" => "White Plastic Rectangle",
-                "product_type_slug" => "white_plastic",
-                "product_category" => "DigBadge",
-                "price" => "7.07",
-                "price_range" => "500",
-            ],
+                "name" => "Fasteners",
+                "slug" => "fasteners",
+                "magnet" => "2.00",
+                "pin" => "0.00",
+                "swivel_clip" => "0.00",
 
-
-
-
-
-            [
-                "product_type" => "Gold & Silver Plastic Rectangle",
-                "product_type_slug" => "gold_silver_plastic",
-                "product_category" => "SMSBadge",
-                "price" => "16.42",
-                "price_range" => "1-5",
             ],
-            [
-                "product_type" => "Gold & Silver Plastic Rectangle",
-                "product_type_slug" => "gold_silver_plastic",
-                "product_category" => "SMSBadge",
-                "price" => "14.93",
-                "price_range" => "6-15",
-            ],
-            [
-                "product_type" => "Gold & Silver Plastic Rectangle",
-                "product_type_slug" => "gold_silver_plastic",
-                "product_category" => "SMSBadge",
-                "price" => "16.42",
-                "price_range" => "13.49",
-            ],
-            [
-                "product_type" => "Gold & Silver Plastic Rectangle",
-                "product_type_slug" => "gold_silver_plastic",
-                "product_category" => "SMSBadge",
-                "price" => "12.14",
-                "price_range" => "26-50",
-            ],
-            [
-                "product_type" => "Gold & Silver Plastic Rectangle",
-                "product_type_slug" => "gold_silver_plastic",
-                "product_category" => "SMSBadge",
-                "price" => "10.28",
-                "price_range" => "51-100",
-            ],
-            [
-                "product_type" => "Gold & Silver Plastic Rectangle",
-                "product_type_slug" => "gold_silver_plastic",
-                "product_category" => "SMSBadge",
-                "price" => "9.19",
-                "price_range" => "101-199",
-            ],
-            [
-                "product_type" => "Gold & Silver Plastic Rectangle",
-                "product_type_slug" => "gold_silver_plastic",
-                "product_category" => "SMSBadge",
-                "price" => "8.80",
-                "price_range" => "200-499",
-            ],
-            [
-                "product_type" => "Gold & Silver Plastic Rectangle",
-                "product_type_slug" => "gold_silver_plastic",
-                "product_category" => "SMSBadge",
-                "price" => "8.12",
-                "price_range" => "500",
-            ],
-
-
-
-
-
-
-
-
-
-
-
-            [
-                "product_type" => "Metallic Plastic Rectangle",
-                "product_type_slug" => "metalic_plastic",
-                "product_category" => "BRSBadge",
-                "price" => "16.95",
-                "price_range" => "1-5",
-            ],
-            [
-                "product_type" => "Metallic Plastic Rectangle",
-                "product_type_slug" => "metalic_plastic",
-                "product_category" => "BRSBadge",
-                "price" => "15.46",
-                "price_range" => "6-15",
-            ],
-            [
-                "product_type" => "Metallic Plastic Rectangle",
-                "product_type_slug" => "metalic_plastic",
-                "product_category" => "BRSBadge",
-                "price" => "14.02",
-                "price_range" => "16-25",
-            ],
-            [
-                "product_type" => "Metallic Plastic Rectangle",
-                "product_type_slug" => "metalic_plastic",
-                "product_category" => "BRSBadge",
-                "price" => "12.66",
-                "price_range" => "26-50",
-            ],
-            [
-                "product_type" => "Metallic Plastic Rectangle",
-                "product_type_slug" => "metalic_plastic",
-                "product_category" => "BRSBadge",
-                "price" => "10.80",
-                "price_range" => "51-100",
-            ],
-            [
-                "product_type" => "Metallic Plastic Rectangle",
-                "product_type_slug" => "metalic_plastic",
-                "product_category" => "BRSBadge",
-                "price" => "9.71",
-                "price_range" => "101-199",
-            ],
-            [
-                "product_type" => "Metallic Plastic Rectangle",
-                "product_type_slug" => "metalic_plastic",
-                "product_category" => "BRSBadge",
-                "price" => "9.32",
-                "price_range" => "200-499",
-            ],
-            [
-                "product_type" => "Metallic Plastic Rectangle",
-                "product_type_slug" => "metalic_plastic",
-                "product_category" => "BRSBadge",
-                "price" => "8.64",
-                "price_range" => "500",
-            ],
-
-
-
-
-
-
-            [
-                "product_type" => "Framed White Badges",
-                "product_type_slug" => "framed_white",
-                "product_category" => "FRBadge",
-                "price" => "21.39",
-                "price_range" => "1-5",
-            ],
-            [
-                "product_type" => "Framed White Badges",
-                "product_type_slug" => "framed_white",
-                "product_category" => "FRBadge",
-                "price" => "21.39",
-                "price_range" => "6-15",
-            ],
-            [
-                "product_type" => "Framed White Badges",
-                "product_type_slug" => "framed_white",
-                "product_category" => "FRBadge",
-                "price" => "21.39",
-                "price_range" => "16-25",
-            ],
-            [
-                "product_type" => "Framed White Badges",
-                "product_type_slug" => "framed_white",
-                "product_category" => "FRBadge",
-                "price" => "21.39",
-                "price_range" => "26-50",
-            ],
-            [
-                "product_type" => "Framed White Badges",
-                "product_type_slug" => "framed_white",
-                "product_category" => "FRBadge",
-                "price" => "21.39",
-                "price_range" => "51-100",
-            ],
-            [
-                "product_type" => "Framed White Badges",
-                "product_type_slug" => "framed_white",
-                "product_category" => "FRBadge",
-                "price" => "21.39",
-                "price_range" => "101-199",
-            ],
-            [
-                "product_type" => "Framed White Badges",
-                "product_type_slug" => "framed_white",
-                "product_category" => "FRBadge",
-                "price" => "21.39",
-                "price_range" => "200-499",
-            ],
-            [
-                "product_type" => "Framed White Badges",
-                "product_type_slug" => "framed_white",
-                "product_category" => "FRBadge",
-                "price" => "21.39",
-                "price_range" => "500",
-            ],
-
-
-
-
-
-
-
-
-
-            [
-                "product_type" => "Framed Gold or Silver Badges",
-                "product_type_slug" => "framed_gold_silver",
-                "product_category" => "FRGBadge",
-                "price" => "22.49",
-                "price_range" => "1-5",
-            ],
-            [
-                "product_type" => "Framed Gold or Silver Badges",
-                "product_type_slug" => "framed_gold_silver",
-                "product_category" => "FRGBadge",
-                "price" => "20.93",
-                "price_range" => "6-15",
-            ],
-            [
-                "product_type" => "Framed Gold or Silver Badges",
-                "product_type_slug" => "framed_gold_silver",
-                "product_category" => "FRGBadge",
-                "price" => "19.42",
-                "price_range" => "16-25",
-            ],
-            [
-                "product_type" => "Framed Gold or Silver Badges",
-                "product_type_slug" => "framed_gold_silver",
-                "product_category" => "FRGBadge",
-                "price" => "17.99",
-                "price_range" => "26-50",
-            ],
-            [
-                "product_type" => "Framed Gold or Silver Badges",
-                "product_type_slug" => "framed_gold_silver",
-                "product_category" => "FRGBadge",
-                "price" => "16.04",
-                "price_range" => "51-100",
-            ],
-            [
-                "product_type" => "Framed Gold or Silver Badges",
-                "product_type_slug" => "framed_gold_silver",
-                "product_category" => "FRGBadge",
-                "price" => "14.90",
-                "price_range" => "101-199",
-            ],
-            [
-                "product_type" => "Framed Gold or Silver Badges",
-                "product_type_slug" => "framed_gold_silver",
-                "product_category" => "FRGBadge",
-                "price" => "14.49",
-                "price_range" => "200-499",
-            ],
-            [
-                "product_type" => "Framed Gold or Silver Badges",
-                "product_type_slug" => "framed_gold_silver",
-                "product_category" => "FRGBadge",
-                "price" => "13.77",
-                "price_range" => "500",
-            ],
-
-
-
-
-
-            [
-                "product_type" => "Framed metallic Badges",
-                "product_type_slug" => "framed_metallic",
-                "product_category" => "FRBRSBadge",
-                "price" => "23.04",
-                "price_range" => "1-5",
-            ],
-            [
-                "product_type" => "Framed metallic Badges",
-                "product_type_slug" => "framed_metallic",
-                "product_category" => "FRBRSBadge",
-                "price" => "21.48",
-                "price_range" => "6-15",
-            ],
-            [
-                "product_type" => "Framed metallic Badges",
-                "product_type_slug" => "framed_metallic",
-                "product_category" => "FRBRSBadge",
-                "price" => "19.97",
-                "price_range" => "16-25",
-            ],
-            [
-                "product_type" => "Framed metallic Badges",
-                "product_type_slug" => "framed_metallic",
-                "product_category" => "FRBRSBadge",
-                "price" => "18.55",
-                "price_range" => "26-50",
-            ],
-            [
-                "product_type" => "Framed metallic Badges",
-                "product_type_slug" => "framed_metallic",
-                "product_category" => "FRBRSBadge",
-                "price" => "16.59",
-                "price_range" => "51-100",
-            ],
-            [
-                "product_type" => "Framed metallic Badges",
-                "product_type_slug" => "framed_metallic",
-                "product_category" => "FRBRSBadge",
-                "price" => "15.45",
-                "price_range" => "101-199",
-            ],
-            [
-                "product_type" => "Framed metallic Badges",
-                "product_type_slug" => "framed_metallic",
-                "product_category" => "FRBRSBadge",
-                "price" => "15.04",
-                "price_range" => "200-499",
-            ],
-            [
-                "product_type" => "Framed metallic Badges",
-                "product_type_slug" => "framed_metallic",
-                "product_category" => "FRBRSBadge",
-                "price" => "14.32",
-                "price_range" => "500",
-            ],
-
-
-
-
-
-            [
-                "product_type" => "Oval White Badges",
-                "product_type_slug" => "oval_white",
-                "product_category" => "OvBadge",
-                "price" => "19.37",
-                "price_range" => "1-5",
-            ],
-            [
-                "product_type" => "Oval White Badges",
-                "product_type_slug" => "oval_white",
-                "product_category" => "OvBadge",
-                "price" => "17.88",
-                "price_range" => "6-15",
-            ],
-            [
-                "product_type" => "Oval White Badges",
-                "product_type_slug" => "oval_white",
-                "product_category" => "OvBadge",
-                "price" => "16.44",
-                "price_range" => "16-25",
-            ],
-            [
-                "product_type" => "Oval White Badges",
-                "product_type_slug" => "oval_white",
-                "product_category" => "OvBadge",
-                "price" => "15.06",
-                "price_range" => "26-50",
-            ],
-            [
-                "product_type" => "Oval White Badges",
-                "product_type_slug" => "oval_white",
-                "product_category" => "OvBadge",
-                "price" => "13.23",
-                "price_range" => "51-100",
-            ],
-            [
-                "product_type" => "Oval White Badges",
-                "product_type_slug" => "oval_white",
-                "product_category" => "OvBadge",
-                "price" => "12.14",
-                "price_range" => "101-199",
-            ],
-            [
-                "product_type" => "Oval White Badges",
-                "product_type_slug" => "oval_white",
-                "product_category" => "OvBadge",
-                "price" => "11.75",
-                "price_range" => "200-499",
-            ],
-            [
-                "product_type" => "Oval White Badges",
-                "product_type_slug" => "oval_white",
-                "product_category" => "OvBadge",
-                "price" => "11.07",
-                "price_range" => "500",
-            ],
-
-
-
-
-
-            [
-                "product_type" => "Framed Oval White Badges",
-                "product_type_slug" => "framed_oval_white",
-                "product_category" => "FrOvBadge",
-                "price" => "25.37",
-                "price_range" => "1-5",
-            ],
-            [
-                "product_type" => "Framed Oval White Badges",
-                "product_type_slug" => "framed_oval_white",
-                "product_category" => "FrOvBadge",
-                "price" => "23.88",
-                "price_range" => "6-15",
-            ],
-            [
-                "product_type" => "Framed Oval White Badges",
-                "product_type_slug" => "framed_oval_white",
-                "product_category" => "FrOvBadge",
-                "price" => "22.44",
-                "price_range" => "16-25",
-            ],
-            [
-                "product_type" => "Framed Oval White Badges",
-                "product_type_slug" => "framed_oval_white",
-                "product_category" => "FrOvBadge",
-                "price" => "21.09",
-                "price_range" => "26-50",
-            ],
-            [
-                "product_type" => "Framed Oval White Badges",
-                "product_type_slug" => "framed_oval_white",
-                "product_category" => "FrOvBadge",
-                "price" => "19.23",
-                "price_range" => "51-100",
-            ],
-
-            [
-                "product_type" => "Framed Oval White Badges",
-                "product_type_slug" => "framed_oval_white",
-                "product_category" => "FrOvBadge",
-                "price" => "18.14",
-                "price_range" => "101-199",
-            ],
-            [
-                "product_type" => "Framed Oval White Badges",
-                "product_type_slug" => "framed_oval_white",
-                "product_category" => "FrOvBadge",
-                "price" => "17.75",
-                "price_range" => "200-499",
-            ],
-            [
-                "product_type" => "Framed Oval White Badges",
-                "product_type_slug" => "framed_oval_white",
-                "product_category" => "FrOvBadge",
-                "price" => "17.07",
-                "price_range" => "500",
-            ],
-           
-
-
-
-
-
-            [
-                "product_type" => "Framed Metallic Oval Badges",
-                "product_type_slug" => "framed_metallic_oval",
-                "product_category" => "FrOvBRSBadge",
-                "price" => "26.37",
-                "price_range" => "1-5",
-            ],
-            [
-                "product_type" => "Framed Metallic Oval Badges",
-                "product_type_slug" => "framed_metallic_oval",
-                "product_category" => "FrOvBRSBadge",
-                "price" => "24.88",
-                "price_range" => "6-15",
-            ],
-            [
-                "product_type" => "Framed Metallic Oval Badges",
-                "product_type_slug" => "framed_metallic_oval",
-                "product_category" => "FrOvBRSBadge",
-                "price" => "23.44",
-                "price_range" => "16-25",
-            ],
-            [
-                "product_type" => "Framed Metallic Oval Badges",
-                "product_type_slug" => "framed_metallic_oval",
-                "product_category" => "FrOvBRSBadge",
-                "price" => "22.09",
-                "price_range" => "26-50",
-            ],
-            [
-                "product_type" => "Framed Metallic Oval Badges",
-                "product_type_slug" => "framed_metallic_oval",
-                "product_category" => "FrOvBRSBadge",
-                "price" => "20.23",
-                "price_range" => "51-100",
-            ],
-            [
-                "product_type" => "Framed Metallic Oval Badges",
-                "product_type_slug" => "framed_metallic_oval",
-                "product_category" => "FrOvBRSBadge",
-                "price" => "19.14",
-                "price_range" => "101-199",
-            ],
-            [
-                "product_type" => "Framed Metallic Oval Badges",
-                "product_type_slug" => "framed_metallic_oval",
-                "product_category" => "FrOvBRSBadge",
-                "price" => "18.75",
-                "price_range" => "200-499",
-            ],
-            [
-                "product_type" => "Framed Metallic Oval Badges",
-                "product_type_slug" => "framed_metallic_oval",
-                "product_category" => "FrOvBRSBadge",
-                "price" => "18.07",
-                "price_range" => "500",
-            ],
-
 
 
         ];

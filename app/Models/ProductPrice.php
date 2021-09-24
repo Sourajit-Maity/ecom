@@ -10,12 +10,19 @@ class ProductPrice extends Model
 {
     use HasFactory,SoftDeletes;
     protected $fillable = [
-        'product_type',
-        'product_type_slug',
-        'product_category',
-        'user_id',
-        'price',
-        'price_range',
+        'name',
+        'slug',
+        '1-5',
+        '6-15',
+        '16-25',
+        '26-50',
+        '51-100',
+        '101-199',
+        '200-499',
+        '500+',
+        'magnet',
+        'pin',
+        'swivel_clip',
         'deleted_at', 
     ];
 
