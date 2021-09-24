@@ -4,7 +4,7 @@
 				<x-admin.breadcrumbs>
 						<x-admin.breadcrumbs-item href="{{ route('admin.dashboard') }}" value="Dashboard" />
 						<x-admin.breadcrumbs-separator />
-						<x-admin.breadcrumbs-item href="{{ route('product-price.index') }}" value="Product Price List" />
+						<x-admin.breadcrumbs-item href="{{ route('price.index') }}" value="Product Price List" />
 				</x-admin.breadcrumbs>
 
 			    <x-slot name="toolbar" >
