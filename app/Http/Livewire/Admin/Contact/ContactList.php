@@ -91,11 +91,11 @@ class ContactList extends Component
     public function deleteConfirm($id)
     {
         ContactUsForm::destroy($id);
-        $this->showModal('success', 'Success', 'FAQ is deleted successfully');
+        $this->showModal('success', 'Success', 'Contact Message is deleted successfully');
     }
     public function deleteAttempt($id)
     {
-        $this->showConfirmation("warning", 'Are you sure?', "Do you want to change this?", 'Yes, Change!', 'deleteConfirm', ['id' => $id]); //($type,$title,$text,$confirmText,$method)
+        $this->showConfirmation("warning", 'Are you sure?', "Do you want to delete this?", 'Yes, Delete!', 'deleteConfirm', ['id' => $id]); //($type,$title,$text,$confirmText,$method)
     }
 
     public function changeStatusConfirm($id)
