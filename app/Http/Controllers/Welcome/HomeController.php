@@ -136,10 +136,7 @@ class HomeController extends Controller
     }
     public function loginClient(Request $request) {
 
-        // $validator = Validator::make($request->all(), [
-        //     "email" =>  "required|email",
-        //     "password" =>  "required",
-        // ]);
+        
         request()->validate([
             "email" =>  "required|email",
             "password" =>  "required",
