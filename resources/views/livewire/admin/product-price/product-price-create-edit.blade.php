@@ -6,7 +6,7 @@
                         <x-admin.lable value="Name" required />
                         <x-admin.input type="text" wire:model.defer="name" placeholder="name"  class="{{ $errors->has('name') ? 'is-invalid' :'' }}" />
                         <x-admin.input type="hidden" wire:model.defer="slug" placeholder="Product Type Slug"  class="{{ $errors->has('slug') ? 'is-invalid' :'' }}" />
-                        <x-admin.input type="text" wire:model.defer="price_id" placeholder="price_id"  class="{{ $errors->has('price_id') ? 'is-invalid' :'' }}" />
+                        <x-admin.input type="hidden" wire:model.defer="price_id" placeholder="price_id"  class="{{ $errors->has('price_id') ? 'is-invalid' :'' }}" />
                         <x-admin.input-error for="name" />
                     </x-admin.form-group>
                    
