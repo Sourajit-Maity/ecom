@@ -23,9 +23,14 @@
                 {{$contactuspage->content_heading}}
                 </h4>
             </div>
-
+            @if (Session::has('success'))
+                    <div class="alert alert-success text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                    <p>{{ Session::get('success') }}</p>
+                    </div>
+            @endif
             <div class="conatct-form">
-                <form>
+               
                     <div class="row conatct-form-row">
                         <div class="col-md-6 conatct-form-col">
                             <div class="conatct-image">
@@ -36,7 +41,8 @@
                             <h3>Contact Us</h3>
                         
                         <form action="{{ route('welcome.contact-submit') }}" method="POST" >
-                            @csrf
+                            @csrf 
+                    
                            
                             <div class="form-input">
                                 <input id="full_name" type="text" placeholder="Name *" class="form-control @error('full_name') is-invalid @enderror" name="full_name" value="{{ old('full_name') }}" required autocomplete="full_name">
@@ -60,7 +66,7 @@
 
                             <div class="form-input">
                                
-                                <input id="email" type="email" placeholder="Email Address *" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                            <input id="email" type="email" placeholder="Email Address *" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -145,7 +151,7 @@
                         </form>
                         </div>
                     </div>
-                </form>
+                
             </div>
 
         </div>
