@@ -66,7 +66,7 @@ class HomeController extends Controller
     
     public function contactUsSubmit(Request $request)
     {
-        Log::debug("Request".print_r($request->all(), true)); 
+        //Log::debug("Request".print_r($request->all(), true)); 
         
         request()->validate([
             'full_name' => 'required',
