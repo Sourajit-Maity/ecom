@@ -114,7 +114,7 @@ class ProductPriceCreateEdit extends Component
         $msgAction ='Product Price is '. ($this->isEdit ? 'updated' : 'added') . ' successfully';
         $this->showToastr("success",$msgAction);
 
-        return redirect()->route('price.index');
+        return redirect()->route('price.index'); 
     }
     public function render()
     {
