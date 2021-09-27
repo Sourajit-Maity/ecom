@@ -16,7 +16,7 @@
                 aria-sort="ascending" aria-label="Agent: activate to sort column descending">Full Name <i
                     class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('full_name')"></i>
             </th>
-            <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 10%;"
+            <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 8%;"
                 aria-sort="ascending" aria-label="Agent: activate to sort column descending">Email <i
                     class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('email')"></i>
             </th>
@@ -45,9 +45,9 @@
                 aria-sort="ascending" aria-label="Agent: activate to sort column descending">Address <i
                     class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('address')"></i>
             </th>
-            <th class="align-center" tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 8%;"
-                aria-label="Status: activate to sort column ascending">Status</th>
-                <th class="align-center" rowspan="1" colspan="1" style="width: 12%;" aria-label="Actions">Actions</th>
+            <!-- <th class="align-center" tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 8%;"
+                aria-label="Status: activate to sort column ascending">Status</th> -->
+                <th class="align-center" rowspan="1" colspan="1" style="width: 15%;" aria-label="Actions">Actions</th>
         </tr>
 
         <tr class="filter">
@@ -83,14 +83,14 @@
                 <x-admin.input type="search" wire:model.defer="searchAddress" placeholder="" autocomplete="off"
                     class="form-control-sm form-filter" />
             </th>
-            <th>
+            <!-- <th>
                 <select class="form-control form-control-sm form-filter kt-input" wire:model.defer="searchStatus"
                     title="Select" data-col-index="2">
                     <option value="-1">Select</option>
                     <option value="1">Active</option>
                     <option value="0">Inactive</option>
                 </select>
-            </th>
+            </th> -->
             <th>
                 <div class="row">
                     <div class="col-md-6">
@@ -125,10 +125,10 @@
                 <td class="sorting_1" tabindex="0">{{ $contactusform->state  }}</td>
                 <td class="sorting_1" tabindex="0">{{ $contactusform->city  }}</td>
                 <td class="sorting_1" tabindex="0">{{ $contactusform->address  }}</td>
-                <td class="align-center"><span
+                <!-- <td class="align-center"><span
                         class="kt-badge  kt-badge--{{ $contactusform->active == 1 ? 'success' : 'warning' }} kt-badge--inline kt-badge--pill cursor-pointer"
                         wire:click="changeStatusConfirm({{ $contactusform->id }})">{{ $contactusform->active == 1 ? 'Active' : 'Inactive' }}</span>
-                </td>
+                </td> -->
                 <x-admin.td-action>
                     <a class="dropdown-item" href="{{ route('contact-form.edit', ['contact_form' => $contactusform->id]) }}"><i
                             class="la la-edit"></i> View</a>

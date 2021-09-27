@@ -51,11 +51,12 @@ Route::post("login-client", [HomeController::class, 'loginClient'])->name('welco
 Route::get('logout-client', [HomeController::class, 'logoutClient'])->name('welcome.logout-client');
 Route::get('/getstate/{id}', [HomeController::class, 'getState']);
 Route::post('contact-us-submit', [HomeController::class, 'contactSubmit'])->name('contact-us-submit');
-Route::post('contact-submit', [HomeController::class, 'contactusSubmit'])->name('welcome.contact-submit');
+Route::post('contact-submit', [HomeController::class, 'contactUsSubmit'])->name('welcome.contact-submit');
 Route::get('signup', [HomeController::class, 'signUp'])->name('welcome.signup');
 Route::get('login', [HomeController::class, 'login'])->name('welcome.login');
 Route::get('design-tool', [HomeController::class, 'designTool'])->name('welcome.design-tool');
 Route::get('product-details/{product_name}', [HomeController::class, 'productDetails'])->name('welcome.product-details');
+
 Route::group(['middleware'=>['auth:web','clientuser']], function() {
 
 

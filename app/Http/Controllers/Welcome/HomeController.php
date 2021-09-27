@@ -63,16 +63,10 @@ class HomeController extends Controller
         return view('Welcome.contact-us',compact('reviews','contactuspage'));
     }
 
-    public function contactusSubmit(Request $request)
+    
+    public function contactUsSubmit(Request $request)
     {
-        dd($request->all());
-        Log::debug("Request".print_r($request->all(), true));
-        
-        
-    }
-    public function contactSubmit(Request $request)
-    {
-        Log::debug("Request".print_r($request->all(), true));
+        Log::debug("Request".print_r($request->all(), true)); 
         
         request()->validate([
             'full_name' => 'required',
@@ -92,7 +86,7 @@ class HomeController extends Controller
          $contact = ContactUsForm::create($inputs);
      
         return redirect()->back()
-                        ->with('success','Request Submitted successfully.');
+                        ->with('success','Message Submitted successfully.');
     }
     public function registerSubmit(Request $request)
     {
