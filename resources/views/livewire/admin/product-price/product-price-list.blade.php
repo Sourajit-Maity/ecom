@@ -59,8 +59,8 @@
             <tr role="row" class="odd">
                 <td class="sorting_1" tabindex="0">{{ $price->name  }}</td>
                 <x-admin.td-action> 
-                    <!-- <a class="dropdown-item" href="{{ route('price.edit', ['price' => $price->id]) }}"><i
-                            class="la la-edit"></i> Edit</a> -->
+                    <a class="dropdown-item" href="{{ route('price.edit', ['price' => $price->id]) }}"><i
+                            class="la la-edit"></i> Edit</a>
                     <!-- <button href="#" class="dropdown-item" wire:click="deleteAttempt({{ $price->id }})"><i
                             class="fa fa-trash"></i> Delete</button> -->
                 </x-admin.td-action>

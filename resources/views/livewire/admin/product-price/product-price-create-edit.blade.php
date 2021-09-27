@@ -6,56 +6,57 @@
                         <x-admin.lable value="Name" required />
                         <x-admin.input type="text" wire:model.defer="name" placeholder="name"  class="{{ $errors->has('name') ? 'is-invalid' :'' }}" />
                         <x-admin.input type="hidden" wire:model.defer="slug" placeholder="Product Type Slug"  class="{{ $errors->has('slug') ? 'is-invalid' :'' }}" />
+                        <x-admin.input type="text" wire:model.defer="price_id" placeholder="price_id"  class="{{ $errors->has('price_id') ? 'is-invalid' :'' }}" />
                         <x-admin.input-error for="name" />
                     </x-admin.form-group>
                    
 
                     <x-admin.form-group>
                         <x-admin.lable value="1-5" required />
-                        <x-admin.input type="text" wire:model.defer="1-5" placeholder="1-5"  class="{{ $errors->has('1-5') ? 'is-invalid' :'' }}" />
-                        <x-admin.input-error for="1-5" />
+                        <x-admin.input type="text" wire:model.defer="one_to_five" placeholder="1-5"  class="{{ $errors->has('one_to_five') ? 'is-invalid' :'' }}" />
+                        <x-admin.input-error for="one_to_five" />
                     </x-admin.form-group>
 
                     <x-admin.form-group>
                         <x-admin.lable value="6-15" required />
-                        <x-admin.input type="text" wire:model.defer="6-15" placeholder="6-15"  class="{{ $errors->has('6-15') ? 'is-invalid' :'' }}" />
-                        <x-admin.input-error for="6-15" />
+                        <x-admin.input type="text" wire:model.defer="six_to_fifteen" placeholder="6-15"  class="{{ $errors->has('six_to_fifteen') ? 'is-invalid' :'' }}" />
+                        <x-admin.input-error for="six_to_fifteen" />
                     </x-admin.form-group>
 
                     <x-admin.form-group>
                         <x-admin.lable value="16-25" required />
-                        <x-admin.input type="text" wire:model.defer="16-25" placeholder="16-25"  class="{{ $errors->has('16-25') ? 'is-invalid' :'' }}" />
-                        <x-admin.input-error for="16-25" />
+                        <x-admin.input type="text" wire:model.defer="sixteen_to_twentyfive" placeholder="sixteen_to_twentyfive"  class="{{ $errors->has('sixteen_to_twentyfive') ? 'is-invalid' :'' }}" />
+                        <x-admin.input-error for="sixteen_to_twentyfive" />
                     </x-admin.form-group>
 
                     <x-admin.form-group>
                         <x-admin.lable value="26-50" required />
-                        <x-admin.input type="text" wire:model.defer="26-50" placeholder="26-50"  class="{{ $errors->has('26-50') ? 'is-invalid' :'' }}" />
-                        <x-admin.input-error for="26-50" />
+                        <x-admin.input type="text" wire:model.defer="twentysix_to_fifty" placeholder="26-50"  class="{{ $errors->has('twentysix_to_fifty') ? 'is-invalid' :'' }}" />
+                        <x-admin.input-error for="twentysix_to_fifty" />
                     </x-admin.form-group>
 
                     <x-admin.form-group>
                         <x-admin.lable value="51-100" required />
-                        <x-admin.input type="text" wire:model.defer="51-100" placeholder="51-100"  class="{{ $errors->has('51-100') ? 'is-invalid' :'' }}" />
-                        <x-admin.input-error for="51-100" />
+                        <x-admin.input type="text" wire:model.defer="fiftyone_to_hundred" placeholder="51-100"  class="{{ $errors->has('fiftyone_to_hundred') ? 'is-invalid' :'' }}" />
+                        <x-admin.input-error for="fiftyone_to_hundred" />
                     </x-admin.form-group>
 
                     <x-admin.form-group>
                         <x-admin.lable value="101-199" required />
-                        <x-admin.input type="text" wire:model.defer="101-199" placeholder="101-199"  class="{{ $errors->has('101-199') ? 'is-invalid' :'' }}" />
-                        <x-admin.input-error for="101-199" />
+                        <x-admin.input type="text" wire:model.defer="hundredone_to_oneninetynine" placeholder="101-199"  class="{{ $errors->has('hundredone_to_oneninetynine') ? 'is-invalid' :'' }}" />
+                        <x-admin.input-error for="hundredone_to_oneninetynine" />
                     </x-admin.form-group>
 
                     <x-admin.form-group>
                         <x-admin.lable value="200-499" required />
-                        <x-admin.input type="text" wire:model.defer="200-499" placeholder="200-499"  class="{{ $errors->has('200-499') ? 'is-invalid' :'' }}" />
-                        <x-admin.input-error for="200-499" />
+                        <x-admin.input type="text" wire:model.defer="twohundred_to_fournintynine" placeholder="200-499"  class="{{ $errors->has('twohundred_to_fournintynine') ? 'is-invalid' :'' }}" />
+                        <x-admin.input-error for="twohundred_to_fournintynine" />
                     </x-admin.form-group>
 
                     <x-admin.form-group>
                         <x-admin.lable value="500+" required />
-                        <x-admin.input type="text" wire:model.defer="500+" placeholder="500+"  class="{{ $errors->has('500+') ? 'is-invalid' :'' }}" />
-                        <x-admin.input-error for="500+" />
+                        <x-admin.input type="text" wire:model.defer="fivehundredplus" placeholder="500+"  class="{{ $errors->has('fivehundredplus') ? 'is-invalid' :'' }}" />
+                        <x-admin.input-error for="fivehundredplus" />
                     </x-admin.form-group>
 
 

@@ -15,7 +15,7 @@ class ProductPriceCreateEdit extends Component
 {
     use AlertMessage;
     use WithFileUploads;
-    public $name,$slug,$magnet,$pin, $user_id,$blankArr, $swivel_clip,$price;
+    public $name,$slug,$magnet,$pin,$price_id, $user_id,$blankArr, $swivel_clip,$price;
     public $one_to_five,$six_to_fifteen,$sixteen_to_twentyfive,$twentysix_to_fifty, $fiftyone_to_hundred;
     public $hundredone_to_oneninetynine, $twohundred_to_fournintynine,$fivehundredplus;
     public $isEdit=false;
@@ -24,7 +24,16 @@ class ProductPriceCreateEdit extends Component
     public function mount($price = null)
     {
         if ($price) {
-            $this->price = $price;
+            $this->price = $price->toarray();
+            $this->price_id = $this->price['id'];
+            $this->one_to_five = $this->price['1-5'];
+            $this->six_to_fifteen = $this->price['6-15'];
+            $this->sixteen_to_twentyfive = $this->price['16-25'];
+            $this->twentysix_to_fifty = $this->price['26-50'];
+            $this->fiftyone_to_hundred = $this->price['51-100'];
+            $this->hundredone_to_oneninetynine = $this->price['101-199'];
+            $this->twohundred_to_fournintynine = $this->price['200-499'];
+            $this->fivehundredplus = $this->price['500+'];
             $this->fill($this->price);
             $this->isEdit=true;
         }
@@ -40,18 +49,20 @@ class ProductPriceCreateEdit extends Component
     {
         return
             [
-                '26-50' => ['required'],
-                '1-5' => ['required'],
-                '6-15' => ['required'],
-                "16-25"  =>  ['required'],
-                '51-100' => ['required'],
-                '101-199' => ['required'],
-                '200-499' => ['required'],
-                "500+"  =>  ['required'],
-                'magnet' => ['required'],
-                'pin' => ['required'],
-                'swivel_clip' => ['required'],
+                
+                'one_to_five' => ['nullable'],
+                'six_to_fifteen' => ['nullable'],
+                "sixteen_to_twentyfive"  =>  ['nullable'],
+                'twentysix_to_fifty' => ['nullable'],
+                'fiftyone_to_hundred' => ['nullable'],
+                'hundredone_to_oneninetynine' => ['nullable'],
+                'twohundred_to_fournintynine' => ['nullable'],
+                "fivehundredplus"  =>  ['nullable'],
+                'magnet' => ['nullable'],
+                'pin' => ['nullable'],
+                'swivel_clip' => ['nullable'],
                 "name"  =>  ['required'],
+                "price_id" =>  ['required'],
                 
             ];
     }
@@ -60,18 +71,19 @@ class ProductPriceCreateEdit extends Component
     {
         return
         [
-            '26-50' => ['required'],
-            '1-5' => ['required'],
-            '6-15' => ['required'],
-            "16-25"  =>  ['required'],
-            '51-100' => ['required'],
-            '101-199' => ['required'],
-            '200-499' => ['required'],
-            "500+"  =>  ['required'],
-            'magnet' => ['required'],
-            'pin' => ['required'],
-            'swivel_clip' => ['required'],
+            'one_to_five' => ['nullable'],
+            'six_to_fifteen' => ['nullable'],
+            "sixteen_to_twentyfive"  =>  ['nullable'],
+            'twentysix_to_fifty' => ['nullable'],
+            'fiftyone_to_hundred' => ['nullable'],
+            'hundredone_to_oneninetynine' => ['nullable'],
+            'twohundred_to_fournintynine' => ['nullable'],
+            "fivehundredplus"  =>  ['nullable'],
+            'magnet' => ['nullable'],
+            'pin' => ['nullable'],
+            'swivel_clip' => ['nullable'],
             "name"  =>  ['required'],
+            "price_id" =>  ['required'],
             
         ];
     }
@@ -80,15 +92,29 @@ class ProductPriceCreateEdit extends Component
 
     public function saveOrUpdate()
     {
-       
-        $this->isEdit ? $this->price->user_id = auth()->user()->id : $this->price->user_id = auth()->user()->id;
+       $id = $this->price_id;
+        $this->price = ProductPrice::find($id);
+        $data = array();
 
-        $this->price->fill($this->validate($this->isEdit ? $this->validationRuleForUpdate() : $this->validationRuleForSave()))->save();
+        $data['1-5'] = $this->one_to_five;
+        $data['6-15'] = $this->six_to_fifteen;
+        $data['16-25'] = $this->sixteen_to_twentyfive;
+        $data['26-50'] = $this->twentysix_to_fifty;
+        $data['51-100'] = $this->fiftyone_to_hundred;
+        $data['101-199'] = $this->hundredone_to_oneninetynine;
+        $data['200-499'] = $this->twohundred_to_fournintynine;
+        $data['500+'] = $this->fivehundredplus;
+        $data['name'] = $this->name;
+        $data['magnet'] = $this->magnet;
+        $data['pin'] = $this->pin;
+        $data['swivel_clip'] = $this->swivel_clip;
         
-        $msgAction = 'Product Price is '. ($this->isEdit ? 'updated' : 'added') . ' successfully';
+        $this->price->update($data);
+        
+        $msgAction ='Product Price is '. ($this->isEdit ? 'updated' : 'added') . ' successfully';
         $this->showToastr("success",$msgAction);
 
-        return redirect()->route('product-price.index');
+        return redirect()->route('price.index');
     }
     public function render()
     {
