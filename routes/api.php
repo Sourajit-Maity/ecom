@@ -20,12 +20,12 @@ use Illuminate\Support\Facades\Route;
 // user controller routes
 Route::post("register", [UserController::class, 'register']);
 Route::post("login", [UserController::class, 'login']);
-Route::post('add-to-cart', [UserCartController::class,'addToCart']);
-Route::get('product-price', [ProductController::class,'productPrice']);
+Route::post('add-to-cart', [UserCartController::class, 'addToCart']);
+Route::get('product-price', [ProductController::class, 'productPrice']);
 // sanctum auth middleware routes
-Route::middleware('auth:api')->group(function() {
+Route::middleware('auth:api')->group(function () {
     Route::get("user", [UserController::class, "user"]);
     // Route::resource('tasks', TaskController::class);    //patch/put   =>  x-www-form-urlencode
 
-    
+
 });

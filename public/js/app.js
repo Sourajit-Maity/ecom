@@ -14595,7 +14595,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       selectedTextBoxIndex: 0,
       selectedClipartIndex: 0,
       selectedLogoIndex: 0,
-      //   number: 10,
+      selectionForPrice: {
+        white_plastic_rectangle: true,
+        gold_silver_plastic_rectangle: false,
+        metallic_plastic_rectangle: false,
+        framed_white_badges: false,
+        framed_gold_or_silver_badges: false,
+        framed_metallic_badges: false,
+        oval_white_badges: false,
+        framed_oval_white_badges: false,
+        framed_metallic_oval_badges: false,
+        fasteners: false
+      },
       textDesigns: [{
         x: 390,
         y: 85,
@@ -14609,6 +14620,158 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         fontColor: "#000000",
         selected: false
       }],
+      priceStructures: {
+        white_plastic_rectangle: [{
+          name: "White Plastic Rectangle",
+          slug: "white_plastic_rectangle",
+          "1-5": "15.37",
+          "6-15": "13.88",
+          "16-25": "12.44",
+          "26-50": "11.09",
+          "51-100": "9.23",
+          "101-199": "8.14",
+          "200-499": "7.75",
+          "500+": "7.07",
+          magnet: null,
+          pin: null,
+          swivel_clip: null
+        }],
+        gold_silver_plastic_rectangle: [{
+          name: "Gold & Silver Plastic Rectangle",
+          slug: "gold_silver_plastic_rectangle",
+          "1-5": "16.42",
+          "6-15": "14.93",
+          "16-25": "13.49",
+          "26-50": "12.14",
+          "51-100": "10.28",
+          "101-199": "9.19",
+          "200-499": "8.80",
+          "500+": "8.12",
+          magnet: null,
+          pin: null,
+          swivel_clip: null
+        }],
+        metallic_plastic_rectangle: [{
+          name: "Metallic Plastic Rectangle",
+          slug: "metallic_plastic_rectangle",
+          "1-5": "16.95",
+          "6-15": "15.46",
+          "16-25": "14.02",
+          "26-50": "12.66",
+          "51-100": "10.80",
+          "101-199": "9.71",
+          "200-499": "9.32",
+          "500+": "8.64",
+          magnet: null,
+          pin: null,
+          swivel_clip: null
+        }],
+        framed_white_badges: [{
+          name: "Framed White Badges",
+          slug: "framed_white_badges",
+          "1-5": "21.39",
+          "6-15": "21.39",
+          "16-25": "21.39",
+          "26-50": "21.39",
+          "51-100": "21.39",
+          "101-199": "21.39",
+          "200-499": "21.39",
+          "500+": "21.39",
+          magnet: null,
+          pin: null,
+          swivel_clip: null
+        }],
+        framed_gold_or_silver_badges: [{
+          name: "Framed Gold or Silver Badges",
+          slug: "framed_gold_or_silver_badges",
+          "1-5": "22.49",
+          "6-15": "20.93",
+          "16-25": "19.42",
+          "26-50": "17.99",
+          "51-100": "16.04",
+          "101-199": "14.90",
+          "200-499": "14.49",
+          "500+": "13.77",
+          magnet: null,
+          pin: null,
+          swivel_clip: null
+        }],
+        framed_metallic_badges: [{
+          name: "Framed metallic Badges",
+          slug: "framed_metallic_badges",
+          "1-5": "23.04",
+          "6-15": "21.48",
+          "16-25": "19.97",
+          "26-50": "18.55",
+          "51-100": "16.59",
+          "101-199": "15.45",
+          "200-499": "15.04",
+          "500+": "14.32",
+          magnet: null,
+          pin: null,
+          swivel_clip: null
+        }],
+        oval_white_badges: [{
+          name: "Oval White Badges",
+          slug: "oval_white_badges",
+          "1-5": "19.37",
+          "6-15": "17.88",
+          "16-25": "16.44",
+          "26-50": "15.09",
+          "51-100": "13.23",
+          "101-199": "12.14",
+          "200-499": "11.75",
+          "500+": "11.07",
+          magnet: null,
+          pin: null,
+          swivel_clip: null
+        }],
+        framed_oval_white_badges: [{
+          name: "Framed Oval White Badges",
+          slug: "framed_oval_white_badges",
+          "1-5": "25.37",
+          "6-15": "23.88",
+          "16-25": "22.44",
+          "26-50": "21.09",
+          "51-100": "19.23",
+          "101-199": "18.14",
+          "200-499": "17.75",
+          "500+": "17.07",
+          magnet: null,
+          pin: null,
+          swivel_clip: null
+        }],
+        framed_metallic_oval_badges: [{
+          name: "Framed Metallic Oval Badges",
+          slug: "framed_metallic_oval_badges",
+          "1-5": "26.37",
+          "6-15": "24.88",
+          "16-25": "23.44",
+          "26-50": "22.09",
+          "51-100": "20.23",
+          "101-199": "19.14",
+          "200-499": "18.75",
+          "500+": "18.07",
+          magnet: null,
+          pin: null,
+          swivel_clip: null
+        }],
+        fasteners: [{
+          name: "Fasteners",
+          slug: "fasteners",
+          "1-5": null,
+          "6-15": null,
+          "16-25": null,
+          "26-50": null,
+          "51-100": null,
+          "101-199": null,
+          "200-499": null,
+          "500+": null,
+          magnet: "2.00",
+          pin: "0.00",
+          swivel_clip: "0.00"
+        }]
+      },
       colors: {
         hex: '#FFFFFF',
         hex8: '#194D33A8',
@@ -14751,12 +14914,32 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       set: function set(value) {
         this.textDesigns[this.selectedTextBoxIndex].text = value;
       }
+    },
+    getPrice: function getPrice() {
+      return this.getPriceTable["1-5"];
+    },
+    getPriceTable: function getPriceTable() {
+      //   if(this.selectionForPrice.white_plastic_rectangle)
+      //   return this.calculatePrice('white_plastic_rectangle');
+      if (this.selectionForPrice.white_plastic_rectangle) return this.calculatePrice('white_plastic_rectangle');else if (this.selectionForPrice.gold_silver_plastic_rectangle) return this.calculatePrice('gold_silver_plastic_rectangle');else if (this.selectionForPrice.metallic_plastic_rectangle) return this.calculatePrice('metallic_plastic_rectangle');else if (this.selectionForPrice.framed_white_badges) return this.calculatePrice('framed_white_badges');else if (this.selectionForPrice.framed_gold_or_silver_badges) return this.calculatePrice('framed_gold_or_silver_badges');else if (this.selectionForPrice.framed_metallic_badges) return this.calculatePrice('framed_metallic_badges');else if (this.selectionForPrice.oval_white_badges) return this.calculatePrice('oval_white_badges');else if (this.selectionForPrice.framed_oval_white_badges) return this.calculatePrice('framed_oval_white_badges');else if (this.selectionForPrice.framed_metallic_oval_badges) return this.calculatePrice('framed_metallic_oval_badges');
     }
   },
   methods: {
     //   itemChange(event){
     //       console.info('event',event);
     //   },
+    selectTypeForPrice: function selectTypeForPrice(type) {
+      console.info('type', this.selectionForPrice[type]);
+      this.selectionForPrice['white_plastic_rectangle'] = 'white_plastic_rectangle' == type;
+      this.selectionForPrice['gold_silver_plastic_rectangle'] = 'gold_silver_plastic_rectangle' == type;
+      this.selectionForPrice['metallic_plastic_rectangle'] = 'metallic_plastic_rectangle' == type;
+      this.selectionForPrice['framed_white_badges'] = 'framed_white_badges' == type;
+      this.selectionForPrice['framed_gold_or_silver_badges'] = 'framed_gold_or_silver_badges' == type;
+      this.selectionForPrice['framed_metallic_badges'] = 'framed_metallic_badges' == type;
+      this.selectionForPrice['oval_white_badges'] = 'oval_white_badges' == type;
+      this.selectionForPrice['framed_oval_white_badges'] = 'framed_oval_white_badges' == type;
+      this.selectionForPrice['framed_metallic_oval_badges'] = 'framed_metallic_oval_badges' == type;
+    },
     resize: function resize(newRect) {
       //    console.info('newRect',newRect);
       if (newRect.w > 50 && newRect.w < 100) this.textDesigns[this.selectedTextBoxIndex].fontSize = 1;
@@ -14917,6 +15100,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         img: imgSrc,
         selected: false
       });
+    },
+    calculatePrice: function calculatePrice(type) {
+      var fasteners = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      return this.priceStructures[type][0];
     },
     printThis: function printThis() {
       var _this4 = this;
@@ -52929,7 +53116,20 @@ var render = function() {
               _c("span", { staticClass: "bottom" }, [_vm._v("3’’")])
             ]),
             _vm._v(" "),
-            _vm._m(8)
+            _c("div", { staticClass: "text-content" }, [
+              _vm._m(8),
+              _vm._v(" "),
+              _c("ul", [
+                _vm._m(9),
+                _vm._v(" "),
+                _c("li", [
+                  _c("h3", [
+                    _vm._v("Price: "),
+                    _c("span", [_vm._v(_vm._s(_vm.getPrice) + " each")])
+                  ])
+                ])
+              ])
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-lg-5 design-page-right" }, [
@@ -53654,7 +53854,7 @@ var render = function() {
             _vm.menu.background
               ? _c("div", { staticClass: "size-sec" }, [
                   _c("div", {}, [
-                    _vm._m(9),
+                    _vm._m(10),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -53690,6 +53890,9 @@ var render = function() {
                                             click: function($event) {
                                               _vm.backgroundImage =
                                                 "/background/Material/White-Plastic/1.png"
+                                              _vm.selectTypeForPrice(
+                                                "white_plastic_rectangle"
+                                              )
                                             }
                                           }
                                         },
@@ -53702,7 +53905,7 @@ var render = function() {
                                             }
                                           }),
                                           _vm._v(" "),
-                                          _vm._m(10)
+                                          _vm._m(11)
                                         ]
                                       ),
                                       _vm._v(" "),
@@ -53725,6 +53928,9 @@ var render = function() {
                                                 click: function($event) {
                                                   _vm.backgroundImage =
                                                     "/background/Material/Gold-Plastic/7.png"
+                                                  _vm.selectTypeForPrice(
+                                                    "gold_silver_plastic_rectangle"
+                                                  )
                                                 }
                                               }
                                             },
@@ -53736,7 +53942,7 @@ var render = function() {
                                                 }
                                               }),
                                               _vm._v(" "),
-                                              _vm._m(11)
+                                              _vm._m(12)
                                             ]
                                           ),
                                           _vm._v(" "),
@@ -53760,6 +53966,9 @@ var render = function() {
                                                 click: function($event) {
                                                   _vm.backgroundImage =
                                                     "/background/Material/Silver-Plastic/8.png"
+                                                  _vm.selectTypeForPrice(
+                                                    "gold_silver_plastic_rectangle"
+                                                  )
                                                 }
                                               }
                                             },
@@ -53771,7 +53980,7 @@ var render = function() {
                                                 }
                                               }),
                                               _vm._v(" "),
-                                              _vm._m(12)
+                                              _vm._m(13)
                                             ]
                                           ),
                                           _vm._v(" "),
@@ -53796,6 +54005,9 @@ var render = function() {
                                             click: function($event) {
                                               _vm.backgroundImage =
                                                 "/background/Material/Gold-Metallic/5.png"
+                                              _vm.selectTypeForPrice(
+                                                "metallic_plastic_rectangle"
+                                              )
                                             }
                                           }
                                         },
@@ -53807,7 +54019,7 @@ var render = function() {
                                             }
                                           }),
                                           _vm._v(" "),
-                                          _vm._m(13)
+                                          _vm._m(14)
                                         ]
                                       ),
                                       _vm._v(" "),
@@ -53829,39 +54041,9 @@ var render = function() {
                                             click: function($event) {
                                               _vm.backgroundImage =
                                                 "/background/Material/Silver-Metallic/6.png"
-                                            }
-                                          }
-                                        },
-                                        [
-                                          _c("input", {
-                                            attrs: {
-                                              type: "radio",
-                                              name: "name"
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _vm._m(14)
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("span", [_vm._v("Silver Metallic")])
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("li", [
-                                  _c(
-                                    "div",
-                                    { staticClass: "form_input_radio" },
-                                    [
-                                      _c(
-                                        "label",
-                                        {
-                                          staticClass: "custom_height_60",
-                                          on: {
-                                            click: function($event) {
-                                              _vm.backgroundImage =
-                                                "background/Material/Wood-Grain/11.png"
+                                              _vm.selectTypeForPrice(
+                                                "metallic_plastic_rectangle"
+                                              )
                                             }
                                           }
                                         },
@@ -53877,7 +54059,7 @@ var render = function() {
                                         ]
                                       ),
                                       _vm._v(" "),
-                                      _c("span", [_vm._v("Wood Grain")])
+                                      _c("span", [_vm._v("Silver Metallic")])
                                     ]
                                   )
                                 ])
@@ -54132,30 +54314,6 @@ var render = function() {
                             {
                               on: {
                                 click: function($event) {
-                                  _vm.selected_fastener = "Jewelers"
-                                }
-                              }
-                            },
-                            [
-                              _c("input", {
-                                attrs: { type: "radio", name: "name" }
-                              }),
-                              _vm._v(" "),
-                              _vm._m(22)
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Jewelers Pin")])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "form_input_radio" }, [
-                          _c(
-                            "label",
-                            {
-                              on: {
-                                click: function($event) {
                                   _vm.selected_fastener = "Magnet"
                                 }
                               }
@@ -54165,7 +54323,7 @@ var render = function() {
                                 attrs: { type: "radio", name: "name" }
                               }),
                               _vm._v(" "),
-                              _vm._m(23)
+                              _vm._m(22)
                             ]
                           ),
                           _vm._v(" "),
@@ -54189,7 +54347,7 @@ var render = function() {
                                 attrs: { type: "radio", name: "name" }
                               }),
                               _vm._v(" "),
-                              _vm._m(24)
+                              _vm._m(23)
                             ]
                           ),
                           _vm._v(" "),
@@ -54213,7 +54371,7 @@ var render = function() {
                                 attrs: { type: "radio", name: "name" }
                               }),
                               _vm._v(" "),
-                              _vm._m(25)
+                              _vm._m(24)
                             ]
                           ),
                           _vm._v(" "),
@@ -54227,7 +54385,7 @@ var render = function() {
             _vm._v(" "),
             _vm.menu.dome
               ? _c("div", { staticClass: "size-sec" }, [
-                  _vm._m(26),
+                  _vm._m(25),
                   _vm._v(" "),
                   _c("div", { staticClass: "matirial-list demo-list" }, [
                     _c("ul", [
@@ -54247,7 +54405,7 @@ var render = function() {
                                 attrs: { type: "radio", name: "name" }
                               }),
                               _vm._v(" "),
-                              _vm._m(27)
+                              _vm._m(26)
                             ]
                           ),
                           _vm._v(" "),
@@ -54275,7 +54433,7 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _vm._m(28)
+                              _vm._m(27)
                             ]
                           ),
                           _vm._v(" "),
@@ -54299,7 +54457,33 @@ var render = function() {
                   _vm.shapeDefaultClass == "rectangle12-3"
               }
             },
-            [_vm._m(29)]
+            [
+              _c("table", [
+                _vm._m(28),
+                _vm._v(" "),
+                _vm._m(29),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td", [_vm._v("Price:")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["1-5"]))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["6-15"]))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["16-25"]))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["26-50"]))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["51-100"]))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["101-199"]))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["200-499"]))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["500+"]))])
+                ])
+              ])
+            ]
           )
         ])
       ]),
@@ -54441,28 +54625,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-content" }, [
-      _c("p", [
-        _c("span", [_vm._v("White")]),
-        _vm._v(
-          " boxes around logos will not be printed on colored backgrounds.\n                        You can click "
-        ),
-        _c("span", [_vm._v("Add Text")]),
-        _vm._v(
-          " up to (4) times for multiple lines of text.\n                    "
-        )
-      ]),
-      _vm._v(" "),
-      _c("ul", [
-        _c("li", [
-          _c("a", { staticClass: "cmn-btn", attrs: { href: "#url" } }, [
-            _vm._v("Finished Designing")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("h3", [_vm._v("Price: "), _c("span", [_vm._v("$9.99 each")])])
-        ])
+    return _c("p", [
+      _c("span", [_vm._v("White")]),
+      _vm._v(
+        " boxes around logos will not be printed on colored backgrounds.\n                        You can click "
+      ),
+      _c("span", [_vm._v("Add Text")]),
+      _vm._v(
+        " up to (4) times for multiple lines of text.\n                    "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { staticClass: "cmn-btn", attrs: { href: "#url" } }, [
+        _vm._v("Finished Designing")
       ])
     ])
   },
@@ -54597,16 +54777,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", [
-      _c("img", {
-        attrs: { src: "/background/Material/Wood-Grain/11-thumb.png", alt: "" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "border-option" }, [
       _c("a", { attrs: { href: "#uel" } }, [
         _vm._v(
@@ -54674,17 +54844,6 @@ var staticRenderFns = [
     return _c("span", [
       _c("img", {
         staticStyle: { height: "60px", width: "100px" },
-        attrs: { src: "/fasteners/Jeweler_s Pin.png", alt: "" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", [
-      _c("img", {
-        staticStyle: { height: "60px", width: "100px" },
         attrs: { src: "/fasteners/Magnet.jpg", alt: "" }
       })
     ])
@@ -54743,56 +54902,38 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("table", [
-      _c("tr", [
-        _c("th", { attrs: { colspan: "2" } }, [_vm._v("Quantity Price")]),
-        _vm._v(" "),
-        _c("th", { attrs: { colspan: "7" } }, [
-          _vm._v(
-            "*These prices will update automatically based on the design you choose above!"
-          )
-        ])
-      ]),
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Quantity Price")]),
       _vm._v(" "),
-      _c("tr", [
-        _c("td", [_vm._v("QTY:")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("1-10")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("11-20")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("21-30")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("31-50")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("51-100")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("101-250")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("251-1000")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("1000+")])
-      ]),
-      _vm._v(" "),
-      _c("tr", [
-        _c("td", [_vm._v("Price:")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("$9.99")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("$9.59")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("$9.39")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("$9.24")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("$8.89")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("$8.49")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("$8.24")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("$7.49")])
+      _c("th", { attrs: { colspan: "7" } }, [
+        _vm._v(
+          "*These prices will update automatically based on the design you choose above!"
+        )
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [_vm._v("QTY:")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("1-10")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("11-20")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("21-30")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("31-50")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("51-100")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("101-199")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("200-499")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("500+")])
     ])
   }
 ]

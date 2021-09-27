@@ -134,7 +134,7 @@
                         <ul>
                             <li><a class="cmn-btn" href="#url">Finished Designing</a></li>
                             <li>
-                                <h3>Price: <span>$9.99 each</span></h3>
+                                <h3>Price: <span>{{getPrice}} each</span></h3>
                             </li>
                         </ul>
 
@@ -306,7 +306,7 @@
                                         <ul>
                                             <li>
                                                 <div class="form_input_radio">
-                                                    <label @click="backgroundImage= '/background/Material/White-Plastic/1.png'" class="custom_height_60">
+                                                    <label @click="backgroundImage= '/background/Material/White-Plastic/1.png'; selectTypeForPrice('white_plastic_rectangle')" class="custom_height_60">
                                                         <input type="radio" checked name="name">
                                                         <span><img src="/background/Material/White-Plastic/1-thumb.png" alt="" class="border"></span>
                                                     </label>
@@ -316,7 +316,7 @@
 
                                             <li v-if="this.shapeDefaultClass!='oval1-3' ">
                                                 <div class="form_input_radio">
-                                                    <label @click="backgroundImage= '/background/Material/Gold-Plastic/7.png'" class="custom_height_60">
+                                                    <label @click="backgroundImage= '/background/Material/Gold-Plastic/7.png'; selectTypeForPrice('gold_silver_plastic_rectangle')" class="custom_height_60">
                                                         <input type="radio" name="name">
                                                         <span><img src="/background/Material/Gold-Plastic/7-thumb.png" alt=""></span>
                                                     </label>
@@ -325,7 +325,7 @@
                                             </li>
                                             <li v-if="this.shapeDefaultClass!='oval1-3' ">
                                                 <div class="form_input_radio">
-                                                    <label @click="backgroundImage= '/background/Material/Silver-Plastic/8.png'" class="custom_height_60">
+                                                    <label @click="backgroundImage= '/background/Material/Silver-Plastic/8.png';  selectTypeForPrice('gold_silver_plastic_rectangle')" class="custom_height_60">
                                                         <input type="radio" name="name">
                                                         <span><img src="/background/Material/Silver-Plastic/8-thumb.png" alt=""></span>
                                                     </label>
@@ -334,7 +334,7 @@
                                             </li>
                                             <li>
                                                 <div class="form_input_radio">
-                                                    <label @click="backgroundImage= '/background/Material/Gold-Metallic/5.png'" class="custom_height_60">
+                                                    <label @click="backgroundImage= '/background/Material/Gold-Metallic/5.png'; selectTypeForPrice('metallic_plastic_rectangle') " class="custom_height_60">
                                                         <input type="radio" name="name">
                                                         <span><img src="/background/Material/Gold-Metallic/5-thumb.png" alt=""></span>
                                                     </label>
@@ -344,7 +344,7 @@
 
                                             <li>
                                                 <div class="form_input_radio">
-                                                    <label @click="backgroundImage= '/background/Material/Silver-Metallic/6.png'" class="custom_height_60">
+                                                    <label @click="backgroundImage= '/background/Material/Silver-Metallic/6.png'; selectTypeForPrice('metallic_plastic_rectangle')" class="custom_height_60">
                                                         <input type="radio"  name="name">
                                                         <span><img src="/background/Material/Silver-Metallic/6-thumb.png" alt=""></span>
                                                     </label>
@@ -352,7 +352,7 @@
                                                 </div>
                                             </li>
 
-                                            <li>
+                                            <!-- <li>
                                                 <div class="form_input_radio">
                                                     <label @click="backgroundImage= 'background/Material/Wood-Grain/11.png'" class="custom_height_60">
                                                         <input type="radio" name="name">
@@ -360,7 +360,7 @@
                                                     </label>
                                                     <span>Wood Grain</span>
                                                 </div>
-                                            </li>
+                                            </li> -->
                                         </ul>
                                     </div>
                                                 <!-- <div class="row">
@@ -464,7 +464,7 @@
                         </div>
                         <div class="matirial-list fastener-list">
                             <ul>
-                                <li>
+                                <!-- <li>
                                     <div class="form_input_radio">
                                         <label @click="selected_fastener = 'Jewelers'">
                                             <input type="radio" name="name">
@@ -472,7 +472,7 @@
                                         </label>
                                         <span>Jewelers Pin</span>
                                     </div>
-                                </li>
+                                </li> -->
 
                                 <li>
                                     <div class="form_input_radio">
@@ -562,20 +562,20 @@
                             <td>21-30</td>
                             <td>31-50</td>
                             <td>51-100</td>
-                            <td>101-250</td>
-                            <td>251-1000</td>
-                            <td>1000+</td>
+                            <td>101-199</td>
+                            <td>200-499</td>
+                            <td>500+</td>
                         </tr>
                         <tr>
                             <td>Price:</td>
-                            <td>$9.99</td>
-                            <td>$9.59</td>
-                            <td>$9.39</td>
-                            <td>$9.24</td>
-                            <td>$8.89</td>
-                            <td>$8.49</td>
-                            <td>$8.24</td>
-                            <td>$7.49</td>
+                            <td>{{getPriceTable["1-5"]}}</td>
+                            <td>{{getPriceTable["6-15"]}}</td>
+                            <td>{{getPriceTable["16-25"]}}</td>
+                            <td>{{getPriceTable["26-50"]}}</td>
+                            <td>{{getPriceTable["51-100"]}}</td>
+                            <td>{{getPriceTable["101-199"]}}</td>
+                            <td>{{getPriceTable["200-499"]}}</td>
+                            <td>{{getPriceTable["500+"]}}</td>
                         </tr>
                     </table>
                 </div>
@@ -616,7 +616,18 @@ export default {
           selectedTextBoxIndex:0,
           selectedClipartIndex:0,
           selectedLogoIndex:0,
-        //   number: 10,
+          selectionForPrice:{
+            white_plastic_rectangle:true,
+            gold_silver_plastic_rectangle:false,
+            metallic_plastic_rectangle:false,
+            framed_white_badges:false,
+            framed_gold_or_silver_badges:false,
+            framed_metallic_badges:false,
+            oval_white_badges:false,
+            framed_oval_white_badges:false,
+            framed_metallic_oval_badges:false,
+            fasteners:false
+          },
             textDesigns:[
                 {
                     x:390,
@@ -632,6 +643,178 @@ export default {
                     selected:false
                 }
             ],
+            priceStructures:{
+               white_plastic_rectangle: [
+                    {
+                    name: "White Plastic Rectangle",
+                    slug: "white_plastic_rectangle",
+                    "1-5": "15.37",
+                    "6-15": "13.88",
+                    "16-25": "12.44",
+                    "26-50": "11.09",
+                    "51-100": "9.23",
+                    "101-199": "8.14",
+                    "200-499": "7.75",
+                    "500+": "7.07",
+                    magnet: null,
+                    pin: null,
+                    swivel_clip: null
+                    }
+                ],
+                gold_silver_plastic_rectangle: [
+                    {
+                    name: "Gold & Silver Plastic Rectangle",
+                    slug: "gold_silver_plastic_rectangle",
+                    "1-5": "16.42",
+                    "6-15": "14.93",
+                    "16-25": "13.49",
+                    "26-50": "12.14",
+                    "51-100" : "10.28",
+                    "101-199": "9.19",
+                    "200-499": "8.80",
+                    "500+": "8.12",
+                    magnet: null,
+                    pin: null,
+                    swivel_clip: null
+                    }
+                ],
+                metallic_plastic_rectangle: [
+                    {
+                    name: "Metallic Plastic Rectangle",
+                    slug: "metallic_plastic_rectangle",
+                    "1-5": "16.95",
+                    "6-15": "15.46",
+                    "16-25": "14.02",
+                    "26-50": "12.66",
+                    "51-100": "10.80",
+                    "101-199": "9.71",
+                    "200-499": "9.32",
+                    "500+": "8.64",
+                    magnet: null,
+                    pin: null,
+                    swivel_clip: null
+                    }
+                ],
+                framed_white_badges: [
+                    {
+                    name: "Framed White Badges",
+                    slug: "framed_white_badges",
+                    "1-5": "21.39",
+                    "6-15": "21.39",
+                    "16-25": "21.39",
+                    "26-50": "21.39",
+                    "51-100": "21.39",
+                    "101-199": "21.39",
+                    "200-499": "21.39",
+                    "500+": "21.39",
+                    magnet: null,
+                    pin: null,
+                    swivel_clip: null
+                    }
+                ],
+                framed_gold_or_silver_badges: [
+                    {
+                    name: "Framed Gold or Silver Badges",
+                    slug: "framed_gold_or_silver_badges",
+                    "1-5": "22.49",
+                    "6-15": "20.93",
+                    "16-25": "19.42",
+                    "26-50": "17.99",
+                    "51-100": "16.04",
+                    "101-199": "14.90",
+                    "200-499": "14.49",
+                    "500+": "13.77",
+                    magnet: null,
+                    pin: null,
+                    swivel_clip: null
+                    }
+                ],
+                framed_metallic_badges: [
+                    {
+                    name: "Framed metallic Badges",
+                    slug: "framed_metallic_badges",
+                    "1-5": "23.04",
+                    "6-15": "21.48",
+                    "16-25": "19.97",
+                    "26-50": "18.55",
+                    "51-100": "16.59",
+                    "101-199": "15.45",
+                    "200-499": "15.04",
+                    "500+": "14.32",
+                    magnet: null,
+                    pin: null,
+                    swivel_clip: null
+                    }
+                ],
+                oval_white_badges: [
+                    {
+                    name: "Oval White Badges",
+                    slug: "oval_white_badges",
+                    "1-5": "19.37",
+                    "6-15": "17.88",
+                    "16-25": "16.44",
+                    "26-50": "15.09",
+                    "51-100": "13.23",
+                    "101-199": "12.14",
+                    "200-499": "11.75",
+                    "500+": "11.07",
+                    magnet: null,
+                    pin: null,
+                    swivel_clip: null
+                    }
+                ],
+                framed_oval_white_badges: [
+                {
+                name: "Framed Oval White Badges",
+                slug: "framed_oval_white_badges",
+                "1-5": "25.37",
+                "6-15": "23.88",
+                "16-25": "22.44",
+                "26-50": "21.09",
+                "51-100": "19.23",
+                "101-199": "18.14",
+                "200-499": "17.75",
+                "500+": "17.07",
+                magnet: null,
+                pin: null,
+                swivel_clip: null
+                }
+                ],
+                framed_metallic_oval_badges: [
+                {
+                name: "Framed Metallic Oval Badges",
+                slug: "framed_metallic_oval_badges",
+                "1-5": "26.37",
+                "6-15": "24.88",
+                "16-25": "23.44",
+                "26-50": "22.09",
+                "51-100": "20.23",
+                "101-199": "19.14",
+                "200-499": "18.75",
+                "500+": "18.07",
+                magnet: null,
+                pin: null,
+                swivel_clip: null
+                }
+                ],
+                fasteners: [
+                {
+                name: "Fasteners",
+                slug: "fasteners",
+                "1-5": null,
+                "6-15": null,
+                "16-25": null,
+                "26-50": null,
+                "51-100": null,
+                "101-199": null,
+                "200-499": null,
+                "500+": null,
+                magnet: "2.00",
+                pin: "0.00",
+                swivel_clip: "0.00"
+                }
+                ]
+                },
         colors:{
             hex: '#FFFFFF',
             hex8: '#194D33A8',
@@ -734,7 +917,6 @@ export default {
             this.textDesigns[this.selectedTextBoxIndex].height=135;
             }
         }
-
           return {
             'rectangle1-3': 'rectangle1-3' == this.shapeDefaultClass,
             'rectangle1-5-3': 'rectangle1-5-3'==this.shapeDefaultClass,
@@ -754,12 +936,49 @@ export default {
         set(value) {
             this.textDesigns[this.selectedTextBoxIndex].text = value;
         }
+      },
+      getPrice(){
+                return this.getPriceTable["1-5"];
+      },
+      getPriceTable(){
+        //   if(this.selectionForPrice.white_plastic_rectangle)
+        //   return this.calculatePrice('white_plastic_rectangle');
+        if(this.selectionForPrice.white_plastic_rectangle)
+            return  this.calculatePrice('white_plastic_rectangle');
+        else if(this.selectionForPrice.gold_silver_plastic_rectangle) 
+            return  this.calculatePrice('gold_silver_plastic_rectangle');
+        else if(this.selectionForPrice.metallic_plastic_rectangle) 
+            return  this.calculatePrice('metallic_plastic_rectangle');
+        else if(this.selectionForPrice.framed_white_badges)
+            return  this.calculatePrice('framed_white_badges');
+        else if(this.selectionForPrice.framed_gold_or_silver_badges)
+            return  this.calculatePrice('framed_gold_or_silver_badges');
+        else if(this.selectionForPrice.framed_metallic_badges)
+            return  this.calculatePrice('framed_metallic_badges');
+        else if(this.selectionForPrice.oval_white_badges)
+            return  this.calculatePrice('oval_white_badges');
+        else if(this.selectionForPrice.framed_oval_white_badges)
+            return  this.calculatePrice('framed_oval_white_badges');
+        else if(this.selectionForPrice.framed_metallic_oval_badges)
+            return  this.calculatePrice('framed_metallic_oval_badges');
       }
   },
   methods: {
     //   itemChange(event){
     //       console.info('event',event);
     //   },
+    selectTypeForPrice(type){
+        console.info('type',this.selectionForPrice[type]);
+        this.selectionForPrice['white_plastic_rectangle']= ('white_plastic_rectangle'==type);
+        this.selectionForPrice['gold_silver_plastic_rectangle']= ('gold_silver_plastic_rectangle'==type);
+        this.selectionForPrice['metallic_plastic_rectangle']= ('metallic_plastic_rectangle'==type);
+        this.selectionForPrice['framed_white_badges']= ('framed_white_badges'==type);
+        this.selectionForPrice['framed_gold_or_silver_badges']= ('framed_gold_or_silver_badges'==type);
+        this.selectionForPrice['framed_metallic_badges']= ('framed_metallic_badges'==type);
+        this.selectionForPrice['oval_white_badges']= ('oval_white_badges'==type);
+        this.selectionForPrice['framed_oval_white_badges']= ('framed_oval_white_badges'==type);
+        this.selectionForPrice['framed_metallic_oval_badges']= ('framed_metallic_oval_badges'==type);
+    },
     resize(newRect) {
     //    console.info('newRect',newRect);
        if(newRect.w>50 && newRect.w<100)
@@ -949,6 +1168,10 @@ export default {
                     selected:false
                 }
           );
+      },
+      calculatePrice(type,fasteners=false){
+                return this.priceStructures[type][0];
+          
       },
       async printThis() {
     //   console.log("printing..");
