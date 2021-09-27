@@ -19,11 +19,12 @@
 
     <section class="faq-sec cmn-gap">
         <div class="container">
+        @foreach($faqs as $faq)
             <div class="faq-content">
                 <div class="accordion" id="accordionExample">
                
                     <div class="accordion-item">
-                    @foreach($faqs as $faq)
+                    
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             {{$faq->question}}
@@ -34,12 +35,13 @@
                                 <p>{{$faq->answer}}</p>
                             </div>
                         </div>
-                    @endforeach
+                    
                     </div>
                 
 
                 </div>
             </div>
+        @endforeach
         </div>
     </section>
 
