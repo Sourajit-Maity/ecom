@@ -64,6 +64,9 @@ Route::group(['middleware'=>['auth:web','clientuser']], function() {
 
 Route::get('add-address', [HomeController::class, 'addAddress'])->name('welcome.add-address');
 Route::post('save-address', [HomeController::class, 'saveAddress'])->name('welcome.save-address');
+Route::get('edit-address/{id}', [HomeController::class, 'editAddress'])->name('welcome.edit-address');
+Route::post('update-address/{id}', [HomeController::class, 'updateAddress'])->name('welcome.update-address');
+Route::get('delete-address/{id}', [HomeController::class, 'deleteAddress'])->name('welcome.delete-address');
 Route::get('billing-address', [HomeController::class, 'billingAddress'])->name('welcome.billing-address');
 Route::get('shopping-cart', [UserCartController::class, 'shoppingCart'])->name('welcome.shopping-cart');
 Route::get('saved-address', [HomeController::class, 'savedAddress'])->name('welcome.saved-address');

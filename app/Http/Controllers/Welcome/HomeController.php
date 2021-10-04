@@ -11,6 +11,8 @@ use App\Models\City;
 use App\Models\State;
 use App\Models\AddAddress;
 use App\Models\BillingAddress;
+use App\Models\Order;
+use App\Models\OrderDetails;
 use App\Models\User;
 use App\Models\Faqpage;
 use App\Models\Aboutpage;
@@ -211,8 +213,53 @@ class HomeController extends Controller
          $user->user_id=auth()->user()->id;
          $user->save();
     
-        return redirect()->back()
+        return redirect()->route('welcome.saved-address')
                         ->with('success','Address Stored successfully.');
+    }
+    public function editAddress()
+    {
+        $currentuserid = Auth::user()->id;
+        $countryid = Auth::user()->country;
+        $stateid = Auth::user()->state;
+        $country = Country::where('id',$countryid)->value('country_name');
+        $state = State::where('id',$stateid)->value('state_name');
+        $states = State::with('countries')->where('active', 1)->pluck('id','state_name');
+        $countrys = Country::where('active', 1)->pluck('id','country_name'); 
+        $users = User::findOrFail($currentuserid);
+        return view('Welcome.edit-account',compact('country','state','states','countrys','users'));
+    }
+    public function updateAddress(Request $request)
+    {
+        //Log::debug("register".print_r($request->all(), true));
+        //dd($request->all());
+       
+        $this->validate($request, [
+            'first_name' => 'required|regex:/^[a-zA-Z]+$/u',
+            'last_name' => 'required|regex:/^[a-zA-Z]+$/u',
+            'email' => 'required|email|max:255|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix|unique:users',
+            'phone' => 'required|regex:/^([0-9\s+\(\)]*)$/',
+            'address1' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'country' => 'required',
+            'zip' => 'required',
+        ]);
+       
+        $currentuserid = Auth::user()->id;
+        $user= User::findOrFail($currentuserid);
+         $inputs = $request->all();    
+         $user->update($inputs);     
+    
+        return redirect()->route('welcome.saved-address')
+                        ->with('success','Updated successfully.');
+    }
+    public function deleteAddress(Request $request,$id)
+    {
+
+        AddAddress::where('id',$id)->delete();
+        
+        return redirect()->back()
+                        ->with('success','Deleted successfully.');
     }
     public function billingAddress()
     {
@@ -222,11 +269,16 @@ class HomeController extends Controller
    
     public function savedAddress()
     {
-        return view('Welcome.saved-address');
+        $userid= Auth::user()->id;
+        $shippingaddresses = AddAddress::where('user_id', $userid)->get();
+        return view('Welcome.saved-address',compact('shippingaddresses'));
     }
     public function orderHistory()
     {
-        return view('Welcome.order-history');
+        $userid= Auth::user()->id;
+        $orders = Order::where('user_id', $userid)->get();
+        //dd($orders);
+        return view('Welcome.order-history',compact('orders'));
     }
     public function myAccount()
     {
