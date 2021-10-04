@@ -102,7 +102,7 @@
                                     <span> * My shipping information is the same as my billing.</span>
                                 </label>
                             </div>
-                          </div>
+                          </div> 
                         
 
                             <div class="acound-form-col">
