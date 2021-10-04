@@ -29,14 +29,14 @@
 
                 <div class="row account-row">
                     <div class="col-md-12 add-address-right">
-                    <form action="{{ route('welcome.save-address') }}" method="POST" >
-                      @csrf
+                    <form method="POST" action="{{ route('welcome.update-address', $address->id) }}" enctype="multipart/form-data">
+                        @csrf 
                             <div class="accout-form">
                                 <div class="row acound-form-row">
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>First Name<span style="color:red"> *</span></label>
-                                            <input id="first_name" type="text" placeholder="First Name *" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}"  autocomplete="first_name">
+                                            <input id="first_name" type="text" placeholder="First Name *" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{$address->first_name }}"  autocomplete="first_name">
 
                                                     @error('first_name')
                                                         <span class="invalid-feedback" role="alert">
@@ -49,7 +49,7 @@
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Last Name<span style="color:red"> *</span></label>
-                                            <input id="last_name" type="text" placeholder="Last Name *" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}"  autocomplete="last_name">
+                                            <input id="last_name" type="text" placeholder="Last Name *" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{$address->last_name }}"  autocomplete="last_name">
 
                                             @error('last_name')
                                                 <span class="invalid-feedback" role="alert">
@@ -62,7 +62,7 @@
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Nick name<span style="color:red"> *</span></label>
-                                            <input id="nick_name" type="text" placeholder="Nick Name *" class="form-control @error('nick_name') is-invalid @enderror" name="nick_name" value="{{ old('nick_name') }}"  autocomplete="nick_name">
+                                            <input id="nick_name" type="text" placeholder="Nick Name *" class="form-control @error('nick_name') is-invalid @enderror" name="nick_name" value="{{ $address->nick_name }}"  autocomplete="nick_name">
 
                                                 @error('nick_name')
                                                     <span class="invalid-feedback" role="alert">
@@ -75,7 +75,7 @@
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Company<span style="color:red"> *</span></label>
-                                            <input id="company" type="text" placeholder="Company Name" class="form-control @error('company') is-invalid @enderror" name="company" value="{{ old('company') }}"  autocomplete="company">
+                                            <input id="company" type="text" placeholder="Company Name" class="form-control @error('company') is-invalid @enderror" name="company" value="{{ $address->company }}"  autocomplete="company">
 
                                                 @error('company')
                                                     <span class="invalid-feedback" role="alert">
@@ -88,7 +88,7 @@
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Phone number<span style="color:red"> *</span></label>
-                                            <input id="phone" type="tel" placeholder="Phone Number *" class="form-control @error('phone') is-invalid @enderror only-numeric" name="phone" value="{{ old('phone') }}"  autocomplete="phone">
+                                            <input id="phone" type="tel" placeholder="Phone Number *" class="form-control @error('phone') is-invalid @enderror only-numeric" name="phone" value="{{ $address->phone }}"  autocomplete="phone">
 
                                                 @error('phone')
                                                     <span class="invalid-feedback" role="alert">
@@ -101,7 +101,7 @@
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Street address<span style="color:red"> *</span></label>
-                                            <input id="street_address" type="text" placeholder="Street Address*" class="form-control @error('street_address') is-invalid @enderror" name="street_address" value="{{ old('street_address') }}"  autocomplete="street_address">
+                                            <input id="street_address" type="text" placeholder="Street Address*" class="form-control @error('street_address') is-invalid @enderror" name="street_address" value="{{ $address->street_address }}"  autocomplete="street_address">
 
                                                 @error('street_address')
                                                     <span class="invalid-feedback" role="alert">
@@ -114,7 +114,7 @@
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Postal code<span style="color:red"> *</span></label>
-                                            <input id="postal_code" type="text" placeholder="postal code*" class="form-control @error('postal_code') is-invalid @enderror only-numeric" name="postal_code" value="{{ old('postal_code') }}"  autocomplete="postal_code">
+                                            <input id="postal_code" type="text" placeholder="postal code*" class="form-control @error('postal_code') is-invalid @enderror only-numeric" name="postal_code" value="{{ $address->postal_code }}"  autocomplete="postal_code">
 
                                                 @error('postal_code')
                                                     <span class="invalid-feedback" role="alert">
@@ -127,7 +127,7 @@
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>City<span style="color:red"> *</span></label>
-                                            <input id="city" type="text" placeholder="City *" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ old('city') }}"  autocomplete="city">
+                                            <input id="city" type="text" placeholder="City *" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ $address->city }}"  autocomplete="city">
 
                                                 @error('city')
                                                     <span class="invalid-feedback" role="alert">
@@ -175,7 +175,7 @@
 
                                     <div class="col-md-12 acound-form-col">
                                         <div class="form-input">
-                                            <input type="submit" value="Add address">
+                                            <input type="submit" value="Update address">
                                         </div>
                                     </div>
 

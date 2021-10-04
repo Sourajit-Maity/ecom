@@ -63,12 +63,17 @@ Route::group(['middleware'=>['auth:web','clientuser']], function() {
 // Route::get('design-tool', [DesignToolController::class, 'index'])->name('welcome.design-tool');
 
 Route::get('add-address', [HomeController::class, 'addAddress'])->name('welcome.add-address');
+Route::post('save-address', [HomeController::class, 'saveAddress'])->name('welcome.save-address');
+Route::get('edit-address/{id}', [HomeController::class, 'editAddress'])->name('welcome.edit-address');
+Route::post('update-address/{id}', [HomeController::class, 'updateAddress'])->name('welcome.update-address');
+Route::get('delete-address/{id}', [HomeController::class, 'deleteAddress'])->name('welcome.delete-address');
 Route::get('billing-address', [HomeController::class, 'billingAddress'])->name('welcome.billing-address');
 Route::get('shopping-cart', [UserCartController::class, 'shoppingCart'])->name('welcome.shopping-cart');
 Route::get('saved-address', [HomeController::class, 'savedAddress'])->name('welcome.saved-address');
 Route::get('order-history', [HomeController::class, 'orderHistory'])->name('welcome.order-history');
 Route::get('my-account', [HomeController::class, 'myAccount'])->name('welcome.my-account');
 Route::get('edit-account', [HomeController::class, 'editAccount'])->name('welcome.edit-account');
+Route::post('update-account', [HomeController::class, 'updateAccount'])->name('welcome.update-account');
 Route::get('my-save-design', [HomeController::class, 'mySaveDesign'])->name('welcome.my-save-design');
 
 Route::get('design-page', [HomeController::class, 'designPage'])->name('welcome.design-page');
