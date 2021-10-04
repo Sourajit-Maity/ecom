@@ -46,6 +46,11 @@
                     </button>
                     <ul class="navbar-nav">
                         <li class="{{ Request::is('/') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.home')}}">Home</a></li>
+                    @guest
+                        
+                    @else
+                        <li class="{{ Request::is('edit-account') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.edit-account')}}">User Menu</a></li>
+                    @endguest 
                         <li class="{{ Request::is('about-us') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.about-us')}}">About Us</a></li>
                         <li class="{{ Request::is('products') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.products')}}">Products</a></li>
                         <li class="{{ Request::is('faq') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.faq')}}">FAQs</a></li>

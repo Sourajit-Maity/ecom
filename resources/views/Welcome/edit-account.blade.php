@@ -28,85 +28,149 @@
                             <img src="{{asset('welcome_assets/images/user-profile.png')}}" alt="">
                         </div>
                     </div>
-
+                    @if (Session::has('success'))
+                        <div class="alert alert-success text-center">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                        <p>{{ Session::get('success') }}</p>
+                        </div>
+                    @endif
                     <div class="col-md-10 accout-col-right">
-                        <form>
+                       
+                    <form method="POST" action="{{ route('welcome.update-account', $users->id) }}" enctype="multipart/form-data">
+                        @csrf                
                             <div class="accout-form">
                                 <div class="row acound-form-row">
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
-                                            <label>First Name</label>
-                                            <input type="text" placeholder="Smith">
+                                            <label>First Name<span style="color:red"> *</span></label>
+                                            <input type="text" value = "{{ Auth::user()->first_name }}"  placeholder="Smith" class="form-control @error('first_name') is-invalid @enderror" name="first_name">
+                                            @error('first_name')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
-                                            <label>Last Name</label>
-                                            <input type="text" placeholder="Williams">
+                                            <label>Last Name<span style="color:red"> *</span></label>
+                                            <input type="text" value = "{{ Auth::user()->last_name }}"  placeholder="Williams" class="form-control @error('last_name') is-invalid @enderror" name="last_name">
+                                            @error('last_name')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
-                                            <label>Email</label>
-                                            <input type="email" placeholder="smith.williams@yopmail.com">
+                                            <label>Email<span style="color:red"> *</span></label>
+                                            <input type="email" value = "{{ Auth::user()->email }}"  placeholder="smith.williams@yopmail.com" class="form-control @error('email') is-invalid @enderror" name="email">
+                                            @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                             @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
-                                            <label>Company</label>
-                                            <input type="text" placeholder="ws">
+                                            <label>Company<span style="color:red"> *</span></label>
+                                            <input type="text" value = "{{ Auth::user()->company }}"  placeholder="ws" class="form-control @error('company') is-invalid @enderror" name="company">
+                                            @error('company')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
-                                            <label>Address 1</label>
-                                            <input type="text" placeholder="1 main st">
+                                            <label>Address 1<span style="color:red"> *</span></label>
+                                            <input type="text" value = "{{ Auth::user()->address1 }}"  placeholder="1 main st" class="form-control @error('address1') is-invalid @enderror" name="address1">
+                                            @error('address1')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Address 2</label>
-                                            <input type="text">
+                                            <input type="text" name = "address2" value = "{{ Auth::user()->address2 }}" >
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
-                                            <label>City</label>
-                                            <input type="text" placeholder="san jose">
+                                            <label>City<span style="color:red"> *</span></label>
+                                            <input type="text" value = "{{ Auth::user()->city }}"  placeholder="san jose" class="form-control @error('city') is-invalid @enderror" name="city">
+                                            @error('city')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
-                                            <label>Country</label>
-                                            <input type="text" placeholder="United States">
+                                            <label>Country<span style="color:red"> *</span></label>
+                                            <select  name="country" id="country" class="form-control @error('country') is-invalid @enderror" name="country"  autocomplete="country" class="form-control @error('country') is-invalid @enderror" name="country">                                   
+                                                <option value=""disable selected>Select Country</option>
+                                                @foreach ($countrys as $key => $value)                               
+                                                <option value="{{ $value }}">{{ $key }}</option>
+                                                @endforeach                                                                                                                                   
+                                            </select>
+                                            @error('country')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
-                                            <label>State</label>
-                                            <input type="text" placeholder="California">
+                                            <label>State<span style="color:red"> *</span></label>
+                                            <select  name="state" id="state" class="form-control @error('state') is-invalid @enderror" name="state"   autocomplete="state" class="form-control @error('state') is-invalid @enderror" name="state">                                  
+                                                <option value=""disable selected>Select State</option>                                                                                                                                                                        
+                                            </select>
+                                            @error('state')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
-                                            <label>Zip</label>
-                                            <input type="text" placeholder="95131">
+                                            <label>Zip<span style="color:red"> *</span></label>
+                                            <input type="text" value = "{{ Auth::user()->zip }}"  placeholder="95131" class="form-control @error('zip') is-invalid @enderror only-numeric" name="zip">
+                                            @error('zip')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
-                                            <label>Phone</label>
-                                            <input type="tel" placeholder="5689458975 ">
+                                            <label>Phone<span style="color:red"> *</span></label>
+                                            <input type="text" value = "{{ Auth::user()->phone }}"  placeholder="5689458975 " class="form-control @error('phone') is-invalid @enderror only-numeric" name="phone">
+                                            @error('phone')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
 
@@ -127,3 +191,37 @@
         </div>
     </section>
 </x-layouts.welcome-layout>
+<script>
+    $(document).ready(function(){
+        $("#country").change(function(){
+            var val = $(this).val();
+            $("#state").html('');
+            var op='<option>Select State</option>';
+            $("#state").append(op);
+            jQuery.ajax({ 
+                url : '/getstate/' +val,
+                type : "GET",
+                dataType : "json",
+                success:function(data)
+                {
+                    
+                    for(var i=0;i<data.length;i++){
+                        op='<option value="'+data[i].id+'">'+data[i].state_name+'</option>';
+                        $("#state").append(op);
+                    }
+                }
+            });
+            
+        });
+        $(".only-numeric").bind("keypress", function (e) {
+          var keyCode = e.which ? e.which : e.keyCode
+               
+          if (!(keyCode >= 48 && keyCode <= 57)) {
+            $(".error").css("display", "inline");
+            return false;
+          }else{
+            $(".error").css("display", "none");
+          }
+      });
+    });
+</script>
