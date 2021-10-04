@@ -14572,6 +14572,100 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 
@@ -14607,6 +14701,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         framed_metallic_oval_badges: false,
         fasteners: false
       },
+      addNames: [],
       textDesigns: [{
         x: 390,
         y: 85,
@@ -14618,7 +14713,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         fontStyle: "",
         fontSize: 3,
         fontColor: "#000000",
-        selected: false
+        selected: false,
+        quantity: 1
       }],
       priceStructures: {
         white_plastic_rectangle: [{
@@ -14859,6 +14955,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   computed: {
+    calculateTDWidthOfEditNames: function calculateTDWidthOfEditNames() {
+      return "".concat(65 / this.textDesigns.length, "%");
+    },
+    calculateColspanOfEditNamesActionMenu: function calculateColspanOfEditNamesActionMenu() {
+      return 2 + this.textDesigns.length;
+    },
     getShapeClass: function getShapeClass() {
       //   console.info('textDesigns[selectedTextBoxIndex].fontSize',this.textDesigns[this.selectedTextBoxIndex].fontSize);
       if (this.textDesigns.length > 0) {
@@ -14895,6 +14997,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }
       }
 
+      this.selectTypeForPrice('white_plastic_rectangle');
       return {
         'rectangle1-3': 'rectangle1-3' == this.shapeDefaultClass,
         'rectangle1-5-3': 'rectangle1-5-3' == this.shapeDefaultClass,
@@ -14929,7 +15032,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     //       console.info('event',event);
     //   },
     selectTypeForPrice: function selectTypeForPrice(type) {
-      console.info('type', this.selectionForPrice[type]);
+      // console.info('type',this.selectionForPrice[type]);
+      if (this.shapeDefaultClass == 'oval1-3') {
+        switch (type) {
+          case 'white_plastic_rectangle':
+            type = 'oval_white_badges';
+            break;
+
+          case 'metallic_plastic_rectangle':
+            type = 'framed_metallic_oval_badges';
+            break;
+
+          default:
+            break;
+        }
+      }
+
       this.selectionForPrice['white_plastic_rectangle'] = 'white_plastic_rectangle' == type;
       this.selectionForPrice['gold_silver_plastic_rectangle'] = 'gold_silver_plastic_rectangle' == type;
       this.selectionForPrice['metallic_plastic_rectangle'] = 'metallic_plastic_rectangle' == type;
@@ -52900,1022 +53018,1038 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row design-page-row" }, [
-          _c("div", { staticClass: "col-lg-7 design-page-left" }, [
-            _c("div", { staticClass: "design-tab" }, [
-              _c("ul", [
-                _c(
-                  "li",
-                  {
-                    staticClass: "cursor-pointer",
-                    class: [_vm.menu.sizeShape ? "active" : "visited"],
-                    on: {
-                      click: function($event) {
-                        return _vm.selectDesignbar("sizeShape")
-                      }
-                    }
-                  },
-                  [_vm._m(3)]
-                ),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.menu.global_items.designYourBadge,
+                expression: "menu.global_items.designYourBadge"
+              }
+            ]
+          },
+          [
+            _c("div", { staticClass: "row design-page-row" }, [
+              _c("div", { staticClass: "col-lg-7 design-page-left" }, [
+                _c("div", { staticClass: "design-tab" }, [
+                  _c("ul", [
+                    _c(
+                      "li",
+                      {
+                        staticClass: "cursor-pointer",
+                        class: [_vm.menu.sizeShape ? "active" : "visited"],
+                        on: {
+                          click: function($event) {
+                            return _vm.selectDesignbar("sizeShape")
+                          }
+                        }
+                      },
+                      [_vm._m(3)]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      {
+                        staticClass: "cursor-pointer",
+                        class: [_vm.menu.background ? "active" : "visited"],
+                        on: {
+                          click: function($event) {
+                            return _vm.selectDesignbar("background")
+                          }
+                        }
+                      },
+                      [_vm._m(4)]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      {
+                        staticClass: "cursor-pointer",
+                        class: [_vm.menu.border ? "active" : "visited"],
+                        on: {
+                          click: function($event) {
+                            return _vm.selectDesignbar("border")
+                          }
+                        }
+                      },
+                      [_vm._m(5)]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      {
+                        staticClass: "cursor-pointer",
+                        class: [_vm.menu.fastener ? "active" : "visited"],
+                        on: {
+                          click: function($event) {
+                            return _vm.selectDesignbar("fastener")
+                          }
+                        }
+                      },
+                      [_vm._m(6)]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      {
+                        staticClass: "cursor-pointer",
+                        class: [_vm.menu.dome ? "active" : "visited"],
+                        on: {
+                          click: function($event) {
+                            return _vm.selectDesignbar("dome")
+                          }
+                        }
+                      },
+                      [_vm._m(7)]
+                    )
+                  ])
+                ]),
                 _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass: "cursor-pointer",
-                    class: [_vm.menu.background ? "active" : "visited"],
-                    on: {
-                      click: function($event) {
-                        return _vm.selectDesignbar("background")
-                      }
-                    }
-                  },
-                  [_vm._m(4)]
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass: "cursor-pointer",
-                    class: [_vm.menu.border ? "active" : "visited"],
-                    on: {
-                      click: function($event) {
-                        return _vm.selectDesignbar("border")
-                      }
-                    }
-                  },
-                  [_vm._m(5)]
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass: "cursor-pointer",
-                    class: [_vm.menu.fastener ? "active" : "visited"],
-                    on: {
-                      click: function($event) {
-                        return _vm.selectDesignbar("fastener")
-                      }
-                    }
-                  },
-                  [_vm._m(6)]
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass: "cursor-pointer",
-                    class: [_vm.menu.dome ? "active" : "visited"],
-                    on: {
-                      click: function($event) {
-                        return _vm.selectDesignbar("dome")
-                      }
-                    }
-                  },
-                  [_vm._m(7)]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "design_tool_custom" }, [
-              _c("div", { staticClass: "your-text" }, [
                 _c(
                   "div",
-                  {
-                    staticClass: "design-area",
-                    class: _vm.getShapeClass,
-                    style: { backgroundColor: _vm.colors.hex }
-                  },
+                  { ref: "printcontent", staticClass: "design_tool_custom" },
                   [
-                    _vm.backgroundImage
-                      ? _c("img", {
-                          staticClass: "h-100 w-100",
-                          attrs: { src: _vm.backgroundImage }
-                        })
+                    _c("div", { staticClass: "your-text" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "design-area",
+                          class: _vm.getShapeClass,
+                          style: { backgroundColor: _vm.colors.hex }
+                        },
+                        [
+                          _vm.backgroundImage
+                            ? _c("img", {
+                                staticClass: "h-100 w-100",
+                                attrs: { src: _vm.backgroundImage }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm._l(_vm.clipartDesigns, function(
+                            clipartDesign,
+                            index
+                          ) {
+                            return _c(
+                              "drr",
+                              {
+                                key: index,
+                                attrs: {
+                                  x: clipartDesign.x,
+                                  y: clipartDesign.y,
+                                  w: clipartDesign.weight,
+                                  h: clipartDesign.height,
+                                  angle: clipartDesign.angle,
+                                  selected: clipartDesign.selected,
+                                  aspectRatio: true,
+                                  innerBox: _vm.innerBox,
+                                  outerBox: _vm.outerBox
+                                },
+                                on: {
+                                  select: function($event) {
+                                    return _vm.selectItemClipart(index)
+                                  }
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  staticStyle: {
+                                    width: "100%",
+                                    height: "100%"
+                                  },
+                                  attrs: { src: clipartDesign.img }
+                                })
+                              ]
+                            )
+                          }),
+                          _vm._v(" "),
+                          _vm._l(_vm.logoDesigns, function(logoDesign, index) {
+                            return _c(
+                              "drr",
+                              {
+                                key: index,
+                                attrs: {
+                                  x: logoDesign.x,
+                                  y: logoDesign.y,
+                                  w: logoDesign.weight,
+                                  h: logoDesign.height,
+                                  angle: logoDesign.angle,
+                                  selected: logoDesign.selected,
+                                  aspectRatio: true,
+                                  innerBox: _vm.innerBox,
+                                  outerBox: _vm.outerBox
+                                },
+                                on: {
+                                  select: function($event) {
+                                    return _vm.selectItemLogo(index)
+                                  }
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  staticStyle: {
+                                    width: "100%",
+                                    height: "100%"
+                                  },
+                                  attrs: { src: logoDesign.img }
+                                })
+                              ]
+                            )
+                          }),
+                          _vm._v(" "),
+                          _vm._l(_vm.textDesigns, function(textDesign, index) {
+                            return _c(
+                              "drr",
+                              {
+                                key: index,
+                                attrs: {
+                                  x: textDesign.x,
+                                  y: textDesign.y,
+                                  w: textDesign.weight,
+                                  h: textDesign.height,
+                                  angle: textDesign.angle,
+                                  selected: textDesign.selected,
+                                  aspectRatio: true
+                                },
+                                on: {
+                                  resize: _vm.resize,
+                                  select: function($event) {
+                                    return _vm.selectItem(index)
+                                  }
+                                }
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    class: _vm.getCustomDesignClass(index),
+                                    staticStyle: {
+                                      width: "100%",
+                                      height: "100%"
+                                    },
+                                    style: {
+                                      color: textDesign.fontColor,
+                                      fontSize: textDesign.fontSize * 11 + "px"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(textDesign.text))]
+                                )
+                              ]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _vm.shapeDefaultClass == "rectangle1-3"
+                      ? _c("span", { staticClass: "right" }, [_vm._v("1’’")])
                       : _vm._e(),
                     _vm._v(" "),
-                    _vm._l(_vm.clipartDesigns, function(clipartDesign, index) {
-                      return _c(
-                        "drr",
-                        {
-                          key: index,
-                          attrs: {
-                            x: clipartDesign.x,
-                            y: clipartDesign.y,
-                            w: clipartDesign.weight,
-                            h: clipartDesign.height,
-                            angle: clipartDesign.angle,
-                            selected: clipartDesign.selected,
-                            aspectRatio: true,
-                            innerBox: _vm.innerBox,
-                            outerBox: _vm.outerBox
-                          },
-                          on: {
-                            select: function($event) {
-                              return _vm.selectItemClipart(index)
-                            }
-                          }
-                        },
-                        [
-                          _c("img", {
-                            staticStyle: { width: "100%", height: "100%" },
-                            attrs: { src: clipartDesign.img }
-                          })
-                        ]
-                      )
-                    }),
+                    _vm.shapeDefaultClass == "rectangle1-5-3"
+                      ? _c("span", { staticClass: "right" }, [_vm._v("1.5’’")])
+                      : _vm._e(),
                     _vm._v(" "),
-                    _vm._l(_vm.logoDesigns, function(logoDesign, index) {
-                      return _c(
-                        "drr",
-                        {
-                          key: index,
-                          attrs: {
-                            x: logoDesign.x,
-                            y: logoDesign.y,
-                            w: logoDesign.weight,
-                            h: logoDesign.height,
-                            angle: logoDesign.angle,
-                            selected: logoDesign.selected,
-                            aspectRatio: true,
-                            innerBox: _vm.innerBox,
-                            outerBox: _vm.outerBox
-                          },
-                          on: {
-                            select: function($event) {
-                              return _vm.selectItemLogo(index)
-                            }
-                          }
-                        },
-                        [
-                          _c("img", {
-                            staticStyle: { width: "100%", height: "100%" },
-                            attrs: { src: logoDesign.img }
-                          })
-                        ]
-                      )
-                    }),
+                    _vm.shapeDefaultClass == "oval1-3"
+                      ? _c("span", { staticClass: "right" }, [_vm._v("1.5’’")])
+                      : _vm._e(),
                     _vm._v(" "),
-                    _vm._l(_vm.textDesigns, function(textDesign, index) {
-                      return _c(
-                        "drr",
-                        {
-                          key: index,
-                          attrs: {
-                            x: textDesign.x,
-                            y: textDesign.y,
-                            w: textDesign.weight,
-                            h: textDesign.height,
-                            angle: textDesign.angle,
-                            selected: textDesign.selected,
-                            aspectRatio: true
-                          },
-                          on: {
-                            resize: _vm.resize,
-                            select: function($event) {
-                              return _vm.selectItem(index)
-                            }
-                          }
-                        },
-                        [
-                          _c(
-                            "div",
-                            {
-                              class: _vm.getCustomDesignClass(index),
-                              staticStyle: { width: "100%", height: "100%" },
-                              style: {
-                                color: textDesign.fontColor,
-                                fontSize: textDesign.fontSize * 11 + "px"
-                              }
-                            },
-                            [_vm._v(_vm._s(textDesign.text))]
-                          )
-                        ]
-                      )
-                    })
-                  ],
-                  2
-                )
-              ]),
-              _vm._v(" "),
-              _vm.shapeDefaultClass == "rectangle1-3"
-                ? _c("span", { staticClass: "right" }, [_vm._v("1’’")])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.shapeDefaultClass == "rectangle1-5-3"
-                ? _c("span", { staticClass: "right" }, [_vm._v("1.5’’")])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.shapeDefaultClass == "oval1-3"
-                ? _c("span", { staticClass: "right" }, [_vm._v("1.5’’")])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.shapeDefaultClass == "rectangle12-3"
-                ? _c("span", { staticClass: "right" }, [_vm._v("2’’")])
-                : _vm._e(),
-              _vm._v(" "),
-              _c("span", { staticClass: "bottom" }, [_vm._v("3’’")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "text-content" }, [
-              _vm._m(8),
-              _vm._v(" "),
-              _c("ul", [
-                _vm._m(9),
+                    _vm.shapeDefaultClass == "rectangle12-3"
+                      ? _c("span", { staticClass: "right" }, [_vm._v("2’’")])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "bottom" }, [_vm._v("3’’")])
+                  ]
+                ),
                 _vm._v(" "),
-                _c("li", [
-                  _c("h3", [
-                    _vm._v("Price: "),
-                    _c("span", [_vm._v(_vm._s(_vm.getPrice) + " each")])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-5 design-page-right" }, [
-            _c("div", { staticClass: "add-list" }, [
-              _c("ul", [
-                _c("li", [
-                  _c(
-                    "a",
-                    { attrs: { href: "#url" }, on: { click: _vm.addText } },
-                    [_vm._v("+ Add Text")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
-                    "a",
-                    { attrs: { href: "#url" }, on: { click: _vm.selectImage } },
-                    [_vm._v("+ Add Logo")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  ref: "fileInput",
-                  staticStyle: { display: "none" },
-                  attrs: { type: "file" },
-                  on: { input: _vm.pickFile }
-                }),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
-                    "a",
-                    {
-                      attrs: { href: "#url" },
-                      on: {
-                        click: function($event) {
-                          return _vm.$modal.show("clipart-modal")
-                        }
-                      }
-                    },
-                    [_vm._v("+ Add Clipart")]
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _vm.menu.sizeShape
-              ? _c("div", { staticClass: "size-sec" }, [
-                  _c("h5", [_vm._v("SELECT A SIZE / SHAPE")]),
+                _c("div", { staticClass: "text-content" }, [
+                  _vm._m(8),
                   _vm._v(" "),
                   _c("ul", [
                     _c("li", [
-                      _c("div", { staticClass: "form_input_radio" }, [
-                        _c("label", [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.shapeDefaultClass,
-                                expression: "shapeDefaultClass"
-                              }
-                            ],
-                            attrs: { type: "radio", value: "rectangle1-3" },
-                            domProps: {
-                              checked: _vm._q(
-                                _vm.shapeDefaultClass,
-                                "rectangle1-3"
-                              )
-                            },
-                            on: {
-                              change: function($event) {
-                                _vm.shapeDefaultClass = "rectangle1-3"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", [_vm._v(" 1’’x3’’ Rectangle")])
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "form_input_radio" }, [
-                        _c("label", [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.shapeDefaultClass,
-                                expression: "shapeDefaultClass"
-                              }
-                            ],
-                            attrs: { type: "radio", value: "rectangle1-5-3" },
-                            domProps: {
-                              checked: _vm._q(
-                                _vm.shapeDefaultClass,
-                                "rectangle1-5-3"
-                              )
-                            },
-                            on: {
-                              change: function($event) {
-                                _vm.shapeDefaultClass = "rectangle1-5-3"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("1.5’’x3’’ Rectangle")])
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "form_input_radio" }, [
-                        _c("label", [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.shapeDefaultClass,
-                                expression: "shapeDefaultClass"
-                              }
-                            ],
-                            attrs: { type: "radio", value: "oval1-3" },
-                            domProps: {
-                              checked: _vm._q(_vm.shapeDefaultClass, "oval1-3")
-                            },
-                            on: {
-                              change: function($event) {
-                                _vm.shapeDefaultClass = "oval1-3"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("1.5’x3’ Oval")])
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "form_input_radio" }, [
-                        _c("label", [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.shapeDefaultClass,
-                                expression: "shapeDefaultClass"
-                              }
-                            ],
-                            attrs: { type: "radio", value: "rectangle12-3" },
-                            domProps: {
-                              checked: _vm._q(
-                                _vm.shapeDefaultClass,
-                                "rectangle12-3"
-                              )
-                            },
-                            on: {
-                              change: function($event) {
-                                _vm.shapeDefaultClass = "rectangle12-3"
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("2’’x3’’ Rectangle")])
-                        ])
-                      ])
-                    ])
-                  ])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.menu.textOptions
-              ? _c("div", { staticClass: "size-sec" }, [
-                  _c("h5", [_vm._v("TEXT OPTIONS")]),
-                  _vm._v(" "),
-                  _c("div", {}, [
-                    _c("div", { staticClass: "form-group row" }, [
                       _c(
-                        "label",
+                        "a",
                         {
-                          staticClass: "col-sm-3 col-form-label",
-                          attrs: { for: "inputPassword" }
+                          staticClass: "cmn-btn cursor-pointer",
+                          on: { click: _vm.printThis }
                         },
-                        [_vm._v("Your Text")]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-sm-9" }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.getYourText,
-                              expression: "getYourText"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            id: "inputPassword",
-                            placeholder: "Your Text"
-                          },
-                          domProps: { value: _vm.getYourText },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.getYourText = $event.target.value
-                            }
-                          }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group row" }, [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "col-sm-3 col-form-label",
-                          attrs: { for: "inputPassword" }
-                        },
-                        [_vm._v("Font")]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-sm-9" }, [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value:
-                                  _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                    .font,
-                                expression:
-                                  "textDesigns[selectedTextBoxIndex].font"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.$set(
-                                  _vm.textDesigns[_vm.selectedTextBoxIndex],
-                                  "font",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                )
-                              }
-                            }
-                          },
-                          [
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt2", id: "fnt2" } },
-                              [_vm._v("Arial")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt4", id: "fnt4" } },
-                              [_vm._v("Century Gothic")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt28", id: "fnt28" } },
-                              [_vm._v("Century Gothic Bold")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt5", id: "fnt5" } },
-                              [_vm._v("Comic Sans MS")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt6", id: "fnt6" } },
-                              [_vm._v("Courier New")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt7", id: "fnt7" } },
-                              [_vm._v("Georgia")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt8", id: "fnt8" } },
-                              [_vm._v("Impact")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt9", id: "fnt9" } },
-                              [_vm._v("Times New Roman")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt10", id: "fnt10" } },
-                              [_vm._v("Trebuchet MS")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt11", id: "fnt11" } },
-                              [_vm._v("Verdana")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt12", id: "fnt12" } },
-                              [_vm._v("Gotham")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt13", id: "fnt13" } },
-                              [_vm._v("Cormorant Garamond Medium")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt15", id: "fnt15" } },
-                              [_vm._v("Lobster")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt17", id: "fnt17" } },
-                              [_vm._v("Old English TextMT")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt22", id: "fnt22" } },
-                              [_vm._v("MonotypeCorsiva")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt23", id: "fnt23" } },
-                              [_vm._v("Scriptoria SSK")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt19", id: "fnt19" } },
-                              [_vm._v("Ardestine")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "fnt20", id: "fnt20" } },
-                              [_vm._v("Arbonnie")]
-                            )
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group row" }, [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "col-sm-3 col-form-label",
-                          attrs: { for: "inputPassword" }
-                        },
-                        [_vm._v("Font Style")]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-sm-9" }, [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value:
-                                  _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                    .fontStyle,
-                                expression:
-                                  "textDesigns[selectedTextBoxIndex].fontStyle"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: { id: "inputState" },
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.$set(
-                                  _vm.textDesigns[_vm.selectedTextBoxIndex],
-                                  "fontStyle",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                )
-                              }
-                            }
-                          },
-                          [
-                            _c("option", { attrs: { value: "" } }, [
-                              _vm._v("Regular")
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "option",
-                              { attrs: { value: "font-weight-bold" } },
-                              [_vm._v("Bold")]
-                            ),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "font-italic" } }, [
-                              _vm._v("Italic")
-                            ])
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group row" }, [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "col-sm-3 col-form-label",
-                          attrs: { for: "inputPassword" }
-                        },
-                        [_vm._v("Font Size")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "col-sm-9" },
-                        [
-                          _c("VueSimpleRangeSlider", {
-                            staticStyle: { width: "100%" },
-                            attrs: { min: 1, max: 10 },
-                            model: {
-                              value:
-                                _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                  .fontSize,
-                              callback: function($$v) {
-                                _vm.$set(
-                                  _vm.textDesigns[_vm.selectedTextBoxIndex],
-                                  "fontSize",
-                                  $$v
-                                )
-                              },
-                              expression:
-                                "textDesigns[selectedTextBoxIndex].fontSize"
-                            }
-                          })
-                        ],
-                        1
+                        [_vm._v("Finished Designing")]
                       )
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form-group row" }, [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "col-sm-3 col-form-label",
-                          attrs: { for: "inputPassword" }
-                        },
-                        [_vm._v("Color")]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-sm-9 color-row" }, [
-                        _c("span", {
-                          staticClass: "colr-000000",
-                          class: {
-                            active:
-                              _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                .fontColor == "#000000"
-                          },
-                          staticStyle: { background: "#000000" },
-                          attrs: { id: "colr" },
-                          on: {
-                            click: function($event) {
-                              _vm.textDesigns[
-                                _vm.selectedTextBoxIndex
-                              ].fontColor = "#000000"
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", {
-                          staticClass: "colr-ffffff",
-                          class: {
-                            active:
-                              _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                .fontColor == "#ffffff"
-                          },
-                          staticStyle: {
-                            background: "#ffffff",
-                            "border-color": "#ccc"
-                          },
-                          on: {
-                            click: function($event) {
-                              _vm.textDesigns[
-                                _vm.selectedTextBoxIndex
-                              ].fontColor = "#ffffff"
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", {
-                          staticClass: "colr-ff0000",
-                          class: {
-                            active:
-                              _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                .fontColor == "#ff0000"
-                          },
-                          staticStyle: { background: "#ff0000" },
-                          on: {
-                            click: function($event) {
-                              _vm.textDesigns[
-                                _vm.selectedTextBoxIndex
-                              ].fontColor = "#ff0000"
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", {
-                          staticClass: "colr-0000ff",
-                          class: {
-                            active:
-                              _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                .fontColor == "#0000FF"
-                          },
-                          staticStyle: { background: "#0000FF" },
-                          on: {
-                            click: function($event) {
-                              _vm.textDesigns[
-                                _vm.selectedTextBoxIndex
-                              ].fontColor = "#0000FF"
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", {
-                          staticClass: "colr-008000",
-                          class: {
-                            active:
-                              _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                .fontColor == "#008000"
-                          },
-                          staticStyle: { background: "#008000" },
-                          on: {
-                            click: function($event) {
-                              _vm.textDesigns[
-                                _vm.selectedTextBoxIndex
-                              ].fontColor = "#008000"
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", {
-                          staticClass: "colr-ffa500",
-                          class: {
-                            active:
-                              _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                .fontColor == "#FFA500"
-                          },
-                          staticStyle: { background: "#FFA500" },
-                          on: {
-                            click: function($event) {
-                              _vm.textDesigns[
-                                _vm.selectedTextBoxIndex
-                              ].fontColor = "#FFA500"
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", {
-                          staticClass: "colr-ff921d",
-                          class: {
-                            active:
-                              _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                .fontColor == "#ff921d"
-                          },
-                          staticStyle: { background: "#ff921d" },
-                          on: {
-                            click: function($event) {
-                              _vm.textDesigns[
-                                _vm.selectedTextBoxIndex
-                              ].fontColor = "#ff921d"
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", {
-                          staticClass: "colr-2ee6b4",
-                          class: {
-                            active:
-                              _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                .fontColor == "#2ee6b4"
-                          },
-                          staticStyle: { background: "#2ee6b4" },
-                          on: {
-                            click: function($event) {
-                              _vm.textDesigns[
-                                _vm.selectedTextBoxIndex
-                              ].fontColor = "#2ee6b4"
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", {
-                          staticClass: "colr-547ce1",
-                          class: {
-                            active:
-                              _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                .fontColor == "#547ce1"
-                          },
-                          staticStyle: { background: "#547ce1" },
-                          on: {
-                            click: function($event) {
-                              _vm.textDesigns[
-                                _vm.selectedTextBoxIndex
-                              ].fontColor = "#547ce1"
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", {
-                          staticClass: "colr-51a3f0",
-                          class: {
-                            active:
-                              _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                .fontColor == "#51a3f0"
-                          },
-                          staticStyle: { background: "#51a3f0" },
-                          on: {
-                            click: function($event) {
-                              _vm.textDesigns[
-                                _vm.selectedTextBoxIndex
-                              ].fontColor = "#51a3f0"
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", {
-                          staticClass: "colr-5a5af5",
-                          class: {
-                            active:
-                              _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                .fontColor == "#5a5af5"
-                          },
-                          staticStyle: { background: "#5a5af5" },
-                          on: {
-                            click: function($event) {
-                              _vm.textDesigns[
-                                _vm.selectedTextBoxIndex
-                              ].fontColor = "#5a5af5"
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", {
-                          staticClass: "colr-ff00f0",
-                          class: {
-                            active:
-                              _vm.textDesigns[_vm.selectedTextBoxIndex]
-                                .fontColor == "#ff00f0"
-                          },
-                          staticStyle: { background: "#ff00f0" },
-                          on: {
-                            click: function($event) {
-                              _vm.textDesigns[
-                                _vm.selectedTextBoxIndex
-                              ].fontColor = "#ff00f0"
-                            }
-                          }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-3" }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-9" }, [
-                        _vm.textDesigns.length > 1
-                          ? _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-danger",
-                                on: { click: _vm.deleteText }
-                              },
-                              [_vm._v("Delete Text")]
-                            )
-                          : _vm._e()
+                    _c("li", [
+                      _c("h3", [
+                        _vm._v("Price: "),
+                        _c("span", [_vm._v(_vm._s(_vm.getPrice) + " each")])
                       ])
                     ])
                   ])
                 ])
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.menu.background
-              ? _c("div", { staticClass: "size-sec" }, [
-                  _c("div", {}, [
-                    _vm._m(10),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-5 design-page-right" }, [
+                _c("div", { staticClass: "add-list" }, [
+                  _c("ul", [
+                    _c("li", [
+                      _c(
+                        "a",
+                        { attrs: { href: "#url" }, on: { click: _vm.addText } },
+                        [_vm._v("+ Add Text")]
+                      )
+                    ]),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "tab-content",
-                        attrs: { id: "myTabContent" }
-                      },
-                      [
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#url" },
+                          on: { click: _vm.selectImage }
+                        },
+                        [_vm._v("+ Add Logo")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      ref: "fileInput",
+                      staticStyle: { display: "none" },
+                      attrs: { type: "file" },
+                      on: { input: _vm.pickFile }
+                    }),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#url" },
+                          on: {
+                            click: function($event) {
+                              return _vm.$modal.show("clipart-modal")
+                            }
+                          }
+                        },
+                        [_vm._v("+ Add Clipart")]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm.menu.sizeShape
+                  ? _c("div", { staticClass: "size-sec" }, [
+                      _c("h5", [_vm._v("SELECT A SIZE / SHAPE")]),
+                      _vm._v(" "),
+                      _c("ul", [
+                        _c("li", [
+                          _c("div", { staticClass: "form_input_radio" }, [
+                            _c("label", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.shapeDefaultClass,
+                                    expression: "shapeDefaultClass"
+                                  }
+                                ],
+                                attrs: { type: "radio", value: "rectangle1-3" },
+                                domProps: {
+                                  checked: _vm._q(
+                                    _vm.shapeDefaultClass,
+                                    "rectangle1-3"
+                                  )
+                                },
+                                on: {
+                                  change: function($event) {
+                                    _vm.shapeDefaultClass = "rectangle1-3"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", [_vm._v(" 1’’x3’’ Rectangle")])
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c("div", { staticClass: "form_input_radio" }, [
+                            _c("label", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.shapeDefaultClass,
+                                    expression: "shapeDefaultClass"
+                                  }
+                                ],
+                                attrs: {
+                                  type: "radio",
+                                  value: "rectangle1-5-3"
+                                },
+                                domProps: {
+                                  checked: _vm._q(
+                                    _vm.shapeDefaultClass,
+                                    "rectangle1-5-3"
+                                  )
+                                },
+                                on: {
+                                  change: function($event) {
+                                    _vm.shapeDefaultClass = "rectangle1-5-3"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("1.5’’x3’’ Rectangle")])
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c("div", { staticClass: "form_input_radio" }, [
+                            _c("label", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.shapeDefaultClass,
+                                    expression: "shapeDefaultClass"
+                                  }
+                                ],
+                                attrs: { type: "radio", value: "oval1-3" },
+                                domProps: {
+                                  checked: _vm._q(
+                                    _vm.shapeDefaultClass,
+                                    "oval1-3"
+                                  )
+                                },
+                                on: {
+                                  change: function($event) {
+                                    _vm.shapeDefaultClass = "oval1-3"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("1.5’x3’ Oval")])
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c("div", { staticClass: "form_input_radio" }, [
+                            _c("label", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.shapeDefaultClass,
+                                    expression: "shapeDefaultClass"
+                                  }
+                                ],
+                                attrs: {
+                                  type: "radio",
+                                  value: "rectangle12-3"
+                                },
+                                domProps: {
+                                  checked: _vm._q(
+                                    _vm.shapeDefaultClass,
+                                    "rectangle12-3"
+                                  )
+                                },
+                                on: {
+                                  change: function($event) {
+                                    _vm.shapeDefaultClass = "rectangle12-3"
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("2’’x3’’ Rectangle")])
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.menu.textOptions
+                  ? _c("div", { staticClass: "size-sec" }, [
+                      _c("h5", [_vm._v("TEXT OPTIONS")]),
+                      _vm._v(" "),
+                      _c("div", {}, [
+                        _c("div", { staticClass: "form-group row" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "col-sm-3 col-form-label",
+                              attrs: { for: "inputPassword" }
+                            },
+                            [_vm._v("Your Text")]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm-9" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.getYourText,
+                                  expression: "getYourText"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "text",
+                                id: "inputPassword",
+                                placeholder: "Your Text"
+                              },
+                              domProps: { value: _vm.getYourText },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.getYourText = $event.target.value
+                                }
+                              }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form-group row" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "col-sm-3 col-form-label",
+                              attrs: { for: "inputPassword" }
+                            },
+                            [_vm._v("Font")]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm-9" }, [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value:
+                                      _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                        .font,
+                                    expression:
+                                      "textDesigns[selectedTextBoxIndex].font"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.textDesigns[_vm.selectedTextBoxIndex],
+                                      "font",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  }
+                                }
+                              },
+                              [
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt2", id: "fnt2" } },
+                                  [_vm._v("Arial")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt4", id: "fnt4" } },
+                                  [_vm._v("Century Gothic")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt28", id: "fnt28" } },
+                                  [_vm._v("Century Gothic Bold")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt5", id: "fnt5" } },
+                                  [_vm._v("Comic Sans MS")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt6", id: "fnt6" } },
+                                  [_vm._v("Courier New")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt7", id: "fnt7" } },
+                                  [_vm._v("Georgia")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt8", id: "fnt8" } },
+                                  [_vm._v("Impact")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt9", id: "fnt9" } },
+                                  [_vm._v("Times New Roman")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt10", id: "fnt10" } },
+                                  [_vm._v("Trebuchet MS")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt11", id: "fnt11" } },
+                                  [_vm._v("Verdana")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt12", id: "fnt12" } },
+                                  [_vm._v("Gotham")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt13", id: "fnt13" } },
+                                  [_vm._v("Cormorant Garamond Medium")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt15", id: "fnt15" } },
+                                  [_vm._v("Lobster")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt17", id: "fnt17" } },
+                                  [_vm._v("Old English TextMT")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt22", id: "fnt22" } },
+                                  [_vm._v("MonotypeCorsiva")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt23", id: "fnt23" } },
+                                  [_vm._v("Scriptoria SSK")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt19", id: "fnt19" } },
+                                  [_vm._v("Ardestine")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "fnt20", id: "fnt20" } },
+                                  [_vm._v("Arbonnie")]
+                                )
+                              ]
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form-group row" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "col-sm-3 col-form-label",
+                              attrs: { for: "inputPassword" }
+                            },
+                            [_vm._v("Font Style")]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm-9" }, [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value:
+                                      _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                        .fontStyle,
+                                    expression:
+                                      "textDesigns[selectedTextBoxIndex].fontStyle"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: { id: "inputState" },
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.textDesigns[_vm.selectedTextBoxIndex],
+                                      "fontStyle",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  }
+                                }
+                              },
+                              [
+                                _c("option", { attrs: { value: "" } }, [
+                                  _vm._v("Regular")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "font-weight-bold" } },
+                                  [_vm._v("Bold")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "option",
+                                  { attrs: { value: "font-italic" } },
+                                  [_vm._v("Italic")]
+                                )
+                              ]
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form-group row" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "col-sm-3 col-form-label",
+                              attrs: { for: "inputPassword" }
+                            },
+                            [_vm._v("Font Size")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-sm-9" },
+                            [
+                              _c("VueSimpleRangeSlider", {
+                                staticStyle: { width: "100%" },
+                                attrs: { min: 1, max: 10 },
+                                model: {
+                                  value:
+                                    _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                      .fontSize,
+                                  callback: function($$v) {
+                                    _vm.$set(
+                                      _vm.textDesigns[_vm.selectedTextBoxIndex],
+                                      "fontSize",
+                                      $$v
+                                    )
+                                  },
+                                  expression:
+                                    "textDesigns[selectedTextBoxIndex].fontSize"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form-group row" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "col-sm-3 col-form-label",
+                              attrs: { for: "inputPassword" }
+                            },
+                            [_vm._v("Color")]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm-9 color-row" }, [
+                            _c("span", {
+                              staticClass: "colr-000000",
+                              class: {
+                                active:
+                                  _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                    .fontColor == "#000000"
+                              },
+                              staticStyle: { background: "#000000" },
+                              attrs: { id: "colr" },
+                              on: {
+                                click: function($event) {
+                                  _vm.textDesigns[
+                                    _vm.selectedTextBoxIndex
+                                  ].fontColor = "#000000"
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("span", {
+                              staticClass: "colr-ffffff",
+                              class: {
+                                active:
+                                  _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                    .fontColor == "#ffffff"
+                              },
+                              staticStyle: {
+                                background: "#ffffff",
+                                "border-color": "#ccc"
+                              },
+                              on: {
+                                click: function($event) {
+                                  _vm.textDesigns[
+                                    _vm.selectedTextBoxIndex
+                                  ].fontColor = "#ffffff"
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("span", {
+                              staticClass: "colr-ff0000",
+                              class: {
+                                active:
+                                  _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                    .fontColor == "#ff0000"
+                              },
+                              staticStyle: { background: "#ff0000" },
+                              on: {
+                                click: function($event) {
+                                  _vm.textDesigns[
+                                    _vm.selectedTextBoxIndex
+                                  ].fontColor = "#ff0000"
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("span", {
+                              staticClass: "colr-0000ff",
+                              class: {
+                                active:
+                                  _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                    .fontColor == "#0000FF"
+                              },
+                              staticStyle: { background: "#0000FF" },
+                              on: {
+                                click: function($event) {
+                                  _vm.textDesigns[
+                                    _vm.selectedTextBoxIndex
+                                  ].fontColor = "#0000FF"
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("span", {
+                              staticClass: "colr-008000",
+                              class: {
+                                active:
+                                  _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                    .fontColor == "#008000"
+                              },
+                              staticStyle: { background: "#008000" },
+                              on: {
+                                click: function($event) {
+                                  _vm.textDesigns[
+                                    _vm.selectedTextBoxIndex
+                                  ].fontColor = "#008000"
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("span", {
+                              staticClass: "colr-ffa500",
+                              class: {
+                                active:
+                                  _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                    .fontColor == "#FFA500"
+                              },
+                              staticStyle: { background: "#FFA500" },
+                              on: {
+                                click: function($event) {
+                                  _vm.textDesigns[
+                                    _vm.selectedTextBoxIndex
+                                  ].fontColor = "#FFA500"
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("span", {
+                              staticClass: "colr-ff921d",
+                              class: {
+                                active:
+                                  _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                    .fontColor == "#ff921d"
+                              },
+                              staticStyle: { background: "#ff921d" },
+                              on: {
+                                click: function($event) {
+                                  _vm.textDesigns[
+                                    _vm.selectedTextBoxIndex
+                                  ].fontColor = "#ff921d"
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("span", {
+                              staticClass: "colr-2ee6b4",
+                              class: {
+                                active:
+                                  _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                    .fontColor == "#2ee6b4"
+                              },
+                              staticStyle: { background: "#2ee6b4" },
+                              on: {
+                                click: function($event) {
+                                  _vm.textDesigns[
+                                    _vm.selectedTextBoxIndex
+                                  ].fontColor = "#2ee6b4"
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("span", {
+                              staticClass: "colr-547ce1",
+                              class: {
+                                active:
+                                  _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                    .fontColor == "#547ce1"
+                              },
+                              staticStyle: { background: "#547ce1" },
+                              on: {
+                                click: function($event) {
+                                  _vm.textDesigns[
+                                    _vm.selectedTextBoxIndex
+                                  ].fontColor = "#547ce1"
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("span", {
+                              staticClass: "colr-51a3f0",
+                              class: {
+                                active:
+                                  _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                    .fontColor == "#51a3f0"
+                              },
+                              staticStyle: { background: "#51a3f0" },
+                              on: {
+                                click: function($event) {
+                                  _vm.textDesigns[
+                                    _vm.selectedTextBoxIndex
+                                  ].fontColor = "#51a3f0"
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("span", {
+                              staticClass: "colr-5a5af5",
+                              class: {
+                                active:
+                                  _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                    .fontColor == "#5a5af5"
+                              },
+                              staticStyle: { background: "#5a5af5" },
+                              on: {
+                                click: function($event) {
+                                  _vm.textDesigns[
+                                    _vm.selectedTextBoxIndex
+                                  ].fontColor = "#5a5af5"
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("span", {
+                              staticClass: "colr-ff00f0",
+                              class: {
+                                active:
+                                  _vm.textDesigns[_vm.selectedTextBoxIndex]
+                                    .fontColor == "#ff00f0"
+                              },
+                              staticStyle: { background: "#ff00f0" },
+                              on: {
+                                click: function($event) {
+                                  _vm.textDesigns[
+                                    _vm.selectedTextBoxIndex
+                                  ].fontColor = "#ff00f0"
+                                }
+                              }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-md-3" }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-md-9" }, [
+                            _vm.textDesigns.length > 1
+                              ? _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-danger",
+                                    on: { click: _vm.deleteText }
+                                  },
+                                  [_vm._v("Delete Text")]
+                                )
+                              : _vm._e()
+                          ])
+                        ])
+                      ])
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.menu.background
+                  ? _c("div", { staticClass: "size-sec" }, [
+                      _c("div", {}, [
+                        _vm._m(9),
+                        _vm._v(" "),
                         _c(
                           "div",
                           {
-                            staticClass:
-                              "tab-pane fade show active ul-custom-height",
-                            attrs: {
-                              id: "MATERIAL",
-                              role: "tabpanel",
-                              "aria-labelledby": "home-tab"
-                            }
+                            staticClass: "tab-content",
+                            attrs: { id: "myTabContent" }
                           },
                           [
-                            _c("div", { staticClass: "matirial-list" }, [
-                              _c("ul", [
-                                _c("li", [
-                                  _c(
-                                    "div",
-                                    { staticClass: "form_input_radio" },
-                                    [
-                                      _c(
-                                        "label",
-                                        {
-                                          staticClass: "custom_height_60",
-                                          on: {
-                                            click: function($event) {
-                                              _vm.backgroundImage =
-                                                "/background/Material/White-Plastic/1.png"
-                                              _vm.selectTypeForPrice(
-                                                "white_plastic_rectangle"
-                                              )
-                                            }
-                                          }
-                                        },
-                                        [
-                                          _c("input", {
-                                            attrs: {
-                                              type: "radio",
-                                              checked: "",
-                                              name: "name"
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _vm._m(11)
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("span", [_vm._v("White - Plastic")])
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                this.shapeDefaultClass != "oval1-3"
-                                  ? _c("li", [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "tab-pane fade show active ul-custom-height",
+                                attrs: {
+                                  id: "MATERIAL",
+                                  role: "tabpanel",
+                                  "aria-labelledby": "home-tab"
+                                }
+                              },
+                              [
+                                _c("div", { staticClass: "matirial-list" }, [
+                                  _c("ul", [
+                                    _c("li", [
                                       _c(
                                         "div",
                                         { staticClass: "form_input_radio" },
@@ -53927,9 +54061,9 @@ var render = function() {
                                               on: {
                                                 click: function($event) {
                                                   _vm.backgroundImage =
-                                                    "/background/Material/Gold-Plastic/7.png"
+                                                    "/background/Material/White-Plastic/1.png"
                                                   _vm.selectTypeForPrice(
-                                                    "gold_silver_plastic_rectangle"
+                                                    "white_plastic_rectangle"
                                                   )
                                                 }
                                               }
@@ -53938,22 +54072,133 @@ var render = function() {
                                               _c("input", {
                                                 attrs: {
                                                   type: "radio",
+                                                  checked: "",
                                                   name: "name"
                                                 }
                                               }),
                                               _vm._v(" "),
-                                              _vm._m(12)
+                                              _vm._m(10)
                                             ]
                                           ),
                                           _vm._v(" "),
-                                          _c("span", [_vm._v("Gold - Plastic")])
+                                          _c("span", [
+                                            _vm._v("White - Plastic")
+                                          ])
                                         ]
                                       )
-                                    ])
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                this.shapeDefaultClass != "oval1-3"
-                                  ? _c("li", [
+                                    ]),
+                                    _vm._v(" "),
+                                    this.shapeDefaultClass != "oval1-3"
+                                      ? _c("li", [
+                                          _c(
+                                            "div",
+                                            { staticClass: "form_input_radio" },
+                                            [
+                                              _c(
+                                                "label",
+                                                {
+                                                  staticClass:
+                                                    "custom_height_60",
+                                                  on: {
+                                                    click: function($event) {
+                                                      _vm.backgroundImage =
+                                                        "/background/Material/Gold-Plastic/7.png"
+                                                      _vm.selectTypeForPrice(
+                                                        "gold_silver_plastic_rectangle"
+                                                      )
+                                                    }
+                                                  }
+                                                },
+                                                [
+                                                  _c("input", {
+                                                    directives: [
+                                                      {
+                                                        name: "model",
+                                                        rawName: "v-model",
+                                                        value:
+                                                          _vm.selectionForPrice
+                                                            .gold_silver_plastic_rectangle,
+                                                        expression:
+                                                          "selectionForPrice.gold_silver_plastic_rectangle"
+                                                      }
+                                                    ],
+                                                    attrs: {
+                                                      type: "radio",
+                                                      value: "true",
+                                                      name: "name"
+                                                    },
+                                                    domProps: {
+                                                      checked: _vm._q(
+                                                        _vm.selectionForPrice
+                                                          .gold_silver_plastic_rectangle,
+                                                        "true"
+                                                      )
+                                                    },
+                                                    on: {
+                                                      change: function($event) {
+                                                        return _vm.$set(
+                                                          _vm.selectionForPrice,
+                                                          "gold_silver_plastic_rectangle",
+                                                          "true"
+                                                        )
+                                                      }
+                                                    }
+                                                  }),
+                                                  _vm._v(" "),
+                                                  _vm._m(11)
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("span", [
+                                                _vm._v("Gold - Plastic")
+                                              ])
+                                            ]
+                                          )
+                                        ])
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    this.shapeDefaultClass != "oval1-3"
+                                      ? _c("li", [
+                                          _c(
+                                            "div",
+                                            { staticClass: "form_input_radio" },
+                                            [
+                                              _c(
+                                                "label",
+                                                {
+                                                  staticClass:
+                                                    "custom_height_60",
+                                                  on: {
+                                                    click: function($event) {
+                                                      _vm.backgroundImage =
+                                                        "/background/Material/Silver-Plastic/8.png"
+                                                      _vm.selectTypeForPrice(
+                                                        "gold_silver_plastic_rectangle"
+                                                      )
+                                                    }
+                                                  }
+                                                },
+                                                [
+                                                  _c("input", {
+                                                    attrs: {
+                                                      type: "radio",
+                                                      name: "name"
+                                                    }
+                                                  }),
+                                                  _vm._v(" "),
+                                                  _vm._m(12)
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("span", [
+                                                _vm._v("Silver - Plastic")
+                                              ])
+                                            ]
+                                          )
+                                        ])
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    _c("li", [
                                       _c(
                                         "div",
                                         { staticClass: "form_input_radio" },
@@ -53965,9 +54210,9 @@ var render = function() {
                                               on: {
                                                 click: function($event) {
                                                   _vm.backgroundImage =
-                                                    "/background/Material/Silver-Plastic/8.png"
+                                                    "/background/Material/Gold-Metallic/5.png"
                                                   _vm.selectTypeForPrice(
-                                                    "gold_silver_plastic_rectangle"
+                                                    "metallic_plastic_rectangle"
                                                   )
                                                 }
                                               }
@@ -53984,508 +54229,684 @@ var render = function() {
                                             ]
                                           ),
                                           _vm._v(" "),
+                                          _c("span", [_vm._v("Gold Metallic")])
+                                        ]
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("li", [
+                                      _c(
+                                        "div",
+                                        { staticClass: "form_input_radio" },
+                                        [
+                                          _c(
+                                            "label",
+                                            {
+                                              staticClass: "custom_height_60",
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.backgroundImage =
+                                                    "/background/Material/Silver-Metallic/6.png"
+                                                  _vm.selectTypeForPrice(
+                                                    "metallic_plastic_rectangle"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("input", {
+                                                attrs: {
+                                                  type: "radio",
+                                                  name: "name"
+                                                }
+                                              }),
+                                              _vm._v(" "),
+                                              _vm._m(14)
+                                            ]
+                                          ),
+                                          _vm._v(" "),
                                           _c("span", [
-                                            _vm._v("Silver - Plastic")
+                                            _vm._v("Silver Metallic")
                                           ])
                                         ]
                                       )
                                     ])
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _c("li", [
-                                  _c(
-                                    "div",
-                                    { staticClass: "form_input_radio" },
-                                    [
-                                      _c(
-                                        "label",
-                                        {
-                                          staticClass: "custom_height_60",
-                                          on: {
-                                            click: function($event) {
-                                              _vm.backgroundImage =
-                                                "/background/Material/Gold-Metallic/5.png"
-                                              _vm.selectTypeForPrice(
-                                                "metallic_plastic_rectangle"
-                                              )
-                                            }
-                                          }
-                                        },
-                                        [
-                                          _c("input", {
-                                            attrs: {
-                                              type: "radio",
-                                              name: "name"
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _vm._m(14)
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("span", [_vm._v("Gold Metallic")])
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("li", [
-                                  _c(
-                                    "div",
-                                    { staticClass: "form_input_radio" },
-                                    [
-                                      _c(
-                                        "label",
-                                        {
-                                          staticClass: "custom_height_60",
-                                          on: {
-                                            click: function($event) {
-                                              _vm.backgroundImage =
-                                                "/background/Material/Silver-Metallic/6.png"
-                                              _vm.selectTypeForPrice(
-                                                "metallic_plastic_rectangle"
-                                              )
-                                            }
-                                          }
-                                        },
-                                        [
-                                          _c("input", {
-                                            attrs: {
-                                              type: "radio",
-                                              name: "name"
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _vm._m(15)
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("span", [_vm._v("Silver Metallic")])
-                                    ]
-                                  )
+                                  ])
                                 ])
-                              ])
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "tab-pane fade",
-                            attrs: {
-                              id: "colors",
-                              role: "tabpanel",
-                              "aria-labelledby": "home-tab"
-                            }
-                          },
-                          [
+                              ]
+                            ),
+                            _vm._v(" "),
                             _c(
                               "div",
                               {
-                                staticClass: "row",
-                                staticStyle: { "margin-right": "13px" }
+                                staticClass: "tab-pane fade",
+                                attrs: {
+                                  id: "colors",
+                                  role: "tabpanel",
+                                  "aria-labelledby": "home-tab"
+                                }
                               },
                               [
-                                _c("photoshop-picker", {
-                                  staticClass: "color-picker-custom mt-2",
-                                  on: { input: _vm.colorChanged },
-                                  model: {
-                                    value: _vm.colors,
-                                    callback: function($$v) {
-                                      _vm.colors = $$v
-                                    },
-                                    expression: "colors"
-                                  }
-                                })
-                              ],
-                              1
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "row",
+                                    staticStyle: { "margin-right": "13px" }
+                                  },
+                                  [
+                                    _c("photoshop-picker", {
+                                      staticClass: "color-picker-custom mt-2",
+                                      on: { input: _vm.colorChanged },
+                                      model: {
+                                        value: _vm.colors,
+                                        callback: function($$v) {
+                                          _vm.colors = $$v
+                                        },
+                                        expression: "colors"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "tab-pane fade",
+                                attrs: {
+                                  id: "custom",
+                                  role: "tabpanel",
+                                  "aria-labelledby": "profile-tab"
+                                }
+                              },
+                              [
+                                _c("div", { staticClass: "matirial-list" }, [
+                                  _c(
+                                    "ul",
+                                    _vm._l(37, function(i) {
+                                      return _c("li", { key: i }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "form_input_radio" },
+                                          [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass: "custom_height_60",
+                                                on: {
+                                                  click: function($event) {
+                                                    _vm.backgroundImage =
+                                                      "/background/Custom/" +
+                                                      i +
+                                                      "/" +
+                                                      i +
+                                                      ".png"
+                                                  }
+                                                }
+                                              },
+                                              [
+                                                _c("input", {
+                                                  attrs: {
+                                                    type: "radio",
+                                                    name: "name"
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c("span", [
+                                                  _c("img", {
+                                                    staticStyle: {
+                                                      height: "60px",
+                                                      width: "100px"
+                                                    },
+                                                    attrs: {
+                                                      src:
+                                                        "/background/Custom/" +
+                                                        i +
+                                                        "/thumb.png",
+                                                      alt: ""
+                                                    }
+                                                  })
+                                                ])
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ])
+                                    }),
+                                    0
+                                  )
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "tab-pane fade",
+                                attrs: {
+                                  id: "contact",
+                                  role: "tabpanel",
+                                  "aria-labelledby": "contact-tab"
+                                }
+                              },
+                              [_vm._v("...")]
                             )
                           ]
-                        ),
-                        _vm._v(" "),
+                        )
+                      ])
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.menu.border
+                  ? _c("div", { staticClass: "size-sec" }, [
+                      _vm._m(15),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "matirial-list" }, [
+                        _c("ul", [
+                          _c("li", [
+                            _c("div", { staticClass: "form_input_radio" }, [
+                              _c(
+                                "label",
+                                {
+                                  on: {
+                                    click: function($event) {
+                                      _vm.borderDefaultClass = "gold-border"
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("input", {
+                                    attrs: { type: "radio", name: "name" }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(16)
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("Gold Border")])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("div", { staticClass: "form_input_radio" }, [
+                              _c(
+                                "label",
+                                {
+                                  on: {
+                                    click: function($event) {
+                                      _vm.borderDefaultClass = "silver-border"
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("input", {
+                                    attrs: { type: "radio", name: "name" }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(17)
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("Silver Border")])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("div", { staticClass: "form_input_radio" }, [
+                              _c(
+                                "label",
+                                {
+                                  on: {
+                                    click: function($event) {
+                                      _vm.borderDefaultClass = "black-border"
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("input", {
+                                    attrs: { type: "radio", name: "name" }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(18)
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("Black Border")])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("div", { staticClass: "form_input_radio" }, [
+                              _c(
+                                "label",
+                                {
+                                  on: {
+                                    click: function($event) {
+                                      _vm.borderDefaultClass = "no-border"
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("input", {
+                                    attrs: {
+                                      type: "radio",
+                                      checked: "",
+                                      name: "name"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(19)
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("No Border")])
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.menu.fastener
+                  ? _c("div", { staticClass: "size-sec" }, [
+                      _vm._m(20),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "matirial-list fastener-list" },
+                        [
+                          _c("ul", [
+                            _c("li", [
+                              _c("div", { staticClass: "form_input_radio" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    on: {
+                                      click: function($event) {
+                                        _vm.selected_fastener = "Magnet"
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("input", {
+                                      attrs: { type: "radio", name: "name" }
+                                    }),
+                                    _vm._v(" "),
+                                    _vm._m(21)
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("span", [_vm._v("Magnet")])
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("div", { staticClass: "form_input_radio" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    on: {
+                                      click: function($event) {
+                                        _vm.selected_fastener = "Pin"
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("input", {
+                                      attrs: { type: "radio", name: "name" }
+                                    }),
+                                    _vm._v(" "),
+                                    _vm._m(22)
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("span", [_vm._v("Pin")])
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("div", { staticClass: "form_input_radio" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    on: {
+                                      click: function($event) {
+                                        _vm.selected_fastener = "Swivel"
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("input", {
+                                      attrs: { type: "radio", name: "name" }
+                                    }),
+                                    _vm._v(" "),
+                                    _vm._m(23)
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("span", [_vm._v("Swivel Clip")])
+                              ])
+                            ])
+                          ])
+                        ]
+                      )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.menu.dome
+                  ? _c("div", { staticClass: "size-sec" }, [
+                      _vm._m(24),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "matirial-list demo-list" }, [
+                        _c("ul", [
+                          _c("li", [
+                            _c("div", { staticClass: "form_input_radio" }, [
+                              _c(
+                                "label",
+                                {
+                                  on: {
+                                    click: function($event) {
+                                      _vm.selected_fastener = "doming"
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("input", {
+                                    attrs: { type: "radio", name: "name" }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(25)
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("Add Doming")])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("div", { staticClass: "form_input_radio" }, [
+                              _c(
+                                "label",
+                                {
+                                  on: {
+                                    click: function($event) {
+                                      _vm.selected_fastener = "no doming"
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("input", {
+                                    attrs: {
+                                      type: "radio",
+                                      checked: "",
+                                      name: "name"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(26)
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("No Doming")])
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  : _vm._e()
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "Product-sec" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "table-sec",
+                  class: {
+                    "price_yable-custom-margin":
+                      _vm.shapeDefaultClass == "rectangle12-3"
+                  }
+                },
+                [
+                  _c("table", [
+                    _vm._m(27),
+                    _vm._v(" "),
+                    _vm._m(28),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [_vm._v("Price:")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm.getPriceTable["1-5"]))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm.getPriceTable["6-15"]))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm.getPriceTable["16-25"]))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm.getPriceTable["26-50"]))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm.getPriceTable["51-100"]))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm.getPriceTable["101-199"]))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm.getPriceTable["200-499"]))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(_vm.getPriceTable["500+"]))])
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.menu.global_items.addNames,
+                expression: "menu.global_items.addNames"
+              }
+            ]
+          },
+          [
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.menu.global_items.addOrEditNames,
+                    expression: "menu.global_items.addOrEditNames"
+                  }
+                ]
+              },
+              [
+                _vm._m(29),
+                _vm._v(" "),
+                _c("div", { staticClass: "demo-table" }, [
+                  _c("form", [
+                    _c("table", [
+                      _c(
+                        "tr",
+                        [
+                          _c("th", [_vm._v("No")]),
+                          _vm._v(" "),
+                          _vm._l(_vm.textDesigns, function(textDesign, index) {
+                            return _c("th", { key: index }, [
+                              _vm._v("Field " + _vm._s(index + 1))
+                            ])
+                          }),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("Quantity")])
+                        ],
+                        2
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "tr",
+                        [
+                          _c("td", [_vm._v("1")]),
+                          _vm._v(" "),
+                          _vm._l(_vm.textDesigns, function(textDesign, index) {
+                            return _c(
+                              "td",
+                              {
+                                key: index,
+                                attrs: {
+                                  width: _vm.calculateTDWidthOfEditNames
+                                }
+                              },
+                              [
+                                _c("div", { staticClass: "form-input" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.textDesigns[index].text,
+                                        expression: "textDesigns[index].text"
+                                      }
+                                    ],
+                                    attrs: {
+                                      type: "text",
+                                      placeholder: "Lorem Ipsum"
+                                    },
+                                    domProps: {
+                                      value: _vm.textDesigns[index].text
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.textDesigns[index],
+                                          "text",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ])
+                              ]
+                            )
+                          }),
+                          _vm._v(" "),
+                          _vm._m(30)
+                        ],
+                        2
+                      ),
+                      _vm._v(" "),
+                      _c("tr", [
                         _c(
-                          "div",
+                          "td",
                           {
-                            staticClass: "tab-pane fade",
                             attrs: {
-                              id: "custom",
-                              role: "tabpanel",
-                              "aria-labelledby": "profile-tab"
+                              colspan: _vm.calculateColspanOfEditNamesActionMenu
                             }
                           },
                           [
-                            _c("div", { staticClass: "matirial-list" }, [
+                            _c("div", { staticClass: "complete-btn" }, [
                               _c(
-                                "ul",
-                                _vm._l(37, function(i) {
-                                  return _c("li", { key: i }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "form_input_radio" },
-                                      [
-                                        _c(
-                                          "label",
-                                          {
-                                            staticClass: "custom_height_60",
-                                            on: {
-                                              click: function($event) {
-                                                _vm.backgroundImage =
-                                                  "/background/Custom/" +
-                                                  i +
-                                                  "/" +
-                                                  i +
-                                                  ".png"
-                                              }
-                                            }
-                                          },
-                                          [
-                                            _c("input", {
-                                              attrs: {
-                                                type: "radio",
-                                                name: "name"
-                                              }
-                                            }),
-                                            _vm._v(" "),
-                                            _c("span", [
-                                              _c("img", {
-                                                staticStyle: {
-                                                  height: "60px",
-                                                  width: "100px"
-                                                },
-                                                attrs: {
-                                                  src:
-                                                    "/background/Custom/" +
-                                                    i +
-                                                    "/thumb.png",
-                                                  alt: ""
-                                                }
-                                              })
-                                            ])
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  ])
-                                }),
-                                0
+                                "a",
+                                {
+                                  staticClass: "cmn-btn cursor-pointer",
+                                  on: {
+                                    click: function($event) {
+                                      _vm.menu.global_items.addOrEditNames = false
+                                    }
+                                  }
+                                },
+                                [_vm._v("GO BACK")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "cmn-btn cursor-pointer",
+                                  on: {
+                                    click: function($event) {
+                                      _vm.menu.global_items.addOrEditNames = false
+                                    }
+                                  }
+                                },
+                                [_vm._v("finished")]
                               )
                             ])
                           ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "tab-pane fade",
-                            attrs: {
-                              id: "contact",
-                              role: "tabpanel",
-                              "aria-labelledby": "contact-tab"
-                            }
-                          },
-                          [_vm._v("...")]
                         )
-                      ]
-                    )
-                  ])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.menu.border
-              ? _c("div", { staticClass: "size-sec" }, [
-                  _vm._m(16),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "matirial-list" }, [
-                    _c("ul", [
-                      _c("li", [
-                        _c("div", { staticClass: "form_input_radio" }, [
-                          _c(
-                            "label",
-                            {
-                              on: {
-                                click: function($event) {
-                                  _vm.borderDefaultClass = "gold-border"
-                                }
-                              }
-                            },
-                            [
-                              _c("input", {
-                                attrs: { type: "radio", name: "name" }
-                              }),
-                              _vm._v(" "),
-                              _vm._m(17)
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Gold Border")])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "form_input_radio" }, [
-                          _c(
-                            "label",
-                            {
-                              on: {
-                                click: function($event) {
-                                  _vm.borderDefaultClass = "silver-border"
-                                }
-                              }
-                            },
-                            [
-                              _c("input", {
-                                attrs: { type: "radio", name: "name" }
-                              }),
-                              _vm._v(" "),
-                              _vm._m(18)
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Silver Border")])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "form_input_radio" }, [
-                          _c(
-                            "label",
-                            {
-                              on: {
-                                click: function($event) {
-                                  _vm.borderDefaultClass = "black-border"
-                                }
-                              }
-                            },
-                            [
-                              _c("input", {
-                                attrs: { type: "radio", name: "name" }
-                              }),
-                              _vm._v(" "),
-                              _vm._m(19)
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Black Border")])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "form_input_radio" }, [
-                          _c(
-                            "label",
-                            {
-                              on: {
-                                click: function($event) {
-                                  _vm.borderDefaultClass = "no-border"
-                                }
-                              }
-                            },
-                            [
-                              _c("input", {
-                                attrs: {
-                                  type: "radio",
-                                  checked: "",
-                                  name: "name"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _vm._m(20)
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("No Border")])
-                        ])
                       ])
                     ])
                   ])
                 ])
-              : _vm._e(),
+              ]
+            ),
             _vm._v(" "),
-            _vm.menu.fastener
-              ? _c("div", { staticClass: "size-sec" }, [
-                  _vm._m(21),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "matirial-list fastener-list" }, [
-                    _c("ul", [
-                      _c("li", [
-                        _c("div", { staticClass: "form_input_radio" }, [
-                          _c(
-                            "label",
-                            {
-                              on: {
-                                click: function($event) {
-                                  _vm.selected_fastener = "Magnet"
-                                }
-                              }
-                            },
-                            [
-                              _c("input", {
-                                attrs: { type: "radio", name: "name" }
-                              }),
-                              _vm._v(" "),
-                              _vm._m(22)
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Magnet")])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "form_input_radio" }, [
-                          _c(
-                            "label",
-                            {
-                              on: {
-                                click: function($event) {
-                                  _vm.selected_fastener = "Pin"
-                                }
-                              }
-                            },
-                            [
-                              _c("input", {
-                                attrs: { type: "radio", name: "name" }
-                              }),
-                              _vm._v(" "),
-                              _vm._m(23)
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Pin")])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "form_input_radio" }, [
-                          _c(
-                            "label",
-                            {
-                              on: {
-                                click: function($event) {
-                                  _vm.selected_fastener = "Swivel"
-                                }
-                              }
-                            },
-                            [
-                              _c("input", {
-                                attrs: { type: "radio", name: "name" }
-                              }),
-                              _vm._v(" "),
-                              _vm._m(24)
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Swivel Clip")])
-                        ])
-                      ])
-                    ])
-                  ])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.menu.dome
-              ? _c("div", { staticClass: "size-sec" }, [
-                  _vm._m(25),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "matirial-list demo-list" }, [
-                    _c("ul", [
-                      _c("li", [
-                        _c("div", { staticClass: "form_input_radio" }, [
-                          _c(
-                            "label",
-                            {
-                              on: {
-                                click: function($event) {
-                                  _vm.selected_fastener = "doming"
-                                }
-                              }
-                            },
-                            [
-                              _c("input", {
-                                attrs: { type: "radio", name: "name" }
-                              }),
-                              _vm._v(" "),
-                              _vm._m(26)
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Add Doming")])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "form_input_radio" }, [
-                          _c(
-                            "label",
-                            {
-                              on: {
-                                click: function($event) {
-                                  _vm.selected_fastener = "no doming"
-                                }
-                              }
-                            },
-                            [
-                              _c("input", {
-                                attrs: {
-                                  type: "radio",
-                                  checked: "",
-                                  name: "name"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _vm._m(27)
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("No Doming")])
-                        ])
-                      ])
-                    ])
-                  ])
-                ])
-              : _vm._e()
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "Product-sec" }, [
-          _c(
-            "div",
-            {
-              staticClass: "table-sec",
-              class: {
-                "price_yable-custom-margin":
-                  _vm.shapeDefaultClass == "rectangle12-3"
-              }
-            },
-            [
-              _c("table", [
-                _vm._m(28),
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.menu.global_items.addOrEditNames,
+                    expression: "!menu.global_items.addOrEditNames"
+                  }
+                ]
+              },
+              [
+                _vm._m(31),
                 _vm._v(" "),
-                _vm._m(29),
+                _c("div", { staticClass: "your-text-box" }, [
+                  _c("h3", [
+                    _c("img", {
+                      staticClass: "w-100",
+                      attrs: { src: _vm.output }
+                    })
+                  ])
+                ]),
                 _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("Price:")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["1-5"]))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["6-15"]))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["16-25"]))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["26-50"]))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["51-100"]))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["101-199"]))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["200-499"]))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.getPriceTable["500+"]))])
+                _c("div", { staticClass: "button-section" }, [
+                  _c("ul", [
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "cmn-btn cursor-pointer",
+                          on: { click: _vm.gobackAndEdit }
+                        },
+                        [_vm._v("Go back and edit badge")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "cmn-btn cursor-pointer",
+                          on: {
+                            click: function($event) {
+                              _vm.menu.global_items.addOrEditNames = true
+                            }
+                          }
+                        },
+                        [_vm._v("Add or edit names")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(32)
+                  ])
                 ])
-              ])
-            ]
-          )
-        ])
+              ]
+            )
+          ]
+        )
       ]),
       _vm._v(" "),
       _c(
@@ -54525,7 +54946,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "" } }, [
+    return _c("a", [
       _c("span", [_vm._v("1")]),
       _vm._v(" "),
       _c("span", [_vm._v("DESIGN YOUR BADGE")])
@@ -54535,7 +54956,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "" } }, [
+    return _c("a", [
       _c("span", [_vm._v("2")]),
       _vm._v(" "),
       _c("span", [_vm._v("ADD NAMES")])
@@ -54545,7 +54966,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#url" } }, [
+    return _c("a", [
       _c("span", [_vm._v("3")]),
       _vm._v(" "),
       _c("span", [_vm._v("COMPLETE ORDER")])
@@ -54634,16 +55055,6 @@ var staticRenderFns = [
       _vm._v(
         " up to (4) times for multiple lines of text.\n                    "
       )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { staticClass: "cmn-btn", attrs: { href: "#url" } }, [
-        _vm._v("Finished Designing")
-      ])
     ])
   },
   function() {
@@ -54934,6 +55345,80 @@ var staticRenderFns = [
       _c("td", [_vm._v("200-499")]),
       _vm._v(" "),
       _c("td", [_vm._v("500+")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "demo-cont demo-cont-2" }, [
+      _c("p", [
+        _vm._v(
+          "\n                Please add all the names and quantities you want for your name badges. (All name badges will keep the same design formatting) "
+        ),
+        _c("br"),
+        _vm._v(
+          "\n                **You will not see a proof of all the individual name badges. "
+        ),
+        _c("br"),
+        _vm._v(
+          "\n                ***We will match all the additional names to your first design and make sure all the text fits properly.\n            "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("div", { staticClass: "quantity" }, [
+        _c("div", { staticClass: "quantity-wrap" }, [
+          _c("button", { attrs: { type: "button" } }, [_vm._v("-")]),
+          _vm._v(" "),
+          _c("input", { attrs: { type: "text", placeholder: "1" } }),
+          _vm._v(" "),
+          _c("button", { attrs: { type: "button" } }, [_vm._v("+")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "delete-edit" }, [
+          _c("a", { staticClass: "cmn-btn", attrs: { href: "#url" } }, [
+            _c("img", {
+              attrs: { src: "welcome_assets/images/edit-icon.svg", alt: "" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("a", { staticClass: "cmn-btn", attrs: { href: "#url" } }, [
+            _c("img", {
+              attrs: { src: "welcome_assets/images/delete-icon.svg", alt: "" }
+            })
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "demo-cont" }, [
+      _c("p", [
+        _vm._v(
+          '\n                If you require additional badges with different names, click the "Add or edit names"\n                button.If you do not need badges with different names, click "I am finished adding \n                names" to continue your order.\n            '
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c(
+        "a",
+        { staticClass: "cmn-btn cursor-pointer", attrs: { href: "#url" } },
+        [_vm._v("I am finished adding names")]
+      )
     ])
   }
 ]

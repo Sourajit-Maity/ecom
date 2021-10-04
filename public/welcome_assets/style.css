@@ -3009,7 +3009,7 @@ input[type="submit"]:hover {
 }
 
 .design-page-sec .your-text-box {
-    background: #ececec;
+    /* background: #ececec; */
     border-radius: 9px;
     max-width: 665px;
     min-height: 298px;
@@ -3128,15 +3128,15 @@ input[type="submit"]:hover {
     text-align: center;
 }
 
-.demo-table table th:nth-child(2),
+/* .demo-table table th:nth-child(2),
 .demo-table table td:nth-child(2) {
     width: 65%;
-}
+} */
 
-.demo-table table th:last-child,
+/* .demo-table table th:last-child,
 .demo-table table td:last-child {
     width: 30%;
-}
+} */
 
 .demo-table table td .form-input input[type="text"] {
     border: 1px solid #dedede;

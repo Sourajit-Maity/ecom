@@ -4,21 +4,21 @@
             <div class="order-tab">
                 <ul>
                     <li :class="{'active':menu.global_items.designYourBadge }">
-                        <a href="">
+                        <a>
                             <span>1</span>
                             <span>DESIGN YOUR BADGE</span>
                         </a>
                     </li>
 
                     <li :class="{'active':menu.global_items.addNames }">
-                        <a href="">
+                        <a>
                             <span>2</span>
                             <span>ADD NAMES</span>
                         </a>
                     </li>
 
                     <li :class="{'active':menu.global_items.completeOrder }">
-                        <a href="#url">
+                        <a>
                             <span>3</span>
                             <span>COMPLETE ORDER</span>
                         </a>
@@ -27,6 +27,7 @@
                 </ul>
             </div>
 
+            <div v-show="menu.global_items.designYourBadge">
             <div class="row design-page-row">
                 <div class="col-lg-7 design-page-left">
                     <div class="design-tab">
@@ -64,7 +65,7 @@
                         </ul>
                     </div>
 
-                    <div class="design_tool_custom" >
+                    <div class="design_tool_custom" ref="printcontent">
                         <div class="your-text">
                         <div class="design-area" v-bind:class="getShapeClass" :style="{backgroundColor : colors.hex}">
                         <img :src="backgroundImage" class="h-100 w-100" v-if="backgroundImage">
@@ -132,7 +133,7 @@
                         </p>
 
                         <ul>
-                            <li><a class="cmn-btn" href="#url">Finished Designing</a></li>
+                            <li><a class="cmn-btn cursor-pointer" @click="printThis">Finished Designing</a></li>
                             <li>
                                 <h3>Price: <span>{{getPrice}} each</span></h3>
                             </li>
@@ -317,7 +318,7 @@
                                             <li v-if="this.shapeDefaultClass!='oval1-3' ">
                                                 <div class="form_input_radio">
                                                     <label @click="backgroundImage= '/background/Material/Gold-Plastic/7.png'; selectTypeForPrice('gold_silver_plastic_rectangle')" class="custom_height_60">
-                                                        <input type="radio" name="name">
+                                                        <input type="radio" value="true" name="name" v-model="selectionForPrice.gold_silver_plastic_rectangle">
                                                         <span><img src="/background/Material/Gold-Plastic/7-thumb.png" alt=""></span>
                                                     </label>
                                                     <span>Gold - Plastic</span>
@@ -580,6 +581,99 @@
                     </table>
                 </div>
             </div>
+            </div>
+            <div v-show="menu.global_items.addNames">
+                <div v-show="menu.global_items.addOrEditNames">
+                    <div class="demo-cont demo-cont-2">
+                <p>
+                    Please add all the names and quantities you want for your name badges. (All name badges will keep the same design formatting) <br>
+                    **You will not see a proof of all the individual name badges. <br>
+                    ***We will match all the additional names to your first design and make sure all the text fits properly.
+                </p>
+            </div>
+
+            <div class="demo-table">
+                <form>
+                    <table>
+                        <tr>
+                            <th>No</th>
+                            <th v-for="(textDesign, index) in textDesigns" :key="index">Field {{index+1}}</th>
+                            <th>Quantity</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td v-for="(textDesign, index) in textDesigns" :key="index" :width="calculateTDWidthOfEditNames">
+                                <div class="form-input">
+                                    <input type="text" placeholder="Lorem Ipsum" v-model="textDesigns[index].text">
+                                </div>
+                                <!-- <span>{{textDesigns[index].text}}</span> -->
+                            </td>
+                            <td>
+                                <div class="quantity">
+                                    <div class="quantity-wrap">
+                                        <button type="button">-</button>
+                                        <input type="text" placeholder="1">
+                                        <button type="button">+</button>
+                                    </div>
+                                  <!-- <a class="cmn-btn" href="#url" v-if="index>0">DONE</a> -->
+                                  <div class="delete-edit">
+                                    <a class="cmn-btn" href="#url"><img src="welcome_assets/images/edit-icon.svg" alt=""></a>
+                                    <a class="cmn-btn" href="#url"><img src="welcome_assets/images/delete-icon.svg" alt=""></a>
+                                </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- <tr>
+                            <td></td>
+                            <td>
+                                <div class="form-input">
+                                    <input type="text" placeholder="Lorem Ipsum">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="total">
+                                    <input type="text" placeholder="1">
+                                    <a class="cmn-btn" href="#url">+ Add Name</a>
+                                </div>
+                            </td>
+                        </tr> -->
+                        <tr>
+                            <td :colspan="calculateColspanOfEditNamesActionMenu">
+                                <div class="complete-btn">
+                                    <a class="cmn-btn cursor-pointer" @click="menu.global_items.addOrEditNames= false">GO BACK</a>
+                                    <a class="cmn-btn cursor-pointer" @click="menu.global_items.addOrEditNames= false">finished</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+                </div>
+                <div v-show="!menu.global_items.addOrEditNames">
+                    <div class="demo-cont">
+                <p>
+                    If you require additional badges with different names, click the "Add or edit names"
+                    button.If you do not need badges with different names, click "I am finished adding 
+                    names" to continue your order.
+                </p>
+            </div>
+
+            <div class="your-text-box">
+                <h3>
+                    <img :src="output" class="w-100">
+                </h3>
+            </div>
+
+            <div class="button-section">
+                <ul>
+                    <li><a class="cmn-btn cursor-pointer" @click="gobackAndEdit">Go back and edit badge</a></li>
+                    <li><a class="cmn-btn cursor-pointer" @click="menu.global_items.addOrEditNames= true">Add or edit names</a></li>
+                    <li><a class="cmn-btn cursor-pointer" href="#url">I am finished adding names</a></li>
+                </ul>
+            </div>
+                </div>
+                  
+            </div>
         </div>
          <modal name="clipart-modal" :adaptive="true" :draggable="true">
                         <div class="row p-4 clipart-custom">
@@ -628,6 +722,7 @@ export default {
             framed_metallic_oval_badges:false,
             fasteners:false
           },
+          addNames:[],
             textDesigns:[
                 {
                     x:390,
@@ -640,7 +735,8 @@ export default {
                     fontStyle: "",
                     fontSize: 3,
                     fontColor: "#000000",
-                    selected:false
+                    selected:false,
+                    quantity : 1
                 }
             ],
             priceStructures:{
@@ -873,6 +969,12 @@ export default {
       }
   },
   computed:{
+      calculateTDWidthOfEditNames(){
+          return `${65/this.textDesigns.length}%`;
+      },
+      calculateColspanOfEditNamesActionMenu(){
+          return 2 + this.textDesigns.length;
+      },
       getShapeClass(){
         //   console.info('textDesigns[selectedTextBoxIndex].fontSize',this.textDesigns[this.selectedTextBoxIndex].fontSize);
         if(this.textDesigns.length>0){
@@ -917,6 +1019,9 @@ export default {
             this.textDesigns[this.selectedTextBoxIndex].height=135;
             }
         }
+            this.selectTypeForPrice('white_plastic_rectangle');
+      
+
           return {
             'rectangle1-3': 'rectangle1-3' == this.shapeDefaultClass,
             'rectangle1-5-3': 'rectangle1-5-3'==this.shapeDefaultClass,
@@ -968,7 +1073,19 @@ export default {
     //       console.info('event',event);
     //   },
     selectTypeForPrice(type){
-        console.info('type',this.selectionForPrice[type]);
+        // console.info('type',this.selectionForPrice[type]);
+        if(this.shapeDefaultClass == 'oval1-3'){
+             switch (type) {
+                 case 'white_plastic_rectangle':
+                     type= 'oval_white_badges';
+                     break;
+                 case 'metallic_plastic_rectangle':
+                     type= 'framed_metallic_oval_badges';
+                     break;
+                 default:
+                     break;
+             }
+        }
         this.selectionForPrice['white_plastic_rectangle']= ('white_plastic_rectangle'==type);
         this.selectionForPrice['gold_silver_plastic_rectangle']= ('gold_silver_plastic_rectangle'==type);
         this.selectionForPrice['metallic_plastic_rectangle']= ('metallic_plastic_rectangle'==type);
