@@ -618,8 +618,22 @@
                                   <!-- <a class="cmn-btn" href="#url" v-if="index>0">DONE</a> -->
                                   <div class="delete-edit">
                                     <a class="cmn-btn" href="#url"><img src="welcome_assets/images/edit-icon.svg" alt=""></a>
-                                    <a class="cmn-btn" href="#url"><img src="welcome_assets/images/delete-icon.svg" alt=""></a>
+                                    <!-- <a class="cmn-btn" href="#url"><img src="welcome_assets/images/delete-icon.svg" alt=""></a> -->
                                 </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr v-for="(addNameArr, index) in addNames" :key="index">
+                            <td>{{index+1}}</td>
+                            <td v-for="(addName,index_2nd) in addNameArr" :key="index_2nd" :width="calculateTDWidthOfEditNames"> 
+                                <div class="form-input">
+                                     <input type="text"  v-model="addNameArr[index_2nd].text">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="total">
+                                    <input type="text" placeholder="1" v-model="addNames[index][0].quantity">
+                                    <a class="cmn-btn" href="#url" @click="setDataToNamesArray" >+ Add Name</a>
                                 </div>
                             </td>
                         </tr>
@@ -640,8 +654,8 @@
                         <tr>
                             <td :colspan="calculateColspanOfEditNamesActionMenu">
                                 <div class="complete-btn">
-                                    <a class="cmn-btn cursor-pointer" @click="menu.global_items.addOrEditNames= false">GO BACK</a>
-                                    <a class="cmn-btn cursor-pointer" @click="menu.global_items.addOrEditNames= false">finished</a>
+                                    <a class="cmn-btn cursor-pointer" @click="menu.global_items.addOrEditNames= false; printThis">GO BACK</a>
+                                    <a class="cmn-btn cursor-pointer" @click="menu.global_items.addOrEditNames= false; printThis">finished</a>
                                 </div>
                             </td>
                         </tr>
@@ -667,7 +681,7 @@
             <div class="button-section">
                 <ul>
                     <li><a class="cmn-btn cursor-pointer" @click="gobackAndEdit">Go back and edit badge</a></li>
-                    <li><a class="cmn-btn cursor-pointer" @click="menu.global_items.addOrEditNames= true">Add or edit names</a></li>
+                    <li><a class="cmn-btn cursor-pointer" @click="setDataToNamesArray(); menu.global_items.addOrEditNames= true;" >Add or edit names</a></li>
                     <li><a class="cmn-btn cursor-pointer" href="#url">I am finished adding names</a></li>
                 </ul>
             </div>
@@ -1205,6 +1219,18 @@ export default {
                 this.textDesigns.splice(this.selectedTextBoxIndex,1);
                 this.selectItem(0);
           }
+      },
+      setDataToNamesArray(){
+          let textDesigns= this.textDesigns.map(item=>{
+              console.info('item',item);
+              return {...item,
+                text: "",
+                quantity : 1,
+                is_edit:true
+              };
+          })
+          this.addNames.push(textDesigns);
+          console.info('this.addNames',this.addNames);
       },
        getCustomDesignClass(index){
           return {

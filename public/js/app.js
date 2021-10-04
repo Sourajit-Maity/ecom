@@ -13980,6 +13980,26 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -15144,6 +15164,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         this.textDesigns.splice(this.selectedTextBoxIndex, 1);
         this.selectItem(0);
       }
+    },
+    setDataToNamesArray: function setDataToNamesArray() {
+      var textDesigns = this.textDesigns.map(function (item) {
+        console.info('item', item);
+        return _objectSpread(_objectSpread({}, item), {}, {
+          text: "",
+          quantity: 1,
+          is_edit: true
+        });
+      });
+      this.addNames.push(textDesigns);
+      console.info('this.addNames', this.addNames);
     },
     getCustomDesignClass: function getCustomDesignClass(index) {
       return {
@@ -54731,54 +54763,151 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "demo-table" }, [
                   _c("form", [
-                    _c("table", [
-                      _c(
-                        "tr",
-                        [
-                          _c("th", [_vm._v("No")]),
-                          _vm._v(" "),
-                          _vm._l(_vm.textDesigns, function(textDesign, index) {
-                            return _c("th", { key: index }, [
-                              _vm._v("Field " + _vm._s(index + 1))
-                            ])
-                          }),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("Quantity")])
-                        ],
-                        2
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "tr",
-                        [
-                          _c("td", [_vm._v("1")]),
-                          _vm._v(" "),
-                          _vm._l(_vm.textDesigns, function(textDesign, index) {
-                            return _c(
-                              "td",
-                              {
-                                key: index,
-                                attrs: {
-                                  width: _vm.calculateTDWidthOfEditNames
-                                }
-                              },
-                              [
-                                _c("div", { staticClass: "form-input" }, [
+                    _c(
+                      "table",
+                      [
+                        _c(
+                          "tr",
+                          [
+                            _c("th", [_vm._v("No")]),
+                            _vm._v(" "),
+                            _vm._l(_vm.textDesigns, function(
+                              textDesign,
+                              index
+                            ) {
+                              return _c("th", { key: index }, [
+                                _vm._v("Field " + _vm._s(index + 1))
+                              ])
+                            }),
+                            _vm._v(" "),
+                            _c("th", [_vm._v("Quantity")])
+                          ],
+                          2
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "tr",
+                          [
+                            _c("td", [_vm._v("1")]),
+                            _vm._v(" "),
+                            _vm._l(_vm.textDesigns, function(
+                              textDesign,
+                              index
+                            ) {
+                              return _c(
+                                "td",
+                                {
+                                  key: index,
+                                  attrs: {
+                                    width: _vm.calculateTDWidthOfEditNames
+                                  }
+                                },
+                                [
+                                  _c("div", { staticClass: "form-input" }, [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.textDesigns[index].text,
+                                          expression: "textDesigns[index].text"
+                                        }
+                                      ],
+                                      attrs: {
+                                        type: "text",
+                                        placeholder: "Lorem Ipsum"
+                                      },
+                                      domProps: {
+                                        value: _vm.textDesigns[index].text
+                                      },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.textDesigns[index],
+                                            "text",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    })
+                                  ])
+                                ]
+                              )
+                            }),
+                            _vm._v(" "),
+                            _vm._m(30)
+                          ],
+                          2
+                        ),
+                        _vm._v(" "),
+                        _vm._l(_vm.addNames, function(addNameArr, index) {
+                          return _c(
+                            "tr",
+                            { key: index },
+                            [
+                              _c("td", [_vm._v(_vm._s(index + 1))]),
+                              _vm._v(" "),
+                              _vm._l(addNameArr, function(addName, index_2nd) {
+                                return _c(
+                                  "td",
+                                  {
+                                    key: index_2nd,
+                                    attrs: {
+                                      width: _vm.calculateTDWidthOfEditNames
+                                    }
+                                  },
+                                  [
+                                    _c("div", { staticClass: "form-input" }, [
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: addNameArr[index_2nd].text,
+                                            expression:
+                                              "addNameArr[index_2nd].text"
+                                          }
+                                        ],
+                                        attrs: { type: "text" },
+                                        domProps: {
+                                          value: addNameArr[index_2nd].text
+                                        },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              addNameArr[index_2nd],
+                                              "text",
+                                              $event.target.value
+                                            )
+                                          }
+                                        }
+                                      })
+                                    ])
+                                  ]
+                                )
+                              }),
+                              _vm._v(" "),
+                              _c("td", [
+                                _c("div", { staticClass: "total" }, [
                                   _c("input", {
                                     directives: [
                                       {
                                         name: "model",
                                         rawName: "v-model",
-                                        value: _vm.textDesigns[index].text,
-                                        expression: "textDesigns[index].text"
+                                        value: _vm.addNames[index][0].quantity,
+                                        expression:
+                                          "addNames[index][0].quantity"
                                       }
                                     ],
-                                    attrs: {
-                                      type: "text",
-                                      placeholder: "Lorem Ipsum"
-                                    },
+                                    attrs: { type: "text", placeholder: "1" },
                                     domProps: {
-                                      value: _vm.textDesigns[index].text
+                                      value: _vm.addNames[index][0].quantity
                                     },
                                     on: {
                                       input: function($event) {
@@ -54786,63 +54915,75 @@ var render = function() {
                                           return
                                         }
                                         _vm.$set(
-                                          _vm.textDesigns[index],
-                                          "text",
+                                          _vm.addNames[index][0],
+                                          "quantity",
                                           $event.target.value
                                         )
                                       }
                                     }
-                                  })
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "cmn-btn",
+                                      attrs: { href: "#url" },
+                                      on: { click: _vm.setDataToNamesArray }
+                                    },
+                                    [_vm._v("+ Add Name")]
+                                  )
                                 ])
-                              ]
-                            )
-                          }),
-                          _vm._v(" "),
-                          _vm._m(30)
-                        ],
-                        2
-                      ),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c(
-                          "td",
-                          {
-                            attrs: {
-                              colspan: _vm.calculateColspanOfEditNamesActionMenu
-                            }
-                          },
-                          [
-                            _c("div", { staticClass: "complete-btn" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "cmn-btn cursor-pointer",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.menu.global_items.addOrEditNames = false
+                              ])
+                            ],
+                            2
+                          )
+                        }),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c(
+                            "td",
+                            {
+                              attrs: {
+                                colspan:
+                                  _vm.calculateColspanOfEditNamesActionMenu
+                              }
+                            },
+                            [
+                              _c("div", { staticClass: "complete-btn" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "cmn-btn cursor-pointer",
+                                    on: {
+                                      click: function($event) {
+                                        _vm.menu.global_items.addOrEditNames = false
+                                        _vm.printThis
+                                      }
                                     }
-                                  }
-                                },
-                                [_vm._v("GO BACK")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "cmn-btn cursor-pointer",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.menu.global_items.addOrEditNames = false
+                                  },
+                                  [_vm._v("GO BACK")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "cmn-btn cursor-pointer",
+                                    on: {
+                                      click: function($event) {
+                                        _vm.menu.global_items.addOrEditNames = false
+                                        _vm.printThis
+                                      }
                                     }
-                                  }
-                                },
-                                [_vm._v("finished")]
-                              )
-                            ])
-                          ]
-                        )
-                      ])
-                    ])
+                                  },
+                                  [_vm._v("finished")]
+                                )
+                              ])
+                            ]
+                          )
+                        ])
+                      ],
+                      2
+                    )
                   ])
                 ])
               ]
@@ -54893,6 +55034,7 @@ var render = function() {
                           staticClass: "cmn-btn cursor-pointer",
                           on: {
                             click: function($event) {
+                              _vm.setDataToNamesArray()
                               _vm.menu.global_items.addOrEditNames = true
                             }
                           }
@@ -55386,12 +55528,6 @@ var staticRenderFns = [
           _c("a", { staticClass: "cmn-btn", attrs: { href: "#url" } }, [
             _c("img", {
               attrs: { src: "welcome_assets/images/edit-icon.svg", alt: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("a", { staticClass: "cmn-btn", attrs: { href: "#url" } }, [
-            _c("img", {
-              attrs: { src: "welcome_assets/images/delete-icon.svg", alt: "" }
             })
           ])
         ])
