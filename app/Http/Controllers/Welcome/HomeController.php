@@ -216,19 +216,17 @@ class HomeController extends Controller
         return redirect()->route('welcome.saved-address')
                         ->with('success','Address Stored successfully.');
     }
-    public function editAddress()
+    public function editAddress($id)
     {
-        $currentuserid = Auth::user()->id;
-        $countryid = Auth::user()->country;
-        $stateid = Auth::user()->state;
-        $country = Country::where('id',$countryid)->value('country_name');
-        $state = State::where('id',$stateid)->value('state_name');
-        $states = State::with('countries')->where('active', 1)->pluck('id','state_name');
-        $countrys = Country::where('active', 1)->pluck('id','country_name'); 
-        $users = User::findOrFail($currentuserid);
-        return view('Welcome.edit-account',compact('country','state','states','countrys','users'));
+        
+        
+        $state = State::with('countries')->where('active', 1)->pluck('id','state_name');
+        $country = Country::where('active', 1)->pluck('id','country_name'); 
+        $address = AddAddress::findOrFail($id);
+        //dd($address);
+        return view('Welcome.edit-address',compact('country','state','address'));
     }
-    public function updateAddress(Request $request)
+    public function updateAddress(Request $request,$id)
     {
         //Log::debug("register".print_r($request->all(), true));
         //dd($request->all());
@@ -236,17 +234,17 @@ class HomeController extends Controller
         $this->validate($request, [
             'first_name' => 'required|regex:/^[a-zA-Z]+$/u',
             'last_name' => 'required|regex:/^[a-zA-Z]+$/u',
-            'email' => 'required|email|max:255|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix|unique:users',
+            'nick_name' => 'required',
             'phone' => 'required|regex:/^([0-9\s+\(\)]*)$/',
-            'address1' => 'required',
+            'street_address' => 'required',
             'city' => 'required',
             'state' => 'required',
             'country' => 'required',
-            'zip' => 'required',
+            'postal_code' => 'required',
         ]);
        
-        $currentuserid = Auth::user()->id;
-        $user= User::findOrFail($currentuserid);
+
+        $user= AddAddress::findOrFail($id);
          $inputs = $request->all();    
          $user->update($inputs);     
     
