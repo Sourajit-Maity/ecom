@@ -54866,7 +54866,8 @@ var render = function() {
                 _c("div", { staticClass: "your-text-box" }, [
                   _c("h3", [
                     _c("img", {
-                      staticClass: "w-100",
+                      staticClass: "w-100 shadow",
+                      staticStyle: { "border-radius": "30px" },
                       attrs: { src: _vm.output }
                     })
                   ])

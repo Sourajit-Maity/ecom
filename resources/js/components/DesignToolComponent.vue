@@ -660,7 +660,7 @@
 
             <div class="your-text-box">
                 <h3>
-                    <img :src="output" class="w-100">
+                    <img :src="output" class="w-100 shadow" style="border-radius: 30px;">
                 </h3>
             </div>
 
