@@ -21,7 +21,7 @@
             <div class="order-table saved-address">
                 <div class="address-wrap">
                     <h2>Address list</h2>
-                    <a class="cmn-btn" href="#url">+ Add address</a>
+                    <a class="cmn-btn" href="{{route('welcome.add-address')}}">+ Add address</a>
                 </div>
                 
 

@@ -36,83 +36,83 @@
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>First Name</label>
-                                            <input type="text" placeholder="Smith">
+                                            <input type="text" value = "{{ Auth::user()->first_name }}" readonly placeholder="Smith">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Last Name</label>
-                                            <input type="text" placeholder="Williams">
+                                            <input type="text" value = "{{ Auth::user()->last_name }}" readonly placeholder="Williams">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Email</label>
-                                            <input type="email" placeholder="smith.williams@yopmail.com">
+                                            <input type="email" value = "{{ Auth::user()->email }}" readonly placeholder="smith.williams@yopmail.com">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Company</label>
-                                            <input type="text" placeholder="ws">
+                                            <input type="text" value = "{{ Auth::user()->company }}" readonly placeholder="ws">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Address 1</label>
-                                            <input type="text" placeholder="1 main st">
+                                            <input type="text" value = "{{ Auth::user()->address1 }}" readonly placeholder="1 main st">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Address 2</label>
-                                            <input type="text">
+                                            <input type="text" value = "{{ Auth::user()->address2 }}" readonly>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>City</label>
-                                            <input type="text" placeholder="san jose">
+                                            <input type="text" value = "{{ Auth::user()->city }}" readonly placeholder="san jose">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Country</label>
-                                            <input type="text" placeholder="United States">
+                                            <input type="text" value = "{{ $country }}" readonly placeholder="United States">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>State</label>
-                                            <input type="text" placeholder="California">
+                                            <input type="text" value = "{{ $state }}" readonly placeholder="California">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Zip</label>
-                                            <input type="text" placeholder="95131">
+                                            <input type="text" value = "{{ Auth::user()->zip }}" readonly placeholder="95131">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 acound-form-col">
                                         <div class="form-input">
                                             <label>Phone</label>
-                                            <input type="tel" placeholder="5689458975 ">
+                                            <input type="text" value = "{{ Auth::user()->phone }}" readonly placeholder="5689458975 ">
                                         </div>
                                     </div>
 
                                     <div class="col-md-12 acound-form-col">
                                         <div class="form-input">
-                                            <input type="submit" value="Edit">
+                                        <a href="{{ route('welcome.edit-account') }}" class="btn btn-success">Edit</a> 
                                         </div>
                                     </div>
 
