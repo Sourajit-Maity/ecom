@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ContactPageTableSeeder::class);
         $this->call(ReviewSeeder::class);
         $this->call(FaqSeeder::class);
+        $this->call(CountrySeeder::class);
+        $this->call(StateSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }
