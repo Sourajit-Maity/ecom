@@ -123,9 +123,16 @@
                                         <div class="form-input">
                                             <label>Country<span style="color:red"> *</span></label>
                                             <select  name="country" id="country" class="form-control @error('country') is-invalid @enderror" name="country"  autocomplete="country" class="form-control @error('country') is-invalid @enderror" name="country">                                   
-                                                <option value=""disable selected>Select Country</option>
+                                                
+                                                @if($users->country != null) 
+                                                    @foreach($country as $key => $value)
+                                                        <option value="{{ $value }}">{{ $key }}</option>
+                                                    @endforeach
+                                                @else  
+                                                        <option value=""disable selected>Select Country</option>                                                            
+                                                @endif
                                                 @foreach ($countrys as $key => $value)                               
-                                                <option value="{{ $value }}">{{ $key }}</option>
+                                                         <option value="{{ $value }}">{{ $key }}</option>
                                                 @endforeach                                                                                                                                   
                                             </select>
                                             @error('country')
@@ -140,7 +147,14 @@
                                         <div class="form-input">
                                             <label>State<span style="color:red"> *</span></label>
                                             <select  name="state" id="state" class="form-control @error('state') is-invalid @enderror" name="state"   autocomplete="state" class="form-control @error('state') is-invalid @enderror" name="state">                                  
-                                                <option value=""disable selected>Select State</option>                                                                                                                                                                        
+                                               
+                                                @if($users->state != null) 
+                                                    @foreach($state as $key => $value)
+                                                        <option value="{{ $value }}">{{ $key }}</option>
+                                                    @endforeach
+                                                @else  
+                                                <option value=""disable selected>Select State</option>                                                            
+                                                @endif                                                                                                                                                                        
                                             </select>
                                             @error('state')
                                                 <span class="invalid-feedback" role="alert">
