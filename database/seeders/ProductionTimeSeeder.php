@@ -17,17 +17,17 @@ class ProductionTimeSeeder extends Seeder
             [
                 "production_time_name" => "Standard",
                 "price" => "0",
-                "days" => 5-7,
+                "days" => "5",
             ],
             [
                 "production_time_name" => "Recommended",
                 "price" => "15.00",
-                "days" => 2-3,
+                "days" => "3",
             ],
             [
                 "production_time_name" => "Fast",
                 "price" => "25.00",
-                "days" => 1-2,
+                "days" => "2",
             ],
            
         ];

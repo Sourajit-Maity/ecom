@@ -124,4 +124,8 @@ class User extends Authenticatable
     {
          return $this->hasMany(BillingAddress::class);
     }
+    public function shippingaddress()
+    {
+         return $this->hasMany(ShippingAddress::class);
+    }
 }
