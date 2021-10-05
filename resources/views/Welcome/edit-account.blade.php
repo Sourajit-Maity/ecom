@@ -4,15 +4,15 @@
         <div class="container">
             <div class="user-nav">
                 <ul>
-                    <li><a href="#url">USER MENU</a></li>
-                    <li><a href="{{route('welcome.design-tool')}}">CREATE NEW DESIGN</a></li>
-                    <li><a href="{{route('welcome.my-save-design')}}">MY SAVED DESIGNS</a></li>
-                    <li><a href="{{route('welcome.order-history')}}">ORDER HISTORY</a></li>
+                <li class="{{ Request::is('welcome.my-account') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.my-account')}}">USER MENU</a></li>
+                    <li class="{{ Request::is('welcome.design-tool') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.design-tool')}}">CREATE NEW DESIGN</a></li>
+                    <li class="{{ Request::is('welcome.my-save-design') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.my-save-design')}}">MY SAVED DESIGNS</a></li>
+                    <li class="{{ Request::is('welcome.order-history') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.order-history')}}">ORDER HISTORY</a></li>
                     <li class="menu-item-has-children">
                         <a href="#url">ACCOUNT</a>
                         <ul class="sub-menu">
-                            <li><a href="{{route('welcome.my-account')}}">My account</a></li>
-                            <li><a href="{{route('welcome.saved-address')}}">saved addresses</a></li>
+                            <li class="{{ Request::is('welcome.my-account') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.my-account')}}">My account</a></li>
+                            <li class="{{ Request::is('welcome.saved-address') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.saved-address')}}">Saved addresses</a></li>
                         </ul>
                     </li>
                     <li><a href="#url">LOG OUT</a></li>

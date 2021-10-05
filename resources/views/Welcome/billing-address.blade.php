@@ -1,19 +1,43 @@
 <x-layouts.welcome-layout>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+   $(document).ready(function(){ 
+     $('#check-address').click(function(){ 
+     if ($('#check-address').is(":checked")) {
+      $('#txtfname_billing').val($('#txtfname').val());
+      $('#txtlname_billing').val($('#txtlname').val());
+      $('#txtaddress_billing').val($('#txtaddress').val());
+      $('#txtcity_billing').val($('#txtcity').val());
+      var country = $('#country option:selected').val();
+      $('#country_billing option[value=' + country + ']').attr('selected','selected');
+     } else { //Clear on uncheck
+      $('#txtfname_billing').val("");
+      $('#txtlname_billing').val("");
+      $('#txtaddress_billing').val("");
+      $('#txtcity_billing').val("");
+      $('#country_billing option[value=""]').attr('selected','selected');
+     };
+    });
+ 
+   });
+</script>
     <section class="billing-address account-info cmn-gap2">
         <div class="container">
-            <form>
+           
             <div class="user-nav">
                 <ul>
-                    <li><a href="#url">USER MENU</a></li>
-                    <li><a href="{{route('welcome.design-tool')}}">CREATE NEW DESIGN</a></li>
-                    <li><a href="{{route('welcome.my-save-design')}}">MY SAVED DESIGNS</a></li>
-                    <li><a href="{{route('welcome.order-history')}}">ORDER HISTORY</a></li>
+                    
+                    <li class="{{ Request::is('welcome.my-account') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.my-account')}}">USER MENU</a></li>
+                    <li class="{{ Request::is('welcome.design-tool') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.design-tool')}}">CREATE NEW DESIGN</a></li>
+                    <li class="{{ Request::is('welcome.my-save-design') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.my-save-design')}}">MY SAVED DESIGNS</a></li>
+                    <li class="{{ Request::is('welcome.order-history') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.order-history')}}">ORDER HISTORY</a></li>
                     <li class="menu-item-has-children">
                         <a href="#url">ACCOUNT</a>
                         <ul class="sub-menu">
-                            <li><a href="{{route('welcome.my-account')}}">My account</a></li>
-                            <li><a href="{{route('welcome.saved-address')}}">saved addresses</a></li>
+                            <li class="{{ Request::is('welcome.my-account') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.my-account')}}">My account</a></li>
+                            <li class="{{ Request::is('welcome.saved-address') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.saved-address')}}">Saved addresses</a></li>
                         </ul>
                     </li>
                     <li><a href="{{route('welcome.logout-client')}}">LOG OUT</a></li>
@@ -38,7 +62,7 @@
                                        <option>Select saved address</option>
                                    </select>
                                 </div>
-
+                            <form>
                                 <div class="form-input">
                                     <label>First name*</label>
                                     <input type="text" placeholder="Smith">
