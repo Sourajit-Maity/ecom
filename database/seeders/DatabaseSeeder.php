@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(FaqSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(StateSeeder::class);
+        $this->call(ProductionTimeSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }
