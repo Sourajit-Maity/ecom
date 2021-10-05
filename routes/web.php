@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\HomepageController;
 use App\Http\Controllers\Admin\FaqpageController;
 use App\Http\Controllers\Admin\ContactuspageController;
 use App\Http\Controllers\Admin\AboutpageController;
+use App\Http\Controllers\Admin\ProductionTimeController;
 use App\Http\Controllers\UserCartController;
 use Illuminate\Support\Facades\Route;
 
@@ -111,6 +112,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum','role_or_permi
         'contactuspage' => ContactuspageController::class,
         'aboutpage' => AboutpageController::class,
         'pages' => CmsController::class,
+        'timeproduction' => ProductionTimeController::class,
 
     ]);
 });

@@ -78,6 +78,7 @@
 								</li>
 								<li class="kt-menu__item  {{ Request::is('admin/pages*') ? 'kt-menu__item--active' : '' }}" aria-haspopup="true"><a href="{{route('pages.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-file-alt"></i><span class="kt-menu__link-text">Pages</span></a></li>
 								<li class="kt-menu__item  {{ Request::is('admin/product*') ? 'kt-menu__item--active' : '' }}" aria-haspopup="true"><a href="{{route('product.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fab fa-product-hunt"></i><span class="kt-menu__link-text">Product</span></a></li>
+								<li class="kt-menu__item  {{ Request::is('admin/timeproduction*') ? 'kt-menu__item--active' : '' }}" aria-haspopup="true"><a href="{{route('timeproduction.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fab fa-product-hunt"></i><span class="kt-menu__link-text">Production Time</span></a></li>
 
 							</ul>
 						</div>
