@@ -142,7 +142,13 @@
                                             <label>Country<span style="color:red"> *</span></label>
                                             <select  name="country" id="country" class="form-control @error('country') is-invalid @enderror" name="country"  autocomplete="country">
                                    
-                                                <option value=""disable selected>Select Country</option>
+                                               @if($address->country != null) 
+                                                    @foreach($oldcountry as $key => $value)
+                                                        <option value="{{ $value }}">{{ $key }}</option>
+                                                    @endforeach
+                                                @else  
+                                                        <option value=""disable selected>Select Country</option>                                                            
+                                                @endif
                                                     @foreach ($country as $key => $value)                               
                                                     <option value="{{ $value }}">{{ $key }}</option>
                                                     @endforeach                                                                               
@@ -161,7 +167,13 @@
                                         <label>State<span style="color:red"> *</span></label>
                                             <select  name="state" id="state" class="form-control @error('state') is-invalid @enderror" name="state"   autocomplete="state">
                                             
-                                                <option value=""disable selected>Select State</option>
+                                            @if($address->state != null) 
+                                                    @foreach($oldstate as $key => $value)
+                                                        <option value="{{ $value }}">{{ $key }}</option>
+                                                    @endforeach
+                                             @else  
+                                                <option value=""disable selected>Select State</option>                                                            
+                                             @endif
                                                                                                                             
                                                                 
                                             </select>

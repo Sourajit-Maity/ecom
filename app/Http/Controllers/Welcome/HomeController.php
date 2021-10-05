@@ -219,12 +219,16 @@ class HomeController extends Controller
     public function editAddress($id)
     {
         
-        
+        $userid= Auth::user()->id;
+        $countryid = AddAddress::where('user_id',$userid)->value('country');
+        $stateid = AddAddress::where('user_id',$userid)->value('state');
+        $oldcountry = Country::where('id',$countryid)->pluck('id','country_name');
+        $oldstate = State::where('id',$stateid)->pluck('id','state_name');
         $state = State::with('countries')->where('active', 1)->pluck('id','state_name');
         $country = Country::where('active', 1)->pluck('id','country_name'); 
-        $address = AddAddress::findOrFail($id);
+        $address = AddAddress::where('user_id', $userid)->findOrFail($id);
         //dd($address);
-        return view('Welcome.edit-address',compact('country','state','address'));
+        return view('Welcome.edit-address',compact('country','state','address','oldcountry','oldstate'));
     }
     public function updateAddress(Request $request,$id)
     {
@@ -291,8 +295,9 @@ class HomeController extends Controller
         $currentuserid = Auth::user()->id;
         $countryid = Auth::user()->country;
         $stateid = Auth::user()->state;
-        $country = Country::where('id',$countryid)->value('country_name');
-        $state = State::where('id',$stateid)->value('state_name');
+        $country = Country::where('id',$countryid)->pluck('id','country_name');
+        $state = State::where('id',$stateid)->pluck('id','state_name');
+        //dd($state);
         $states = State::with('countries')->where('active', 1)->pluck('id','state_name');
         $countrys = Country::where('active', 1)->pluck('id','country_name'); 
         $users = User::findOrFail($currentuserid);
@@ -306,7 +311,7 @@ class HomeController extends Controller
         $this->validate($request, [
             'first_name' => 'required|regex:/^[a-zA-Z]+$/u',
             'last_name' => 'required|regex:/^[a-zA-Z]+$/u',
-            'email' => 'required|email|max:255|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix|unique:users',
+            'email' => 'required|email|max:255|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
             'phone' => 'required|regex:/^([0-9\s+\(\)]*)$/',
             'address1' => 'required',
             'city' => 'required',
