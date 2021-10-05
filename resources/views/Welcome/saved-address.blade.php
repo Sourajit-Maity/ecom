@@ -1,22 +1,7 @@
 <x-layouts.welcome-layout>
     <section class="order-history cmn-gap2">
         <div class="container">
-            <div class="user-nav">
-                <ul>
-                <li class="{{ Request::is('welcome.my-account') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.my-account')}}">USER MENU</a></li>
-                    <li class="{{ Request::is('welcome.design-tool') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.design-tool')}}">CREATE NEW DESIGN</a></li>
-                    <li class="{{ Request::is('welcome.my-save-design') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.my-save-design')}}">MY SAVED DESIGNS</a></li>
-                    <li class="{{ Request::is('welcome.order-history') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.order-history')}}">ORDER HISTORY</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="#url">ACCOUNT</a>
-                        <ul class="sub-menu">
-                            <li class="{{ Request::is('welcome.my-account') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.my-account')}}">My account</a></li>
-                            <li class="{{ Request::is('welcome.saved-address') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.saved-address')}}">Saved addresses</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="{{route('welcome.logout-client')}}">LOG OUT</a></li>
-                </ul>
-            </div>
+           
             @if (Session::has('success'))
                     <div class="alert alert-success text-center">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>

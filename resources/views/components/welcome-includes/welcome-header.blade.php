@@ -9,7 +9,7 @@
                         <li><a href="{{route('welcome.login')}}">Login</a></li>
                         <li><a href="{{route('welcome.signup')}}">Signup</a></li>
                     @else
-                    <li><a href="{{route('welcome.logout-client')}}">Logout</a></li>
+                    <!-- <li><a href="{{route('welcome.logout-client')}}">Logout</a></li> -->
                      @endguest   
                     </ul>
                 </div>
@@ -59,7 +59,26 @@
                 </div>
             </nav>
         </div>
-                 
+        @guest
+                        
+            @else
+                <div class="user-nav">
+                    <ul>                    
+                        <li class="{{ Request::is('welcome.my-account') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.my-account')}}">USER MENU</a></li>
+                        <li class="{{ Request::is('welcome.design-tool') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.design-tool')}}">CREATE NEW DESIGN</a></li>
+                        <li class="{{ Request::is('welcome.my-save-design') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.my-save-design')}}">MY SAVED DESIGNS</a></li>
+                        <li class="{{ Request::is('welcome.order-history') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.order-history')}}">ORDER HISTORY</a></li>
+                        <li class="menu-item-has-children">
+                            <a href="#url">ACCOUNT</a>
+                            <ul class="sub-menu">
+                                <li class="{{ Request::is('welcome.my-account') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.my-account')}}">My account</a></li>
+                                <li class="{{ Request::is('welcome.saved-address') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.saved-address')}}">Saved addresses</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{route('welcome.logout-client')}}">LOG OUT</a></li>
+                    </ul>
+                </div> 
+            @endguest 
         <button class="navbar-toggler" id="navoverlay" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
     </div>
 </header>
