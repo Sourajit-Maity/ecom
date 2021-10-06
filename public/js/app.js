@@ -54916,7 +54916,8 @@ var render = function() {
                                       attrs: { type: "button" },
                                       on: {
                                         click: function($event) {
-                                          _vm.textDesigns[0].quantity--
+                                          _vm.textDesigns[0].quantity > 1 &&
+                                            _vm.textDesigns[0].quantity--
                                         }
                                       }
                                     },
@@ -55087,7 +55088,9 @@ var render = function() {
                                               on: {
                                                 click: function($event) {
                                                   _vm.addNames[index][0]
-                                                    .quantity--
+                                                    .quantity > 1 &&
+                                                    _vm.addNames[index][0]
+                                                      .quantity--
                                                 }
                                               }
                                             },

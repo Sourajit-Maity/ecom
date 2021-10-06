@@ -611,7 +611,7 @@
                             <td>
                                 <div class="quantity">
                                     <div class="quantity-wrap">
-                                        <button type="button" @click="textDesigns[0].quantity--">-</button>
+                                        <button type="button" @click="textDesigns[0].quantity>1 && textDesigns[0].quantity--">-</button>
                                         <input type="text"  v-model="textDesigns[0].quantity" >
                                         <button type="button" @click="textDesigns[0].quantity++">+</button>
                                     </div>
@@ -634,7 +634,7 @@
                             <td>
                                 <div class="quantity">
                                     <div class="quantity-wrap" v-if="index< addNames.length-1">
-                                        <button type="button" @click="addNames[index][0].quantity--">-</button>
+                                        <button type="button" @click="addNames[index][0].quantity>1 && addNames[index][0].quantity--">-</button>
                                         <input type="text"  v-model="addNames[index][0].quantity">
                                         <button type="button" @click="addNames[index][0].quantity++">+</button>
                                     </div>
