@@ -18,5 +18,12 @@ class AddAddress extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+    public function countryaddress(){
+        return $this->belongsTo(Country::class, 'country');
+    }
+    public function stateaddress(){
+        return $this->belongsTo(State::class, 'state');
+    }
+
 
 }

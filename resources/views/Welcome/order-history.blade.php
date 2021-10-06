@@ -1,22 +1,7 @@
 <x-layouts.welcome-layout>
     <section class="order-history cmn-gap2">
         <div class="container">
-            <div class="user-nav">
-                <ul>
-                    <li><a href="#url">USER MENU</a></li>
-                    <li><a href="{{route('welcome.design-tool')}}">CREATE NEW DESIGN</a></li>
-                    <li><a href="{{route('welcome.my-save-design')}}">MY SAVED DESIGNS</a></li>
-                    <li class="current-menu-item"><a href="{{route('welcome.order-history')}}">ORDER HISTORY</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="#url">ACCOUNT</a>
-                        <ul class="sub-menu">
-                        <li><a href="{{route('welcome.my-account')}}">My account</a></li>
-                            <li><a href="{{route('welcome.saved-address')}}">saved addresses</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="{{route('welcome.logout-client')}}">LOG OUT</a></li>
-                </ul>
-            </div>
+            
 
             <div class="order-table">
                 <h2>Order History</h2>

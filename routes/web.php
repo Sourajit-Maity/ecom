@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Welcome\DesignToolController;
 use App\Http\Controllers\Welcome\HomeController;
+use App\Http\Controllers\Welcome\AddressController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ReviewController;
@@ -18,6 +19,7 @@ use App\Http\Controllers\Admin\HomepageController;
 use App\Http\Controllers\Admin\FaqpageController;
 use App\Http\Controllers\Admin\ContactuspageController;
 use App\Http\Controllers\Admin\AboutpageController;
+use App\Http\Controllers\Admin\ProductionTimeController;
 use App\Http\Controllers\UserCartController;
 use Illuminate\Support\Facades\Route;
 
@@ -62,14 +64,18 @@ Route::group(['middleware'=>['auth:web','clientuser']], function() {
 
 // Route::get('design-tool', [DesignToolController::class, 'index'])->name('welcome.design-tool');
 
-Route::get('add-address', [HomeController::class, 'addAddress'])->name('welcome.add-address');
-Route::post('save-address', [HomeController::class, 'saveAddress'])->name('welcome.save-address');
-Route::get('edit-address/{id}', [HomeController::class, 'editAddress'])->name('welcome.edit-address');
-Route::post('update-address/{id}', [HomeController::class, 'updateAddress'])->name('welcome.update-address');
-Route::get('delete-address/{id}', [HomeController::class, 'deleteAddress'])->name('welcome.delete-address');
-Route::get('billing-address', [HomeController::class, 'billingAddress'])->name('welcome.billing-address');
+Route::get('add-address', [AddressController::class, 'addAddress'])->name('welcome.add-address');
+Route::post('save-address', [AddressController::class, 'saveAddress'])->name('welcome.save-address');
+Route::get('edit-address/{id}', [AddressController::class, 'editAddress'])->name('welcome.edit-address');
+Route::post('update-address/{id}', [AddressController::class, 'updateAddress'])->name('welcome.update-address');
+Route::get('delete-address/{id}', [AddressController::class, 'deleteAddress'])->name('welcome.delete-address');
+Route::get('billing-address', [AddressController::class, 'billingAddress'])->name('welcome.billing-address');
+Route::post('save-billing-details', [AddressController::class, 'savebillingDetails'])->name('welcome.save-billing-details');
+Route::get('saved-address', [AddressController::class, 'savedAddress'])->name('welcome.saved-address');
+Route::get('/getaddress/{id}', [AddressController::class, 'getaddressdetails']);
+
+
 Route::get('shopping-cart', [UserCartController::class, 'shoppingCart'])->name('welcome.shopping-cart');
-Route::get('saved-address', [HomeController::class, 'savedAddress'])->name('welcome.saved-address');
 Route::get('order-history', [HomeController::class, 'orderHistory'])->name('welcome.order-history');
 Route::get('my-account', [HomeController::class, 'myAccount'])->name('welcome.my-account');
 Route::get('edit-account', [HomeController::class, 'editAccount'])->name('welcome.edit-account');
@@ -111,6 +117,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum','role_or_permi
         'contactuspage' => ContactuspageController::class,
         'aboutpage' => AboutpageController::class,
         'pages' => CmsController::class,
+        'timeproduction' => ProductionTimeController::class,
 
     ]);
 });

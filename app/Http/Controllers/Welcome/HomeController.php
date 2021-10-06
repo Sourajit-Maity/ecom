@@ -123,7 +123,7 @@ class HomeController extends Controller
          $user   =   User::create($inputs);
          $user->assignRole('CLIENT');
     
-        return redirect()->route('welcome.login')
+        return redirect()->route('welcome.my-account')
                         ->with('success','Request Submitted successfully.');
     }
     public function signUp()
@@ -183,94 +183,7 @@ class HomeController extends Controller
         return view('Welcome.design-tool');
     }
 
-    public function addAddress()
-    {
-        $state = State::with('countries')->where('active', 1)->pluck('id','state_name');
-        $city = City::with('state')->where('active', 1)->pluck('id','city_name');
-        $country = Country::where('active', 1)->pluck('id','country_name'); 
-        return view('Welcome.add-address',compact('state','city','country'));
-    }
-    public function saveAddress(Request $request)
-    {
-        //Log::debug("register".print_r($request->all(), true));
-        //dd($request->all());
-        
-        $this->validate($request, [
-            'first_name' => 'required|regex:/^[a-zA-Z]+$/u',
-            'last_name' => 'required|regex:/^[a-zA-Z]+$/u',
-            'nick_name' => 'required',
-            'phone' => 'required|regex:/^([0-9\s+\(\)]*)$/',
-            'street_address' => 'required',
-            'city' => 'required',
-            'state' => 'required',
-            'country' => 'required',
-            'postal_code' => 'required',
-        ]);
-       
     
-         $inputs = $request->all();
-         $user=new AddAddress($inputs);
-         $user->user_id=auth()->user()->id;
-         $user->save();
-    
-        return redirect()->route('welcome.saved-address')
-                        ->with('success','Address Stored successfully.');
-    }
-    public function editAddress($id)
-    {
-        
-        
-        $state = State::with('countries')->where('active', 1)->pluck('id','state_name');
-        $country = Country::where('active', 1)->pluck('id','country_name'); 
-        $address = AddAddress::findOrFail($id);
-        //dd($address);
-        return view('Welcome.edit-address',compact('country','state','address'));
-    }
-    public function updateAddress(Request $request,$id)
-    {
-        //Log::debug("register".print_r($request->all(), true));
-        //dd($request->all());
-       
-        $this->validate($request, [
-            'first_name' => 'required|regex:/^[a-zA-Z]+$/u',
-            'last_name' => 'required|regex:/^[a-zA-Z]+$/u',
-            'nick_name' => 'required',
-            'phone' => 'required|regex:/^([0-9\s+\(\)]*)$/',
-            'street_address' => 'required',
-            'city' => 'required',
-            'state' => 'required',
-            'country' => 'required',
-            'postal_code' => 'required',
-        ]);
-       
-
-        $user= AddAddress::findOrFail($id);
-         $inputs = $request->all();    
-         $user->update($inputs);     
-    
-        return redirect()->route('welcome.saved-address')
-                        ->with('success','Updated successfully.');
-    }
-    public function deleteAddress(Request $request,$id)
-    {
-
-        AddAddress::where('id',$id)->delete();
-        
-        return redirect()->back()
-                        ->with('success','Deleted successfully.');
-    }
-    public function billingAddress()
-    {
-        return view('Welcome.billing-address');
-    }
-
-   
-    public function savedAddress()
-    {
-        $userid= Auth::user()->id;
-        $shippingaddresses = AddAddress::where('user_id', $userid)->get();
-        return view('Welcome.saved-address',compact('shippingaddresses'));
-    }
     public function orderHistory()
     {
         $userid= Auth::user()->id;
@@ -291,8 +204,9 @@ class HomeController extends Controller
         $currentuserid = Auth::user()->id;
         $countryid = Auth::user()->country;
         $stateid = Auth::user()->state;
-        $country = Country::where('id',$countryid)->value('country_name');
-        $state = State::where('id',$stateid)->value('state_name');
+        $country = Country::where('id',$countryid)->pluck('id','country_name');
+        $state = State::where('id',$stateid)->pluck('id','state_name');
+        //dd($state);
         $states = State::with('countries')->where('active', 1)->pluck('id','state_name');
         $countrys = Country::where('active', 1)->pluck('id','country_name'); 
         $users = User::findOrFail($currentuserid);
@@ -306,7 +220,7 @@ class HomeController extends Controller
         $this->validate($request, [
             'first_name' => 'required|regex:/^[a-zA-Z]+$/u',
             'last_name' => 'required|regex:/^[a-zA-Z]+$/u',
-            'email' => 'required|email|max:255|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix|unique:users',
+            'email' => 'required|email|max:255|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
             'phone' => 'required|regex:/^([0-9\s+\(\)]*)$/',
             'address1' => 'required',
             'city' => 'required',

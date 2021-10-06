@@ -17,6 +17,8 @@ class CreateOrderDetailsTable extends Migration
             $table->id();
             $table->foreignId('orders_id')->constrained()->onDelete('cascade');
             $table->text('product_image')->nullable();
+            $table->longText('name')->nullable();
+            $table->string('quantity')->nullable();
             $table->json('design');
             $table->timestamps();
         });

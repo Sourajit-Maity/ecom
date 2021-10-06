@@ -2,22 +2,7 @@
 
     <section class="my-account cmn-gap2">
         <div class="container">
-            <div class="user-nav">
-                <ul>
-                    <li><a href="#url">USER MENU</a></li>
-                    <li><a href="{{route('welcome.design-tool')}}">CREATE NEW DESIGN</a></li>
-                    <li><a href="{{route('welcome.my-save-design')}}">MY SAVED DESIGNS</a></li>
-                    <li><a href="{{route('welcome.order-history')}}">ORDER HISTORY</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="#url">ACCOUNT</a>
-                        <ul class="sub-menu">
-                            <li><a href="{{route('welcome.my-account')}}">My account</a></li>
-                            <li><a href="{{route('welcome.saved-address')}}">saved addresses</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#url">LOG OUT</a></li>
-                </ul>
-            </div>
+            
 
             <div class="account-info edit-account">
                 <h3>Edit Account info</h3>
@@ -123,9 +108,16 @@
                                         <div class="form-input">
                                             <label>Country<span style="color:red"> *</span></label>
                                             <select  name="country" id="country" class="form-control @error('country') is-invalid @enderror" name="country"  autocomplete="country" class="form-control @error('country') is-invalid @enderror" name="country">                                   
-                                                <option value=""disable selected>Select Country</option>
+                                                
+                                                @if($users->country != null) 
+                                                    @foreach($country as $key => $value)
+                                                        <option value="{{ $value }}">{{ $key }}</option>
+                                                    @endforeach
+                                                @else  
+                                                        <option value=""disable selected>Select Country</option>                                                            
+                                                @endif
                                                 @foreach ($countrys as $key => $value)                               
-                                                <option value="{{ $value }}">{{ $key }}</option>
+                                                         <option value="{{ $value }}">{{ $key }}</option>
                                                 @endforeach                                                                                                                                   
                                             </select>
                                             @error('country')
@@ -140,7 +132,14 @@
                                         <div class="form-input">
                                             <label>State<span style="color:red"> *</span></label>
                                             <select  name="state" id="state" class="form-control @error('state') is-invalid @enderror" name="state"   autocomplete="state" class="form-control @error('state') is-invalid @enderror" name="state">                                  
-                                                <option value=""disable selected>Select State</option>                                                                                                                                                                        
+                                               
+                                                @if($users->state != null) 
+                                                    @foreach($state as $key => $value)
+                                                        <option value="{{ $value }}">{{ $key }}</option>
+                                                    @endforeach
+                                                @else  
+                                                <option value=""disable selected>Select State</option>                                                            
+                                                @endif                                                                                                                                                                        
                                             </select>
                                             @error('state')
                                                 <span class="invalid-feedback" role="alert">

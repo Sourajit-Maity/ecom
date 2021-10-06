@@ -26,6 +26,7 @@ class CreateAddAddressesTable extends Migration
             $table->string('state')->nullable();
             $table->string('postal_code')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->integer('is_default')->default(0);
             $table->timestamps();
         });
     }

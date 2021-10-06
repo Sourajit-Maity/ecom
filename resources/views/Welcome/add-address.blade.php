@@ -2,22 +2,7 @@
 
     <section class="my-account add-address cmn-gap2">
         <div class="container">
-            <div class="user-nav">
-                <ul>
-                    <li><a href="#url">USER MENU</a></li>
-                    <li><a href="{{route('welcome.design-tool')}}">CREATE NEW DESIGN</a></li>
-                    <li><a href="{{route('welcome.my-save-design')}}">MY SAVED DESIGNS</a></li>
-                    <li><a href="{{route('welcome.order-history')}}">ORDER HISTORY</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="#url">ACCOUNT</a>
-                        <ul class="sub-menu">
-                            <li><a href="{{route('welcome.my-account')}}">My account</a></li>
-                            <li><a href="{{route('welcome.saved-address')}}">saved addresses</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="{{route('welcome.logout-client')}}">LOG OUT</a></li>
-                </ul>
-            </div> 
+            
             @if (Session::has('success'))
                     <div class="alert alert-success text-center">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -189,7 +174,8 @@
              </div>
         </div>
     </section>
-</x-layouts.welcome-layout><script>
+</x-layouts.welcome-layout>
+<script>
     $(document).ready(function(){
         $("#country").change(function(){
             var val = $(this).val();
