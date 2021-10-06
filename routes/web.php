@@ -72,6 +72,7 @@ Route::get('delete-address/{id}', [AddressController::class, 'deleteAddress'])->
 Route::get('billing-address', [AddressController::class, 'billingAddress'])->name('welcome.billing-address');
 Route::post('save-billing-details', [AddressController::class, 'savebillingDetails'])->name('welcome.save-billing-details');
 Route::get('saved-address', [AddressController::class, 'savedAddress'])->name('welcome.saved-address');
+Route::get('/getaddress/{id}', [AddressController::class, 'getaddressdetails']);
 
 
 Route::get('shopping-cart', [UserCartController::class, 'shoppingCart'])->name('welcome.shopping-cart');

@@ -3,7 +3,71 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+var productimeid = 0;
    $(document).ready(function(){ 
+
+    $("#billaddress").change(function(){
+        var val = $(this).val();
+        jQuery.ajax({ 
+            url : '/getaddress/' +val,
+            type : "GET",
+            dataType : "json",
+            success:function(data)
+            {
+               console.log(data[0]);
+               $('#first_name').val(data[0].first_name);
+               $('#last_name').val(data[0].last_name);
+               $('#street_address').val(data[0].street_address);
+               $('#city').val(data[0].city);
+               $('#postal_code').val(data[0].postal_code);
+               $('#phone').val(data[0].phone);
+               $('#company').val(data[0].company);
+               $('#country option[value="'+data[0].country+'"]').attr("selected", "selected");
+               $('#state option[value="'+data[0].state+'"]').attr("selected", "selected");
+            }
+        });
+        
+    });
+    
+    $("#shipaddress").change(function(){
+        var val = $(this).val();
+        jQuery.ajax({ 
+            url : '/getaddress/' +val,
+            type : "GET",
+            dataType : "json",
+            success:function(data)
+            {
+               console.log(data[0]);
+               $('#shipping_first_name').val(data[0].first_name);
+               $('#shipping_last_name').val(data[0].last_name);
+               $('#shipping_street_address').val(data[0].street_address);
+               $('#shipping_city').val(data[0].city);
+               $('#shipping_postal_code').val(data[0].postal_code);
+               $('#shipping_phone').val(data[0].phone);
+               $('#shipping_company').val(data[0].company);
+               $('#shipping_country option[value="'+data[0].country+'"]').attr("selected", "selected");
+               $('#shipping_state option[value="'+data[0].state+'"]').attr("selected", "selected");
+            }
+        });
+        
+    });
+    $(".production-card").click(function(){
+    	$(this).find(".heading").css("background", "#d61a6a");
+        $(this).find(".heading h3, .heading p").css("color", "#fff");
+        $(this).find(".production-cont h2").css("color", "#d61a6a");
+        $(this).find(".production-cont > p").css("color", "#eb1212");
+        
+        $(".production-card").not(this).find(".heading").css("background", "#eae8e9");
+        $(".production-card").not(this).find(".heading h3, .heading p").css("color", "#2f2f30");
+        $(".production-card").not(this).find(".production-cont h2").css("color", "#535548");
+        $(".production-card").not(this).find(".production-cont > p").css("color", "#c0bbbb");
+
+        var productimeid = $(this).find(".heading h3:eq(1)").text();
+        console.log(productimeid);
+
+    
+    });
+   
      $('#check-address').click(function(){ 
      if ($('#check-address').is(":checked")) {
       $('#shipping_first_name').val($('#first_name').val());
@@ -30,8 +94,12 @@
 	  $('#shipping_state option[value=""]').attr('selected','selected');
      };
     });
- 
-   });
+});
+
+
+
+   
+
 </script>
     <section class="billing-address account-info cmn-gap2">
         <div class="container">
@@ -57,7 +125,7 @@
                             <div class="acound-form-col">
                                 <div class="form-input">
                                     <label>Saved addresses</label>
-                                   <select>
+                                   <select value="" id="billaddress">
                                        <option>Select saved address</option>
                                        @foreach ($address as $key => $value)                               
                                                     <option value="{{ $value }}">{{ $key }}</option>
@@ -193,7 +261,7 @@
                             <div class="acound-form-col">
                                 <div class="form-input">
                                     <label>Saved addresses</label>
-                                   <select>
+                                   <select value="" id="shipaddress">
                                        <option>Select saved address</option>
                                        @foreach ($address as $key => $value)                               
                                                     <option value="{{ $value }}">{{ $key }}</option>
@@ -330,6 +398,7 @@
                         <div class="production-card">
                             <div class="heading">
                                 <h3>{{$productiontime->production_time_name}}</h3>
+                                <h3 style="display:none">{{$productiontime->id}}</h3>
                                 <p>Production Time</p>
                             </div>
                             <div class="production-cont">
