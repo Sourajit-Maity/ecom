@@ -641,7 +641,7 @@
                                   <a class="cmn-btn" href="#url" v-if="addNames[index][0].is_edit && (index!=addNames.length-1)" @click="addNames[index][0].is_edit=false">DONE</a>
                                   <div class="delete-edit" v-if="!addNames[index][0].is_edit">
                                     <a class="cmn-btn" href="#url" @click="addNames[index][0].is_edit=true"><img src="welcome_assets/images/edit-icon.svg" alt=""></a>
-                                    <a class="cmn-btn" href="#url"><img src="welcome_assets/images/delete-icon.svg" alt=""></a>
+                                    <a class="cmn-btn" href="#url" @click="nameDeleteConfirm(index)"><img src="welcome_assets/images/delete-icon.svg" alt=""></a>
                                 </div>
                                 </div>
                                 <div class="total" v-if="addNames[index][0].is_edit && (index==addNames.length-1)">
@@ -1103,6 +1103,10 @@ export default {
     //   itemChange(event){
     //       console.info('event',event);
     //   },
+    nameDeleteConfirm(index){
+        if(confirm('Are you sure you want to delete?'))
+        this.addNames.splice(index, 1);
+    },
     selectTypeForPrice(type){
         // console.info('type',this.selectionForPrice[type]);
         if(this.shapeDefaultClass == 'oval1-3'){
