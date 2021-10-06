@@ -159,4 +159,10 @@ class AddressController extends Controller
         $shippingaddresses = AddAddress::where('user_id', $userid)->get();
         return view('Welcome.saved-address',compact('shippingaddresses'));
     }
+
+    public function getaddressdetails($id) 
+    {
+        $saveaddress= AddAddress::where("id",$id)->with(['countryaddress','stateaddress'])->get();
+        return json_encode($saveaddress);
+    }
 }

@@ -23,4 +23,8 @@ class State extends Model
     {
          return $this->hasMany(City::class);
     }
+    public function addaddress()
+    {
+         return $this->hasOne(AddAddress::class);
+    }
 }
