@@ -603,40 +603,54 @@
                         <tr>
                             <td>1</td>
                             <td v-for="(textDesign, index) in textDesigns" :key="index" :width="calculateTDWidthOfEditNames">
-                                <div class="form-input">
+                                <div class="form-input" v-if="textDesigns[0].is_edit">
                                     <input type="text" placeholder="Lorem Ipsum" v-model="textDesigns[index].text">
                                 </div>
-                                <!-- <span>{{textDesigns[index].text}}</span> -->
+                                <span v-else>{{textDesigns[index].text}}</span>
                             </td>
                             <td>
                                 <div class="quantity">
                                     <div class="quantity-wrap">
-                                        <button type="button">-</button>
-                                        <input type="text" placeholder="1">
-                                        <button type="button">+</button>
+                                        <button type="button" @click="textDesigns[0].quantity--">-</button>
+                                        <input type="text"  v-model="textDesigns[0].quantity" >
+                                        <button type="button" @click="textDesigns[0].quantity++">+</button>
                                     </div>
-                                  <!-- <a class="cmn-btn" href="#url" v-if="index>0">DONE</a> -->
-                                  <div class="delete-edit">
-                                    <a class="cmn-btn" href="#url"><img src="welcome_assets/images/edit-icon.svg" alt=""></a>
+                                  <div class="delete-edit" v-if="!textDesigns[0].is_edit">
+                                    <a class="cmn-btn"  href="#url" @click="textDesigns[0].is_edit=true"><img src="welcome_assets/images/edit-icon.svg" alt=""></a>
                                     <!-- <a class="cmn-btn" href="#url"><img src="welcome_assets/images/delete-icon.svg" alt=""></a> -->
-                                </div>
+                                    </div>
+                                <a class="cmn-btn" href="#url" v-if="textDesigns[0].is_edit"   @click="textDesigns[0].is_edit=false">DONE</a>
                                 </div>
                             </td>
                         </tr>
                         <tr v-for="(addNameArr, index) in addNames" :key="index">
-                            <td>{{index+1}}</td>
+                            <td>{{index+2}}</td>
                             <td v-for="(addName,index_2nd) in addNameArr" :key="index_2nd" :width="calculateTDWidthOfEditNames"> 
-                                <div class="form-input">
+                                <div class="form-input" v-if="addNames[index][0].is_edit">
                                      <input type="text"  v-model="addNameArr[index_2nd].text">
                                 </div>
+                                <span v-else>{{addNameArr[index_2nd].text}}</span>
                             </td>
                             <td>
-                                <div class="total">
+                                <div class="quantity">
+                                    <div class="quantity-wrap" v-if="index< addNames.length-1">
+                                        <button type="button" @click="addNames[index][0].quantity--">-</button>
+                                        <input type="text"  v-model="addNames[index][0].quantity">
+                                        <button type="button" @click="addNames[index][0].quantity++">+</button>
+                                    </div>
+                                  <a class="cmn-btn" href="#url" v-if="addNames[index][0].is_edit && (index!=addNames.length-1)" @click="addNames[index][0].is_edit=false">DONE</a>
+                                  <div class="delete-edit" v-if="!addNames[index][0].is_edit">
+                                    <a class="cmn-btn" href="#url" @click="addNames[index][0].is_edit=true"><img src="welcome_assets/images/edit-icon.svg" alt=""></a>
+                                    <a class="cmn-btn" href="#url"><img src="welcome_assets/images/delete-icon.svg" alt=""></a>
+                                </div>
+                                </div>
+                                <div class="total" v-if="addNames[index][0].is_edit && (index==addNames.length-1)">
                                     <input type="text" placeholder="1" v-model="addNames[index][0].quantity">
-                                    <a class="cmn-btn" href="#url" @click="setDataToNamesArray" >+ Add Name</a>
+                                    <a class="cmn-btn" href="#url" @click="setDataToNamesArray(true,index)" >+ Add Name</a>
                                 </div>
                             </td>
                         </tr>
+                        
                         <!-- <tr>
                             <td></td>
                             <td>
@@ -681,8 +695,8 @@
             <div class="button-section">
                 <ul>
                     <li><a class="cmn-btn cursor-pointer" @click="gobackAndEdit">Go back and edit badge</a></li>
-                    <li><a class="cmn-btn cursor-pointer" @click="setDataToNamesArray(); menu.global_items.addOrEditNames= true;" >Add or edit names</a></li>
-                    <li><a class="cmn-btn cursor-pointer" href="#url">I am finished adding names</a></li>
+                    <li><a class="cmn-btn cursor-pointer" @click="menu.global_items.addOrEditNames= true;" >Add or edit names</a></li>
+                    <li><a class="cmn-btn cursor-pointer" href="#url" @click="finishedAddingNames">I am finished adding names</a></li>
                 </ul>
             </div>
                 </div>
@@ -750,7 +764,8 @@ export default {
                     fontSize: 3,
                     fontColor: "#000000",
                     selected:false,
-                    quantity : 1
+                    quantity : 1,
+                    is_edit: false
                 }
             ],
             priceStructures:{
@@ -1034,7 +1049,9 @@ export default {
             }
         }
             this.selectTypeForPrice('white_plastic_rectangle');
-      
+            
+      if(this.addNames.length==0)
+          this.setDataToNamesArray();
 
           return {
             'rectangle1-3': 'rectangle1-3' == this.shapeDefaultClass,
@@ -1219,11 +1236,19 @@ export default {
                 this.textDesigns.splice(this.selectedTextBoxIndex,1);
                 this.selectItem(0);
           }
+          this.setDataToNamesArray();
       },
-      setDataToNamesArray(){
+      setDataToNamesArray(push=false,index=-1){
+          if(!push){
+             console.info('not pushed',push);
+             this.addNames=[];
+          }
+          if(index>=0)
+          this.addNames[index][0].is_edit=false;
           let textDesigns= this.textDesigns.map(item=>{
               console.info('item',item);
-              return {...item,
+              return {
+                ...item,
                 text: "",
                 quantity : 1,
                 is_edit:true
@@ -1281,6 +1306,7 @@ export default {
                     selected:false
                 }
           );
+          this.setDataToNamesArray();
       },
       addClipart(i){
           this.addClipartIndex++;
@@ -1311,6 +1337,34 @@ export default {
                     selected:false
                 }
           );
+      },
+      finishedAddingNames(){
+          let tempAddNames= this.addNames.slice();
+          tempAddNames.pop();
+          console.info('this.addNames',tempAddNames);
+          let original_name="";
+          let obj= {
+              original_order:{
+                  image:this.output,
+                  names:this.textDesigns.map(item=>{
+                      return item.text;
+                  }),
+                  quantity:this.textDesigns[0].quantity,
+                  price : this.getPrice
+              },
+              sub_order:{
+                  names:tempAddNames.map((names,index)=>
+                       names.map(item=>{
+                          return {
+                              name:item.text,
+                              quantity: item.quantity,
+                              price : this.getPrice
+                              }
+                      }),
+                  )
+              }
+          };
+          console.info('obj',obj);
       },
       calculatePrice(type,fasteners=false){
                 return this.priceStructures[type][0];
