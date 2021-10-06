@@ -14686,6 +14686,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //https://vuejsfeed.com/blog/drag-and-resize-elements-with-vuedraggableresizable
 
 
@@ -14734,7 +14748,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         fontSize: 3,
         fontColor: "#000000",
         selected: false,
-        quantity: 1
+        quantity: 1,
+        is_edit: false
       }],
       priceStructures: {
         white_plastic_rectangle: [{
@@ -15018,6 +15033,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
 
       this.selectTypeForPrice('white_plastic_rectangle');
+      if (this.addNames.length == 0) this.setDataToNamesArray();
       return {
         'rectangle1-3': 'rectangle1-3' == this.shapeDefaultClass,
         'rectangle1-5-3': 'rectangle1-5-3' == this.shapeDefaultClass,
@@ -15164,8 +15180,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.textDesigns.splice(this.selectedTextBoxIndex, 1);
         this.selectItem(0);
       }
+
+      this.setDataToNamesArray();
     },
     setDataToNamesArray: function setDataToNamesArray() {
+      var push = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var index = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : -1;
+
+      if (!push) {
+        console.info('not pushed', push);
+        this.addNames = [];
+      }
+
+      if (index >= 0) this.addNames[index][0].is_edit = false;
       var textDesigns = this.textDesigns.map(function (item) {
         console.info('item', item);
         return _objectSpread(_objectSpread({}, item), {}, {
@@ -15224,6 +15251,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         fontColor: "",
         selected: false
       });
+      this.setDataToNamesArray();
     },
     addClipart: function addClipart(i) {
       this.addClipartIndex++;
@@ -15251,12 +15279,42 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         selected: false
       });
     },
+    finishedAddingNames: function finishedAddingNames() {
+      var _this4 = this;
+
+      var tempAddNames = this.addNames.slice();
+      tempAddNames.pop();
+      console.info('this.addNames', tempAddNames);
+      var original_name = "";
+      var obj = {
+        original_order: {
+          image: this.output,
+          names: this.textDesigns.map(function (item) {
+            return item.text;
+          }),
+          quantity: this.textDesigns[0].quantity,
+          price: this.getPrice
+        },
+        sub_order: {
+          names: tempAddNames.map(function (names, index) {
+            return names.map(function (item) {
+              return {
+                name: item.text,
+                quantity: item.quantity,
+                price: _this4.getPrice
+              };
+            });
+          })
+        }
+      };
+      console.info('obj', obj);
+    },
     calculatePrice: function calculatePrice(type) {
       var fasteners = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       return this.priceStructures[type][0];
     },
     printThis: function printThis() {
-      var _this4 = this;
+      var _this5 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
         var el, options;
@@ -15265,7 +15323,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             switch (_context.prev = _context.next) {
               case 0:
                 //   console.log("printing..");
-                el = _this4.$refs.printcontent; // add option type to get the image version
+                el = _this5.$refs.printcontent; // add option type to get the image version
                 // if not provided the promise will return 
                 // the canvas.
 
@@ -15273,12 +15331,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   type: 'dataURL'
                 };
                 _context.next = 4;
-                return _this4.$html2canvas(el, options);
+                return _this5.$html2canvas(el, options);
 
               case 4:
-                _this4.output = _context.sent;
+                _this5.output = _context.sent;
 
-                _this4.selectGlobalMenuItems('addNames');
+                _this5.selectGlobalMenuItems('addNames');
 
               case 6:
               case "end":
@@ -54803,42 +54861,149 @@ var render = function() {
                                   }
                                 },
                                 [
-                                  _c("div", { staticClass: "form-input" }, [
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.textDesigns[index].text,
-                                          expression: "textDesigns[index].text"
-                                        }
-                                      ],
-                                      attrs: {
-                                        type: "text",
-                                        placeholder: "Lorem Ipsum"
-                                      },
-                                      domProps: {
-                                        value: _vm.textDesigns[index].text
-                                      },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
+                                  _vm.textDesigns[0].is_edit
+                                    ? _c("div", { staticClass: "form-input" }, [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.textDesigns[index].text,
+                                              expression:
+                                                "textDesigns[index].text"
+                                            }
+                                          ],
+                                          attrs: {
+                                            type: "text",
+                                            placeholder: "Lorem Ipsum"
+                                          },
+                                          domProps: {
+                                            value: _vm.textDesigns[index].text
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.textDesigns[index],
+                                                "text",
+                                                $event.target.value
+                                              )
+                                            }
                                           }
-                                          _vm.$set(
-                                            _vm.textDesigns[index],
-                                            "text",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    })
-                                  ])
+                                        })
+                                      ])
+                                    : _c("span", [
+                                        _vm._v(
+                                          _vm._s(_vm.textDesigns[index].text)
+                                        )
+                                      ])
                                 ]
                               )
                             }),
                             _vm._v(" "),
-                            _vm._m(30)
+                            _c("td", [
+                              _c("div", { staticClass: "quantity" }, [
+                                _c("div", { staticClass: "quantity-wrap" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      attrs: { type: "button" },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.textDesigns[0].quantity--
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("-")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.textDesigns[0].quantity,
+                                        expression: "textDesigns[0].quantity"
+                                      }
+                                    ],
+                                    attrs: { type: "text" },
+                                    domProps: {
+                                      value: _vm.textDesigns[0].quantity
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.textDesigns[0],
+                                          "quantity",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "button",
+                                    {
+                                      attrs: { type: "button" },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.textDesigns[0].quantity++
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("+")]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                !_vm.textDesigns[0].is_edit
+                                  ? _c("div", { staticClass: "delete-edit" }, [
+                                      _c(
+                                        "a",
+                                        {
+                                          staticClass: "cmn-btn",
+                                          attrs: { href: "#url" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.textDesigns[0].is_edit = true
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("img", {
+                                            attrs: {
+                                              src:
+                                                "welcome_assets/images/edit-icon.svg",
+                                              alt: ""
+                                            }
+                                          })
+                                        ]
+                                      )
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.textDesigns[0].is_edit
+                                  ? _c(
+                                      "a",
+                                      {
+                                        staticClass: "cmn-btn",
+                                        attrs: { href: "#url" },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.textDesigns[0].is_edit = false
+                                          }
+                                        }
+                                      },
+                                      [_vm._v("DONE")]
+                                    )
+                                  : _vm._e()
+                              ])
+                            ])
                           ],
                           2
                         ),
@@ -54848,7 +55013,7 @@ var render = function() {
                             "tr",
                             { key: index },
                             [
-                              _c("td", [_vm._v(_vm._s(index + 1))]),
+                              _c("td", [_vm._v(_vm._s(index + 2))]),
                               _vm._v(" "),
                               _vm._l(addNameArr, function(addName, index_2nd) {
                                 return _c(
@@ -54860,20 +55025,194 @@ var render = function() {
                                     }
                                   },
                                   [
-                                    _c("div", { staticClass: "form-input" }, [
+                                    _vm.addNames[index][0].is_edit
+                                      ? _c(
+                                          "div",
+                                          { staticClass: "form-input" },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value:
+                                                    addNameArr[index_2nd].text,
+                                                  expression:
+                                                    "addNameArr[index_2nd].text"
+                                                }
+                                              ],
+                                              attrs: { type: "text" },
+                                              domProps: {
+                                                value:
+                                                  addNameArr[index_2nd].text
+                                              },
+                                              on: {
+                                                input: function($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    addNameArr[index_2nd],
+                                                    "text",
+                                                    $event.target.value
+                                                  )
+                                                }
+                                              }
+                                            })
+                                          ]
+                                        )
+                                      : _c("span", [
+                                          _vm._v(
+                                            _vm._s(addNameArr[index_2nd].text)
+                                          )
+                                        ])
+                                  ]
+                                )
+                              }),
+                              _vm._v(" "),
+                              _c("td", [
+                                _c("div", { staticClass: "quantity" }, [
+                                  index < _vm.addNames.length - 1
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "quantity-wrap" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              attrs: { type: "button" },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.addNames[index][0]
+                                                    .quantity--
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("-")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value:
+                                                  _vm.addNames[index][0]
+                                                    .quantity,
+                                                expression:
+                                                  "addNames[index][0].quantity"
+                                              }
+                                            ],
+                                            attrs: { type: "text" },
+                                            domProps: {
+                                              value:
+                                                _vm.addNames[index][0].quantity
+                                            },
+                                            on: {
+                                              input: function($event) {
+                                                if ($event.target.composing) {
+                                                  return
+                                                }
+                                                _vm.$set(
+                                                  _vm.addNames[index][0],
+                                                  "quantity",
+                                                  $event.target.value
+                                                )
+                                              }
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "button",
+                                            {
+                                              attrs: { type: "button" },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.addNames[index][0]
+                                                    .quantity++
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("+")]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _vm.addNames[index][0].is_edit &&
+                                  index != _vm.addNames.length - 1
+                                    ? _c(
+                                        "a",
+                                        {
+                                          staticClass: "cmn-btn",
+                                          attrs: { href: "#url" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.addNames[
+                                                index
+                                              ][0].is_edit = false
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("DONE")]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  !_vm.addNames[index][0].is_edit
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "delete-edit" },
+                                        [
+                                          _c(
+                                            "a",
+                                            {
+                                              staticClass: "cmn-btn",
+                                              attrs: { href: "#url" },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.addNames[
+                                                    index
+                                                  ][0].is_edit = true
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("img", {
+                                                attrs: {
+                                                  src:
+                                                    "welcome_assets/images/edit-icon.svg",
+                                                  alt: ""
+                                                }
+                                              })
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _vm._m(30, true)
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ]),
+                                _vm._v(" "),
+                                _vm.addNames[index][0].is_edit &&
+                                index == _vm.addNames.length - 1
+                                  ? _c("div", { staticClass: "total" }, [
                                       _c("input", {
                                         directives: [
                                           {
                                             name: "model",
                                             rawName: "v-model",
-                                            value: addNameArr[index_2nd].text,
+                                            value:
+                                              _vm.addNames[index][0].quantity,
                                             expression:
-                                              "addNameArr[index_2nd].text"
+                                              "addNames[index][0].quantity"
                                           }
                                         ],
-                                        attrs: { type: "text" },
+                                        attrs: {
+                                          type: "text",
+                                          placeholder: "1"
+                                        },
                                         domProps: {
-                                          value: addNameArr[index_2nd].text
+                                          value: _vm.addNames[index][0].quantity
                                         },
                                         on: {
                                           input: function($event) {
@@ -54881,58 +55220,32 @@ var render = function() {
                                               return
                                             }
                                             _vm.$set(
-                                              addNameArr[index_2nd],
-                                              "text",
+                                              _vm.addNames[index][0],
+                                              "quantity",
                                               $event.target.value
                                             )
                                           }
                                         }
-                                      })
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "a",
+                                        {
+                                          staticClass: "cmn-btn",
+                                          attrs: { href: "#url" },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.setDataToNamesArray(
+                                                true,
+                                                index
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("+ Add Name")]
+                                      )
                                     ])
-                                  ]
-                                )
-                              }),
-                              _vm._v(" "),
-                              _c("td", [
-                                _c("div", { staticClass: "total" }, [
-                                  _c("input", {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.addNames[index][0].quantity,
-                                        expression:
-                                          "addNames[index][0].quantity"
-                                      }
-                                    ],
-                                    attrs: { type: "text", placeholder: "1" },
-                                    domProps: {
-                                      value: _vm.addNames[index][0].quantity
-                                    },
-                                    on: {
-                                      input: function($event) {
-                                        if ($event.target.composing) {
-                                          return
-                                        }
-                                        _vm.$set(
-                                          _vm.addNames[index][0],
-                                          "quantity",
-                                          $event.target.value
-                                        )
-                                      }
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "cmn-btn",
-                                      attrs: { href: "#url" },
-                                      on: { click: _vm.setDataToNamesArray }
-                                    },
-                                    [_vm._v("+ Add Name")]
-                                  )
-                                ])
+                                  : _vm._e()
                               ])
                             ],
                             2
@@ -55034,7 +55347,6 @@ var render = function() {
                           staticClass: "cmn-btn cursor-pointer",
                           on: {
                             click: function($event) {
-                              _vm.setDataToNamesArray()
                               _vm.menu.global_items.addOrEditNames = true
                             }
                           }
@@ -55043,7 +55355,17 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _vm._m(32)
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "cmn-btn cursor-pointer",
+                          attrs: { href: "#url" },
+                          on: { click: _vm.finishedAddingNames }
+                        },
+                        [_vm._v("I am finished adding names")]
+                      )
+                    ])
                   ])
                 ])
               ]
@@ -55514,24 +55836,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("div", { staticClass: "quantity" }, [
-        _c("div", { staticClass: "quantity-wrap" }, [
-          _c("button", { attrs: { type: "button" } }, [_vm._v("-")]),
-          _vm._v(" "),
-          _c("input", { attrs: { type: "text", placeholder: "1" } }),
-          _vm._v(" "),
-          _c("button", { attrs: { type: "button" } }, [_vm._v("+")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "delete-edit" }, [
-          _c("a", { staticClass: "cmn-btn", attrs: { href: "#url" } }, [
-            _c("img", {
-              attrs: { src: "welcome_assets/images/edit-icon.svg", alt: "" }
-            })
-          ])
-        ])
-      ])
+    return _c("a", { staticClass: "cmn-btn", attrs: { href: "#url" } }, [
+      _c("img", {
+        attrs: { src: "welcome_assets/images/delete-icon.svg", alt: "" }
+      })
     ])
   },
   function() {
@@ -55544,18 +55852,6 @@ var staticRenderFns = [
           '\n                If you require additional badges with different names, click the "Add or edit names"\n                button.If you do not need badges with different names, click "I am finished adding \n                names" to continue your order.\n            '
         )
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c(
-        "a",
-        { staticClass: "cmn-btn cursor-pointer", attrs: { href: "#url" } },
-        [_vm._v("I am finished adding names")]
-      )
     ])
   }
 ]
