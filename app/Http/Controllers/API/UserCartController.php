@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Input;
 /**
  * @group  User Cart Authentication
  *
@@ -150,5 +151,75 @@ class UserCartController extends Controller
            return Response()->Json(["status"=>false,"message"=> 'Something went wrong. Please try again.']);
       }
     }
+
+    
+      /** 
+       * Make Order
+ * @authenticated
+ * @bodyParam products string required Example: [
+        {
+        "product_id": 1,
+        "quantity":1
+        },
+        {
+        "product_id": 2,
+        "quantity":1
+        }
+    ]
+ * @response  {
+    "status": true,
+    "message": "Your order has been successfully Placed."
+}
+ * @response  401 {
+ *   "message": "Unauthenticated."
+*}
+ */
+
+public function orderDetails(Request $request)
+{
+    try{
+
+    //     $rules = [
+    //         'image' => 'required',
+    //         'payment_method' => 'required',
+    //         'shipping_method' => 'required',
+    //         'names' => 'array|min:1',
+    //         'quantity' => 'required',
+    //         'price' => 'required',
+    //         'status' => 'required',
+    //         'production_time_id' => 'required',
+    // ];
+    // $validator = Validator::make($request->all(),$rules);
+    // if ($validator->fails()){
+      
+    //     return response()->json([
+    //         'status'=>false,
+    //         'message' => $validator->errors()->all()[0],
+    //         'data'=> new \stdClass()
+    //     ]);
+        
+    // }
+         $inputs = $request->all();
+         
+         $price = $request->input('original_order.price');
+         $image = $request->input('original_order.image');
+         $quantity = $request->input('original_order.quantity');
+         $arraytostringnames =  implode(' | ',$request->input('original_order.names'));
+
+         $quantitydetails = $request->get('sub_order');
+
+         dd($quantitydetails);
+           DB::beginTransaction();
+
+        
+        DB::commit();
+        return Response()->Json(["status"=>true,"message"=> 'Your order has been successfully Placed.']);
+
+       }
+       catch(\Exception $e) {
+        DB::rollback();
+           return Response()->Json(["status"=>false,"message"=> 'Something went wrong. Please try again.']);
+      }
+}
 
 }

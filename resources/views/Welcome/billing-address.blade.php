@@ -63,7 +63,8 @@ var productimeid = 0;
         $(".production-card").not(this).find(".production-cont > p").css("color", "#c0bbbb");
 
         var productimeid = $(this).find(".heading h3:eq(1)").text();
-        console.log(productimeid);
+
+        //console.log(productimeid);
 
     
     });

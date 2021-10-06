@@ -27,7 +27,14 @@ class Order extends Model
         return $status;
     }
     
-
+    protected $fillable = [ 
+        'user_id', 'production_time_id', 'product_image',
+        'payment_method','shipping_method','names',
+        'quantity','payment_price','status'
+    ];
+    public function orderdetails(){
+        return $this->hasMany(OrderDetails::class);
+    }
     public function user(){
         return $this->belongsTo(User::class);
     }

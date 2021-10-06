@@ -26,5 +26,6 @@ Route::middleware('auth:api')->group(function () {
     Route::get("user", [UserController::class, "user"]);
     // Route::resource('tasks', TaskController::class);    //patch/put   =>  x-www-form-urlencode
     Route::post('add-to-cart', [UserCartController::class, 'addToCart']);
+    Route::post('order-details', [UserCartController::class, 'orderDetails']);
 
 });
