@@ -222,7 +222,9 @@ var productimeid = 0;
                                     <select  name="state" id="state" class="form-control @error('state') is-invalid @enderror" name="state"   autocomplete="state">
                                             
                                             <option value=""disable selected>Select State</option>
-                                                                                                                        
+                                            @foreach ($state as $key => $value)                               
+                                                 <option value="{{ $value }}">{{ $key }}</option>
+                                            @endforeach                                                                             
                                                             
                                         </select>
                                         @error('state')
