@@ -14,6 +14,10 @@
                     class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('title')"></i>
             </th>
             <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
+                aria-sort="ascending" aria-label="Agent: activate to sort column descending">Names <i
+                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('names')"></i>
+            </th>
+            <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
                 aria-sort="ascending" aria-label="Agent: activate to sort column descending">Quantity <i
                     class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('quantity')"></i>
             </th>
@@ -46,6 +50,7 @@
                     </div>
                 </td>
                 <td class="sorting_1" tabindex="0">{{ $usercart->title  }}</td>
+                <td class="sorting_1" tabindex="0">{{ $usercart->names  }}</td>
                 <td class="sorting_1" tabindex="0">{{ $usercart->quantity  }}</td>
                 <td class="sorting_1" tabindex="0">{{ $usercart->payment_price  }}</td>
                 <td class="sorting_1" tabindex="0">{{ $usercart->status  }}               
@@ -53,7 +58,7 @@
                 </td>
                 
                 <td>
-                    <button href="#" class="dropdown-item" wire:click="removeCart({{ $usercart->id }})"><i class="fa fa-trash" ></i></button>
+                    <!-- <button href="#" class="dropdown-item" wire:click="removeCart({{ $usercart->id }})"><i class="fa fa-trash" ></i></button> -->
                 </td>              
             </tr>
         @empty
