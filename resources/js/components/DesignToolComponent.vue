@@ -1378,8 +1378,8 @@ export default {
           //api/order-details
           axios.post('/order-details', obj)
                 .then(res => {
-                    // if( res.data.status)
-                    //   window.location.href = res.data.redirect_url;
+                    if( res.data.status)
+                      window.location.href = res.data.redirect_url;
                 }).catch(err => {
                 console.log(err)
             })

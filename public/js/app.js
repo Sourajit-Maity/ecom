@@ -15318,8 +15318,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       };
       console.info('obj', obj); //api/order-details
 
-      axios.post('/order-details', obj).then(function (res) {// if( res.data.status)
-        //   window.location.href = res.data.redirect_url;
+      axios.post('/order-details', obj).then(function (res) {
+        if (res.data.status) window.location.href = res.data.redirect_url;
       })["catch"](function (err) {
         console.log(err);
       });
