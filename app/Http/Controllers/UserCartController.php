@@ -193,7 +193,7 @@ class UserCartController extends Controller
         $order->orderdetails()->createMany($subOrderDetailstempArray);
 
         DB::commit();
-        return Response()->Json(["status" => true, "message" => 'Your order has been successfully Placed.', "redirect_url" => route('welcome.order-history')]);
+        return Response()->Json(["status" => true, "message" => 'Your order has been successfully Placed.', "redirect_url" => route('welcome.shopping-cart')]);
 
 
         //    catch(\Exception $e) {
