@@ -26,9 +26,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <table
-                        class="table table-striped- table-bordered table-hover table-checkable dataTable no-footer dtr-inline"
-                        id="kt_table_1" role="grid" aria-describedby="kt_table_1_info" style="width: 1115px;">
+                    <table class="table table-striped- table-bordered table-hover table-checkable dataTable no-footer dtr-inline" id="kt_table_1" role="grid" aria-describedby="kt_table_1_info">
                         <thead>
                             {{ $thead }}
                         </thead>
