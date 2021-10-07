@@ -15067,6 +15067,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     //   itemChange(event){
     //       console.info('event',event);
     //   },
+    nameDeleteConfirm: function nameDeleteConfirm(index) {
+      if (confirm('Are you sure you want to delete?')) this.addNames.splice(index, 1);
+    },
     selectTypeForPrice: function selectTypeForPrice(type) {
       // console.info('type',this.selectionForPrice[type]);
       if (this.shapeDefaultClass == 'oval1-3') {
@@ -54913,7 +54916,8 @@ var render = function() {
                                       attrs: { type: "button" },
                                       on: {
                                         click: function($event) {
-                                          _vm.textDesigns[0].quantity--
+                                          _vm.textDesigns[0].quantity > 1 &&
+                                            _vm.textDesigns[0].quantity--
                                         }
                                       }
                                     },
@@ -55084,7 +55088,9 @@ var render = function() {
                                               on: {
                                                 click: function($event) {
                                                   _vm.addNames[index][0]
-                                                    .quantity--
+                                                    .quantity > 1 &&
+                                                    _vm.addNames[index][0]
+                                                      .quantity--
                                                 }
                                               }
                                             },
@@ -55187,7 +55193,29 @@ var render = function() {
                                             ]
                                           ),
                                           _vm._v(" "),
-                                          _vm._m(30, true)
+                                          _c(
+                                            "a",
+                                            {
+                                              staticClass: "cmn-btn",
+                                              attrs: { href: "#url" },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.nameDeleteConfirm(
+                                                    index
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("img", {
+                                                attrs: {
+                                                  src:
+                                                    "welcome_assets/images/delete-icon.svg",
+                                                  alt: ""
+                                                }
+                                              })
+                                            ]
+                                          )
                                         ]
                                       )
                                     : _vm._e()
@@ -55315,7 +55343,7 @@ var render = function() {
                 ]
               },
               [
-                _vm._m(31),
+                _vm._m(30),
                 _vm._v(" "),
                 _c("div", { staticClass: "your-text-box" }, [
                   _c("h3", [
@@ -55830,16 +55858,6 @@ var staticRenderFns = [
           "\n                ***We will match all the additional names to your first design and make sure all the text fits properly.\n            "
         )
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "cmn-btn", attrs: { href: "#url" } }, [
-      _c("img", {
-        attrs: { src: "welcome_assets/images/delete-icon.svg", alt: "" }
-      })
     ])
   },
   function() {
