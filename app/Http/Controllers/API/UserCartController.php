@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\OrderDetails;
 use App\Models\Product;
 use App\Models\UserCart;
 use App\Models\User;
@@ -177,7 +178,7 @@ class UserCartController extends Controller
 
 public function orderDetails(Request $request)
 {
-    try{
+   // try{
 
     //     $rules = [
     //         'image' => 'required',
@@ -200,26 +201,48 @@ public function orderDetails(Request $request)
         
     // }
          $inputs = $request->all();
+         $subOrderDetailstempArray= [];
          
          $price = $request->input('original_order.price');
          $image = $request->input('original_order.image');
          $quantity = $request->input('original_order.quantity');
          $arraytostringnames =  implode(' | ',$request->input('original_order.names'));
 
-         $quantitydetails = $request->get('sub_order');
+            
 
-         dd($quantitydetails);
+         $quantitydetails = $request->input('sub_order.names');
+         foreach($quantitydetails as $quantitydetail)
+         {
+             $quantityDetailTemp = [];
+             $badgeName = "";
+             foreach($quantitydetail as $details){
+                $badgeName .=   $details['name'] . " | ";
+             }
+             $quantityDetailTemp['name'] = $badgeName;
+             $quantityDetailTemp['quantity'] = $quantitydetail[0]['quantity'];
+             $quantityDetailTemp['price'] = $quantitydetail[0]['price'];
+             array_push($subOrderDetailstempArray,$quantityDetailTemp);
+             
+         }
+         
            DB::beginTransaction();
+           $order = new Order;
+           $order->user_id = Auth::user()->id;
+           $order->payment_price = $price;
+           $order->quantity = $quantity;
+           $order->image = $image;
+           $order->names = $arraytostringnames;
+           $order->save();
+           $order->orderdetails()->createMany($subOrderDetailstempArray);
 
-        
         DB::commit();
-        return Response()->Json(["status"=>true,"message"=> 'Your order has been successfully Placed.']);
+        return Response()->Json(["status"=>true,"message"=> 'Your order has been successfully Placed.',"redirect_url"=>route('welcome.order-history')]);
 
        }
-       catch(\Exception $e) {
-        DB::rollback();
-           return Response()->Json(["status"=>false,"message"=> 'Something went wrong. Please try again.']);
-      }
+    //    catch(\Exception $e) {
+    //     DB::rollback();
+    //        return Response()->Json(["status"=>false,"message"=> 'Something went wrong. Please try again.']);
+    //   }
 }
 
-}
+
