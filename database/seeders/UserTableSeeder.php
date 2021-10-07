@@ -25,7 +25,7 @@ class UserTableSeeder extends Seeder
         ]);
         $superAdminUser->assignRole('SUPER-ADMIN');
         $User= User::create([
-            'first_name' => "Test",
+            'first_name' => "User",
             'last_name' => "User",
             'email' => "user@user.com",
             'password' => "11111111",

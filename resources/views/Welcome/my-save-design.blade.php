@@ -1,10 +1,6 @@
 <x-layouts.welcome-layout>
 
-    <section class="design-sec cmn-gap2">
-        <div class="container">
-            
-
-            <div class="design-content">
+    <div class="design-content">
                 <h3>My Saved Designs</h3>
 
                 <div class="row design-row">

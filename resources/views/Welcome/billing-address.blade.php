@@ -97,15 +97,7 @@ var productimeid = 0;
     });
 });
 
-
-
-   
-
 </script>
-    <section class="billing-address account-info cmn-gap2">
-        <div class="container">
-           
-           
 
             @if (Session::has('success'))
                     <div class="alert alert-success text-center">

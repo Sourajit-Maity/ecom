@@ -56,13 +56,13 @@ Route::post('contact-us-submit', [HomeController::class, 'contactSubmit'])->name
 Route::post('contact-submit', [HomeController::class, 'contactUsSubmit'])->name('welcome.contact-submit');
 Route::get('signup', [HomeController::class, 'signUp'])->name('welcome.signup');
 Route::get('login', [HomeController::class, 'login'])->name('welcome.login');
-Route::get('design-tool', [HomeController::class, 'designTool'])->name('welcome.design-tool');
+
 Route::get('product-details/{product_name}', [HomeController::class, 'productDetails'])->name('welcome.product-details');
 
 Route::group(['middleware'=>['auth:web','clientuser']], function() {
 
+Route::get('design-tool', [HomeController::class, 'designTool'])->name('welcome.design-tool');
 
-// Route::get('design-tool', [DesignToolController::class, 'index'])->name('welcome.design-tool');
 
 Route::get('add-address', [AddressController::class, 'addAddress'])->name('welcome.add-address');
 Route::post('save-address', [AddressController::class, 'saveAddress'])->name('welcome.save-address');

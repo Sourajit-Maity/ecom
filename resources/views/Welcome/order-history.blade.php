@@ -22,12 +22,12 @@
                     <tr>
         
                         <td>{!! \Carbon\Carbon::parse($order->created_at)->format('d M Y') !!}</td>
-                        <td>{{ $order->id }}</td>
+                        <td>##{{ $order->id }}</td>
                         <td>{{ $order->status }}</td>
                         <td>
                             <div class="image-wraper">
                                 <div class="order-image">
-                                    <img src="{{asset('welcome_assets/images/order01.png')}}" alt="">
+                                    <img src="{{ $order->image }}" alt="">
                                     <a href="#url"><img src="{{asset('welcome_assets/images/close.svg')}}" alt=""></a>
                                 </div>
                                 <div class="order-name">
