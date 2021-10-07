@@ -28,7 +28,7 @@ class Order extends Model
     }
     
     protected $fillable = [ 
-        'user_id', 'production_time_id', 'product_image',
+        'user_id','title', 'production_time_id', 'product_image',
         'payment_method','shipping_method','names',
         'quantity','payment_price','status'
     ];

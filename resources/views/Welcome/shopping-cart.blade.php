@@ -7,7 +7,7 @@
                         <livewire:cart.user-cart-list/>
 
                     <div class="checkout">
-                        <input type="submit" value="Proceed To Checkout"> 
+                    <a href="{{ route('welcome.billing-address') }}"><input type="submit" value="Proceed To Checkout"> </a>
                     </div>
 
                 </div>

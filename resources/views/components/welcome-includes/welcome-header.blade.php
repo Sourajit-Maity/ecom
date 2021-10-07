@@ -69,7 +69,7 @@
                         
                     @else
                         <div class="w3-bar" style="background-color:#b3b3ff; height: 3px;" !imporatnt>
-                            <a href="#" class="w3-bar-item w3-button"></a>  
+                                <a href="#" class="w3-bar-item w3-button"></a>  
                         </div>
                         <section class="my-account add-address cmn-gap2">
                          <div class="container">

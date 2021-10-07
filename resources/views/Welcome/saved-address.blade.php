@@ -13,7 +13,7 @@
                 </div>
                 
 
-                <table>
+                <table class="table">
                  <thead>
                     <tr>
                         <th>Nick name</th>
@@ -23,7 +23,7 @@
                         <th>Action</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody> 
                     @if (count($shippingaddresses) > 0)
                             @foreach ($shippingaddresses as $shippingaddress)
                     <tr>
@@ -52,15 +52,10 @@
             </div>
 
             <div class="pagination">
-                <ul>
-                    <li class="prev"><a href="#url"><img src="{{asset('welcome_assets/images/arrow-right.svg')}}" alt=""></a></li>
-                    <li class="active"><a href="#url"><span>1</span></a></li>
-                    <li><a href="#url"><span>2</span></a></li>
-                    <li><a href="#url"><span>3</span></a></li>
-                    <li><a href="#url"><span>4</span></a></li>
-                    <li><a href="#url"><span>...</span></a></li>
-                    <li class="next"><a href="#url"><img src="{{asset('welcome_assets/images/arrow-right.svg')}}" alt=""></a></li>
-                </ul>
+                    <ul>
+                        <!-- <li>{!! $shippingaddresses->appends(['sort' => 'id'])->links() !!}</li>                    -->
+                         <li>{{ $shippingaddresses->links('vendor.pagination.custom') }}</li>
+                    </ul>
             </div>
 
         </div>

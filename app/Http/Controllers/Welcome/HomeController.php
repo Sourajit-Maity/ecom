@@ -174,10 +174,11 @@ class HomeController extends Controller
     public function productDetails($product_name)
     { 
         $products = Product::where('product_name',$product_name)->first();
-        //dd($products);
+        $otherproducts = Product::latest()->take(4)->get();
+        //dd($otherproducts);
         $productprices = ProductPrice::get();
         $reviews = Review::with('user')->where('active', 1)->get();
-        return view('Welcome.product-details',compact('reviews','productprices','products'));
+        return view('Welcome.product-details',compact('reviews','productprices','products','otherproducts'));
     }
     public function designTool()
     {
