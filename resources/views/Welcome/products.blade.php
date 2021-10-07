@@ -7,23 +7,25 @@
                         <ul>
                             <!-- <li class="active"><a href="#url">Plastic Badges</a></li> -->
                             @foreach($products as $product)
-                                <li><a href="#url">{{$product->product_name}}</a></li> 
-                                <a href="{{route('welcome.product-details',[$product->product_name])}}">View Details</a>
+                                <li><a href="{{route('welcome.product-details',[$product->product_name])}}">{{$product->product_name}}</a></li> 
                             @endforeach                        
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-9 product-right">
                     <div class="product-cont">
+
+                    @foreach($productsdetails as $productsdetail)
                         <div class="product-card">
                             <div class="row product-row">
                                 <div class="col-md-5 product-col-left">
-                                    <img src="{{asset('welcome_assets/images/product-01.png')}}" alt="">
-                                    <a href="{{route('welcome.product-details',[$product->product_name])}}">View Details</a>
+                                    <!-- <img src="{{asset('welcome_assets/images/product-01.png')}}" alt=""> -->
+                                    <img src="{{$productsdetail->product_photo_path}}" alt="">
+                                    <!-- <a href="{{route('welcome.product-details',[$product->product_name])}}">View Details</a> -->
                                 </div>
                                 <div class="col-md-7 product-col-right">
                                     <h4>
-                                        Plastic Name Tags & Custom Name <br>
+                                           {{$productsdetail->product_name}}  <br>
                                         Badges include:
                                     </h4>
 
@@ -58,116 +60,21 @@
                                         </div> 
                                     </div>
 
-                                    <a href="#">View Details</a>
+                                    <a href="{{route('welcome.product-details',[$productsdetail->product_name])}}">View Details</a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="product-card">
-                            <div class="row product-row">
-                                <div class="col-md-5 product-col-left">
-                                    <img src="{{asset('welcome_assets/images/product-02.png')}}" alt="">
-                                </div>
-                                <div class="col-md-7 product-col-right">
-                                    <h4>
-                                        Plastic Name Tags & Custom Name <br>
-                                        Badges include:
-                                    </h4>
+                        @endforeach 
 
-                                    <div class="product-wrap">
-                                        <div class="product-wrap-col">
-                                            <ul>
-                                                <li>
-                                                    Full custom color printing
-                                                    of logos and text
-                                                </li>
-                                                <li>
-                                                    Option of pin or magnetic fastener
-                                                </li>
-                                                <li>Rapid production times</li>
-                                                <li>No Design Fees</li>
-                                                <li>No Minimums</li>
-                                                <li>Quantity based prices</li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-wrap-col">
-                                            <ul>
-                                                <li>
-                                                    Wide range of background color and font options
-                                                </li>
-                                                <li>
-                                                    Scratch and fade-proof epoxy coating
-                                                </li>
-                                                <li>No Setup Fees</li>
-                                                <li>Free Doming</li>
-                                                <li>No Hidden Fees</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <a href="#">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="row product-row">
-                                <div class="col-md-5 product-col-left">
-                                    <img src="{{asset('welcome_assets/images/product-03.png')}}" alt="">
-                                </div>
-                                <div class="col-md-7 product-col-right">
-                                    <h4>
-                                        Plastic Name Tags & Custom Name <br>
-                                        Badges include:
-                                    </h4>
-
-                                    <div class="product-wrap">
-                                        <div class="product-wrap-col">
-                                            <ul>
-                                                <li>
-                                                    Full custom color printing
-                                                    of logos and text
-                                                </li>
-                                                <li>
-                                                    Option of pin or magnetic fastener
-                                                </li>
-                                                <li>Rapid production times</li>
-                                                <li>No Design Fees</li>
-                                                <li>No Minimums</li>
-                                                <li>Quantity based prices</li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-wrap-col">
-                                            <ul>
-                                                <li>
-                                                    Wide range of background color and font options
-                                                </li>
-                                                <li>
-                                                    Scratch and fade-proof epoxy coating
-                                                </li>
-                                                <li>No Setup Fees</li>
-                                                <li>Free Doming</li>
-                                                <li>No Hidden Fees</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <a href="#">View Details</a>
-                                </div>
-                            </div>
-                        </div>
+                       
 
                         <div class="pagination">
                             <ul>
-                                <li class="prev"><a href="#url"><img src="{{asset('welcome_assets/images/arrow-right.svg')}}" alt=""></a></li>
-                                <li class="active"><a href="#url"><span>1</span></a></li>
-                                <li><a href="#url"><span>2</span></a></li>
-                                <li><a href="#url"><span>3</span></a></li>
-                                <li><a href="#url"><span>4</span></a></li>
-                                <li><a href="#url"><span>...</span></a></li>
-                                <li class="next"><a href="#url"><img src="{{asset('welcome_assets/images/arrow-right.svg')}}" alt=""></a></li>
+                                <!-- <li>{!! $productsdetails->appends(['sort' => 'id'])->links() !!}</li>                    -->
+                                <li>{{ $productsdetails->links('vendor.pagination.custom') }}</li>
                             </ul>
-                        </div>
+                     </div>
 
                     </div>
                 </div>
