@@ -30,9 +30,6 @@
                                     <img src="{{ $order->image }}" alt="">
                                     <a href="#url"><img src="{{asset('welcome_assets/images/close.svg')}}" alt=""></a>
                                 </div>
-                                <div class="order-name">
-                                    <p>Plastic Badges</p>
-                                </div>
                             </div>
                         </td>
                         <td>
