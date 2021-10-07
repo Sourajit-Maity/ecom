@@ -1,5 +1,5 @@
 <header class="main-head {{ Request::is('design-tool') ? 'product-head' : '' }}">
-
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <div class="top-head">
         <div class="container">
             <div class="top-head-wrap">
@@ -61,9 +61,18 @@
         </div>
        
         <button class="navbar-toggler" id="navoverlay" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
-        @guest
+       
+    </div>
+</header>
+
+                @guest
                         
-                        @else
+                    @else
+                        <div class="w3-bar" style="background-color:#b3b3ff; height: 3px;" !imporatnt>
+                            <a href="#" class="w3-bar-item w3-button"></a>  
+                        </div>
+                        <section class="my-account add-address cmn-gap2">
+                         <div class="container">
                             <div class="user-nav">
                                 <ul>                    
                                     <li class="{{ Request::is('welcome.my-account') ? 'current-menu-item' : '' }}"><a href="{{route('welcome.my-account')}}">USER MENU</a></li>
@@ -80,6 +89,4 @@
                                     <li><a href="{{route('welcome.logout-client')}}">LOG OUT</a></li>
                                 </ul>
                             </div> 
-                        @endguest 
-    </div>
-</header>
+                @endguest

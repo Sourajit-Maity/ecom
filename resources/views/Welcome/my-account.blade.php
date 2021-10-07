@@ -1,9 +1,5 @@
 <x-layouts.welcome-layout>
 
-    <section class="my-account cmn-gap2">
-        <div class="container">
-            
-
             <div class="account-info">
                 <h3>Account info</h3>
 
