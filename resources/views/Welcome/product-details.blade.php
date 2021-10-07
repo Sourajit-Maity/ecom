@@ -94,51 +94,26 @@
                 <div class="cmn-heading">
                     <h2>You May Also Like</h2>
                 </div>
+                
                 <div class="row you-may-like-row">
+                @foreach($otherproducts as $otherproduct)
                     <div class="col-md-3 you-may-like-col">
                         <div class="rel-product-card">
                             <div class="product-image">
-                                <img src="{{asset('welcome_assets/images/lated-product01.png')}}" alt="">
+                               <img src="{{$otherproduct->product_photo_path}}" alt="">
+                               <!-- <img src="{{asset('welcome_assets/images/product-03.png')}}" alt=""> -->
+
                             </div>
                             <div class="content">
-                                <h4>Plastic Badges</h4>
-                                <a class="cmn-btn" href="{{route('welcome.design-tool')}}">View Details</a>
+                            
+                                <h4>{{$otherproduct->product_name}}</h4>
+                                <!-- <a class="cmn-btn" href="{{route('welcome.design-tool')}}">View Details</a> -->
+                                <a class="cmn-btn" href="{{route('welcome.product-details',[$otherproduct->product_name])}}">View Details</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 you-may-like-col">
-                        <div class="rel-product-card">
-                            <div class="product-image">
-                                <img src="{{asset('welcome_assets/images/lated-product02.png')}}" alt="">
-                            </div>
-                            <div class="content">
-                                <h4>Oval Badges</h4>
-                                <a class="cmn-btn" href="{{route('welcome.design-tool')}}">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 you-may-like-col">
-                        <div class="rel-product-card">
-                            <div class="product-image">
-                                <img src="{{asset('welcome_assets/images/lated-product03.png')}}" alt="">
-                            </div>
-                            <div class="content">
-                                <h4>Aluminum Badges</h4>
-                                <a class="cmn-btn" href="{{route('welcome.design-tool')}}">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 you-may-like-col">
-                        <div class="rel-product-card">
-                            <div class="product-image">
-                                <img src="{{asset('welcome_assets/images/lated-product04.png')}}" alt="">
-                            </div>
-                            <div class="content">
-                                <h4>Framed Badges</h4>
-                                <a class="cmn-btn" href="{{route('welcome.design-tool')}}">View Details</a>
-                            </div>
-                        </div>
-                    </div>
+                   
+                   @endforeach
                 </div>
             </div>
 
