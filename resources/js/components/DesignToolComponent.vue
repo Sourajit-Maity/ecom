@@ -1,5 +1,5 @@
 <template>
-             <section class="design-page-sec cmn-gap2">
+             <section class="design-page-sec">
         <div class="container">
             <div class="order-tab">
                 <ul>
@@ -549,7 +549,7 @@
             </div>
 
 
-            <div class="Product-sec">
+            <div class="Product-sec mb-10">
                 <div class="table-sec" :class="{'price_yable-custom-margin' : shapeDefaultClass == 'rectangle12-3'}">
                     <table>
                         <tr>
@@ -1103,6 +1103,12 @@ export default {
     //   itemChange(event){
     //       console.info('event',event);
     //   },
+     getWidthOfCanvas(){
+            if(this.shapeDefaultClass == 'rectangle1-3') return 1;
+            if(this.shapeDefaultClass == 'rectangle1-5-3') return 1.5
+            if(this.shapeDefaultClass == 'oval1-3') return 1;
+            if(this.shapeDefaultClass == 'rectangle12-3') return  2;
+      },
     nameDeleteConfirm(index){
         if(confirm('Are you sure you want to delete?'))
         this.addNames.splice(index, 1);
@@ -1345,7 +1351,6 @@ export default {
       finishedAddingNames(){
           let tempAddNames= this.addNames.slice();
           tempAddNames.pop();
-          console.info('this.addNames',tempAddNames);
           let original_name="";
           let obj= {
               original_order:{
@@ -1353,6 +1358,7 @@ export default {
                   names:this.textDesigns.map(item=>{
                       return item.text;
                   }),
+                  title: `${this.getWidthOfCanvas()} * 3 Design`,
                   quantity:this.textDesigns[0].quantity,
                   price : this.getPrice
               },
@@ -1368,7 +1374,15 @@ export default {
                   )
               }
           };
-          console.info('obj',obj);
+           console.info('obj',obj);
+          //api/order-details
+          axios.post('/order-details', obj)
+                .then(res => {
+                    // if( res.data.status)
+                    //   window.location.href = res.data.redirect_url;
+                }).catch(err => {
+                console.log(err)
+            })
       },
       calculatePrice(type,fasteners=false){
                 return this.priceStructures[type][0];

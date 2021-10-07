@@ -15067,6 +15067,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     //   itemChange(event){
     //       console.info('event',event);
     //   },
+    getWidthOfCanvas: function getWidthOfCanvas() {
+      if (this.shapeDefaultClass == 'rectangle1-3') return 1;
+      if (this.shapeDefaultClass == 'rectangle1-5-3') return 1.5;
+      if (this.shapeDefaultClass == 'oval1-3') return 1;
+      if (this.shapeDefaultClass == 'rectangle12-3') return 2;
+    },
     nameDeleteConfirm: function nameDeleteConfirm(index) {
       if (confirm('Are you sure you want to delete?')) this.addNames.splice(index, 1);
     },
@@ -15287,7 +15293,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       var tempAddNames = this.addNames.slice();
       tempAddNames.pop();
-      console.info('this.addNames', tempAddNames);
       var original_name = "";
       var obj = {
         original_order: {
@@ -15295,6 +15300,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           names: this.textDesigns.map(function (item) {
             return item.text;
           }),
+          title: "".concat(this.getWidthOfCanvas(), " * 3 Design"),
           quantity: this.textDesigns[0].quantity,
           price: this.getPrice
         },
@@ -15310,7 +15316,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           })
         }
       };
-      console.info('obj', obj);
+      console.info('obj', obj); //api/order-details
+
+      axios.post('/order-details', obj).then(function (res) {// if( res.data.status)
+        //   window.location.href = res.data.redirect_url;
+      })["catch"](function (err) {
+        console.log(err);
+      });
     },
     calculatePrice: function calculatePrice(type) {
       var fasteners = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
@@ -53088,7 +53100,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "design-page-sec cmn-gap2" },
+    { staticClass: "design-page-sec" },
     [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "order-tab" }, [
@@ -54752,7 +54764,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "Product-sec" }, [
+            _c("div", { staticClass: "Product-sec mb-10" }, [
               _c(
                 "div",
                 {
