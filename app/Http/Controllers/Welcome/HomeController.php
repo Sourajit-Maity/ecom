@@ -50,8 +50,9 @@ class HomeController extends Controller
     public function products()
     {
         $products = Product::get();
+        $productsdetails = Product::paginate(3);
         $reviews = Review::with('user')->where('active', 1)->get();
-        return view('Welcome.products',compact('reviews','products'));
+        return view('Welcome.products',compact('reviews','products','productsdetails'));
     }
     public function faq()
     {
@@ -187,7 +188,7 @@ class HomeController extends Controller
     public function orderHistory()
     {
         $userid= Auth::user()->id;
-        $orders = Order::where('user_id', $userid)->get();
+        $orders = Order::where('user_id', $userid)->paginate(5);
         //dd($orders);
         return view('Welcome.order-history',compact('orders'));
     }
