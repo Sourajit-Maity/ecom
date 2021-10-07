@@ -12,7 +12,7 @@ class OrderDetails extends Model
         'design' => 'array'
     ];
     protected $fillable = [ 
-        'orders_id', 'product_image', 'design'
+        'orders_id', 'quantity','price','name'
     ];
     public function order(){
         return $this->belongsTo(Order::class);

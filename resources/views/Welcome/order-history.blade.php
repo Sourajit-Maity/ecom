@@ -22,7 +22,7 @@
                     <tr>
         
                         <td>{!! \Carbon\Carbon::parse($order->created_at)->format('d M Y') !!}</td>
-                        <td>{{ $order->order_id }}</td>
+                        <td>{{ $order->id }}</td>
                         <td>{{ $order->status }}</td>
                         <td>
                             <div class="image-wraper">

@@ -24,6 +24,14 @@ class UserTableSeeder extends Seeder
             'active'=>true
         ]);
         $superAdminUser->assignRole('SUPER-ADMIN');
+        $User= User::create([
+            'first_name' => "Test",
+            'last_name' => "User",
+            'email' => "testuser@user.com",
+            'password' => "11111111",
+            'active'=>true
+        ]);
+        $User->assignRole('CLIENT');
         User::factory(50)->create()->each(function ($user) {
             $user->assignRole('CLIENT');
         });
