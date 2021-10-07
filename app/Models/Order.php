@@ -13,22 +13,22 @@ class Order extends Model
     {
         $status = '';
         if($value == 1){
-            $status = 'processing';
+            $status = 'Processing';
         }
         if($value == 2){
-            $status = 'accepted';
+            $status = 'Accepted';
         }
         if($value == 3){
-            $status = 'cancel';
+            $status = 'Cancel';
         }
         if($value == 4){
-            $status = 'delivered';
+            $status = 'Delivered';
         }
         return $status;
     }
     
     protected $fillable = [ 
-        'user_id', 'production_time_id', 'product_image',
+        'user_id','title', 'production_time_id', 'product_image',
         'payment_method','shipping_method','names',
         'quantity','payment_price','status'
     ];

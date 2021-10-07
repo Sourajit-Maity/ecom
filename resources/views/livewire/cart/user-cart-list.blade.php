@@ -7,28 +7,30 @@
         <tr role="row">
         <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
                 aria-sort="ascending" aria-label="Agent: activate to sort column descending">Product Image <i
-                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('product_name')"></i>
+                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('image')"></i>
             </th>
             <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
-                aria-sort="ascending" aria-label="Agent: activate to sort column descending">Product Name <i
-                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('product_name')"></i>
+                aria-sort="ascending" aria-label="Agent: activate to sort column descending">Description <i
+                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('title')"></i>
             </th>
             <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
-                aria-sort="ascending" aria-label="Agent: activate to sort column descending"> Product Category <i
-                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('product_category')"></i>
-            </th>
-            <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
-                aria-sort="ascending" aria-label="Agent: activate to sort column descending">Product Price <i
-                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('price')"></i>
+                aria-sort="ascending" aria-label="Agent: activate to sort column descending">Names <i
+                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('names')"></i>
             </th>
             <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
                 aria-sort="ascending" aria-label="Agent: activate to sort column descending">Quantity <i
                     class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('quantity')"></i>
             </th>
-            <!-- <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
-                aria-sort="ascending" aria-label="Agent: activate to sort column descending">Total Price <i
-                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('product_category')"></i>
-            </th> -->
+           
+            <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
+                aria-sort="ascending" aria-label="Agent: activate to sort column descending"> Price <i
+                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('payment_price')"></i>
+            </th>
+            <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;"
+                aria-sort="ascending" aria-label="Agent: activate to sort column descending"> Status <i
+                    class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('status')"></i>
+            </th>
+            
               <th class="align-center" rowspan="1" colspan="1" style="width: 20%;" aria-label="Actions">Actions</th>
         </tr>
       
@@ -40,20 +42,23 @@
        
             <tr role="row" class="odd">
                 
-           
-				<td class="sorting_1" tabindex="0"><img src="{{url($usercart->product->product_photo_path)}}" width="100" class="img-circle img-left"></td>	
-                <!-- <td class="sorting_1" tabindex="0"><img src="{{url('images')}}/{{$usercart->product_image}}" width="100" class="img-circle img-left"></td>			 		  -->
-                <td class="sorting_1" tabindex="0">{{ $usercart->product->product_name  }}</td>
-                <td class="sorting_1" tabindex="0">{{ $usercart->productprice->product_category  }}</td>
-                <td class="sorting_1" tabindex="0">{{ $usercart->productprice->price  }}</td>
-                <td class="sorting_1" tabindex="0">{{ $usercart->quantity  }}               
+                <td>
+                    <div class="image-wraper">
+                        <div class="order-image">
+                            <img src="{{ $usercart->image }}" alt="">
+                        </div>
+                    </div>
+                </td>
+                <td class="sorting_1" tabindex="0">{{ $usercart->title  }}</td>
+                <td class="sorting_1" tabindex="0">{{ $usercart->names  }}</td>
+                <td class="sorting_1" tabindex="0">{{ $usercart->quantity  }}</td>
+                <td class="sorting_1" tabindex="0">{{ $usercart->payment_price  }}</td>
+                <td class="sorting_1" tabindex="0">{{ $usercart->status  }}               
                 
                 </td>
-                <!-- <td class="sorting_1" tabindex="0">{{ $usercart->productprice->price  }}</td> -->
+                
                 <td>
-                <!-- <a class="dropdown-item" href="{{ route('cart.destroy', ['cart' => $usercart->id]) }}"><i
-                            class="la la-edit"></i> Delete</a> -->
-                    <button href="#" class="dropdown-item" wire:click="removeCart({{ $usercart->id }})"><i class="fa fa-trash" ></i></button>
+                    <!-- <button href="#" class="dropdown-item" wire:click="removeCart({{ $usercart->id }})"><i class="fa fa-trash" ></i></button> -->
                 </td>              
             </tr>
         @empty
@@ -67,10 +72,7 @@
     <x-slot name="pagination">
         {{ $usercarts->links() }}
     </x-slot>
-    <x-slot name="perPage">    
-         Total: ${{ Cart::getTotal() }}
-    </x-slot>
+   
     <x-slot name="showingEntries">
-    <button href="#" class="px-6 py-2 text-red-800 bg-red-300" wire:click.prevent="clearAllCart"><i class="fa fa-trash" ></i> Remove All Cart Items</button>
     </x-slot>
 </x-admin.table>

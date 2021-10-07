@@ -26,7 +26,7 @@ class UserCartList extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public $searchProduct,$searchPrice, $searchStatus = -1, $perPage = 5;
+    public $searchTitle,$searchImage,$searchNames,$searchPrice,$searchQuantity, $searchStatus = -1, $perPage = 5;
     protected $listeners = ['deleteConfirm', 'changeStatus','cartUpdated' => '$refresh'];
 
     public function mount()
@@ -64,7 +64,7 @@ class UserCartList extends Component
     public function render()
     {
         $user = Auth::user();
-        $cartQuery = UserCart::query()->where('user_id',$user->id)->with(['user','product','productprice']);
+        $cartQuery = Order::query()->where('user_id',$user->id)->with(['user','orderdetails']);
         
         return view('livewire.cart.user-cart-list', [
             'usercarts' => $cartQuery
@@ -75,7 +75,7 @@ class UserCartList extends Component
     }
     public function deleteConfirm($id)
     {
-        UserCart::destroy($id);
+        Order::destroy($id);
         $this->showModal('success', 'Success', 'Product is removed successfully');
     }
 
@@ -87,21 +87,21 @@ class UserCartList extends Component
 
     public function deleteCart($id)
     {
-        UserCart::destroy($id);
+        Order::destroy($id);
         $this->showModal('success', 'Success', 'City is deleted successfully');
     }
 
     public function removeCart($id)
     {
-        dd($id);
-        UserCart::destroy($id);
+        //dd($id);
+        Order::destroy($id);
 
         session()->flash('success', 'Item has removed!');
     }
 
     public function clearAllCart()
     {
-        UserCart::clear();
+        Order::clear();
 
         session()->flash('success', 'All Item Clear Successfully!');
     }

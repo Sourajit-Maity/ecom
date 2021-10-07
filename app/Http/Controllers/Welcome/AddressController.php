@@ -156,7 +156,7 @@ class AddressController extends Controller
     public function savedAddress()
     {
         $userid= Auth::user()->id;
-        $shippingaddresses = AddAddress::where('user_id', $userid)->get();
+        $shippingaddresses = AddAddress::where('user_id', $userid)->paginate(3);
         return view('Welcome.saved-address',compact('shippingaddresses'));
     }
 

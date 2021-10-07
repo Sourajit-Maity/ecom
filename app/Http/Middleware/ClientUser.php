@@ -22,7 +22,7 @@ class ClientUser
         } else {
             Auth::logout();
             session()->flash('error', 'You are not Authenticate.');
-            return redirect('/');
+            return redirect('welcome.login');
         } 
     }
 }
