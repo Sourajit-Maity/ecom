@@ -131,7 +131,7 @@ var productimeid = 0;
                                 <div class="form-input">
                                     <label>First name*</label>
                                     </br></br>
-                                    <input id="first_name" type="text"  placeholder="First Name *"  name="first_name" value="{{ old('first_name') }}"  autocomplete="first_name">
+                                    <input id="first_name" type="text"  placeholder="First Name *" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}"  autocomplete="first_name">
 
                                         @error('first_name')
                                             <span class="invalid-feedback" role="alert">
