@@ -68,16 +68,9 @@
             <td class="sorting_1" tabindex="0">{{ $usercartdetail->name  }}</td>
             <td class="sorting_1" tabindex="0">{{ $usercartdetail->quantity  }}</td>
             <td class="sorting_1" tabindex="0">${{ $usercartdetail->price  }}</td>
+            <td class="sorting_1" tabindex="0">{{ $usercart->status  }}</td>
            
-            @if( $usercartdetail->status == 1 )
-                <td class="sorting_1" tabindex="0">Processing</td>
-            @elseif( $usercartdetail->status == 2 )
-                <td class="sorting_1" tabindex="0">Accepted</td>
-            @elseif( $usercartdetail->status == 4 )
-                <td class="sorting_1" tabindex="0">Delivered</td>
-            @else
-                <td class="sorting_1" tabindex="0">Cancel</td>
-            @endif 
+            
              <!-- <td>
                  <button href="#" class="dropdown-item" wire:click="removeCart({{ $usercart->id }})"><i class="fa fa-trash" ></i></button>
             </td>  -->
