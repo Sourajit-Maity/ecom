@@ -163,6 +163,7 @@ class UserCartController extends Controller
         $subOrderDetailstempArray = [];
 
         $price = $request->input('original_order.price');
+        $title = $request->input('original_order.title');
         $image = $request->input('original_order.image');
         $quantity = $request->input('original_order.quantity');
         $arraytostringnames =  implode(' | ', $request->input('original_order.names'));
@@ -187,6 +188,7 @@ class UserCartController extends Controller
         $order->user_id = Auth::user()->id;
         $order->payment_price = $price;
         $order->quantity = $quantity;
+        $order->title = $title;
         $order->image = $image;
         $order->names = $arraytostringnames;
         $order->save();
