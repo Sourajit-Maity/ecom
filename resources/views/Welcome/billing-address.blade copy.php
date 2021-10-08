@@ -1,4 +1,4 @@
-
+<x-layouts.welcome-layout>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -98,9 +98,7 @@ var productimeid = 0;
 });
 
 </script>
-<x-layouts.welcome-layout>
-    <section class="billing-address account-info cmn-gap2">
-        <div class="container">
+
             @if (Session::has('success'))
                     <div class="alert alert-success text-center">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
