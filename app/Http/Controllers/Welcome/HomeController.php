@@ -192,12 +192,11 @@ class HomeController extends Controller
         $orders = Order::where('user_id', $userid)->paginate(5);
         $orderdetailsid = Order::where('user_id', $userid)->get();
         foreach ($orderdetailsid as $value) {
-            // $orderdetails = OrderDetails::where('order_id', $value->id)->get();
             $orderdetails = OrderDetails::select('order_details.name','orders.image','order_details.quantity','order_details.order_id','order_details.price','order_details.id','orders.status')->
-        join('orders', 'order_details.order_id', '=', 'orders.id')
-        ->where('order_id', $value->id)
-        ->orderBy('id','DESC')->paginate(5);
-            //dd($orderdetails);
+                join('orders', 'order_details.order_id', '=', 'orders.id')
+                ->where('order_id', $value->id)
+                ->orderBy('id','DESC')->paginate(5);
+
         }
         
         return view('Welcome.order-history',compact('orders','orderdetails'));

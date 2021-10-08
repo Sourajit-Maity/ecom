@@ -125,11 +125,13 @@ var productimeid = 0;
                                         @endforeach 
                                    </select>
                                 </div>
+                                </br>
                             <form action="{{ route('welcome.save-billing-details') }}" method="POST" >
                                    @csrf
                                 <div class="form-input">
                                     <label>First name*</label>
-                                    <input id="first_name" type="text"  placeholder="First Name *" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}"  autocomplete="first_name">
+                                    </br></br>
+                                    <input id="first_name" type="text"  placeholder="First Name *"  name="first_name" value="{{ old('first_name') }}"  autocomplete="first_name">
 
                                         @error('first_name')
                                             <span class="invalid-feedback" role="alert">
