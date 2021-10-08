@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->foreignId('user_id')->nullable()->index();
             $table->foreignId('production_time_id')->default(1);
+            $table->string('title')->nullable();
             $table->integer('quantity')->default(1);
             $table->decimal('payment_price',8,2);
             $table->longText('image')->nullable();

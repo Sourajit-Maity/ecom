@@ -64,23 +64,13 @@ class UserCartList extends Component
 
     public function render()
     {
-        $user = Auth::user();
-        $cartQuery = Order::query()->where('user_id',$user->id)->with(['user','orderdetails']);
-        $orderdetailsid = Order::where('user_id', $user->id)->get();
-        foreach ($orderdetailsid as $value) {
-            $orderdetails = OrderDetails::select('order_details.name','orders.image','order_details.quantity','order_details.order_id','order_details.price','order_details.id','orders.status')->
-        join('orders', 'order_details.order_id', '=', 'orders.id')
-        ->where('order_id', $value->id);
-        }
-        //dd($orderdetails);
+        $cartQuery = Order::query()->where('user_id',auth()->id())->with(['user','orderdetails']);
+
         return view('livewire.cart.user-cart-list', [
             'usercarts' => $cartQuery
                 ->orderBy($this->sortBy, $this->sortDirection)
                 ->paginate($this->perPage)
-        ],[
-            'usercartdetails' => $orderdetails
-                ->orderBy($this->sortBy, $this->sortDirection)
-                ->paginate($this->perPage)]);
+        ]);
         
     }
     public function deleteConfirm($id)

@@ -45,13 +45,6 @@
             <!-- <td> </td> -->
             
         </tr>
-        @empty
-        <tr>
-            <td colspan="4" class="align-center">No records available</td>
-        </tr>
-        @endforelse
-        @forelse($usercarts as $usercart)
-
         <tr role="row" class="odd">
 
             <td>
@@ -65,12 +58,7 @@
             <!-- <td> </td> -->
             
         </tr>
-        @empty
-        <tr>
-            <td colspan="4" class="align-center">No records available</td>
-        </tr>
-        @endforelse
-         @forelse($usercartdetails as $usercartdetail)
+        @forelse($usercart->orderdetails as $usercartdetail)
         <tr role="row" class="odd">
 
             <td>
@@ -83,9 +71,9 @@
            
             @if( $usercartdetail->status == 1 )
                 <td class="sorting_1" tabindex="0">Processing</td>
-            @elseif( $orderdetail->status == 2 )
+            @elseif( $usercartdetail->status == 2 )
                 <td class="sorting_1" tabindex="0">Accepted</td>
-            @elseif( $orderdetail->status == 4 )
+            @elseif( $usercartdetail->status == 4 )
                 <td class="sorting_1" tabindex="0">Delivered</td>
             @else
                 <td class="sorting_1" tabindex="0">Cancel</td>
@@ -99,6 +87,13 @@
             <td colspan="4" class="align-center">No records available</td>
         </tr>
         @endforelse
+        @empty
+        <tr>
+            <td colspan="4" class="align-center">No records available</td>
+        </tr>
+        @endforelse
+        
+         
     </x-slot>
 
 
