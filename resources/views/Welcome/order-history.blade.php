@@ -36,15 +36,9 @@
                             <td>##{{ $order->id }}</td> 
                             <td>{!! \Carbon\Carbon::parse($order->created_at)->format('d M Y') !!}</td>                                                       
                             <td colspan="4"></td>                                                      
-                                                                                                             
-                            <!-- <td>{{ $order->quantity }}</td>
-                            <td>$ {{ $order->payment_price }}</td>                               
-                            <td>{{ $order->status }}</td>
-                             -->
+                            
                             
                         </tr>
-                        @endforeach
-                        @foreach ($orders as $order)
                         <tr>
                             <td>
                                 <h4>Name Badge</h4>
@@ -59,14 +53,7 @@
                             <td>{{ $order->status }}</td>
                              
                         </tr>
-                        @endforeach
-                        @else
-                        <tr>
-                            <td colspan="7">No entries in table</td>
-                        </tr>
-                        @endif
-                        @if (count($orderdetails) > 0)
-                        @foreach ($orderdetails as $orderdetail)
+                        @foreach ($order->orderdetails as $orderdetail)
                         <tr>
                             <td><h4>NameBadge</h4></td>                           
                             <td>--</td>   
@@ -89,11 +76,15 @@
 
                         </tr>
                         @endforeach
+                        
+                        @endforeach
+                        
                         @else
                         <tr>
                             <td colspan="7">No entries in table</td>
                         </tr>
                         @endif
+                        
                     </tbody>
 
                 </table>
