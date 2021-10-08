@@ -2196,7 +2196,7 @@ input[type="submit"]:hover {
 
 .order-history .order-table table td .order-image img {
     width: 100%;
-    height: 60px;
+    height: 100px;
 }
 
 .order-history .order-table table td:last-child {
@@ -3361,6 +3361,8 @@ input[type="submit"]:hover {
 .my-shopping .order-table table td,
 .my-shopping .order-table table th {
     text-align: left;
+    text-align: center;
+    width: 15%;
 }
 
 .my-shopping .order-table table td:nth-child(3),
@@ -3452,10 +3454,10 @@ input[type="submit"]:hover {
     font-weight: 600;
 }
 
-.my-shopping .order-table table tr:last-child td:nth-child(4) {
+/* .my-shopping .order-table table tr:last-child td:nth-child(4) {
     padding-left: 63px;
     color: #000;
-}
+} */
 
 .my-shopping .order-table table {
     margin-bottom: 51px;
