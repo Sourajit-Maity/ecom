@@ -12,11 +12,12 @@
                             <th>Product</th>
                             <th>Description</th>
                             <th>Order ID</th>
+                            <th>Date</th>
                             <th>Names</th>                                                              
                             <th>Quantity</th>
                             <th>Total</th>
                             <th>status</th>
-                            <th>date</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -27,21 +28,36 @@
                                 <div class="image-wraper shadow">
                                     <div class="order-image">
                                         <img src="{{ $order->image }}" alt="">
-                                        <a href="#url"><img src="{{asset('welcome_assets/images/close.svg')}}" alt=""></a>
+                                        <!-- <a href="#url"><img src="{{asset('welcome_assets/images/close.svg')}}" alt=""></a> -->
                                     </div>
                                 </div>
                             </td>
                             <td>{{ $order->title }}</td>  
-                            <td>##{{ $order->id }}</td>                                                       
-                            <td>{{ $order->names }}</td>                                                      
-                            <td></td>                                                       
-                            <td></td>                                                       
-                            <td></td>                                                       
-                            <td></td>                                                                                 
+                            <td>##{{ $order->id }}</td> 
+                            <td>{!! \Carbon\Carbon::parse($order->created_at)->format('d M Y') !!}</td>                                                       
+                            <td colspan="4"></td>                                                      
+                                                                                                             
                             <!-- <td>{{ $order->quantity }}</td>
                             <td>$ {{ $order->payment_price }}</td>                               
                             <td>{{ $order->status }}</td>
-                            <td>{!! \Carbon\Carbon::parse($order->created_at)->format('d M Y') !!}</td> -->
+                             -->
+                            
+                        </tr>
+                        @endforeach
+                        @foreach ($orders as $order)
+                        <tr>
+                            <td>
+                                <h4>Name Badge</h4>
+                            </td>
+                            <td></td>  
+                            <td></td>   
+                            <td></td>                                                    
+                            <td>{{ $order->names }}</td>                                                      
+                                                                                                            
+                           <td>{{ $order->quantity }}</td>
+                            <td>${{ $order->payment_price }}</td>                               
+                            <td>{{ $order->status }}</td>
+                             
                         </tr>
                         @endforeach
                         @else
@@ -54,6 +70,7 @@
                         <tr>
                             <td><h4>NameBadge</h4></td>                           
                             <td>--</td>   
+                            <td>--</td>
                             <td>--</td>
                             <td>{{ $orderdetail->name }}</td>                       
                             <td>{{ $orderdetail->quantity }}</td>
@@ -68,7 +85,7 @@
                             @else
                             <td>Cancel</td>
                             @endif                        
-                            <td>{!! \Carbon\Carbon::parse($orderdetail->created_at)->format('d M Y') !!}</td>
+                            
 
                         </tr>
                         @endforeach
@@ -97,5 +114,6 @@
 <style>
 .custom-tr-color{
     background: aliceblue;
+    font-weight: 900;
 }
 </style>
