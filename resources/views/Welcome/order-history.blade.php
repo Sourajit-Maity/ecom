@@ -62,17 +62,7 @@
                             <td>{{ $orderdetail->name }}</td>                       
                             <td>{{ $orderdetail->quantity }}</td>
                             <td> ${{ $orderdetail->price }} </td>   
-                           
-                            @if( $orderdetail->status == 1 )
-                            <td>Processing</td>
-                            @elseif( $orderdetail->status == 2 )
-                            <td>Accepted</td>
-                            @elseif( $orderdetail->status == 4 )
-                            <td>Delivered</td>
-                            @else
-                            <td>Cancel</td>
-                            @endif                        
-                            
+                            <td> {{ $order->status }} </td>  
 
                         </tr>
                         @endforeach
