@@ -9,24 +9,20 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>date</th>
-                            <th>Order ID</th>
-                            <th>Names</th>
-                            <th>status</th>
                             <th>Product</th>
+                            <th>Description</th>
+                            <th>Order ID</th>
+                            <th>Names</th>                                                              
                             <th>Quantity</th>
                             <th>Total</th>
+                            <th>status</th>
+                            <th>date</th>
                         </tr>
                     </thead>
                     <tbody>
                         @if (count($orders) > 0)
                         @foreach ($orders as $order)
-                        <tr>
-
-                            <td>{!! \Carbon\Carbon::parse($order->created_at)->format('d M Y') !!}</td>
-                            <td>##{{ $order->id }}</td>
-                            <td>{{ $order->names }}</td>
-                            <td>{{ $order->status }}</td>
+                        <tr class="custom-tr-color">
                             <td>
                                 <div class="image-wraper shadow">
                                     <div class="order-image">
@@ -35,10 +31,17 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>{{ $order->quantity }}</td>
-                            <td>
-                                $ {{ $order->payment_price }}
-                            </td>
+                            <td>{{ $order->title }}</td>  
+                            <td>##{{ $order->id }}</td>                                                       
+                            <td>{{ $order->names }}</td>                                                      
+                            <td></td>                                                       
+                            <td></td>                                                       
+                            <td></td>                                                       
+                            <td></td>                                                                                 
+                            <!-- <td>{{ $order->quantity }}</td>
+                            <td>$ {{ $order->payment_price }}</td>                               
+                            <td>{{ $order->status }}</td>
+                            <td>{!! \Carbon\Carbon::parse($order->created_at)->format('d M Y') !!}</td> -->
                         </tr>
                         @endforeach
                         @else
@@ -49,10 +52,13 @@
                         @if (count($orderdetails) > 0)
                         @foreach ($orderdetails as $orderdetail)
                         <tr>
-
-                            <td>{!! \Carbon\Carbon::parse($orderdetail->created_at)->format('d M Y') !!}</td>
-                            <td>##{{ $orderdetail->order_id }}</td>
-                            <td>{{ $orderdetail->name }}</td>
+                            <td><h4>NameBadge</h4></td>                           
+                            <td>--</td>   
+                            <td>--</td>
+                            <td>{{ $orderdetail->name }}</td>                       
+                            <td>{{ $orderdetail->quantity }}</td>
+                            <td> ${{ $orderdetail->price }} </td>   
+                           
                             @if( $orderdetail->status == 1 )
                             <td>Processing</td>
                             @elseif( $orderdetail->status == 2 )
@@ -61,19 +67,9 @@
                             <td>Delivered</td>
                             @else
                             <td>Cancel</td>
-                            @endif
-                            <td>
-                                <div class="image-wraper">
-                                    <div class="order-image">
-                                        <img src="{{ $orderdetail->image }}" alt="">
-                                        <a href="#url"><img src="{{asset('welcome_assets/images/close.svg')}}" alt=""></a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>{{ $orderdetail->quantity }}</td>
-                            <td>
-                                $ {{ $orderdetail->price }}
-                            </td>
+                            @endif                        
+                            <td>{!! \Carbon\Carbon::parse($orderdetail->created_at)->format('d M Y') !!}</td>
+
                         </tr>
                         @endforeach
                         @else
@@ -98,3 +94,8 @@
     </section>
 
 </x-layouts.welcome-layout>
+<style>
+.custom-tr-color{
+    background: aliceblue;
+}
+</style>

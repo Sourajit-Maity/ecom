@@ -12,6 +12,7 @@ use App\Models\ProductPrice;
 use App\Models\UserCart;
 use App\Models\User;
 use App\Models\Order;
+use App\Models\OrderDetails;
 use Illuminate\Support\Facades\Auth;
 
 class UserCartList extends Component
@@ -65,12 +66,21 @@ class UserCartList extends Component
     {
         $user = Auth::user();
         $cartQuery = Order::query()->where('user_id',$user->id)->with(['user','orderdetails']);
-        
+        $orderdetailsid = Order::where('user_id', $user->id)->get();
+        foreach ($orderdetailsid as $value) {
+            $orderdetails = OrderDetails::select('order_details.name','orders.image','order_details.quantity','order_details.order_id','order_details.price','order_details.id','orders.status')->
+        join('orders', 'order_details.order_id', '=', 'orders.id')
+        ->where('order_id', $value->id);
+        }
+        //dd($orderdetails);
         return view('livewire.cart.user-cart-list', [
             'usercarts' => $cartQuery
                 ->orderBy($this->sortBy, $this->sortDirection)
                 ->paginate($this->perPage)
-        ]);
+        ],[
+            'usercartdetails' => $orderdetails
+                ->orderBy($this->sortBy, $this->sortDirection)
+                ->paginate($this->perPage)]);
         
     }
     public function deleteConfirm($id)

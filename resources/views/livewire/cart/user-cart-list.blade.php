@@ -19,7 +19,7 @@
             <th tabindex="0" aria-controls="kt_table_1" rowspan="1" colspan="1" style="width: 22%;" aria-sort="ascending" aria-label="Agent: activate to sort column descending"> Status <i class="fa fa-fw fa-sort pull-right" style="cursor: pointer;" wire:click="sortBy('status')"></i>
             </th>
 
-            <th class="align-center" rowspan="1" colspan="1" style="width: 20%;" aria-label="Actions">Actions</th>
+            <!-- <th class="align-center" rowspan="1" colspan="1" style="width: 20%;" aria-label="Actions">Actions</th> -->
         </tr>
 
 
@@ -28,7 +28,7 @@
     <x-slot name="tbody">
         @forelse($usercarts as $usercart)
 
-        <tr role="row" class="odd">
+        <tr role="row" class="odd custom-tr-color">
 
             <td>
                 <div class="image-wraper">
@@ -40,14 +40,30 @@
             <td class="sorting_1" tabindex="0">{{ $usercart->title  }}</td>
             <td class="sorting_1" tabindex="0">{{ $usercart->names  }}</td>
             <td class="sorting_1" tabindex="0">{{ $usercart->quantity  }}</td>
-            <td class="sorting_1" tabindex="0">{{ $usercart->payment_price  }}</td>
-            <td class="sorting_1" tabindex="0">{{ $usercart->status  }}
-
-            </td>
+            <td class="sorting_1" tabindex="0"></td>
+            <td class="sorting_1" tabindex="0"></td>
+            <!-- <td> </td> -->
+            
+        </tr>
+        @empty
+        <tr>
+            <td colspan="4" class="align-center">No records available</td>
+        </tr>
+        @endforelse
+         @forelse($usercartdetails as $usercartdetail)
+        <tr role="row" class="odd">
 
             <td>
-                <!-- <button href="#" class="dropdown-item" wire:click="removeCart({{ $usercart->id }})"><i class="fa fa-trash" ></i></button> -->
+                <h4>Namebadge</h4>
             </td>
+            <td class="sorting_1" tabindex="0">--</td>
+            <td class="sorting_1" tabindex="0">{{ $usercartdetail->name  }}</td>
+            <td class="sorting_1" tabindex="0">{{ $usercartdetail->quantity  }}</td>
+            <td class="sorting_1" tabindex="0">${{ $usercartdetail->price  }}</td>
+            <td class="sorting_1" tabindex="0">{{ $usercartdetail->status  }}</td>
+             <!-- <td>
+                 <button href="#" class="dropdown-item" wire:click="removeCart({{ $usercart->id }})"><i class="fa fa-trash" ></i></button>
+            </td>  -->
         </tr>
         @empty
         <tr>
@@ -64,3 +80,8 @@
     <x-slot name="showingEntries">
     </x-slot>
 </x-admin.table>
+<style>
+.custom-tr-color{
+    background: aliceblue;
+}
+</style>
