@@ -22,7 +22,7 @@
                 </div>
                 @else
                 <div class="cart-sec">
-                    <p>Hi! {{ Auth::user()->first_name }} <a href="{{route('welcome.shopping-cart')}}">cart 2</a></p>
+                    <p>Hi! {{ Auth::user()->first_name }}  &#160; <a href="{{route('welcome.shopping-cart')}}">Cart</a></p>
 
                 </div>
                 @endguest
