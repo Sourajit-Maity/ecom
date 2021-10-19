@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "198156b758d5dbb1fedab6061c861184",
+    "content-hash": "2e36ded61940f0550987f277b15bc541",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -798,6 +798,89 @@
                 }
             ],
             "time": "2021-04-26T11:24:25+00:00"
+        },
+        {
+            "name": "gabrielbull/ups-api",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gabrielbull/php-ups-api.git",
+                "reference": "d3e504063a01a8a024af901b19104bdd32abcf50"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gabrielbull/php-ups-api/zipball/d3e504063a01a8a024af901b19104bdd32abcf50",
+                "reference": "d3e504063a01a8a024af901b19104bdd32abcf50",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-simplexml": "*",
+                "guzzlehttp/guzzle": "^6.0 || ^7.0",
+                "php": "^7.3 || ^8.0",
+                "psr/log": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5.4"
+            },
+            "suggest": {
+                "ext-soap": "Required if you need the Tradeability API of UPS"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ups\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gabriel Bull",
+                    "email": "me@gabrielbull.com"
+                },
+                {
+                    "name": "Sebastien Vergnes",
+                    "email": "sebastien@vergnes.eu"
+                },
+                {
+                    "name": "Michael Williams",
+                    "email": "michael.williams@limelyte.com"
+                },
+                {
+                    "name": "Stefan Doorn",
+                    "email": "stefan@efectos.nl"
+                },
+                {
+                    "name": "Eduard Sukharev",
+                    "email": "sukharev.eh@gmail.com"
+                }
+            ],
+            "description": "PHP UPS API",
+            "keywords": [
+                "Rate",
+                "Rating",
+                "api",
+                "quantum view",
+                "shipping",
+                "time in transit",
+                "tracking",
+                "tradeability",
+                "ups",
+                "wrapper"
+            ],
+            "support": {
+                "issues": "https://github.com/gabrielbull/php-ups-api/issues",
+                "source": "https://github.com/gabrielbull/php-ups-api/tree/2.0.1"
+            },
+            "time": "2021-06-07T07:13:27+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -2335,16 +2418,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v2.6.7",
+            "version": "v2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "7e8ded3cc496858b0a35c1c9355e5af79985bd0c"
+                "reference": "7795843505d4f8f3819bae7cae2a200f414d9658"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/7e8ded3cc496858b0a35c1c9355e5af79985bd0c",
-                "reference": "7e8ded3cc496858b0a35c1c9355e5af79985bd0c",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/7795843505d4f8f3819bae7cae2a200f414d9658",
+                "reference": "7795843505d4f8f3819bae7cae2a200f414d9658",
                 "shasum": ""
             },
             "require": {
@@ -2395,7 +2478,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v2.6.7"
+                "source": "https://github.com/livewire/livewire/tree/v2.7.0"
             },
             "funding": [
                 {
@@ -2403,7 +2486,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-09-25T22:50:47+00:00"
+            "time": "2021-10-18T01:30:22+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -3551,6 +3634,80 @@
             "time": "2021-10-10T13:37:39+00:00"
         },
         {
+            "name": "ptondereau/laravel-ups-api",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ptondereau/Laravel-UPS-Api.git",
+                "reference": "c690c7fc8f690165f526e81bb79f3d00c605e78a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ptondereau/Laravel-UPS-Api/zipball/c690c7fc8f690165f526e81bb79f3d00c605e78a",
+                "reference": "c690c7fc8f690165f526e81bb79f3d00c605e78a",
+                "shasum": ""
+            },
+            "require": {
+                "gabrielbull/ups-api": "^1.2.2 || ^2.0",
+                "illuminate/contracts": "^6.0 || ^7.0 || ^8.0",
+                "illuminate/support": "^6.0 || ^7.0 || ^8.0",
+                "php": "^7.2.5 || ^8.0"
+            },
+            "require-dev": {
+                "graham-campbell/analyzer": "^3.0",
+                "graham-campbell/testbench": "^5.4",
+                "phpunit/phpunit": "^8.5.8 || ^9.3.7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ptondereau\\LaravelUpsApi\\UpsApiServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ptondereau\\LaravelUpsApi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pierre Tondereau",
+                    "email": "pierre.tondereau@gmail.com"
+                }
+            ],
+            "description": "A small Laravel's wrapper for the PHP UPS API library",
+            "keywords": [
+                "Laravel UPS Api",
+                "Laravel-Ups-Api",
+                "Pierre Tondereau",
+                "Ptondereau",
+                "framework",
+                "laravel",
+                "ups"
+            ],
+            "support": {
+                "issues": "https://github.com/ptondereau/Laravel-UPS-Api/issues",
+                "source": "https://github.com/ptondereau/Laravel-UPS-Api/tree/v2.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/ptondereau",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/ptondereau",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-05-13T19:29:41+00:00"
+        },
+        {
             "name": "ralouphie/getallheaders",
             "version": "3.0.3",
             "source": {
@@ -3912,16 +4069,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.2.7",
+            "version": "v6.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "15f7faf8508e04471f666633addacf54c0ab5933"
+                "reference": "8a5d5072dca8f48460fce2f4131fcc495eec654c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/15f7faf8508e04471f666633addacf54c0ab5933",
-                "reference": "15f7faf8508e04471f666633addacf54c0ab5933",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/8a5d5072dca8f48460fce2f4131fcc495eec654c",
+                "reference": "8a5d5072dca8f48460fce2f4131fcc495eec654c",
                 "shasum": ""
             },
             "require": {
@@ -3933,7 +4090,7 @@
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
-                "symfony/phpunit-bridge": "^4.4|^5.0"
+                "symfony/phpunit-bridge": "^4.4|^5.4"
             },
             "suggest": {
                 "ext-intl": "Needed to support internationalized email addresses"
@@ -3971,7 +4128,7 @@
             ],
             "support": {
                 "issues": "https://github.com/swiftmailer/swiftmailer/issues",
-                "source": "https://github.com/swiftmailer/swiftmailer/tree/v6.2.7"
+                "source": "https://github.com/swiftmailer/swiftmailer/tree/v6.3.0"
             },
             "funding": [
                 {
@@ -3983,7 +4140,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-03-09T12:30:35+00:00"
+            "time": "2021-10-18T15:26:12+00:00"
         },
         {
             "name": "symfony/console",
@@ -10022,5 +10179,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
