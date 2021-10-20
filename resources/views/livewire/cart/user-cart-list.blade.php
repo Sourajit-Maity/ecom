@@ -76,14 +76,14 @@
             </td>  -->
         </tr>
         @empty
-        <tr>
+        <!-- <tr>
             <td colspan="4" class="align-center">No records available</td>
-        </tr>
+        </tr> -->
         @endforelse
         @empty
-        <tr>
+        <!-- <tr>
             <td colspan="4" class="align-center">No records available</td>
-        </tr>
+        </tr> -->
         @endforelse
         
          
