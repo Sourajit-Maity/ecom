@@ -95,6 +95,7 @@
     </x-slot>
 
     <x-slot name="showingEntries">
+    <!-- {{ $totals }} -->
     </x-slot>
 </x-admin.table>
 <style>

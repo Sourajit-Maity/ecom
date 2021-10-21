@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
-
+use App\Models\OrderDetails;
 class UserCartController extends Controller
 {
     private  $per_page = 10;
@@ -25,7 +25,12 @@ class UserCartController extends Controller
 
     public function shoppingCart()
     {
-        return view('Welcome.shopping-cart');
+        $totals = OrderDetails::
+        join('orders', 'orders.id', '=', 'order_details.order_id')
+        ->select(DB::raw('sum(order_details.quantity*order_details.price) AS Total'))
+        ->where('orders.user_id',auth()->id())
+        ->first();
+        return view('Welcome.shopping-cart',compact('totals'));
     }
 
     public function index()

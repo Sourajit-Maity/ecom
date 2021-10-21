@@ -64,6 +64,26 @@ var productimeid = 0;
 
         var productimeid = $(this).find(".heading h3:eq(1)").text();
 
+        var cost = $(this).find(".production-cont h2").text();
+
+        if(cost != "Free"){
+            console.log('hi');
+            $('#fedex_ups').attr("disabled", false);
+            $('#fedex_account').attr("readonly", false);
+            $('#shipping_speed').attr("disabled", false);
+        }
+        else{
+            console.log('hi1');
+            $('#fedex_ups').attr("disabled", true);
+            $('#fedex_account').attr("readonly", true);
+            $('#shipping_speed').attr("disabled", true);
+        }
+        
+    
+        //console.log(cost);
+
+        
+
         //console.log(productimeid);
 
     
@@ -369,7 +389,7 @@ var productimeid = 0;
                                  <div class="form-input">
                                     <label>State/Province*</label>
                                     </br></br>
-                                    <select  name="stshipping_stateate" id="shipping_state" class="form-control @error('shipping_state') is-invalid @enderror" name="shipping_state"   autocomplete="shipping_state">
+                                    <select  name="shipping_state" id="shipping_state" class="form-control @error('shipping_state') is-invalid @enderror" name="shipping_state"   autocomplete="shipping_state">
                                             
                                                  <option value=""disable selected>Select State</option>
                                             @foreach ($state as $key => $value)                               
@@ -411,17 +431,17 @@ var productimeid = 0;
                 <div class="row production-row">
                 @foreach($productiontimes as $productiontime)
                     <div class="col-md-4 production-col">
-                        <div class="production-card">
+                        <div class="production-card" onchange="valueChanged()">
                             <div class="heading">
                                 <h3>{{$productiontime->production_time_name}}</h3>
                                 <h3 style="display:none">{{$productiontime->id}}</h3>
                                 <p>Production Time</p>
                             </div>
-                            <div class="production-cont">
+                            <div class="production-cont" >
                             @if($productiontime->price == 0.00)
                                     <h2>Free</h2>
                             @else
-                                   <h2>$ {{$productiontime->price}}</h2>
+                                   <h2>${{$productiontime->price}}</h2>
                             @endif   
     
                                 <div class="production-time">
@@ -454,8 +474,8 @@ var productimeid = 0;
                                     <div class="form-input">
                                         <div class="form_input_check">
                                             <label>
-                                                <input type="checkbox">
-                                                <span>$ 7.49 - Standard Shipping</span>
+                                                <input type="radio" name="shipping_price" id="standard" value="standard" checked>
+                                                <span>$ 0.00 - Standard Shipping</span>
                                                 <span>
                                                     Ships First Class USPS once production is complete. Transit 
                                                     time 3-5 business days.
@@ -467,7 +487,7 @@ var productimeid = 0;
                                     <div class="form-input">
                                         <div class="form_input_check">
                                             <label>
-                                                <input type="checkbox">
+                                                <input type="radio" name="shipping_price" value="priority" id="priority"> 
                                                 <span>$ 18.99 - Priority Shipping</span>
                                                 <span>
                                                     Ships USPS Priority once production is complete.Transit time
@@ -477,11 +497,12 @@ var productimeid = 0;
                                         </div>
                                      </div>
     
-                                     <div class="form-input">
+                                     <div class="form-input fedexups">
                                         <div class="form_input_check">
                                             <label>
-                                                <input type="checkbox">
-                                                <span>$ 4.99 - Have your own FEDEX / UPS Account? Enter it here!</span>
+                                                <input type="radio" name="shipping_price"  id="fedex_ups" disabled>
+                                                <span>$ 4.99 - Have your own FEDEX / UPS Account?</span>
+                                                <span> Enter it here!</span>
                                                 <span>
                                                     We will ship on your FedEx or UPS account once production is 
                                                     complete. Enter your account number and the shipping speed 
@@ -492,12 +513,16 @@ var productimeid = 0;
                                      </div>
     
                                      <div class="form-input">
-                                        <input type="text" placeholder="FedEx Account here">
+                                        <input type="text" placeholder="FedEx Account here" name="fedex_account" id="fedex_account" readonly>
                                       </div>
     
                                      <div class="form-input">
-                                       <select>
+                                       <select disabled name="shipping_speed" id="shipping_speed">
                                            <option>Select Shipping Speed</option>
+                                           <option>Ground</option>
+                                           <option>2 Day</option>
+                                           <option>Next Day</option>
+                                           <option>Next Day Morning</option>
                                        </select>
                                      </div>
     
@@ -555,10 +580,10 @@ var productimeid = 0;
 
                 <div class="payment-opt">
                     <ul>
-                        <li><a href="#url"><img src="images/visa.png" alt=""></a></li>
-                        <li><a href="#url"><img src="images/master.png" alt=""></a></li>
-                        <li><a href="#url"><img src="images/american-express.png" alt=""></a></li>
-                        <li><a href="#url"><img src="images/discover.png" alt=""></a></li>
+                        <!-- <li><a href="#url"><img src="{{asset('welcome_assets/images/master.png')}}" alt=""></a></li> -->
+                        <li><a href="#url"><img src="{{asset('welcome_assets/images/master.png')}}" alt=""></a></li>
+                        <li><a href="#url"><img src="{{asset('welcome_assets/images/american-express.png')}}" alt=""></a></li>
+                        <li><a href="#url"><img src="{{asset('welcome_assets/images/discover.png')}}" alt=""></a></li>
                     </ul>
                 </div>
 
@@ -612,6 +637,11 @@ var productimeid = 0;
 </x-layouts.welcome-layout>
 <script>
     $(document).ready(function(){
+        $(".production-card:eq(0) .heading").css("background", "#d61a6a");
+        $(".production-card:eq(0) .heading h3, .heading p").css("color", "#fff");
+        $(".production-card:eq(0) .production-cont h2").css("color", "#d61a6a");
+        $(".production-card:eq(0) .production-cont > p").css("color", "#eb1212");
+    
         $("#country").change(function(){
             var val = $(this).val();
             $("#state").html('');
