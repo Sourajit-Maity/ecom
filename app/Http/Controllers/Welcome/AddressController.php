@@ -293,29 +293,29 @@ class AddressController extends Controller
         // catch(\Stripe\Exception\ApiErrorException $e) {
             
         //     $msgAction = $e->getMessage();
-        //     return redirect()->route('welcome.billing-address')->with('error', $msgAction);
+        //     return redirect()->route('welcome.check-out')->with('error', $msgAction);
         // }
         // catch(\Stripe\Exception\CardException $e) {
         //     $msgAction = $e->getMessage();
-        //     return redirect()->route('welcome.billing-address')->with('error', $msgAction);
+        //     return redirect()->route('welcome.check-out')->with('error', $msgAction);
         // }
         // catch (\Stripe\Exception\InvalidRequestException $e) {
         //     $msgAction = $e->getMessage();
-        //     return redirect()->route('welcome.billing-address')->with('error', $msgAction);
+        //     return redirect()->route('welcome.check-out')->with('error', $msgAction);
         // } catch (\Stripe\Exception\AuthenticationException $e) {
         //     $msgAction = $e->getMessage();
-        //     return redirect()->route('welcome.billing-address')->with('error', $msgAction);
+        //     return redirect()->route('welcome.check-out')->with('error', $msgAction);
         // }
         // catch (\Stripe\Exception\ApiConnectionException $e) {
         //     $msgAction = $e->getMessage();
-        //     return redirect()->route('welcome.billing-address')->with('error', $msgAction);
+        //     return redirect()->route('welcome.check-out')->with('error', $msgAction);
         // }
         // catch (Exception $e) {
         //     $msgAction = $e->getMessage();
-        //     return redirect()->route('welcome.billing-address')->with('error', $msgAction);
+        //     return redirect()->route('welcome.check-out')->with('error', $msgAction);
         // }
           
-        return redirect()->route('welcome.billing-address')->with('success', 'Payment successfully made.');
+        return redirect()->route('welcome.check-out')->with('success', 'Payment successfully made.');
 
     }
 

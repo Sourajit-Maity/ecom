@@ -69,7 +69,7 @@ Route::group(['middleware' => ['auth:web', 'clientuser']], function () {
     Route::get('edit-address/{id}', [AddressController::class, 'editAddress'])->name('welcome.edit-address');
     Route::post('update-address/{id}', [AddressController::class, 'updateAddress'])->name('welcome.update-address');
     Route::get('delete-address/{id}', [AddressController::class, 'deleteAddress'])->name('welcome.delete-address');
-    Route::get('billing-address', [AddressController::class, 'billingAddress'])->name('welcome.billing-address');
+    Route::get('check-out', [AddressController::class, 'billingAddress'])->name('welcome.check-out');
     Route::post('save-billing-details', [AddressController::class, 'savebillingDetails'])->name('welcome.save-billing-details');
     Route::get('saved-address', [AddressController::class, 'savedAddress'])->name('welcome.saved-address');
     Route::get('/getaddress/{id}', [AddressController::class, 'getaddressdetails']);
