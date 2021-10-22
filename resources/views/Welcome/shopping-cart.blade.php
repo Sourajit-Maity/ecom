@@ -8,11 +8,11 @@
 
                  <div class="row">
                     <div class="form-group col-md-6"; align="left">
-                        <a href="{{ route('welcome.billing-address') }}"><input type="submit" value="${{$subtotal}}"> </a>
+                        <a href="{{ route('welcome.check-out') }}"><input type="submit" value="${{$subtotal}}"> </a>
                     </div>
 
                     <div class="form-group col-md-6"; align="right">
-                        <a href="{{ route('welcome.billing-address') }}"><input type="submit" value="Proceed To Checkout"> </a>
+                        <a href="{{ route('welcome.check-out') }}"><input type="submit" value="Proceed To Checkout"> </a>
                     </div> 
                 </div>
                 </div>

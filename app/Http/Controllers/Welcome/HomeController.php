@@ -188,10 +188,7 @@ class HomeController extends Controller
     
     public function orderHistory()
     {
-        //$userid= Auth::user()->id;
-        $orders = Order::where('user_id',auth()->id())->with(['user','orderdetails'])->paginate(5);
-        
-        
+        $orders = Order::where('status','!=', 1)->where('user_id',auth()->id())->with(['user','orderdetails'])->paginate(5);      
         return view('Welcome.order-history',compact('orders'));
     }
     public function myAccount()

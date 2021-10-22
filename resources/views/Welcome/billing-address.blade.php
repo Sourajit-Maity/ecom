@@ -484,13 +484,13 @@
                             <div class="form-input">
                             <label class='control-label'>Card Number </label> 
 							  <input autocomplete='off'
-                                  class='form-control card-number only-numeric' required name="cardnumber" size='20' type='text' placeholder='e.g 4765356282902992' maxlength="16">
+                                  class='form-control card-number only-numeric' required name="cardnumber" size='20' type='text' placeholder='e.g 4242424242424242' maxlength="16">
                             </div>
                         </div>
                         <div class="col-md-4 card-details-col">
                             <div class="form-input">
                             <label class='control-label'>CVV </label>
-                              <input autocomplete='off' class='form-control card-cvc only-numeric' placeholder='e.g 595'
+                              <input autocomplete='off' class='form-control card-cvc only-numeric' placeholder='e.g 123'
                                   size='4' type='text' maxlength="3" name="cvv" required>
                             </div>
                         </div>
