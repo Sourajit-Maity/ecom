@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Darryldecode\Cart\CartServiceProvider::class,
+        Ptondereau\LaravelUpsApi\UpsApiServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -229,7 +230,16 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Cart' => Darryldecode\Cart\Facades\CartFacade::class
+        'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
+        'UpsAddressValidator' => Ptondereau\LaravelUpsApi\Facades\UpsAddressValidator::class,
+        'UpsLocator' => Ptondereau\LaravelUpsApi\Facades\UpsLocator::class,
+        'UpsQuantumView' => Ptondereau\LaravelUpsApi\Facades\UpsQuantumView::class,
+        'UpsRate' => Ptondereau\LaravelUpsApi\Facades\UpsRate::class,
+        'UpsTimeInTransit' => Ptondereau\LaravelUpsApi\Facades\UpsTimeInTransit::class,
+        'UpsTracking' => Ptondereau\LaravelUpsApi\Facades\UpsTracking::class,
+        'UpsTradeability' => Ptondereau\LaravelUpsApi\Facades\UpsTradeability::class,
+        'UpsShipping' => Ptondereau\LaravelUpsApi\Facades\UpsShipping::class,
+        'UpsRateInTransit' => Ptondereau\LaravelUpsApi\Facades\UpsRateInTransit::class,
 
     ],
 

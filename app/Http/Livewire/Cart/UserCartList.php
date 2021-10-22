@@ -14,6 +14,7 @@ use App\Models\User;
 use App\Models\Order;
 use App\Models\OrderDetails;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserCartList extends Component
 {
@@ -64,13 +65,22 @@ class UserCartList extends Component
 
     public function render()
     {
-        $cartQuery = Order::query()->where('user_id',auth()->id())->with(['user','orderdetails']);
+        $cartQuery = Order::query()->where('user_id',auth()->id())->where('orders.status',1)
+        ->with(['user','orderdetails']);
+
+        $total = OrderDetails::
+        join('orders', 'orders.id', '=', 'order_details.order_id')
+        ->select(DB::raw('sum(order_details.quantity*order_details.price) AS Total'))
+        ->where('orders.user_id',auth()->id())
+        ->first();
 
         return view('livewire.cart.user-cart-list', [
             'usercarts' => $cartQuery
                 ->orderBy($this->sortBy, $this->sortDirection)
                 ->paginate($this->perPage)
-        ]);
+        ], [
+            'totals' => $total]);
+       
         
     }
     public function deleteConfirm($id)
