@@ -1,124 +1,8 @@
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-var productimeid = 0;
-   $(document).ready(function(){ 
 
-    $("#billaddress").change(function(){
-        var val = $(this).val();
-        jQuery.ajax({ 
-            url : '/getaddress/' +val,
-            type : "GET",
-            dataType : "json",
-            success:function(data)
-            {
-               console.log(data[0]);
-               $('#first_name').val(data[0].first_name);
-               $('#last_name').val(data[0].last_name);
-               $('#street_address').val(data[0].street_address);
-               $('#city').val(data[0].city);
-               $('#postal_code').val(data[0].postal_code);
-               $('#phone').val(data[0].phone);
-               $('#company').val(data[0].company);
-               $('#country option[value="'+data[0].country+'"]').attr("selected", "selected");
-               $('#state option[value="'+data[0].state+'"]').attr("selected", "selected");
-            }
-        });
-        
-    });
-    
-    $("#shipaddress").change(function(){
-        var val = $(this).val();
-        jQuery.ajax({ 
-            url : '/getaddress/' +val,
-            type : "GET",
-            dataType : "json",
-            success:function(data)
-            {
-               console.log(data[0]);
-               $('#shipping_first_name').val(data[0].first_name);
-               $('#shipping_last_name').val(data[0].last_name);
-               $('#shipping_street_address').val(data[0].street_address);
-               $('#shipping_city').val(data[0].city);
-               $('#shipping_postal_code').val(data[0].postal_code);
-               $('#shipping_phone').val(data[0].phone);
-               $('#shipping_company').val(data[0].company);
-               $('#shipping_country option[value="'+data[0].country+'"]').attr("selected", "selected");
-               $('#shipping_state option[value="'+data[0].state+'"]').attr("selected", "selected");
-            }
-        });
-        
-    });
-    $(".production-card").click(function(){
-    	$(this).find(".heading").css("background", "#d61a6a");
-        $(this).find(".heading h3, .heading p").css("color", "#fff");
-        $(this).find(".production-cont h2").css("color", "#d61a6a");
-        $(this).find(".production-cont > p").css("color", "#eb1212");
-        
-        $(".production-card").not(this).find(".heading").css("background", "#eae8e9");
-        $(".production-card").not(this).find(".heading h3, .heading p").css("color", "#2f2f30");
-        $(".production-card").not(this).find(".production-cont h2").css("color", "#535548");
-        $(".production-card").not(this).find(".production-cont > p").css("color", "#c0bbbb");
 
-        var productimeid = $(this).find(".heading h3:eq(1)").text();
-
-        var cost = $(this).find(".production-cont h2").text();
-
-        if(cost != "Free"){
-            console.log('hi');
-            $('#fedex_ups').attr("disabled", false);
-            $('#fedex_account').attr("readonly", false);
-            $('#shipping_speed').attr("disabled", false);
-        }
-        else{
-            console.log('hi1');
-            $('#fedex_ups').attr("disabled", true);
-            $('#fedex_account').attr("readonly", true);
-            $('#shipping_speed').attr("disabled", true);
-        }
-        
-    
-        //console.log(cost);
-
-        
-
-        //console.log(productimeid);
-
-    
-    });
-   
-     $('#check-address').click(function(){ 
-     if ($('#check-address').is(":checked")) {
-      $('#shipping_first_name').val($('#first_name').val());
-      $('#shipping_last_name').val($('#last_name').val());
-      $('#shipping_street_address').val($('#street_address').val());
-      $('#shipping_city').val($('#city').val());
-	    $('#shipping_postal_code').val($('#postal_code').val());
-      $('#shipping_company').val($('#company').val());
-      $('#shipping_phone').val($('#phone').val());
-      var country = $('#country option:selected').val();
-      $('#shipping_country option[value=' + country + ']').attr('selected','selected');
-	   var state = $('#state option:selected').val();
-      $('#shipping_state option[value=' + state + ']').attr('selected','selected');
-     } else { //Clear on uncheck
-      $('#shipping_first_name').val("");
-      $('#shipping_last_name').val("");
-      $('#shipping_street_address').val("");
-      $('#shipping_postal_code').val("");
-	  $('#shipping_city').val("");
-      $('#shipping_company').val("");
-      $('#shipping_phone').val("");
-      $('#shipping_postal_code').val("");
-      $('#shipping_country option[value=""]').attr('selected','selected');
-	  $('#shipping_state option[value=""]').attr('selected','selected');
-     };
-    });
-});
-
-</script>
 <x-layouts.welcome-layout>
+
     <section class="billing-address account-info cmn-gap2">
         <div class="container">
             @if (Session::has('success'))
@@ -148,7 +32,11 @@ var productimeid = 0;
                                    </select>
                                 </div>
                                 </br>
-                            <form action="{{ route('welcome.save-billing-details') }}" method="POST" >
+                            <form action="{{ route('welcome.save-billing-details') }}" method="POST" 
+                            class="require-validation"
+                            data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
+                            id="payment-form">
+                            
                                    @csrf
                                 <div class="form-input">
                                     <label>First name*</label>
@@ -591,34 +479,58 @@ var productimeid = 0;
                     <h3>Card Details </h3>
 
                     <div class="row card-details-row">
+                        
                         <div class="col-md-8 card-details-col">
                             <div class="form-input">
-                                <label>Card Number</label>
-                                <input type="text">
+                            <label class='control-label'>Card Number </label> 
+							  <input autocomplete='off'
+                                  class='form-control card-number only-numeric' required name="cardnumber" size='20' type='text' placeholder='e.g 4765356282902992' maxlength="16">
                             </div>
                         </div>
                         <div class="col-md-4 card-details-col">
                             <div class="form-input">
-                                <label>CVV</label>
-                                <input type="text">
+                            <label class='control-label'>CVV </label>
+                              <input autocomplete='off' class='form-control card-cvc only-numeric' placeholder='e.g 595'
+                                  size='4' type='text' maxlength="3" name="cvv" required>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row card-details-row">
+                        <div class="row card-details-row">
                         <div class="col-md-7 card-details-col">
                             <div class="form-input">
                                 <label>Expiration Date</label>
-                                <select>
-                                    <option>1- January</option>
+                                <select name ="card-expiry-month" class='card-expiry-month' required>
+                                    <option value="1">1- January</option>
+                                    <option value="2">2- February</option>
+                                    <option value="3">3- March</option>
+                                    <option value="4">4- April</option>
+                                    <option value="5">5- May</option>
+                                    <option value="6">6- June</option>
+                                    <option value="7">7- July</option>
+                                    <option value="8">8- August</option>
+                                    <option value="9">9- September</option>
+                                    <option value="10">10- October</option>
+                                    <option value="11">11- November</option>
+                                    <option value="12">12- December</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-5 card-details-col">
                             <div class="form-input">
                                 <label>Year</label>
-                                <select>
-                                    <option>2021</option>
+                                <select  name ="card-expiry-year" class='card-expiry-year' required>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2028">2028</option>
+                                    <option value="2029">2029</option>
+                                    <option value="2030">2030</option>
+
                                 </select>
                             </div>
                         </div>
@@ -627,21 +539,25 @@ var productimeid = 0;
             </div>
 
             <div class="continue-sec">
-                <input type="submit" value="Continue"> 
+                <input type="submit" value="Pay Now - ${{$subtotal}}"> 
             </div>
 
         </form>
         </div>
     </section>
+    @push('js')
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+ $(document).ready(function(){
 
-</x-layouts.welcome-layout>
-<script>
-    $(document).ready(function(){
         $(".production-card:eq(0) .heading").css("background", "#d61a6a");
         $(".production-card:eq(0) .heading h3, .heading p").css("color", "#fff");
         $(".production-card:eq(0) .production-cont h2").css("color", "#d61a6a");
         $(".production-card:eq(0) .production-cont > p").css("color", "#eb1212");
-    
+
         $("#country").change(function(){
             var val = $(this).val();
             $("#state").html('');
@@ -672,5 +588,172 @@ var productimeid = 0;
             $(".error").css("display", "none");
           }
       });
+    
+ 
+      var $form   = $(".require-validation");
+  
+   $('form.require-validation').bind('submit', function(e) {
+       var $form         = $(".require-validation"),
+       
+       inputSelector = ['input[type=email]', 'input[type=password]',
+                        'input[type=text]', 'input[type=file]',
+                        'textarea'].join(', '),
+       $inputs       = $form.find('.required').find(inputSelector),
+       $errorMessage = $form.find('div.error'),
+       valid         = true;
+       $errorMessage.addClass('hide');
+ 
+       $('.has-error').removeClass('has-error');
+       $inputs.each(function(i, el) {
+         var $input = $(el);
+         if ($input.val() === '') {
+           $input.parent().addClass('has-error');
+           $errorMessage.removeClass('hide');
+           e.preventDefault();
+         }
+       });
+  
+       if (!$form.data('cc-on-file')) {
+         e.preventDefault();
+         console.log($form.data('stripe-publishable-key'));
+         Stripe.setPublishableKey($form.data('stripe-publishable-key'));
+         Stripe.createToken({
+           number: $('.card-number').val(),
+           cvc: $('.card-cvc').val(),
+           exp_month: $('.card-expiry-month').val(),
+           exp_year: $('.card-expiry-year').val()
+         }, stripeResponseHandler);
+       }
+ 
+ });
+
+ function stripeResponseHandler(status, response) {
+    
+       if (response.error) {
+
+           $('.error')
+               .removeClass('hide')
+               .find('.alert')
+               .text(response.error.message);
+       } else {
+           /* token contains id, last4, and card type */
+           var token = response['id'];
+           console.log('hi');
+           $form.find('input[type=text]').empty();
+           $form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
+           $form.get(0).submit();
+       }
+   }
+
+var productimeid = 0;
+ 
+    $("#billaddress").change(function(){
+        var val = $(this).val();
+        jQuery.ajax({ 
+            url : '/getaddress/' +val,
+            type : "GET",
+            dataType : "json",
+            success:function(data)
+            {
+               console.log(data[0]);
+               $('#first_name').val(data[0].first_name);
+               $('#last_name').val(data[0].last_name);
+               $('#street_address').val(data[0].street_address);
+               $('#city').val(data[0].city);
+               $('#postal_code').val(data[0].postal_code);
+               $('#phone').val(data[0].phone);
+               $('#company').val(data[0].company);
+               $('#country option[value="'+data[0].country+'"]').attr("selected", "selected");
+               $('#state option[value="'+data[0].state+'"]').attr("selected", "selected");
+            }
+        });
+        
     });
+    
+    $("#shipaddress").change(function(){
+        var val = $(this).val();
+        jQuery.ajax({ 
+            url : '/getaddress/' +val,
+            type : "GET",
+            dataType : "json",
+            success:function(data)
+            {
+               console.log(data[0]);
+               $('#shipping_first_name').val(data[0].first_name);
+               $('#shipping_last_name').val(data[0].last_name);
+               $('#shipping_street_address').val(data[0].street_address);
+               $('#shipping_city').val(data[0].city);
+               $('#shipping_postal_code').val(data[0].postal_code);
+               $('#shipping_phone').val(data[0].phone);
+               $('#shipping_company').val(data[0].company);
+               $('#shipping_country option[value="'+data[0].country+'"]').attr("selected", "selected");
+               $('#shipping_state option[value="'+data[0].state+'"]').attr("selected", "selected");
+            }
+        });
+        
+    });
+    $(".production-card").click(function(){
+    	$(this).find(".heading").css("background", "#d61a6a");
+        $(this).find(".heading h3, .heading p").css("color", "#fff");
+        $(this).find(".production-cont h2").css("color", "#d61a6a");
+        $(this).find(".production-cont > p").css("color", "#eb1212");
+        
+        $(".production-card").not(this).find(".heading").css("background", "#eae8e9");
+        $(".production-card").not(this).find(".heading h3, .heading p").css("color", "#2f2f30");
+        $(".production-card").not(this).find(".production-cont h2").css("color", "#535548");
+        $(".production-card").not(this).find(".production-cont > p").css("color", "#c0bbbb");
+
+        var productimeid = $(this).find(".heading h3:eq(1)").text();
+
+        var cost = $(this).find(".production-cont h2").text();
+
+        if(cost != "Free"){
+            //console.log('hi');
+            $('#fedex_ups').attr("disabled", false);
+            $('#fedex_account').attr("readonly", false);
+            $('#shipping_speed').attr("disabled", false);
+        }
+        else{
+            //console.log('hi1');
+            $('#fedex_ups').attr("disabled", true);
+            $('#fedex_account').attr("readonly", true);
+            $('#shipping_speed').attr("disabled", true);
+        }
+  
+    });
+   
+     $('#check-address').click(function(){ 
+     if ($('#check-address').is(":checked")) {
+      $('#shipping_first_name').val($('#first_name').val());
+      $('#shipping_last_name').val($('#last_name').val());
+      $('#shipping_street_address').val($('#street_address').val());
+      $('#shipping_city').val($('#city').val());
+	    $('#shipping_postal_code').val($('#postal_code').val());
+      $('#shipping_company').val($('#company').val());
+      $('#shipping_phone').val($('#phone').val());
+      var country = $('#country option:selected').val();
+      $('#shipping_country option[value=' + country + ']').attr('selected','selected');
+	   var state = $('#state option:selected').val();
+      $('#shipping_state option[value=' + state + ']').attr('selected','selected');
+     } 
+     else 
+     { //Clear on uncheck
+      $('#shipping_first_name').val("");
+      $('#shipping_last_name').val("");
+      $('#shipping_street_address').val("");
+      $('#shipping_postal_code').val("");
+	  $('#shipping_city').val("");
+      $('#shipping_company').val("");
+      $('#shipping_phone').val("");
+      $('#shipping_postal_code').val("");
+      $('#shipping_country option[value=""]').attr('selected','selected');
+	  $('#shipping_state option[value=""]').attr('selected','selected');
+     };
+    });
+});
+
 </script>
+@endpush
+</x-layouts.welcome-layout>
+
+

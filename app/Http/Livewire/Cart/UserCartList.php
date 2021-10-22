@@ -65,7 +65,7 @@ class UserCartList extends Component
 
     public function render()
     {
-        $cartQuery = Order::query()->where('user_id',auth()->id())
+        $cartQuery = Order::query()->where('user_id',auth()->id())->where('orders.status',1)
         ->with(['user','orderdetails']);
 
         $total = OrderDetails::

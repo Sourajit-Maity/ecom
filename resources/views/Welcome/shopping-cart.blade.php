@@ -8,7 +8,7 @@
 
                  <div class="row">
                     <div class="form-group col-md-6"; align="left">
-                        <a href="{{ route('welcome.billing-address') }}"><input type="submit" value="{{$totals}}"> </a>
+                        <a href="{{ route('welcome.billing-address') }}"><input type="submit" value="${{$subtotal}}"> </a>
                     </div>
 
                     <div class="form-group col-md-6"; align="right">

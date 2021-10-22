@@ -28,9 +28,17 @@ class UserCartController extends Controller
         $totals = OrderDetails::
         join('orders', 'orders.id', '=', 'order_details.order_id')
         ->select(DB::raw('sum(order_details.quantity*order_details.price) AS Total'))
+        ->where('orders.status',1)
         ->where('orders.user_id',auth()->id())
         ->first();
-        return view('Welcome.shopping-cart',compact('totals'));
+        
+        $ordervalue = Order::where('orders.status',1)
+        ->where('orders.user_id',auth()->id())
+        ->value('payment_price');$ordervalue = Order::where('orders.status',1)
+        ->where('orders.user_id',auth()->id())
+        ->value('payment_price');       
+        $subtotal = $totals['Total'] + $ordervalue;        
+        return view('Welcome.shopping-cart',compact('subtotal'));
     }
 
     public function index()
