@@ -74,6 +74,9 @@ Route::group(['middleware' => ['auth:web', 'clientuser']], function () {
     Route::get('saved-address', [AddressController::class, 'savedAddress'])->name('welcome.saved-address');
     Route::get('/getaddress/{id}', [AddressController::class, 'getaddressdetails']);
 
+    Route::get('payment', [AddressController::class, 'paypalpayment'])->name('payment');
+    Route::get('cancel', [AddressController::class, 'paypalcancel'])->name('payment.cancel');
+    Route::get('payment/success', [AddressController:: class, 'paypalsuccess'])->name('payment.success');
 
     Route::get('shopping-cart', [UserCartController::class, 'shoppingCart'])->name('welcome.shopping-cart');
     Route::get('order-history', [HomeController::class, 'orderHistory'])->name('welcome.order-history');

@@ -25,6 +25,7 @@
         "ptondereau/laravel-ups-api": "^2.2",
         "shipengine/shipengine": "^1.0",
         "spatie/laravel-permission": "^3.18",
+        "srmklive/paypal": "~1.0",
         "stripe/stripe-php": "^7.77",
         "webreinvent/laravel-usps": "^1.1"
     },

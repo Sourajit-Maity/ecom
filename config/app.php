@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Darryldecode\Cart\CartServiceProvider::class,
         Ptondereau\LaravelUpsApi\UpsApiServiceProvider::class,
+        Srmklive\PayPal\Providers\PayPalServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -240,6 +241,8 @@ return [
         'UpsTradeability' => Ptondereau\LaravelUpsApi\Facades\UpsTradeability::class,
         'UpsShipping' => Ptondereau\LaravelUpsApi\Facades\UpsShipping::class,
         'UpsRateInTransit' => Ptondereau\LaravelUpsApi\Facades\UpsRateInTransit::class,
+        'PayPal' => Srmklive\PayPal\Facades\PayPal::class,
+
 
     ],
 

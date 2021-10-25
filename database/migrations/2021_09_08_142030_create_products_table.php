@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('product_name')->unique();
             $table->decimal('price',8,2)->nullable(); 
             $table->text('product_description')->nullable();
+            $table->text('product_features')->nullable();
             $table->text('product_photo_path')->nullable();
             $table->foreignId('user_id')->nullable()->references('id')->on('users')->onDelete('cascade');           
             $table->timestamps();

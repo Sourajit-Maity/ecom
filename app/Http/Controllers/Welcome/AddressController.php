@@ -37,6 +37,7 @@ use FedEx\RateService\SimpleType;
 use App\Models\Payment;
 use Stripe;
 use Illuminate\Support\Facades\DB;
+use Srmklive\PayPal\Services\ExpressCheckout;
 
 class AddressController extends Controller
 {
@@ -143,12 +144,14 @@ class AddressController extends Controller
         ->where('orders.user_id',auth()->id())
         ->value('payment_price');       
         $subtotal = $totals['Total'] + $ordervalue;  
+        
 
         return view('Welcome.billing-address',compact('state','country','address','productiontimes','subtotal'));
     }
 
     public function savebillingDetails(HttpRequest $request)
     {
+        
 
         //dd($request->all());
         //  // //fedex start
@@ -332,4 +335,58 @@ class AddressController extends Controller
         $saveaddress= AddAddress::where("id",$id)->with(['countryaddress','stateaddress'])->get();
         return json_encode($saveaddress);
     }
+
+    public function paypalpayment()
+    {
+        $data = [];
+        $data['items'] = [
+            [
+                'name' => 'ournamebadges.com',
+                'price' => 100,
+                'desc'  => 'Description for ournamebadges.com',
+                'qty' => 1
+            ]
+        ];
+  
+        $data['invoice_id'] = 1;
+        $data['invoice_description'] = "Order #{$data['invoice_id']} Invoice";
+        $data['return_url'] = route('payment.success');
+        $data['cancel_url'] = route('payment.cancel');
+        $data['total'] = 100;
+  
+        $provider = new ExpressCheckout;
+  
+        $response = $provider->setExpressCheckout($data);
+  
+        $response = $provider->setExpressCheckout($data, true);
+  
+        return redirect($response['paypal_link']);
+    }
+   
+    /**
+     * Responds with a welcome message with instructions
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function paypalcancel()
+    {
+        dd('Your payment is canceled. You can create cancel page here.');
+    }
+  
+    /**
+     * Responds with a welcome message with instructions
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function paypalsuccess(Request $request)
+    {
+        $response = $provider->getExpressCheckoutDetails($request->token);
+  
+        if (in_array(strtoupper($response['ACK']), ['SUCCESS', 'SUCCESSWITHWARNING'])) {
+            dd('Your payment was successfully. You can create success page here.');
+        }
+  
+        dd('Something is wrong.');
+    }
+
 }

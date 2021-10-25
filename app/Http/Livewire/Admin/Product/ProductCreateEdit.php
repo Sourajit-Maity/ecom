@@ -14,7 +14,7 @@ class ProductCreateEdit extends Component
 {
     use AlertMessage;
     use WithFileUploads;
-    public $product_name,$product_description, $user_id, $product,$product_photo_path;
+    public $product_name,$product_description,$product_features, $user_id, $product,$product_photo_path;
     public $isEdit=false;
     public $categoryList = [];
 
@@ -54,6 +54,7 @@ class ProductCreateEdit extends Component
             [
                 'product_name' => ['required', 'max:255', Rule::unique('products')],
                 'product_description' => ['required'],
+                'product_features' => ['required'],
                 "product_photo_path"  =>  "required|image:jpeg,png,jpg,gif,svg|max:2048",
                 
             ];
@@ -65,6 +66,7 @@ class ProductCreateEdit extends Component
             [   
                 'product_name' => ['required', 'max:255', Rule::unique('products')->ignore($this->product->id)],
                 'product_description' => ['required'],
+                'product_features' => ['required'],
             ];
     }
 

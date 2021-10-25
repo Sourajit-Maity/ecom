@@ -5,11 +5,15 @@
                         <x-admin.input type="text" wire:model.defer="product_name" placeholder="Product Name"  class="{{ $errors->has('product_name') ? 'is-invalid' :'' }}" />
                         <x-admin.input-error for="product_name" />
                     </x-admin.form-group>
-                  
                     <x-admin.form-group class="col-lg-12">
                         <x-admin.lable value="Product Description" required />
                         <x-admin.textarea type="text" wire:model.defer="product_description" placeholder="product description..."  class="{{ $errors->has('product_description') ? 'is-invalid' :'' }}" rows='8' />
                         <x-admin.input-error for="product_description" />
+                    </x-admin.form-group>
+                    <x-admin.form-group class="col-lg-12">
+                        <x-admin.lable value="Product Features" required />
+                        <x-admin.textarea type="text" wire:model.defer="product_features" placeholder="product features..."  class="{{ $errors->has('product_features') ? 'is-invalid' :'' }}" rows='8' />
+                        <x-admin.input-error for="product_features" />
                     </x-admin.form-group>
                 <x-admin.form-group>
                         <x-admin.lable value="Product Image" required />

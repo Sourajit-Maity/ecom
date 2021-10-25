@@ -15,6 +15,7 @@ class Product extends Model
         'price',
         'product_description',
         'product_photo_path',
+        'product_features',
         'deleted_at',
     ];
 

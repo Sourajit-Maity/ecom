@@ -540,6 +540,8 @@
 
             <div class="continue-sec">
                 <input type="submit" value="Pay Now - ${{$subtotal}}"> 
+
+                <a href="{{ route('payment') }}" ><input type="submit" value="Pay Now - ${{$subtotal}} from Paypal"> </a>
             </div>
 
         </form>
