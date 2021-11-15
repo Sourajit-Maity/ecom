@@ -23,6 +23,7 @@
         "laravel/ui": "^3.3",
         "livewire/livewire": "^2.3",
         "ptondereau/laravel-ups-api": "^2.2",
+        "razorpay/razorpay": "^2.8",
         "shipengine/shipengine": "^1.0",
         "spatie/laravel-permission": "^3.18",
         "srmklive/paypal": "~1.0",

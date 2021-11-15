@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Welcome\DesignToolController;
 use App\Http\Controllers\Welcome\HomeController;
 use App\Http\Controllers\Welcome\AddressController;
+use App\Http\Controllers\Welcome\RazorpayPaymentController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ReviewController;
@@ -63,7 +64,8 @@ Route::group(['middleware' => ['auth:web', 'clientuser']], function () {
 
     Route::get('design-tool', [HomeController::class, 'designTool'])->name('welcome.design-tool');
 
-
+    Route::get('razorpay-payment', [RazorpayPaymentController::class, 'index']);
+    Route::post('razorpay-payment', [RazorpayPaymentController::class, 'store'])->name('razorpay.payment.store');
     Route::get('add-address', [AddressController::class, 'addAddress'])->name('welcome.add-address');
     Route::post('save-address', [AddressController::class, 'saveAddress'])->name('welcome.save-address');
     Route::get('edit-address/{id}', [AddressController::class, 'editAddress'])->name('welcome.edit-address');

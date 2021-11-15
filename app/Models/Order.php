@@ -28,8 +28,8 @@ class Order extends Model
     }
     
     protected $fillable = [ 
-        'user_id','title', 'production_time_id', 'product_image',
-        'payment_method','shipping_method','names',
+        'user_id', 'product_id',
+        'payment_method','shipping_method',
         'quantity','payment_price','status'
     ];
     public function orderdetails(){

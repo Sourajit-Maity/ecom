@@ -14,7 +14,28 @@
                         <x-admin.lable value="Product Features" required />
                         <x-admin.textarea type="text" wire:model.defer="product_features" placeholder="product features..."  class="{{ $errors->has('product_features') ? 'is-invalid' :'' }}" rows='8' />
                         <x-admin.input-error for="product_features" />
-                    </x-admin.form-group>
+                        <!-- <x-admin.input type="text" wire:model.defer="product_features" placeholder="Product Features"  class="{{ $errors->has('product_features') ? 'is-invalid' :'' }}" />
+                        <x-admin.input-error for="product_features" /> -->
+                    </x-admin.form-group>           
+                    <!-- <div class="col-md-2">
+                    <button class="btn text-white btn-info btn-sm" wire:click.prevent="add({{$i}})">Add</button>
+                </div> -->
+                <!-- @foreach($inputs as $key => $value)
+                    <div class=" add-input">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                <x-admin.input type="text" wire:model.defer="product_features.{{ $value }}" placeholder="Product Features"  class="{{ $errors->has('product_features.'.$value) ? 'is-invalid' :'' }}" />
+                                <x-admin.input-error for="product_features.{{ $value }}" />
+                                </div>
+                            </div>
+                        
+                            <div class="col-md-2">
+                                <button class="btn btn-danger btn-sm" wire:click.prevent="remove({{$key}})">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach -->
                 <x-admin.form-group>
                         <x-admin.lable value="Product Image" required />
                         <x-admin.input type="file" wire:model.defer="product_photo_path"   class="{{ $errors->has('product_photo_path') ? 'is-invalid' :'' }}" accept="image/*" />
@@ -24,10 +45,7 @@
                 <div class="form-group col-lg-3 d-flex justify-content-end">
                     <img src="{{Storage::disk('public')->exists($product->product_photo_path) ? Storage::url($product->product_photo_path) : asset($product->product_photo_path)}}" width="200px" height="150px">
                 </div>
-
-                
-                   
-                   
+                  
                 </div>
             <br>
     </x-slot>

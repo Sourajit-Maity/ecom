@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin\Product;
 use Livewire\Component;
 use Illuminate\Validation\Rule;
 use App\Http\Livewire\Traits\AlertMessage;
+use App\Http\Livewire\Field;
 use App\Models\Product;
 use Livewire\WithFileUploads;
 use Spatie\MediaLibrary\Models\Media;
@@ -17,6 +18,8 @@ class ProductCreateEdit extends Component
     public $product_name,$product_description,$product_features, $user_id, $product,$product_photo_path;
     public $isEdit=false;
     public $categoryList = [];
+    public $inputs = [];
+    public $i = 1;
 
     public function mount($product = null)
     {
@@ -54,8 +57,8 @@ class ProductCreateEdit extends Component
             [
                 'product_name' => ['required', 'max:255', Rule::unique('products')],
                 'product_description' => ['required'],
-                'product_features' => ['required'],
                 "product_photo_path"  =>  "required|image:jpeg,png,jpg,gif,svg|max:2048",
+                'product_features' => ['required'],
                 
             ];
     }
@@ -67,11 +70,13 @@ class ProductCreateEdit extends Component
                 'product_name' => ['required', 'max:255', Rule::unique('products')->ignore($this->product->id)],
                 'product_description' => ['required'],
                 'product_features' => ['required'],
+
             ];
     }
 
                 protected $messages = [
                     'product_photo_path.required' => 'Product photo field is required.',
+
                 
                 ];
 
@@ -95,6 +100,12 @@ class ProductCreateEdit extends Component
             $msgAction = $this->product->name . ' Product has been updated';
             $this->showToastr("success", $msgAction);
             return redirect()->route('product.index');
+
+            // foreach ($this->name as $key => $value) {
+            //     Product::create(['name' => $this->name[$key], 'phone' => $this->phone[$key]]);
+            // }      
+            // $this->inputs = [];       
+            // $this->resetInputFields();
         }
         $this->showToastr("error", "No record to update!!");
         return redirect()->route('product.index');
@@ -105,4 +116,22 @@ class ProductCreateEdit extends Component
     {
         return view('livewire.admin.product.product-create-edit');
     }
+
+    public function add($i)
+    {
+        $i = $i + 1;
+        $this->i = $i;
+        array_push($this->inputs ,$i);
+    }
+ 
+    public function remove($i)
+    {
+        unset($this->inputs[$i]);
+    }
+      
+    private function resetInputFields(){
+        $this->product_features = '';
+
+    }
+    
 }

@@ -97,10 +97,6 @@ class User extends Authenticatable
          return $this->hasMany(Task::class);
     }
 
-    public function review()
-    {
-         return $this->hasMany(Review::class);
-    }
 
     public function products()
     {

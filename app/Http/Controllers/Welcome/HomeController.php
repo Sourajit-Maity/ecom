@@ -16,7 +16,13 @@ use App\Models\OrderDetails;
 use App\Models\User;
 use App\Models\Faqpage;
 use App\Models\Aboutpage;
+use App\Models\Header;
+use App\Models\Footer;
+use App\Models\Slider;
 use App\Models\Product;
+use App\Models\Metatable;
+use App\Models\ProductCategory;
+use App\Models\ProductImage;
 use App\Models\ProductPrice;
 use App\Models\Homepage;
 use App\Models\ContactUsForm;
@@ -29,42 +35,69 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     
 
     public function index()
     {
-        $homedetails = Homepage::first();
-        $products = Product::latest()->take(6)->get();
-        $reviews = Review::with('user')->where('active', 1)->get();
-        return view('Welcome.home',compact('reviews','homedetails','products'));
+        $header = Header::first();
+        $footer = Footer::first();
+
+        $banner = Slider::get();
+
+        $about = DB::table('aboutpages')->first();
+
+        $feedback = Review::where('active', 1)->get();
+            
+        $seodata = Metatable::where('id',7)->get();
+
+
+        $category = ProductCategory::get();
+        $products=[];
+        
+            foreach($category as $cat){
+                $prods =ProductCategory::
+                     where('product_categories.id',$cat->id)
+                    ->with('product')
+                    ->take(4)
+                    ->get();
+                foreach($prods as $prod){
+                    $products[]=$prod;
+                }
+            }
+            
+
+        $menu = ProductCategory::get();
+        //dd($products);
+        return view('frontend.welcome',compact('category','header','footer','banner','about','menu','feedback','products','seodata'));
+    
     }
     public function aboutUs()
     {
         $about = Aboutpage::first();
-        $reviews = Review::with('user')->where('active', 1)->get();
+        $reviews = Review::where('active', 1)->get();
         return view('Welcome.about-us',compact('reviews','about'));
     }
     public function products()
     {
         $products = Product::get();
         $productsdetails = Product::paginate(3);
-        $reviews = Review::with('user')->where('active', 1)->get();
+        $reviews = Review::where('active', 1)->get();
         return view('Welcome.products',compact('reviews','products','productsdetails'));
     }
     public function faq()
     {
         $faqs = Faq::all();
         $faqpage = Faqpage::first();
-        $reviews = Review::with('user')->where('active', 1)->get();
+        $reviews = Review::where('active', 1)->get();
         return view('Welcome.faq',compact('faqs','reviews','faqpage'));
     }
     public function contactUs()
     {
         $contactuspage = Contactuspage::first();
-        $reviews = Review::with('user')->where('active', 1)->get();
+        $reviews = Review::where('active', 1)->get();
         return view('Welcome.contact-us',compact('reviews','contactuspage'));
     }
 

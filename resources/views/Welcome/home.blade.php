@@ -129,7 +129,7 @@
                         <img src="{{asset('welcome_assets/images/testimonial01.jpg')}}" alt="">
                     </div>
                     <div class="testimonial-cont">
-                        <h4>{{$review->user->first_name}} {{$review->user->last_name}}</h4>
+                        <h4>{{$review->name}}</h4>
                         <p>{{ Str::limit($review->review_description , 100) }}
                         </p>
                         <a href="#url">Read More</a>
